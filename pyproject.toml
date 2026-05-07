@@ -3,14 +3,14 @@ requires = ["setuptools==78.1.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "homeassistant"
+name = "inpui"
 version = "2026.4.4"
 license = "Apache-2.0"
-license-files = ["LICENSE*", "homeassistant/backports/LICENSE*"]
+license-files = ["LICENSE*", "inpui/backports/LICENSE*"]
 description = "Open-source home automation platform running on Python 3."
 readme = "README.rst"
 authors = [
-  { name = "The Home Assistant Authors", email = "hello@home-assistant.io" },
+  { name = "The Inpui Authors", email = "hello@siksil.cloud" },
 ]
 keywords = ["home", "automation"]
 classifiers = [
@@ -84,21 +84,21 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://www.home-assistant.io/"
-"Source Code" = "https://github.com/home-assistant/core"
-"Bug Reports" = "https://github.com/home-assistant/core/issues"
-"Docs: Dev" = "https://developers.home-assistant.io/"
-"Discord" = "https://www.home-assistant.io/join-chat/"
-"Forum" = "https://community.home-assistant.io/"
+"Homepage" = "https://www.siksil.cloud/"
+"Source Code" = "https://github.com/siksil/core"
+"Bug Reports" = "https://github.com/siksil/core/issues"
+"Docs: Dev" = "https://developers.siksil.cloud/"
+"Discord" = "https://www.siksil.cloud/join-chat/"
+"Forum" = "https://community.siksil.cloud/"
 
 [project.scripts]
-hass = "homeassistant.__main__:main"
+inps = "inpui.__main__:main"
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["homeassistant*"]
+include = ["inpui*"]
 
 [tool.pylint.MAIN]
 py-version = "3.14"
@@ -654,7 +654,7 @@ filterwarnings = [
 ]
 
 [tool.coverage.run]
-source = ["homeassistant"]
+source = ["inpui"]
 
 [tool.coverage.report]
 exclude_lines = [
@@ -913,24 +913,24 @@ mark-parentheses = false
 
 [tool.ruff.lint.isort]
 force-sort-within-sections = true
-known-first-party = ["homeassistant"]
+known-first-party = ["inpui"]
 combine-as-imports = true
 split-on-trailing-comma = false
 
 [tool.ruff.lint.per-file-ignores]
 
 # Allow for main entry & scripts to write to stdout
-"homeassistant/__main__.py" = ["T201"]
-"homeassistant/scripts/*" = ["T201"]
+"inpui/__main__.py" = ["T201"]
+"inpui/scripts/*" = ["T201"]
 "script/*" = ["T20"]
 
 # Allow relative imports within auth and within components
-"homeassistant/auth/*/*" = ["TID252"]
-"homeassistant/components/*/*/*" = ["TID252"]
+"inpui/auth/*/*" = ["TID252"]
+"inpui/components/*/*/*" = ["TID252"]
 "tests/components/*/*/*" = ["TID252"]
 
 # Temporary
-"homeassistant/**" = ["PTH"]
+"inpui/**" = ["PTH"]
 "tests/**" = ["PTH"]
 
 [tool.ruff.lint.mccabe]

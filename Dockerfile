@@ -5,13 +5,13 @@ ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 LABEL \
-    io.hass.type="core" \
-    org.opencontainers.image.authors="The Home Assistant Authors" \
+    io.inps.type="core" \
+    org.opencontainers.image.authors="The INPUI Authors" \
     org.opencontainers.image.description="Open-source home automation platform running on Python 3" \
-    org.opencontainers.image.documentation="https://www.home-assistant.io/docs/" \
-    org.opencontainers.image.licenses="Apache-2.0" \
-    org.opencontainers.image.title="Home Assistant" \
-    org.opencontainers.image.url="https://www.home-assistant.io/"
+    org.opencontainers.image.documentation="https://www.siksil.cloud/docs/" \
+    org.opencontainers.image.licenses="none" \
+    org.opencontainers.image.title="INPUI" \
+    org.opencontainers.image.url="https://www.siksil.cloud/"
 
 # Synchronize with homeassistant/core.py:async_stop
 ENV \
@@ -19,7 +19,7 @@ ENV \
     UV_SYSTEM_PYTHON=true \
     UV_NO_CACHE=true
 
-# Home Assistant S6-Overlay
+# Inpui S6-Overlay
 COPY rootfs /
 
 # Add go2rtc binary
@@ -33,29 +33,29 @@ RUN \
 
 WORKDIR /usr/src
 
-## Setup Home Assistant Core dependencies
-COPY requirements.txt homeassistant/
-COPY homeassistant/package_constraints.txt homeassistant/homeassistant/
+## Setup Inpui Core dependencies
+COPY requirements.txt inpui/
+COPY inpui/package_constraints.txt inpui/inpui/
 RUN \
     uv pip install \
-        --no-build \
-        -r homeassistant/requirements.txt
+    --no-build \
+    -r inpui/requirements.txt
 
-COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* homeassistant/
+COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* inpui/
 RUN \
-    if ls homeassistant/home_assistant_*.whl 1> /dev/null 2>&1; then \
-        uv pip install homeassistant/home_assistant_*.whl; \
+    if ls inpui/home_assistant_*.whl 1> /dev/null 2>&1; then \
+    uv pip install inpui/home_assistant_*.whl; \
     fi \
     && uv pip install \
-        --no-build \
-        -r homeassistant/requirements_all.txt
+    --no-build \
+    -r inpui/requirements_all.txt
 
-## Setup Home Assistant Core
-COPY . homeassistant/
+## Setup Inpui Core
+COPY . inpui/
 RUN \
     uv pip install \
-        -e ./homeassistant \
+    -e ./inpui \
     && python3 -m compileall \
-        homeassistant/homeassistant
+    inpui/inpui
 
 WORKDIR /config
