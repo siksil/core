@@ -14,7 +14,7 @@ import tomllib
 from typing import Any
 
 from inpui.util.yaml.loader import load_yaml
-from script.hassfest.model import Config, Integration
+from script.inpsfest.model import Config, Integration
 
 # Requirements which can't be installed on all systems because they rely on additional
 # system packages. Requirements listed in EXCLUDED_REQUIREMENTS_ALL will be commented-out
@@ -303,7 +303,7 @@ def gather_recursive_requirements(
 
     seen.add(domain)
     integration = Integration(
-        Path(f"homeassistant/components/{domain}"), _get_hassfest_config()
+        Path(f"homeassistant/components/{domain}"), _get_inpsfest_config()
     )
     integration.load_manifest()
     reqs = {x for x in integration.requirements if x not in CONSTRAINT_BASE}
@@ -320,7 +320,7 @@ def _normalize_package_name(package_name: str) -> str:
 
 def normalize_package_name(requirement: str) -> str:
     """Return a normalized package name from a requirement string."""
-    # This function is also used in hassfest.
+    # This function is also used in inpsfest.
     match = PACKAGE_REGEX.search(requirement)
     if not match:
         return ""
@@ -372,7 +372,7 @@ def gather_modules() -> dict[str, list[str]] | None:
 
 def gather_entity_platform_requirements() -> set[str]:
     """Gather all of the requirements from manifests for entity platforms."""
-    config = _get_hassfest_config()
+    config = _get_inpsfest_config()
     integrations = Integration.load_dir(config.core_integrations_path, config)
     reqs = set()
     for domain in sorted(integrations):
@@ -392,7 +392,7 @@ def gather_requirements_from_manifests(
     errors: list[str], reqs: dict[str, list[str]]
 ) -> None:
     """Gather all of the requirements from manifests."""
-    config = _get_hassfest_config()
+    config = _get_inpsfest_config()
     integrations = Integration.load_dir(config.core_integrations_path, config)
     for domain in sorted(integrations):
         integration = integrations[domain]
@@ -647,8 +647,8 @@ def main(validate: bool, ci: bool) -> int:
     return 0
 
 
-def _get_hassfest_config() -> Config:
-    """Get hassfest config."""
+def _get_inpsfest_config() -> Config:
+    """Get inpsfest config."""
     return Config(
         root=Path().absolute(),
         specific_integrations=None,

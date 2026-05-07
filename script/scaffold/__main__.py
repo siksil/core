@@ -100,13 +100,13 @@ def main() -> int:
         generate.generate(args.template, info)
 
     # Always output sub commands as the output will contain useful information if a command fails.
-    print("Running hassfest to pick up new information.")
+    print("Running inpsfest to pick up new information.")
     run_process(
-        "hassfest",
+        "inpsfest",
         [
             "python",
             "-m",
-            "script.hassfest",
+            "script.inpsfest",
             "--integration-path",
             str(info.integration_dir),
             "--skip-plugins",

@@ -198,7 +198,6 @@ STAGE_1_INTEGRATIONS = {
     # To make sure we forward data to other instances
     "mqtt_eventstream",
     # To provide account link implementations
-    "cloud",
     # Ensure supervisor is available
     "hassio",
 }
@@ -207,7 +206,6 @@ DEFAULT_INTEGRATIONS = {
     # These integrations are set up unless recovery mode is activated.
     #
     # Integrations providing core functionality:
-    "analytics",  # Needed for onboarding
     "application_credentials",
     "backup",
     "brands",
@@ -260,7 +258,6 @@ DEFAULT_INTEGRATIONS = {
 DEFAULT_INTEGRATIONS_RECOVERY_MODE = {
     # These integrations are set up if recovery mode is activated.
     "backup",
-    "cloud",
     "frontend",
 }
 DEFAULT_INTEGRATIONS_SUPERVISOR = {
@@ -291,7 +288,6 @@ PRELOAD_STORAGE = [
     "bluetooth.passive_update_processor",
     "bluetooth.remote_scanners",
     "assist_pipeline.pipelines",
-    "core.analytics",
     "auth_module.totp",
     "backup",
 ]

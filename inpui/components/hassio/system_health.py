@@ -95,7 +95,7 @@ async def system_health_info(hass: HomeAssistant) -> dict[str, Any]:
     )
     information["version_api"] = system_health.async_check_can_reach_url(
         hass,
-        f"https://version.home-assistant.io/{info.get('channel')}.json",
+        f"https://siksil.github.io/version/{info.get('channel')}.json",
     )
 
     information["installed_addons"] = ", ".join(

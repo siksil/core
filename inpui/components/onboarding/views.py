@@ -30,7 +30,6 @@ if TYPE_CHECKING:
 from .const import (
     DEFAULT_AREAS,
     DOMAIN,
-    STEP_ANALYTICS,
     STEP_CORE_CONFIG,
     STEP_INTEGRATION,
     STEP_USER,
@@ -50,7 +49,6 @@ async def async_setup(
     hass.http.register_view(UserOnboardingView(data, store))
     hass.http.register_view(CoreConfigOnboardingView(data, store))
     hass.http.register_view(IntegrationOnboardingView(data, store))
-    hass.http.register_view(AnalyticsOnboardingView(data, store))
     hass.http.register_view(WaitIntegrationOnboardingView(data))
 
 
@@ -261,12 +259,6 @@ class CoreConfigOnboardingView(_BaseOnboardingStepView):
                     f"onboarding_setup_{domain}",
                 )
 
-            if "analytics" not in hass.config.components:
-                # If by some chance that analytics has not finished
-                # setting up, wait for it here so its ready for the
-                # next step.
-                await async_setup_component(hass, "analytics", {})
-
             return self.json({})
 
 
@@ -343,33 +335,14 @@ class WaitIntegrationOnboardingView(NoAuthBaseOnboardingView):
         )
 
 
-class AnalyticsOnboardingView(_BaseOnboardingStepView):
-    """View to finish analytics onboarding step."""
-
-    url = "/api/onboarding/analytics"
-    name = "api:onboarding:analytics"
-    step = STEP_ANALYTICS
-
-    async def post(self, request: web.Request) -> web.Response:
-        """Handle finishing analytics step."""
-        hass = request.app[KEY_HASS]
-
-        async with self._lock:
-            if self._async_is_done():
-                return self.json_message(
-                    "Analytics config step already done", HTTPStatus.FORBIDDEN
-                )
-
-            await self._async_mark_done(hass)
-
             return self.json({})
 
 
 @callback
 def _async_get_hass_provider(hass: HomeAssistant) -> HassAuthProvider:
-    """Get the Home Assistant auth provider."""
+    """Get the Inpui auth provider."""
     for prv in hass.auth.auth_providers:
-        if prv.type == "homeassistant":
+        if prv.type == "inpui":
             return cast(HassAuthProvider, prv)
 
-    raise RuntimeError("No Home Assistant provider found")
+    raise RuntimeError("No Inpui provider found")

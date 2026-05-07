@@ -5,7 +5,7 @@ from pathlib import Path
 from lxml import html
 import requests
 
-from .hassfest.serializer import format_python_namespace
+from .inpsfest.serializer import format_python_namespace
 
 URL = "https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support"
 XPATH_QUERY = "//section[@data-tab='tts']/table[1]/tbody/tr/td[1]/code/text()"

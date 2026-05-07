@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING
 
 from homeassistant import runner
 from inpui.auth import auth_manager_from_config
-from inpui.auth.providers import homeassistant as hass_auth
+from inpui.auth.providers import inpui as inps_auth
 from inpui.config import get_default_config_dir
 from inpui.core import HomeAssistant
 from inpui.helpers import device_registry as dr, entity_registry as er
@@ -48,7 +48,7 @@ def run(args: Sequence[str] | None) -> None:
     parser_change_pw.add_argument("new_password", type=str)
     parser_change_pw.set_defaults(func=change_password)
 
-    asyncio.set_event_loop_policy(runner.HassEventLoopPolicy(False))  # type: ignore[deprecated]
+    asyncio.set_event_loop_policy(runner.InpsEventLoopPolicy(False))  # type: ignore[deprecated]
     asyncio.run(run_command(parser.parse_args(args)))
 
 
@@ -57,7 +57,7 @@ async def run_command(args: argparse.Namespace) -> None:
     hass = HomeAssistant(os.path.join(os.getcwd(), args.config))
     dr.async_setup(hass)
     await asyncio.gather(dr.async_load(hass), er.async_load(hass))
-    hass.auth = await auth_manager_from_config(hass, [{"type": "homeassistant"}], [])
+    hass.auth = await auth_manager_from_config(hass, [{"type": "inpui"}], [])
     provider = hass.auth.auth_providers[0]
     await provider.async_initialize()
     await args.func(hass, provider, args)
@@ -69,7 +69,7 @@ async def run_command(args: argparse.Namespace) -> None:
 
 
 async def list_users(
-    hass: HomeAssistant, provider: hass_auth.HassAuthProvider, args: argparse.Namespace
+    hass: HomeAssistant, provider: inps_auth.InpsAuthProvider, args: argparse.Namespace
 ) -> None:
     """List the users."""
     count = 0
@@ -84,14 +84,14 @@ async def list_users(
 
 
 async def add_user(
-    hass: HomeAssistant, provider: hass_auth.HassAuthProvider, args: argparse.Namespace
+    hass: HomeAssistant, provider: inps_auth.InpsAuthProvider, args: argparse.Namespace
 ) -> None:
     """Create a user."""
     if TYPE_CHECKING:
         assert provider.data
     try:
         provider.data.add_auth(args.username, args.password)
-    except hass_auth.InvalidUser:
+    except inps_auth.InvalidUser:
         print("Username already exists!")
         return
 
@@ -101,7 +101,7 @@ async def add_user(
 
 
 async def validate_login(
-    hass: HomeAssistant, provider: hass_auth.HassAuthProvider, args: argparse.Namespace
+    hass: HomeAssistant, provider: inps_auth.InpsAuthProvider, args: argparse.Namespace
 ) -> None:
     """Validate a login."""
     if TYPE_CHECKING:
@@ -109,12 +109,12 @@ async def validate_login(
     try:
         provider.data.validate_login(args.username, args.password)
         print("Auth valid")
-    except hass_auth.InvalidAuth:
+    except inps_auth.InvalidAuth:
         print("Auth invalid")
 
 
 async def change_password(
-    hass: HomeAssistant, provider: hass_auth.HassAuthProvider, args: argparse.Namespace
+    hass: HomeAssistant, provider: inps_auth.InpsAuthProvider, args: argparse.Namespace
 ) -> None:
     """Change password."""
     if TYPE_CHECKING:
@@ -123,5 +123,5 @@ async def change_password(
         provider.data.change_password(args.username, args.new_password)
         await provider.data.async_save()
         print("Password changed")
-    except hass_auth.InvalidUser:
+    except inps_auth.InvalidUser:
         print("User not found")

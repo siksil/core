@@ -3,7 +3,7 @@
 import json
 
 from inpui.util import slugify
-from script.hassfest.manifest import SUPPORTED_IOT_CLASSES
+from script.inpsfest.manifest import SUPPORTED_IOT_CLASSES
 
 from .const import COMPONENT_DIR
 from .error import ExitApp

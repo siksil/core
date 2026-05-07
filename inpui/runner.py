@@ -173,7 +173,7 @@ class RuntimeConfig:
     safe_mode: bool = False
 
 
-class HassEventLoopPolicy(asyncio.DefaultEventLoopPolicy):  # type: ignore[name-defined,misc]
+class InpsEventLoopPolicy(asyncio.DefaultEventLoopPolicy):  # type: ignore[name-defined,misc]
     """Event loop policy for Home Assistant."""
 
     def __init__(self, debug: bool) -> None:
@@ -251,8 +251,8 @@ def _async_loop_exception_handler(
         loop.close()
 
 
-async def setup_and_run_hass(runtime_config: RuntimeConfig) -> int:
-    """Set up Home Assistant and run."""
+async def setup_and_run_inps(runtime_config: RuntimeConfig) -> int:
+    """Set up Inpui and run."""
     hass = await bootstrap.async_setup_hass(runtime_config)
 
     if hass is None:
@@ -281,12 +281,12 @@ def run(runtime_config: RuntimeConfig) -> int:
     """Run Home Assistant."""
     _enable_posix_spawn()
     set_open_file_descriptor_limit()
-    asyncio.set_event_loop_policy(HassEventLoopPolicy(runtime_config.debug))  # type: ignore[deprecated]
+    asyncio.set_event_loop_policy(InpsEventLoopPolicy(runtime_config.debug))  # type: ignore[deprecated]
     # Backport of cpython 3.9 asyncio.run with a _cancel_all_tasks that times out
     loop = asyncio.new_event_loop()
     try:
         asyncio.set_event_loop(loop)
-        return loop.run_until_complete(setup_and_run_hass(runtime_config))
+        return loop.run_until_complete(setup_and_run_inps(runtime_config))
     finally:
         try:
             _cancel_all_tasks_with_timeout(loop, TASK_CANCELATION_TIMEOUT)

@@ -9,7 +9,7 @@ from typing import Self
 
 import boto3
 
-from .hassfest.serializer import format_python_namespace
+from .inpsfest.serializer import format_python_namespace
 
 
 @dataclass(frozen=True)

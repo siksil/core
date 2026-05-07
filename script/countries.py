@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pycountry
 
-from .hassfest.serializer import format_python_namespace
+from .inpsfest.serializer import format_python_namespace
 
 countries = {x.alpha_2 for x in pycountry.countries}
 

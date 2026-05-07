@@ -5,7 +5,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 import requests
 
-from .hassfest.serializer import format_python_namespace
+from .inpsfest.serializer import format_python_namespace
 
 req = requests.get(
     "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml"
