@@ -375,8 +375,8 @@ class CoreState(enum.Enum):
         return self.value
 
 
-class HomeAssistant:
-    """Root object of the Home Assistant home automation."""
+class Inpui:
+    """Root object of the Inpui home automation."""
 
     auth: AuthManager
     http: HomeAssistantHTTP = None  # type: ignore[assignment]
@@ -390,7 +390,7 @@ class HomeAssistant:
 
     def __repr__(self) -> str:
         """Return the representation."""
-        return f"<HomeAssistant {self.state}>"
+        return f"<Inpui {self.state}>"
 
     def __init__(self, config_dir: str) -> None:
         """Initialize new Home Assistant object."""
@@ -2865,3 +2865,5 @@ class ServiceRegistry:
         if TYPE_CHECKING:
             target = cast(Callable[..., ServiceResponse], target)
         return await self._hass.async_add_executor_job(target, service_call)
+
+HomeAssistant = Inpui
