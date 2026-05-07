@@ -53,7 +53,7 @@ def mock_zha_get_last_network_settings() -> Generator[None]:
 def mock_firmware_update_client() -> Generator[MagicMock]:
     """Mock the FirmwareUpdateClient to avoid network requests."""
     with patch(
-        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+        "inpui.components.inpui_hardware.coordinator.FirmwareUpdateClient",
         autospec=True,
     ) as mock_client:
         mock_client.return_value.async_update_data = AsyncMock(return_value=None)

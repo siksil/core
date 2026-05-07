@@ -264,7 +264,7 @@ async def test_core_failure_loads_recovery_mode(
 ) -> None:
     """Test failing core setup aborts further setup."""
     with patch(
-        "inpui.components.homeassistant.async_setup",
+        "inpui.components.inpui.async_setup",
         return_value=False,
     ):
         await bootstrap.async_from_config_dict({"group": {}}, hass)

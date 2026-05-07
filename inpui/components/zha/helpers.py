@@ -98,7 +98,7 @@ import zigpy.zcl
 from zigpy.zcl.foundation import CommandSchema
 
 from homeassistant import __path__ as HOMEASSISTANT_PATH
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
 from inpui.components.system_log import LogEntry

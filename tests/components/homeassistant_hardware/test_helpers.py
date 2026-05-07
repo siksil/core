@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, Mock, call, patch
 
 import pytest
 
-from inpui.components.homeassistant_hardware.const import DATA_COMPONENT, DOMAIN
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.const import DATA_COMPONENT, DOMAIN
+from inpui.components.inpui_hardware.helpers import (
     async_firmware_update_context,
     async_is_firmware_update_in_progress,
     async_notify_firmware_info,
@@ -16,7 +16,7 @@ from inpui.components.homeassistant_hardware.helpers import (
     async_register_firmware_update_in_progress,
     async_unregister_firmware_update_in_progress,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
@@ -309,7 +309,7 @@ async def test_firmware_callback_no_usb_device(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
+            "inpui.components.inpui_hardware.helpers.usb_device_from_path",
             return_value=None,
         ),
         caplog.at_level(logging.DEBUG),
@@ -350,7 +350,7 @@ async def test_firmware_callback_no_hardware_domain(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
+            "inpui.components.inpui_hardware.helpers.usb_device_from_path",
             return_value=usb_device,
         ),
         caplog.at_level(logging.DEBUG),

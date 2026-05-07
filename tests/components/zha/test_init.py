@@ -13,10 +13,10 @@ from zigpy.config import CONF_DEVICE, CONF_DEVICE_PATH
 from zigpy.device import Device
 from zigpy.exceptions import TransientConnectionError
 
-from inpui.components.homeassistant_hardware import (
+from inpui.components.inpui_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_is_firmware_update_in_progress,
     async_register_firmware_update_in_progress,
 )

@@ -1871,7 +1871,7 @@ async def test_wait_for_trigger_bad(
         return None
 
     with mock.patch(
-        "inpui.components.homeassistant.triggers.state.async_attach_trigger",
+        "inpui.components.inpui.triggers.state.async_attach_trigger",
         wraps=async_attach_trigger_mock,
     ):
         hass.async_create_task(script_obj.async_run())
@@ -1914,7 +1914,7 @@ async def test_wait_for_trigger_generated_exception(
         raise ValueError("something bad")
 
     with mock.patch(
-        "inpui.components.homeassistant.triggers.state.async_attach_trigger",
+        "inpui.components.inpui.triggers.state.async_attach_trigger",
         wraps=async_attach_trigger_mock,
     ):
         hass.async_create_task(script_obj.async_run())

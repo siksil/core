@@ -35,7 +35,7 @@ from inpui.components.climate import (
     HVACAction,
     HVACMode,
 )
-from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.inpui import SERVICE_UPDATE_ENTITY
 from inpui.components.modbus.const import (
     CONF_CLIMATES,
     CONF_CURRENT_TEMP_OFFSET,

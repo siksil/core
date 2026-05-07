@@ -6,7 +6,7 @@ import pytest
 from zeroconf import ServiceStateChange
 from zeroconf.asyncio import AsyncServiceInfo
 
-from inpui.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.components.inpui import DOMAIN as HOMEASSISTANT_DOMAIN
 from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
 from inpui.components.zeroconf import DOMAIN, discovery, repairs
 from inpui.components.zeroconf.discovery import ZEROCONF_TYPE

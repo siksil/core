@@ -14,7 +14,7 @@ from inpui.components.conversation.models import (
     ConversationInput,
     ConversationResult,
 )
-from inpui.components.homeassistant.exposed_entities import (
+from inpui.components.inpui.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     async_expose_entity,
 )

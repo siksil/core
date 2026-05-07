@@ -8,7 +8,7 @@ from google_weather_api import GoogleWeatherApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

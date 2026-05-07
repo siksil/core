@@ -8,7 +8,7 @@ from aioesphomeapi import APIClient, UpdateCommand, UpdateInfo, UpdateState
 import pytest
 
 from inpui.components.esphome.dashboard import async_get_dashboard
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

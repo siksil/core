@@ -32,7 +32,7 @@ import voluptuous as vol
 from inpui.auth.const import GROUP_ID_ADMIN
 from inpui.auth.models import RefreshToken
 from inpui.components import frontend, panel_custom
-from inpui.components.homeassistant import async_set_stop_handler
+from inpui.components.inpui import async_set_stop_handler
 from inpui.components.http import (
     CONF_SERVER_HOST,
     CONF_SERVER_PORT,

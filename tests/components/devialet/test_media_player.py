@@ -7,7 +7,7 @@ from devialet.const import UrlSuffix
 from yarl import URL
 
 from inpui.components.devialet.media_player import SUPPORT_DEVIALET
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

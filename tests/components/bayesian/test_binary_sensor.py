@@ -12,7 +12,7 @@ from inpui.components.bayesian.const import (
     DEFAULT_PROBABILITY_THRESHOLD,
     DOMAIN,
 )
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

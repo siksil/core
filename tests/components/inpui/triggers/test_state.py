@@ -7,7 +7,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from inpui.components import automation
-from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.components.inpui.triggers import state as state_trigger
 from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,

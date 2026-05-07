@@ -7,12 +7,12 @@ from unittest.mock import Mock, call, patch
 
 import pytest
 
-from inpui.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
-from inpui.components.homeassistant_hardware import DOMAIN
-from inpui.components.homeassistant_hardware.coordinator import (
+from inpui.components.inpui import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.components.inpui_hardware import DOMAIN
+from inpui.components.inpui_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from inpui.components.homeassistant_hardware.switch import (
+from inpui.components.inpui_hardware.switch import (
     BaseBetaFirmwareSwitch,
 )
 from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
@@ -110,7 +110,7 @@ async def mock_async_setup_switch_entities(
 def mock_firmware_client_fixture():
     """Create a mock firmware update client."""
     with patch(
-        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+        "inpui.components.inpui_hardware.coordinator.FirmwareUpdateClient",
         autospec=True,
     ) as mock_client:
         mock_client.return_value.async_update_data.return_value = TEST_MANIFEST
@@ -244,7 +244,7 @@ async def test_switch_turn_on_off(
 
     # Track async_refresh calls
     with patch(
-        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateCoordinator.async_refresh"
+        "inpui.components.inpui_hardware.coordinator.FirmwareUpdateCoordinator.async_refresh"
     ) as mock_refresh:
         assert await hass.config_entries.async_setup(switch_config_entry.entry_id)
         await hass.async_block_till_done()

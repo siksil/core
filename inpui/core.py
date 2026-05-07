@@ -119,7 +119,7 @@ _SENTINEL = object()
 _DataT = TypeVar("_DataT", bound=Mapping[str, Any], default=Mapping[str, Any])
 type CALLBACK_TYPE = Callable[[], None]
 
-DOMAIN = "homeassistant"
+DOMAIN = "inpui"
 
 # How long to wait to log tasks that are blocking
 BLOCK_LOG_TIMEOUT = 60

@@ -15,7 +15,7 @@ from inpui.components import (
     valve,
 )
 from inpui.components.cover import intent as cover_intent
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.media_player import (
     MediaPlayerEntityFeature,
     intent as media_player_intent,

@@ -16,7 +16,7 @@ from inpui.components.climate import (
     HVACAction,
     HVACMode,
 )
-from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.inpui import DOMAIN as HA_DOMAIN
 from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,

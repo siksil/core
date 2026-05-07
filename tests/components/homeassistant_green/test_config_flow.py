@@ -8,7 +8,7 @@ from aiohasupervisor.models import GreenOptions
 import pytest
 
 from inpui.components.hassio import DOMAIN as HASSIO_DOMAIN
-from inpui.components.homeassistant_green.const import DOMAIN
+from inpui.components.inpui_green.const import DOMAIN
 from inpui.core import HomeAssistant
 from inpui.data_entry_flow import FlowResultType
 from inpui.setup import async_setup_component
@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry, MockModule, mock_integration
 def mock_get_supervisor_client(supervisor_client: AsyncMock) -> Generator[None]:
     """Mock get_supervisor_client method."""
     with patch(
-        "inpui.components.homeassistant_green.config_flow.get_supervisor_client",
+        "inpui.components.inpui_green.config_flow.get_supervisor_client",
         return_value=supervisor_client,
     ):
         yield
@@ -38,7 +38,7 @@ async def test_config_flow(hass: HomeAssistant) -> None:
     await async_setup_component(hass, HASSIO_DOMAIN, {})
 
     with patch(
-        "inpui.components.homeassistant_green.async_setup_entry",
+        "inpui.components.inpui_green.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -72,7 +72,7 @@ async def test_config_flow_single_entry(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "inpui.components.homeassistant_green.async_setup_entry",
+        "inpui.components.inpui_green.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -101,7 +101,7 @@ async def test_option_flow_non_hassio(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "inpui.components.homeassistant_green.config_flow.is_hassio",
+        "inpui.components.inpui_green.config_flow.is_hassio",
         return_value=False,
     ):
         result = await hass.config_entries.options.async_init(config_entry.entry_id)

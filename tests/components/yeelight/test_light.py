@@ -23,7 +23,7 @@ from yeelight import (
 from yeelight.flow import Action, Flow
 from yeelight.main import _MODEL_SPECS
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

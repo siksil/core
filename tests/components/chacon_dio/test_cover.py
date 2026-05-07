@@ -15,7 +15,7 @@ from inpui.components.cover import (
     SERVICE_STOP_COVER,
     CoverState,
 )
-from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.inpui import SERVICE_UPDATE_ENTITY
 from inpui.const import ATTR_ENTITY_ID
 from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
 from inpui.helpers import entity_registry as er

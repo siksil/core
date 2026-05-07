@@ -6,14 +6,14 @@ import pytest
 
 from inpui.components import zha
 from inpui.components.hassio import DOMAIN as HASSIO_DOMAIN
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from inpui.components.homeassistant_yellow.config_flow import (
+from inpui.components.inpui_yellow.config_flow import (
     HomeAssistantYellowConfigFlow,
 )
-from inpui.components.homeassistant_yellow.const import DOMAIN
+from inpui.components.inpui_yellow.const import DOMAIN
 from inpui.config_entries import ConfigEntryState
 from inpui.core import HomeAssistant
 from inpui.exceptions import HomeAssistantError
@@ -44,7 +44,7 @@ async def test_setup_entry(
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ) as mock_get_os_info,
         patch(
@@ -52,7 +52,7 @@ async def test_setup_entry(
             return_value=onboarded,
         ),
         patch(
-            "inpui.components.homeassistant_yellow.guess_firmware_info",
+            "inpui.components.inpui_yellow.guess_firmware_info",
             return_value=FirmwareInfo(  # Nothing is setup
                 device="/dev/ttyAMA1",
                 firmware_version=None,
@@ -109,7 +109,7 @@ async def test_setup_zha(hass: HomeAssistant, addon_store_info) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ) as mock_get_os_info,
         patch(
@@ -165,7 +165,7 @@ async def test_setup_entry_no_hassio(hass: HomeAssistant) -> None:
     assert len(hass.config_entries.async_entries()) == 1
 
     with patch(
-        "inpui.components.homeassistant_yellow.get_os_info"
+        "inpui.components.inpui_yellow.get_os_info"
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
@@ -192,7 +192,7 @@ async def test_setup_entry_wrong_board(hass: HomeAssistant) -> None:
     assert len(hass.config_entries.async_entries()) == 1
 
     with patch(
-        "inpui.components.homeassistant_yellow.get_os_info",
+        "inpui.components.inpui_yellow.get_os_info",
         return_value={"board": "generic-x86-64"},
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
@@ -218,7 +218,7 @@ async def test_setup_entry_wait_hassio(hass: HomeAssistant) -> None:
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "inpui.components.homeassistant_yellow.get_os_info",
+        "inpui.components.inpui_yellow.get_os_info",
         return_value=None,
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
@@ -247,7 +247,7 @@ async def test_setup_entry_addon_info_fails(
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
         patch(
@@ -255,7 +255,7 @@ async def test_setup_entry_addon_info_fails(
             return_value=False,
         ),
         patch(
-            "inpui.components.homeassistant_yellow.check_multi_pan_addon",
+            "inpui.components.inpui_yellow.check_multi_pan_addon",
             side_effect=HomeAssistantError("Boom"),
         ),
     ):
@@ -306,7 +306,7 @@ async def test_migrate_entry(
 
     with (
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
         patch(
@@ -314,7 +314,7 @@ async def test_migrate_entry(
             return_value=True,
         ),
         patch(
-            "inpui.components.homeassistant_yellow.guess_firmware_info",
+            "inpui.components.inpui_yellow.guess_firmware_info",
             return_value=FirmwareInfo(  # Nothing is setup
                 device="/dev/ttyAMA1",
                 firmware_version="1234",

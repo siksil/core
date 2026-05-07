@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from inpui.components.homeassistant import exposed_entities
+from inpui.components.inpui import exposed_entities
 from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
 from inpui.const import (
     ATTR_ENTITY_ID,

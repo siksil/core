@@ -6,26 +6,26 @@ from unittest.mock import AsyncMock, Mock, call, patch
 import pytest
 
 from inpui.components.hassio import AddonInfo, AddonState
-from inpui.components.homeassistant_hardware import (
+from inpui.components.inpui_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
 )
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_notify_firmware_info,
 )
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     CONF_DISABLE_MULTI_PAN,
     get_flasher_addon_manager,
     get_multiprotocol_addon_manager,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from inpui.components.homeassistant_sky_connect.const import DOMAIN
+from inpui.components.inpui_sky_connect.const import DOMAIN
 from inpui.components.usb import DOMAIN as USB_DOMAIN, USBDevice
 from inpui.config_entries import ConfigFlowResult
 from inpui.core import HomeAssistant
@@ -42,7 +42,7 @@ from tests.common import MockConfigEntry
 def mock_supervisor_fixture() -> Generator[None]:
     """Mock Supervisor."""
     with patch(
-        "inpui.components.homeassistant_hardware.firmware_config_flow.is_hassio",
+        "inpui.components.inpui_hardware.firmware_config_flow.is_hassio",
         return_value=True,
     ):
         yield
@@ -52,7 +52,7 @@ def mock_supervisor_fixture() -> Generator[None]:
 def setup_entry_fixture() -> Generator[AsyncMock]:
     """Mock entry setup."""
     with patch(
-        "inpui.components.homeassistant_sky_connect.async_setup_entry",
+        "inpui.components.inpui_sky_connect.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -110,7 +110,7 @@ async def test_config_flow_zigbee(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
+            "inpui.components.inpui_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -206,7 +206,7 @@ async def test_config_flow_thread(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
+            "inpui.components.inpui_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -306,11 +306,11 @@ async def test_options_flow(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+            "inpui.components.inpui_hardware.firmware_config_flow.guess_hardware_owners",
             return_value=[],
         ),
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareOptionsFlow._install_firmware_step",
+            "inpui.components.inpui_hardware.firmware_config_flow.BaseFirmwareOptionsFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -396,15 +396,15 @@ async def test_options_flow_multipan_uninstall(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
+            "inpui.components.inpui_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
             return_value=mock_multipan_manager,
         ),
         patch(
-            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.get_flasher_addon_manager",
+            "inpui.components.inpui_hardware.silabs_multiprotocol_addon.get_flasher_addon_manager",
             return_value=mock_flasher_manager,
         ),
         patch(
-            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
+            "inpui.components.inpui_hardware.silabs_multiprotocol_addon.is_hassio",
             return_value=True,
         ),
     ):
@@ -469,7 +469,7 @@ async def test_firmware_callback_auto_creates_entry(
     )
 
     with patch(
-        "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
+        "inpui.components.inpui_hardware.helpers.usb_device_from_path",
         return_value=usb_device,
     ):
         await async_notify_firmware_info(
@@ -595,7 +595,7 @@ async def test_firmware_callback_updates_existing_entry(
     )
 
     with patch(
-        "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
+        "inpui.components.inpui_hardware.helpers.usb_device_from_path",
         return_value=usb_device,
     ):
         await async_notify_firmware_info(

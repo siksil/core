@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 from inpui.components.cpuspeed.const import DOMAIN
 from inpui.components.cpuspeed.sensor import ATTR_ARCH, ATTR_BRAND, ATTR_HZ
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOME_ASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

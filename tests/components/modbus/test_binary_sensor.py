@@ -3,7 +3,7 @@
 import pytest
 
 from inpui.components.binary_sensor import DOMAIN as SENSOR_DOMAIN
-from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.inpui import SERVICE_UPDATE_ENTITY
 from inpui.components.modbus.const import (
     CALL_TYPE_COIL,
     CALL_TYPE_DISCRETE,

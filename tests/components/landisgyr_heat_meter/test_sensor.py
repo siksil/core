@@ -9,7 +9,7 @@ import serial
 from syrupy.assertion import SnapshotAssertion
 from ultraheat_api.response import HeatMeterResponse
 
-from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.inpui import DOMAIN as HA_DOMAIN
 from inpui.components.landisgyr_heat_meter.const import DOMAIN, POLLING_INTERVAL
 from inpui.const import STATE_UNAVAILABLE
 from inpui.core import HomeAssistant

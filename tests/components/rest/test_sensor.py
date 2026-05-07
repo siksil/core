@@ -8,7 +8,7 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.inpui import SERVICE_UPDATE_ENTITY
 from inpui.components.rest import DOMAIN
 from inpui.components.sensor import (
     ATTR_STATE_CLASS,

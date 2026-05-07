@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_notify_firmware_info,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from inpui.components.homeassistant_yellow.const import RADIO_DEVICE
+from inpui.components.inpui_yellow.const import RADIO_DEVICE
 from inpui.core import HomeAssistant
 from inpui.setup import async_setup_component
 
@@ -40,10 +40,10 @@ async def test_yellow_update_entity(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "inpui.components.homeassistant_yellow.is_hassio", return_value=True
+            "inpui.components.inpui_yellow.is_hassio", return_value=True
         ),
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
     ):
@@ -126,10 +126,10 @@ async def test_yellow_update_entity_state(
 
     with (
         patch(
-            "inpui.components.homeassistant_yellow.is_hassio", return_value=True
+            "inpui.components.inpui_yellow.is_hassio", return_value=True
         ),
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
     ):

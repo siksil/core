@@ -8,7 +8,7 @@ import pytest
 import voluptuous as vol
 
 from inpui.components import automation
-from inpui.components.homeassistant.triggers import time
+from inpui.components.inpui.triggers import time
 from inpui.components.sensor import SensorDeviceClass
 from inpui.const import (
     ATTR_DEVICE_CLASS,
@@ -489,7 +489,7 @@ async def test_untrack_time_change(hass: HomeAssistant) -> None:
     """Test for removing tracked time changes."""
     mock_track_time_change = Mock()
     with patch(
-        "inpui.components.homeassistant.triggers.time.async_track_time_change",
+        "inpui.components.inpui.triggers.time.async_track_time_change",
         return_value=mock_track_time_change,
     ):
         assert await async_setup_component(

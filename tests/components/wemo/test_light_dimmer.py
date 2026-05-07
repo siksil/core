@@ -3,7 +3,7 @@
 import pytest
 from pywemo.exceptions import ActionException
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

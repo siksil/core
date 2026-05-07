@@ -7,7 +7,7 @@ import logging
 import aiohttp
 import python_otbr_api
 
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_notify_firmware_info,
     async_register_firmware_info_provider,
 )

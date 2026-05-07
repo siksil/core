@@ -23,7 +23,7 @@ from inpui.components.camera import (
     async_register_webrtc_provider,
     get_camera_from_entity_id,
 )
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

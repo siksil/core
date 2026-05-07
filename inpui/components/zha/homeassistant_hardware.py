@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningIntegration,

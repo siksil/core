@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 
 from inpui.components.hassio import DOMAIN as HASSIO_DOMAIN
-from inpui.components.homeassistant_yellow.const import DOMAIN
+from inpui.components.inpui_yellow.const import DOMAIN
 from inpui.core import HomeAssistant
 from inpui.setup import async_setup_component
 
@@ -30,7 +30,7 @@ async def test_hardware_info(
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "inpui.components.homeassistant_yellow.get_os_info",
+        "inpui.components.inpui_yellow.get_os_info",
         return_value={"board": "yellow"},
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -39,7 +39,7 @@ async def test_hardware_info(
     client = await hass_ws_client(hass)
 
     with patch(
-        "inpui.components.homeassistant_yellow.hardware.get_os_info",
+        "inpui.components.inpui_yellow.hardware.get_os_info",
         return_value={"board": "yellow"},
     ):
         await client.send_json({"id": 1, "type": "hardware/info"})
@@ -83,7 +83,7 @@ async def test_hardware_info_fail(
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "inpui.components.homeassistant_yellow.get_os_info",
+        "inpui.components.inpui_yellow.get_os_info",
         return_value={"board": "yellow"},
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -92,7 +92,7 @@ async def test_hardware_info_fail(
     client = await hass_ws_client(hass)
 
     with patch(
-        "inpui.components.homeassistant_yellow.hardware.get_os_info",
+        "inpui.components.inpui_yellow.hardware.get_os_info",
         return_value=os_info,
     ):
         await client.send_json({"id": 1, "type": "hardware/info"})

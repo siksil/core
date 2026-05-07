@@ -12,7 +12,7 @@ from zha.zigbee.device import get_device_automation_triggers
 from zigpy.config import CONF_DATABASE, CONF_DEVICE, CONF_DEVICE_PATH
 from zigpy.exceptions import NetworkSettingsInconsistent, TransientConnectionError
 
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_is_firmware_update_in_progress,
     async_notify_firmware_info,
     async_register_firmware_info_provider,

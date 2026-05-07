@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 from subarulink import InvalidCredentials, SubaruException
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

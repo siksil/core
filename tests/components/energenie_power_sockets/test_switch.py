@@ -6,7 +6,7 @@ from pyegps.exceptions import EgpsException
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOME_ASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

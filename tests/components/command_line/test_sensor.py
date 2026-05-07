@@ -13,7 +13,7 @@ import pytest
 from homeassistant import setup
 from inpui.components.command_line import DOMAIN
 from inpui.components.command_line.sensor import CommandSensor
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

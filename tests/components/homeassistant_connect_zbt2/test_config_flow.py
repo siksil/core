@@ -6,18 +6,18 @@ from unittest.mock import ANY, AsyncMock, Mock, call, patch
 import pytest
 from universal_silabs_flasher.flasher import Zbt2Flasher
 
-from inpui.components.homeassistant_connect_zbt2.const import DOMAIN
-from inpui.components.homeassistant_hardware import (
+from inpui.components.inpui_connect_zbt2.const import DOMAIN
+from inpui.components.inpui_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
 )
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_notify_firmware_info,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
@@ -37,7 +37,7 @@ from tests.common import MockConfigEntry
 def mock_supervisor_fixture() -> Generator[None]:
     """Mock Supervisor."""
     with patch(
-        "inpui.components.homeassistant_hardware.firmware_config_flow.is_hassio",
+        "inpui.components.inpui_hardware.firmware_config_flow.is_hassio",
         return_value=True,
     ):
         yield
@@ -47,7 +47,7 @@ def mock_supervisor_fixture() -> Generator[None]:
 def setup_entry_fixture() -> Generator[AsyncMock]:
     """Mock entry setup."""
     with patch(
-        "inpui.components.homeassistant_connect_zbt2.async_setup_entry",
+        "inpui.components.inpui_connect_zbt2.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -90,7 +90,7 @@ async def test_config_flow_zigbee(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
+            "inpui.components.inpui_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -192,7 +192,7 @@ async def test_config_flow_thread(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
+            "inpui.components.inpui_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -285,15 +285,15 @@ async def test_options_flow(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+            "inpui.components.inpui_hardware.firmware_config_flow.guess_hardware_owners",
             return_value=[],
         ),
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.FirmwareUpdateClient",
+            "inpui.components.inpui_hardware.firmware_config_flow.FirmwareUpdateClient",
             return_value=mock_update_client,
         ),
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware",
+            "inpui.components.inpui_hardware.firmware_config_flow.async_flash_silabs_firmware",
             return_value=FirmwareInfo(
                 device=usb_data.device,
                 firmware_type=ApplicationType.EZSP,
@@ -303,7 +303,7 @@ async def test_options_flow(
             ),
         ) as flash_mock,
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
+            "inpui.components.inpui_hardware.firmware_config_flow.probe_silabs_firmware_info",
             side_effect=[
                 # First call: probe before installation (returns current SPINEL firmware)
                 FirmwareInfo(
@@ -324,7 +324,7 @@ async def test_options_flow(
             ],
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.inpui_hardware.util.parse_firmware_image"
         ),
     ):
         pick_result = await hass.config_entries.options.async_configure(
@@ -469,7 +469,7 @@ async def test_firmware_callback_auto_creates_entry(hass: HomeAssistant) -> None
     )
 
     with patch(
-        "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
+        "inpui.components.inpui_hardware.helpers.usb_device_from_path",
         return_value=usb_device,
     ):
         await async_notify_firmware_info(
@@ -541,7 +541,7 @@ async def test_firmware_callback_updates_existing_entry(hass: HomeAssistant) -> 
     )
 
     with patch(
-        "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
+        "inpui.components.inpui_hardware.helpers.usb_device_from_path",
         return_value=usb_device,
     ):
         await async_notify_firmware_info(

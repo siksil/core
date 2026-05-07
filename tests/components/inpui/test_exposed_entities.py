@@ -3,7 +3,7 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from inpui.components.homeassistant.exposed_entities import (
+from inpui.components.inpui.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     ExposedEntities,
     ExposedEntity,

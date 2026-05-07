@@ -14,7 +14,7 @@ import voluptuous as vol
 import yarl
 
 from inpui.components.hassio import AddonError, AddonManager
-from inpui.components.homeassistant_yellow import hardware as yellow_hardware
+from inpui.components.inpui_yellow import hardware as yellow_hardware
 from inpui.components.thread import async_get_preferred_dataset
 from inpui.config_entries import (
     SOURCE_HASSIO,

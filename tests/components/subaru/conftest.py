@@ -8,7 +8,7 @@ import pytest
 from subarulink.const import COUNTRY_USA
 
 from homeassistant import config_entries
-from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.inpui import DOMAIN as HA_DOMAIN
 from inpui.components.subaru.const import (
     CONF_UPDATE_ENABLED,
     DOMAIN,

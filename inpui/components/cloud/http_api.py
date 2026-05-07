@@ -27,7 +27,7 @@ from inpui.components.alexa import (
     errors as alexa_errors,
 )
 from inpui.components.google_assistant import helpers as google_helpers
-from inpui.components.homeassistant import exposed_entities
+from inpui.components.inpui import exposed_entities
 from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
 from inpui.components.http.data_validator import RequestDataValidator
 from inpui.components.system_health import get_info as get_system_health_info

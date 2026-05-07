@@ -3,7 +3,7 @@
 from pymodbus.exceptions import ModbusException
 import pytest
 
-from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.inpui import SERVICE_UPDATE_ENTITY
 from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,

@@ -17,17 +17,17 @@ import pytest
 from universal_silabs_flasher.flasher import DeviceSpecificFlasher, Zbt1Flasher
 from yarl import URL
 
-from inpui.components.homeassistant_hardware.const import (
+from inpui.components.inpui_hardware.const import (
     DOMAIN,
     Z2M_EMBER_DOCS_URL,
 )
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
     BaseFirmwareConfigFlow,
     BaseFirmwareOptionsFlow,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
@@ -320,27 +320,27 @@ def mock_firmware_info(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.is_hassio",
+            "inpui.components.inpui_hardware.firmware_config_flow.is_hassio",
             return_value=is_hassio,
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.is_hassio",
+            "inpui.components.inpui_hardware.util.is_hassio",
             return_value=is_hassio,
         ),
         patch(
             # We probe once before installation and once after
-            "inpui.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
+            "inpui.components.inpui_hardware.firmware_config_flow.probe_silabs_firmware_info",
             side_effect=(probed_firmware_info, flashed_firmware_info),
         ),
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.FirmwareUpdateClient",
+            "inpui.components.inpui_hardware.firmware_config_flow.FirmwareUpdateClient",
             return_value=mock_update_client,
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.inpui_hardware.util.parse_firmware_image"
         ),
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware",
+            "inpui.components.inpui_hardware.firmware_config_flow.async_flash_silabs_firmware",
             side_effect=mock_flash_firmware,
         ),
     ):
@@ -701,7 +701,7 @@ async def test_config_flow_doesnt_downgrade(
             probe_fw_version="7.5.0.0",
         ),
         patch(
-            "inpui.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware"
+            "inpui.components.inpui_hardware.firmware_config_flow.async_flash_silabs_firmware"
         ) as mock_async_flash_silabs_firmware,
     ):
         pick_result = await hass.config_entries.flow.async_configure(
@@ -760,7 +760,7 @@ async def test_config_flow_zigbee_skip_step_if_installed(hass: HomeAssistant) ->
 async def test_config_flow_auto_confirm_if_running(hass: HomeAssistant) -> None:
     """Test the config flow skips the confirmation step the hardware is already used."""
     with patch(
-        "inpui.components.homeassistant_hardware.firmware_config_flow.guess_firmware_info",
+        "inpui.components.inpui_hardware.firmware_config_flow.guess_firmware_info",
         return_value=FirmwareInfo(
             device=TEST_DEVICE,
             firmware_type=ApplicationType.EZSP,

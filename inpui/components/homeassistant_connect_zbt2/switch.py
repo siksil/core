@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import logging
 
-from inpui.components.homeassistant_hardware.coordinator import (
+from inpui.components.inpui_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from inpui.components.homeassistant_hardware.switch import (
+from inpui.components.inpui_hardware.switch import (
     BaseBetaFirmwareSwitch,
 )
 from inpui.core import HomeAssistant

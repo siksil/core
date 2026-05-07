@@ -1,10 +1,10 @@
 """Test SkyConnect utilities."""
 
-from inpui.components.homeassistant_sky_connect.const import (
+from inpui.components.inpui_sky_connect.const import (
     DOMAIN,
     HardwareVariant,
 )
-from inpui.components.homeassistant_sky_connect.util import (
+from inpui.components.inpui_sky_connect.util import (
     get_hardware_variant,
     get_usb_service_info,
 )

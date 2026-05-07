@@ -5,8 +5,8 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from inpui.components.homeassistant import scene as ha_scene
-from inpui.components.homeassistant.scene import EVENT_SCENE_RELOADED
+from inpui.components.inpui import scene as ha_scene
+from inpui.components.inpui.scene import EVENT_SCENE_RELOADED
 from inpui.const import STATE_UNKNOWN
 from inpui.core import HomeAssistant
 from inpui.exceptions import ServiceValidationError

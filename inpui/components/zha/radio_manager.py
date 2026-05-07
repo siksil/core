@@ -28,7 +28,7 @@ from zigpy.exceptions import NetworkNotFormed
 
 from homeassistant import config_entries
 from inpui.components import usb
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware.firmware_config_flow import (
     ZigbeeFlowStrategy,
 )
 from inpui.core import HomeAssistant

@@ -38,7 +38,7 @@ from inpui.components.home_connect.const import (
     BSH_POWER_OFF,
     DOMAIN,
 )
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

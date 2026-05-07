@@ -25,7 +25,7 @@ from inpui.components.conversation.chat_log import (
 from inpui.components.conversation.default_agent import METADATA_CUSTOM_SENTENCE
 from inpui.components.conversation.models import ConversationInput
 from inpui.components.cover import SERVICE_OPEN_COVER
-from inpui.components.homeassistant.exposed_entities import (
+from inpui.components.inpui.exposed_entities import (
     async_get_assistant_settings,
 )
 from inpui.components.intent import (

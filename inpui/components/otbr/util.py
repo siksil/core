@@ -15,7 +15,7 @@ from python_otbr_api import PENDING_DATASET_DELAY_TIMER, tlv_parser
 from python_otbr_api.pskc import compute_pskc
 from python_otbr_api.tlv_parser import MeshcopTLVType
 
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     MultiprotocolAddonManager,
     get_multiprotocol_addon_manager,
     is_multiprotocol_url,

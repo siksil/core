@@ -6,10 +6,10 @@ from dataclasses import dataclass
 import logging
 import os.path
 
-from inpui.components.homeassistant_hardware.coordinator import (
+from inpui.components.inpui_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from inpui.components.homeassistant_hardware.util import guess_firmware_info
+from inpui.components.inpui_hardware.util import guess_firmware_info
 from inpui.components.usb import (
     USBDevice,
     async_register_port_event_callback,

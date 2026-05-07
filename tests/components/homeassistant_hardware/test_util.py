@@ -15,11 +15,11 @@ from inpui.components.hassio import (
     AddonManager,
     AddonState,
 )
-from inpui.components.homeassistant_hardware import DOMAIN
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware import DOMAIN
+from inpui.components.inpui_hardware.helpers import (
     async_register_firmware_info_provider,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,
@@ -174,7 +174,7 @@ async def test_owning_addon(hass: HomeAssistant) -> None:
 
     # Explicitly running
     with patch(
-        "inpui.components.homeassistant_hardware.util.WaitingAddonManager"
+        "inpui.components.inpui_hardware.util.WaitingAddonManager"
     ) as mock_manager:
         mock_manager.return_value.async_get_addon_info = AsyncMock(
             return_value=AddonInfo(
@@ -190,7 +190,7 @@ async def test_owning_addon(hass: HomeAssistant) -> None:
 
     # Explicitly not running
     with patch(
-        "inpui.components.homeassistant_hardware.util.WaitingAddonManager"
+        "inpui.components.inpui_hardware.util.WaitingAddonManager"
     ) as mock_manager:
         mock_manager.return_value.async_get_addon_info = AsyncMock(
             return_value=AddonInfo(
@@ -206,7 +206,7 @@ async def test_owning_addon(hass: HomeAssistant) -> None:
 
     # Failed to get status
     with patch(
-        "inpui.components.homeassistant_hardware.util.WaitingAddonManager"
+        "inpui.components.inpui_hardware.util.WaitingAddonManager"
     ) as mock_manager:
         mock_manager.return_value.async_get_addon_info = AsyncMock(
             side_effect=AddonError()
@@ -222,7 +222,7 @@ async def test_owning_addon_temporarily_stop_info_error(hass: HomeAssistant) -> 
     mock_manager.async_get_addon_info.side_effect = AddonError()
 
     with patch(
-        "inpui.components.homeassistant_hardware.util.WaitingAddonManager",
+        "inpui.components.inpui_hardware.util.WaitingAddonManager",
         return_value=mock_manager,
     ):
         async with owning_addon.temporarily_stop(hass):
@@ -251,7 +251,7 @@ async def test_owning_addon_temporarily_stop_not_running(hass: HomeAssistant) ->
     )
 
     with patch(
-        "inpui.components.homeassistant_hardware.util.WaitingAddonManager",
+        "inpui.components.inpui_hardware.util.WaitingAddonManager",
         return_value=mock_manager,
     ):
         async with owning_addon.temporarily_stop(hass):
@@ -286,7 +286,7 @@ async def test_owning_addon_temporarily_stop(hass: HomeAssistant) -> None:
     # The error is propagated but it doesn't affect restarting the addon
     with (
         patch(
-            "inpui.components.homeassistant_hardware.util.WaitingAddonManager",
+            "inpui.components.inpui_hardware.util.WaitingAddonManager",
             return_value=mock_manager,
         ),
         pytest.raises(RuntimeError),
@@ -532,7 +532,7 @@ async def test_probe_silabs_firmware_type(
     mock_flasher.app_type = None
 
     with patch(
-        "inpui.components.homeassistant_hardware.util.Flasher",
+        "inpui.components.inpui_hardware.util.Flasher",
         autospec=True,
         return_value=mock_flasher,
     ):
@@ -582,7 +582,7 @@ async def test_async_flash_silabs_firmware(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.util.guess_firmware_info",
+            "inpui.components.inpui_hardware.util.guess_firmware_info",
             return_value=FirmwareInfo(
                 device="/dev/ttyUSB0",
                 firmware_type=ApplicationType.EZSP,
@@ -592,10 +592,10 @@ async def test_async_flash_silabs_firmware(hass: HomeAssistant) -> None:
             ),
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.inpui_hardware.util.parse_firmware_image"
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.probe_silabs_firmware_info",
+            "inpui.components.inpui_hardware.util.probe_silabs_firmware_info",
             return_value=expected_firmware_info,
         ),
     ):
@@ -662,7 +662,7 @@ async def test_async_flash_silabs_firmware_flash_failure(
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.util.guess_firmware_info",
+            "inpui.components.inpui_hardware.util.guess_firmware_info",
             return_value=FirmwareInfo(
                 device="/dev/ttyUSB0",
                 firmware_type=ApplicationType.EZSP,
@@ -672,7 +672,7 @@ async def test_async_flash_silabs_firmware_flash_failure(
             ),
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.inpui_hardware.util.parse_firmware_image"
         ),
         pytest.raises(HomeAssistantError, match=expected_error_msg) as exc,
     ):
@@ -716,7 +716,7 @@ async def test_async_flash_silabs_firmware_probe_failure(hass: HomeAssistant) ->
 
     with (
         patch(
-            "inpui.components.homeassistant_hardware.util.guess_firmware_info",
+            "inpui.components.inpui_hardware.util.guess_firmware_info",
             return_value=FirmwareInfo(
                 device="/dev/ttyUSB0",
                 firmware_type=ApplicationType.EZSP,
@@ -726,10 +726,10 @@ async def test_async_flash_silabs_firmware_probe_failure(hass: HomeAssistant) ->
             ),
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.inpui_hardware.util.parse_firmware_image"
         ),
         patch(
-            "inpui.components.homeassistant_hardware.util.probe_silabs_firmware_info",
+            "inpui.components.inpui_hardware.util.probe_silabs_firmware_info",
             return_value=None,
         ),
         pytest.raises(

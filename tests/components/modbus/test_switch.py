@@ -6,7 +6,7 @@ from unittest import mock
 from pymodbus.exceptions import ModbusException
 import pytest
 
-from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.inpui import SERVICE_UPDATE_ENTITY
 from inpui.components.modbus.const import (
     CALL_TYPE_COIL,
     CALL_TYPE_DISCRETE,

@@ -8,7 +8,7 @@ from airly.exceptions import AirlyError
 from syrupy.assertion import SnapshotAssertion
 
 from inpui.components.airly.const import DOMAIN
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

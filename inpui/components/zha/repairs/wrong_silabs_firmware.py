@@ -5,14 +5,14 @@ from __future__ import annotations
 import enum
 import logging
 
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     probe_silabs_firmware_type,
 )
-from inpui.components.homeassistant_sky_connect import (
+from inpui.components.inpui_sky_connect import (
     hardware as skyconnect_hardware,
 )
-from inpui.components.homeassistant_yellow import (
+from inpui.components.inpui_yellow import (
     RADIO_DEVICE as YELLOW_RADIO_DEVICE,
     hardware as yellow_hardware,
 )

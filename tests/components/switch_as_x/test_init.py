@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pytest
 
 from inpui.components import switch_as_x
-from inpui.components.homeassistant import exposed_entities
+from inpui.components.inpui import exposed_entities
 from inpui.components.lock import LockState
 from inpui.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
 from inpui.components.switch_as_x.const import (

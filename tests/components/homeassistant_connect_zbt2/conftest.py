@@ -53,7 +53,7 @@ def mock_zha_get_last_network_settings() -> Generator[None]:
 def mock_usb_path_exists() -> Generator[None]:
     """Mock os.path.exists to allow the Connect ZBT-2 integration to load."""
     with patch(
-        "inpui.components.homeassistant_connect_zbt2.os.path.exists",
+        "inpui.components.inpui_connect_zbt2.os.path.exists",
         return_value=True,
     ):
         yield
@@ -63,7 +63,7 @@ def mock_usb_path_exists() -> Generator[None]:
 def mock_firmware_update_client() -> Generator[MagicMock]:
     """Mock the FirmwareUpdateClient to avoid network requests."""
     with patch(
-        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+        "inpui.components.inpui_hardware.coordinator.FirmwareUpdateClient",
         autospec=True,
     ) as mock_client:
         mock_client.return_value.async_update_data = AsyncMock(return_value=None)

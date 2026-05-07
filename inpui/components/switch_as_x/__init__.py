@@ -6,7 +6,7 @@ import logging
 
 import voluptuous as vol
 
-from inpui.components.homeassistant import exposed_entities
+from inpui.components.inpui import exposed_entities
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_ENTITY_ID
 from inpui.core import HomeAssistant, callback

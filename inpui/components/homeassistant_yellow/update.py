@@ -6,14 +6,14 @@ import logging
 
 from universal_silabs_flasher.flasher import YellowFlasher
 
-from inpui.components.homeassistant_hardware.coordinator import (
+from inpui.components.inpui_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from inpui.components.homeassistant_hardware.update import (
+from inpui.components.inpui_hardware.update import (
     BaseFirmwareUpdateEntity,
     FirmwareUpdateEntityDescription,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )

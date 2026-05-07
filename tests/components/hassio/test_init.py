@@ -40,7 +40,7 @@ from inpui.components.hassio.const import (
     HASSIO_UPDATE_INTERVAL,
     REQUEST_REFRESH_DELAY,
 )
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
@@ -1013,7 +1013,7 @@ async def test_setup_hardware_integration(
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "inpui.components.homeassistant_yellow.config_flow.probe_silabs_firmware_info",
+            "inpui.components.inpui_yellow.config_flow.probe_silabs_firmware_info",
             return_value=None,
         ),
     ):

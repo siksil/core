@@ -9,7 +9,7 @@ from syrupy.assertion import SnapshotAssertion
 from inpui.components import automation, script
 from inpui.components.apcupsd.const import DEPRECATED_SENSORS, DOMAIN
 from inpui.components.apcupsd.coordinator import REQUEST_REFRESH_COOLDOWN
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

@@ -1,6 +1,6 @@
 """Test the Home Assistant SkyConnect hardware platform."""
 
-from inpui.components.homeassistant_sky_connect.const import DOMAIN
+from inpui.components.inpui_sky_connect.const import DOMAIN
 from inpui.components.usb import DOMAIN as USB_DOMAIN
 from inpui.const import EVENT_INPUI_STARTED
 from inpui.core import HomeAssistant

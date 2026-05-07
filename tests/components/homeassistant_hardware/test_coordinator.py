@@ -6,7 +6,7 @@ from ha_silabs_firmware_client import FirmwareManifest, ManifestMissing
 import pytest
 from yarl import URL
 
-from inpui.components.homeassistant_hardware.coordinator import (
+from inpui.components.inpui_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
 from inpui.core import HomeAssistant
@@ -35,7 +35,7 @@ async def test_firmware_update_coordinator_fetching(
     mock_client.async_update_data = AsyncMock(side_effect=[ManifestMissing(), manifest])
 
     with patch(
-        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+        "inpui.components.inpui_hardware.coordinator.FirmwareUpdateClient",
         return_value=mock_client,
     ):
         coordinator = FirmwareUpdateCoordinator(

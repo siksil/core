@@ -14,7 +14,7 @@ from smart_meter_texas.const import (
     OD_READ_ENDPOINT,
 )
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

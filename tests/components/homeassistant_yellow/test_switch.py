@@ -6,7 +6,7 @@ from ha_silabs_firmware_client import FirmwareManifest, FirmwareMetadata
 import pytest
 from yarl import URL
 
-from inpui.components.homeassistant_yellow.const import RADIO_DEVICE
+from inpui.components.inpui_yellow.const import RADIO_DEVICE
 from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
 from inpui.const import (
     ATTR_ENTITY_ID,
@@ -91,17 +91,17 @@ async def test_switch_turn_on_off(
 
     with (
         patch(
-            "inpui.components.homeassistant_yellow.is_hassio", return_value=True
+            "inpui.components.inpui_yellow.is_hassio", return_value=True
         ),
         patch(
-            "inpui.components.homeassistant_yellow.get_os_info",
+            "inpui.components.inpui_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
         patch(
-            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
+            "inpui.components.inpui_hardware.coordinator.FirmwareUpdateClient"
         ) as mock_client,
         patch(
-            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateCoordinator.async_refresh"
+            "inpui.components.inpui_hardware.coordinator.FirmwareUpdateCoordinator.async_refresh"
         ) as mock_refresh,
     ):
         mock_client.return_value.async_update_data.return_value = TEST_MANIFEST

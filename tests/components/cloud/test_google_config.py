@@ -17,7 +17,7 @@ from inpui.components.cloud.const import (
 from inpui.components.cloud.google_config import CloudGoogleConfig
 from inpui.components.cloud.prefs import CloudPreferences
 from inpui.components.google_assistant import helpers as ga_helpers
-from inpui.components.homeassistant.exposed_entities import (
+from inpui.components.inpui.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     async_expose_entity,
     async_get_entity_settings,

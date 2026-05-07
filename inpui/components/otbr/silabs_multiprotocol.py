@@ -11,7 +11,7 @@ import aiohttp
 from python_otbr_api import tlv_parser
 from python_otbr_api.tlv_parser import MeshcopTLVType
 
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
 from inpui.components.thread import async_add_dataset

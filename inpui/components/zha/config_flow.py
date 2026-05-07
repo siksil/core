@@ -21,11 +21,11 @@ from zigpy.exceptions import CannotWriteNetworkSettings, DestructiveWriteNetwork
 from inpui.components import onboarding, usb
 from inpui.components.file_upload import process_uploaded_file
 from inpui.components.hassio import AddonError, AddonState
-from inpui.components.homeassistant_hardware import silabs_multiprotocol_addon
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware import silabs_multiprotocol_addon
+from inpui.components.inpui_hardware.firmware_config_flow import (
     ZigbeeFlowStrategy,
 )
-from inpui.components.homeassistant_yellow import hardware as yellow_hardware
+from inpui.components.inpui_yellow import hardware as yellow_hardware
 from inpui.components.usb import USBDevice, scan_serial_ports
 from inpui.config_entries import (
     SOURCE_IGNORE,

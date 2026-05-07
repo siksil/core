@@ -10,7 +10,7 @@ from typing import Any
 
 import pywemo
 
-from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.inpui import DOMAIN as HA_DOMAIN
 from inpui.components.wemo.coordinator import async_get_coordinator
 from inpui.const import (
     ATTR_ENTITY_ID,

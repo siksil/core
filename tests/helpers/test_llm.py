@@ -8,7 +8,7 @@ import pytest
 import voluptuous as vol
 
 from inpui.components import calendar, todo
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.intent import async_register_timer_handler
 from inpui.components.script import ScriptConfig
 from inpui.core import Context, HomeAssistant, State, SupportsResponse

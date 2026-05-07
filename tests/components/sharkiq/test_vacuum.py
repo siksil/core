@@ -14,7 +14,7 @@ from sharkiq import AylaApi, SharkIqAuthError, SharkIqNotAuthedError, SharkIqVac
 from voluptuous.error import MultipleInvalid
 
 from homeassistant import exceptions
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

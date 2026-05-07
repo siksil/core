@@ -13,7 +13,7 @@ from inpui.components.cover import (
     SERVICE_STOP_COVER,
     CoverState,
 )
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.lock import SERVICE_LOCK, SERVICE_UNLOCK
 from inpui.components.valve import (
     DOMAIN as VALVE_DOMAIN,

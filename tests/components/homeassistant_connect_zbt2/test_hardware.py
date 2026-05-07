@@ -1,6 +1,6 @@
 """Test the Home Assistant Connect ZBT-2 hardware platform."""
 
-from inpui.components.homeassistant_connect_zbt2.const import DOMAIN
+from inpui.components.inpui_connect_zbt2.const import DOMAIN
 from inpui.components.usb import DOMAIN as USB_DOMAIN
 from inpui.const import EVENT_INPUI_STARTED
 from inpui.core import HomeAssistant

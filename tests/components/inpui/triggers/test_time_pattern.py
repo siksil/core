@@ -7,7 +7,7 @@ import pytest
 import voluptuous as vol
 
 from inpui.components import automation
-from inpui.components.homeassistant.triggers import time_pattern
+from inpui.components.inpui.triggers import time_pattern
 from inpui.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
 from inpui.core import HomeAssistant, ServiceCall
 from inpui.setup import async_setup_component

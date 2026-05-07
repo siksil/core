@@ -27,7 +27,7 @@ from inpui.components.alexa import (
     state_report as alexa_state_report,
 )
 from inpui.components.binary_sensor import BinarySensorDeviceClass
-from inpui.components.homeassistant.exposed_entities import (
+from inpui.components.inpui.exposed_entities import (
     async_expose_entity,
     async_get_assistant_settings,
     async_listen_entity_updates,

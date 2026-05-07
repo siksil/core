@@ -18,7 +18,7 @@ from zigpy.zcl import foundation
 from zigpy.zcl.clusters import general
 import zigpy.zdo.types as zdo_t
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

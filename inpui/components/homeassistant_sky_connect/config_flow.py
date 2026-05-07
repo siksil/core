@@ -8,14 +8,14 @@ from typing import TYPE_CHECKING, Any, Protocol
 from universal_silabs_flasher.flasher import Zbt1Flasher
 
 from inpui.components import usb
-from inpui.components.homeassistant_hardware import (
+from inpui.components.inpui_hardware import (
     firmware_config_flow,
     silabs_multiprotocol_addon,
 )
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     HardwareFirmwareDiscoveryInfo,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )

@@ -7,7 +7,7 @@ import voluptuous as vol
 import yaml
 
 from homeassistant import config, core as ha
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     ATTR_ENTRY_ID,
     ATTR_SAFE_MODE,
     DOMAIN,
@@ -130,7 +130,7 @@ async def test_reload_core_conf(hass: HomeAssistant) -> None:
 
 
 @patch("inpui.config.os.path.isfile", Mock(return_value=True))
-@patch("inpui.components.homeassistant._LOGGER.error")
+@patch("inpui.components.inpui._LOGGER.error")
 @patch("inpui.core_config.async_process_ha_core_config")
 async def test_reload_core_with_wrong_conf(
     mock_process, mock_error, hass: HomeAssistant
@@ -222,7 +222,7 @@ async def test_entity_update(hass: HomeAssistant) -> None:
     await async_setup_component(hass, "homeassistant", {})
 
     with patch(
-        "inpui.components.homeassistant.async_update_entity",
+        "inpui.components.inpui.async_update_entity",
         return_value=None,
     ) as mock_update:
         await hass.services.async_call(
@@ -566,7 +566,7 @@ async def test_reload_custom_templates(hass: HomeAssistant) -> None:
     """Test we can call reload_custom_templates."""
     await async_setup_component(hass, "homeassistant", {})
     with patch(
-        "inpui.components.homeassistant.async_load_custom_templates",
+        "inpui.components.inpui.async_load_custom_templates",
         return_value=None,
     ) as mock_load_custom_templates:
         await hass.services.async_call(
@@ -657,14 +657,14 @@ async def test_deprecated_installation_issue_32bit_core(
     """Test deprecated installation issue."""
     with (
         patch(
-            "inpui.components.homeassistant.async_get_system_info",
+            "inpui.components.inpui.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "arch": arch,
             },
         ),
         patch(
-            "inpui.components.homeassistant._is_32_bit",
+            "inpui.components.inpui._is_32_bit",
             return_value=True,
         ),
     ):
@@ -697,14 +697,14 @@ async def test_deprecated_installation_issue_64bit_core(
     """Test deprecated installation issue."""
     with (
         patch(
-            "inpui.components.homeassistant.async_get_system_info",
+            "inpui.components.inpui.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "arch": arch,
             },
         ),
         patch(
-            "inpui.components.homeassistant._is_32_bit",
+            "inpui.components.inpui._is_32_bit",
             return_value=False,
         ),
     ):
@@ -738,7 +738,7 @@ async def test_deprecated_installation_issue_32bit(
     """Test deprecated installation issue."""
     with (
         patch(
-            "inpui.components.homeassistant.async_get_system_info",
+            "inpui.components.inpui.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Container",
                 "container_arch": arch,
@@ -746,7 +746,7 @@ async def test_deprecated_installation_issue_32bit(
             },
         ),
         patch(
-            "inpui.components.homeassistant._is_32_bit",
+            "inpui.components.inpui._is_32_bit",
             return_value=True,
         ),
     ):

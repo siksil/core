@@ -4,13 +4,13 @@ from unittest.mock import AsyncMock, Mock, call, patch
 
 import pytest
 
-from inpui.components.homeassistant_hardware import (
+from inpui.components.inpui_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from inpui.components.homeassistant_hardware.helpers import (
+from inpui.components.inpui_hardware.helpers import (
     async_register_firmware_info_callback,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,

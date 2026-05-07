@@ -15,7 +15,7 @@ from typing import Any
 from propcache.api import cached_property
 import voluptuous as vol
 
-from inpui.components.homeassistant.exposed_entities import async_should_expose
+from inpui.components.inpui.exposed_entities import async_should_expose
 from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,

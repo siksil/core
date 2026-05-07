@@ -20,7 +20,7 @@ from kasa.iot import IotDevice
 import pytest
 
 from inpui.components import tplink
-from inpui.components.homeassistant.scene import (
+from inpui.components.inpui.scene import (
     CONF_SCENE_ID,
     CONF_SNAPSHOT,
     SERVICE_CREATE,

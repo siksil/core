@@ -9,7 +9,7 @@ import pytest
 import voluptuous as vol
 
 from inpui.components import automation
-from inpui.components.homeassistant.triggers import (
+from inpui.components.inpui.triggers import (
     numeric_state as numeric_state_trigger,
 )
 from inpui.const import (

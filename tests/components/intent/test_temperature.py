@@ -13,7 +13,7 @@ from inpui.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.sensor import SensorDeviceClass
 from inpui.config_entries import ConfigEntry, ConfigFlow
 from inpui.const import ATTR_DEVICE_CLASS, Platform, UnitOfTemperature

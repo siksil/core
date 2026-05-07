@@ -6,11 +6,11 @@ from aiohttp import ClientError
 import pytest
 
 from inpui.components.hassio import AddonError
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,
@@ -414,7 +414,7 @@ async def test_options_flow_zigbee_to_thread_zha_configured(
 
     # Pretend ZHA is using the stick
     with patch(
-        "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+        "inpui.components.inpui_hardware.firmware_config_flow.guess_hardware_owners",
         return_value=[
             FirmwareInfo(
                 device=TEST_DEVICE,
@@ -470,7 +470,7 @@ async def test_options_flow_thread_to_zigbee_otbr_configured(
 
     # Pretend OTBR is using the stick
     with patch(
-        "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+        "inpui.components.inpui_hardware.firmware_config_flow.guess_hardware_owners",
         return_value=[
             FirmwareInfo(
                 device=TEST_DEVICE,

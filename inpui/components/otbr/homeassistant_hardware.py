@@ -7,7 +7,7 @@ import logging
 from yarl import URL
 
 from inpui.components.hassio import AddonManager
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,

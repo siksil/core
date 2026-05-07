@@ -6,13 +6,13 @@ from dataclasses import dataclass
 import logging
 
 from inpui.components.hassio import get_os_info
-from inpui.components.homeassistant_hardware.coordinator import (
+from inpui.components.inpui_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     check_multi_pan_addon,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     guess_firmware_info,
 )

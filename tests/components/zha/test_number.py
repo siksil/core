@@ -12,7 +12,7 @@ from zigpy.typing import UNDEFINED
 from zigpy.zcl.clusters import general
 import zigpy.zcl.foundation as zcl_f
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

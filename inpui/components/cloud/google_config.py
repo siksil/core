@@ -15,7 +15,7 @@ from inpui.components.google_assistant import DOMAIN as GOOGLE_DOMAIN
 from inpui.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
     AbstractConfig,
 )
-from inpui.components.homeassistant.exposed_entities import (
+from inpui.components.inpui.exposed_entities import (
     async_expose_entity,
     async_get_assistant_settings,
     async_get_entity_settings,

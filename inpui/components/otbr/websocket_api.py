@@ -10,7 +10,7 @@ from python_otbr_api.tlv_parser import MeshcopTLVType
 import voluptuous as vol
 
 from inpui.components import websocket_api
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
 from inpui.components.thread import async_add_dataset, async_get_dataset

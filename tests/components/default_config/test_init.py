@@ -6,7 +6,7 @@ import pytest
 
 from homeassistant import bootstrap
 from inpui.components.default_config import DOMAIN
-from inpui.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.components.inpui import DOMAIN as HOMEASSISTANT_DOMAIN
 from inpui.core import HomeAssistant
 from inpui.helpers import recorder as recorder_helper
 from inpui.setup import async_setup_component

@@ -7,7 +7,7 @@ import pytest
 import voluptuous as vol
 
 from inpui.components import light, switch
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,

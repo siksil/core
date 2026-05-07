@@ -3,7 +3,7 @@
 import pytest
 
 from inpui.components import conversation
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.weather import (
     DOMAIN,
     WeatherEntity,

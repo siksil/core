@@ -15,15 +15,15 @@ from inpui.components.hassio import (
     YellowOptions,
     get_supervisor_client,
 )
-from inpui.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.inpui_hardware.firmware_config_flow import (
     BaseFirmwareConfigFlow,
     BaseFirmwareOptionsFlow,
 )
-from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     OptionsFlowHandler as MultiprotocolOptionsFlowHandler,
     SerialPortSettings as MultiprotocolSerialPortSettings,
 )
-from inpui.components.homeassistant_hardware.util import (
+from inpui.components.inpui_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     probe_silabs_firmware_info,

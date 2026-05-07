@@ -14,7 +14,7 @@ from inpui.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

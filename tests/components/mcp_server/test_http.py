@@ -17,7 +17,7 @@ from mcp.shared.exceptions import McpError
 import pytest
 
 from inpui.components.conversation import DOMAIN as CONVERSATION_DOMAIN
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.light import DOMAIN as LIGHT_DOMAIN
 from inpui.components.mcp_server.const import STATELESS_LLM_API
 from inpui.components.mcp_server.http import (

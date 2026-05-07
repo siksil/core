@@ -11,7 +11,7 @@ from matter_server.common.errors import UpdateCheckError, UpdateError
 from matter_server.common.models import MatterSoftwareVersion, UpdateSource
 import pytest
 
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

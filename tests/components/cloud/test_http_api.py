@@ -37,7 +37,7 @@ from inpui.components.cloud.http_api import validate_language_voice
 from inpui.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
     GoogleEntity,
 )
-from inpui.components.homeassistant import exposed_entities
+from inpui.components.inpui import exposed_entities
 from inpui.components.websocket_api import ERR_INVALID_FORMAT
 from inpui.core import HomeAssistant, State
 from inpui.helpers import entity_registry as er
@@ -1940,7 +1940,7 @@ async def test_download_support_package(
     with (
         patch.object(hass.config, "config_dir", new="config"),
         patch(
-            "inpui.components.homeassistant.system_health.system_info.async_get_system_info",
+            "inpui.components.inpui.system_health.system_info.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "version": "2025.2.0",
@@ -2055,7 +2055,7 @@ async def test_download_support_package_custom_components_error(
     with (
         patch.object(hass.config, "config_dir", new="config"),
         patch(
-            "inpui.components.homeassistant.system_health.system_info.async_get_system_info",
+            "inpui.components.inpui.system_health.system_info.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "version": "2025.2.0",
@@ -2177,7 +2177,7 @@ async def test_download_support_package_integration_load_error(
     with (
         patch.object(hass.config, "config_dir", new="config"),
         patch(
-            "inpui.components.homeassistant.system_health.system_info.async_get_system_info",
+            "inpui.components.inpui.system_health.system_info.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "version": "2025.2.0",

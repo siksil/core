@@ -8,7 +8,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from inpui.components.accuweather.const import UPDATE_INTERVAL_DAILY_FORECAST
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )

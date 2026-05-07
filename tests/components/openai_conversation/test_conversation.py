@@ -16,7 +16,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from inpui.components import conversation
-from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.inpui.exposed_entities import async_expose_entity
 from inpui.components.openai_conversation.const import (
     CONF_CODE_INTERPRETER,
     CONF_SERVICE_TIER,

@@ -9,7 +9,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from inpui.components.arcam_fmj.media_player import ArcamFmj
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
