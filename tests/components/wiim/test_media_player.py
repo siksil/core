@@ -557,7 +557,7 @@ async def test_play_media_url_service_uses_processed_url(
     mock_wiim_device.supports_http_api = True
 
     with patch(
-        "homeassistant.components.wiim.media_player.async_process_play_media_url",
+        "inpui.components.wiim.media_player.async_process_play_media_url",
         return_value="http://processed/song.mp3",
     ):
         await hass.services.async_call(
@@ -587,15 +587,15 @@ async def test_play_media_source_service_uses_resolved_url(
 
     with (
         patch(
-            "homeassistant.components.wiim.media_player.media_source.is_media_source_id",
+            "inpui.components.wiim.media_player.media_source.is_media_source_id",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.wiim.media_player.media_source.async_resolve_media",
+            "inpui.components.wiim.media_player.media_source.async_resolve_media",
             AsyncMock(return_value=MagicMock(url="http://resolved/song.mp3")),
         ),
         patch(
-            "homeassistant.components.wiim.media_player.async_process_play_media_url",
+            "inpui.components.wiim.media_player.async_process_play_media_url",
             return_value="http://processed/song.mp3",
         ),
     ):
@@ -702,7 +702,7 @@ async def test_browse_media_service_includes_media_sources_when_supported(
     )
 
     with patch(
-        "homeassistant.components.wiim.media_player.media_source.async_browse_media",
+        "inpui.components.wiim.media_player.media_source.async_browse_media",
         AsyncMock(return_value=media_source_root),
     ):
         result = await hass.services.async_call(

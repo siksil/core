@@ -25,7 +25,7 @@ async def test_migrate_entry(hass: HomeAssistant) -> None:
     mock_entry.add_to_hass(hass)
 
     # Create entity entry to migrate to new unique ID
-    with patch("homeassistant.components.epson.Projector.get_power"):
+    with patch("inpui.components.epson.Projector.get_power"):
         await hass.config_entries.async_setup(mock_entry.entry_id)
         await hass.async_block_till_done()
 

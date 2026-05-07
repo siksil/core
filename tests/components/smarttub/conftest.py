@@ -167,7 +167,7 @@ def mock_api(account, spa):
     """Mock the SmartTub API."""
 
     with patch(
-        "homeassistant.components.smarttub.controller.SmartTub",
+        "inpui.components.smarttub.controller.SmartTub",
         autospec=True,
     ) as api_class_mock:
         api_mock = api_class_mock.return_value

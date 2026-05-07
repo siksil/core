@@ -31,7 +31,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 async def notify_only() -> AsyncGenerator[None]:
     """Enable only the notify platform."""
     with patch(
-        "homeassistant.components.playstation_network.PLATFORMS",
+        "inpui.components.playstation_network.PLATFORMS",
         [Platform.NOTIFY],
     ):
         yield

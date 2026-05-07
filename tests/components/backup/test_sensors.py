@@ -25,7 +25,7 @@ async def test_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test setup of backup sensors."""
-    with patch("homeassistant.components.backup.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.backup.PLATFORMS", [Platform.SENSOR]):
         await setup_backup_integration(hass, with_hassio=False)
         await hass.async_block_till_done(wait_background_tasks=True)
 
@@ -96,7 +96,7 @@ async def test_sensor_updates(
         "minor_version": store.STORAGE_VERSION_MINOR,
     }
 
-    with patch("homeassistant.components.backup.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.backup.PLATFORMS", [Platform.SENSOR]):
         await setup_backup_integration(
             hass, with_hassio=False, remote_agents=["test.remote"]
         )

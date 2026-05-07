@@ -44,7 +44,7 @@ async def test_form_multiple_meters_first_connected(hass: HomeAssistant) -> None
             return_value=meters,
         ),
         patch(
-            "homeassistant.components.rainforest_eagle.async_setup_entry",
+            "inpui.components.rainforest_eagle.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -163,11 +163,11 @@ async def test_form_eagle_100(hass: HomeAssistant) -> None:
             return_value=eagle_100_response,
         ),
         patch(
-            "homeassistant.core.HomeAssistant.async_add_executor_job",
+            "inpui.core.HomeAssistant.async_add_executor_job",
             return_value=eagle_100_response,
         ),
         patch(
-            "homeassistant.components.rainforest_eagle.async_setup_entry",
+            "inpui.components.rainforest_eagle.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -215,7 +215,7 @@ async def test_form_unknown_device_type(hass: HomeAssistant) -> None:
             return_value=unknown_device_response,
         ),
         patch(
-            "homeassistant.core.HomeAssistant.async_add_executor_job",
+            "inpui.core.HomeAssistant.async_add_executor_job",
             return_value=unknown_device_response,
         ),
     ):
@@ -242,7 +242,7 @@ async def test_form_unsupported_device_type(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.rainforest_eagle.config_flow.async_get_type",
+        "inpui.components.rainforest_eagle.config_flow.async_get_type",
         return_value=("UNSUPPORTED_DEVICE_TYPE", None),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -268,7 +268,7 @@ async def test_form_unexpected_exception(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.rainforest_eagle.config_flow.async_get_type",
+        "inpui.components.rainforest_eagle.config_flow.async_get_type",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(

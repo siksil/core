@@ -32,7 +32,7 @@ async def test_form(hass: HomeAssistant) -> None:
     with (
         patch("smart_meter_texas.Client.authenticate", return_value=True),
         patch(
-            "homeassistant.components.smart_meter_texas.async_setup_entry",
+            "inpui.components.smart_meter_texas.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

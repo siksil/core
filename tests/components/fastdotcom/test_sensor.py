@@ -24,7 +24,7 @@ async def test_fastdotcom_data_update_coordinator(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fastdotcom.coordinator.fast_com",
+        "inpui.components.fastdotcom.coordinator.fast_com",
         return_value=MOCK_DATA,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

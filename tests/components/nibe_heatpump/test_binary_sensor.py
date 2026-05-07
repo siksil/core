@@ -20,7 +20,7 @@ from tests.common import snapshot_platform
 async def fixture_single_platform():
     """Only allow this platform to load."""
     with patch(
-        "homeassistant.components.nibe_heatpump.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.nibe_heatpump.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         yield
 

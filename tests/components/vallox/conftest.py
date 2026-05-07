@@ -131,7 +131,7 @@ def default_metrics():
 def fetch_metric_data_mock(default_metrics):
     """Stub the Vallox fetch_metric_data method."""
     with patch(
-        "homeassistant.components.vallox.Vallox.fetch_metric_data",
+        "inpui.components.vallox.Vallox.fetch_metric_data",
         new_callable=AsyncMock,
     ) as mock:
         mock.return_value = MetricData(default_metrics)
@@ -155,19 +155,19 @@ def setup_fetch_metric_data_mock(fetch_metric_data_mock, default_metrics):
 
 def patch_set_profile():
     """Patch the Vallox metrics set values."""
-    return patch("homeassistant.components.vallox.Vallox.set_profile")
+    return patch("inpui.components.vallox.Vallox.set_profile")
 
 
 def patch_set_fan_speed():
     """Patch the Vallox metrics set values."""
-    return patch("homeassistant.components.vallox.Vallox.set_fan_speed")
+    return patch("inpui.components.vallox.Vallox.set_fan_speed")
 
 
 def patch_set_values():
     """Patch the Vallox metrics set values."""
-    return patch("homeassistant.components.vallox.Vallox.set_values")
+    return patch("inpui.components.vallox.Vallox.set_values")
 
 
 def patch_set_filter_change_date():
     """Patch the Vallox metrics set filter change date."""
-    return patch("homeassistant.components.vallox.Vallox.set_filter_change_date")
+    return patch("inpui.components.vallox.Vallox.set_filter_change_date")

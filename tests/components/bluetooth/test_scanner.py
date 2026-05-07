@@ -487,7 +487,7 @@ async def test_adapter_fails_to_start_and_takes_a_bit_to_init(
     """Test we can recover the adapter at startup and we wait for Dbus to init."""
     assert await async_setup_component(hass, "logger", {})
     async with async_call_logger_set_level(
-        "homeassistant.components.bluetooth", "DEBUG", hass=hass, caplog=caplog
+        "inpui.components.bluetooth", "DEBUG", hass=hass, caplog=caplog
     ):
         called_start = 0
         called_stop = 0

@@ -23,7 +23,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.vera.async_setup_entry", return_value=True
+        "inpui.components.vera.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

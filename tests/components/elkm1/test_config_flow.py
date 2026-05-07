@@ -43,7 +43,7 @@ DHCP_DISCOVERY = DhcpServiceInfo(
 ELK_DISCOVERY_INFO = asdict(ELK_DISCOVERY)
 ELK_DISCOVERY_INFO_NON_STANDARD_PORT = asdict(ELK_DISCOVERY_NON_STANDARD_PORT)
 
-MODULE = "homeassistant.components.elkm1"
+MODULE = "inpui.components.elkm1"
 
 
 @pytest.fixture
@@ -101,10 +101,10 @@ async def test_form_user_with_secure_elk_no_discovery(hass: HomeAssistant) -> No
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -158,10 +158,10 @@ async def test_form_user_with_insecure_elk_skip_discovery(hass: HomeAssistant) -
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -215,10 +215,10 @@ async def test_form_user_with_insecure_elk_no_discovery(hass: HomeAssistant) -> 
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -270,10 +270,10 @@ async def test_form_user_with_insecure_elk_times_out(hass: HomeAssistant) -> Non
 
     with (
         patch(
-            "homeassistant.components.elkm1.config_flow.VALIDATE_TIMEOUT",
+            "inpui.components.elkm1.config_flow.VALIDATE_TIMEOUT",
             0,
         ),
-        patch("homeassistant.components.elkm1.config_flow.LOGIN_TIMEOUT", 0),
+        patch("inpui.components.elkm1.config_flow.LOGIN_TIMEOUT", 0),
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
     ):
@@ -299,10 +299,10 @@ async def test_form_user_with_insecure_elk_times_out(hass: HomeAssistant) -> Non
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -397,10 +397,10 @@ async def test_form_user_with_secure_elk_with_discovery(hass: HomeAssistant) -> 
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -455,10 +455,10 @@ async def test_form_user_with_secure_elk_with_discovery_pick_manual(
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -516,10 +516,10 @@ async def test_form_user_with_secure_elk_with_discovery_pick_manual_direct_disco
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -568,10 +568,10 @@ async def test_form_user_with_tls_elk_no_discovery(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -619,10 +619,10 @@ async def test_form_user_with_non_secure_elk_no_discovery(hass: HomeAssistant) -
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -668,10 +668,10 @@ async def test_form_user_with_serial_elk_no_discovery(hass: HomeAssistant) -> No
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -711,11 +711,11 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.config_flow.VALIDATE_TIMEOUT",
+            "inpui.components.elkm1.config_flow.VALIDATE_TIMEOUT",
             0,
         ),
         patch(
-            "homeassistant.components.elkm1.config_flow.LOGIN_TIMEOUT",
+            "inpui.components.elkm1.config_flow.LOGIN_TIMEOUT",
             0,
         ),
     ):
@@ -740,10 +740,10 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -785,11 +785,11 @@ async def test_unknown_exception(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.config_flow.VALIDATE_TIMEOUT",
+            "inpui.components.elkm1.config_flow.VALIDATE_TIMEOUT",
             0,
         ),
         patch(
-            "homeassistant.components.elkm1.config_flow.LOGIN_TIMEOUT",
+            "inpui.components.elkm1.config_flow.LOGIN_TIMEOUT",
             0,
         ),
     ):
@@ -815,10 +815,10 @@ async def test_unknown_exception(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -859,7 +859,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     with (
         _patch_discovery(no_device=True),
         patch(
-            "homeassistant.components.elkm1.config_flow.Elk",
+            "inpui.components.elkm1.config_flow.Elk",
             return_value=mocked_elk,
         ),
     ):
@@ -884,10 +884,10 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -928,7 +928,7 @@ async def test_form_invalid_auth_no_password(hass: HomeAssistant) -> None:
     with (
         _patch_discovery(no_device=True),
         patch(
-            "homeassistant.components.elkm1.config_flow.Elk",
+            "inpui.components.elkm1.config_flow.Elk",
             return_value=mocked_elk,
         ),
     ):
@@ -953,10 +953,10 @@ async def test_form_invalid_auth_no_password(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -993,10 +993,10 @@ async def test_form_import(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1063,10 +1063,10 @@ async def test_form_import_device_discovered(hass: HomeAssistant) -> None:
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1133,10 +1133,10 @@ async def test_form_import_non_secure_device_discovered(hass: HomeAssistant) -> 
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1177,10 +1177,10 @@ async def test_form_import_non_secure_non_stanadard_port_device_discovered(
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1397,10 +1397,10 @@ async def test_discovered_by_discovery(hass: HomeAssistant) -> None:
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1447,10 +1447,10 @@ async def test_discovered_by_discovery_non_standard_port(hass: HomeAssistant) ->
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1518,10 +1518,10 @@ async def test_discovered_by_dhcp_udp_responds(hass: HomeAssistant) -> None:
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1568,10 +1568,10 @@ async def test_discovered_by_dhcp_udp_responds_with_nonsecure_port(
         _patch_discovery(device=ELK_NON_SECURE_DISCOVERY),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1623,10 +1623,10 @@ async def test_discovered_by_dhcp_udp_responds_existing_config_entry(
         _patch_discovery(),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1691,10 +1691,10 @@ async def test_multiple_instances_with_discovery(hass: HomeAssistant) -> None:
         _patch_discovery(device=elk_discovery_1),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1743,7 +1743,7 @@ async def test_multiple_instances_with_discovery(hass: HomeAssistant) -> None:
         _patch_discovery(device=elk_discovery_2),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1785,7 +1785,7 @@ async def test_multiple_instances_with_discovery(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1843,10 +1843,10 @@ async def test_multiple_instances_with_tls_v12(hass: HomeAssistant) -> None:
         _patch_discovery(device=elk_discovery_1),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup", return_value=True
+            "inpui.components.elkm1.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1896,7 +1896,7 @@ async def test_multiple_instances_with_tls_v12(hass: HomeAssistant) -> None:
         _patch_discovery(device=elk_discovery_2),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1939,7 +1939,7 @@ async def test_multiple_instances_with_tls_v12(hass: HomeAssistant) -> None:
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -2002,7 +2002,7 @@ async def test_reconfigure_nonsecure(
         _patch_discovery(no_device=True),
         _patch_elk(mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -2053,7 +2053,7 @@ async def test_reconfigure_tls(
         _patch_discovery(no_device=True),  # ensure no UDP/DNS work
         _patch_elk(mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -2093,8 +2093,8 @@ async def test_reconfigure_device_offline(
     with (
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
-        patch("homeassistant.components.elkm1.config_flow.VALIDATE_TIMEOUT", 0),
-        patch("homeassistant.components.elkm1.config_flow.LOGIN_TIMEOUT", 0),
+        patch("inpui.components.elkm1.config_flow.VALIDATE_TIMEOUT", 0),
+        patch("inpui.components.elkm1.config_flow.LOGIN_TIMEOUT", 0),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -2117,7 +2117,7 @@ async def test_reconfigure_device_offline(
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -2176,7 +2176,7 @@ async def test_reconfigure_invalid_auth(
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -2247,8 +2247,8 @@ async def test_reconfigure_unknown_error(
     with (
         _patch_discovery(no_device=True),
         _patch_elk(elk=elk),
-        patch("homeassistant.components.elkm1.config_flow.VALIDATE_TIMEOUT", 0),
-        patch("homeassistant.components.elkm1.config_flow.LOGIN_TIMEOUT", 0),
+        patch("inpui.components.elkm1.config_flow.VALIDATE_TIMEOUT", 0),
+        patch("inpui.components.elkm1.config_flow.LOGIN_TIMEOUT", 0),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -2271,7 +2271,7 @@ async def test_reconfigure_unknown_error(
         _patch_discovery(no_device=True),
         _patch_elk(elk=mocked_elk),
         patch(
-            "homeassistant.components.elkm1.async_setup_entry",
+            "inpui.components.elkm1.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -2322,7 +2322,7 @@ async def test_reconfigure_preserves_existing_config_entry_fields(
     with (
         _patch_discovery(no_device=True),
         _patch_elk(mocked_elk),
-        patch("homeassistant.components.elkm1.async_setup_entry", return_value=True),
+        patch("inpui.components.elkm1.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],

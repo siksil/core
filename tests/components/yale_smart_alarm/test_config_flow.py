@@ -26,10 +26,10 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -71,7 +71,7 @@ async def test_form_invalid_auth(
     )
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
         side_effect=sideeffect,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -89,10 +89,10 @@ async def test_form_invalid_auth(
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -138,10 +138,10 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
         ) as mock_yale,
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -195,7 +195,7 @@ async def test_reauth_flow_error(
     result = await entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
         side_effect=sideeffect,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -212,11 +212,11 @@ async def test_reauth_flow_error(
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
             return_value="",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -257,11 +257,11 @@ async def test_reconfigure(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
             return_value="",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -317,11 +317,11 @@ async def test_reconfigure_username_exist(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
             return_value="",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -340,11 +340,11 @@ async def test_reconfigure_username_exist(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
             return_value="",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -397,7 +397,7 @@ async def test_reconfigure_flow_error(
     result = await entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
         side_effect=sideeffect,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -416,11 +416,11 @@ async def test_reconfigure_flow_error(
 
     with (
         patch(
-            "homeassistant.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.config_flow.YaleSmartAlarmClient",
             return_value="",
         ),
         patch(
-            "homeassistant.components.yale_smart_alarm.async_setup_entry",
+            "inpui.components.yale_smart_alarm.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -456,7 +456,7 @@ async def test_options_flow(
     assert result["step_id"] == "init"
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
         return_value=load_config_entry[1],
     ):
         result = await hass.config_entries.options.async_configure(

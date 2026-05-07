@@ -33,10 +33,10 @@ async def test_services_registered(hass: HomeAssistant, mock_dsm: MagicMock) -> 
     """Test if all services are registered."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=mock_dsm,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -59,11 +59,11 @@ async def test_reauth_triggered(hass: HomeAssistant) -> None:
     """Test if reauthentication flow is triggered."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.SynoApi.async_setup",
+            "inpui.components.synology_dsm.SynoApi.async_setup",
             side_effect=SynologyDSMLoginInvalidException(USERNAME),
         ),
         patch(
-            "homeassistant.components.synology_dsm.config_flow.SynologyDSMFlowHandler.async_step_reauth",
+            "inpui.components.synology_dsm.config_flow.SynologyDSMFlowHandler.async_step_reauth",
             return_value={
                 "type": FlowResultType.FORM,
                 "flow_id": "mock_flow",
@@ -94,10 +94,10 @@ async def test_config_entry_migrations(
     """Test if reauthentication flow is triggered."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=mock_dsm,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,

@@ -78,7 +78,7 @@ def test_main(capfd: pytest.CaptureFixture[str]) -> None:
     with (
         patch.object(sys, "argv", args),
         patch(
-            "homeassistant.components.zwave_js.scripts.convert_device_diagnostics_to_fixture.Path.write_text"
+            "inpui.components.zwave_js.scripts.convert_device_diagnostics_to_fixture.Path.write_text"
         ) as write_text_mock,
     ):
         main()

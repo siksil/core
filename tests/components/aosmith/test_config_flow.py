@@ -32,7 +32,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+        "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
         return_value=[],
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -68,7 +68,7 @@ async def test_form_exception(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+        "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
         side_effect=exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -79,7 +79,7 @@ async def test_form_exception(
         assert result2["errors"] == {"base": expected_error_key}
 
     with patch(
-        "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+        "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
         return_value=[],
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -127,14 +127,14 @@ async def test_reauth_flow(
 
     with (
         patch(
-            "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+            "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_energy_use_data",
+            "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_energy_use_data",
             return_value=[],
         ),
-        patch("homeassistant.components.aosmith.async_setup_entry", return_value=True),
+        patch("inpui.components.aosmith.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             flows[0]["flow_id"],
@@ -170,7 +170,7 @@ async def test_reauth_flow_retry(
 
     # First attempt at reauth - authentication fails again
     with patch(
-        "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+        "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
         side_effect=AOSmithInvalidCredentialsException("Authentication error"),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -185,10 +185,10 @@ async def test_reauth_flow_retry(
     # Second attempt at reauth - authentication succeeds
     with (
         patch(
-            "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+            "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
             return_value=[],
         ),
-        patch("homeassistant.components.aosmith.async_setup_entry", return_value=True),
+        patch("inpui.components.aosmith.async_setup_entry", return_value=True),
     ):
         result3 = await hass.config_entries.flow.async_configure(
             flows[0]["flow_id"],

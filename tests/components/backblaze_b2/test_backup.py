@@ -39,8 +39,8 @@ async def setup_backup_integration(
 ) -> AsyncGenerator[None]:
     """Set up integration."""
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=False),
-        patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0),
+        patch("inpui.components.backup.is_hassio", return_value=False),
+        patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0),
     ):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {})
         await setup_integration(hass, mock_config_entry)
@@ -413,11 +413,11 @@ async def test_upload_with_cleanup_and_logging(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -441,11 +441,11 @@ async def test_upload_with_cleanup_and_logging(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -482,11 +482,11 @@ async def test_upload_with_cleanup_failure(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -525,11 +525,11 @@ async def test_tar_upload_failure_skips_cleanup(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -568,11 +568,11 @@ async def test_handle_b2_errors_logs_root_cause(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -723,7 +723,7 @@ async def test_download_triggers_backup_not_found(
 
     with (
         patch.object(BucketSimulator, "ls", mock_ls_race_condition),
-        patch("homeassistant.components.backblaze_b2.backup.CACHE_TTL", 0),
+        patch("inpui.components.backblaze_b2.backup.CACHE_TTL", 0),
     ):
         resp = await client.get(
             f"/api/backup/download/{TEST_BACKUP.backup_id}?agent_id={DOMAIN}.{mock_config_entry.entry_id}"
@@ -965,19 +965,19 @@ async def test_upload_timeout(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
         patch(
-            "homeassistant.components.backblaze_b2.backup.BackblazeBackupAgent._upload_unbound_stream_sync",
+            "inpui.components.backblaze_b2.backup.BackblazeBackupAgent._upload_unbound_stream_sync",
         ),
         patch(
-            "homeassistant.components.backblaze_b2.backup.asyncio.wait_for",
+            "inpui.components.backblaze_b2.backup.asyncio.wait_for",
             side_effect=TimeoutError,
         ),
         patch.object(
@@ -1010,19 +1010,19 @@ async def test_upload_cancelled(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
             return_value=TEST_BACKUP,
         ),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
         patch(
-            "homeassistant.components.backblaze_b2.backup.BackblazeBackupAgent._upload_unbound_stream_sync",
+            "inpui.components.backblaze_b2.backup.BackblazeBackupAgent._upload_unbound_stream_sync",
         ),
         patch(
-            "homeassistant.components.backblaze_b2.backup.asyncio.wait_for",
+            "inpui.components.backblaze_b2.backup.asyncio.wait_for",
             side_effect=asyncio.CancelledError,
         ),
         patch.object(
@@ -1064,7 +1064,7 @@ async def test_metadata_download_timeout_during_list(
     with (
         patch.object(BucketSimulator, "ls", mock_ls),
         patch(
-            "homeassistant.components.backblaze_b2.backup.asyncio.wait_for",
+            "inpui.components.backblaze_b2.backup.asyncio.wait_for",
             side_effect=TimeoutError,
         ),
         caplog.at_level(logging.WARNING),
@@ -1099,7 +1099,7 @@ async def test_metadata_download_timeout_during_find_by_id(
     with (
         patch.object(BucketSimulator, "ls", mock_ls),
         patch(
-            "homeassistant.components.backblaze_b2.backup.asyncio.wait_for",
+            "inpui.components.backblaze_b2.backup.asyncio.wait_for",
             side_effect=TimeoutError,
         ),
         caplog.at_level(logging.WARNING),
@@ -1172,7 +1172,7 @@ async def test_metadata_timeout_does_not_block_healthy_backups(
     with (
         patch.object(BucketSimulator, "ls", mock_ls),
         patch(
-            "homeassistant.components.backblaze_b2.backup.asyncio.wait_for",
+            "inpui.components.backblaze_b2.backup.asyncio.wait_for",
             wait_for_first_timeout,
         ),
         caplog.at_level(logging.WARNING),
@@ -1223,10 +1223,10 @@ async def test_metadata_download_timeout_during_get_backup(
     with (
         patch.object(BucketSimulator, "ls", mock_ls),
         patch(
-            "homeassistant.components.backblaze_b2.backup.asyncio.wait_for",
+            "inpui.components.backblaze_b2.backup.asyncio.wait_for",
             wait_for_second_timeout,
         ),
-        patch("homeassistant.components.backblaze_b2.backup.CACHE_TTL", 0),
+        patch("inpui.components.backblaze_b2.backup.CACHE_TTL", 0),
     ):
         await client.send_json_auto_id(
             {"type": "backup/details", "backup_id": TEST_BACKUP.backup_id}

@@ -27,7 +27,7 @@ TEST_ENTITY = "todo.my_tasks"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.local_todo.async_setup_entry", return_value=True
+        "inpui.components.local_todo.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -82,7 +82,7 @@ def mock_store(ics_content: str, store_read_side_effect: Any | None) -> Generato
             stores[path] = FakeStore(hass, path, ics_content, store_read_side_effect)
         return stores[path]
 
-    with patch("homeassistant.components.local_todo.LocalTodoListStore", new=new_store):
+    with patch("inpui.components.local_todo.LocalTodoListStore", new=new_store):
         yield
 
 

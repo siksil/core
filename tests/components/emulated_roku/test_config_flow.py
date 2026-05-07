@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.emulated_roku.async_setup_entry", return_value=True
+        "inpui.components.emulated_roku.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 

@@ -194,7 +194,7 @@ def bypass_api_client_fixture() -> None:
 
     with (
         patch(
-            "homeassistant.components.roborock.config_flow.RoborockApiClient.base_url",
+            "inpui.components.roborock.config_flow.RoborockApiClient.base_url",
             new_callable=PropertyMock,
             return_value=base_url_future,
         ),
@@ -512,7 +512,7 @@ def fake_create_device_manager_fixture(
 ) -> None:
     """Fixture to create a fake device manager."""
     with patch(
-        "homeassistant.components.roborock.create_device_manager",
+        "inpui.components.roborock.create_device_manager",
     ) as mock_create_device_manager:
         mock_create_device_manager.return_value = device_manager
         yield
@@ -557,7 +557,7 @@ async def mock_patforms_fixture(
     platforms: list[Platform],
 ) -> Generator[None]:
     """Set up the Roborock platform."""
-    with patch("homeassistant.components.roborock.PLATFORMS", platforms):
+    with patch("inpui.components.roborock.PLATFORMS", platforms):
         yield
 
 
@@ -583,7 +583,7 @@ async def storage_path_fixture(
             return pathlib.Path(tmp_path) / entry_id
 
         with patch(
-            "homeassistant.components.roborock.roborock_storage._storage_path_prefix",
+            "inpui.components.roborock.roborock_storage._storage_path_prefix",
             new=get_storage_path,
         ):
             yield pathlib.Path(tmp_path)

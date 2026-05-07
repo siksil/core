@@ -139,7 +139,7 @@ async def test_deprecate_entity_automation(
     assert issue is not None
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={AUTOMATION_DOMAIN: []},
     ):
@@ -207,7 +207,7 @@ async def test_deprecate_entity_script(
     assert issue is not None
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={SCRIPT_DOMAIN: {}},
     ):

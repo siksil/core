@@ -22,7 +22,7 @@ async def test_sensor(
 ) -> None:
     """Test sensor platform."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)

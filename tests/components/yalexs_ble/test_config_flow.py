@@ -51,7 +51,7 @@ def _get_mock_push_lock():
 async def test_user_step_success(hass: HomeAssistant, slot: int) -> None:
     """Test user step success path."""
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_YALE_DISCOVERY_INFO, YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -73,10 +73,10 @@ async def test_user_step_success(hass: HomeAssistant, slot: int) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -112,7 +112,7 @@ async def test_user_step_from_ignored(hass: HomeAssistant, slot: int) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_YALE_DISCOVERY_INFO, YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -134,10 +134,10 @@ async def test_user_step_from_ignored(hass: HomeAssistant, slot: int) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -165,7 +165,7 @@ async def test_user_step_from_ignored(hass: HomeAssistant, slot: int) -> None:
 async def test_user_step_no_devices_found(hass: HomeAssistant) -> None:
     """Test user step with no devices found."""
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_YALE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -189,7 +189,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -202,7 +202,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
 async def test_user_step_invalid_keys(hass: HomeAssistant) -> None:
     """Test user step with invalid keys tried first."""
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -257,10 +257,10 @@ async def test_user_step_invalid_keys(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -288,7 +288,7 @@ async def test_user_step_invalid_keys(hass: HomeAssistant) -> None:
 async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
     """Test user step and we cannot connect."""
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -309,7 +309,7 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+        "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         side_effect=BleakError,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -327,10 +327,10 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -358,7 +358,7 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
 async def test_user_step_auth_exception(hass: HomeAssistant) -> None:
     """Test user step with an authentication exception."""
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO, NOT_YALE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -379,7 +379,7 @@ async def test_user_step_auth_exception(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+        "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         side_effect=AuthError,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -397,10 +397,10 @@ async def test_user_step_auth_exception(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -428,7 +428,7 @@ async def test_user_step_auth_exception(hass: HomeAssistant) -> None:
 async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
     """Test user step with an unknown exception."""
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_YALE_DISCOVERY_INFO, YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -449,7 +449,7 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+        "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         side_effect=RuntimeError,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -467,10 +467,10 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -508,10 +508,10 @@ async def test_bluetooth_step_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -539,7 +539,7 @@ async def test_bluetooth_step_success(hass: HomeAssistant) -> None:
 async def test_integration_discovery_success(hass: HomeAssistant) -> None:
     """Test integration discovery step success path."""
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -558,7 +558,7 @@ async def test_integration_discovery_success(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.yalexs_ble.async_setup_entry",
+        "inpui.components.yalexs_ble.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -582,7 +582,7 @@ async def test_integration_discovery_success(hass: HomeAssistant) -> None:
 async def test_integration_discovery_device_not_found(hass: HomeAssistant) -> None:
     """Test integration discovery when the device is not found."""
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -618,7 +618,7 @@ async def test_integration_discovery_takes_precedence_over_bluetooth(
     assert flows[0].local_name == YALE_ACCESS_LOCK_DISCOVERY_INFO.name
 
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -649,7 +649,7 @@ async def test_integration_discovery_takes_precedence_over_bluetooth(
     assert len(flows) == 1
 
     with patch(
-        "homeassistant.components.yalexs_ble.async_setup_entry",
+        "inpui.components.yalexs_ble.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -697,7 +697,7 @@ async def test_bluetooth_discovery_with_cached_config(
 
     # Now do bluetooth discovery with the cached config
     with patch(
-        "homeassistant.components.yalexs_ble.PushLock.validate",
+        "inpui.components.yalexs_ble.PushLock.validate",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -714,7 +714,7 @@ async def test_bluetooth_discovery_with_cached_config(
 
     # Confirm the discovery
     with patch(
-        "homeassistant.components.yalexs_ble.async_setup_entry",
+        "inpui.components.yalexs_ble.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -748,11 +748,11 @@ async def test_integration_discovery_updates_key_unique_local_name(
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+            "inpui.components.yalexs_ble.util.async_discovered_service_info",
             return_value=[LOCK_DISCOVERY_INFO_UUID_ADDRESS],
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -792,7 +792,7 @@ async def test_integration_discovery_updates_key_without_unique_local_name(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[LOCK_DISCOVERY_INFO_UUID_ADDRESS],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -841,7 +841,7 @@ async def test_integration_discovery_updates_key_duplicate_local_name(
     entry2.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[LOCK_DISCOVERY_INFO_UUID_ADDRESS],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -883,7 +883,7 @@ async def test_integration_discovery_takes_precedence_over_bluetooth_uuid_addres
     assert flows[0].local_name == LOCK_DISCOVERY_INFO_UUID_ADDRESS.name
 
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[LOCK_DISCOVERY_INFO_UUID_ADDRESS],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -914,7 +914,7 @@ async def test_integration_discovery_takes_precedence_over_bluetooth_uuid_addres
     assert len(flows) == 1
 
     with patch(
-        "homeassistant.components.yalexs_ble.async_setup_entry",
+        "inpui.components.yalexs_ble.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -959,7 +959,7 @@ async def test_integration_discovery_takes_precedence_over_bluetooth_non_unique_
     assert flows[0].local_name == OLD_FIRMWARE_LOCK_DISCOVERY_INFO.name
 
     with patch(
-        "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+        "inpui.components.yalexs_ble.util.async_discovered_service_info",
         return_value=[OLD_FIRMWARE_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -998,7 +998,7 @@ async def test_user_is_setting_up_lock_and_discovery_happens_in_the_middle(
     In this case the integration discovery should abort and let the user continue setting up the lock.
     """
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_YALE_DISCOVERY_INFO, YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1026,11 +1026,11 @@ async def test_user_is_setting_up_lock_and_discovery_happens_in_the_middle(
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
             side_effect=_wait_for_user_flow,
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1046,7 +1046,7 @@ async def test_user_is_setting_up_lock_and_discovery_happens_in_the_middle(
         await valdidate_started.wait()
 
         with patch(
-            "homeassistant.components.yalexs_ble.util.async_discovered_service_info",
+            "inpui.components.yalexs_ble.util.async_discovered_service_info",
             return_value=[LOCK_DISCOVERY_INFO_UUID_ADDRESS],
         ):
             discovery_result = await hass.config_entries.flow.async_init(
@@ -1099,7 +1099,7 @@ async def test_reauth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_validate"
 
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+        "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         side_effect=RuntimeError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1117,14 +1117,14 @@ async def test_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.async_ble_device_from_address",
+            "inpui.components.yalexs_ble.config_flow.async_ble_device_from_address",
             return_value=YALE_ACCESS_LOCK_DISCOVERY_INFO,
         ),
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1161,7 +1161,7 @@ async def test_user_step_with_cached_config(hass: HomeAssistant) -> None:
 
     # Now start a user flow - it should use the cached config
     with patch(
-        "homeassistant.components.yalexs_ble.config_flow.async_discovered_service_info",
+        "inpui.components.yalexs_ble.config_flow.async_discovered_service_info",
         return_value=[YALE_ACCESS_LOCK_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1185,10 +1185,10 @@ async def test_user_step_with_cached_config(hass: HomeAssistant) -> None:
     # When no user input is provided, it should use the cached config
     with (
         patch(
-            "homeassistant.components.yalexs_ble.config_flow.PushLock.validate",
+            "inpui.components.yalexs_ble.config_flow.PushLock.validate",
         ),
         patch(
-            "homeassistant.components.yalexs_ble.async_setup_entry",
+            "inpui.components.yalexs_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -1226,7 +1226,7 @@ async def test_options(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.yalexs_ble.PushLock",
+        "inpui.components.yalexs_ble.PushLock",
         return_value=_get_mock_push_lock(),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -1240,7 +1240,7 @@ async def test_options(hass: HomeAssistant) -> None:
     assert result["step_id"] == "device_options"
 
     with patch(
-        "homeassistant.components.yalexs_ble.async_setup_entry",
+        "inpui.components.yalexs_ble.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.options.async_configure(

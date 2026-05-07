@@ -161,7 +161,7 @@ async def test_display_access_token_aborted(hass: HomeAssistant) -> None:
     with (
         _patch_lg_netcast(session_error=True),
         patch(
-            "homeassistant.components.lg_netcast.config_flow.async_track_time_interval"
+            "inpui.components.lg_netcast.config_flow.async_track_time_interval"
         ) as mock_interval,
     ):
         mock_interval.side_effect = _async_track_time_interval

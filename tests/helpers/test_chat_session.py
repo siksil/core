@@ -16,7 +16,7 @@ from tests.common import async_fire_time_changed
 @pytest.fixture
 def mock_ulid() -> Generator[Mock]:
     """Mock the ulid library."""
-    with patch("homeassistant.helpers.chat_session.ulid_now") as mock_ulid_now:
+    with patch("inpui.helpers.chat_session.ulid_now") as mock_ulid_now:
         mock_ulid_now.return_value = "mock-ulid"
         yield mock_ulid_now
 

@@ -27,7 +27,7 @@ MOCK_COVER_DEVICE = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.chacon_dio.async_setup_entry", return_value=True
+        "inpui.components.chacon_dio.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -51,11 +51,11 @@ def mock_dio_chacon_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.chacon_dio.DIOChaconAPIClient",
+            "inpui.components.chacon_dio.DIOChaconAPIClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.chacon_dio.config_flow.DIOChaconAPIClient",
+            "inpui.components.chacon_dio.config_flow.DIOChaconAPIClient",
             new=mock_client,
         ),
     ):

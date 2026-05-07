@@ -581,7 +581,7 @@ async def test_discovery_update_unchanged_update(
     """Test update of discovered update."""
     data1 = '{ "name": "Beer", "state_topic": "text-topic", "command_topic": "command-topic"}'
     with patch(
-        "homeassistant.components.mqtt.text.MqttTextEntity.discovery_update"
+        "inpui.components.mqtt.text.MqttTextEntity.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, text.DOMAIN, data1, discovery_update
@@ -605,7 +605,7 @@ async def test_discovery_update_unchanged_climate(
     """Test update of discovered text entity."""
     data1 = '{ "name": "Beer", "command_topic": "cmd-topic" }'
     with patch(
-        "homeassistant.components.mqtt.text.MqttTextEntity.discovery_update"
+        "inpui.components.mqtt.text.MqttTextEntity.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, text.DOMAIN, data1, discovery_update

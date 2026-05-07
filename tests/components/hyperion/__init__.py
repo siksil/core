@@ -156,7 +156,7 @@ async def setup_test_config_entry(
     hyperion_client.instances = [TEST_INSTANCE_1]
 
     with patch(
-        "homeassistant.components.hyperion.client.HyperionClient",
+        "inpui.components.hyperion.client.HyperionClient",
         return_value=hyperion_client,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

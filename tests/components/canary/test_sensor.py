@@ -46,7 +46,7 @@ async def test_sensors_pro(
         mock_reading("air_quality", "0.59"),
     ]
 
-    with patch("homeassistant.components.canary.PLATFORMS", ["sensor"]):
+    with patch("inpui.components.canary.PLATFORMS", ["sensor"]):
         await init_integration(hass)
 
     sensors = {
@@ -108,7 +108,7 @@ async def test_sensors_attributes_pro(hass: HomeAssistant, canary) -> None:
         mock_reading("air_quality", "0.59"),
     ]
 
-    with patch("homeassistant.components.canary.PLATFORMS", ["sensor"]):
+    with patch("inpui.components.canary.PLATFORMS", ["sensor"]):
         await init_integration(hass)
 
     entity_id = "sensor.dining_room_home_dining_room_air_quality"
@@ -167,7 +167,7 @@ async def test_sensors_flex(
         mock_reading("wifi", "-57"),
     ]
 
-    with patch("homeassistant.components.canary.PLATFORMS", ["sensor"]):
+    with patch("inpui.components.canary.PLATFORMS", ["sensor"]):
         await init_integration(hass)
 
     sensors = {

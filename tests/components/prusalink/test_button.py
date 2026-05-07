@@ -16,7 +16,7 @@ from tests.typing import ClientSessionGenerator
 @pytest.fixture(autouse=True)
 def setup_button_platform_only():
     """Only setup button platform."""
-    with patch("homeassistant.components.prusalink.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.prusalink.PLATFORMS", [Platform.BUTTON]):
         yield
 
 
@@ -93,7 +93,7 @@ async def test_button_resume_cancel(
     with (
         patch(f"pyprusalink.PrusaLink.{method}") as mock_meth,
         patch(
-            "homeassistant.components.prusalink.coordinator.PrusaLinkUpdateCoordinator._fetch_data"
+            "inpui.components.prusalink.coordinator.PrusaLinkUpdateCoordinator._fetch_data"
         ),
     ):
         await hass.services.async_call(

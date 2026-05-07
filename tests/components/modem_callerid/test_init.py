@@ -24,7 +24,7 @@ async def test_setup_entry(hass: HomeAssistant) -> None:
     with (
         patch("aioserial.AioSerial", autospec=True),
         patch(
-            "homeassistant.components.modem_callerid.PhoneModem._get_response",
+            "inpui.components.modem_callerid.PhoneModem._get_response",
             return_value="OK",
         ),
         patch("phone_modem.PhoneModem._modem_sm"),

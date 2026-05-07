@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_discovery_fixture():
     """Mock discovery to avoid loading the whole bluetooth stack."""
     with patch(
-        "homeassistant.components.yale.data.discovery_flow.async_create_flow"
+        "inpui.components.yale.data.discovery_flow.async_create_flow"
     ) as mock_discovery:
         yield mock_discovery
 
@@ -68,5 +68,5 @@ def skip_cloud_fixture():
     We do not need to test it here as we only need to test our
     usage of the oauth2 helpers.
     """
-    with patch("homeassistant.components.cloud.async_setup", return_value=True):
+    with patch("inpui.components.cloud.async_setup", return_value=True):
         yield

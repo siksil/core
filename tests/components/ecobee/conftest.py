@@ -36,5 +36,5 @@ def mock_ecobee() -> Generator[MagicMock]:
     ecobee.get_thermostat = lambda index: ecobee.thermostats[index]
 
     ecobee.config = {ECOBEE_API_KEY: "mocked_key", ECOBEE_REFRESH_TOKEN: "mocked_token"}
-    with patch("homeassistant.components.ecobee.Ecobee", return_value=ecobee):
+    with patch("inpui.components.ecobee.Ecobee", return_value=ecobee):
         yield ecobee

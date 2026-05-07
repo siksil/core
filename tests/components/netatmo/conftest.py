@@ -93,7 +93,7 @@ def mock_config_entry_fixture(hass: HomeAssistant) -> MockConfigEntry:
 def netatmo_auth(hass: HomeAssistant) -> Generator[None]:
     """Restrict loaded platforms to list given."""
     with patch(
-        "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+        "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
     ) as mock_auth:
         mock_auth.return_value.async_post_request.side_effect = partial(
             fake_post_request, hass

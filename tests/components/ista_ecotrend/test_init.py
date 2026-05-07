@@ -99,7 +99,7 @@ async def test_update_failed(
     """Test coordinator update failed."""
 
     with patch(
-        "homeassistant.components.ista_ecotrend.PLATFORMS",
+        "inpui.components.ista_ecotrend.PLATFORMS",
         [],
     ):
         mock_ista.get_consumption_data.side_effect = ServerError
@@ -115,7 +115,7 @@ async def test_auth_failed(
 ) -> None:
     """Test coordinator auth failed and reauth flow started."""
     with patch(
-        "homeassistant.components.ista_ecotrend.PLATFORMS",
+        "inpui.components.ista_ecotrend.PLATFORMS",
         [],
     ):
         mock_ista.get_consumption_data.side_effect = LoginError

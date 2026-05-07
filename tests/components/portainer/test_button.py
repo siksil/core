@@ -34,7 +34,7 @@ async def test_all_button_entities_snapshot(
 ) -> None:
     """Snapshot test for all Portainer button entities."""
     with patch(
-        "homeassistant.components.portainer._PLATFORMS",
+        "inpui.components.portainer._PLATFORMS",
         [Platform.BUTTON],
     ):
         await setup_integration(hass, mock_config_entry)

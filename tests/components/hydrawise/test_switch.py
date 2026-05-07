@@ -31,7 +31,7 @@ async def test_all_switches(
 ) -> None:
     """Test that all switches are working."""
     with patch(
-        "homeassistant.components.hydrawise.PLATFORMS",
+        "inpui.components.hydrawise.PLATFORMS",
         [Platform.SWITCH],
     ):
         config_entry = await mock_add_config_entry()

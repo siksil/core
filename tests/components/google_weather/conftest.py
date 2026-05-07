@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.google_weather.async_setup_entry", return_value=True
+        "inpui.components.google_weather.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -68,10 +68,10 @@ def mock_google_weather_api() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.google_weather.GoogleWeatherApi", autospec=True
+            "inpui.components.google_weather.GoogleWeatherApi", autospec=True
         ) as mock_api,
         patch(
-            "homeassistant.components.google_weather.config_flow.GoogleWeatherApi",
+            "inpui.components.google_weather.config_flow.GoogleWeatherApi",
             new=mock_api,
         ),
     ):

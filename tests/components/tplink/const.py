@@ -20,8 +20,8 @@ from inpui.components.tplink import (
     Credentials,
 )
 
-MODULE = "homeassistant.components.tplink"
-MODULE_CONFIG_FLOW = "homeassistant.components.tplink.config_flow"
+MODULE = "inpui.components.tplink"
+MODULE_CONFIG_FLOW = "inpui.components.tplink.config_flow"
 IP_ADDRESS = "127.0.0.1"
 IP_ADDRESS2 = "127.0.0.2"
 IP_ADDRESS3 = "127.0.0.3"

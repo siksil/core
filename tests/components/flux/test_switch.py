@@ -211,7 +211,7 @@ async def test_flux_when_switch_is_off(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -269,7 +269,7 @@ async def test_flux_before_sunrise(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -392,7 +392,7 @@ async def test_flux_after_sunrise_before_sunset(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -456,7 +456,7 @@ async def test_flux_after_sunset_before_stop(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -521,7 +521,7 @@ async def test_flux_after_stop_before_sunrise(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -585,7 +585,7 @@ async def test_flux_with_custom_start_stop_times(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -654,7 +654,7 @@ async def test_flux_before_sunrise_stop_next_day(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -722,7 +722,7 @@ async def test_flux_after_sunrise_before_sunset_stop_next_day(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -790,7 +790,7 @@ async def test_flux_after_sunset_before_midnight_stop_next_day(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -858,7 +858,7 @@ async def test_flux_after_sunset_after_midnight_stop_next_day(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -926,7 +926,7 @@ async def test_flux_after_stop_before_sunrise_stop_next_day(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -991,7 +991,7 @@ async def test_flux_with_custom_colortemps(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -1058,7 +1058,7 @@ async def test_flux_with_custom_brightness(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -1141,7 +1141,7 @@ async def test_flux_with_multiple_lights(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -1210,7 +1210,7 @@ async def test_flux_with_temp(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):
@@ -1273,7 +1273,7 @@ async def test_flux_with_rgb(
     with (
         freeze_time(test_time),
         patch(
-            "homeassistant.components.flux.switch.get_astral_event_date",
+            "inpui.components.flux.switch.get_astral_event_date",
             side_effect=event_date,
         ),
     ):

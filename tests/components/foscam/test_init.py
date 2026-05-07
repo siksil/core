@@ -23,7 +23,7 @@ async def test_unique_id_new_entry(
 
     with (
         # Mock a valid camera instance"
-        patch("homeassistant.components.foscam.FoscamCamera") as mock_foscam_camera,
+        patch("inpui.components.foscam.FoscamCamera") as mock_foscam_camera,
     ):
         setup_mock_foscam_camera(mock_foscam_camera)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -61,7 +61,7 @@ async def test_switch_unique_id_migration_ok(
 
     with (
         # Mock a valid camera instance"
-        patch("homeassistant.components.foscam.FoscamCamera") as mock_foscam_camera,
+        patch("inpui.components.foscam.FoscamCamera") as mock_foscam_camera,
     ):
         setup_mock_foscam_camera(mock_foscam_camera)
         await hass.config_entries.async_setup(entry.entry_id)
@@ -97,9 +97,9 @@ async def test_unique_id_migration_not_needed(
 
     with (
         # Mock a valid camera instance
-        patch("homeassistant.components.foscam.FoscamCamera") as mock_foscam_camera,
+        patch("inpui.components.foscam.FoscamCamera") as mock_foscam_camera,
         patch(
-            "homeassistant.components.foscam.async_migrate_entry",
+            "inpui.components.foscam.async_migrate_entry",
             return_value=True,
         ),
     ):

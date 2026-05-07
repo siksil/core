@@ -21,7 +21,7 @@ ENTITY_IR_TRANSMITTER = "infrared.ir_blaster_infrared_transmitter"
 def no_platforms() -> Generator[None]:
     """Don't enable any platforms."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [],
     ):
         yield
@@ -31,7 +31,7 @@ def no_platforms() -> Generator[None]:
 def infrared_only() -> Generator[None]:
     """Enable only the infrared platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.INFRARED],
     ):
         yield
@@ -39,7 +39,7 @@ def infrared_only() -> Generator[None]:
 
 async def test_import(hass: HomeAssistant) -> None:
     """Test that we can import a config entry."""
-    with patch("homeassistant.components.kitchen_sink.async_setup_entry"):
+    with patch("inpui.components.kitchen_sink.async_setup_entry"):
         assert await setup.async_setup_component(hass, DOMAIN, {DOMAIN: {}})
         await hass.async_block_till_done()
 
@@ -51,7 +51,7 @@ async def test_import(hass: HomeAssistant) -> None:
 async def test_import_once(hass: HomeAssistant) -> None:
     """Test that we don't create multiple config entries."""
     with patch(
-        "homeassistant.components.kitchen_sink.async_setup_entry",
+        "inpui.components.kitchen_sink.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -67,7 +67,7 @@ async def test_import_once(hass: HomeAssistant) -> None:
 
     # Test importing again doesn't create a 2nd entry
     with patch(
-        "homeassistant.components.kitchen_sink.async_setup_entry"
+        "inpui.components.kitchen_sink.async_setup_entry"
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,

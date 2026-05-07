@@ -38,7 +38,7 @@ def mock_mqtt_fixture(hass: HomeAssistant) -> None:
 @pytest.fixture(name="is_serial_port")
 def is_serial_port_fixture() -> Generator[MagicMock]:
     """Patch the serial port check."""
-    with patch("homeassistant.components.mysensors.gateway.cv.isdevice") as is_device:
+    with patch("inpui.components.mysensors.gateway.cv.isdevice") as is_device:
         is_device.side_effect = lambda device: device
         yield is_device
 
@@ -141,7 +141,7 @@ async def integration_fixture(
     config: dict[str, Any] = {}
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.mysensors.entity.Debouncer", autospec=True
+        "inpui.components.mysensors.entity.Debouncer", autospec=True
     ) as debouncer_class:
 
         def debouncer(

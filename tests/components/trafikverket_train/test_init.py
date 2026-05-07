@@ -41,10 +41,10 @@ async def test_unload_entry(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             return_value=get_trains,
         ) as mock_tv_train,
     ):
@@ -77,7 +77,7 @@ async def test_auth_failed(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+        "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
         side_effect=InvalidAuthentication,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -108,7 +108,7 @@ async def test_no_stations(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+        "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
         side_effect=NoTrainStationFound,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -145,10 +145,10 @@ async def test_migrate_entity_unique_id(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             return_value=get_trains,
         ),
     ):
@@ -181,14 +181,14 @@ async def test_migrate_entry(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             return_value=get_trains,
         ),
     ):
@@ -258,7 +258,7 @@ async def test_migrate_entry_fails(hass: HomeAssistant, side_effect: Exception) 
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -287,7 +287,7 @@ async def test_migrate_entry_fails_multiple_stations(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_multiple_train_stations,
         ),
     ):

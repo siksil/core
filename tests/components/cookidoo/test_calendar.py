@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def calendar_only() -> Generator[None]:
     """Enable only the calendar platform."""
     with patch(
-        "homeassistant.components.cookidoo.PLATFORMS",
+        "inpui.components.cookidoo.PLATFORMS",
         [Platform.CALENDAR],
     ):
         yield
@@ -36,7 +36,7 @@ async def test_calendar(
 ) -> None:
     """Snapshot test states of calendar platform."""
 
-    with patch("homeassistant.components.cookidoo.PLATFORMS", [Platform.CALENDAR]):
+    with patch("inpui.components.cookidoo.PLATFORMS", [Platform.CALENDAR]):
         await setup_integration(hass, cookidoo_config_entry)
 
     assert cookidoo_config_entry.state is ConfigEntryState.LOADED
@@ -57,7 +57,7 @@ async def test_get_events(
 ) -> None:
     """Test fetching events from Cookidoo calendar."""
 
-    with patch("homeassistant.components.cookidoo.PLATFORMS", [Platform.CALENDAR]):
+    with patch("inpui.components.cookidoo.PLATFORMS", [Platform.CALENDAR]):
         await setup_integration(hass, cookidoo_config_entry)
 
     assert cookidoo_config_entry.state is ConfigEntryState.LOADED

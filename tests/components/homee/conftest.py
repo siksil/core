@@ -24,7 +24,7 @@ NEW_TESTPASS = "testpass2"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.homee.async_setup_entry", return_value=True
+        "inpui.components.homee.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -50,10 +50,10 @@ def mock_homee() -> Generator[AsyncMock]:
     """Return a mock Homee instance."""
     with (
         patch(
-            "homeassistant.components.homee.config_flow.Homee", autospec=True
+            "inpui.components.homee.config_flow.Homee", autospec=True
         ) as mocked_homee,
         patch(
-            "homeassistant.components.homee.Homee",
+            "inpui.components.homee.Homee",
             new=mocked_homee,
         ),
     ):

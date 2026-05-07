@@ -32,7 +32,7 @@ from tests.common import (
 def button_only() -> Generator[None]:
     """Enable only the button platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.BUTTON],
     ):
         yield

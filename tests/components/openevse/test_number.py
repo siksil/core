@@ -26,7 +26,7 @@ async def test_entities(
     mock_charger: MagicMock,
 ) -> None:
     """Test the sensor entities."""
-    with patch("homeassistant.components.openevse.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.openevse.PLATFORMS", [Platform.NUMBER]):
         mock_config_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
 

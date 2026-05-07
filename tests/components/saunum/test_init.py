@@ -38,7 +38,7 @@ async def test_async_setup_entry_connection_failed(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.saunum.SaunumClient.create",
+        "inpui.components.saunum.SaunumClient.create",
         side_effect=SaunumConnectionError("Connection failed"),
     ):
         assert not await hass.config_entries.async_setup(mock_config_entry.entry_id)

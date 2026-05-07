@@ -24,11 +24,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.advantage_air.config_flow.advantage_air.async_get",
+            "inpui.components.advantage_air.config_flow.advantage_air.async_get",
             new=AsyncMock(return_value=TEST_SYSTEM_DATA),
         ) as mock_get,
         patch(
-            "homeassistant.components.advantage_air.async_setup_entry",
+            "inpui.components.advantage_air.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -49,7 +49,7 @@ async def test_form(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.advantage_air.config_flow.advantage_air.async_get",
+        "inpui.components.advantage_air.config_flow.advantage_air.async_get",
         new=AsyncMock(return_value=TEST_SYSTEM_DATA),
     ) as mock_get:
         result4 = await hass.config_entries.flow.async_configure(
@@ -66,7 +66,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.advantage_air.config_flow.advantage_air.async_get",
+        "inpui.components.advantage_air.config_flow.advantage_air.async_get",
         new=AsyncMock(side_effect=ApiError),
     ) as mock_get:
         result2 = await hass.config_entries.flow.async_configure(

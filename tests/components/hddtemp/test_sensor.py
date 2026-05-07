@@ -85,7 +85,7 @@ class TelnetMock:
 @pytest.fixture
 def telnetmock():
     """Mock telnet."""
-    with patch("homeassistant.components.hddtemp.sensor.Telnet", new=TelnetMock):
+    with patch("inpui.components.hddtemp.sensor.Telnet", new=TelnetMock):
         yield
 
 

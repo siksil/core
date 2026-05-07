@@ -70,7 +70,7 @@ async def test_device_diagnostics(
 
     mock_smartthings.get_raw_device_status.reset_mock()
 
-    with patch("homeassistant.components.smartthings.diagnostics.EVENT_WAIT_TIME", 0.1):
+    with patch("inpui.components.smartthings.diagnostics.EVENT_WAIT_TIME", 0.1):
         diag = await get_diagnostics_for_device(
             hass, hass_client, mock_config_entry, device
         )

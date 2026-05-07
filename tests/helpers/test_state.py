@@ -26,13 +26,13 @@ from tests.common import async_mock_service
 async def test_call_to_component(hass: HomeAssistant) -> None:
     """Test calls to components state reproduction functions."""
     with patch(
-        "homeassistant.components.media_player.reproduce_state.async_reproduce_states"
+        "inpui.components.media_player.reproduce_state.async_reproduce_states"
     ) as media_player_fun:
         media_player_fun.return_value = asyncio.Future()
         media_player_fun.return_value.set_result(None)
 
         with patch(
-            "homeassistant.components.climate.reproduce_state.async_reproduce_states"
+            "inpui.components.climate.reproduce_state.async_reproduce_states"
         ) as climate_fun:
             climate_fun.return_value = asyncio.Future()
             climate_fun.return_value.set_result(None)

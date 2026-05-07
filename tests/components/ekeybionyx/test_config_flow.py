@@ -123,7 +123,7 @@ async def test_full_flow(
     }
 
     with patch(
-        "homeassistant.components.ekeybionyx.async_setup_entry", return_value=True
+        "inpui.components.ekeybionyx.async_setup_entry", return_value=True
     ) as mock_setup:
         flow5 = await hass.config_entries.flow.async_configure(
             flow2["flow_id"],

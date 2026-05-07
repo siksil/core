@@ -287,9 +287,9 @@ def _patch_wizlight(
     def _patcher() -> Generator[None]:
         bulb = device or _mocked_wizlight(device, extended_white_range, bulb_type)
         with (
-            patch("homeassistant.components.wiz.wizlight", return_value=bulb),
+            patch("inpui.components.wiz.wizlight", return_value=bulb),
             patch(
-                "homeassistant.components.wiz.config_flow.wizlight",
+                "inpui.components.wiz.config_flow.wizlight",
                 return_value=bulb,
             ),
         ):
@@ -302,7 +302,7 @@ def _patch_discovery() -> _GeneratorContextManager[None]:
     @contextmanager
     def _patcher() -> Generator[None]:
         with patch(
-            "homeassistant.components.wiz.discovery.find_wizlights",
+            "inpui.components.wiz.discovery.find_wizlights",
             return_value=[DiscoveredBulb(FAKE_IP, FAKE_MAC)],
         ):
             yield

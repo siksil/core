@@ -94,7 +94,7 @@ def _mock_light_brightness_levels(device_type: str) -> list[int]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.letpot.async_setup_entry", return_value=True
+        "inpui.components.letpot.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -104,11 +104,11 @@ def mock_client(device_type: str) -> Generator[AsyncMock]:
     """Mock a LetPotClient."""
     with (
         patch(
-            "homeassistant.components.letpot.LetPotClient",
+            "inpui.components.letpot.LetPotClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.letpot.config_flow.LetPotClient",
+            "inpui.components.letpot.config_flow.LetPotClient",
             new=mock_client,
         ),
     ):
@@ -131,7 +131,7 @@ def mock_client(device_type: str) -> Generator[AsyncMock]:
 def mock_device_client() -> Generator[AsyncMock]:
     """Mock a LetPotDeviceClient."""
     with patch(
-        "homeassistant.components.letpot.LetPotDeviceClient",
+        "inpui.components.letpot.LetPotDeviceClient",
         autospec=True,
     ) as mock_device_client:
         device_client = mock_device_client.return_value

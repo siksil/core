@@ -130,7 +130,7 @@ MOCK_DEVICE_STATE = DeviceState(
 def patch_refresh_delay() -> Generator[None]:
     """Patch REFRESH_DELAY to 0 to avoid delays in tests."""
     with patch(
-        "homeassistant.components.liebherr.entity.REFRESH_DELAY",
+        "inpui.components.liebherr.entity.REFRESH_DELAY",
         timedelta(seconds=0),
     ):
         yield
@@ -140,7 +140,7 @@ def patch_refresh_delay() -> Generator[None]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.liebherr.async_setup_entry", return_value=True
+        "inpui.components.liebherr.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -160,11 +160,11 @@ def mock_liebherr_client() -> Generator[MagicMock]:
     """Return a mocked Liebherr client."""
     with (
         patch(
-            "homeassistant.components.liebherr.LiebherrClient",
+            "inpui.components.liebherr.LiebherrClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.liebherr.config_flow.LiebherrClient",
+            "inpui.components.liebherr.config_flow.LiebherrClient",
             new=mock_client,
         ),
     ):
@@ -202,7 +202,7 @@ async def init_integration(
     """Set up the Liebherr integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.liebherr.PLATFORMS", platforms):
+    with patch("inpui.components.liebherr.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

@@ -32,13 +32,13 @@ async def setup_integration(
 ) -> None:
     """Fixture for setting up the component."""
     with (
-        patch("homeassistant.components.squeezebox.Server", return_value=lms),
+        patch("inpui.components.squeezebox.Server", return_value=lms),
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.MEDIA_PLAYER],
         ),
         patch(
-            "homeassistant.components.squeezebox.media_player.start_server_discovery"
+            "inpui.components.squeezebox.media_player.start_server_discovery"
         ),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -92,7 +92,7 @@ async def test_async_browse_media_with_subitems(
 ) -> None:
     """Test each category with subitems."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         client = await hass_ws_client()
@@ -137,7 +137,7 @@ async def test_async_browse_media_for_apps(
 ) -> None:
     """Test browsing for app category."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         category = "Apps"
@@ -193,7 +193,7 @@ async def test_async_search_media(
 ) -> None:
     """Test each category with subitems."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         client = await hass_ws_client()
@@ -221,7 +221,7 @@ async def test_async_search_media_invalid_filter(
 ) -> None:
     """Test search_media action with invalid media_filter_class."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         client = await hass_ws_client()
@@ -248,7 +248,7 @@ async def test_async_search_media_invalid_type(
 ) -> None:
     """Test search_media action with invalid media_content_type."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         client = await hass_ws_client()
@@ -275,7 +275,7 @@ async def test_async_search_media_not_found(
 ) -> None:
     """Test trying to play an item that doesn't exist."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         client = await hass_ws_client()
@@ -300,7 +300,7 @@ async def test_generate_playlist_for_app(
 ) -> None:
     """Test the generate_playlist for app-fakecommand media type."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         category = "Apps"
@@ -339,7 +339,7 @@ async def test_async_browse_tracks(
 ) -> None:
     """Test tracks (no subitems)."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=True,
     ):
         client = await hass_ws_client()
@@ -437,7 +437,7 @@ async def test_synthetic_thumbnail_item_ids(
 ) -> None:
     """Test synthetic ID generation and url caching for items without stable IDs."""
     with patch(
-        "homeassistant.components.squeezebox.browse_media.is_internal_request",
+        "inpui.components.squeezebox.browse_media.is_internal_request",
         return_value=False,
     ):
         client = await hass_ws_client()

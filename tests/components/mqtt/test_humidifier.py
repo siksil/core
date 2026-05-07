@@ -1344,7 +1344,7 @@ async def test_discovery_update_unchanged_humidifier(
     """Test update of discovered humidifier."""
     data1 = '{ "name": "Beer", "command_topic": "test_topic", "target_humidity_command_topic": "test-topic2" }'
     with patch(
-        "homeassistant.components.mqtt.fan.MqttFan.discovery_update"
+        "inpui.components.mqtt.fan.MqttFan.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, humidifier.DOMAIN, data1, discovery_update

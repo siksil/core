@@ -207,7 +207,7 @@ async def test_switches_can_be_enabled(
         assert not entity_state
 
         with patch(
-            "homeassistant.components.hyperion.client.HyperionClient",
+            "inpui.components.hyperion.client.HyperionClient",
             return_value=client,
         ):
             updated_entry = entity_registry.async_update_entity(

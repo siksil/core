@@ -37,7 +37,7 @@ async def setup_homeassistant(hass: HomeAssistant) -> None:
 def camera_only() -> Generator[None]:
     """Enable only the camera platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.CAMERA],
     ):
         yield
@@ -52,7 +52,7 @@ async def mock_camera_fixture(hass: HomeAssistant) -> AsyncGenerator[None]:
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.demo.camera.Path.read_bytes",
+        "inpui.components.demo.camera.Path.read_bytes",
         return_value=b"Test",
     ):
         yield
@@ -62,7 +62,7 @@ async def mock_camera_fixture(hass: HomeAssistant) -> AsyncGenerator[None]:
 def mock_camera_hls_fixture(mock_camera: None) -> Generator[None]:
     """Initialize a demo camera platform with HLS."""
     with patch(
-        "homeassistant.components.camera.Camera.camera_capabilities",
+        "inpui.components.camera.Camera.camera_capabilities",
         new_callable=PropertyMock(
             return_value=camera.CameraCapabilities({StreamType.HLS})
         ),
@@ -83,11 +83,11 @@ async def mock_camera_webrtc(
 
     with (
         patch(
-            "homeassistant.components.camera.Camera.async_handle_async_webrtc_offer",
+            "inpui.components.camera.Camera.async_handle_async_webrtc_offer",
             side_effect=async_handle_async_webrtc_offer,
         ),
         patch(
-            "homeassistant.components.camera.Camera.camera_capabilities",
+            "inpui.components.camera.Camera.camera_capabilities",
             new_callable=PropertyMock(
                 return_value=camera.CameraCapabilities({StreamType.WEB_RTC})
             ),
@@ -110,12 +110,12 @@ def mock_camera_with_device_fixture() -> Generator[None]:
 
     with (
         patch(
-            "homeassistant.components.camera.Camera.has_entity_name",
+            "inpui.components.camera.Camera.has_entity_name",
             new_callable=PropertyMock(return_value=True),
         ),
-        patch("homeassistant.components.camera.Camera.unique_id", new=UniqueIdMock()),
+        patch("inpui.components.camera.Camera.unique_id", new=UniqueIdMock()),
         patch(
-            "homeassistant.components.camera.Camera.device_info",
+            "inpui.components.camera.Camera.device_info",
             new_callable=PropertyMock(return_value=dev_info),
         ),
     ):
@@ -126,7 +126,7 @@ def mock_camera_with_device_fixture() -> Generator[None]:
 def mock_camera_with_no_name_fixture(mock_camera_with_device: None) -> Generator[None]:
     """Initialize a demo camera platform with a device and no name."""
     with patch(
-        "homeassistant.components.camera.Camera._attr_name",
+        "inpui.components.camera.Camera._attr_name",
         new_callable=PropertyMock(return_value=None),
     ):
         yield
@@ -142,7 +142,7 @@ async def mock_stream_fixture(hass: HomeAssistant) -> None:
 def mock_stream_source_fixture() -> Generator[AsyncMock]:
     """Fixture to create an RTSP stream source."""
     with patch(
-        "homeassistant.components.camera.Camera.stream_source",
+        "inpui.components.camera.Camera.stream_source",
         return_value=STREAM_SOURCE,
     ) as mock_stream_source:
         yield mock_stream_source
@@ -158,7 +158,7 @@ def mock_create_stream_fixture() -> Generator[Mock]:
     mock_stream.set_update_callback = Mock()
     mock_stream.available = True
     with patch(
-        "homeassistant.components.camera.create_stream",
+        "inpui.components.camera.create_stream",
         return_value=mock_stream,
     ):
         yield mock_stream

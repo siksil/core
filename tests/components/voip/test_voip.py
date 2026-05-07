@@ -141,7 +141,7 @@ async def test_pipeline_not_found(
     assert await async_setup_component(hass, "voip", {})
 
     with patch(
-        "homeassistant.components.voip.voip.async_get_pipeline", return_value=None
+        "inpui.components.voip.voip.async_get_pipeline", return_value=None
     ):
         protocol: PreRecordMessageProtocol = make_protocol(
             hass, voip_devices, call_info
@@ -180,7 +180,7 @@ async def test_satellite_prepared(
 
     with (
         patch(
-            "homeassistant.components.voip.voip.async_get_pipeline",
+            "inpui.components.voip.voip.async_get_pipeline",
             return_value=pipeline,
         ),
     ):
@@ -330,7 +330,7 @@ async def test_pipeline(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch.object(satellite, "tts_response_finished", tts_response_finished),
@@ -384,7 +384,7 @@ async def test_stt_stream_timeout(
             pass
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         new=async_pipeline_from_audio_stream,
     ):
         satellite._tones = Tones(0)
@@ -466,7 +466,7 @@ async def test_tts_timeout(
         await asyncio.sleep(2)
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         new=async_pipeline_from_audio_stream,
     ):
         satellite._tts_extra_timeout = 0.001
@@ -557,7 +557,7 @@ async def test_tts_wrong_extension(
         )
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         new=async_pipeline_from_audio_stream,
     ):
         original_send_tts = satellite._send_tts
@@ -650,7 +650,7 @@ async def test_tts_wrong_wav_format(
         )
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         new=async_pipeline_from_audio_stream,
     ):
         original_send_tts = satellite._send_tts
@@ -740,11 +740,11 @@ async def test_empty_tts_output(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch(
-            "homeassistant.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
+            "inpui.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
         ) as mock_send_tts,
     ):
         satellite.connection_made(Mock())
@@ -807,7 +807,7 @@ async def test_pipeline_error(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
     ):
@@ -869,7 +869,7 @@ async def test_announce(
 
     with (
         patch(
-            "homeassistant.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
+            "inpui.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
         ) as mock_send_tts,
     ):
         announce_task = hass.async_create_background_task(
@@ -925,7 +925,7 @@ async def test_voip_id_is_ip_address(
     with (
         patch.object(voip_device, "voip_id", "192.168.68.10"),
         patch(
-            "homeassistant.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
+            "inpui.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
         ) as mock_send_tts,
     ):
         announce_task = hass.async_create_background_task(
@@ -986,7 +986,7 @@ async def test_announce_timeout(
     # Very short timeout which will trigger because we don't send any audio in
     with (
         patch(
-            "homeassistant.components.voip.assist_satellite._ANNOUNCEMENT_RING_TIMEOUT",
+            "inpui.components.voip.assist_satellite._ANNOUNCEMENT_RING_TIMEOUT",
             0.01,
         ),
     ):
@@ -1069,11 +1069,11 @@ async def test_start_conversation(
 
     with (
         patch(
-            "homeassistant.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
+            "inpui.components.voip.assist_satellite.VoipAssistSatellite._send_tts",
             new=_send_tts,
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
     ):
@@ -1136,7 +1136,7 @@ async def test_start_conversation_user_doesnt_pick_up(
     # Very short timeout which will trigger because we don't send any audio in
     with (
         patch(
-            "homeassistant.components.voip.assist_satellite._ANNOUNCEMENT_RING_TIMEOUT",
+            "inpui.components.voip.assist_satellite._ANNOUNCEMENT_RING_TIMEOUT",
             0.1,
         ),
     ):

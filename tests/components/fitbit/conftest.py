@@ -150,7 +150,7 @@ async def mock_integration_setup(
     config_entry.add_to_hass(hass)
 
     async def run() -> bool:
-        with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+        with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
             result = await hass.config_entries.async_setup(config_entry.entry_id)
             await hass.async_block_till_done()
         return result

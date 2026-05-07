@@ -20,7 +20,7 @@ from .conftest import mock_config, mock_feature, mock_only_feature, setup_produc
 from tests.common import MockConfigEntry
 
 
-def create_valid_feature_mock(path="homeassistant.components.blebox.Products"):
+def create_valid_feature_mock(path="inpui.components.blebox.Products"):
     """Return a valid, complete BleBox feature mock."""
     feature = mock_only_feature(
         blebox_uniapi.cover.Cover,
@@ -54,7 +54,7 @@ def valid_feature_mock_fixture():
 def flow_feature_mock_fixture():
     """Return a mocked user flow feature."""
     return create_valid_feature_mock(
-        "homeassistant.components.blebox.config_flow.Products"
+        "inpui.components.blebox.config_flow.Products"
     )
 
 
@@ -87,7 +87,7 @@ async def test_flow_works(
 @pytest.fixture(name="product_class_mock")
 def product_class_mock_fixture():
     """Return a mocked feature."""
-    path = "homeassistant.components.blebox.config_flow.Box"
+    path = "inpui.components.blebox.config_flow.Box"
     return patch(path, DEFAULT, blebox_uniapi.box.Box, True, True)
 
 
@@ -240,7 +240,7 @@ async def test_flow_with_zeroconf(hass: HomeAssistant) -> None:
 
     assert result["type"] is FlowResultType.FORM
 
-    with patch("homeassistant.components.blebox.async_setup_entry", return_value=True):
+    with patch("inpui.components.blebox.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(result["flow_id"], {})
         await hass.async_block_till_done()
 
@@ -261,7 +261,7 @@ async def test_flow_with_zeroconf_when_already_configured(hass: HomeAssistant) -
         blebox_uniapi.sensor.Temperature,
     )
     with patch(
-        "homeassistant.components.blebox.config_flow.Box.async_from_host",
+        "inpui.components.blebox.config_flow.Box.async_from_host",
         return_value=feature.product,
     ):
         result2 = await hass.config_entries.flow.async_init(
@@ -285,7 +285,7 @@ async def test_flow_with_zeroconf_when_already_configured(hass: HomeAssistant) -
 async def test_flow_with_zeroconf_when_device_unsupported(hass: HomeAssistant) -> None:
     """Test behaviour when device is not supported."""
     with patch(
-        "homeassistant.components.blebox.config_flow.Box.async_from_host",
+        "inpui.components.blebox.config_flow.Box.async_from_host",
         side_effect=blebox_uniapi.error.UnsupportedBoxVersion,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -311,7 +311,7 @@ async def test_flow_with_zeroconf_when_device_response_unsupported(
     """Test behaviour when device returned unsupported response."""
 
     with patch(
-        "homeassistant.components.blebox.config_flow.Box.async_from_host",
+        "inpui.components.blebox.config_flow.Box.async_from_host",
         side_effect=blebox_uniapi.error.UnsupportedBoxResponse,
     ):
         result = await hass.config_entries.flow.async_init(

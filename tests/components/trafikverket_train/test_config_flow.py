@@ -44,11 +44,11 @@ async def test_form(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -91,7 +91,7 @@ async def test_form_multiple_stations(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_multiple_train_stations,
         ),
     ):
@@ -109,11 +109,11 @@ async def test_form_multiple_stations(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_multiple_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -168,14 +168,14 @@ async def test_form_entry_already_exist(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_get_train_stop",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -225,7 +225,7 @@ async def test_flow_fails(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -267,7 +267,7 @@ async def test_flow_fails_departures(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -309,11 +309,11 @@ async def test_reauth_flow(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -382,7 +382,7 @@ async def test_reauth_flow_error(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -398,11 +398,11 @@ async def test_reauth_flow_error(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -463,7 +463,7 @@ async def test_reauth_flow_error_departures(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -479,14 +479,14 @@ async def test_reauth_flow_error_departures(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_get_train_stop",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -532,18 +532,18 @@ async def test_options_flow(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             return_value=get_trains,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
             return_value=get_train_stop,
         ),
     ):
@@ -601,11 +601,11 @@ async def test_reconfigure_flow(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -647,7 +647,7 @@ async def test_reconfigure_multiple_stations(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_multiple_train_stations,
         ),
     ):
@@ -665,11 +665,11 @@ async def test_reconfigure_multiple_stations(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_multiple_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -723,14 +723,14 @@ async def test_reconfigure_entry_already_exist(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_get_train_stop",
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -790,7 +790,7 @@ async def test_reconfigure_flow_fails(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -807,11 +807,11 @@ async def test_reconfigure_flow_fails(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -865,7 +865,7 @@ async def test_reconfigure_flow_fails_departures(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.config_flow.TrafikverketTrain.async_search_train_stations",
             side_effect=side_effect(),
         ),
     ):
@@ -882,11 +882,11 @@ async def test_reconfigure_flow_fails_departures(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_stations",
             side_effect=get_train_stations,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.async_setup_entry",
+            "inpui.components.trafikverket_train.async_setup_entry",
             return_value=True,
         ),
     ):

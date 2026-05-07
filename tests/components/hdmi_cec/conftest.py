@@ -22,7 +22,7 @@ def mock_cec_adapter_fixture() -> Generator[MagicMock]:
     Always mocked as it imports the `cec` library which is part of `libcec`.
     """
     with patch(
-        "homeassistant.components.hdmi_cec.CecAdapter", autospec=True
+        "inpui.components.hdmi_cec.CecAdapter", autospec=True
     ) as mock_cec_adapter:
         yield mock_cec_adapter
 
@@ -31,7 +31,7 @@ def mock_cec_adapter_fixture() -> Generator[MagicMock]:
 def mock_hdmi_network_fixture() -> Generator[MagicMock]:
     """Mock HDMINetwork."""
     with patch(
-        "homeassistant.components.hdmi_cec.HDMINetwork", autospec=True
+        "inpui.components.hdmi_cec.HDMINetwork", autospec=True
     ) as mock_hdmi_network:
         yield mock_hdmi_network
 

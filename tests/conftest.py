@@ -327,7 +327,7 @@ def skip_stop_scripts(
         yield
         return
     with patch(
-        "homeassistant.helpers.script._schedule_stop_scripts_after_shutdown",
+        "inpui.helpers.script._schedule_stop_scripts_after_shutdown",
         Mock(),
     ):
         yield
@@ -699,7 +699,7 @@ async def stop_hass() -> AsyncGenerator[None]:
         created.append(hass_inst)
         return hass_inst
 
-    with patch("homeassistant.core.HomeAssistant", mock_hass):
+    with patch("inpui.core.HomeAssistant", mock_hass):
         yield
 
     for hass_inst in created:
@@ -737,13 +737,13 @@ def mock_device_tracker_conf() -> Generator[list[Device]]:
     with (
         patch(
             (
-                "homeassistant.components.device_tracker.legacy"
+                "inpui.components.device_tracker.legacy"
                 ".DeviceTracker.async_update_config"
             ),
             side_effect=mock_update_config,
         ),
         patch(
-            "homeassistant.components.device_tracker.legacy.async_load_config",
+            "inpui.components.device_tracker.legacy.async_load_config",
             side_effect=lambda *args: devices,
         ),
     ):
@@ -894,7 +894,7 @@ def hass_client_no_auth(
 @pytest.fixture
 def current_request() -> Generator[MagicMock]:
     """Mock current request."""
-    with patch("homeassistant.helpers.http.current_request") as mock_request_context:
+    with patch("inpui.helpers.http.current_request") as mock_request_context:
         mocked_request = make_mocked_request(
             "GET",
             "/some/request",
@@ -984,7 +984,7 @@ def fail_on_log_exception(
     def log_exception(format_err, *args):
         raise  # noqa: PLE0704
 
-    monkeypatch.setattr("homeassistant.util.logging.log_exception", log_exception)
+    monkeypatch.setattr("inpui.util.logging.log_exception", log_exception)
 
 
 @pytest.fixture
@@ -1024,7 +1024,7 @@ def mqtt_client_mock(hass: HomeAssistant) -> Generator[MqttMockPahoClient]:
             self.rc = 0
 
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         # The below use a call_soon for the on_publish/on_subscribe/on_unsubscribe
         # callbacks to simulate the behavior of the real MQTT client which will
@@ -1159,7 +1159,7 @@ async def _mqtt_mock_entry(
         )
         return mock_mqtt_instance
 
-    with patch("homeassistant.components.mqtt.MQTT", side_effect=create_mock_mqtt):
+    with patch("inpui.components.mqtt.MQTT", side_effect=create_mock_mqtt):
         yield _setup_mqtt_entry
 
 
@@ -1183,7 +1183,7 @@ def mock_hass_config(hass: HomeAssistant, hass_config: ConfigType) -> Generator[
     """
     if hass_config:
         hass.config_entries = ConfigEntries(hass, hass_config)
-    with patch("homeassistant.config.load_yaml_config_file", return_value=hass_config):
+    with patch("inpui.config.load_yaml_config_file", return_value=hass_config):
         yield
 
 
@@ -1261,7 +1261,7 @@ def mock_network() -> Generator[None]:
     """Mock network."""
     with (
         patch(
-            "homeassistant.components.network.util.ifaddr.get_adapters",
+            "inpui.components.network.util.ifaddr.get_adapters",
             return_value=[
                 Mock(
                     nice_name="eth0",
@@ -1271,7 +1271,7 @@ def mock_network() -> Generator[None]:
             ],
         ),
         patch(
-            "homeassistant.components.network.async_get_loaded_adapters",
+            "inpui.components.network.async_get_loaded_adapters",
             return_value=[
                 {
                     "auto": True,
@@ -1292,7 +1292,7 @@ def mock_network() -> Generator[None]:
 def mock_get_source_ip() -> Generator[_patch]:
     """Mock network util's async_get_source_ip."""
     patcher = patch(
-        "homeassistant.components.network.util.async_get_source_ip",
+        "inpui.components.network.util.async_get_source_ip",
         return_value="10.10.10.10",
     )
     patcher.start()
@@ -1311,7 +1311,7 @@ def translations_once() -> Generator[_patch]:
     """
     cache = _TranslationsCacheData({}, {})
     patcher = patch(
-        "homeassistant.helpers.translation._TranslationsCacheData",
+        "inpui.helpers.translation._TranslationsCacheData",
         return_value=cache,
     )
     patcher.start()
@@ -1344,11 +1344,11 @@ def evict_faked_translations(translations_once) -> Generator[_patch]:
 
     with (
         patch(
-            "homeassistant.helpers.translation.async_get_cached_translations",
+            "inpui.helpers.translation.async_get_cached_translations",
             _async_get_cached_translations,
         ),
         patch(
-            "homeassistant.helpers.translation._async_get_component_strings",
+            "inpui.helpers.translation._async_get_component_strings",
             wraps=real_component_strings,
         ) as mock_component_strings,
     ):
@@ -1386,7 +1386,7 @@ async def mock_zeroconf_resolver() -> AsyncGenerator[_patch]:
     resolver = AsyncResolver()
     resolver.real_close = resolver.close
     patcher = patch(
-        "homeassistant.helpers.aiohttp_client._async_make_resolver",
+        "inpui.helpers.aiohttp_client._async_make_resolver",
         return_value=resolver,
     )
     patcher.start()
@@ -1412,9 +1412,9 @@ def mock_zeroconf() -> Generator[MagicMock]:
     from zeroconf import DNSCache  # noqa: PLC0415
 
     with (
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceBrowser",
+            "inpui.components.zeroconf.discovery.AsyncServiceBrowser",
         ) as mock_browser,
     ):
         asb = mock_browser.return_value
@@ -1433,7 +1433,7 @@ def mock_async_zeroconf(mock_zeroconf: MagicMock) -> Generator[MagicMock]:
     from zeroconf.asyncio import AsyncZeroconf  # noqa: PLC0415
 
     with patch(
-        "homeassistant.components.zeroconf.HaAsyncZeroconf", spec=AsyncZeroconf
+        "inpui.components.zeroconf.HaAsyncZeroconf", spec=AsyncZeroconf
     ) as mock_aiozc:
         zc = mock_aiozc.return_value
         zc.async_unregister_service = AsyncMock()
@@ -1653,7 +1653,7 @@ async def _async_init_recorder_component(
         if recorder.CONF_COMMIT_INTERVAL not in config:
             config[recorder.CONF_COMMIT_INTERVAL] = 0
 
-    with patch("homeassistant.components.recorder.ALLOW_IN_MEMORY_DB", True):
+    with patch("inpui.components.recorder.ALLOW_IN_MEMORY_DB", True):
         if recorder.DOMAIN not in hass.data:
             recorder_helper.async_initialize_recorder(hass)
         setup_task = asyncio.ensure_future(
@@ -1772,47 +1772,47 @@ async def async_test_recorder(
     )
     with (
         patch(
-            "homeassistant.components.recorder.Recorder.async_nightly_tasks",
+            "inpui.components.recorder.Recorder.async_nightly_tasks",
             side_effect=nightly,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.Recorder.async_periodic_statistics",
+            "inpui.components.recorder.Recorder.async_periodic_statistics",
             side_effect=stats,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.migration._find_schema_errors",
+            "inpui.components.recorder.migration._find_schema_errors",
             side_effect=schema_validate,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.migration.EventsContextIDMigration.migrate_data",
+            "inpui.components.recorder.migration.EventsContextIDMigration.migrate_data",
             side_effect=migrate_events_context_ids,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.migration.StatesContextIDMigration.migrate_data",
+            "inpui.components.recorder.migration.StatesContextIDMigration.migrate_data",
             side_effect=migrate_states_context_ids,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.migration.EventTypeIDMigration.migrate_data",
+            "inpui.components.recorder.migration.EventTypeIDMigration.migrate_data",
             side_effect=migrate_event_type_ids,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.migration.EntityIDMigration.migrate_data",
+            "inpui.components.recorder.migration.EntityIDMigration.migrate_data",
             side_effect=migrate_entity_ids,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.migration.EventIDPostMigration.needs_migrate_impl",
+            "inpui.components.recorder.migration.EventIDPostMigration.needs_migrate_impl",
             side_effect=post_migrate_event_ids,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.recorder.Recorder._schedule_compile_missing_statistics",
+            "inpui.components.recorder.Recorder._schedule_compile_missing_statistics",
             side_effect=compile_missing,
             autospec=True,
         ),
@@ -2012,7 +2012,7 @@ async def hassio_stubs(
 ) -> None:
     """Create mock hassio http client."""
     with patch(
-        "homeassistant.components.hassio.issues.SupervisorIssues.setup",
+        "inpui.components.hassio.issues.SupervisorIssues.setup",
     ):
         await async_setup_component(hass, "hassio", {})
 
@@ -2050,11 +2050,11 @@ def mock_integration_frame(integration_frame_path: str) -> Generator[Mock]:
     with (
         patch.dict(sys.modules, {correct_module_name: Mock(__file__=correct_filename)}),
         patch(
-            "homeassistant.helpers.frame.linecache.getline",
+            "inpui.helpers.frame.linecache.getline",
             return_value=correct_frame.line,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=extract_stack_to_frame(
                 [
                     Mock(
@@ -2158,7 +2158,7 @@ def service_calls(hass: HomeAssistant) -> Generator[list[ServiceCall]]:
             _LOGGER.debug("Ignoring unknown service call to %s.%s", domain, service)
         return None
 
-    with patch("homeassistant.core.ServiceRegistry.async_call", _async_call):
+    with patch("inpui.core.ServiceRegistry.async_call", _async_call):
         yield calls
 
 
@@ -2205,5 +2205,5 @@ def disable_http_server() -> Generator[None]:
     This prevents the HTTP server from starting in tests that setup
     integrations which depend on the HTTP component.
     """
-    with patch("homeassistant.components.http.start_http_server_and_save_config"):
+    with patch("inpui.components.http.start_http_server_and_save_config"):
         yield

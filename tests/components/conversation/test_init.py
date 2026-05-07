@@ -77,7 +77,7 @@ async def test_service_fails(hass: HomeAssistant, init_components) -> None:
     with (
         pytest.raises(HomeAssistantError),
         patch(
-            "homeassistant.components.conversation.async_converse",
+            "inpui.components.conversation.async_converse",
             side_effect=intent.IntentHandleError,
         ),
     ):
@@ -180,7 +180,7 @@ async def test_reload(hass: HomeAssistant) -> None:
         }
     }
     with patch(
-        "homeassistant.config.load_yaml_config_file", return_value=hass_config_new
+        "inpui.config.load_yaml_config_file", return_value=hass_config_new
     ):
         await hass.services.async_call("conversation", "reload", {}, blocking=True)
 
@@ -253,7 +253,7 @@ async def test_prepare_agent(
 ) -> None:
     """Test prepare agent."""
     with patch(
-        "homeassistant.components.conversation.default_agent.DefaultAgent.async_prepare"
+        "inpui.components.conversation.default_agent.DefaultAgent.async_prepare"
     ) as mock_prepare:
         await conversation.async_prepare_agent(hass, agent_id, "en")
 

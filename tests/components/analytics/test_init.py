@@ -98,7 +98,7 @@ async def test_websocket(
 
     assert response["success"]
 
-    with patch("homeassistant.components.analytics.analytics.HA_VERSION", MOCK_VERSION):
+    with patch("inpui.components.analytics.analytics.HA_VERSION", MOCK_VERSION):
         await ws_client.send_json_auto_id(
             {"type": "analytics/preferences", "preferences": {"base": True}}
         )

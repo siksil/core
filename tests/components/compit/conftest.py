@@ -28,7 +28,7 @@ def mock_config_entry():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.compit.async_setup_entry", return_value=True
+        "inpui.components.compit.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -37,7 +37,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_compit_api() -> Generator[AsyncMock]:
     """Mock CompitApiConnector."""
     with patch(
-        "homeassistant.components.compit.config_flow.CompitApiConnector.init",
+        "inpui.components.compit.config_flow.CompitApiConnector.init",
     ) as mock_api:
         yield mock_api
 
@@ -120,11 +120,11 @@ def mock_connector():
 
     with (
         patch(
-            "homeassistant.components.compit.CompitApiConnector",
+            "inpui.components.compit.CompitApiConnector",
             return_value=mock_instance,
         ),
         patch(
-            "homeassistant.components.compit.coordinator.CompitApiConnector",
+            "inpui.components.compit.coordinator.CompitApiConnector",
             return_value=mock_instance,
         ),
     ):

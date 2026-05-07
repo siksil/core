@@ -785,7 +785,7 @@ async def test_discovery_update_unchanged_cover(
     config["rl"][0] = 3
     config["rl"][1] = 3
     with patch(
-        "homeassistant.components.tasmota.cover.TasmotaCover.discovery_update"
+        "inpui.components.tasmota.cover.TasmotaCover.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass,

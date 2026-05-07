@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 async def test_user_flow_success(hass: HomeAssistant) -> None:
     """Test user-initiated config flow."""
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd"
+        "inpui.components.datadog.config_flow.DogStatsd"
     ) as mock_dogstatsd:
         mock_instance = MagicMock()
         mock_dogstatsd.return_value = mock_instance
@@ -37,7 +37,7 @@ async def test_user_flow_success(hass: HomeAssistant) -> None:
 async def test_user_flow_retry_after_connection_fail(hass: HomeAssistant) -> None:
     """Test connection failure."""
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd",
+        "inpui.components.datadog.config_flow.DogStatsd",
         side_effect=OSError("Connection failed"),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -51,7 +51,7 @@ async def test_user_flow_retry_after_connection_fail(hass: HomeAssistant) -> Non
         assert result2["errors"] == {"base": "cannot_connect"}
 
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd",
+        "inpui.components.datadog.config_flow.DogStatsd",
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input=MOCK_CONFIG
@@ -99,7 +99,7 @@ async def test_options_flow_cannot_connect(hass: HomeAssistant) -> None:
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd",
+        "inpui.components.datadog.config_flow.DogStatsd",
         side_effect=OSError("connection failed"),
     ):
         result = await hass.config_entries.options.async_init(mock_entry.entry_id)
@@ -113,7 +113,7 @@ async def test_options_flow_cannot_connect(hass: HomeAssistant) -> None:
         assert result2["errors"] == {"base": "cannot_connect"}
 
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd",
+        "inpui.components.datadog.config_flow.DogStatsd",
     ):
         result3 = await hass.config_entries.options.async_configure(
             result["flow_id"], user_input=MOCK_OPTIONS
@@ -138,7 +138,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
 
     # OSError Case
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd",
+        "inpui.components.datadog.config_flow.DogStatsd",
         side_effect=OSError,
     ):
         result = await hass.config_entries.options.async_init(mock_entry.entry_id)
@@ -151,7 +151,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
 
     # ValueError Case
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd",
+        "inpui.components.datadog.config_flow.DogStatsd",
         side_effect=ValueError,
     ):
         result = await hass.config_entries.options.async_init(mock_entry.entry_id)
@@ -164,7 +164,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
 
     # Success Case
     with patch(
-        "homeassistant.components.datadog.config_flow.DogStatsd"
+        "inpui.components.datadog.config_flow.DogStatsd"
     ) as mock_dogstatsd:
         mock_instance = MagicMock()
         mock_dogstatsd.return_value = mock_instance

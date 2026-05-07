@@ -81,7 +81,7 @@ async def test_services_api_connection_error(
 
     with (
         patch(
-            f"homeassistant.components.radarr.coordinator.RadarrClient.{method}",
+            f"inpui.components.radarr.coordinator.RadarrClient.{method}",
             side_effect=ArrConnectionException(None, "Connection failed"),
         ),
         pytest.raises(HomeAssistantError, match="Failed to connect to Radarr"),
@@ -110,7 +110,7 @@ async def test_get_movies_service_api_auth_error(
 
     with (
         patch(
-            f"homeassistant.components.radarr.coordinator.RadarrClient.{method}",
+            f"inpui.components.radarr.coordinator.RadarrClient.{method}",
             side_effect=ArrAuthenticationException(None, "Authentication failed"),
         ),
         pytest.raises(HomeAssistantError, match="Authentication failed for Radarr"),

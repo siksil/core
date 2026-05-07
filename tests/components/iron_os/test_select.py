@@ -40,7 +40,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 async def select_only() -> AsyncGenerator[None]:
     """Enable only the select platform."""
     with patch(
-        "homeassistant.components.iron_os.PLATFORMS",
+        "inpui.components.iron_os.PLATFORMS",
         [Platform.SELECT],
     ):
         yield

@@ -35,7 +35,7 @@ async def test_firmware_update_coordinator_fetching(
     mock_client.async_update_data = AsyncMock(side_effect=[ManifestMissing(), manifest])
 
     with patch(
-        "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
         return_value=mock_client,
     ):
         coordinator = FirmwareUpdateCoordinator(

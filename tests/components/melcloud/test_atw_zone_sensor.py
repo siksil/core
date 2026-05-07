@@ -11,7 +11,7 @@ from inpui.components.melcloud.sensor import ATW_ZONE_SENSORS, AtwZoneSensor
 def mock_coordinator():
     """Mock MELCloud coordinator."""
     with patch(
-        "homeassistant.components.melcloud.coordinator.MelCloudDeviceUpdateCoordinator"
+        "inpui.components.melcloud.coordinator.MelCloudDeviceUpdateCoordinator"
     ) as mock:
         yield mock
 

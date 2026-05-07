@@ -32,7 +32,7 @@ GOOD_CONFIG = {
 
 async def test_setup_missing_config(hass: HomeAssistant) -> None:
     """Test setup with missing configuration."""
-    with mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client:
+    with mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client:
         config = {"sensor": {"platform": "mfi"}}
         assert await async_setup_component(hass, COMPONENT.DOMAIN, config)
         assert not mock_client.called
@@ -40,21 +40,21 @@ async def test_setup_missing_config(hass: HomeAssistant) -> None:
 
 async def test_setup_failed_login(hass: HomeAssistant) -> None:
     """Test setup with login failure."""
-    with mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client:
+    with mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client:
         mock_client.side_effect = FailedToLogin
         assert not PLATFORM.setup_platform(hass, GOOD_CONFIG[COMPONENT.DOMAIN], None)
 
 
 async def test_setup_failed_connect(hass: HomeAssistant) -> None:
     """Test setup with connection failure."""
-    with mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client:
+    with mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client:
         mock_client.side_effect = requests.exceptions.ConnectionError
         assert not PLATFORM.setup_platform(hass, GOOD_CONFIG[COMPONENT.DOMAIN], None)
 
 
 async def test_setup_minimum(hass: HomeAssistant) -> None:
     """Test setup with minimum configuration."""
-    with mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client:
+    with mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client:
         config = deepcopy(GOOD_CONFIG)
         del config[THING]["port"]
         assert await async_setup_component(hass, COMPONENT.DOMAIN, config)
@@ -67,7 +67,7 @@ async def test_setup_minimum(hass: HomeAssistant) -> None:
 
 async def test_setup_with_port(hass: HomeAssistant) -> None:
     """Test setup with port."""
-    with mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client:
+    with mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client:
         assert await async_setup_component(hass, COMPONENT.DOMAIN, GOOD_CONFIG)
         await hass.async_block_till_done()
         assert mock_client.call_count == 1
@@ -78,7 +78,7 @@ async def test_setup_with_port(hass: HomeAssistant) -> None:
 
 async def test_setup_with_tls_disabled(hass: HomeAssistant) -> None:
     """Test setup without TLS."""
-    with mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client:
+    with mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client:
         config = deepcopy(GOOD_CONFIG)
         del config[THING]["port"]
         config[THING]["ssl"] = False
@@ -94,9 +94,9 @@ async def test_setup_with_tls_disabled(hass: HomeAssistant) -> None:
 async def test_setup_adds_proper_devices(hass: HomeAssistant) -> None:
     """Test if setup adds devices."""
     with (
-        mock.patch("homeassistant.components.mfi.sensor.MFiClient") as mock_client,
+        mock.patch("inpui.components.mfi.sensor.MFiClient") as mock_client,
         mock.patch(
-            "homeassistant.components.mfi.sensor.MfiSensor", side_effect=mfi.MfiSensor
+            "inpui.components.mfi.sensor.MfiSensor", side_effect=mfi.MfiSensor
         ) as mock_sensor,
     ):
         ports = {

@@ -1753,7 +1753,7 @@ async def test_update_before_load(recorder_mock: Recorder, hass: HomeAssistant) 
 
         # create the statistics component, get filled from database
         with patch(
-            "homeassistant.components.statistics.sensor.history.state_changes_during_period",
+            "inpui.components.statistics.sensor.history.state_changes_during_period",
             mock_state_changes_during_period,
         ):
             assert await async_setup_component(

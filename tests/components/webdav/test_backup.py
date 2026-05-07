@@ -29,8 +29,8 @@ async def setup_backup_integration(
 ) -> AsyncGenerator[None]:
     """Set up webdav integration."""
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=False),
-        patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0),
+        patch("inpui.components.backup.is_hassio", return_value=False),
+        patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0),
     ):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {})
         mock_config_entry.add_to_hass(hass)
@@ -170,10 +170,10 @@ async def test_agents_upload(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -219,10 +219,10 @@ async def test_agents_upload_emits_progress_events(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,

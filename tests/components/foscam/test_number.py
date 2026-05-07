@@ -31,8 +31,8 @@ async def test_number_entities(
 
     with (
         # Mock a valid camera instance
-        patch("homeassistant.components.foscam.FoscamCamera") as mock_foscam_camera,
-        patch("homeassistant.components.foscam.PLATFORMS", [Platform.NUMBER]),
+        patch("inpui.components.foscam.FoscamCamera") as mock_foscam_camera,
+        patch("inpui.components.foscam.PLATFORMS", [Platform.NUMBER]),
     ):
         setup_mock_foscam_camera(mock_foscam_camera)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -45,7 +45,7 @@ async def test_setting_number(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=DOMAIN, data=VALID_CONFIG, entry_id=ENTRY_ID)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.foscam.FoscamCamera") as mock_foscam_camera:
+    with patch("inpui.components.foscam.FoscamCamera") as mock_foscam_camera:
         setup_mock_foscam_camera(mock_foscam_camera)
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()

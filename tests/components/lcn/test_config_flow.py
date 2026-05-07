@@ -65,8 +65,8 @@ async def test_show_form(hass: HomeAssistant) -> None:
 async def test_step_user(hass: HomeAssistant) -> None:
     """Test for user step."""
     with (
-        patch("homeassistant.components.lcn.PchkConnectionManager.async_connect"),
-        patch("homeassistant.components.lcn.async_setup_entry", return_value=True),
+        patch("inpui.components.lcn.PchkConnectionManager.async_connect"),
+        patch("inpui.components.lcn.async_setup_entry", return_value=True),
     ):
         data = CONNECTION_DATA.copy()
         result = await hass.config_entries.flow.async_init(
@@ -88,7 +88,7 @@ async def test_step_user_existing_host(
     """Test for user defined host already exists."""
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.lcn.PchkConnectionManager.async_connect"):
+    with patch("inpui.components.lcn.PchkConnectionManager.async_connect"):
         config_data = entry.data.copy()
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}, data=config_data
@@ -112,7 +112,7 @@ async def test_step_user_error(
 ) -> None:
     """Test for error in user step is handled correctly."""
     with patch(
-        "homeassistant.components.lcn.PchkConnectionManager.async_connect",
+        "inpui.components.lcn.PchkConnectionManager.async_connect",
         side_effect=error,
     ):
         data = CONNECTION_DATA.copy()
@@ -135,8 +135,8 @@ async def test_step_reconfigure(hass: HomeAssistant, entry: MockConfigEntry) -> 
     assert result["step_id"] == "reconfigure"
 
     with (
-        patch("homeassistant.components.lcn.PchkConnectionManager.async_connect"),
-        patch("homeassistant.components.lcn.async_setup_entry", return_value=True),
+        patch("inpui.components.lcn.PchkConnectionManager.async_connect"),
+        patch("inpui.components.lcn.async_setup_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -173,7 +173,7 @@ async def test_step_reconfigure_error(
     assert result["step_id"] == "reconfigure"
 
     with patch(
-        "homeassistant.components.lcn.PchkConnectionManager.async_connect",
+        "inpui.components.lcn.PchkConnectionManager.async_connect",
         side_effect=error,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -191,10 +191,10 @@ async def test_validate_connection() -> None:
 
     with (
         patch(
-            "homeassistant.components.lcn.PchkConnectionManager.async_connect"
+            "inpui.components.lcn.PchkConnectionManager.async_connect"
         ) as async_connect,
         patch(
-            "homeassistant.components.lcn.PchkConnectionManager.async_close"
+            "inpui.components.lcn.PchkConnectionManager.async_close"
         ) as async_close,
     ):
         result = await validate_connection(data=data)

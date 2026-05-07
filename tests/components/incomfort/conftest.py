@@ -62,7 +62,7 @@ MOCK_HEATER_STATUS_HEATING = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.incomfort.async_setup_entry",
+        "inpui.components.incomfort.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -172,7 +172,7 @@ def mock_incomfort(
             self.rooms = [MockRoom()]
 
     with patch(
-        "homeassistant.components.incomfort.coordinator.InComfortGateway", MagicMock()
+        "inpui.components.incomfort.coordinator.InComfortGateway", MagicMock()
     ) as patch_gateway:
         patch_gateway().heaters = AsyncMock()
         patch_gateway().heaters.return_value = [MockHeater()]

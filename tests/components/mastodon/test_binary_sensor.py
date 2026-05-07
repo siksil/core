@@ -22,7 +22,7 @@ async def test_binary_sensors(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test the binary sensor entities."""
-    with patch("homeassistant.components.mastodon.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.mastodon.PLATFORMS", [Platform.BINARY_SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

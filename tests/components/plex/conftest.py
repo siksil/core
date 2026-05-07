@@ -26,7 +26,7 @@ def plex_server_url(entry):
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.plex.async_setup_entry", return_value=True
+        "inpui.components.plex.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -431,7 +431,7 @@ async def mock_config_entry():
 @pytest.fixture
 def mock_websocket():
     """Mock the PlexWebsocket class."""
-    with patch("homeassistant.components.plex.PlexWebsocket", autospec=True) as ws:
+    with patch("inpui.components.plex.PlexWebsocket", autospec=True) as ws:
         yield ws
 
 
@@ -592,7 +592,7 @@ def setup_plex_server(
             requests_mock.get(f"{url}/clients", text=empty_payload)
 
         with patch(
-            "homeassistant.components.plex.GDM",
+            "inpui.components.plex.GDM",
             return_value=MockGDM(disabled=disable_gdm),
         ):
             config_entry.add_to_hass(hass)

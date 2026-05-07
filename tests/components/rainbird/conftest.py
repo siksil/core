@@ -153,7 +153,7 @@ def setup_platforms(
 ) -> None:
     """Fixture for setting up the default platforms."""
 
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         yield
 
 
@@ -174,11 +174,11 @@ def aioclient_mock(hass: HomeAssistant) -> Generator[AiohttpClientMocker]:
 
     with (
         patch(
-            "homeassistant.components.rainbird.async_create_clientsession",
+            "inpui.components.rainbird.async_create_clientsession",
             side_effect=create_session,
         ),
         patch(
-            "homeassistant.components.rainbird.config_flow.async_create_clientsession",
+            "inpui.components.rainbird.config_flow.async_create_clientsession",
             side_effect=create_session,
         ),
     ):

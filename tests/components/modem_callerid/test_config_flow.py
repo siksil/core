@@ -26,7 +26,7 @@ DISCOVERY_INFO = UsbServiceInfo(
 
 def _patch_setup():
     return patch(
-        "homeassistant.components.modem_callerid.async_setup_entry",
+        "inpui.components.modem_callerid.async_setup_entry",
     )
 
 

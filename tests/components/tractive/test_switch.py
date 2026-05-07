@@ -31,7 +31,7 @@ async def test_switch(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test states of the switch."""
-    with patch("homeassistant.components.tractive.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.tractive.PLATFORMS", [Platform.SWITCH]):
         await init_integration(hass, mock_config_entry)
 
         mock_tractive_client.send_switch_event(mock_config_entry)

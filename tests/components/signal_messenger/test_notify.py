@@ -55,7 +55,7 @@ def test_send_message(
     """Test send message."""
     signal_requests_mock = signal_requests_mock_factory()
     with caplog.at_level(
-        logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+        logging.DEBUG, logger="inpui.components.signal_messenger.notify"
     ):
         signal_notification_service.send_message(MESSAGE)
     assert "Sending signal message" in caplog.text
@@ -72,7 +72,7 @@ def test_send_message_with_custom_recipients(
     """Test send message with custom recipients."""
     signal_requests_mock = signal_requests_mock_factory()
     with caplog.at_level(
-        logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+        logging.DEBUG, logger="inpui.components.signal_messenger.notify"
     ):
         signal_notification_service.send_message(
             MESSAGE, target=["+49111111111", "+49222222222"]
@@ -93,7 +93,7 @@ def test_send_message_styled(
     """Test send styled message."""
     signal_requests_mock = signal_requests_mock_factory()
     with caplog.at_level(
-        logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+        logging.DEBUG, logger="inpui.components.signal_messenger.notify"
     ):
         data = {"text_mode": "styled"}
         signal_notification_service.send_message(MESSAGE, data=data)
@@ -114,7 +114,7 @@ def test_send_message_to_api_with_bad_data_throws_error(
     signal_requests_mock = signal_requests_mock_factory(False)
     with (
         caplog.at_level(
-            logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+            logging.DEBUG, logger="inpui.components.signal_messenger.notify"
         ),
         pytest.raises(SignalCliRestApiError) as exc,
     ):
@@ -134,7 +134,7 @@ def test_send_message_with_bad_data_throws_vol_error(
     """Test sending a message with bad data throws an error."""
     with (
         caplog.at_level(
-            logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+            logging.DEBUG, logger="inpui.components.signal_messenger.notify"
         ),
         pytest.raises(vol.Invalid) as exc,
     ):
@@ -152,7 +152,7 @@ def test_send_message_styled_with_bad_data_throws_vol_error(
     """Test sending a styled message with bad data throws an error."""
     with (
         caplog.at_level(
-            logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+            logging.DEBUG, logger="inpui.components.signal_messenger.notify"
         ),
         pytest.raises(vol.Invalid) as exc,
     ):
@@ -174,7 +174,7 @@ def test_send_message_with_attachment(
     signal_requests_mock = signal_requests_mock_factory()
     with (
         caplog.at_level(
-            logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+            logging.DEBUG, logger="inpui.components.signal_messenger.notify"
         ),
         tempfile.NamedTemporaryFile(
             mode="w", suffix=".png", prefix=os.path.basename(__file__)
@@ -199,7 +199,7 @@ def test_send_message_styled_with_attachment(
     signal_requests_mock = signal_requests_mock_factory()
     with (
         caplog.at_level(
-            logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+            logging.DEBUG, logger="inpui.components.signal_messenger.notify"
         ),
         tempfile.NamedTemporaryFile(
             mode="w", suffix=".png", prefix=os.path.basename(__file__)
@@ -224,7 +224,7 @@ def test_send_message_with_attachment_as_url(
     """Test send message with attachment as URL."""
     signal_requests_mock = signal_requests_mock_factory(True, str(len(CONTENT)))
     with caplog.at_level(
-        logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+        logging.DEBUG, logger="inpui.components.signal_messenger.notify"
     ):
         data = {"urls": [URL_ATTACHMENT]}
         signal_notification_service.send_message(MESSAGE, data=data)
@@ -243,7 +243,7 @@ def test_send_message_styled_with_attachment_as_url(
     """Test send message with attachment as URL."""
     signal_requests_mock = signal_requests_mock_factory(True, str(len(CONTENT)))
     with caplog.at_level(
-        logging.DEBUG, logger="homeassistant.components.signal_messenger.notify"
+        logging.DEBUG, logger="inpui.components.signal_messenger.notify"
     ):
         data = {"urls": [URL_ATTACHMENT], "text_mode": "styled"}
         signal_notification_service.send_message(MESSAGE, data=data)
@@ -281,7 +281,7 @@ def test_get_attachments_not_on_allowlist(
     url = "http://dodgyurl.com"
     data = {"urls": [url]}
     with caplog.at_level(
-        logging.ERROR, logger="homeassistant.components.signal_messenger.notify"
+        logging.ERROR, logger="inpui.components.signal_messenger.notify"
     ):
         result = signal_notification_service.get_attachments_as_bytes(
             data, len(CONTENT), hass

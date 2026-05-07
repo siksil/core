@@ -51,7 +51,7 @@ def mock_process_uploaded_file(
 
     with (
         patch(
-            "homeassistant.components.local_calendar.config_flow.process_uploaded_file",
+            "inpui.components.local_calendar.config_flow.process_uploaded_file",
             side_effect=_mock_process_uploaded_file,
         ) as mock_upload,
         patch(
@@ -73,7 +73,7 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.local_calendar.async_setup_entry",
+        "inpui.components.local_calendar.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -112,7 +112,7 @@ async def test_form_import_ics(
     assert result2["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.local_calendar.async_setup_entry",
+        "inpui.components.local_calendar.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         file_id = mock_process_uploaded_file.file_id

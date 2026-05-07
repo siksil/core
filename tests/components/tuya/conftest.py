@@ -60,7 +60,7 @@ async def mock_loaded_entry(
 
     # Initialize the component
     with (
-        patch("homeassistant.components.tuya.Manager", return_value=mock_manager),
+        patch("inpui.components.tuya.Manager", return_value=mock_manager),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
@@ -71,7 +71,7 @@ async def mock_loaded_entry(
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.tuya.async_setup_entry", return_value=True):
+    with patch("inpui.components.tuya.async_setup_entry", return_value=True):
         yield
 
 
@@ -79,7 +79,7 @@ def mock_setup_entry() -> Generator[None]:
 def mock_tuya_login_control() -> Generator[MagicMock]:
     """Return a mocked Tuya login control."""
     with patch(
-        "homeassistant.components.tuya.config_flow.LoginControl", autospec=True
+        "inpui.components.tuya.config_flow.LoginControl", autospec=True
     ) as login_control_mock:
         login_control = login_control_mock.return_value
         login_control.qr_code.return_value = {

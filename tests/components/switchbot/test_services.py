@@ -48,7 +48,7 @@ async def test_add_password_service(
 
     mocked_instance = AsyncMock(return_value=True)
     with patch.multiple(
-        "homeassistant.components.switchbot.switchbot.SwitchbotKeypadVision",
+        "inpui.components.switchbot.switchbot.SwitchbotKeypadVision",
         update=AsyncMock(return_value=None),
         add_password=mocked_instance,
     ):
@@ -83,7 +83,7 @@ async def test_device_not_found(
     entry.add_to_hass(hass)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.switchbot.SwitchbotKeypadVision",
+        "inpui.components.switchbot.switchbot.SwitchbotKeypadVision",
         update=AsyncMock(return_value=None),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -117,7 +117,7 @@ async def test_device_not_belonging(
     entry.add_to_hass(hass)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.switchbot.SwitchbotKeypadVision",
+        "inpui.components.switchbot.switchbot.SwitchbotKeypadVision",
         update=AsyncMock(return_value=None),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -159,7 +159,7 @@ async def test_device_entry_not_loaded(
     entry.add_to_hass(hass)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.switchbot.SwitchbotKeypadVision",
+        "inpui.components.switchbot.switchbot.SwitchbotKeypadVision",
         update=AsyncMock(return_value=None),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -201,7 +201,7 @@ async def test_service_unsupported_device(
     entry.add_to_hass(hass)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.switchbot.SwitchbotSmartThermostatRadiator",
+        "inpui.components.switchbot.switchbot.SwitchbotSmartThermostatRadiator",
         update=AsyncMock(return_value=None),
     ):
         await hass.config_entries.async_setup(entry.entry_id)

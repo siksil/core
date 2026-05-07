@@ -523,7 +523,7 @@ async def test_hmip_heating_profile_name_not_in_list(
     )
 
     with patch(
-        "homeassistant.components.homematicip_cloud.climate.NICE_PROFILE_NAMES",
+        "inpui.components.homematicip_cloud.climate.NICE_PROFILE_NAMES",
         return_value={},
     ):
         await hass.services.async_call(

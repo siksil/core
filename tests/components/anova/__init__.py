@@ -48,7 +48,7 @@ async def async_init_integration(
 ) -> ConfigEntry:
     """Set up the Anova integration in Home Assistant."""
 
-    with patch("homeassistant.components.anova.AnovaApi.authenticate"):
+    with patch("inpui.components.anova.AnovaApi.authenticate"):
         entry = create_entry(hass)
 
         if not skip_setup:

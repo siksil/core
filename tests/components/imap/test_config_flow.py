@@ -50,7 +50,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = (
             "OK",
@@ -102,7 +102,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server",
+        "inpui.components.imap.config_flow.connect_to_server",
         side_effect=InvalidAuth,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -133,7 +133,7 @@ async def test_form_cannot_connect(
     )
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server",
+        "inpui.components.imap.config_flow.connect_to_server",
         side_effect=exc,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -157,7 +157,7 @@ async def test_form_invalid_charset(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = (
             "NO",
@@ -178,7 +178,7 @@ async def test_form_invalid_folder(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server",
+        "inpui.components.imap.config_flow.connect_to_server",
         side_effect=InvalidFolder,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -196,7 +196,7 @@ async def test_form_invalid_search(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = ("BAD", [b"Invalid search"])
         result2 = await hass.config_entries.flow.async_configure(
@@ -224,7 +224,7 @@ async def test_reauth_success(hass: HomeAssistant, mock_setup_entry: AsyncMock) 
     }
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = (
             "OK",
@@ -256,7 +256,7 @@ async def test_reauth_failed(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server",
+        "inpui.components.imap.config_flow.connect_to_server",
         side_effect=InvalidAuth,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -286,7 +286,7 @@ async def test_reauth_failed_conn_error(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server",
+        "inpui.components.imap.config_flow.connect_to_server",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -318,7 +318,7 @@ async def test_options_form(hass: HomeAssistant) -> None:
 
     # simulate initial search setup error
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = ("BAD", [b"Invalid search"])
         result2 = await hass.config_entries.options.async_configure(
@@ -331,7 +331,7 @@ async def test_options_form(hass: HomeAssistant) -> None:
     new_config["search"] = "UnSeen UnDeleted"
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = ("OK", [b""])
         result3 = await hass.config_entries.options.async_configure(
@@ -368,7 +368,7 @@ async def test_key_options_in_options_form(hass: HomeAssistant) -> None:
     new_config = MOCK_OPTIONS.copy()
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = ("OK", [b""])
         result2 = await hass.config_entries.options.async_configure(
@@ -431,7 +431,7 @@ async def test_advanced_options_form(
 
     try:
         with patch(
-            "homeassistant.components.imap.config_flow.connect_to_server"
+            "inpui.components.imap.config_flow.connect_to_server"
         ) as mock_client:
             mock_client.return_value.search.return_value = ("OK", [b""])
             # Option update should fail if FlowResultType.FORM is expected
@@ -468,7 +468,7 @@ async def test_config_flow_with_cipherlist_and_ssl_verify(
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = (
             "OK",
@@ -500,7 +500,7 @@ async def test_config_flow_with_event_message_data(
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = (
             "OK",
@@ -532,7 +532,7 @@ async def test_config_flow_from_with_advanced_settings(
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server",
+        "inpui.components.imap.config_flow.connect_to_server",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -546,7 +546,7 @@ async def test_config_flow_from_with_advanced_settings(
 
     config["ssl_cipher_list"] = "modern"
     with patch(
-        "homeassistant.components.imap.config_flow.connect_to_server"
+        "inpui.components.imap.config_flow.connect_to_server"
     ) as mock_client:
         mock_client.return_value.search.return_value = (
             "OK",

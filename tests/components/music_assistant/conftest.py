@@ -23,7 +23,7 @@ MOCK_SERVER_ID = "1234"
 def mock_get_server_info() -> Generator[AsyncMock]:
     """Mock the function to get server info."""
     with patch(
-        "homeassistant.components.music_assistant.config_flow._get_server_info"
+        "inpui.components.music_assistant.config_flow._get_server_info"
     ) as mock_get_server_info:
         mock_get_server_info.return_value = ServerInfoMessage.from_json(
             load_fixture("server_info_message.json", DOMAIN)
@@ -35,7 +35,7 @@ def mock_get_server_info() -> Generator[AsyncMock]:
 async def music_assistant_client_fixture() -> AsyncGenerator[MagicMock]:
     """Fixture for a Music Assistant client."""
     with patch(
-        "homeassistant.components.music_assistant.MusicAssistantClient", autospec=True
+        "inpui.components.music_assistant.MusicAssistantClient", autospec=True
     ) as client_class:
         client = client_class.return_value
 

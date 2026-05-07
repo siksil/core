@@ -30,7 +30,7 @@ async def test_config_entry_diagnostics(
 
     config_entry = hass.config_entries.async_entries(DOMAIN)[0]
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.raw_data",
+        "inpui.components.airzone.AirzoneLocalApi.raw_data",
         return_value={
             RAW_HVAC: HVAC_MOCK,
             RAW_VERSION: HVAC_VERSION_MOCK,

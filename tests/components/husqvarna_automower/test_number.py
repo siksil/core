@@ -109,7 +109,7 @@ async def test_number_snapshot(
 ) -> None:
     """Snapshot tests of the number entities."""
     with patch(
-        "homeassistant.components.husqvarna_automower.PLATFORMS",
+        "inpui.components.husqvarna_automower.PLATFORMS",
         [Platform.NUMBER],
     ):
         await setup_integration(hass, mock_config_entry)

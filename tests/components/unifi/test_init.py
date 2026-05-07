@@ -34,7 +34,7 @@ async def test_setup_entry_fails_config_entry_not_ready(
 ) -> None:
     """Failed authentication trigger a reauthentication flow."""
     with patch(
-        "homeassistant.components.unifi.get_unifi_api",
+        "inpui.components.unifi.get_unifi_api",
         side_effect=CannotConnect,
     ):
         config_entry = await config_entry_factory()
@@ -48,7 +48,7 @@ async def test_setup_entry_fails_trigger_reauth_flow(
     """Failed authentication trigger a reauthentication flow."""
     with (
         patch(
-            "homeassistant.components.unifi.get_unifi_api",
+            "inpui.components.unifi.get_unifi_api",
             side_effect=AuthenticationRequired,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_flow_init,

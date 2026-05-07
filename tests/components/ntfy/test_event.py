@@ -37,7 +37,7 @@ from tests.typing import ClientSessionGenerator
 async def event_only() -> AsyncGenerator[None]:
     """Enable only the event platform."""
     with patch(
-        "homeassistant.components.ntfy.PLATFORMS",
+        "inpui.components.ntfy.PLATFORMS",
         [Platform.EVENT],
     ):
         yield

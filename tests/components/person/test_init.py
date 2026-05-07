@@ -864,7 +864,7 @@ async def test_reload(hass: HomeAssistant, hass_admin_user: MockUser) -> None:
     assert state_3 is None
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             DOMAIN: [

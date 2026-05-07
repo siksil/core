@@ -31,7 +31,7 @@ async def test_dynamic_entities(
     eheimdigital_hub_mock.return_value.devices["00:00:00:00:00:02"].heater_data = None
     with (
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):

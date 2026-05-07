@@ -10,7 +10,7 @@ import pytest
 def mock_usb_serial_by_id_fixture() -> Generator[MagicMock]:
     """Mock usb serial by id."""
     with patch(
-        "homeassistant.components.zha.config_flow.usb.get_serial_by_id"
+        "inpui.components.zha.config_flow.usb.get_serial_by_id"
     ) as mock_usb_serial_by_id:
         mock_usb_serial_by_id.side_effect = lambda x: x
         yield mock_usb_serial_by_id
@@ -27,11 +27,11 @@ def mock_zha():
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.create_zigpy_app",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.create_zigpy_app",
             return_value=mock_connect_app,
         ),
         patch(
-            "homeassistant.components.zha.async_setup_entry",
+            "inpui.components.zha.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -43,7 +43,7 @@ def mock_zha_get_last_network_settings() -> Generator[None]:
     """Mock zha.api.async_get_last_network_settings."""
 
     with patch(
-        "homeassistant.components.zha.api.async_get_last_network_settings",
+        "inpui.components.zha.api.async_get_last_network_settings",
         AsyncMock(return_value=None),
     ):
         yield
@@ -53,7 +53,7 @@ def mock_zha_get_last_network_settings() -> Generator[None]:
 def mock_usb_path_exists() -> Generator[None]:
     """Mock os.path.exists to allow the ZBT-1 integration to load."""
     with patch(
-        "homeassistant.components.homeassistant_sky_connect.os.path.exists",
+        "inpui.components.homeassistant_sky_connect.os.path.exists",
         return_value=True,
     ):
         yield
@@ -63,7 +63,7 @@ def mock_usb_path_exists() -> Generator[None]:
 def mock_firmware_update_client() -> Generator[MagicMock]:
     """Mock the FirmwareUpdateClient to avoid network requests."""
     with patch(
-        "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+        "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
         autospec=True,
     ) as mock_client:
         mock_client.return_value.async_update_data = AsyncMock(return_value=None)

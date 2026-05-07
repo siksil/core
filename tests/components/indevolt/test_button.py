@@ -37,7 +37,7 @@ async def test_button(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test button entity registration and states."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -50,7 +50,7 @@ async def test_button_press_standby(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test pressing the standby button switches to real-time mode and sends standby action."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration
@@ -84,7 +84,7 @@ async def test_button_press_standby_already_in_realtime_mode(
 
     # Force real-time control mode
     mock_indevolt.fetch_data.return_value[ENERGY_MODE_READ_KEY] = REALTIME_ACTION_MODE
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration
@@ -109,7 +109,7 @@ async def test_button_press_standby_timeout_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test pressing standby raises HomeAssistantError when the device times out."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
 
     # Simulate an API push failure
@@ -135,7 +135,7 @@ async def test_button_press_standby_portable_mode_error(
 
     # Force outdoor/portable mode
     mock_indevolt.fetch_data.return_value[ENERGY_MODE_READ_KEY] = PORTABLE_MODE
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration

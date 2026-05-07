@@ -38,10 +38,10 @@ async def test_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.pegel_online.async_setup_entry", return_value=True
+            "inpui.components.pegel_online.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.pegel_online.config_flow.PegelOnline",
+            "inpui.components.pegel_online.config_flow.PegelOnline",
         ) as pegelonline,
     ):
         pegelonline.return_value = PegelOnlineMock(nearby_stations=MOCK_NEARBY_STATIONS)
@@ -79,7 +79,7 @@ async def test_user_already_configured(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.pegel_online.config_flow.PegelOnline",
+        "inpui.components.pegel_online.config_flow.PegelOnline",
     ) as pegelonline:
         pegelonline.return_value = PegelOnlineMock(nearby_stations=MOCK_NEARBY_STATIONS)
         result = await hass.config_entries.flow.async_configure(
@@ -105,10 +105,10 @@ async def test_connection_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.pegel_online.async_setup_entry", return_value=True
+            "inpui.components.pegel_online.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.pegel_online.config_flow.PegelOnline",
+            "inpui.components.pegel_online.config_flow.PegelOnline",
         ) as pegelonline,
     ):
         # connection issue during setup
@@ -150,10 +150,10 @@ async def test_user_no_stations(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.pegel_online.async_setup_entry", return_value=True
+            "inpui.components.pegel_online.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.pegel_online.config_flow.PegelOnline",
+            "inpui.components.pegel_online.config_flow.PegelOnline",
         ) as pegelonline,
     ):
         # no stations found

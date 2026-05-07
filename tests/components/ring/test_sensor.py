@@ -197,7 +197,7 @@ async def test_history_sensor(
         suggested_object_id=f"{device_name}_{sensor_name}",
         config_entry=mock_config_entry,
     )
-    with patch("homeassistant.components.ring.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.ring.PLATFORMS", [Platform.SENSOR]):
         assert await async_setup_component(hass, DOMAIN, {})
 
     entity_id = f"sensor.{device_name}_{sensor_name}"

@@ -24,7 +24,7 @@ def met_setup_fixture(request: pytest.FixtureRequest) -> Generator[Any]:
     if "disable_autouse_fixture" in request.keywords:
         yield
     else:
-        with patch("homeassistant.components.met.async_setup_entry", return_value=True):
+        with patch("inpui.components.met.async_setup_entry", return_value=True):
             yield
 
 
@@ -161,7 +161,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
 
     # Test Options flow updated config entry
     with patch(
-        "homeassistant.components.met.coordinator.metno.MetWeatherData"
+        "inpui.components.met.coordinator.metno.MetWeatherData"
     ) as weatherdatamock:
         result = await hass.config_entries.options.async_init(
             entry.entry_id, data=update_data

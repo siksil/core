@@ -34,7 +34,7 @@ async def test_diagnostics(
     inject_bluetooth_service_info(hass, WORELAY_SWITCH_1PM_SERVICE_INFO)
 
     with patch(
-        "homeassistant.components.switchbot.switch.switchbot.SwitchbotRelaySwitch.update",
+        "inpui.components.switchbot.switch.switchbot.SwitchbotRelaySwitch.update",
         return_value=None,
     ):
         mock_config_entry = MockConfigEntry(

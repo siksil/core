@@ -210,7 +210,7 @@ async def test_discovery_camera(
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -278,7 +278,7 @@ async def test_discovery_pick_device_camera(
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -390,7 +390,7 @@ async def test_discovery_auth_camera(
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -502,7 +502,7 @@ async def test_discovery_new_credentials(
     assert mock_connect["connect"].call_count == 1
 
     with patch(
-        "homeassistant.components.tplink.config_flow.get_credentials",
+        "inpui.components.tplink.config_flow.get_credentials",
         return_value=Credentials("fake_user", "fake_pass"),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -533,9 +533,9 @@ async def test_discovery_new_credentials_invalid(
     mock_device = mock_connect["mock_devices"][IP_ADDRESS]
 
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         patch(
-            "homeassistant.components.tplink.config_flow.get_credentials",
+            "inpui.components.tplink.config_flow.get_credentials",
             return_value=None,
         ),
         override_side_effect(mock_connect["connect"], AuthenticationError),
@@ -559,7 +559,7 @@ async def test_discovery_new_credentials_invalid(
 
     with (
         patch(
-            "homeassistant.components.tplink.config_flow.get_credentials",
+            "inpui.components.tplink.config_flow.get_credentials",
             return_value=Credentials("fake_user", "fake_pass"),
         ),
         override_side_effect(mock_connect["connect"], AuthenticationError),
@@ -776,7 +776,7 @@ async def test_manual_camera(
     # Test unknown error
     with (
         patch(
-            "homeassistant.components.stream.async_check_stream_client_error",
+            "inpui.components.stream.async_check_stream_client_error",
             side_effect=stream.StreamOpenClientError(
                 "Stream was not found", error_code=stream.StreamClientError.NotFound
             ),
@@ -799,7 +799,7 @@ async def test_manual_camera(
     # Test unknown error
     with (
         patch(
-            "homeassistant.components.stream.async_check_stream_client_error",
+            "inpui.components.stream.async_check_stream_client_error",
             side_effect=stream.StreamOpenClientError(
                 "Request is unauthorized",
                 error_code=stream.StreamClientError.Unauthorized,
@@ -820,7 +820,7 @@ async def test_manual_camera(
     assert result["errors"] == {"base": "invalid_camera_auth"}
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -878,10 +878,10 @@ async def test_manual_camera_no_hls(
     # Test stream error
     with (
         patch(
-            "homeassistant.components.stream.async_check_stream_client_error",
+            "inpui.components.stream.async_check_stream_client_error",
             side_effect=exception,
         ),
-        patch("homeassistant.components.ffmpeg.async_get_image", return_value=None),
+        patch("inpui.components.ffmpeg.async_get_image", return_value=None),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -900,11 +900,11 @@ async def test_manual_camera_no_hls(
     # async_get_image will succeed
     with (
         patch(
-            "homeassistant.components.stream.async_check_stream_client_error",
+            "inpui.components.stream.async_check_stream_client_error",
             side_effect=exception,
         ),
         patch(
-            "homeassistant.components.ffmpeg.async_get_image",
+            "inpui.components.ffmpeg.async_get_image",
             return_value=SMALLEST_VALID_JPEG_BYTES,
         ),
     ):
@@ -1064,7 +1064,7 @@ async def test_manual_auth_camera(
     assert result["step_id"] == "camera_auth_confirm"
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1431,7 +1431,7 @@ async def test_integration_discovery_with_ip_change(
     """Test integration updates ip address from discovery."""
     mock_config_entry.add_to_hass(hass)
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], KasaException()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1479,7 +1479,7 @@ async def test_integration_discovery_with_ip_change(
 
     with (
         patch(
-            "homeassistant.components.tplink.async_create_clientsession",
+            "inpui.components.tplink.async_create_clientsession",
             return_value="Foo",
         ),
         override_side_effect(mock_connect["connect"], lambda *_, **__: bulb),
@@ -1512,7 +1512,7 @@ async def test_integration_discovery_with_connection_change(
     )
     mock_config_entry.add_to_hass(hass)
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], KasaException()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1549,7 +1549,7 @@ async def test_integration_discovery_with_connection_change(
 
     with (
         patch(
-            "homeassistant.components.tplink.async_create_clientsession",
+            "inpui.components.tplink.async_create_clientsession",
             return_value="Foo",
         ),
         override_side_effect(mock_connect["connect"], lambda *_, **__: bulb),
@@ -1590,7 +1590,7 @@ async def test_dhcp_discovery_with_ip_change(
     """Test dhcp discovery with an IP change."""
     mock_config_entry.add_to_hass(hass)
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], KasaException()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1695,7 +1695,7 @@ async def test_reauth_camera(
     assert result["step_id"] == "camera_auth_confirm"
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1821,7 +1821,7 @@ async def test_reauth_update_with_encryption_change(
     assert mock_config_entry.data[CONF_CREDENTIALS_HASH] == CREDENTIALS_HASH_AES
 
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], AuthenticationError()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1892,7 +1892,7 @@ async def test_reauth_update_from_discovery(
     """Test reauth flow."""
     mock_config_entry.add_to_hass(hass)
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], AuthenticationError()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1941,7 +1941,7 @@ async def test_reauth_update_from_discovery_with_ip_change(
     """Test reauth flow."""
     mock_config_entry.add_to_hass(hass)
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], AuthenticationError()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -2272,7 +2272,7 @@ async def test_reauth_update_other_flows(
     mock_config_entry.add_to_hass(hass)
     mock_config_entry2.add_to_hass(hass)
     with (
-        patch("homeassistant.components.tplink.Discover.discover", return_value={}),
+        patch("inpui.components.tplink.Discover.discover", return_value={}),
         override_side_effect(mock_connect["connect"], AuthenticationError()),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -2453,7 +2453,7 @@ async def test_reconfigure_camera(
     assert result["step_id"] == "camera_auth_confirm"
 
     with patch(
-        "homeassistant.components.stream.async_check_stream_client_error",
+        "inpui.components.stream.async_check_stream_client_error",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(

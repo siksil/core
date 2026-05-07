@@ -34,7 +34,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_opengarage() -> Generator[MagicMock]:
     """Return a mocked OpenGarage client."""
     with patch(
-        "homeassistant.components.opengarage.opengarage.OpenGarage",
+        "inpui.components.opengarage.opengarage.OpenGarage",
         autospec=True,
     ) as client_mock:
         client = client_mock.return_value

@@ -39,7 +39,7 @@ async def test_sensors(
 ) -> None:
     """Test wolflink sensors."""
 
-    with patch("homeassistant.components.wolflink.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.wolflink.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

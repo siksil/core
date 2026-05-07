@@ -35,7 +35,7 @@ KIRA_CODES = """
 @pytest.fixture(autouse=True)
 def setup_comp():
     """Set up things to be run when tests are started."""
-    with patch("homeassistant.components.kira.pykira.KiraReceiver"):
+    with patch("inpui.components.kira.pykira.KiraReceiver"):
         yield
 
 

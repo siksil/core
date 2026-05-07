@@ -25,14 +25,14 @@ async def test_async_setup_entry_fails(
     assert config_entry.state is ConfigEntryState.SETUP_RETRY
 
     with (
-        patch("homeassistant.components.zeversolar.PLATFORMS", []),
+        patch("inpui.components.zeversolar.PLATFORMS", []),
         patch("zeversolar.ZeverSolarClient.get_data", return_value=zeversolar_data),
     ):
         hass.config_entries.async_schedule_reload(config_entry.entry_id)
     assert config_entry.state is ConfigEntryState.LOADED
 
     with (
-        patch("homeassistant.components.zeversolar.PLATFORMS", []),
+        patch("inpui.components.zeversolar.PLATFORMS", []),
     ):
         result = await hass.config_entries.async_unload(config_entry.entry_id)
     assert result is True

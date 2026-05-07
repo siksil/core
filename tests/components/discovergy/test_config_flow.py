@@ -23,7 +23,7 @@ async def test_form(hass: HomeAssistant, discovergy: AsyncMock) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.discovergy.async_setup_entry",
+        "inpui.components.discovergy.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -54,7 +54,7 @@ async def test_reauth(
     assert init_result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.discovergy.async_setup_entry",
+        "inpui.components.discovergy.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         configure_result = await hass.config_entries.flow.async_configure(
@@ -124,7 +124,7 @@ async def test_reauth_unique_id_mismatch(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.discovergy.async_setup_entry",
+        "inpui.components.discovergy.async_setup_entry",
         return_value=True,
     ):
         configure_result = await hass.config_entries.flow.async_configure(

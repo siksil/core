@@ -75,7 +75,7 @@ PROBE_FUNCTION_PATH = "zigbee.application.ControllerApplication.probe"
 @pytest.fixture(autouse=True)
 def disable_platform_only():
     """Disable platforms to speed up tests."""
-    with patch("homeassistant.components.zha.PLATFORMS", []):
+    with patch("inpui.components.zha.PLATFORMS", []):
         yield
 
 
@@ -84,11 +84,11 @@ def mock_multipan_platform():
     """Mock the multipan platform."""
     with (
         patch(
-            "homeassistant.components.zha.silabs_multiprotocol.async_get_channel",
+            "inpui.components.zha.silabs_multiprotocol.async_get_channel",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.zha.silabs_multiprotocol.async_using_multipan",
+            "inpui.components.zha.silabs_multiprotocol.async_using_multipan",
             return_value=False,
         ),
     ):
@@ -314,7 +314,7 @@ class DelayedAsyncMock(AsyncMock):
         ),
     ],
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
 @patch(f"bellows.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
 async def test_zeroconf_discovery(
@@ -363,7 +363,7 @@ async def test_zeroconf_discovery(
     }
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @patch(f"zigpy_zigate.{PROBE_FUNCTION_PATH}")
 async def test_legacy_zeroconf_discovery_zigate(
     setup_entry_mock, hass: HomeAssistant
@@ -440,7 +440,7 @@ async def test_zeroconf_discovery_bad_payload(hass: HomeAssistant) -> None:
     assert result["reason"] == "invalid_zeroconf_data"
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
 async def test_legacy_zeroconf_discovery_ip_change_ignored(hass: HomeAssistant) -> None:
     """Test zeroconf flow that was ignored gets updated."""
@@ -498,7 +498,7 @@ async def test_legacy_zeroconf_discovery_confirm_final_abort_if_entries(
 
     # ZHA was somehow set up while we were in the config flow
     with patch(
-        "homeassistant.config_entries.ConfigFlow._async_current_entries",
+        "inpui.config_entries.ConfigFlow._async_current_entries",
         return_value=[MagicMock()],
     ):
         # Confirm discovery
@@ -538,7 +538,7 @@ async def test_discovery_via_usb(hass: HomeAssistant) -> None:
     assert result2["type"] is FlowResultType.MENU
     assert result2["step_id"] == "choose_setup_strategy"
 
-    with patch("homeassistant.components.zha.async_setup_entry", return_value=True):
+    with patch("inpui.components.zha.async_setup_entry", return_value=True):
         result_setup = await hass.config_entries.flow.async_configure(
             result2["flow_id"],
             user_input={"next_step_id": config_flow.SETUP_STRATEGY_RECOMMENDED},
@@ -564,7 +564,7 @@ async def test_discovery_via_usb(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+    "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
     AsyncMock(return_value=ProbeResult.PROBING_FAILED),
 )
 async def test_discovery_via_usb_no_radio(hass: HomeAssistant) -> None:
@@ -584,7 +584,7 @@ async def test_discovery_via_usb_no_radio(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "confirm"
 
-    with patch("homeassistant.components.zha.async_setup_entry", return_value=True):
+    with patch("inpui.components.zha.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}
         )
@@ -626,7 +626,7 @@ async def test_discovery_via_usb_already_setup(hass: HomeAssistant) -> None:
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_strategy_recommended(
     hass: HomeAssistant, backup, mock_app
 ) -> None:
@@ -655,7 +655,7 @@ async def test_migration_strategy_recommended(
     )
 
     with patch(
-        "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+        "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
         return_value=[backup],
     ):
         result_init = await hass.config_entries.flow.async_init(
@@ -670,10 +670,10 @@ async def test_migration_strategy_recommended(
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
         ) as mock_restore_backup,
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_unload",
+            "inpui.config_entries.ConfigEntries.async_unload",
             return_value=True,
         ) as mock_async_unload,
     ):
@@ -695,7 +695,7 @@ async def test_migration_strategy_recommended(
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_strategy_recommended_cannot_write(
     hass: HomeAssistant, backup, mock_app
 ) -> None:
@@ -721,7 +721,7 @@ async def test_migration_strategy_recommended_cannot_write(
     )
 
     with patch(
-        "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+        "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
         return_value=[backup],
     ):
         result_confirm = await hass.config_entries.flow.async_configure(
@@ -731,7 +731,7 @@ async def test_migration_strategy_recommended_cannot_write(
     assert result_confirm["step_id"] == "choose_migration_strategy"
 
     with patch(
-        "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+        "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
         new_callable=DelayedAsyncMock,
         side_effect=CannotWriteNetworkSettings("test error"),
     ) as mock_restore_backup:
@@ -753,7 +753,7 @@ async def test_migration_strategy_recommended_cannot_write(
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_multiple_zha_entries_aborts(hass: HomeAssistant, mock_app) -> None:
     """Test flow aborts if there are multiple ZHA config entries."""
     MockConfigEntry(
@@ -796,7 +796,7 @@ async def test_multiple_zha_entries_aborts(hass: HomeAssistant, mock_app) -> Non
     assert result_reuse["reason"] == "single_instance_allowed"
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_discovery_via_usb_duplicate_unique_id(hass: HomeAssistant) -> None:
     """Test USB discovery when a config entry with a duplicate unique_id already exists."""
 
@@ -959,7 +959,7 @@ async def test_discovery_via_usb_same_device_already_setup(hass: HomeAssistant) 
     )
 
     with patch(
-        "homeassistant.components.zha.config_flow.usb.get_serial_by_id",
+        "inpui.components.zha.config_flow.usb.get_serial_by_id",
         return_value="/dev/serial/by-id/usb-device123",
     ) as mock_get_serial_by_id:
         result = await hass.config_entries.flow.async_init(
@@ -975,7 +975,7 @@ async def test_discovery_via_usb_same_device_already_setup(hass: HomeAssistant) 
     assert result["reason"] == "single_instance_allowed"
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
 async def test_legacy_zeroconf_discovery_already_setup(hass: HomeAssistant) -> None:
     """Test zeroconf flow -- radio detected."""
@@ -1041,7 +1041,7 @@ async def test_zeroconf_discovery_via_socket_already_setup_with_ip_match(
     assert result["reason"] == "single_instance_allowed"
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_zeroconf_not_onboarded(hass: HomeAssistant) -> None:
     """Test zeroconf discovery needing confirmation when not onboarded."""
     service_info = ZeroconfServiceInfo(
@@ -1054,7 +1054,7 @@ async def test_zeroconf_not_onboarded(hass: HomeAssistant) -> None:
         type="mock_type",
     )
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+        "inpui.components.onboarding.async_is_onboarded", return_value=False
     ):
         result_create = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -1069,11 +1069,11 @@ async def test_zeroconf_not_onboarded(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+    "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
     mock_detect_radio_type(radio_type=RadioType.deconz),
 )
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[usb_port()]),
 )
 async def test_user_flow(hass: HomeAssistant) -> None:
@@ -1092,7 +1092,7 @@ async def test_user_flow(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.MENU
     assert result["step_id"] == "choose_setup_strategy"
 
-    with patch("homeassistant.components.zha.async_setup_entry", return_value=True):
+    with patch("inpui.components.zha.async_setup_entry", return_value=True):
         result_setup = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"next_step_id": config_flow.SETUP_STRATEGY_RECOMMENDED},
@@ -1118,11 +1118,11 @@ async def test_user_flow(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+    "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
     AsyncMock(return_value=ProbeResult.PROBING_FAILED),
 )
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[usb_port()]),
 )
 async def test_user_flow_not_detected(hass: HomeAssistant) -> None:
@@ -1146,7 +1146,7 @@ async def test_user_flow_not_detected(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[usb_port()]),
 )
 async def test_user_flow_show_form(hass: HomeAssistant) -> None:
@@ -1162,7 +1162,7 @@ async def test_user_flow_show_form(hass: HomeAssistant) -> None:
 
 @pytest.mark.usefixtures("addon_not_installed")
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[]),
 )
 async def test_user_flow_show_manual(hass: HomeAssistant) -> None:
@@ -1281,7 +1281,7 @@ async def test_user_port_config_fail(probe_mock, hass: HomeAssistant) -> None:
     assert probe_mock.await_count == 1
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @patch(f"bellows.{PROBE_FUNCTION_PATH}", return_value=True)
 async def test_user_port_config(probe_mock, hass: HomeAssistant) -> None:
     """Test port config."""
@@ -1320,7 +1320,7 @@ async def test_user_port_config(probe_mock, hass: HomeAssistant) -> None:
     assert probe_mock.await_count == 1
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_hardware_not_onboarded(hass: HomeAssistant) -> None:
     """Test hardware flow."""
     data = {
@@ -1333,7 +1333,7 @@ async def test_hardware_not_onboarded(hass: HomeAssistant) -> None:
         },
     }
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+        "inpui.components.onboarding.async_is_onboarded", return_value=False
     ):
         result_init = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_HARDWARE}, data=data
@@ -1357,7 +1357,7 @@ async def test_hardware_not_onboarded(hass: HomeAssistant) -> None:
     }
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_hardware_no_flow_strategy(hass: HomeAssistant) -> None:
     """Test hardware flow."""
     data = {
@@ -1370,7 +1370,7 @@ async def test_hardware_no_flow_strategy(hass: HomeAssistant) -> None:
         },
     }
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=True
+        "inpui.components.onboarding.async_is_onboarded", return_value=True
     ):
         result1 = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_HARDWARE}, data=data
@@ -1411,7 +1411,7 @@ async def test_hardware_no_flow_strategy(hass: HomeAssistant) -> None:
     }
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_hardware_flow_strategy_advanced(hass: HomeAssistant) -> None:
     """Test advanced flow strategy for hardware flow."""
     data = {
@@ -1425,7 +1425,7 @@ async def test_hardware_flow_strategy_advanced(hass: HomeAssistant) -> None:
         "flow_strategy": "advanced",
     }
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=True
+        "inpui.components.onboarding.async_is_onboarded", return_value=True
     ):
         result_hardware = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_HARDWARE}, data=data
@@ -1466,7 +1466,7 @@ async def test_hardware_flow_strategy_advanced(hass: HomeAssistant) -> None:
     }
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_hardware_flow_strategy_recommended(hass: HomeAssistant) -> None:
     """Test recommended flow strategy for hardware flow."""
     data = {
@@ -1480,7 +1480,7 @@ async def test_hardware_flow_strategy_recommended(hass: HomeAssistant) -> None:
         "flow_strategy": "recommended",
     }
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=True
+        "inpui.components.onboarding.async_is_onboarded", return_value=True
     ):
         result_hardware = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_HARDWARE}, data=data
@@ -1514,7 +1514,7 @@ async def test_hardware_flow_strategy_recommended(hass: HomeAssistant) -> None:
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_hardware_migration_flow_strategy_advanced(
     hass: HomeAssistant,
     backup: zigpy.backups.NetworkBackup,
@@ -1547,17 +1547,17 @@ async def test_hardware_migration_flow_strategy_advanced(
     }
     with (
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded", return_value=True
+            "inpui.components.onboarding.async_is_onboarded", return_value=True
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
         ) as mock_restore_backup,
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_unload",
+            "inpui.config_entries.ConfigEntries.async_unload",
             return_value=True,
         ) as mock_async_unload,
     ):
@@ -1594,7 +1594,7 @@ async def test_hardware_migration_flow_strategy_advanced(
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_hardware_migration_flow_strategy_recommended(
     hass: HomeAssistant,
     backup: zigpy.backups.NetworkBackup,
@@ -1627,17 +1627,17 @@ async def test_hardware_migration_flow_strategy_recommended(
     }
     with (
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded", return_value=True
+            "inpui.components.onboarding.async_is_onboarded", return_value=True
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
         ) as mock_restore_backup,
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_unload",
+            "inpui.config_entries.ConfigEntries.async_unload",
             return_value=True,
         ) as mock_async_unload,
     ):
@@ -1710,7 +1710,7 @@ def advanced_pick_radio(
         port_select = f"{port}, s/n: {port.serial_number} - {port.manufacturer}"
 
         with patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
             mock_detect_radio_type(radio_type=radio_type),
         ):
             result = await hass.config_entries.flow.async_init(
@@ -1735,10 +1735,10 @@ def advanced_pick_radio(
         return advanced_strategy_result
 
     p1 = patch(
-        "homeassistant.components.zha.config_flow.list_serial_ports",
+        "inpui.components.zha.config_flow.list_serial_ports",
         AsyncMock(return_value=[usb_port()]),
     )
-    p2 = patch("homeassistant.components.zha.async_setup_entry")
+    p2 = patch("inpui.components.zha.async_setup_entry")
 
     with p1, p2:
         yield wrapper
@@ -1844,7 +1844,7 @@ async def test_formation_strategy_form_initial_network_failure(
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_onboarding_auto_formation_new_hardware(
     mock_app: AsyncMock, hass: HomeAssistant
 ) -> None:
@@ -1869,7 +1869,7 @@ async def test_onboarding_auto_formation_new_hardware(
     )
 
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+        "inpui.components.onboarding.async_is_onboarded", return_value=False
     ):
         result_init = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_USB}, data=discovery_info
@@ -1912,7 +1912,7 @@ async def test_formation_strategy_reuse_settings(
     assert result2["type"] is FlowResultType.CREATE_ENTRY
 
 
-@patch("homeassistant.components.zha.config_flow.process_uploaded_file")
+@patch("inpui.components.zha.config_flow.process_uploaded_file")
 def test_parse_uploaded_backup(process_mock) -> None:
     """Test parsing uploaded backup files."""
     backup = zigpy.backups.NetworkBackup()
@@ -1926,7 +1926,7 @@ def test_parse_uploaded_backup(process_mock) -> None:
     assert backup == parsed_backup
 
 
-@patch("homeassistant.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
+@patch("inpui.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
 async def test_formation_strategy_restore_manual_backup_non_ezsp(
     allow_overwrite_ieee_mock,
     advanced_pick_radio: RadioPicker,
@@ -1946,7 +1946,7 @@ async def test_formation_strategy_restore_manual_backup_non_ezsp(
     assert result2["step_id"] == "upload_manual_backup"
 
     with patch(
-        "homeassistant.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
+        "inpui.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
         return_value=zigpy.backups.NetworkBackup(),
     ):
         result_upload = await hass.config_entries.flow.async_configure(
@@ -1967,7 +1967,7 @@ async def test_formation_strategy_restore_manual_backup_non_ezsp(
     assert result3["data"][CONF_RADIO_TYPE] == "znp"
 
 
-@patch("homeassistant.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
+@patch("inpui.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
 async def test_formation_strategy_restore_manual_backup_overwrite_ieee_ezsp(
     allow_overwrite_ieee_mock,
     advanced_pick_radio: RadioPicker,
@@ -1989,11 +1989,11 @@ async def test_formation_strategy_restore_manual_backup_overwrite_ieee_ezsp(
 
     with (
         patch(
-            "homeassistant.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
+            "inpui.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
             return_value=backup,
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
             new_callable=DelayedAsyncMock,
             side_effect=[
                 DestructiveWriteNetworkSettings("Radio IEEE change is permanent"),
@@ -2038,7 +2038,7 @@ async def test_formation_strategy_restore_manual_backup_overwrite_ieee_ezsp(
     assert mock_restore_backup.mock_calls[0].kwargs["overwrite_ieee"] is True
 
 
-@patch("homeassistant.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
+@patch("inpui.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
 async def test_formation_strategy_restore_manual_backup_ezsp(
     allow_overwrite_ieee_mock,
     advanced_pick_radio: RadioPicker,
@@ -2059,11 +2059,11 @@ async def test_formation_strategy_restore_manual_backup_ezsp(
 
     with (
         patch(
-            "homeassistant.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
+            "inpui.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
             return_value=backup,
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
             new_callable=DelayedAsyncMock,
             side_effect=[
                 DestructiveWriteNetworkSettings("Radio IEEE change is permanent"),
@@ -2117,7 +2117,7 @@ async def test_formation_strategy_restore_manual_backup_invalid_upload(
     assert result2["step_id"] == "upload_manual_backup"
 
     with patch(
-        "homeassistant.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
+        "inpui.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
         side_effect=ValueError("Invalid backup JSON"),
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -2149,10 +2149,10 @@ def test_format_backup_choice() -> None:
 
 
 @patch(
-    "homeassistant.components.zha.config_flow._format_backup_choice",
+    "inpui.components.zha.config_flow._format_backup_choice",
     lambda s, **kwargs: "choice:" + repr(s),
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_formation_strategy_restore_automatic_backup_ezsp(
     advanced_pick_radio: RadioPicker,
     mock_app: AsyncMock,
@@ -2198,10 +2198,10 @@ async def test_formation_strategy_restore_automatic_backup_ezsp(
 
 
 @patch(
-    "homeassistant.components.zha.config_flow._format_backup_choice",
+    "inpui.components.zha.config_flow._format_backup_choice",
     lambda s, **kwargs: "choice:" + repr(s),
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @pytest.mark.parametrize("is_advanced", [True, False])
 async def test_formation_strategy_restore_automatic_backup_non_ezsp(
     is_advanced,
@@ -2222,7 +2222,7 @@ async def test_formation_strategy_restore_automatic_backup_non_ezsp(
     result = await advanced_pick_radio(RadioType.znp)
 
     with patch(
-        "homeassistant.config_entries.ConfigFlow.show_advanced_options",
+        "inpui.config_entries.ConfigFlow.show_advanced_options",
         new_callable=PropertyMock(return_value=is_advanced),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -2265,7 +2265,7 @@ async def test_formation_strategy_restore_automatic_backup_non_ezsp(
     assert result3["data"][CONF_RADIO_TYPE] == "znp"
 
 
-@patch("homeassistant.components.zha.async_setup_entry", return_value=True)
+@patch("inpui.components.zha.async_setup_entry", return_value=True)
 async def test_options_flow_creates_backup(
     async_setup_entry, hass: HomeAssistant, mock_app
 ) -> None:
@@ -2292,7 +2292,7 @@ async def test_options_flow_creates_backup(
     assert entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.zha.config_flow.get_zha_gateway",
+        "inpui.components.zha.config_flow.get_zha_gateway",
         return_value=zha_gateway,
     ):
         flow = await hass.config_entries.options.async_init(entry.entry_id)
@@ -2300,7 +2300,7 @@ async def test_options_flow_creates_backup(
         assert flow["step_id"] == "init"
 
         with patch(
-            "homeassistant.config_entries.ConfigEntries.async_unload", return_value=True
+            "inpui.config_entries.ConfigEntries.async_unload", return_value=True
         ) as mock_async_unload:
             result = await hass.config_entries.options.async_configure(
                 flow["flow_id"], user_input={}
@@ -2324,7 +2324,7 @@ async def test_options_flow_creates_backup(
     ],
 )
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(
         return_value=[
             usb_port("/dev/SomePort"),
@@ -2333,7 +2333,7 @@ async def test_options_flow_creates_backup(
         ]
     ),
 )
-@patch("homeassistant.components.zha.async_setup_entry", return_value=True)
+@patch("inpui.components.zha.async_setup_entry", return_value=True)
 async def test_options_flow_defaults(
     async_setup_entry,
     async_unload_effect,
@@ -2366,7 +2366,7 @@ async def test_options_flow_defaults(
 
     # ZHA gets unloaded
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload",
+        "inpui.config_entries.ConfigEntries.async_unload",
         new_callable=DelayedAsyncMock,
         side_effect=[async_unload_effect],
     ) as mock_async_unload:
@@ -2479,7 +2479,7 @@ async def test_options_flow_defaults(
 
 
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(
         return_value=[
             usb_port("/dev/SomePort"),
@@ -2487,7 +2487,7 @@ async def test_options_flow_defaults(
         ]
     ),
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_options_flow_defaults_socket(hass: HomeAssistant) -> None:
     """Test options flow defaults work even for serial ports that can't be listed."""
 
@@ -2512,7 +2512,7 @@ async def test_options_flow_defaults_socket(hass: HomeAssistant) -> None:
 
     # ZHA gets unloaded
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload", return_value=True
+        "inpui.config_entries.ConfigEntries.async_unload", return_value=True
     ):
         result1 = await hass.config_entries.options.async_configure(
             flow["flow_id"], user_input={}
@@ -2563,10 +2563,10 @@ async def test_options_flow_defaults_socket(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[usb_port()]),
 )
-@patch("homeassistant.components.zha.async_setup_entry", return_value=True)
+@patch("inpui.components.zha.async_setup_entry", return_value=True)
 async def test_options_flow_restarts_running_zha_if_cancelled(
     async_setup_entry, hass: HomeAssistant
 ) -> None:
@@ -2593,7 +2593,7 @@ async def test_options_flow_restarts_running_zha_if_cancelled(
 
     # ZHA gets unloaded
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload", return_value=True
+        "inpui.config_entries.ConfigEntries.async_unload", return_value=True
     ):
         result1 = await hass.config_entries.options.async_configure(
             flow["flow_id"], user_input={}
@@ -2620,7 +2620,7 @@ async def test_options_flow_restarts_running_zha_if_cancelled(
     async_setup_entry.assert_called_once_with(hass, entry)
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_options_flow_migration_reset_old_adapter(
     hass: HomeAssistant, backup, mock_app
 ) -> None:
@@ -2647,7 +2647,7 @@ async def test_options_flow_migration_reset_old_adapter(
 
     # ZHA gets unloaded
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload", return_value=True
+        "inpui.config_entries.ConfigEntries.async_unload", return_value=True
     ):
         result_init = await hass.config_entries.options.async_configure(
             flow["flow_id"], user_input={}
@@ -2659,15 +2659,15 @@ async def test_options_flow_migration_reset_old_adapter(
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
             return_value=ProbeResult.RADIO_TYPE_DETECTED,
         ),
         patch(
-            "homeassistant.components.zha.config_flow.list_serial_ports",
+            "inpui.components.zha.config_flow.list_serial_ports",
             AsyncMock(return_value=[usb_port("/dev/ttyUSB_new")]),
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
     ):
@@ -2692,7 +2692,7 @@ async def test_options_flow_migration_reset_old_adapter(
     mock_radio_manager = AsyncMock()
 
     with patch(
-        "homeassistant.components.zha.config_flow.ZhaRadioManager",
+        "inpui.components.zha.config_flow.ZhaRadioManager",
         spec=ZhaRadioManager,
         side_effect=[mock_radio_manager],
     ):
@@ -2722,10 +2722,10 @@ async def test_options_flow_migration_reset_old_adapter(
 
 
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[usb_port()]),
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_options_flow_reconfigure_no_reset(
     hass: HomeAssistant, backup, mock_app
 ) -> None:
@@ -2752,7 +2752,7 @@ async def test_options_flow_reconfigure_no_reset(
 
     # ZHA gets unloaded
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload", return_value=True
+        "inpui.config_entries.ConfigEntries.async_unload", return_value=True
     ):
         result_init = await hass.config_entries.options.async_configure(
             flow["flow_id"], user_input={}
@@ -2764,15 +2764,15 @@ async def test_options_flow_reconfigure_no_reset(
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
             return_value=ProbeResult.RADIO_TYPE_DETECTED,
         ),
         patch(
-            "homeassistant.components.zha.config_flow.list_serial_ports",
+            "inpui.components.zha.config_flow.list_serial_ports",
             AsyncMock(return_value=[usb_port("/dev/ttyUSB_new")]),
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
     ):
@@ -2794,7 +2794,7 @@ async def test_options_flow_reconfigure_no_reset(
     assert result_port["step_id"] == "choose_migration_strategy"
 
     with patch(
-        "homeassistant.components.zha.config_flow.ZhaRadioManager"
+        "inpui.components.zha.config_flow.ZhaRadioManager"
     ) as mock_radio_manager:
         result_migrate_start = await hass.config_entries.options.async_configure(
             flow["flow_id"],
@@ -2842,9 +2842,9 @@ async def test_config_flow_port_yellow_port_name(
     )
 
     with (
-        patch("homeassistant.components.zha.config_flow.yellow_hardware.async_info"),
+        patch("inpui.components.zha.config_flow.yellow_hardware.async_info"),
         patch(
-            "homeassistant.components.zha.config_flow.scan_serial_ports",
+            "inpui.components.zha.config_flow.scan_serial_ports",
             return_value=[port],
         ),
     ):
@@ -2864,9 +2864,9 @@ async def test_config_flow_ports_no_hassio(hass: HomeAssistant) -> None:
     """Test config flow serial port name when this is not a hassio install."""
 
     with (
-        patch("homeassistant.components.zha.config_flow.is_hassio", return_value=False),
+        patch("inpui.components.zha.config_flow.is_hassio", return_value=False),
         patch(
-            "homeassistant.components.zha.config_flow.scan_serial_ports",
+            "inpui.components.zha.config_flow.scan_serial_ports",
             return_value=[],
         ),
     ):
@@ -2879,12 +2879,12 @@ async def test_config_flow_port_multiprotocol_port_name(hass: HomeAssistant) -> 
     """Test config flow serial port name for multiprotocol add-on."""
 
     with (
-        patch("homeassistant.components.zha.config_flow.is_hassio", return_value=True),
+        patch("inpui.components.zha.config_flow.is_hassio", return_value=True),
         patch(
-            "homeassistant.components.hassio.addon_manager.AddonManager.async_get_addon_info"
+            "inpui.components.hassio.addon_manager.AddonManager.async_get_addon_info"
         ) as async_get_addon_info,
         patch(
-            "homeassistant.components.zha.config_flow.scan_serial_ports",
+            "inpui.components.zha.config_flow.scan_serial_ports",
             return_value=[],
         ),
     ):
@@ -2902,14 +2902,14 @@ async def test_config_flow_port_no_multiprotocol(hass: HomeAssistant) -> None:
     """Test config flow serial port listing when addon info fails to load."""
 
     with (
-        patch("homeassistant.components.zha.config_flow.is_hassio", return_value=True),
+        patch("inpui.components.zha.config_flow.is_hassio", return_value=True),
         patch(
-            "homeassistant.components.hassio.addon_manager.AddonManager.async_get_addon_info",
+            "inpui.components.hassio.addon_manager.AddonManager.async_get_addon_info",
             new_callable=DelayedAsyncMock,
             side_effect=AddonError,
         ),
         patch(
-            "homeassistant.components.zha.config_flow.scan_serial_ports",
+            "inpui.components.zha.config_flow.scan_serial_ports",
             return_value=[],
         ),
     ):
@@ -2972,9 +2972,9 @@ async def test_list_serial_ports_ignored_devices(hass: HomeAssistant) -> None:
     ]
 
     with (
-        patch("homeassistant.components.zha.config_flow.is_hassio", return_value=False),
+        patch("inpui.components.zha.config_flow.is_hassio", return_value=False),
         patch(
-            "homeassistant.components.zha.config_flow.scan_serial_ports",
+            "inpui.components.zha.config_flow.scan_serial_ports",
             return_value=mock_ports,
         ),
     ):
@@ -3005,14 +3005,14 @@ async def test_list_serial_ports_ignored_devices(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.zha.config_flow.list_serial_ports",
+    "inpui.components.zha.config_flow.list_serial_ports",
     AsyncMock(return_value=[usb_port()]),
 )
 async def test_probe_wrong_firmware_installed(hass: HomeAssistant) -> None:
     """Test auto-probing failing because the wrong firmware is installed."""
 
     with patch(
-        "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+        "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
         return_value=ProbeResult.WRONG_FIRMWARE_INSTALLED,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -3034,11 +3034,11 @@ async def test_discovery_wrong_firmware_installed(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
             return_value=ProbeResult.WRONG_FIRMWARE_INSTALLED,
         ),
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+            "inpui.components.onboarding.async_is_onboarded", return_value=False
         ),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -3069,7 +3069,7 @@ async def test_migration_ti_cc_to_znp(
         config_entry, data={**config_entry.data, CONF_RADIO_TYPE: old_type}, version=2
     )
 
-    with patch("homeassistant.components.zha.async_setup_entry", return_value=True):
+    with patch("inpui.components.zha.async_setup_entry", return_value=True):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -3078,7 +3078,7 @@ async def test_migration_ti_cc_to_znp(
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_resets_old_radio(
     hass: HomeAssistant, backup, mock_app
 ) -> None:
@@ -3111,11 +3111,11 @@ async def test_migration_resets_old_radio(
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
         patch(
-            "homeassistant.components.zha.config_flow.ZhaRadioManager",
+            "inpui.components.zha.config_flow.ZhaRadioManager",
             side_effect=[ZhaRadioManager(), mock_temp_radio_mgr],
         ),
     ):
@@ -3156,7 +3156,7 @@ async def test_migration_resets_old_radio(
     }
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 @patch(f"bellows.{PROBE_FUNCTION_PATH}", return_value=True)
 async def test_config_flow_serial_resolution_oserror(
     probe_mock, hass: HomeAssistant
@@ -3174,7 +3174,7 @@ async def test_config_flow_serial_resolution_oserror(
 
     with (
         patch(
-            "homeassistant.components.zha.config_flow.usb.get_serial_by_id",
+            "inpui.components.zha.config_flow.usb.get_serial_by_id",
             side_effect=OSError("Test error"),
         ),
     ):
@@ -3187,7 +3187,7 @@ async def test_config_flow_serial_resolution_oserror(
     assert result_init["description_placeholders"] == {"path": "/dev/ttyZIGBEE"}
 
 
-@patch("homeassistant.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
+@patch("inpui.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
 async def test_formation_strategy_restore_manual_backup_overwrite_ieee_ezsp_write_fail(
     allow_overwrite_ieee_mock,
     advanced_pick_radio: RadioPicker,
@@ -3209,11 +3209,11 @@ async def test_formation_strategy_restore_manual_backup_overwrite_ieee_ezsp_writ
 
     with (
         patch(
-            "homeassistant.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
+            "inpui.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
             return_value=backup,
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
             new_callable=DelayedAsyncMock,
             side_effect=[
                 DestructiveWriteNetworkSettings("Radio IEEE change is permanent"),
@@ -3310,7 +3310,7 @@ async def test_migrate_setup_options_with_ignored_discovery(
     ]
 
 
-@patch("homeassistant.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
+@patch("inpui.components.zha.radio_manager._allow_overwrite_ezsp_ieee")
 async def test_plug_in_new_radio_retry(
     allow_overwrite_ieee_mock,
     advanced_pick_radio: RadioPicker,
@@ -3332,11 +3332,11 @@ async def test_plug_in_new_radio_retry(
 
     with (
         patch(
-            "homeassistant.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
+            "inpui.components.zha.config_flow.ZhaConfigFlowHandler._parse_uploaded_backup",
             return_value=backup,
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
             new_callable=DelayedAsyncMock,
             side_effect=[
                 HomeAssistantError(
@@ -3421,7 +3421,7 @@ async def test_plug_in_new_radio_retry(
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_plug_in_old_radio_retry(hass: HomeAssistant, backup, mock_app) -> None:
     """Test plug_in_old_radio step when reset fails due to unplugged adapter."""
     entry = MockConfigEntry(
@@ -3456,11 +3456,11 @@ async def test_plug_in_old_radio_retry(hass: HomeAssistant, backup, mock_app) ->
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
         patch(
-            "homeassistant.components.zha.config_flow.ZhaRadioManager",
+            "inpui.components.zha.config_flow.ZhaRadioManager",
             side_effect=[ZhaRadioManager(), mock_temp_radio_mgr, mock_temp_radio_mgr],
         ),
     ):
@@ -3534,7 +3534,7 @@ async def test_plug_in_old_radio_retry(hass: HomeAssistant, backup, mock_app) ->
 
 
 @patch(f"zigpy_znp.{PROBE_FUNCTION_PATH}", AsyncMock(return_value=True))
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_plug_in_old_radio_config_entry_removed(
     hass: HomeAssistant, backup, mock_app
 ) -> None:
@@ -3578,18 +3578,18 @@ async def test_plug_in_old_radio_config_entry_removed(
 
     with (
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
+            "inpui.components.zha.radio_manager.ZhaRadioManager._async_read_backups_from_database",
             return_value=[backup],
         ),
         patch(
-            "homeassistant.components.zha.config_flow.ZhaRadioManager",
+            "inpui.components.zha.config_flow.ZhaRadioManager",
             side_effect=[
                 ZhaRadioManager(),  # for initial new radio setup
                 mock_temp_radio_mgr,  # for failing reset of old radio
             ],
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
         ) as mock_restore_backup,
     ):
         result_init = await hass.config_entries.flow.async_init(

@@ -15,7 +15,7 @@ async def test_setup_config_full(hass: HomeAssistant) -> None:
     config = {"logentries": {"token": "secret"}}
     assert await async_setup_component(hass, logentries.DOMAIN, config)
 
-    with patch("homeassistant.components.logentries.requests.post") as mock_post:
+    with patch("inpui.components.logentries.requests.post") as mock_post:
         hass.states.async_set("fake.entity", STATE_ON)
         await hass.async_block_till_done()
         assert len(mock_post.mock_calls) == 1
@@ -26,7 +26,7 @@ async def test_setup_config_defaults(hass: HomeAssistant) -> None:
     config = {"logentries": {"token": "token"}}
     assert await async_setup_component(hass, logentries.DOMAIN, config)
 
-    with patch("homeassistant.components.logentries.requests.post") as mock_post:
+    with patch("inpui.components.logentries.requests.post") as mock_post:
         hass.states.async_set("fake.entity", STATE_ON)
         await hass.async_block_till_done()
         assert len(mock_post.mock_calls) == 1

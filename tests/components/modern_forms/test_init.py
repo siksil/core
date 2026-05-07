@@ -14,7 +14,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 
 
 @patch(
-    "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update",
+    "inpui.components.modern_forms.coordinator.ModernFormsDevice.update",
     side_effect=ModernFormsConnectionError,
 )
 async def test_config_entry_not_ready(

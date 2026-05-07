@@ -25,7 +25,7 @@ from tests.typing import WebSocketGenerator
 def mock_sleep() -> Generator[AsyncMock]:
     """Mock asyncio.sleep."""
     with patch(
-        "homeassistant.components.lamarzocco.update.asyncio.sleep",
+        "inpui.components.lamarzocco.update.asyncio.sleep",
         return_value=AsyncMock(),
     ) as mock_sleep:
         yield mock_sleep
@@ -38,7 +38,7 @@ async def test_update(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the La Marzocco updates."""
-    with patch("homeassistant.components.lamarzocco.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.lamarzocco.PLATFORMS", [Platform.UPDATE]):
         await async_init_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
@@ -144,7 +144,7 @@ async def test_update_times_out(
     assert state
 
     with (
-        patch("homeassistant.components.lamarzocco.update.MAX_UPDATE_WAIT", 0),
+        patch("inpui.components.lamarzocco.update.MAX_UPDATE_WAIT", 0),
         pytest.raises(HomeAssistantError) as exc_info,
     ):
         await hass.services.async_call(

@@ -37,7 +37,7 @@ async def test_all_button_entities(
 ) -> None:
     """Snapshot test for all ProxmoxVE button entities."""
     with patch(
-        "homeassistant.components.proxmoxve.PLATFORMS",
+        "inpui.components.proxmoxve.PLATFORMS",
         [Platform.BUTTON],
     ):
         await setup_integration(hass, mock_config_entry)

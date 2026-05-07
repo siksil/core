@@ -62,7 +62,7 @@ async def test_accessory_cancels_track_state_change_on_stop(
         hass, hk_driver, "Home Accessory", entity_id, 2, {"platform": "isy994"}
     )
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         acc.run()
     await acc.stop()
@@ -175,7 +175,7 @@ async def test_home_accessory(hass: HomeAssistant, hk_driver) -> None:
     hass.states.async_set(entity_id, "on")
     await hass.async_block_till_done()
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -273,7 +273,7 @@ async def test_battery_service(
     assert acc._char_charging.value == 2
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -285,7 +285,7 @@ async def test_battery_service(
     assert acc._char_charging.value == 2
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_set(entity_id, None, {ATTR_BATTERY_LEVEL: 15})
         await hass.async_block_till_done()
@@ -297,7 +297,7 @@ async def test_battery_service(
     assert acc._char_charging.value == 2
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_set(entity_id, None, {ATTR_BATTERY_LEVEL: "error"})
         await hass.async_block_till_done()
@@ -311,7 +311,7 @@ async def test_battery_service(
 
     # Test charging
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_set(
             entity_id, None, {ATTR_BATTERY_LEVEL: 10, ATTR_BATTERY_CHARGING: True}
@@ -321,7 +321,7 @@ async def test_battery_service(
         mock_async_update_state.assert_called_with(state)
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         acc = HomeAccessory(hass, hk_driver, "Battery Service", entity_id, 3, None)
         assert acc._char_battery.value == 0
@@ -329,7 +329,7 @@ async def test_battery_service(
         assert acc._char_charging.value == 2
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -340,7 +340,7 @@ async def test_battery_service(
     assert acc._char_charging.value == 1
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         hass.states.async_set(
             entity_id, None, {ATTR_BATTERY_LEVEL: 100, ATTR_BATTERY_CHARGING: False}
@@ -372,7 +372,7 @@ async def test_linked_battery_sensor(
     assert acc.linked_battery_sensor == linked_battery
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -389,7 +389,7 @@ async def test_linked_battery_sensor(
 
     # Ignore battery change on entity if it has linked_battery
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         hass.states.async_set(entity_id, "open", {ATTR_BATTERY_LEVEL: 90})
         await hass.async_block_till_done()
@@ -397,7 +397,7 @@ async def test_linked_battery_sensor(
 
     # Test none numeric state for linked_battery
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         hass.states.async_set(linked_battery, "error", None)
         await hass.async_block_till_done()
@@ -417,7 +417,7 @@ async def test_linked_battery_sensor(
         {CONF_LINKED_BATTERY_SENSOR: linked_battery, CONF_LOW_BATTERY_THRESHOLD: 50},
     )
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -461,7 +461,7 @@ async def test_linked_battery_charging_sensor(
     assert acc.linked_battery_charging_sensor == linked_battery_charging_sensor
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -472,7 +472,7 @@ async def test_linked_battery_charging_sensor(
     assert acc._char_charging.value == 1
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_set(linked_battery_charging_sensor, STATE_OFF, None)
         acc.run()
@@ -482,7 +482,7 @@ async def test_linked_battery_charging_sensor(
     assert acc._char_charging.value == 0
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_set(linked_battery_charging_sensor, STATE_ON, None)
         acc.run()
@@ -492,7 +492,7 @@ async def test_linked_battery_charging_sensor(
     assert acc._char_charging.value == 1
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_remove(linked_battery_charging_sensor)
         acc.run()
@@ -526,7 +526,7 @@ async def test_linked_battery_sensor_and_linked_battery_charging_sensor(
     assert acc.linked_battery_sensor == linked_battery
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -572,7 +572,7 @@ async def test_missing_linked_battery_charging_sensor(
     # is removed
     hass.states.async_remove(linked_battery_charging_sensor)
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         acc.run()
         await hass.async_block_till_done()
@@ -581,7 +581,7 @@ async def test_missing_linked_battery_charging_sensor(
     # is removed
     hass.states.async_remove(entity_id)
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         acc.run()
         await hass.async_block_till_done()
@@ -607,7 +607,7 @@ async def test_missing_linked_battery_sensor(
     assert not acc.linked_battery_sensor
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -620,7 +620,7 @@ async def test_missing_linked_battery_sensor(
     assert acc._char_charging is None
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         hass.states.async_remove(entity_id)
         acc.run()
@@ -644,7 +644,7 @@ async def test_battery_appears_after_startup(
     assert acc._char_battery is None
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ) as mock_async_update_state:
         acc.run()
         await hass.async_block_till_done()
@@ -653,14 +653,14 @@ async def test_battery_appears_after_startup(
     assert acc._char_battery is None
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         hass.states.async_set(entity_id, None, {ATTR_BATTERY_LEVEL: 15})
         await hass.async_block_till_done()
     assert acc._char_battery is None
 
     with patch(
-        "homeassistant.components.homekit.accessories.HomeAccessory.async_update_state"
+        "inpui.components.homekit.accessories.HomeAccessory.async_update_state"
     ):
         hass.states.async_remove(entity_id)
         await hass.async_block_till_done()
@@ -758,7 +758,7 @@ def test_home_driver(iid_storage) -> None:
     with (
         patch("pyhap.accessory_driver.AccessoryDriver.pair") as mock_pair,
         patch(
-            "homeassistant.components.homekit.accessories.async_dismiss_setup_message"
+            "inpui.components.homekit.accessories.async_dismiss_setup_message"
         ) as mock_dissmiss_msg,
     ):
         driver.pair("client_uuid", "client_public", b"1")
@@ -770,7 +770,7 @@ def test_home_driver(iid_storage) -> None:
     with (
         patch("pyhap.accessory_driver.AccessoryDriver.unpair") as mock_unpair,
         patch(
-            "homeassistant.components.homekit.accessories.async_show_setup_message"
+            "inpui.components.homekit.accessories.async_show_setup_message"
         ) as mock_show_msg,
     ):
         driver.unpair("client_uuid")

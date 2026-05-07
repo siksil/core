@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.waterfurnace.async_setup_entry", return_value=True
+        "inpui.components.waterfurnace.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -27,11 +27,11 @@ def mock_waterfurnace_client() -> Generator[Mock]:
     """Mock WaterFurnace client."""
     with (
         patch(
-            "homeassistant.components.waterfurnace.config_flow.WaterFurnace",
+            "inpui.components.waterfurnace.config_flow.WaterFurnace",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.waterfurnace.WaterFurnace",
+            "inpui.components.waterfurnace.WaterFurnace",
             new=mock_client,
         ),
     ):
@@ -71,11 +71,11 @@ def mock_waterfurnace_client_multi_device() -> Generator[Mock]:
 
     with (
         patch(
-            "homeassistant.components.waterfurnace.config_flow.WaterFurnace",
+            "inpui.components.waterfurnace.config_flow.WaterFurnace",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.waterfurnace.WaterFurnace",
+            "inpui.components.waterfurnace.WaterFurnace",
             new=mock_client,
         ),
     ):

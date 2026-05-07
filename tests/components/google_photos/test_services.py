@@ -55,11 +55,11 @@ def mock_upload_file(
     """Fixture that mocks out the file calls using the FakeFile fixture."""
     with (
         patch(
-            "homeassistant.components.google_photos.services.Path.read_bytes",
+            "inpui.components.google_photos.services.Path.read_bytes",
             return_value=upload_file.content,
         ),
         patch(
-            "homeassistant.components.google_photos.services.Path.exists",
+            "inpui.components.google_photos.services.Path.exists",
             return_value=upload_file.exists,
         ),
         patch.object(

@@ -62,7 +62,7 @@ async def test_set_run_state_multi_server_targets_correct_server(
         return client
 
     with patch(
-        "homeassistant.components.zoneminder.ZoneMinder",
+        "inpui.components.zoneminder.ZoneMinder",
         side_effect=make_client,
     ):
         assert await async_setup_component(hass, DOMAIN, multi_server_config)

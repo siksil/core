@@ -33,7 +33,7 @@ async def test_sensors(
     ]
 
     with patch(
-        "homeassistant.components.opower.coordinator.dt_util.utcnow"
+        "inpui.components.opower.coordinator.dt_util.utcnow"
     ) as mock_utcnow:
         mock_utcnow.return_value = datetime(2023, 1, 2, 8, 0, 0, tzinfo=dt_util.UTC)
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

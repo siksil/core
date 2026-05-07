@@ -84,23 +84,23 @@ async def test_humidifier_services(
 
     with (
         patch(
-            "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.set_level",
+            "inpui.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.set_level",
             new=AsyncMock(return_value=True),
         ) as mock_set_humidity_level,
         patch(
-            "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.async_set_auto",
+            "inpui.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.async_set_auto",
             new=AsyncMock(return_value=True),
         ) as mock_set_auto_mode,
         patch(
-            "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.async_set_manual",
+            "inpui.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.async_set_manual",
             new=AsyncMock(return_value=True),
         ) as mock_set_manual_mode,
         patch(
-            "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.turn_off",
+            "inpui.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.turn_off",
             new=AsyncMock(return_value=True),
         ) as mock_turn_off,
         patch(
-            "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.turn_on",
+            "inpui.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.turn_on",
             new=AsyncMock(return_value=True),
         ) as mock_turn_on,
     ):
@@ -160,7 +160,7 @@ async def test_exception_handling_humidifier_service(
     entry.add_to_hass(hass)
     entity_id = "humidifier.test_name"
 
-    patch_target = f"homeassistant.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.{mock_method}"
+    patch_target = f"inpui.components.switchbot.humidifier.switchbot.SwitchbotHumidifier.{mock_method}"
 
     with patch(patch_target, new=AsyncMock(side_effect=exception)):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -200,7 +200,7 @@ async def test_evaporative_humidifier_services(
 
     mocked_instance = AsyncMock(return_value=True)
     with patch.multiple(
-        "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotEvaporativeHumidifier",
+        "inpui.components.switchbot.humidifier.switchbot.SwitchbotEvaporativeHumidifier",
         update=AsyncMock(return_value=None),
         **{mock_method: mocked_instance},
     ):
@@ -240,7 +240,7 @@ async def test_evaporative_humidifier_services_with_exception(
     entry.add_to_hass(hass)
     entity_id = "humidifier.test_name"
 
-    patch_target = f"homeassistant.components.switchbot.humidifier.switchbot.SwitchbotEvaporativeHumidifier.{mock_method}"
+    patch_target = f"inpui.components.switchbot.humidifier.switchbot.SwitchbotEvaporativeHumidifier.{mock_method}"
 
     with patch(
         patch_target,

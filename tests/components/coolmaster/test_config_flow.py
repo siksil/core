@@ -43,11 +43,11 @@ async def form_base(hass: HomeAssistant, advanced: bool) -> None:
 
     with (
         patch(
-            "homeassistant.components.coolmaster.config_flow.CoolMasterNet.status",
+            "inpui.components.coolmaster.config_flow.CoolMasterNet.status",
             return_value={"test_id": "test_unit"},
         ),
         patch(
-            "homeassistant.components.coolmaster.async_setup_entry",
+            "inpui.components.coolmaster.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -78,7 +78,7 @@ async def test_form_timeout(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.coolmaster.config_flow.CoolMasterNet.status",
+        "inpui.components.coolmaster.config_flow.CoolMasterNet.status",
         side_effect=TimeoutError(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -96,7 +96,7 @@ async def test_form_connection_refused(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.coolmaster.config_flow.CoolMasterNet.status",
+        "inpui.components.coolmaster.config_flow.CoolMasterNet.status",
         side_effect=ConnectionRefusedError(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -114,7 +114,7 @@ async def test_form_no_units(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.coolmaster.config_flow.CoolMasterNet.status",
+        "inpui.components.coolmaster.config_flow.CoolMasterNet.status",
         return_value={},
     ):
         result2 = await hass.config_entries.flow.async_configure(

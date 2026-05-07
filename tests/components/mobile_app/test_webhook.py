@@ -202,7 +202,7 @@ async def test_webhook_handle_get_zones(
     # Zone is already loaded as part of the fixture,
     # so we just trigger a reload.
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             ZONE_DOMAIN: [
@@ -328,11 +328,11 @@ async def test_webhook_handle_get_config_with_cloudhook_and_active_subscription(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_remote_ui_url",
+            "inpui.components.cloud.async_remote_ui_url",
             return_value="https://remote.ui.url",
         ),
     ):
@@ -364,7 +364,7 @@ async def test_webhook_handle_get_config_with_cloudhook_no_subscription(
     )
 
     with patch(
-        "homeassistant.components.cloud.async_active_subscription",
+        "inpui.components.cloud.async_active_subscription",
         return_value=False,
     ):
         resp = await webhook_client.post(webhook_url, json={"type": "get_config"})
@@ -398,11 +398,11 @@ async def test_webhook_handle_get_config_with_cloudhook_local_only_user(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_remote_ui_url",
+            "inpui.components.cloud.async_remote_ui_url",
             return_value="https://remote.ui.url",
         ),
     ):
@@ -746,7 +746,7 @@ async def test_webhook_update_location_with_location_name(
     """Test that location can be updated."""
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             ZONE_DOMAIN: [
@@ -918,7 +918,7 @@ async def test_webhook_camera_stream_stream_available(
     webhook_id = create_registrations[1]["webhook_id"]
 
     with patch(
-        "homeassistant.components.camera.async_request_stream",
+        "inpui.components.camera.async_request_stream",
         return_value="/api/streams/some_hls_stream",
     ):
         resp = await webhook_client.post(
@@ -950,7 +950,7 @@ async def test_webhook_camera_stream_stream_available_but_errors(
     webhook_id = create_registrations[1]["webhook_id"]
 
     with patch(
-        "homeassistant.components.camera.async_request_stream",
+        "inpui.components.camera.async_request_stream",
         side_effect=HomeAssistantError(),
     ):
         resp = await webhook_client.post(
@@ -1152,7 +1152,7 @@ async def test_webhook_handle_conversation_process(
     webhook_client.server.app.router._frozen = False
 
     with patch(
-        "homeassistant.components.conversation.agent_manager.async_get_agent",
+        "inpui.components.conversation.agent_manager.async_get_agent",
         return_value=mock_conversation_agent,
     ):
         resp = await webhook_client.post(

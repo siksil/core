@@ -57,7 +57,7 @@ def mock_nessclient():
     _mock_factory.return_value = _mock_instance
 
     with patch(
-        "homeassistant.components.ness_alarm.Client", new=_mock_factory, create=True
+        "inpui.components.ness_alarm.Client", new=_mock_factory, create=True
     ):
         yield _mock_instance
 
@@ -78,7 +78,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_client() -> Generator[AsyncMock]:
     """Mock the nessclient Client for config flow tests."""
     with patch(
-        "homeassistant.components.ness_alarm.config_flow.Client",
+        "inpui.components.ness_alarm.config_flow.Client",
         return_value=AsyncMock(),
     ) as mock:
         yield mock.return_value
@@ -88,7 +88,7 @@ def mock_client() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.ness_alarm.async_setup_entry",
+        "inpui.components.ness_alarm.async_setup_entry",
         return_value=True,
     ) as mock:
         yield mock
@@ -98,7 +98,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def post_connection_delay() -> Generator[None]:
     """Mock POST_CONNECTION_DELAY to 0 for faster tests."""
     with patch(
-        "homeassistant.components.ness_alarm.config_flow.POST_CONNECTION_DELAY",
+        "inpui.components.ness_alarm.config_flow.POST_CONNECTION_DELAY",
         0,
     ):
         yield

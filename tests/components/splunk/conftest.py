@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.splunk.async_setup_entry", return_value=True
+        "inpui.components.splunk.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -47,10 +47,10 @@ def mock_hass_splunk() -> Generator[MagicMock]:
     """Mock hass_splunk."""
     with (
         patch(
-            "homeassistant.components.splunk.hass_splunk", autospec=True
+            "inpui.components.splunk.hass_splunk", autospec=True
         ) as mock_client_class,
         patch(
-            "homeassistant.components.splunk.config_flow.hass_splunk",
+            "inpui.components.splunk.config_flow.hass_splunk",
             new=mock_client_class,
         ),
     ):

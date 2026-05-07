@@ -123,7 +123,7 @@ async def test_gdm_client_failure(
 ) -> None:
     """Test connection failure to a GDM discovered client."""
     with patch(
-        "homeassistant.components.plex.server.PlexClient", side_effect=ConnectionError
+        "inpui.components.plex.server.PlexClient", side_effect=ConnectionError
     ):
         mock_plex_server = await setup_plex_server(disable_gdm=False)
         await hass.async_block_till_done()

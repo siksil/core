@@ -52,7 +52,7 @@ def recorder_dialect_name(hass: HomeAssistant, db_engine: str) -> Generator[None
             instance.__dict__.pop("dialect_name", None)
     else:
         with patch(
-            "homeassistant.components.recorder.Recorder.dialect_name", db_engine
+            "inpui.components.recorder.Recorder.dialect_name", db_engine
         ):
             yield
 
@@ -160,17 +160,17 @@ def instrument_migration(
 
     with (
         patch(
-            "homeassistant.components.recorder.migration.migrate_schema_live",
+            "inpui.components.recorder.migration.migrate_schema_live",
             wraps=partial(_instrument_migrate_schema_live, real_migrate_schema_live),
         ),
         patch(
-            "homeassistant.components.recorder.migration.migrate_schema_non_live",
+            "inpui.components.recorder.migration.migrate_schema_non_live",
             wraps=partial(
                 _instrument_migrate_schema_non_live, real_migrate_schema_non_live
             ),
         ),
         patch(
-            "homeassistant.components.recorder.migration._apply_update",
+            "inpui.components.recorder.migration._apply_update",
             wraps=_instrument_apply_update,
         ) as apply_update_mock,
     ):

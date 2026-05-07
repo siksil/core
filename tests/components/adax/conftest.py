@@ -63,7 +63,7 @@ def mock_local_config_entry(request: pytest.FixtureRequest) -> MockConfigEntry:
 @pytest.fixture
 def mock_adax_cloud():
     """Mock climate data."""
-    with patch("homeassistant.components.adax.coordinator.Adax") as mock_adax:
+    with patch("inpui.components.adax.coordinator.Adax") as mock_adax:
         mock_adax_class = mock_adax.return_value
 
         mock_adax_class.fetch_rooms_info = AsyncMock()
@@ -85,7 +85,7 @@ def mock_adax_cloud():
 @pytest.fixture
 def mock_adax_local():
     """Mock climate data."""
-    with patch("homeassistant.components.adax.coordinator.AdaxLocal") as mock_adax:
+    with patch("inpui.components.adax.coordinator.AdaxLocal") as mock_adax:
         mock_adax_class = mock_adax.return_value
 
         mock_adax_class.get_status = AsyncMock()

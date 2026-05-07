@@ -226,7 +226,7 @@ class ServiceParams(TypedDict):
 
 
 @deprecated_class(
-    "homeassistant.helpers.target.TargetSelection",
+    "inpui.helpers.target.TargetSelection",
     breaks_in_ha_version="2026.8",
 )
 class ServiceTargetSelector(target_helpers.TargetSelection):
@@ -238,7 +238,7 @@ class ServiceTargetSelector(target_helpers.TargetSelection):
 
 
 @deprecated_class(
-    "homeassistant.helpers.target.SelectedEntities",
+    "inpui.helpers.target.SelectedEntities",
     breaks_in_ha_version="2026.8",
 )
 class SelectedEntities(target_helpers.SelectedEntities):
@@ -449,7 +449,7 @@ async def async_extract_entity_ids(
 
 
 @deprecated_function(
-    "homeassistant.helpers.target.async_extract_referenced_entity_ids",
+    "inpui.helpers.target.async_extract_referenced_entity_ids",
     breaks_in_ha_version="2026.8",
 )
 @bind_hass

@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry
 def mock_sense():
     """Mock Sense object for authenticatation."""
     with patch(
-        "homeassistant.components.sense.config_flow.ASyncSenseable"
+        "inpui.components.sense.config_flow.ASyncSenseable"
     ) as mock_sense:
         mock_sense.return_value.authenticate = AsyncMock(return_value=True)
         mock_sense.return_value.validate_mfa = AsyncMock(return_value=True)
@@ -47,7 +47,7 @@ async def test_form(hass: HomeAssistant, mock_sense) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.sense.async_setup_entry",
+        "inpui.components.sense.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -256,7 +256,7 @@ async def test_reauth_no_form(hass: HomeAssistant, mock_sense) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_reload",
+        "inpui.config_entries.ConfigEntries.async_reload",
         return_value=True,
     ):
         result = await entry.start_reauth_flow(hass)
@@ -282,7 +282,7 @@ async def test_reauth_password(hass: HomeAssistant, mock_sense) -> None:
 
     mock_sense.return_value.authenticate.side_effect = None
     with patch(
-        "homeassistant.components.sense.async_setup_entry",
+        "inpui.components.sense.async_setup_entry",
         return_value=True,
     ):
         result2 = await hass.config_entries.flow.async_configure(

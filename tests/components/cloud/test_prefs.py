@@ -145,7 +145,7 @@ async def test_import_google_assistant_settings(
     hass_storage[STORAGE_KEY] = {"version": 1, "data": {"username": "cloud-user"}}
 
     with patch(
-        "homeassistant.components.cloud.prefs.async_get_google_assistant_users"
+        "inpui.components.cloud.prefs.async_get_google_assistant_users"
     ) as mock_get_users:
         mock_get_users.return_value = google_assistant_users
         prefs = CloudPreferences(hass)

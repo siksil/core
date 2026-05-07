@@ -28,7 +28,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.brunt.config_flow.BruntClientAsync.async_login",
+        "inpui.components.brunt.config_flow.BruntClientAsync.async_login",
         return_value=None,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -53,7 +53,7 @@ async def test_form_duplicate_login(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.brunt.config_flow.BruntClientAsync.async_login",
+        "inpui.components.brunt.config_flow.BruntClientAsync.async_login",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -75,7 +75,7 @@ async def test_form_duplicate_login(hass: HomeAssistant) -> None:
 async def test_form_error(hass: HomeAssistant, side_effect, error_message) -> None:
     """Test we handle cannot connect."""
     with patch(
-        "homeassistant.components.brunt.config_flow.BruntClientAsync.async_login",
+        "inpui.components.brunt.config_flow.BruntClientAsync.async_login",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -114,7 +114,7 @@ async def test_reauth(
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "reauth_confirm"
     with patch(
-        "homeassistant.components.brunt.config_flow.BruntClientAsync.async_login",
+        "inpui.components.brunt.config_flow.BruntClientAsync.async_login",
         return_value=None,
         side_effect=side_effect,
     ):

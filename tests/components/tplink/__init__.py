@@ -70,7 +70,7 @@ async def setup_platform_for_device(
     config_entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.tplink.PLATFORMS", [platform]),
+        patch("inpui.components.tplink.PLATFORMS", [platform]),
         _patch_discovery(device=device),
         _patch_connect(device=device),
     ):
@@ -558,7 +558,7 @@ def _patch_discovery(device=None, no_device=False, ip_address=IP_ADDRESS):
             return {}
         return {ip_address: device or _mocked_device()}
 
-    return patch("homeassistant.components.tplink.Discover.discover", new=_discovery)
+    return patch("inpui.components.tplink.Discover.discover", new=_discovery)
 
 
 def _patch_single_discovery(device=None, no_device=False):
@@ -568,7 +568,7 @@ def _patch_single_discovery(device=None, no_device=False):
         return device or _mocked_device()
 
     return patch(
-        "homeassistant.components.tplink.Discover.discover_single", new=_discover_single
+        "inpui.components.tplink.Discover.discover_single", new=_discover_single
     )
 
 
@@ -578,7 +578,7 @@ def _patch_connect(device=None, no_device=False):
             raise KasaException
         return device or _mocked_device()
 
-    return patch("homeassistant.components.tplink.Device.connect", new=_connect)
+    return patch("inpui.components.tplink.Device.connect", new=_connect)
 
 
 async def initialize_config_entry_for_device(

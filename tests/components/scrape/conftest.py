@@ -43,7 +43,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Automatically path uuid generator."""
     with patch(
-        "homeassistant.components.scrape.async_setup_entry",
+        "inpui.components.scrape.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -98,7 +98,7 @@ async def load_integration(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=get_data,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -111,7 +111,7 @@ async def load_integration(
 def uuid_fixture() -> str:
     """Automatically path uuid generator."""
     with patch(
-        "homeassistant.components.scrape.config_flow.uuid.uuid1",
+        "inpui.components.scrape.config_flow.uuid.uuid1",
         return_value=uuid.UUID("3699ef88-69e6-11ed-a1eb-0242ac120002"),
     ):
         yield

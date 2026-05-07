@@ -50,7 +50,7 @@ GET_DEVICE_INFO_RESPONSE_BRIDGE_NO_LINKED_DEVICE = GetDeviceInfoResponse(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.igloohome.async_setup_entry", return_value=True
+        "inpui.components.igloohome.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -59,7 +59,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 async def mock_auth() -> Generator[AsyncMock]:
     """Set up the mock usages of the igloohome_api.Auth class. Defaults to always successfully operate."""
     with patch(
-        "homeassistant.components.igloohome.config_flow.IgloohomeAuth.async_get_access_token",
+        "inpui.components.igloohome.config_flow.IgloohomeAuth.async_get_access_token",
         return_value="mock_access_token",
     ) as mock_auth:
         yield mock_auth
@@ -81,7 +81,7 @@ def mock_api() -> Generator[AsyncMock]:
     """Set up the Api module. Defaults to always returning a single lock."""
     with (
         patch(
-            "homeassistant.components.igloohome.IgloohomeApi",
+            "inpui.components.igloohome.IgloohomeApi",
             autospec=True,
         ) as api_mock,
     ):

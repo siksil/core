@@ -16,7 +16,7 @@ from . import SATELLITE_INFO, STT_INFO, TTS_INFO, WAKE_WORD_INFO, MockAsyncTcpCl
 async def test_load_info(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
     """Test loading info."""
     with patch(
-        "homeassistant.components.wyoming.data.AsyncTcpClient",
+        "inpui.components.wyoming.data.AsyncTcpClient",
         MockAsyncTcpClient([STT_INFO.event()]),
     ) as mock_client:
         info = await load_wyoming_info("localhost", 1234)
@@ -31,7 +31,7 @@ async def test_load_info_oserror(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.AsyncTcpClient",
+            "inpui.components.wyoming.data.AsyncTcpClient",
             mock_client,
         ),
         patch.object(mock_client, "read_event", side_effect=OSError("Boom!")),
@@ -50,7 +50,7 @@ async def test_load_info_oserror(hass: HomeAssistant) -> None:
 async def test_service_name(hass: HomeAssistant) -> None:
     """Test loading service info."""
     with patch(
-        "homeassistant.components.wyoming.data.AsyncTcpClient",
+        "inpui.components.wyoming.data.AsyncTcpClient",
         MockAsyncTcpClient([STT_INFO.event()]),
     ):
         service = await WyomingService.create("localhost", 1234)
@@ -58,7 +58,7 @@ async def test_service_name(hass: HomeAssistant) -> None:
         assert service.get_name() == STT_INFO.asr[0].name
 
     with patch(
-        "homeassistant.components.wyoming.data.AsyncTcpClient",
+        "inpui.components.wyoming.data.AsyncTcpClient",
         MockAsyncTcpClient([TTS_INFO.event()]),
     ):
         service = await WyomingService.create("localhost", 1234)
@@ -66,7 +66,7 @@ async def test_service_name(hass: HomeAssistant) -> None:
         assert service.get_name() == TTS_INFO.tts[0].name
 
     with patch(
-        "homeassistant.components.wyoming.data.AsyncTcpClient",
+        "inpui.components.wyoming.data.AsyncTcpClient",
         MockAsyncTcpClient([WAKE_WORD_INFO.event()]),
     ):
         service = await WyomingService.create("localhost", 1234)
@@ -74,7 +74,7 @@ async def test_service_name(hass: HomeAssistant) -> None:
         assert service.get_name() == WAKE_WORD_INFO.wake[0].name
 
     with patch(
-        "homeassistant.components.wyoming.data.AsyncTcpClient",
+        "inpui.components.wyoming.data.AsyncTcpClient",
         MockAsyncTcpClient([SATELLITE_INFO.event()]),
     ):
         service = await WyomingService.create("localhost", 1234)
@@ -91,7 +91,7 @@ async def test_satellite_with_wake_word(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.wyoming.data.AsyncTcpClient",
+        "inpui.components.wyoming.data.AsyncTcpClient",
         MockAsyncTcpClient([satellite_info.event()]),
     ):
         service = await WyomingService.create("localhost", 1234)

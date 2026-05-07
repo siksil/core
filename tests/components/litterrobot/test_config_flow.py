@@ -38,16 +38,16 @@ async def test_full_flow(hass: HomeAssistant, mock_account) -> None:
 
     with (
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.connect",
+            "inpui.components.litterrobot.config_flow.Account.connect",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.user_id",
+            "inpui.components.litterrobot.config_flow.Account.user_id",
             new_callable=PropertyMock,
             return_value=ACCOUNT_USER_ID,
         ),
         patch(
-            "homeassistant.components.litterrobot.async_setup_entry",
+            "inpui.components.litterrobot.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -97,7 +97,7 @@ async def test_create_entry(
     )
 
     with patch(
-        "homeassistant.components.litterrobot.config_flow.Account.connect",
+        "inpui.components.litterrobot.config_flow.Account.connect",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -109,16 +109,16 @@ async def test_create_entry(
 
     with (
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.connect",
+            "inpui.components.litterrobot.config_flow.Account.connect",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.user_id",
+            "inpui.components.litterrobot.config_flow.Account.user_id",
             new_callable=PropertyMock,
             return_value=ACCOUNT_USER_ID,
         ),
         patch(
-            "homeassistant.components.litterrobot.async_setup_entry",
+            "inpui.components.litterrobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -147,7 +147,7 @@ async def test_reauth(hass: HomeAssistant, mock_account: Account) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.litterrobot.config_flow.Account.connect",
+        "inpui.components.litterrobot.config_flow.Account.connect",
         side_effect=LitterRobotLoginException,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -160,16 +160,16 @@ async def test_reauth(hass: HomeAssistant, mock_account: Account) -> None:
 
     with (
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.connect",
+            "inpui.components.litterrobot.config_flow.Account.connect",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.user_id",
+            "inpui.components.litterrobot.config_flow.Account.user_id",
             new_callable=PropertyMock,
             return_value=ACCOUNT_USER_ID,
         ),
         patch(
-            "homeassistant.components.litterrobot.async_setup_entry",
+            "inpui.components.litterrobot.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -196,10 +196,10 @@ async def test_reauth_wrong_account(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.connect",
+            "inpui.components.litterrobot.config_flow.Account.connect",
         ),
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.user_id",
+            "inpui.components.litterrobot.config_flow.Account.user_id",
             new_callable=PropertyMock,
             return_value="different_user_id",
         ),
@@ -233,7 +233,7 @@ async def test_reconfigure(hass: HomeAssistant, mock_account: Account) -> None:
     assert result["step_id"] == "reconfigure"
 
     with patch(
-        "homeassistant.components.litterrobot.config_flow.Account.connect",
+        "inpui.components.litterrobot.config_flow.Account.connect",
         side_effect=LitterRobotLoginException,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -247,16 +247,16 @@ async def test_reconfigure(hass: HomeAssistant, mock_account: Account) -> None:
 
     with (
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.connect",
+            "inpui.components.litterrobot.config_flow.Account.connect",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.user_id",
+            "inpui.components.litterrobot.config_flow.Account.user_id",
             new_callable=PropertyMock,
             return_value=ACCOUNT_USER_ID,
         ),
         patch(
-            "homeassistant.components.litterrobot.async_setup_entry",
+            "inpui.components.litterrobot.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -302,16 +302,16 @@ async def test_dhcp_discovery_full_flow(
 
     with (
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.connect",
+            "inpui.components.litterrobot.config_flow.Account.connect",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.config_flow.Account.user_id",
+            "inpui.components.litterrobot.config_flow.Account.user_id",
             new_callable=PropertyMock,
             return_value=ACCOUNT_USER_ID,
         ),
         patch(
-            "homeassistant.components.litterrobot.async_setup_entry",
+            "inpui.components.litterrobot.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

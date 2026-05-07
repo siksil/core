@@ -85,7 +85,7 @@ def mock_bluetooth(enable_bluetooth: None) -> None:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.iron_os.async_setup_entry", return_value=True
+        "inpui.components.iron_os.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -94,7 +94,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_async_discovered_service_info() -> Generator[MagicMock]:
     """Mock service discovery."""
     with patch(
-        "homeassistant.components.iron_os.config_flow.async_discovered_service_info",
+        "inpui.components.iron_os.config_flow.async_discovered_service_info",
         return_value=[PINECIL_SERVICE_INFO, UNKNOWN_SERVICE_INFO],
     ) as discovery:
         yield discovery
@@ -129,7 +129,7 @@ def mock_config_entry_ignored() -> MockConfigEntry:
 def mock_ble_device() -> Generator[MagicMock]:
     """Mock BLEDevice."""
     with patch(
-        "homeassistant.components.bluetooth.async_ble_device_from_address",
+        "inpui.components.bluetooth.async_ble_device_from_address",
         return_value=BLEDevice(
             address="c0:ff:ee:c0:ff:ee", name=DEFAULT_NAME, details={}
         ),
@@ -142,7 +142,7 @@ def mock_ironosupdate() -> Generator[AsyncMock]:
     """Mock IronOSUpdate."""
 
     with patch(
-        "homeassistant.components.iron_os.IronOSUpdate",
+        "inpui.components.iron_os.IronOSUpdate",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value
@@ -160,8 +160,8 @@ def mock_ironosupdate() -> Generator[AsyncMock]:
 def mock_pynecil() -> Generator[AsyncMock]:
     """Mock Pynecil library."""
     with (
-        patch("homeassistant.components.iron_os.Pynecil", autospec=True) as mock_client,
-        patch("homeassistant.components.iron_os.config_flow.Pynecil", new=mock_client),
+        patch("inpui.components.iron_os.Pynecil", autospec=True) as mock_client,
+        patch("inpui.components.iron_os.config_flow.Pynecil", new=mock_client),
     ):
         client = mock_client.return_value
 

@@ -28,7 +28,7 @@ POLL_INTERVAL = timedelta(seconds=POLL_DEVICES)
 @pytest.fixture(autouse=True)
 def patch_binary_sensor_platforms() -> Generator[None]:
     """Patch PLATFORMS to only include binary_sensor for tests."""
-    with patch("homeassistant.components.tplink_omada.PLATFORMS", ["binary_sensor"]):
+    with patch("inpui.components.tplink_omada.PLATFORMS", ["binary_sensor"]):
         yield
 
 

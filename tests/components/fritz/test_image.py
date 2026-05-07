@@ -82,7 +82,7 @@ async def test_image_entity(
 
     # setup component with image platform only
     with patch(
-        "homeassistant.components.fritz.PLATFORMS",
+        "inpui.components.fritz.PLATFORMS",
         [Platform.IMAGE],
     ):
         entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
@@ -132,7 +132,7 @@ async def test_image_update(
 
     # setup component with image platform only
     with patch(
-        "homeassistant.components.fritz.PLATFORMS",
+        "inpui.components.fritz.PLATFORMS",
         [Platform.IMAGE],
     ):
         entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
@@ -173,7 +173,7 @@ async def test_image_update_unavailable(
 
     # setup component with image platform only
     with patch(
-        "homeassistant.components.fritz.PLATFORMS",
+        "inpui.components.fritz.PLATFORMS",
         [Platform.IMAGE],
     ):
         entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
@@ -247,7 +247,7 @@ async def test_migrate_to_new_unique_id(
     assert entity_entry
     assert entity_entry.unique_id == old_unique_id
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.IMAGE]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.IMAGE]):
         await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 

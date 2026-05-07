@@ -40,7 +40,7 @@ async def traccar_client(
 
     await hass.async_block_till_done()
 
-    with patch("homeassistant.components.device_tracker.legacy.update_config"):
+    with patch("inpui.components.device_tracker.legacy.update_config"):
         return await hass_client_no_auth()
 
 

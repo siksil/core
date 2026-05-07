@@ -34,7 +34,7 @@ async def test_update_unique_id(hass: HomeAssistant) -> None:
     assert not entry.unique_id
 
     with patch(
-        "homeassistant.components.cert_expiry.coordinator.get_cert_expiry_timestamp",
+        "inpui.components.cert_expiry.coordinator.get_cert_expiry_timestamp",
         return_value=future_timestamp(1),
     ):
         assert await async_setup_component(hass, DOMAIN, {}) is True
@@ -62,7 +62,7 @@ async def test_unload_config_entry(hass: HomeAssistant) -> None:
 
     timestamp = future_timestamp(100)
     with patch(
-        "homeassistant.components.cert_expiry.coordinator.get_cert_expiry_timestamp",
+        "inpui.components.cert_expiry.coordinator.get_cert_expiry_timestamp",
         return_value=timestamp,
     ):
         assert await async_setup_component(hass, DOMAIN, {}) is True
@@ -105,7 +105,7 @@ async def test_delay_load_during_startup(hass: HomeAssistant) -> None:
 
     timestamp = future_timestamp(100)
     with patch(
-        "homeassistant.components.cert_expiry.coordinator.get_cert_expiry_timestamp",
+        "inpui.components.cert_expiry.coordinator.get_cert_expiry_timestamp",
         return_value=timestamp,
     ):
         await hass.async_start()

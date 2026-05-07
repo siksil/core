@@ -91,11 +91,11 @@ async def test_periodic_issue_check(
 
     with (
         patch(
-            "homeassistant.components.backblaze_b2.async_check_for_repair_issues",
+            "inpui.components.backblaze_b2.async_check_for_repair_issues",
             new_callable=AsyncMock,
         ) as mock_check,
         patch(
-            "homeassistant.components.backblaze_b2.async_track_time_interval",
+            "inpui.components.backblaze_b2.async_track_time_interval",
             side_effect=capture_callback,
         ),
     ):

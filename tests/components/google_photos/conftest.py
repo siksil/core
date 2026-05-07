@@ -206,7 +206,7 @@ async def mock_setup_integration(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.google_photos.GooglePhotosLibraryApi",
+        "inpui.components.google_photos.GooglePhotosLibraryApi",
         return_value=mock_api,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

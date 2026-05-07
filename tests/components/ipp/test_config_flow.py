@@ -525,7 +525,7 @@ async def test_zeroconf_empty_unique_id_uses_serial(hass: HomeAssistant) -> None
         "UUID": "",
     }
     with patch(
-        "homeassistant.components.ipp.config_flow.IPP", autospec=True
+        "inpui.components.ipp.config_flow.IPP", autospec=True
     ) as ipp_mock:
         client = ipp_mock.return_value
         client.printer.return_value = mock_printer_without_uuid

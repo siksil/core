@@ -42,11 +42,11 @@ async def test_user_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.motioneye.MotionEyeClient",
+            "inpui.components.motioneye.MotionEyeClient",
             return_value=mock_client,
         ),
         patch(
-            "homeassistant.components.motioneye.async_setup_entry",
+            "inpui.components.motioneye.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -101,11 +101,11 @@ async def test_hassio_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.motioneye.MotionEyeClient",
+            "inpui.components.motioneye.MotionEyeClient",
             return_value=mock_client,
         ),
         patch(
-            "homeassistant.components.motioneye.async_setup_entry",
+            "inpui.components.motioneye.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -145,7 +145,7 @@ async def test_user_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -174,7 +174,7 @@ async def test_user_invalid_url(hass: HomeAssistant) -> None:
 
     mock_client = create_mock_motioneye_client()
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -205,7 +205,7 @@ async def test_user_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -235,7 +235,7 @@ async def test_user_request_error(hass: HomeAssistant) -> None:
     mock_client.async_client_login = AsyncMock(side_effect=MotionEyeClientRequestError)
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -280,11 +280,11 @@ async def test_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.motioneye.MotionEyeClient",
+            "inpui.components.motioneye.MotionEyeClient",
             return_value=mock_client,
         ),
         patch(
-            "homeassistant.components.motioneye.async_setup_entry",
+            "inpui.components.motioneye.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -335,7 +335,7 @@ async def test_duplicate(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -435,11 +435,11 @@ async def test_hassio_clean_up_on_user_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.motioneye.MotionEyeClient",
+            "inpui.components.motioneye.MotionEyeClient",
             return_value=mock_client,
         ),
         patch(
-            "homeassistant.components.motioneye.async_setup_entry",
+            "inpui.components.motioneye.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -470,11 +470,11 @@ async def test_options(hass: HomeAssistant) -> None:
     client = create_mock_motioneye_client()
     with (
         patch(
-            "homeassistant.components.motioneye.MotionEyeClient",
+            "inpui.components.motioneye.MotionEyeClient",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.motioneye.async_setup_entry",
+            "inpui.components.motioneye.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -506,11 +506,11 @@ async def test_advanced_options(hass: HomeAssistant) -> None:
     mock_client = create_mock_motioneye_client()
     with (
         patch(
-            "homeassistant.components.motioneye.MotionEyeClient",
+            "inpui.components.motioneye.MotionEyeClient",
             return_value=mock_client,
         ) as mock_setup,
         patch(
-            "homeassistant.components.motioneye.async_setup_entry",
+            "inpui.components.motioneye.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

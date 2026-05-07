@@ -28,7 +28,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.ecovacs.async_setup_entry", return_value=True
+        "inpui.components.ecovacs.async_setup_entry", return_value=True
     ) as async_setup_entry:
         yield async_setup_entry
 
@@ -60,11 +60,11 @@ def mock_authenticator(device_fixture: str) -> Generator[Mock]:
     """Mock the authenticator."""
     with (
         patch(
-            "homeassistant.components.ecovacs.controller.Authenticator",
+            "inpui.components.ecovacs.controller.Authenticator",
             autospec=True,
         ) as mock,
         patch(
-            "homeassistant.components.ecovacs.config_flow.Authenticator",
+            "inpui.components.ecovacs.config_flow.Authenticator",
             new=mock,
         ),
     ):
@@ -105,11 +105,11 @@ def mock_mqtt_client(mock_authenticator: Mock) -> Generator[Mock]:
     """Mock the MQTT client."""
     with (
         patch(
-            "homeassistant.components.ecovacs.controller.MqttClient",
+            "inpui.components.ecovacs.controller.MqttClient",
             autospec=True,
         ) as mock,
         patch(
-            "homeassistant.components.ecovacs.config_flow.MqttClient",
+            "inpui.components.ecovacs.config_flow.MqttClient",
             new=mock,
         ),
     ):
@@ -123,7 +123,7 @@ def mock_mqtt_client(mock_authenticator: Mock) -> Generator[Mock]:
 def mock_vacbot(device_fixture: str) -> Generator[Mock]:
     """Mock the legacy VacBot."""
     with patch(
-        "homeassistant.components.ecovacs.controller.VacBot",
+        "inpui.components.ecovacs.controller.VacBot",
         autospec=True,
     ) as mock:
         vacbot = mock.return_value
@@ -176,7 +176,7 @@ async def init_integration(
         platforms = [platforms]
 
     with patch(
-        "homeassistant.components.ecovacs.PLATFORMS",
+        "inpui.components.ecovacs.PLATFORMS",
         platforms,
     ):
         mock_config_entry.add_to_hass(hass)

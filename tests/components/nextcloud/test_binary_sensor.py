@@ -23,7 +23,7 @@ async def test_async_setup_entry(
 ) -> None:
     """Test a successful setup entry."""
     with patch(
-        "homeassistant.components.nextcloud.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.nextcloud.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         entry = await init_integration(hass, VALID_CONFIG, NC_DATA)
 

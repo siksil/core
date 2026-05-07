@@ -11,7 +11,7 @@ async def test_cannot_connect(
 ) -> None:
     """Test we handle cannot connect error."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=None,
     ):
         assert not await hass.config_entries.async_setup(stt_config_entry.entry_id)

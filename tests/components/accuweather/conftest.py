@@ -20,10 +20,10 @@ def mock_accuweather_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.accuweather.AccuWeather", autospec=True
+            "inpui.components.accuweather.AccuWeather", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.accuweather.config_flow.AccuWeather",
+            "inpui.components.accuweather.config_flow.AccuWeather",
             new=mock_client,
         ),
     ):

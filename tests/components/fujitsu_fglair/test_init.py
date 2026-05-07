@@ -59,7 +59,7 @@ async def test_auth_regions(
 ) -> None:
     """Test that we use the correct credentials if europe is selected."""
     with patch(
-        "homeassistant.components.fujitsu_fglair.new_ayla_api", return_value=AsyncMock()
+        "inpui.components.fujitsu_fglair.new_ayla_api", return_value=AsyncMock()
     ) as new_ayla_api_patch:
         await setup_integration(hass, mock_config_entry)
         new_ayla_api_patch.assert_called_once_with(

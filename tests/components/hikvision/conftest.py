@@ -35,7 +35,7 @@ def platforms() -> list[Platform]:
 @pytest.fixture(autouse=True)
 async def mock_patch_platforms(platforms: list[Platform]) -> AsyncGenerator[None]:
     """Fixture to set up platforms for tests."""
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         yield
 
 
@@ -43,7 +43,7 @@ async def mock_patch_platforms(platforms: list[Platform]) -> AsyncGenerator[None
 def mock_setup_entry() -> Generator[MagicMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.hikvision.async_setup_entry", return_value=True
+        "inpui.components.hikvision.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -90,7 +90,7 @@ def mock_channels(amount_of_channels: int) -> list[MagicMock]:
 def mock_hik_get_channels(mock_channels: list[MagicMock]) -> Generator[MagicMock]:
     """Return a mocked HikCamera."""
     with patch(
-        "homeassistant.components.hikvision.get_video_channels",
+        "inpui.components.hikvision.get_video_channels",
     ) as hik_channels_mock:
         hik_channels_mock.return_value = mock_channels
         yield hik_channels_mock
@@ -101,10 +101,10 @@ def mock_hikcamera(mock_hik_get_channels: MagicMock) -> Generator[MagicMock]:
     """Return a mocked HikCamera."""
     with (
         patch(
-            "homeassistant.components.hikvision.HikCamera",
+            "inpui.components.hikvision.HikCamera",
         ) as hikcamera_mock,
         patch(
-            "homeassistant.components.hikvision.config_flow.HikCamera",
+            "inpui.components.hikvision.config_flow.HikCamera",
             new=hikcamera_mock,
         ),
     ):

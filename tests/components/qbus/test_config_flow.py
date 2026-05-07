@@ -110,7 +110,7 @@ async def test_handle_gateway_topic_when_online(
     )
 
     with (
-        patch("homeassistant.components.mqtt.client.async_publish") as mock_publish,
+        patch("inpui.components.mqtt.client.async_publish") as mock_publish,
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_MQTT}, data=discovery
@@ -136,7 +136,7 @@ async def test_handle_config_topic(
     )
 
     with (
-        patch("homeassistant.components.mqtt.client.async_publish") as mock_publish,
+        patch("inpui.components.mqtt.client.async_publish") as mock_publish,
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_MQTT}, data=discovery

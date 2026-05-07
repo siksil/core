@@ -58,24 +58,24 @@ async def test_diagnostics_cloudhook_instance(
 ) -> None:
     """Test diagnostics."""
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ),
         patch(
-            "homeassistant.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
+            "inpui.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
         ),
         patch(
-            "homeassistant.components.cloud.async_delete_cloudhook",
+            "inpui.components.cloud.async_delete_cloudhook",
         ),
         patch(
-            "homeassistant.components.withings.webhook_generate_url",
+            "inpui.components.withings.webhook_generate_url",
         ),
     ):
         await setup_integration(hass, webhook_config_entry)

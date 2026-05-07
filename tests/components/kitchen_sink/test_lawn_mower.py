@@ -26,7 +26,7 @@ MOWER_SERVICE_ENTITY = "lawn_mower.mower_can_dock"
 async def lawn_mower_only() -> None:
     """Enable only the lawn mower platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.LAWN_MOWER],
     ):
         yield

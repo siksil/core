@@ -24,7 +24,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(name="mock_store")
 def mock_store_fixture():
     """Mock the storage."""
-    with patch("homeassistant.components.icloud.account.Store") as store_mock:
+    with patch("inpui.components.icloud.account.Store") as store_mock:
         store_instance = Mock(spec=Store)
         store_instance.path = "/mock/path"
         store_mock.return_value = store_instance
@@ -35,7 +35,7 @@ def mock_store_fixture():
 def mock_icloud_service_no_userinfo_fixture():
     """Mock PyiCloudService with devices as dict but no userInfo."""
     with patch(
-        "homeassistant.components.icloud.account.PyiCloudService"
+        "inpui.components.icloud.account.PyiCloudService"
     ) as service_mock:
         service_instance = MagicMock()
         service_instance.requires_2fa = False
@@ -120,7 +120,7 @@ class MockDevicesContainer:
 def mock_icloud_service_fixture():
     """Mock PyiCloudService with devices container that is iterable and indexable returning status dict."""
     with patch(
-        "homeassistant.components.icloud.account.PyiCloudService",
+        "inpui.components.icloud.account.PyiCloudService",
     ) as service_mock:
         service_instance = MagicMock()
         device_obj = MockAppleDevice(DEVICE)

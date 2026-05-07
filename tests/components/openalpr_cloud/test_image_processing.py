@@ -38,7 +38,7 @@ async def setup_openalpr_cloud(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.openalpr_cloud.image_processing."
+        "inpui.components.openalpr_cloud.image_processing."
         "OpenAlprCloudEntity.should_poll",
         new_callable=PropertyMock(return_value=False),
     ):
@@ -145,7 +145,7 @@ async def test_openalpr_process_image(
     )
 
     with patch(
-        "homeassistant.components.camera.async_get_image",
+        "inpui.components.camera.async_get_image",
         return_value=camera.Image("image/jpeg", b"image"),
     ):
         common.async_scan(hass, entity_id="image_processing.test_local")
@@ -182,7 +182,7 @@ async def test_openalpr_process_image_api_error(
     )
 
     with patch(
-        "homeassistant.components.camera.async_get_image",
+        "inpui.components.camera.async_get_image",
         return_value=camera.Image("image/jpeg", b"image"),
     ):
         common.async_scan(hass, entity_id="image_processing.test_local")
@@ -202,7 +202,7 @@ async def test_openalpr_process_image_api_timeout(
     aioclient_mock.post(OPENALPR_API_URL, params=PARAMS, exc=TimeoutError())
 
     with patch(
-        "homeassistant.components.camera.async_get_image",
+        "inpui.components.camera.async_get_image",
         return_value=camera.Image("image/jpeg", b"image"),
     ):
         common.async_scan(hass, entity_id="image_processing.test_local")

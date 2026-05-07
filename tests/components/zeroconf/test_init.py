@@ -176,7 +176,7 @@ async def test_setup(hass: HomeAssistant, mock_async_zeroconf: MagicMock) -> Non
             discovery, "AsyncServiceBrowser", side_effect=service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -208,7 +208,7 @@ async def test_setup_with_overly_long_url_and_name(
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.get_url",
+            "inpui.components.zeroconf.get_url",
             return_value=(
                 "https://this.url.is.way.too.long/very/deep/path/that/will/make/us/go/over"
                 "/the/maximum/string/length/and/would/cause/zeroconf/to/fail/to/startup"
@@ -232,7 +232,7 @@ async def test_setup_with_overly_long_url_and_name(
             ),
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo.async_request",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo.async_request",
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
@@ -252,7 +252,7 @@ async def test_setup_with_defaults(
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -297,7 +297,7 @@ async def test_zeroconf_match_macaddress(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("FFAADDCC11DD"),
         ),
     ):
@@ -346,7 +346,7 @@ async def test_zeroconf_match_manufacturer(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock_manufacturer("Samsung Electronics"),
         ),
     ):
@@ -387,7 +387,7 @@ async def test_zeroconf_match_model(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock_model("appletv"),
         ),
     ):
@@ -428,7 +428,7 @@ async def test_zeroconf_match_manufacturer_not_present(hass: HomeAssistant) -> N
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("aabbccddeeff"),
         ),
     ):
@@ -464,7 +464,7 @@ async def test_zeroconf_no_match(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("FFAADDCC11DD"),
         ),
     ):
@@ -504,7 +504,7 @@ async def test_zeroconf_no_match_manufacturer(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock_manufacturer("Not Samsung Electronics"),
         ),
     ):
@@ -539,7 +539,7 @@ async def test_homekit_match_partial_space(hass: HomeAssistant) -> None:
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("LIFX bulb", HOMEKIT_STATUS_UNPAIRED),
         ),
     ):
@@ -587,7 +587,7 @@ async def test_device_with_invalid_name(
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=BadTypeInNameException,
         ),
     ):
@@ -623,7 +623,7 @@ async def test_homekit_match_partial_dash(hass: HomeAssistant) -> None:
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock(
                 "Smart Bridge-001", HOMEKIT_STATUS_UNPAIRED
             ),
@@ -661,7 +661,7 @@ async def test_homekit_match_partial_fnmatch(hass: HomeAssistant) -> None:
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("YLDP13YL", HOMEKIT_STATUS_UNPAIRED),
         ),
     ):
@@ -697,7 +697,7 @@ async def test_homekit_match_full(hass: HomeAssistant) -> None:
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("BSB002", HOMEKIT_STATUS_UNPAIRED),
         ),
     ):
@@ -736,7 +736,7 @@ async def test_homekit_already_paired(hass: HomeAssistant) -> None:
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("tado", HOMEKIT_STATUS_PAIRED),
         ),
     ):
@@ -773,7 +773,7 @@ async def test_homekit_invalid_paring_status(hass: HomeAssistant) -> None:
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("Smart Bridge", b"invalid"),
         ),
     ):
@@ -800,7 +800,7 @@ async def test_homekit_not_paired(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock(
                 "this_will_not_match_any_integration", HOMEKIT_STATUS_UNPAIRED
             ),
@@ -846,7 +846,7 @@ async def test_homekit_controller_still_discovered_unpaired_for_cloud(
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("Rachio-xyz", HOMEKIT_STATUS_UNPAIRED),
         ),
     ):
@@ -891,7 +891,7 @@ async def test_homekit_controller_still_discovered_unpaired_for_polling(
             ),
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_homekit_info_mock("iSmartGate", HOMEKIT_STATUS_UNPAIRED),
         ),
     ):
@@ -1047,7 +1047,7 @@ async def test_removed_ignored(hass: HomeAssistant) -> None:
     with (
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ) as mock_service_info,
     ):
@@ -1078,15 +1078,15 @@ async def test_async_detect_interfaces_setting_non_loopback_route(
 ) -> None:
     """Test without default interface and the route returns a non-loopback address."""
     with (
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_loaded_adapters",
+            "inpui.components.zeroconf.network.async_get_loaded_adapters",
             return_value=_ADAPTER_WITH_DEFAULT_ENABLED,
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -1165,16 +1165,16 @@ async def test_async_detect_interfaces_setting_empty_route_linux(
 ) -> None:
     """Test without default interface config and the route returns nothing on linux."""
     with (
-        patch("homeassistant.components.zeroconf.sys.platform", "linux"),
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.sys.platform", "linux"),
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_loaded_adapters",
+            "inpui.components.zeroconf.network.async_get_loaded_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -1199,16 +1199,16 @@ async def test_async_detect_interfaces_setting_empty_route_freebsd(
 ) -> None:
     """Test without default interface and the route returns nothing on freebsd."""
     with (
-        patch("homeassistant.components.zeroconf.sys.platform", "freebsd"),
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.sys.platform", "freebsd"),
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_loaded_adapters",
+            "inpui.components.zeroconf.network.async_get_loaded_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -1250,16 +1250,16 @@ async def test_async_detect_interfaces_explicitly_set_ipv6_linux(
 ) -> None:
     """Test interfaces are explicitly set when IPv6 is present on linux."""
     with (
-        patch("homeassistant.components.zeroconf.sys.platform", "linux"),
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.sys.platform", "linux"),
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_loaded_adapters",
+            "inpui.components.zeroconf.network.async_get_loaded_adapters",
             return_value=_ADAPTER_WITH_DEFAULT_ENABLED_AND_IPV6,
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -1279,16 +1279,16 @@ async def test_async_detect_interfaces_explicitly_set_ipv6_freebsd(
 ) -> None:
     """Test interfaces are explicitly set when IPv6 is present on freebsd."""
     with (
-        patch("homeassistant.components.zeroconf.sys.platform", "freebsd"),
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.sys.platform", "freebsd"),
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_loaded_adapters",
+            "inpui.components.zeroconf.network.async_get_loaded_adapters",
             return_value=_ADAPTER_WITH_DEFAULT_ENABLED_AND_IPV6,
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -1308,16 +1308,16 @@ async def test_async_detect_interfaces_explicitly_before_setup(
 ) -> None:
     """Test interfaces are explicitly set with IPv6 before setup is called."""
     with (
-        patch("homeassistant.components.zeroconf.sys.platform", "linux"),
-        patch("homeassistant.components.zeroconf.HaZeroconf") as mock_zc,
+        patch("inpui.components.zeroconf.sys.platform", "linux"),
+        patch("inpui.components.zeroconf.HaZeroconf") as mock_zc,
         patch.object(hass.config_entries.flow, "async_init"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_loaded_adapters",
+            "inpui.components.zeroconf.network.async_get_loaded_adapters",
             return_value=_ADAPTER_WITH_DEFAULT_ENABLED_AND_IPV6,
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_service_info_mock,
         ),
     ):
@@ -1335,7 +1335,7 @@ async def test_async_detect_interfaces_explicitly_before_setup(
 async def test_no_name(hass: HomeAssistant, mock_async_zeroconf: MagicMock) -> None:
     """Test fallback to Home for mDNS announcement if the name is missing."""
     hass.config.location_name = ""
-    with patch("homeassistant.components.zeroconf.HaZeroconf"):
+    with patch("inpui.components.zeroconf.HaZeroconf"):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
         hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
@@ -1358,7 +1358,7 @@ async def test_setup_with_disallowed_characters_in_local_name(
             "My.House",
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo.async_request",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo.async_request",
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
@@ -1373,7 +1373,7 @@ async def test_start_with_frontend(
     hass: HomeAssistant, mock_async_zeroconf: MagicMock
 ) -> None:
     """Test we start with the frontend."""
-    with patch("homeassistant.components.zeroconf.HaZeroconf"):
+    with patch("inpui.components.zeroconf.HaZeroconf"):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
         hass.bus.async_fire(EVENT_COMPONENT_LOADED, {ATTR_COMPONENT: "frontend"})
         await hass.async_block_till_done()
@@ -1417,7 +1417,7 @@ async def test_zeroconf_removed(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=_device_removed_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("FFAADDCC11DD"),
         ),
     ):
@@ -1474,7 +1474,7 @@ async def test_zeroconf_removed_dismiss_protected(hass: HomeAssistant) -> None:
             discovery, "AsyncServiceBrowser", side_effect=_device_removed_mock
         ),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("FFAADDCC11DD"),
         ),
     ):
@@ -1597,7 +1597,7 @@ async def test_zeroconf_rediscover(
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("FFAADDCC11DD"),
         ),
     ):
@@ -1717,7 +1717,7 @@ async def test_zeroconf_rediscover_no_match(
             discovery, "AsyncServiceBrowser", side_effect=http_only_service_update_mock
         ) as mock_service_browser,
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=get_zeroconf_info_mock("FFAADDCC11DD"),
         ),
     ):

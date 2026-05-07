@@ -49,7 +49,7 @@ async def test_events_fired_properly(hass: HomeAssistant) -> None:
             events.append(event)
 
     with patch(
-        "homeassistant.components.emulated_roku.binding.EmulatedRokuServer", instantiate
+        "inpui.components.emulated_roku.binding.EmulatedRokuServer", instantiate
     ):
         hass.bus.async_listen(EVENT_ROKU_COMMAND, listener)
 

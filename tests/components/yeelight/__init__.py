@@ -58,7 +58,7 @@ SHORT_ID = hex(int("0x000000000015243f", 16))
 UNIQUE_NAME = f"yeelight_{MODEL}_{SHORT_ID}"
 UNIQUE_FRIENDLY_NAME = f"Yeelight {MODEL.title()} {SHORT_ID}"
 
-MODULE = "homeassistant.components.yeelight"
+MODULE = "inpui.components.yeelight"
 MODULE_CONFIG_FLOW = f"{MODULE}.config_flow"
 
 PROPERTIES = {
@@ -191,7 +191,7 @@ def _patch_discovery(no_device=False, capabilities=None):
         return _patched_ssdp_listener(info, *args, **kwargs)
 
     return patch(
-        "homeassistant.components.yeelight.scanner.SsdpSearchListener",
+        "inpui.components.yeelight.scanner.SsdpSearchListener",
         new=_generate_fake_ssdp_listener,
     )
 

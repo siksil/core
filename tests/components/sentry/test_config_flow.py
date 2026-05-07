@@ -33,9 +33,9 @@ async def test_full_user_flow_implementation(hass: HomeAssistant) -> None:
     assert result.get("errors") == {}
 
     with (
-        patch("homeassistant.components.sentry.config_flow.Dsn"),
+        patch("inpui.components.sentry.config_flow.Dsn"),
         patch(
-            "homeassistant.components.sentry.async_setup_entry",
+            "inpui.components.sentry.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -72,7 +72,7 @@ async def test_user_flow_bad_dsn(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.sentry.config_flow.Dsn",
+        "inpui.components.sentry.config_flow.Dsn",
         side_effect=BadDsn,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -91,7 +91,7 @@ async def test_user_flow_unknown_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.sentry.config_flow.Dsn",
+        "inpui.components.sentry.config_flow.Dsn",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -111,7 +111,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.sentry.async_setup_entry", return_value=True):
+    with patch("inpui.components.sentry.async_setup_entry", return_value=True):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 

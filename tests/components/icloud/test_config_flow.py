@@ -38,7 +38,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(name="icloud_bypass_setup", autouse=True)
 def icloud_bypass_setup_fixture():
     """Mock component setup."""
-    with patch("homeassistant.components.icloud.async_setup_entry", return_value=True):
+    with patch("inpui.components.icloud.async_setup_entry", return_value=True):
         yield
 
 
@@ -46,7 +46,7 @@ def icloud_bypass_setup_fixture():
 def mock_controller_service():
     """Mock a successful service."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = False
         service_mock.return_value.requires_2sa = True
@@ -60,7 +60,7 @@ def mock_controller_service():
 def mock_controller_2fa_service():
     """Mock a successful 2fa service."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = True
         service_mock.return_value.requires_2sa = True
@@ -73,7 +73,7 @@ def mock_controller_2fa_service():
 def mock_controller_service_authenticated():
     """Mock a successful service while already authenticate."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = False
         service_mock.return_value.requires_2sa = False
@@ -89,7 +89,7 @@ def mock_controller_service_authenticated():
 def mock_controller_service_authenticated_no_device():
     """Mock a successful service while already authenticate, but without device."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = False
         service_mock.return_value.requires_2sa = False
@@ -104,7 +104,7 @@ def mock_controller_service_authenticated_no_device():
 def mock_controller_service_authenticated_not_trusted():
     """Mock a successful service while already authenticated, but the session is not trusted."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = False
         service_mock.return_value.requires_2sa = False
@@ -120,7 +120,7 @@ def mock_controller_service_authenticated_not_trusted():
 def mock_controller_service_send_verification_code_failed():
     """Mock a failed service during sending verification code step."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = False
         service_mock.return_value.requires_2sa = True
@@ -133,7 +133,7 @@ def mock_controller_service_send_verification_code_failed():
 def mock_controller_service_validate_2fa_code_failed():
     """Mock a failed service during validation of 2FA verification code step."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = True
         service_mock.return_value.validate_2fa_code = Mock(return_value=False)
@@ -144,7 +144,7 @@ def mock_controller_service_validate_2fa_code_failed():
 def mock_controller_service_validate_verification_code_failed():
     """Mock a failed service during validation of verification code step."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService"
+        "inpui.components.icloud.config_flow.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = False
         service_mock.return_value.requires_2sa = True
@@ -199,7 +199,7 @@ async def test_user_with_cookie(
 async def test_login_failed(hass: HomeAssistant) -> None:
     """Test when we have errors during login."""
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService",
+        "inpui.components.icloud.config_flow.PyiCloudService",
         side_effect=PyiCloudFailedLoginException(msg="Invalid login"),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -409,7 +409,7 @@ async def test_password_update_wrong_password(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.icloud.config_flow.PyiCloudService",
+        "inpui.components.icloud.config_flow.PyiCloudService",
         side_effect=PyiCloudFailedLoginException(msg="Invalid login"),
     ):
         result = await hass.config_entries.flow.async_configure(

@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.nmbs.async_setup_entry",
+        "inpui.components.nmbs.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -30,11 +30,11 @@ def mock_nmbs_client() -> Generator[AsyncMock]:
     """Mock a NMBS client."""
     with (
         patch(
-            "homeassistant.components.nmbs.iRail",
+            "inpui.components.nmbs.iRail",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.nmbs.config_flow.iRail",
+            "inpui.components.nmbs.config_flow.iRail",
             new=mock_client,
         ),
     ):

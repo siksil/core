@@ -171,7 +171,7 @@ async def test_multi_server_camera_creation(
     )
 
     with patch(
-        "homeassistant.components.zoneminder.ZoneMinder",
+        "inpui.components.zoneminder.ZoneMinder",
         side_effect=lambda *args, **kwargs: next(clients),
     ):
         assert await async_setup_component(hass, DOMAIN, multi_server_config)
@@ -200,7 +200,7 @@ async def test_filter_urllib3_logging_called(
     monitors = [create_mock_monitor(name="Front Door")]
 
     with patch(
-        "homeassistant.components.zoneminder.camera.filter_urllib3_logging"
+        "inpui.components.zoneminder.camera.filter_urllib3_logging"
     ) as mock_filter:
         await _setup_zm_with_cameras(
             hass, mock_zoneminder_client, single_server_config, monitors, freezer

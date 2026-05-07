@@ -24,7 +24,7 @@ CHILD_LOCK_SWITCH_ENTITY = "switch.baseboard_heater_child_lock"
 @pytest.fixture(autouse=True)
 def setup_platforms() -> Generator[None]:
     """Set up the platforms for the tests."""
-    with patch("homeassistant.components.tado.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.tado.PLATFORMS", [Platform.SWITCH]):
         yield
 
 
@@ -47,7 +47,7 @@ async def test_set_child_lock(hass: HomeAssistant, method, expected) -> None:
     """Test enable child lock on switch."""
 
     with patch(
-        "homeassistant.components.tado.PyTado.interface.api.Tado.set_child_lock"
+        "inpui.components.tado.PyTado.interface.api.Tado.set_child_lock"
     ) as mock_set_state:
         await hass.services.async_call(
             SWITCH_DOMAIN,

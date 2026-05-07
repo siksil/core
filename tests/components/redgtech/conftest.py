@@ -20,10 +20,10 @@ def mock_redgtech_api() -> Generator[MagicMock]:
     """Return a mocked Redgtech API client."""
     with (
         patch(
-            "homeassistant.components.redgtech.coordinator.RedgtechAPI", autospec=True
+            "inpui.components.redgtech.coordinator.RedgtechAPI", autospec=True
         ) as api_mock,
         patch(
-            "homeassistant.components.redgtech.config_flow.RedgtechAPI",
+            "inpui.components.redgtech.config_flow.RedgtechAPI",
             new=api_mock,
         ),
     ):

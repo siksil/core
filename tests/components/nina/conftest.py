@@ -23,7 +23,7 @@ from tests.common import (
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.nina.async_setup_entry", return_value=True
+        "inpui.components.nina.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -49,9 +49,9 @@ def mock_nina_class(nina_region_codes: dict[str, str]) -> Generator[AsyncMock]:
     """Fixture to mock the NINA class."""
     with (
         patch(
-            "homeassistant.components.nina.config_flow.Nina", autospec=True
+            "inpui.components.nina.config_flow.Nina", autospec=True
         ) as mock_nina,
-        patch("homeassistant.components.nina.coordinator.Nina", new=mock_nina),
+        patch("inpui.components.nina.coordinator.Nina", new=mock_nina),
     ):
         nina = mock_nina.return_value
         nina.get_all_regional_codes.return_value = nina_region_codes

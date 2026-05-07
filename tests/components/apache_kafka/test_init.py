@@ -15,7 +15,7 @@ from inpui.const import STATE_ON
 from inpui.core import HomeAssistant
 from inpui.setup import async_setup_component
 
-APACHE_KAFKA_PATH = "homeassistant.components.apache_kafka"
+APACHE_KAFKA_PATH = "inpui.components.apache_kafka"
 PRODUCER_PATH = f"{APACHE_KAFKA_PATH}.AIOKafkaProducer"
 MIN_CONFIG = {
     "ip_address": "localhost",

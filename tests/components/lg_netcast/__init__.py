@@ -89,7 +89,7 @@ def _patch_lg_netcast(
         )
 
     return patch(
-        "homeassistant.components.lg_netcast.config_flow.LgNetCastClient",
+        "inpui.components.lg_netcast.config_flow.LgNetCastClient",
         new=_generate_fake_lgnetcast_client,
     )
 

@@ -115,7 +115,7 @@ def access_token_fixture(requests_mock: Mocker) -> Generator[None]:
         status_code=HTTPStatus.OK,
         json={"data": [token_response]},
     )
-    with patch("homeassistant.components.flume.coordinator.FlumeAuth.write_token_file"):
+    with patch("inpui.components.flume.coordinator.FlumeAuth.write_token_file"):
         yield
 
 

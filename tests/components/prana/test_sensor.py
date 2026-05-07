@@ -21,7 +21,7 @@ async def test_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test all Prana sensors using snapshots."""
-    with patch("homeassistant.components.prana.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.prana.PLATFORMS", [Platform.SENSOR]):
         await async_init_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -37,7 +37,7 @@ async def test_sensors_not_added_if_none(
     mock_prana_api.get_state.return_value.co2 = None
     mock_prana_api.get_state.return_value.humidity = 45
 
-    with patch("homeassistant.components.prana.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.prana.PLATFORMS", [Platform.SENSOR]):
         await async_init_integration(hass, mock_config_entry)
 
     assert hass.states.get("sensor.prana_recuperator_humidity") is not None

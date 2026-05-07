@@ -69,7 +69,7 @@ async def test_converation_trace_uncaught_error(
     """Test tracing a conversation that raises an uncaught error."""
     with (
         patch(
-            "homeassistant.components.conversation.default_agent.DefaultAgent.async_process",
+            "inpui.components.conversation.default_agent.DefaultAgent.async_process",
             side_effect=ValueError("Unexpected error"),
         ),
         pytest.raises(ValueError),
@@ -99,7 +99,7 @@ async def test_converation_trace_homeassistant_error(
     """Test tracing a conversation with a HomeAssistant error."""
     with (
         patch(
-            "homeassistant.components.conversation.default_agent.DefaultAgent.async_process",
+            "inpui.components.conversation.default_agent.DefaultAgent.async_process",
             side_effect=HomeAssistantError("Failed to talk to agent"),
         ),
     ):

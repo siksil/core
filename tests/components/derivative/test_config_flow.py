@@ -29,7 +29,7 @@ async def test_config_flow(hass: HomeAssistant, platform) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.derivative.async_setup_entry",
+        "inpui.components.derivative.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

@@ -54,10 +54,10 @@ def mock_anglian_water_authenticator() -> Generator[MagicMock]:
     """Mock a Anglian Water authenticator."""
     with (
         patch(
-            "homeassistant.components.anglian_water.MSOB2CAuth", autospec=True
+            "inpui.components.anglian_water.MSOB2CAuth", autospec=True
         ) as mock_auth_class,
         patch(
-            "homeassistant.components.anglian_water.config_flow.MSOB2CAuth",
+            "inpui.components.anglian_water.config_flow.MSOB2CAuth",
             new=mock_auth_class,
         ),
     ):
@@ -79,10 +79,10 @@ async def mock_anglian_water_client(
     # Create a mock instance with our meters and config first.
     with (
         patch(
-            "homeassistant.components.anglian_water.AnglianWater", autospec=True
+            "inpui.components.anglian_water.AnglianWater", autospec=True
         ) as mock_client_class,
         patch(
-            "homeassistant.components.anglian_water.config_flow.AnglianWater",
+            "inpui.components.anglian_water.config_flow.AnglianWater",
             new=mock_client_class,
         ),
     ):
@@ -104,7 +104,7 @@ async def mock_anglian_water_client(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.anglian_water.async_setup_entry",
+        "inpui.components.anglian_water.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

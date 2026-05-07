@@ -34,7 +34,7 @@ async def test_setup_config(hass: HomeAssistant) -> None:
 
     mocker = MockRestData("test_scrape_sensor")
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=mocker,
     ) as mock_setup:
         assert await async_setup_component(hass, DOMAIN, config)
@@ -60,7 +60,7 @@ async def test_setup_no_data_fails_with_recovery(
 
     mocker = MockRestData("test_scrape_sensor_no_data")
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=mocker,
     ):
         assert await async_setup_component(hass, DOMAIN, config)
@@ -111,7 +111,7 @@ async def test_setup_config_no_sensors(
 
     mocker = MockRestData("test_scrape_sensor")
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=mocker,
     ):
         assert await async_setup_component(hass, DOMAIN, config)

@@ -1881,8 +1881,8 @@ async def test_group(hass: HomeAssistant) -> None:
 
     await assert_power_controller_works(
         "group#test",
-        "homeassistant.turn_on",
-        "homeassistant.turn_off",
+        "inpui.turn_on",
+        "inpui.turn_off",
         hass,
         "2022-04-19T07:53:05Z",
     )
@@ -5680,7 +5680,7 @@ async def test_camera_discovery(hass: HomeAssistant, mock_stream: None) -> None:
 
     hass.config.components.add("cloud")
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         appliance = await discovery_test(device, hass)
@@ -5710,7 +5710,7 @@ async def test_camera_discovery_without_stream(hass: HomeAssistant) -> None:
 
     hass.config.components.add("cloud")
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         appliance = await discovery_test(device, hass)
@@ -5756,7 +5756,7 @@ async def test_initialize_camera_stream(
     )
 
     with patch(
-        "homeassistant.components.demo.camera.DemoCamera.stream_source",
+        "inpui.components.demo.camera.DemoCamera.stream_source",
         return_value="rtsp://example.local",
     ):
         msg = await smart_home.async_handle_message(

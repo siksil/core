@@ -26,7 +26,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker, ClientError
 @pytest.fixture(name="hue_setup", autouse=True)
 def hue_setup_fixture():
     """Mock hue entry setup."""
-    with patch("homeassistant.components.hue.async_setup_entry", return_value=True):
+    with patch("inpui.components.hue.async_setup_entry", return_value=True):
         yield
 
 
@@ -61,7 +61,7 @@ async def test_flow_works(hass: HomeAssistant) -> None:
     disc_bridge = get_discovered_bridge(supports_v2=True)
 
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         return_value=[disc_bridge],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -108,7 +108,7 @@ async def test_manual_flow_works(hass: HomeAssistant) -> None:
     ).add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         return_value=[disc_bridge],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -135,7 +135,7 @@ async def test_manual_flow_works(hass: HomeAssistant) -> None:
 
     with (
         patch.object(config_flow, "create_app_key", return_value="123456789"),
-        patch("homeassistant.components.hue.async_unload_entry", return_value=True),
+        patch("inpui.components.hue.async_unload_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
 
@@ -159,7 +159,7 @@ async def test_manual_flow_bridge_exist(hass: HomeAssistant) -> None:
     ).add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -261,7 +261,7 @@ async def test_flow_two_bridges_discovered_one_new(
 async def test_flow_timeout_discovery(hass: HomeAssistant) -> None:
     """Test config flow ."""
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         side_effect=TimeoutError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -276,7 +276,7 @@ async def test_flow_link_unknown_error(hass: HomeAssistant) -> None:
     """Test if a unknown error happened during the linking processes."""
     disc_bridge = get_discovered_bridge()
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         return_value=[disc_bridge],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -301,7 +301,7 @@ async def test_flow_link_button_not_pressed(hass: HomeAssistant) -> None:
     """Test config flow ."""
     disc_bridge = get_discovered_bridge()
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         return_value=[disc_bridge],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -326,7 +326,7 @@ async def test_flow_link_cannot_connect(hass: HomeAssistant) -> None:
     """Test config flow ."""
     disc_bridge = get_discovered_bridge()
     with patch(
-        "homeassistant.components.hue.config_flow.discover_nupnp",
+        "inpui.components.hue.config_flow.discover_nupnp",
         return_value=[disc_bridge],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -397,10 +397,10 @@ async def test_creating_entry_removes_entries_for_same_host_or_bridge(
 
     with (
         patch(
-            "homeassistant.components.hue.config_flow.create_app_key",
+            "inpui.components.hue.config_flow.create_app_key",
             return_value="123456789",
         ),
-        patch("homeassistant.components.hue.async_unload_entry", return_value=True),
+        patch("inpui.components.hue.async_unload_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
 
@@ -670,7 +670,7 @@ async def test_bridge_connection_failed(
     create_mock_api_discovery(aioclient_mock, [])
 
     with patch(
-        "homeassistant.components.hue.config_flow.discover_bridge",
+        "inpui.components.hue.config_flow.discover_bridge",
         side_effect=ClientError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -761,11 +761,11 @@ async def test_bsb003_bridge_discovery(
 
     with (
         patch(
-            "homeassistant.components.hue.config_flow.discover_bridge",
+            "inpui.components.hue.config_flow.discover_bridge",
             return_value=disc_bridge,
         ),
         patch(
-            "homeassistant.components.hue.config_flow.HueBridgeV2",
+            "inpui.components.hue.config_flow.HueBridgeV2",
             autospec=True,
         ) as mock_bridge,
     ):
@@ -818,7 +818,7 @@ async def test_bsb003_bridge_discovery_old_version(
     )
 
     with patch(
-        "homeassistant.components.hue.config_flow.discover_bridge",
+        "inpui.components.hue.config_flow.discover_bridge",
         return_value=disc_bridge,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -864,11 +864,11 @@ async def test_bsb003_bridge_discovery_same_host(
 
     with (
         patch(
-            "homeassistant.components.hue.config_flow.discover_bridge",
+            "inpui.components.hue.config_flow.discover_bridge",
             return_value=disc_bridge,
         ),
         patch(
-            "homeassistant.components.hue.config_flow.HueBridgeV2",
+            "inpui.components.hue.config_flow.HueBridgeV2",
             autospec=True,
         ),
     ):
@@ -917,11 +917,11 @@ async def test_bsb003_bridge_discovery_cannot_connect(
 
     with (
         patch(
-            "homeassistant.components.hue.config_flow.discover_bridge",
+            "inpui.components.hue.config_flow.discover_bridge",
             return_value=disc_bridge,
         ),
         patch(
-            "homeassistant.components.hue.config_flow.HueBridgeV2",
+            "inpui.components.hue.config_flow.HueBridgeV2",
             autospec=True,
         ) as mock_bridge,
     ):

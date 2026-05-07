@@ -18,7 +18,7 @@ from . import initialize_entry
 from tests.common import MockConfigEntry, snapshot_platform
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.BUTTON])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.BUTTON])
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")
 async def test_platform_setup_and_discovery(
     hass: HomeAssistant,
@@ -34,7 +34,7 @@ async def test_platform_setup_and_discovery(
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.BUTTON])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.BUTTON])
 @pytest.mark.parametrize(
     "mock_device_code",
     ["sd_lr33znaodtyarrrz"],

@@ -33,7 +33,7 @@ from tests.common import Mock, MockConfigEntry, snapshot_platform
 def remote_only() -> Generator[None]:
     """Enable only the remote platform."""
     with patch(
-        "homeassistant.components.xbox.PLATFORMS",
+        "inpui.components.xbox.PLATFORMS",
         [Platform.REMOTE],
     ):
         yield

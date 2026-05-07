@@ -26,7 +26,7 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fastdotcom.coordinator.fast_com",
+        "inpui.components.fastdotcom.coordinator.fast_com",
         return_value=MOCK_DATA,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -51,7 +51,7 @@ async def test_delayed_speedtest_during_startup(
 
     original_state = hass.state
     hass.set_state(CoreState.starting)
-    with patch("homeassistant.components.fastdotcom.coordinator.fast_com"):
+    with patch("inpui.components.fastdotcom.coordinator.fast_com"):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
     hass.set_state(original_state)
@@ -62,7 +62,7 @@ async def test_delayed_speedtest_during_startup(
     assert state.state is STATE_UNKNOWN
 
     with patch(
-        "homeassistant.components.fastdotcom.coordinator.fast_com",
+        "inpui.components.fastdotcom.coordinator.fast_com",
         return_value=MOCK_DATA,
     ):
         hass.bus.async_fire(EVENT_INPUI_STARTED)

@@ -20,7 +20,7 @@ ENTITY_DATE = "date.date"
 async def date_only() -> None:
     """Enable only the date platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.DATE],
     ):
         yield

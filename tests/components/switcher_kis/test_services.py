@@ -52,7 +52,7 @@ async def test_turn_on_with_timer_service(
     assert state.state == STATE_OFF
 
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device"
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device"
     ) as mock_control_device:
         await hass.services.async_call(
             DOMAIN,
@@ -92,7 +92,7 @@ async def test_turn_on_with_timer_service_token_needed(
     assert state.state == STATE_OFF
 
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device"
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device"
     ) as mock_control_device:
         await hass.services.async_call(
             DOMAIN,
@@ -122,7 +122,7 @@ async def test_set_auto_off_service(hass: HomeAssistant, mock_bridge, mock_api) 
     entity_id = f"{SWITCH_DOMAIN}.{slugify(device.name)}"
 
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown"
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown"
     ) as mock_set_auto_shutdown:
         await hass.services.async_call(
             DOMAIN,
@@ -149,7 +149,7 @@ async def test_set_auto_off_service_token_needed(
     entity_id = f"{SWITCH_DOMAIN}.{slugify(device.name)}"
 
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown"
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown"
     ) as mock_set_auto_shutdown:
         await hass.services.async_call(
             DOMAIN,
@@ -174,7 +174,7 @@ async def test_set_auto_off_service_fail(
     entity_id = f"{SWITCH_DOMAIN}.{slugify(device.name)}"
 
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown",
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown",
         return_value=None,
     ) as mock_set_auto_shutdown:
         with pytest.raises(HomeAssistantError):
@@ -206,7 +206,7 @@ async def test_set_auto_off_service_fail_token_needed(
 
     with (
         patch(
-            "homeassistant.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown",
+            "inpui.components.switcher_kis.entity.SwitcherApi.set_auto_shutdown",
             return_value=None,
         ) as mock_set_auto_shutdown,
         pytest.raises(HomeAssistantError),

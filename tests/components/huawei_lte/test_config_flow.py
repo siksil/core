@@ -260,8 +260,8 @@ async def test_success(hass: HomeAssistant, login_requests_mock, scheme: str) ->
         text="<response>OK</response>",
     )
     with (
-        patch("homeassistant.components.huawei_lte.async_setup"),
-        patch("homeassistant.components.huawei_lte.async_setup_entry"),
+        patch("inpui.components.huawei_lte.async_setup"),
+        patch("inpui.components.huawei_lte.async_setup_entry"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,

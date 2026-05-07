@@ -20,7 +20,7 @@ ENTITY_TIME = "time.time"
 async def time_only() -> None:
     """Enable only the time platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.TIME],
     ):
         yield

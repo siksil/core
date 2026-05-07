@@ -3260,7 +3260,7 @@ async def test_discovery_update_unchanged_light(
         '  "command_topic": "test_topic" }'
     )
     with patch(
-        "homeassistant.components.mqtt.light.schema_basic.MqttLight.discovery_update"
+        "inpui.components.mqtt.light.schema_basic.MqttLight.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, light.DOMAIN, data1, discovery_update

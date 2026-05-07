@@ -30,7 +30,7 @@ async def test_update_device(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host})
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices"
+        "inpui.components.dynalite.bridge.DynaliteDevices"
     ) as mock_dyn_dev:
         mock_dyn_dev().async_setup = AsyncMock(return_value=True)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -60,7 +60,7 @@ async def test_add_devices_then_register(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host})
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices"
+        "inpui.components.dynalite.bridge.DynaliteDevices"
     ) as mock_dyn_dev:
         mock_dyn_dev().async_setup = AsyncMock(return_value=True)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -95,7 +95,7 @@ async def test_register_then_add_devices(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host})
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices"
+        "inpui.components.dynalite.bridge.DynaliteDevices"
     ) as mock_dyn_dev:
         mock_dyn_dev().async_setup = AsyncMock(return_value=True)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -124,7 +124,7 @@ async def test_notifications(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host})
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices"
+        "inpui.components.dynalite.bridge.DynaliteDevices"
     ) as mock_dyn_dev:
         mock_dyn_dev().async_setup = AsyncMock(return_value=True)
         assert await hass.config_entries.async_setup(entry.entry_id)

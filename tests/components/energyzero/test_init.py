@@ -29,7 +29,7 @@ async def test_load_unload_config_entry(
 
 
 @patch(
-    "homeassistant.components.energyzero.coordinator.EnergyZero._request",
+    "inpui.components.energyzero.coordinator.EnergyZero._request",
     side_effect=EnergyZeroConnectionError,
 )
 async def test_config_flow_entry_not_ready(

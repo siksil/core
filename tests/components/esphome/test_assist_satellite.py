@@ -358,7 +358,7 @@ async def test_pipeline_api_audio(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch.object(satellite, "handle_pipeline_finished", handle_pipeline_finished),
@@ -541,7 +541,7 @@ async def test_pipeline_udp_audio(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch.object(satellite, "handle_pipeline_finished", handle_pipeline_finished),
@@ -730,7 +730,7 @@ async def test_pipeline_media_player(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch.object(satellite, "handle_pipeline_finished", handle_pipeline_finished),
@@ -849,7 +849,7 @@ async def test_unknown_timer_event(
     assert dev is not None
 
     with patch(
-        "homeassistant.components.esphome.assist_satellite._TIMER_EVENT_TYPES.from_hass",
+        "inpui.components.esphome.assist_satellite._TIMER_EVENT_TYPES.from_hass",
         side_effect=KeyError,
     ):
         await intent_helper.async_handle(
@@ -992,7 +992,7 @@ async def test_tts_format_from_media_player(
     assert satellite is not None
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
     ) as mock_pipeline_from_audio_stream:
         await satellite.handle_pipeline_start(
             conversation_id="",
@@ -1058,7 +1058,7 @@ async def test_tts_minimal_format_from_media_player(
     assert satellite is not None
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
     ) as mock_pipeline_from_audio_stream:
         await satellite.handle_pipeline_start(
             conversation_id="",
@@ -1115,15 +1115,15 @@ async def test_announce_message(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://bla",
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud_tts",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch.object(
@@ -1214,7 +1214,7 @@ async def test_announce_media_id(
             new=send_voice_assistant_announcement_await_response,
         ),
         patch(
-            "homeassistant.components.esphome.assist_satellite.async_create_proxy_url",
+            "inpui.components.esphome.assist_satellite.async_create_proxy_url",
             return_value="https://www.home-assistant.io/proxied.flac",
         ) as mock_async_create_proxy_url,
     ):
@@ -1282,15 +1282,15 @@ async def test_announce_message_with_preannounce(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://bla",
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud_tts",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch.object(
@@ -1391,15 +1391,15 @@ async def test_start_conversation_message(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://bla",
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud_tts",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch.object(
@@ -1408,7 +1408,7 @@ async def test_start_conversation_message(
             new=send_voice_assistant_announcement_await_response,
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_get_pipeline",
+            "inpui.components.assist_satellite.entity.async_get_pipeline",
             return_value=pipeline,
         ),
     ):
@@ -1509,11 +1509,11 @@ async def test_start_conversation_media_id(
             new=send_voice_assistant_announcement_await_response,
         ),
         patch(
-            "homeassistant.components.esphome.assist_satellite.async_create_proxy_url",
+            "inpui.components.esphome.assist_satellite.async_create_proxy_url",
             return_value="https://www.home-assistant.io/proxied.flac",
         ) as mock_async_create_proxy_url,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_get_pipeline",
+            "inpui.components.assist_satellite.entity.async_get_pipeline",
             return_value=pipeline,
         ),
     ):
@@ -1596,15 +1596,15 @@ async def test_start_conversation_message_with_preannounce(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://bla",
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud_tts",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch.object(
@@ -1613,7 +1613,7 @@ async def test_start_conversation_message_with_preannounce(
             new=send_voice_assistant_announcement_await_response,
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_get_pipeline",
+            "inpui.components.assist_satellite.entity.async_get_pipeline",
             return_value=pipeline,
         ),
     ):
@@ -1704,7 +1704,7 @@ async def test_pipeline_abort(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch.object(satellite, "handle_pipeline_finished", handle_pipeline_finished),
@@ -2067,7 +2067,7 @@ async def test_secondary_pipeline(
 
     async def get_pipeline(wake_word_phrase):
         with patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         ) as mock_pipeline_from_audio_stream:
             await satellite.handle_pipeline_start(
                 conversation_id="",
@@ -2189,7 +2189,7 @@ async def test_pipeline_start_missing_wake_word_entity_state(
 
     async def get_pipeline(wake_word_phrase):
         with patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         ) as mock_pipeline_from_audio_stream:
             await satellite.handle_pipeline_start(
                 conversation_id="",

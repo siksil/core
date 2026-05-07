@@ -85,7 +85,7 @@ async def test_setup_component_with_service(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.demo.camera.Path.read_bytes",
+    "inpui.components.demo.camera.Path.read_bytes",
     return_value=b"Test",
 )
 @pytest.mark.usefixtures("enable_custom_integrations")
@@ -108,7 +108,7 @@ async def test_get_image_from_camera(
 
 
 @patch(
-    "homeassistant.components.image_processing.async_get_image",
+    "inpui.components.image_processing.async_get_image",
     side_effect=HomeAssistantError(),
 )
 @pytest.mark.usefixtures("enable_custom_integrations")
@@ -158,7 +158,7 @@ async def test_face_event_call(
 
 
 @patch(
-    "homeassistant.components.demo.image_processing.DemoImageProcessingFace.confidence",
+    "inpui.components.demo.image_processing.DemoImageProcessingFace.confidence",
     new_callable=PropertyMock(return_value=None),
 )
 async def test_face_event_call_no_confidence(

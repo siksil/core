@@ -99,7 +99,7 @@ async def test_oauth_refresh_expired(
 
     # Patch the token refresh to raise an error
     with patch(
-        "homeassistant.components.tesla_fleet.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.tesla_fleet.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestReauthError(
             domain=DOMAIN,
             request_info=Mock(),
@@ -122,7 +122,7 @@ async def test_oauth_refresh_error(
 
     # Patch the token refresh to raise an error
     with patch(
-        "homeassistant.components.tesla_fleet.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.tesla_fleet.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestTransientError(
             domain=DOMAIN,
             request_info=Mock(),
@@ -149,7 +149,7 @@ async def test_setup_uses_scopes_from_refreshed_token(
     noscope_config_entry.data[CONF_TOKEN]["expires_at"] = 0
 
     with patch(
-        "homeassistant.components.tesla_fleet.oauth.TeslaUserImplementation.async_refresh_token",
+        "inpui.components.tesla_fleet.oauth.TeslaUserImplementation.async_refresh_token",
         return_value=refreshed_token,
     ) as mock_async_refresh_token:
         await setup_platform(hass, noscope_config_entry)
@@ -386,7 +386,7 @@ async def test_init_invalid_region(
         expires_at, [Scope.VEHICLE_DEVICE_DATA], region="other"
     )
 
-    with patch("homeassistant.components.tesla_fleet.TeslaFleetApi") as mock_api:
+    with patch("inpui.components.tesla_fleet.TeslaFleetApi") as mock_api:
         await setup_platform(hass, config_entry)
         # Check if TeslaFleetApi was called with region=None
         mock_api.assert_called()
@@ -404,7 +404,7 @@ async def test_vehicle_sleep(
     TEST_INTERVAL = timedelta(seconds=120)
 
     with patch(
-        "homeassistant.components.tesla_fleet.coordinator.VEHICLE_INTERVAL",
+        "inpui.components.tesla_fleet.coordinator.VEHICLE_INTERVAL",
         TEST_INTERVAL,
     ):
         await setup_platform(hass, normal_config_entry)
@@ -729,7 +729,7 @@ async def test_signing(
     mock_products.return_value = products
 
     with patch(
-        "homeassistant.components.tesla_fleet.TeslaFleetApi.get_private_key"
+        "inpui.components.tesla_fleet.TeslaFleetApi.get_private_key"
     ) as mock_get_private_key:
         await setup_platform(hass, normal_config_entry)
         mock_get_private_key.assert_called_once()
@@ -822,7 +822,7 @@ async def test_oauth_implementation_not_available(
     normal_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.tesla_fleet.async_get_config_entry_implementation",
+        "inpui.components.tesla_fleet.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(normal_config_entry.entry_id)

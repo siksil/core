@@ -11,7 +11,7 @@ from . import MOCK_SERVERS
 def mock_setup_entry():
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.speedtestdotnet.async_setup_entry",
+        "inpui.components.speedtestdotnet.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

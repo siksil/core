@@ -12,7 +12,7 @@ import pytest
 def mock_github_api() -> Generator[AsyncMock]:
     """Mock aiogithubapi GitHubAPI."""
     with patch(
-        "homeassistant.components.frontend.pr_download.GitHubAPI"
+        "inpui.components.frontend.pr_download.GitHubAPI"
     ) as mock_gh_class:
         mock_client = AsyncMock()
         mock_gh_class.return_value = mock_client

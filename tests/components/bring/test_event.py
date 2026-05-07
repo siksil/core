@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def event_only() -> Generator[None]:
     """Enable only the event platform."""
     with patch(
-        "homeassistant.components.bring.PLATFORMS",
+        "inpui.components.bring.PLATFORMS",
         [Platform.EVENT],
     ):
         yield

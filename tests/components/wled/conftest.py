@@ -30,7 +30,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.wled.async_setup_entry", return_value=True
+        "inpui.components.wled.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -39,7 +39,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_onboarding() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=False,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -55,7 +55,7 @@ def device_fixture() -> str:
 def mock_wled_releases() -> Generator[MagicMock]:
     """Return a mocked WLEDReleases client."""
     with patch(
-        "homeassistant.components.wled.coordinator.WLEDReleases", autospec=True
+        "inpui.components.wled.coordinator.WLEDReleases", autospec=True
     ) as wled_releases_mock:
         wled_releases = wled_releases_mock.return_value
         wled_releases.releases.return_value = Releases(
@@ -73,9 +73,9 @@ def mock_wled(
     """Return a mocked WLED client."""
     with (
         patch(
-            "homeassistant.components.wled.coordinator.WLED", autospec=True
+            "inpui.components.wled.coordinator.WLED", autospec=True
         ) as wled_mock,
-        patch("homeassistant.components.wled.config_flow.WLED", new=wled_mock),
+        patch("inpui.components.wled.config_flow.WLED", new=wled_mock),
     ):
         wled = wled_mock.return_value
         wled.update.return_value = WLEDDevice.from_dict(

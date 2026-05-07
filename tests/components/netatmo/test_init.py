@@ -65,12 +65,12 @@ async def test_setup_component(
     """Test setup and teardown of the netatmo component."""
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ) as mock_impl,
-        patch("homeassistant.components.netatmo.webhook_generate_url") as mock_webhook,
+        patch("inpui.components.netatmo.webhook_generate_url") as mock_webhook,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(
             fake_post_request, hass
@@ -111,13 +111,13 @@ async def test_setup_component_with_config(
 
     with (
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ) as mock_impl,
-        patch("homeassistant.components.netatmo.webhook_generate_url") as mock_webhook,
+        patch("inpui.components.netatmo.webhook_generate_url") as mock_webhook,
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
         ) as mock_auth,
-        patch("homeassistant.components.netatmo.data_handler.PLATFORMS", ["sensor"]),
+        patch("inpui.components.netatmo.data_handler.PLATFORMS", ["sensor"]),
     ):
         mock_auth.return_value.async_post_api_request.side_effect = fake_post
         mock_auth.return_value.async_addwebhook.side_effect = AsyncMock()
@@ -177,17 +177,17 @@ async def test_setup_without_https(
     hass.config.components.add("cloud")
     with (
         patch(
-            "homeassistant.helpers.network.get_url",
+            "inpui.helpers.network.get_url",
             return_value="http://example.nabu.casa",
         ),
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url"
+            "inpui.components.netatmo.webhook_generate_url"
         ) as mock_async_generate_url,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(
@@ -213,25 +213,25 @@ async def test_setup_with_cloud(
     await hass.async_block_till_done()
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
         patch.object(cloud, "async_is_connected", return_value=True),
         patch.object(cloud, "async_active_subscription", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ) as fake_create_cloudhook,
         patch(
-            "homeassistant.components.cloud.async_delete_cloudhook"
+            "inpui.components.cloud.async_delete_cloudhook"
         ) as fake_delete_cloudhook,
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
         ) as mock_auth,
-        patch("homeassistant.components.netatmo.data_handler.PLATFORMS", []),
+        patch("inpui.components.netatmo.data_handler.PLATFORMS", []),
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url",
+            "inpui.components.netatmo.webhook_generate_url",
         ),
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(
@@ -283,25 +283,25 @@ async def test_setup_with_cloudhook(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch.object(cloud, "async_active_subscription", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ) as fake_create_cloudhook,
         patch(
-            "homeassistant.components.cloud.async_delete_cloudhook"
+            "inpui.components.cloud.async_delete_cloudhook"
         ) as fake_delete_cloudhook,
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
         ) as mock_auth,
-        patch("homeassistant.components.netatmo.data_handler.PLATFORMS", []),
+        patch("inpui.components.netatmo.data_handler.PLATFORMS", []),
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url",
+            "inpui.components.netatmo.webhook_generate_url",
         ),
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(
@@ -343,14 +343,14 @@ async def test_setup_component_with_delay(
             "pyatmo.AbstractAsyncAuth.async_dropwebhook", side_effect=AsyncMock()
         ) as mock_dropwebhook,
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ) as mock_impl,
-        patch("homeassistant.components.netatmo.webhook_generate_url") as mock_webhook,
+        patch("inpui.components.netatmo.webhook_generate_url") as mock_webhook,
         patch(
             "pyatmo.AbstractAsyncAuth.async_post_api_request",
             side_effect=partial(fake_post_request, hass),
         ) as mock_post_api_request,
-        patch("homeassistant.components.netatmo.data_handler.PLATFORMS", ["light"]),
+        patch("inpui.components.netatmo.data_handler.PLATFORMS", ["light"]),
     ):
         assert await async_setup_component(
             hass, "netatmo", {"netatmo": {"client_id": "123", "client_secret": "abc"}}
@@ -410,12 +410,12 @@ async def test_setup_component_invalid_token_scope(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ) as mock_impl,
-        patch("homeassistant.components.netatmo.webhook_generate_url") as mock_webhook,
+        patch("inpui.components.netatmo.webhook_generate_url") as mock_webhook,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(
             fake_post_request, hass
@@ -459,13 +459,13 @@ async def test_setup_component_invalid_token(
 
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ) as mock_impl,
-        patch("homeassistant.components.netatmo.webhook_generate_url") as mock_webhook,
-        patch("homeassistant.components.netatmo.OAuth2Session") as mock_session,
+        patch("inpui.components.netatmo.webhook_generate_url") as mock_webhook,
+        patch("inpui.components.netatmo.OAuth2Session") as mock_session,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(
             fake_post_request, hass
@@ -567,7 +567,7 @@ async def test_oauth_implementation_not_available(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.netatmo.async_get_config_entry_implementation",
+        "inpui.components.netatmo.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

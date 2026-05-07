@@ -37,11 +37,11 @@ def mock_casper_glow() -> Generator[MagicMock]:
     """Mock a CasperGlow device."""
     with (
         patch(
-            "homeassistant.components.casper_glow.CasperGlow",
+            "inpui.components.casper_glow.CasperGlow",
             autospec=True,
         ) as mock_device_class,
         patch(
-            "homeassistant.components.casper_glow.config_flow.CasperGlow",
+            "inpui.components.casper_glow.config_flow.CasperGlow",
             new=mock_device_class,
         ),
     ):

@@ -30,7 +30,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.open_router.PLATFORMS",
+        "inpui.components.open_router.PLATFORMS",
         [Platform.AI_TASK],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -249,7 +249,7 @@ async def test_generate_data_with_attachments(
     # Test with attachments
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",
@@ -265,7 +265,7 @@ async def test_generate_data_with_attachments(
         ),
         patch("pathlib.Path.exists", return_value=True),
         patch(
-            "homeassistant.components.open_router.entity.guess_file_type",
+            "inpui.components.open_router.entity.guess_file_type",
             return_value=("image/jpeg", None),
         ),
         patch("pathlib.Path.read_bytes", return_value=b"fake_image_data"),

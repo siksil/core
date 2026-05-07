@@ -46,7 +46,7 @@ async def test_setup_entry_create_errors(
 ) -> None:
     """Test setup failure when LoJackClient.create raises an error."""
     with patch(
-        "homeassistant.components.lojack.LoJackClient.create",
+        "inpui.components.lojack.LoJackClient.create",
         side_effect=side_effect,
     ):
         mock_config_entry.add_to_hass(hass)

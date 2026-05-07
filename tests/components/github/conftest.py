@@ -38,7 +38,7 @@ def mock_config_entry() -> MockConfigEntry:
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.github.async_setup_entry", return_value=True):
+    with patch("inpui.components.github.async_setup_entry", return_value=True):
         yield
 
 
@@ -55,7 +55,7 @@ def github_device_client(
 ) -> Generator[AsyncMock]:
     """Mock GitHub device client."""
     with patch(
-        "homeassistant.components.github.config_flow.GitHubDeviceAPI",
+        "inpui.components.github.config_flow.GitHubDeviceAPI",
         autospec=True,
     ) as github_client_mock:
         client = github_client_mock.return_value
@@ -85,12 +85,12 @@ def github_client(hass: HomeAssistant) -> Generator[AsyncMock]:
     """Mock GitHub device client."""
     with (
         patch(
-            "homeassistant.components.github.config_flow.GitHubAPI",
+            "inpui.components.github.config_flow.GitHubAPI",
             autospec=True,
         ) as github_client_mock,
-        patch("homeassistant.components.github.GitHubAPI", new=github_client_mock),
+        patch("inpui.components.github.GitHubAPI", new=github_client_mock),
         patch(
-            "homeassistant.components.github.diagnostics.GitHubAPI",
+            "inpui.components.github.diagnostics.GitHubAPI",
             new=github_client_mock,
         ),
     ):

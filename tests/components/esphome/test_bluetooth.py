@@ -87,7 +87,7 @@ async def test_bluetooth_cleanup_on_remove_entry(
         mock_bluetooth_entry_with_raw_adv.entry.entry_id
     )
 
-    with patch("homeassistant.components.esphome.async_remove_scanner") as remove_mock:
+    with patch("inpui.components.esphome.async_remove_scanner") as remove_mock:
         await hass.config_entries.async_remove(
             mock_bluetooth_entry_with_raw_adv.entry.entry_id
         )

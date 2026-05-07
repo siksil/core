@@ -35,7 +35,7 @@ from inpui.helpers import entity_registry as er
 from tests.common import snapshot_platform
 
 
-@patch("homeassistant.components.osoenergy.PLATFORMS", [Platform.WATER_HEATER])
+@patch("inpui.components.osoenergy.PLATFORMS", [Platform.WATER_HEATER])
 async def test_water_heater(
     hass: HomeAssistant,
     entity_registry: er.EntityRegistry,

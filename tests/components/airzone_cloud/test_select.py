@@ -55,7 +55,7 @@ async def test_airzone_select_air_quality_mode(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -89,7 +89,7 @@ async def test_airzone_select_mode(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(

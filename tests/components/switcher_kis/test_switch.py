@@ -63,7 +63,7 @@ async def test_switch(
 
     # Test turning on
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device",
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device",
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_ON, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -76,7 +76,7 @@ async def test_switch(
 
     # Test turning off
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device"
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device"
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_OFF, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -113,7 +113,7 @@ async def test_switch_token_needed(
 
     # Test turning on
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device",
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device",
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_ON, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -126,7 +126,7 @@ async def test_switch_token_needed(
 
     # Test turning off
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device"
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device"
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_OFF, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -155,7 +155,7 @@ async def test_switch_ignore_previous_async_state(
 
     # Test turning off
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device"
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device"
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_OFF, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -201,7 +201,7 @@ async def test_switch_control_fail(
 
     # Test exception during turn on
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device",
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device",
         side_effect=RuntimeError("fake error"),
     ) as mock_control_device:
         with pytest.raises(HomeAssistantError):
@@ -226,7 +226,7 @@ async def test_switch_control_fail(
 
     # Test error response during turn on
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.control_device",
+        "inpui.components.switcher_kis.entity.SwitcherApi.control_device",
         return_value=SwitcherBaseResponse(None),
     ) as mock_control_device:
         with pytest.raises(HomeAssistantError):
@@ -306,7 +306,7 @@ async def test_child_lock_switch(
 
     # Test turning on child lock
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock",
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock",
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_ON, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -319,7 +319,7 @@ async def test_child_lock_switch(
 
     # Test turning off
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock"
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock"
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_OFF, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -347,7 +347,7 @@ async def test_child_lock_switch_ignore_previous_async_state(
 
     # Test turning off
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock"
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock"
     ) as mock_control_device:
         await hass.services.async_call(
             SWITCH_DOMAIN, SERVICE_TURN_OFF, {ATTR_ENTITY_ID: entity_id}, blocking=True
@@ -428,7 +428,7 @@ async def test_child_lock_control_fail(
 
     # Test exception during turn on
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock",
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock",
         side_effect=RuntimeError("fake error"),
     ) as mock_control_device:
         with pytest.raises(HomeAssistantError):
@@ -453,7 +453,7 @@ async def test_child_lock_control_fail(
 
     # Test error response during turn on
     with patch(
-        "homeassistant.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock",
+        "inpui.components.switcher_kis.entity.SwitcherApi.set_shutter_child_lock",
         return_value=SwitcherBaseResponse(None),
     ) as mock_control_device:
         with pytest.raises(HomeAssistantError):

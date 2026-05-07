@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.hegel.async_setup_entry",
+        "inpui.components.hegel.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup
@@ -27,7 +27,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_hegel_client() -> Generator[MagicMock]:
     """Mock successful HegelClient connection."""
     with patch(
-        "homeassistant.components.hegel.config_flow.HegelClient", autospec=True
+        "inpui.components.hegel.config_flow.HegelClient", autospec=True
     ) as mock_client_class:
         mock_client = mock_client_class.return_value
         mock_client.start = AsyncMock()

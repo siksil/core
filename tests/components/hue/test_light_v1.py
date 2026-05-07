@@ -20,7 +20,7 @@ from inpui.util import color as color_util
 
 from .conftest import create_config_entry
 
-HUE_LIGHT_NS = "homeassistant.components.light.hue."
+HUE_LIGHT_NS = "inpui.components.light.hue."
 GROUP_RESPONSE = {
     "1": {
         "name": "Group 1",

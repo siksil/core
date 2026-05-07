@@ -419,7 +419,7 @@ async def test_image_stream(
         return result
 
     with patch(
-        "homeassistant.components.image.async_get_still_stream",
+        "inpui.components.image.async_get_still_stream",
         _wrap_async_get_still_stream,
     ):
         with patch.object(mock_image, "async_image", return_value=b""):
@@ -472,8 +472,8 @@ async def test_snapshot_service(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
 
     with (
-        patch("homeassistant.components.image.open", mopen, create=True),
-        patch("homeassistant.components.image.os.makedirs"),
+        patch("inpui.components.image.open", mopen, create=True),
+        patch("inpui.components.image.os.makedirs"),
         patch.object(hass.config, "is_allowed_path", return_value=True),
     ):
         await hass.services.async_call(
@@ -503,9 +503,9 @@ async def test_snapshot_service_no_image(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
 
     with (
-        patch("homeassistant.components.image.open", mopen, create=True),
+        patch("inpui.components.image.open", mopen, create=True),
         patch(
-            "homeassistant.components.image.os.makedirs",
+            "inpui.components.image.os.makedirs",
         ),
         patch.object(hass.config, "is_allowed_path", return_value=True),
     ):

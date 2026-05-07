@@ -39,7 +39,7 @@ async def setup_credentials(hass: HomeAssistant) -> None:
 def mock_auth_manager() -> Generator[MagicMock]:
     """Mock the authentication manager."""
     with patch(
-        "homeassistant.components.yolink.api.ConfigEntryAuth", autospec=True
+        "inpui.components.yolink.api.ConfigEntryAuth", autospec=True
     ) as mock_auth:
         mock_auth.return_value = MagicMock(spec=ConfigEntryAuth)
         yield mock_auth
@@ -49,7 +49,7 @@ def mock_auth_manager() -> Generator[MagicMock]:
 def mock_yolink_home() -> Generator[AsyncMock]:
     """Mock YoLink home instance."""
     with patch(
-        "homeassistant.components.yolink.YoLinkHome", autospec=True
+        "inpui.components.yolink.YoLinkHome", autospec=True
     ) as mock_home:
         mock_home.return_value = AsyncMock(spec=YoLinkHome)
         yield mock_home

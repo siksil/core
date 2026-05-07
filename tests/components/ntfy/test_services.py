@@ -350,7 +350,7 @@ async def test_ntfy_publish_upload_camera_snapshot(
     assert config_entry.state is ConfigEntryState.LOADED
     with (
         patch(
-            "homeassistant.components.camera.async_get_image",
+            "inpui.components.camera.async_get_image",
             return_value=camera.Image("image/jpeg", b"I play the sax\n"),
         ) as mock_get_image,
     ):
@@ -389,7 +389,7 @@ async def test_ntfy_publish_upload_media_source_not_supported(
     assert config_entry.state is ConfigEntryState.LOADED
     with (
         patch(
-            "homeassistant.components.ntfy.notify.async_resolve_media",
+            "inpui.components.ntfy.notify.async_resolve_media",
             return_value=media_source.PlayMedia(
                 url="/api/tts_proxy/WDyphPCh3sAoO3koDY87ew.mp3",
                 mime_type="audio/mpeg",
@@ -428,7 +428,7 @@ async def test_ntfy_publish_upload_media_image_source(
 
     assert config_entry.state is ConfigEntryState.LOADED
     with patch(
-        "homeassistant.components.image.async_get_image",
+        "inpui.components.image.async_get_image",
         return_value=image.Image(content_type="image/jpeg", content=b"\x89PNG"),
     ) as mock_get_image:
         await hass.services.async_call(

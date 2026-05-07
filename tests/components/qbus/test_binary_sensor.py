@@ -21,7 +21,7 @@ async def test_binary_sensor(
 ) -> None:
     """Test binary sensor."""
 
-    with patch("homeassistant.components.qbus.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.qbus.PLATFORMS", [Platform.BINARY_SENSOR]):
         await setup_integration_deferred()
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

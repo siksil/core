@@ -36,7 +36,7 @@ OFF = 0
 def switch_platform_only():
     """Only set up the switch and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.DEVICE_TRACKER,
             Platform.SENSOR,

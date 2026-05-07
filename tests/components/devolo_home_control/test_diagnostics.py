@@ -25,7 +25,7 @@ async def test_entry_diagnostics(
     gateway_1 = HomeControlMockBinarySensor()
     gateway_2 = HomeControlMock()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[gateway_1, gateway_2],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

@@ -22,7 +22,7 @@ def _patch_device_init(side_effect=None):
     def _create_mock_baf(*args, **kwargs):
         return MockBAFDevice(side_effect)
 
-    return patch("homeassistant.components.baf.Device", _create_mock_baf)
+    return patch("inpui.components.baf.Device", _create_mock_baf)
 
 
 async def test_config_entry_wrong_uuid(

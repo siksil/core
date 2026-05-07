@@ -70,7 +70,7 @@ async def test_climate_get_state(
     states_response[0]["state"]["currentTemperature"] = 20
     states_response[0]["state"]["targetTemperature"] = 21
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))
@@ -105,7 +105,7 @@ async def test_climate_set_off(
     assert entry.unique_id == uid
 
     with patch(
-        "homeassistant.components.freedompro.climate.put_state"
+        "inpui.components.freedompro.climate.put_state"
     ) as mock_put_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,
@@ -162,7 +162,7 @@ async def test_climate_set_temperature(
     assert entry.unique_id == uid
 
     with patch(
-        "homeassistant.components.freedompro.climate.put_state"
+        "inpui.components.freedompro.climate.put_state"
     ) as mock_put_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,
@@ -182,7 +182,7 @@ async def test_climate_set_temperature(
     states_response[0]["state"]["currentTemperature"] = 20
     states_response[0]["state"]["targetTemperature"] = 21
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))

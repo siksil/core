@@ -46,7 +46,7 @@ async def test_media_player(
     assert len(mock_fully_kiosk.playSound.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.media_source.async_resolve_media",
+        "inpui.components.media_source.async_resolve_media",
         return_value=Mock(url="http://example.com/test.mp3"),
     ):
         await hass.services.async_call(

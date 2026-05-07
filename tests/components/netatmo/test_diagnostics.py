@@ -25,13 +25,13 @@ async def test_entry_diagnostics(
     """Test config entry diagnostics."""
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth",
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url",
+            "inpui.components.netatmo.webhook_generate_url",
         ),
     ):
         mock_auth.return_value.async_post_api_request.side_effect = partial(

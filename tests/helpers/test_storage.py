@@ -110,7 +110,7 @@ async def test_custom_encoder(hass: HomeAssistant) -> None:
 
 async def test_loading_non_existing(hass: HomeAssistant, store: storage.Store) -> None:
     """Test we can save and load data."""
-    with patch("homeassistant.util.json.open", side_effect=FileNotFoundError):
+    with patch("inpui.util.json.open", side_effect=FileNotFoundError):
         data = await store.async_load()
     assert data is None
 
@@ -188,7 +188,7 @@ async def test_saving_with_delay_threading(tmp_path: Path) -> None:
             return prepare_save_json(*args, **kwargs)
 
         with patch(
-            "homeassistant.helpers.storage.json_helper.prepare_save_json",
+            "inpui.helpers.storage.json_helper.prepare_save_json",
             wraps=mock_prepare_thread_safe,
         ) as mock_prepare:
             store = storage.Store(
@@ -202,7 +202,7 @@ async def test_saving_with_delay_threading(tmp_path: Path) -> None:
             mock_prepare.assert_called_once()
 
         with patch(
-            "homeassistant.helpers.storage.json_helper.prepare_save_json",
+            "inpui.helpers.storage.json_helper.prepare_save_json",
             wraps=mock_prepare_not_thread_safe,
         ) as mock_prepare:
             store = storage.Store(hass, MOCK_VERSION, MOCK_KEY2)
@@ -266,7 +266,7 @@ async def test_saving_with_threading(tmp_path: Path) -> None:
             return prepare_save_json(*args, **kwargs)
 
         with patch(
-            "homeassistant.helpers.storage.json_helper.prepare_save_json",
+            "inpui.helpers.storage.json_helper.prepare_save_json",
             wraps=mock_prepare_thread_safe,
         ) as mock_prepare:
             store = storage.Store(
@@ -276,7 +276,7 @@ async def test_saving_with_threading(tmp_path: Path) -> None:
             mock_prepare.assert_called_once()
 
         with patch(
-            "homeassistant.helpers.storage.json_helper.prepare_save_json",
+            "inpui.helpers.storage.json_helper.prepare_save_json",
             wraps=mock_prepare_not_thread_safe,
         ) as mock_prepare:
             store = storage.Store(hass, MOCK_VERSION, MOCK_KEY2)
@@ -977,7 +977,7 @@ async def test_os_error_is_fatal(tmpdir: py.path.local) -> None:
         with (
             pytest.raises(OSError),
             patch(
-                "homeassistant.helpers.storage.json_util.load_json", side_effect=OSError
+                "inpui.helpers.storage.json_util.load_json", side_effect=OSError
             ),
         ):
             await store.async_load()
@@ -986,7 +986,7 @@ async def test_os_error_is_fatal(tmpdir: py.path.local) -> None:
         with (
             pytest.raises(OSError),
             patch(
-                "homeassistant.helpers.storage.json_util.load_json", side_effect=OSError
+                "inpui.helpers.storage.json_util.load_json", side_effect=OSError
             ),
         ):
             await store.async_load()
@@ -1011,7 +1011,7 @@ async def test_json_load_failure(tmpdir: py.path.local) -> None:
         with (
             pytest.raises(HomeAssistantError),
             patch(
-                "homeassistant.helpers.storage.json_util.load_json",
+                "inpui.helpers.storage.json_util.load_json",
                 side_effect=home_assistant_error,
             ),
         ):

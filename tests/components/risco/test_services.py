@@ -21,7 +21,7 @@ async def test_set_time_service(
     hass: HomeAssistant, setup_risco_local, local_config_entry
 ) -> None:
     """Test the set_time service."""
-    with patch("homeassistant.components.risco.RiscoLocal.set_time") as mock:
+    with patch("inpui.components.risco.RiscoLocal.set_time") as mock:
         time_str = "2025-02-21T12:00:00"
         time = datetime.fromisoformat(time_str)
         data = {
@@ -41,7 +41,7 @@ async def test_set_time_service_with_no_time(
     hass: HomeAssistant, setup_risco_local, local_config_entry
 ) -> None:
     """Test the set_time service when no time is provided."""
-    with patch("homeassistant.components.risco.RiscoLocal.set_time") as mock_set_time:
+    with patch("inpui.components.risco.RiscoLocal.set_time") as mock_set_time:
         data = {
             "config_entry_id": local_config_entry.entry_id,
         }

@@ -27,7 +27,7 @@ ENTITY_CAMERA = "camera.demo_camera"
 def camera_only() -> Generator[None]:
     """Enable only the button platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.CAMERA],
     ):
         yield
@@ -48,7 +48,7 @@ async def test_init_state_is_streaming(hass: HomeAssistant) -> None:
     assert state.state == CameraState.STREAMING
 
     with patch(
-        "homeassistant.components.demo.camera.Path.read_bytes", return_value=b"ON"
+        "inpui.components.demo.camera.Path.read_bytes", return_value=b"ON"
     ) as mock_read_bytes:
         image = await async_get_image(hass, ENTITY_CAMERA)
         assert mock_read_bytes.call_count == 1

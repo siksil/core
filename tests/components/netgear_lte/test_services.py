@@ -15,7 +15,7 @@ from .conftest import HOST
 async def test_set_option(hass: HomeAssistant, setup_integration: None) -> None:
     """Test service call set option."""
     with patch(
-        "homeassistant.components.netgear_lte.eternalegypt.Modem.set_failover_mode"
+        "inpui.components.netgear_lte.eternalegypt.Modem.set_failover_mode"
     ) as mock_client:
         await hass.services.async_call(
             DOMAIN,
@@ -26,7 +26,7 @@ async def test_set_option(hass: HomeAssistant, setup_integration: None) -> None:
     assert len(mock_client.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.netgear_lte.eternalegypt.Modem.connect_lte"
+        "inpui.components.netgear_lte.eternalegypt.Modem.connect_lte"
     ) as mock_client:
         await hass.services.async_call(
             DOMAIN,
@@ -37,7 +37,7 @@ async def test_set_option(hass: HomeAssistant, setup_integration: None) -> None:
     assert len(mock_client.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.netgear_lte.eternalegypt.Modem.disconnect_lte"
+        "inpui.components.netgear_lte.eternalegypt.Modem.disconnect_lte"
     ) as mock_client:
         await hass.services.async_call(
             DOMAIN,
@@ -48,7 +48,7 @@ async def test_set_option(hass: HomeAssistant, setup_integration: None) -> None:
     assert len(mock_client.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.netgear_lte.eternalegypt.Modem.delete_sms"
+        "inpui.components.netgear_lte.eternalegypt.Modem.delete_sms"
     ) as mock_client:
         await hass.services.async_call(
             DOMAIN,

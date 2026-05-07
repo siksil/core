@@ -19,7 +19,7 @@ ENTITY_RESTART = "button.power_strip_with_2_sockets_restart"
 async def button_only() -> None:
     """Enable only the button platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.BUTTON],
     ):
         yield

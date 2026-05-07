@@ -27,7 +27,7 @@ async def test_numbers(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the Prana numbers snapshot."""
-    with patch("homeassistant.components.prana.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.prana.PLATFORMS", [Platform.NUMBER]):
         await async_init_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

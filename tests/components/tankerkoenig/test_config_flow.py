@@ -57,10 +57,10 @@ async def test_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.tankerkoenig.async_setup_entry", return_value=True
+            "inpui.components.tankerkoenig.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
+            "inpui.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
             return_value=NEARBY_STATIONS,
         ),
     ):
@@ -122,7 +122,7 @@ async def test_exception_security(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
+        "inpui.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
         side_effect=TankerkoenigInvalidKeyError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -142,7 +142,7 @@ async def test_user_no_stations(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
+        "inpui.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -163,10 +163,10 @@ async def test_reauth(hass: HomeAssistant, config_entry: MockConfigEntry) -> Non
 
     with (
         patch(
-            "homeassistant.components.tankerkoenig.async_setup_entry", return_value=True
+            "inpui.components.tankerkoenig.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
+            "inpui.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
         ) as mock_nearby_stations,
     ):
         # re-auth unsuccessful
@@ -213,11 +213,11 @@ async def test_options_flow(hass: HomeAssistant, tankerkoenig: AsyncMock) -> Non
 
     with (
         patch(
-            "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
+            "inpui.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
             return_value=NEARBY_STATIONS,
         ),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as mock_async_reload,
     ):
         result = await hass.config_entries.options.async_init(mock_config.entry_id)
@@ -251,7 +251,7 @@ async def test_options_flow_error(hass: HomeAssistant) -> None:
     mock_config.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
+        "inpui.components.tankerkoenig.config_flow.Tankerkoenig.nearby_stations",
         side_effect=TankerkoenigInvalidKeyError("Booom!"),
     ) as mock_nearby_stations:
         result = await hass.config_entries.options.async_init(mock_config.entry_id)

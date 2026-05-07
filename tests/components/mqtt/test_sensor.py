@@ -1499,7 +1499,7 @@ async def test_discovery_update_unchanged_sensor(
     """Test update of discovered sensor."""
     data1 = '{ "name": "Beer", "state_topic": "test_topic" }'
     with patch(
-        "homeassistant.components.mqtt.sensor.MqttSensor.discovery_update"
+        "inpui.components.mqtt.sensor.MqttSensor.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, sensor.DOMAIN, data1, discovery_update

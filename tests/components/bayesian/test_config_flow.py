@@ -47,7 +47,7 @@ from tests.common import MockConfigEntry
 async def test_config_flow_step_user(hass: HomeAssistant) -> None:
     """Test the config flow with an example."""
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ):
         # Open config flow
         result0 = await hass.config_entries.flow.async_init(
@@ -81,7 +81,7 @@ async def test_config_flow_step_user(hass: HomeAssistant) -> None:
 async def test_subentry_flow(hass: HomeAssistant) -> None:
     """Test the subentry flow with a full example."""
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         # Set up the initial config entry as a mock to isolate testing of subentry flows
         config_entry = MockConfigEntry(
@@ -235,7 +235,7 @@ async def test_single_state_observation(hass: HomeAssistant) -> None:
     """
 
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -325,7 +325,7 @@ async def test_single_numeric_state_observation(hass: HomeAssistant) -> None:
     """
 
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -409,7 +409,7 @@ async def test_multi_numeric_state_observation(hass: HomeAssistant) -> None:
     """
 
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -563,7 +563,7 @@ async def test_single_template_observation(hass: HomeAssistant) -> None:
     """
 
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -1015,7 +1015,7 @@ False
 async def test_invalid_configs(hass: HomeAssistant) -> None:
     """Test that invalid configs are refused."""
     with patch(
-        "homeassistant.components.bayesian.async_setup_entry", return_value=True
+        "inpui.components.bayesian.async_setup_entry", return_value=True
     ):
         result0 = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}

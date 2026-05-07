@@ -353,7 +353,7 @@ def test_restore_backup(
 
     with (
         mock.patch(
-            "homeassistant.backup_restore.restore_backup_file_content",
+            "inpui.backup_restore.restore_backup_file_content",
             return_value=restore_backup_content,
         ),
     ):
@@ -393,7 +393,7 @@ def test_restore_backup_filter_files(tmp_path: Path) -> None:
     with (
         tarfile.open(backup_file_path, "r") as outer_tar,
         tarfile.open(
-            fileobj=outer_tar.extractfile("homeassistant.tar.gz"), mode="r|gz"
+            fileobj=outer_tar.extractfile("inpui.tar.gz"), mode="r|gz"
         ) as inner_tar,
     ):
         member_names = {member.name for member in inner_tar.getmembers()}
@@ -410,7 +410,7 @@ def test_restore_backup_filter_files(tmp_path: Path) -> None:
 
     with (
         mock.patch(
-            "homeassistant.backup_restore.restore_backup_file_content",
+            "inpui.backup_restore.restore_backup_file_content",
             return_value=backup_restore.RestoreBackupFileContent(
                 backup_file_path=backup_file_path,
                 password=None,
@@ -429,7 +429,7 @@ def test_restore_backup_filter_files(tmp_path: Path) -> None:
     extracted_files = {call.args[1].name for call in extractone_mock.mock_calls}
     assert extracted_files == {
         "./backup.json",  # From the outer tar
-        "homeassistant.tar.gz",  # From the outer tar
+        "inpui.tar.gz",  # From the outer tar
         ".",
         "data",
         "data/home-assistant_v2.db",
@@ -455,7 +455,7 @@ def test_remove_backup_file_after_restore(
 
     with (
         mock.patch(
-            "homeassistant.backup_restore.restore_backup_file_content",
+            "inpui.backup_restore.restore_backup_file_content",
             return_value=backup_restore.RestoreBackupFileContent(
                 backup_file_path=backup_file_path,
                 password=None,

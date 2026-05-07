@@ -48,9 +48,9 @@ async def test_not_found(
 
     with (
         patch(
-            "homeassistant.components.escea.discovery.pescea_discovery_service"
+            "inpui.components.escea.discovery.pescea_discovery_service"
         ) as discovery_service,
-        patch("homeassistant.components.escea.config_flow.TIMEOUT_DISCOVERY", 0),
+        patch("inpui.components.escea.config_flow.TIMEOUT_DISCOVERY", 0),
     ):
         discovery_service.return_value = mock_discovery_service
 
@@ -77,11 +77,11 @@ async def test_found(
 
     with (
         patch(
-            "homeassistant.components.escea.async_setup_entry",
+            "inpui.components.escea.async_setup_entry",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.escea.discovery.pescea_discovery_service"
+            "inpui.components.escea.discovery.pescea_discovery_service"
         ) as discovery_service,
     ):
         discovery_service.return_value = mock_discovery_service
@@ -109,7 +109,7 @@ async def test_single_instance_allowed(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.escea.discovery.pescea_discovery_service"
+        "inpui.components.escea.discovery.pescea_discovery_service"
     ) as discovery_service:
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}

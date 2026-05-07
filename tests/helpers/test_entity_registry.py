@@ -33,7 +33,7 @@ from tests.common import (
     flush_store,
 )
 
-YAML__OPEN_PATH = "homeassistant.util.yaml.loader.open"
+YAML__OPEN_PATH = "inpui.util.yaml.loader.open"
 
 
 @pytest.mark.parametrize(

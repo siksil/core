@@ -907,7 +907,7 @@ async def test_coordinator_update_handler(
     assert entity.max_temp == TEMP_MAX
 
 
-@patch("homeassistant.components.gree.PLATFORMS", [CLIMATE_DOMAIN])
+@patch("inpui.components.gree.PLATFORMS", [CLIMATE_DOMAIN])
 async def test_registry_settings(
     hass: HomeAssistant, entity_registry: er.EntityRegistry, snapshot: SnapshotAssertion
 ) -> None:
@@ -918,7 +918,7 @@ async def test_registry_settings(
     assert entries == snapshot
 
 
-@patch("homeassistant.components.gree.PLATFORMS", [CLIMATE_DOMAIN])
+@patch("inpui.components.gree.PLATFORMS", [CLIMATE_DOMAIN])
 async def test_entity_states(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
     """Test for entity registry settings (unique_id)."""
     await async_setup_gree(hass)

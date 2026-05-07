@@ -29,11 +29,11 @@ def mock_linkplay_factory_bridge() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.linkplay.config_flow.async_get_client_session",
+            "inpui.components.linkplay.config_flow.async_get_client_session",
             return_value=AsyncMock(spec=ClientSession),
         ),
         patch(
-            "homeassistant.components.linkplay.config_flow.linkplay_factory_httpapi_bridge",
+            "inpui.components.linkplay.config_flow.linkplay_factory_httpapi_bridge",
         ) as conf_factory,
     ):
         bridge = AsyncMock(spec=LinkPlayBridge)
@@ -50,7 +50,7 @@ def mock_linkplay_factory_bridge() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.linkplay.async_setup_entry",
+        "inpui.components.linkplay.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -102,7 +102,7 @@ def mock_lp_aiohttp_client() -> Iterator[AiohttpClientMocker]:
         return session
 
     with mock.patch(
-        "homeassistant.components.linkplay.async_get_client_session",
+        "inpui.components.linkplay.async_get_client_session",
         side_effect=create_session,
     ):
         yield mocker

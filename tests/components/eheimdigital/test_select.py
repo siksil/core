@@ -31,9 +31,9 @@ async def test_setup(
     mock_config_entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.eheimdigital.PLATFORMS", [Platform.SELECT]),
+        patch("inpui.components.eheimdigital.PLATFORMS", [Platform.SELECT]),
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):

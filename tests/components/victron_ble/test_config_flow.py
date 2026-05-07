@@ -293,7 +293,7 @@ async def test_async_step_reauth_device_not_found(
     """Test reauth flow when device is not currently broadcasting."""
     # No mock_discovered_service_info, so no devices will be found
     with patch(
-        "homeassistant.components.victron_ble.config_flow.async_discovered_service_info",
+        "inpui.components.victron_ble.config_flow.async_discovered_service_info",
         return_value=[],
     ):
         result = await mock_config_entry_added_to_hass.start_reauth_flow(hass)

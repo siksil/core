@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def pushbullet_setup_fixture():
     """Patch pushbullet setup entry."""
     with patch(
-        "homeassistant.components.pushbullet.async_setup_entry", return_value=True
+        "inpui.components.pushbullet.async_setup_entry", return_value=True
     ):
         yield
 
@@ -93,7 +93,7 @@ async def test_flow_invalid_key(hass: HomeAssistant) -> None:
     """Test user initialized flow with invalid api key."""
 
     with patch(
-        "homeassistant.components.pushbullet.config_flow.PushBullet",
+        "inpui.components.pushbullet.config_flow.PushBullet",
         side_effect=InvalidKeyError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -110,7 +110,7 @@ async def test_flow_conn_error(hass: HomeAssistant) -> None:
     """Test user initialized flow with conn error."""
 
     with patch(
-        "homeassistant.components.pushbullet.config_flow.PushBullet",
+        "inpui.components.pushbullet.config_flow.PushBullet",
         side_effect=PushbulletError,
     ):
         result = await hass.config_entries.flow.async_init(

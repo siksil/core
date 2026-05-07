@@ -36,7 +36,7 @@ def mock_droplet() -> Generator[AsyncMock]:
     """Mock a Droplet client."""
     with (
         patch(
-            "homeassistant.components.droplet.coordinator.Droplet",
+            "inpui.components.droplet.coordinator.Droplet",
             autospec=True,
         ) as mock_client,
     ):
@@ -59,15 +59,15 @@ def mock_timeout() -> Generator[None]:
     """Mock the timeout."""
     with (
         patch(
-            "homeassistant.components.droplet.coordinator.TIMEOUT",
+            "inpui.components.droplet.coordinator.TIMEOUT",
             0.05,
         ),
         patch(
-            "homeassistant.components.droplet.coordinator.VERSION_TIMEOUT",
+            "inpui.components.droplet.coordinator.VERSION_TIMEOUT",
             0.1,
         ),
         patch(
-            "homeassistant.components.droplet.coordinator.CONNECT_DELAY",
+            "inpui.components.droplet.coordinator.CONNECT_DELAY",
             0.1,
         ),
     ):
@@ -79,7 +79,7 @@ def mock_droplet_connection() -> Generator[AsyncMock]:
     """Mock a Droplet connection."""
     with (
         patch(
-            "homeassistant.components.droplet.config_flow.DropletConnection",
+            "inpui.components.droplet.config_flow.DropletConnection",
             autospec=True,
         ) as mock_client,
     ):
@@ -92,7 +92,7 @@ def mock_droplet_discovery(request: pytest.FixtureRequest) -> Generator[AsyncMoc
     """Mock a DropletDiscovery."""
     with (
         patch(
-            "homeassistant.components.droplet.config_flow.DropletDiscovery",
+            "inpui.components.droplet.config_flow.DropletDiscovery",
             autospec=True,
         ) as mock_client,
     ):

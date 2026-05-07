@@ -294,7 +294,7 @@ def test_as_timedelta(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 def test_now(mock_is_safe, hass: HomeAssistant) -> None:
@@ -308,7 +308,7 @@ def test_now(mock_is_safe, hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 def test_utcnow(mock_is_safe, hass: HomeAssistant) -> None:
@@ -341,7 +341,7 @@ def test_utcnow(mock_is_safe, hass: HomeAssistant) -> None:
     ],
 )
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 async def test_today_at(
@@ -375,7 +375,7 @@ async def test_today_at(
 
 
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 async def test_relative_time(mock_is_safe, hass: HomeAssistant) -> None:
@@ -476,7 +476,7 @@ async def test_relative_time(mock_is_safe, hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 async def test_time_since(mock_is_safe, hass: HomeAssistant) -> None:
@@ -633,7 +633,7 @@ async def test_time_since(mock_is_safe, hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 async def test_time_until(mock_is_safe, hass: HomeAssistant) -> None:

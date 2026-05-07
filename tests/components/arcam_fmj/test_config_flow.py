@@ -64,7 +64,7 @@ MOCK_DISCOVER = SsdpServiceInfo(
 @pytest.fixture(name="dummy_client", autouse=True)
 def dummy_client_fixture() -> Generator[MagicMock]:
     """Mock out the real client."""
-    with patch("homeassistant.components.arcam_fmj.config_flow.Client") as client:
+    with patch("inpui.components.arcam_fmj.config_flow.Client") as client:
         client.return_value.start.side_effect = AsyncMock(return_value=None)
         client.return_value.stop.side_effect = AsyncMock(return_value=None)
         yield client.return_value
@@ -74,7 +74,7 @@ def dummy_client_fixture() -> Generator[MagicMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.arcam_fmj.async_setup_entry", return_value=True
+        "inpui.components.arcam_fmj.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 

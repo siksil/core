@@ -71,7 +71,7 @@ def create_mock_tracker() -> Tracker:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.fressnapf_tracker.async_setup_entry",
+        "inpui.components.fressnapf_tracker.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -109,11 +109,11 @@ def mock_auth_client(mock_device: Device) -> Generator[MagicMock]:
     """Mock the AuthClient."""
     with (
         patch(
-            "homeassistant.components.fressnapf_tracker.config_flow.AuthClient",
+            "inpui.components.fressnapf_tracker.config_flow.AuthClient",
             autospec=True,
         ) as mock_auth_client,
         patch(
-            "homeassistant.components.fressnapf_tracker.AuthClient",
+            "inpui.components.fressnapf_tracker.AuthClient",
             new=mock_auth_client,
         ),
     ):
@@ -137,7 +137,7 @@ def mock_auth_client(mock_device: Device) -> Generator[MagicMock]:
 def mock_api_client_init() -> Generator[MagicMock]:
     """Mock the ApiClient used by _tracker_is_valid in __init__.py."""
     with patch(
-        "homeassistant.components.fressnapf_tracker.ApiClient",
+        "inpui.components.fressnapf_tracker.ApiClient",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value
@@ -149,7 +149,7 @@ def mock_api_client_init() -> Generator[MagicMock]:
 def mock_api_client_coordinator() -> Generator[MagicMock]:
     """Mock the ApiClient used by the coordinator."""
     with patch(
-        "homeassistant.components.fressnapf_tracker.coordinator.ApiClient",
+        "inpui.components.fressnapf_tracker.coordinator.ApiClient",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value

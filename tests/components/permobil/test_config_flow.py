@@ -37,7 +37,7 @@ async def test_sucessful_config_flow(hass: HomeAssistant, my_permobil: Mock) -> 
     """Test the config flow from start to finish with no errors."""
     # init flow
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -80,7 +80,7 @@ async def test_config_flow_incorrect_code(
     my_permobil.request_application_token.side_effect = MyPermobilAPIException
     # init flow
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -125,7 +125,7 @@ async def test_config_flow_unsigned_eula(
     my_permobil.request_application_token.side_effect = MyPermobilEulaException
     # init flow
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -186,7 +186,7 @@ async def test_config_flow_incorrect_region(
     my_permobil.request_application_code.side_effect = MyPermobilAPIException
     # init flow
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -223,7 +223,7 @@ async def test_config_flow_region_request_error(
     # init flow
     # here the request_region_names raises a MyPermobilAPIException
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -251,7 +251,7 @@ async def test_config_flow_invalid_email(
     # init flow
     # here the set_email raises a MyPermobilClientException
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -281,7 +281,7 @@ async def test_config_flow_reauth_success(
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await mock_entry.start_reauth_flow(hass)
@@ -321,7 +321,7 @@ async def test_config_flow_reauth_fail_invalid_code(
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await mock_entry.start_reauth_flow(hass)
@@ -353,7 +353,7 @@ async def test_config_flow_reauth_fail_code_request(
     mock_entry.add_to_hass(hass)
     # test the reauth and have request_application_code fail leading to an abort
     with patch(
-        "homeassistant.components.permobil.config_flow.MyPermobil",
+        "inpui.components.permobil.config_flow.MyPermobil",
         return_value=my_permobil,
     ):
         result = await mock_entry.start_reauth_flow(hass)

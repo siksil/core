@@ -95,13 +95,13 @@ async def test_hmip_add_device(
     reloaded_hap = HomematicipHAP(hass, hmip_config_entry)
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.HomematicipHAP",
+            "inpui.components.homematicip_cloud.HomematicipHAP",
             return_value=reloaded_hap,
         ),
         patch.object(reloaded_hap, "async_connect"),
         patch.object(reloaded_hap, "get_hap", return_value=mock_hap.home),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.asyncio.sleep",
+            "inpui.components.homematicip_cloud.hap.asyncio.sleep",
         ),
     ):
         mock_hap.home.fire_create_event(event_type=EventType.DEVICE_ADDED)
@@ -196,7 +196,7 @@ async def test_hap_reconnected(
     assert ha_state.state == STATE_UNAVAILABLE
 
     with patch(
-        "homeassistant.components.homematicip_cloud.hap.AsyncHome.websocket_is_connected",
+        "inpui.components.homematicip_cloud.hap.AsyncHome.websocket_is_connected",
         return_value=True,
     ):
         await async_manipulate_test_data(hass, mock_hap.home, "connected", True)

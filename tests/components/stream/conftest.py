@@ -67,7 +67,7 @@ def stream_worker_sync() -> Generator[WorkerSync]:
     """Patch StreamOutput to allow test to synchronize worker stream end."""
     sync = WorkerSync()
     with patch(
-        "homeassistant.components.stream.worker.StreamState.discontinuity",
+        "inpui.components.stream.worker.StreamState.discontinuity",
         side_effect=sync.blocking_discontinuity,
         autospec=True,
     ):
@@ -152,25 +152,25 @@ def hls_sync():
     sync = HLSSync()
     with (
         patch(
-            "homeassistant.components.stream.core.StreamOutput.recv",
+            "inpui.components.stream.core.StreamOutput.recv",
             side_effect=sync.recv,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.stream.core.StreamOutput.part_recv",
+            "inpui.components.stream.core.StreamOutput.part_recv",
             side_effect=sync.part_recv,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.stream.hls.web.HTTPBadRequest",
+            "inpui.components.stream.hls.web.HTTPBadRequest",
             side_effect=sync.bad_request,
         ),
         patch(
-            "homeassistant.components.stream.hls.web.HTTPNotFound",
+            "inpui.components.stream.hls.web.HTTPNotFound",
             side_effect=sync.not_found,
         ),
         patch(
-            "homeassistant.components.stream.hls.web.Response",
+            "inpui.components.stream.hls.web.Response",
             new=sync.response,
         ),
     ):
@@ -181,7 +181,7 @@ def hls_sync():
 def should_retry() -> Generator[Mock]:
     """Fixture to disable stream worker retries in tests by default."""
     with patch(
-        "homeassistant.components.stream._should_retry", return_value=False
+        "inpui.components.stream._should_retry", return_value=False
     ) as mock_should_retry:
         yield mock_should_retry
 

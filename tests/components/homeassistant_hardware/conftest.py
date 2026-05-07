@@ -27,11 +27,11 @@ def mock_zha_config_flow_setup() -> Generator[None]:
             side_effect=mock_probe,
         ),
         patch(
-            "homeassistant.components.zha.radio_manager.ZhaRadioManager.create_zigpy_app",
+            "inpui.components.zha.radio_manager.ZhaRadioManager.create_zigpy_app",
             return_value=mock_connect_app,
         ),
         patch(
-            "homeassistant.components.zha.async_setup_entry",
+            "inpui.components.zha.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -43,7 +43,7 @@ def mock_zha_get_last_network_settings() -> Generator[None]:
     """Mock zha.api.async_get_last_network_settings."""
 
     with patch(
-        "homeassistant.components.zha.api.async_get_last_network_settings",
+        "inpui.components.zha.api.async_get_last_network_settings",
         AsyncMock(return_value=None),
     ):
         yield

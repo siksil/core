@@ -34,7 +34,7 @@ async def test_all_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the Powerfox sensors."""
-    with patch("homeassistant.components.powerfox.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.powerfox.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -73,7 +73,7 @@ async def test_skips_gas_sensors_when_report_missing(
     """Test gas sensors are not created when report lacks gas data."""
     mock_powerfox_client.report.return_value = DeviceReport(gas=None)
 
-    with patch("homeassistant.components.powerfox.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.powerfox.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     assert hass.states.get("sensor.gasopti_gas_consumption_today") is None

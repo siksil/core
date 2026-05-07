@@ -60,7 +60,7 @@ async def test_cover(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that all supported cover entities are created."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.COVER]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -148,7 +148,7 @@ async def test_tilt_cover(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that tilting a cover works."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.COVER]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -229,7 +229,7 @@ async def test_level_controllable_output_cover(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that tilting a cover works."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.COVER]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

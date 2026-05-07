@@ -1176,7 +1176,7 @@ async def test_discovery_update_unchanged_sensor(
     config = copy.deepcopy(DEFAULT_CONFIG)
     sensor_config = copy.deepcopy(DEFAULT_SENSOR_CONFIG)
     with patch(
-        "homeassistant.components.tasmota.sensor.TasmotaSensor.discovery_update"
+        "inpui.components.tasmota.sensor.TasmotaSensor.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass,

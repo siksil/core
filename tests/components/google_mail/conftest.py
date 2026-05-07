@@ -22,7 +22,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 
 type ComponentSetup = Callable[[], Awaitable[None]]
 
-BUILD = "homeassistant.components.google_mail.api.build"
+BUILD = "inpui.components.google_mail.api.build"
 CLIENT_ID = "1234"
 CLIENT_SECRET = "5678"
 GOOGLE_AUTH_URI = "https://accounts.google.com/o/oauth2/v2/auth"
@@ -33,7 +33,7 @@ SCOPES = [
 ]
 SENSOR = "sensor.example_gmail_com_vacation_end_date"
 TITLE = "example@gmail.com"
-TOKEN = "homeassistant.components.google_mail.api.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid"
+TOKEN = "inpui.components.google_mail.api.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid"
 
 
 @pytest.fixture(name="scopes")

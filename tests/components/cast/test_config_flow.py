@@ -17,7 +17,7 @@ async def test_creating_entry_sets_up_media_player(hass: HomeAssistant) -> None:
     """Test setting up Cast loads the media player."""
     with (
         patch(
-            "homeassistant.components.cast.media_player.async_setup_entry",
+            "inpui.components.cast.media_player.async_setup_entry",
             return_value=True,
         ) as mock_setup,
         patch("pychromecast.discovery.discover_chromecasts", return_value=(True, None)),
@@ -124,7 +124,7 @@ async def test_zeroconf_setup(hass: HomeAssistant) -> None:
 async def test_zeroconf_setup_onboarding(hass: HomeAssistant) -> None:
     """Test we automatically finish a config flow through zeroconf during onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+        "inpui.components.onboarding.async_is_onboarded", return_value=False
     ):
         result = await hass.config_entries.flow.async_init(
             "cast", context={"source": config_entries.SOURCE_ZEROCONF}

@@ -37,11 +37,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.monoprice.config_flow.get_monoprice",
+            "inpui.components.monoprice.config_flow.get_monoprice",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.monoprice.async_setup_entry",
+            "inpui.components.monoprice.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -66,7 +66,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.monoprice.config_flow.get_monoprice",
+        "inpui.components.monoprice.config_flow.get_monoprice",
         side_effect=SerialException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -84,7 +84,7 @@ async def test_generic_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.monoprice.config_flow.get_monoprice",
+        "inpui.components.monoprice.config_flow.get_monoprice",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -106,7 +106,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.monoprice.async_setup_entry", return_value=True
+        "inpui.components.monoprice.async_setup_entry", return_value=True
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()

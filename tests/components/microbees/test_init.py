@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 async def test_migrate_entry_minor_version_1_2(hass: HomeAssistant) -> None:
     """Test migrating a 1.1 config entry to 1.2."""
     with patch(
-        "homeassistant.components.microbees.async_setup_entry", return_value=True
+        "inpui.components.microbees.async_setup_entry", return_value=True
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -47,7 +47,7 @@ async def test_oauth_implementation_not_available(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
+        "inpui.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

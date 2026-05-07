@@ -27,7 +27,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(autouse=True)
 async def platforms() -> AsyncGenerator[None]:
     """Return the platforms to be loaded for this test."""
-    with patch("homeassistant.components.bosch_alarm.PLATFORMS", []):
+    with patch("inpui.components.bosch_alarm.PLATFORMS", []):
         yield
 
 

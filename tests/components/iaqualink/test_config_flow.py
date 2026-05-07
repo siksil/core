@@ -46,7 +46,7 @@ async def test_with_invalid_credentials(hass: HomeAssistant, config_data) -> Non
     flow.hass = hass
 
     with patch(
-        "homeassistant.components.iaqualink.config_flow.AqualinkClient.login",
+        "inpui.components.iaqualink.config_flow.AqualinkClient.login",
         side_effect=AqualinkServiceUnauthorizedException,
     ):
         result = await flow.async_step_user(config_data)
@@ -62,7 +62,7 @@ async def test_service_exception(hass: HomeAssistant, config_data) -> None:
     flow.hass = hass
 
     with patch(
-        "homeassistant.components.iaqualink.config_flow.AqualinkClient.login",
+        "inpui.components.iaqualink.config_flow.AqualinkClient.login",
         side_effect=AqualinkServiceException,
     ):
         result = await flow.async_step_user(config_data)
@@ -79,7 +79,7 @@ async def test_with_existing_config(hass: HomeAssistant, config_data) -> None:
     flow.context = {}
 
     with patch(
-        "homeassistant.components.iaqualink.config_flow.AqualinkClient.login",
+        "inpui.components.iaqualink.config_flow.AqualinkClient.login",
         return_value=None,
     ):
         result = await flow.async_step_user(config_data)

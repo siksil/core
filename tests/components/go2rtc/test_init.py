@@ -264,7 +264,7 @@ async def test_setup_go_binary(
         assert call_kwargs["password"] == expected_password
         server_start.assert_called_once()
 
-    with patch("homeassistant.components.go2rtc.token_hex") as mock_token_hex:
+    with patch("inpui.components.go2rtc.token_hex") as mock_token_hex:
         # First call for username, second call for password
         mock_token_hex.side_effect = ["mock_username_token", "mock_password_token"]
 
@@ -400,7 +400,7 @@ async def test_on_candidate(
     # Session doesn't exist
     await camera.async_on_webrtc_candidate(session_id, RTCIceCandidateInit("candidate"))
     assert (
-        "homeassistant.components.go2rtc",
+        "inpui.components.go2rtc",
         logging.DEBUG,
         f"Unknown session {session_id}. Ignoring candidate",
     ) in caplog.record_tuples
@@ -1042,8 +1042,8 @@ async def test_unix_socket_connection(hass: HomeAssistant, server_dir: Path) -> 
     config = {DOMAIN: {}}
 
     with (
-        patch("homeassistant.components.go2rtc.ClientSession") as mock_session_cls,
-        patch("homeassistant.components.go2rtc.token_hex") as mock_token_hex,
+        patch("inpui.components.go2rtc.ClientSession") as mock_session_cls,
+        patch("inpui.components.go2rtc.token_hex") as mock_token_hex,
     ):
         mock_session = AsyncMock()
         mock_session_cls.return_value = mock_session
@@ -1080,7 +1080,7 @@ async def test_unix_socket_not_used_for_custom_server(hass: HomeAssistant) -> No
     config = {DOMAIN: {CONF_URL: "http://localhost:1984/"}}
 
     with patch(
-        "homeassistant.components.go2rtc.async_get_clientsession"
+        "inpui.components.go2rtc.async_get_clientsession"
     ) as mock_get_session:
         mock_session = AsyncMock()
         mock_get_session.return_value = mock_session
@@ -1104,7 +1104,7 @@ async def test_basic_auth_with_custom_url(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.go2rtc.async_create_clientsession"
+        "inpui.components.go2rtc.async_create_clientsession"
     ) as mock_create_session:
         mock_session = AsyncMock()
         mock_create_session.return_value = mock_session
@@ -1135,13 +1135,13 @@ async def test_basic_auth_with_debug_ui(hass: HomeAssistant, server_dir: Path) -
 
     with (
         patch(
-            "homeassistant.components.go2rtc.Server",
+            "inpui.components.go2rtc.Server",
             autospec=True,
         ) as mock_server_cls,
-        patch("homeassistant.components.go2rtc.ClientSession") as mock_session_cls,
-        patch("homeassistant.components.go2rtc.is_docker_env", return_value=True),
+        patch("inpui.components.go2rtc.ClientSession") as mock_session_cls,
+        patch("inpui.components.go2rtc.is_docker_env", return_value=True),
         patch(
-            "homeassistant.components.go2rtc.shutil.which",
+            "inpui.components.go2rtc.shutil.which",
             return_value="/usr/bin/go2rtc",
         ),
     ):

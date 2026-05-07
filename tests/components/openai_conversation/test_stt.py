@@ -82,7 +82,7 @@ async def test_stt_process_audio_stream_success_wav(
         return mock_cm
 
     with patch(
-        "homeassistant.components.openai_conversation.stt.wave.open",
+        "inpui.components.openai_conversation.stt.wave.open",
         side_effect=mock_open,
     ) as mock_wave_open:
         result = await entity.async_process_audio_stream(metadata, audio_stream)
@@ -138,7 +138,7 @@ async def test_stt_process_audio_stream_success_ogg(
         return mock_cm
 
     with patch(
-        "homeassistant.components.openai_conversation.stt.wave.open",
+        "inpui.components.openai_conversation.stt.wave.open",
         side_effect=mock_open,
     ) as mock_wave_open:
         result = await entity.async_process_audio_stream(metadata, audio_stream)

@@ -20,7 +20,7 @@ ENTITY_DATETIME = "datetime.date_and_time"
 async def datetime_only() -> None:
     """Enable only the datetime platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.DATETIME],
     ):
         yield

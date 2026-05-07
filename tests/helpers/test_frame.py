@@ -23,7 +23,7 @@ async def test_extract_frame_integration(
         custom_integration=False,
         frame=mock_integration_frame,
         integration="hue",
-        module="homeassistant.components.hue.light",
+        module="inpui.components.hue.light",
         relative_filename="homeassistant/components/hue/light.py",
     )
 
@@ -33,7 +33,7 @@ async def test_get_integration_logger(
 ) -> None:
     """Test extracting the current frame to get the logger."""
     logger = frame.get_integration_logger(__name__)
-    assert logger.name == "homeassistant.components.hue"
+    assert logger.name == "inpui.components.hue"
 
 
 @pytest.mark.usefixtures("enable_custom_integrations", "hass")
@@ -76,7 +76,7 @@ async def test_extract_frame_integration_with_excluded_integration(
         line="self.light.is_on",
     )
     with patch(
-        "homeassistant.helpers.frame.get_current_frame",
+        "inpui.helpers.frame.get_current_frame",
         return_value=extract_stack_to_frame(
             [
                 Mock(
@@ -115,7 +115,7 @@ async def test_extract_frame_no_integration(caplog: pytest.LogCaptureFixture) ->
     """Test extracting the current frame without integration context."""
     with (
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=extract_stack_to_frame(
                 [
                     Mock(
@@ -141,7 +141,7 @@ async def test_get_integration_logger_no_integration(
 ) -> None:
     """Test getting fallback logger without integration context."""
     with patch(
-        "homeassistant.helpers.frame.get_current_frame",
+        "inpui.helpers.frame.get_current_frame",
         return_value=extract_stack_to_frame(
             [
                 Mock(
@@ -439,7 +439,7 @@ async def test_report_missing_integration_frame(
 
     what = "teststring"
     with patch(
-        "homeassistant.helpers.frame.get_integration_frame",
+        "inpui.helpers.frame.get_integration_frame",
         side_effect=frame.MissingIntegrationFrame,
     ):
         frame.report_usage(what, core_behavior=frame.ReportBehavior.LOG)
@@ -481,7 +481,7 @@ async def test_report_error_if_integration(
     )
     with (
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
         pytest.raises(

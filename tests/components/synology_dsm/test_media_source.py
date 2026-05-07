@@ -153,10 +153,10 @@ async def test_browse_media_album_error(
     """Test browse_media with unknown album."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -195,10 +195,10 @@ async def test_browse_media_get_root(
     """Test browse_media returning root media sources."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -232,10 +232,10 @@ async def test_browse_media_get_albums(
     """Test browse_media returning albums."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -276,10 +276,10 @@ async def test_browse_media_get_items_error(
     """Test browse_media returning albums."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -337,10 +337,10 @@ async def test_browse_media_get_items_thumbnail_error(
     """Test browse_media returning albums."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -379,10 +379,10 @@ async def test_browse_media_get_items(
     """Test browse_media returning albums."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -456,10 +456,10 @@ async def test_media_view(
 
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=dsm_with_photos,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,

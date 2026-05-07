@@ -33,7 +33,7 @@ from tests.components.conversation import (
 @pytest.fixture(autouse=True)
 def mock_ulid_tools():
     """Mock generated ULIDs for tool calls."""
-    with patch("homeassistant.helpers.llm.ulid_now", return_value="mock-tool-call"):
+    with patch("inpui.helpers.llm.ulid_now", return_value="mock-tool-call"):
         yield
 
 
@@ -246,7 +246,7 @@ async def test_template_variables(
                 {"message": {"role": "assistant", "content": "test response"}}
             ),
         ) as mock_chat,
-        patch("homeassistant.auth.AuthManager.async_get_user", return_value=mock_user),
+        patch("inpui.auth.AuthManager.async_get_user", return_value=mock_user),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
@@ -292,7 +292,7 @@ async def test_template_variables(
         ),
     ],
 )
-@patch("homeassistant.components.ollama.entity.llm.AssistAPI._async_get_tools")
+@patch("inpui.components.ollama.entity.llm.AssistAPI._async_get_tools")
 async def test_function_call(
     mock_get_tools,
     hass: HomeAssistant,
@@ -379,7 +379,7 @@ async def test_function_call(
     )
 
 
-@patch("homeassistant.components.ollama.entity.llm.AssistAPI._async_get_tools")
+@patch("inpui.components.ollama.entity.llm.AssistAPI._async_get_tools")
 async def test_function_exception(
     mock_get_tools,
     hass: HomeAssistant,

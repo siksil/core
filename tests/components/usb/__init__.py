@@ -13,7 +13,7 @@ from inpui.core import HomeAssistant
 def force_usb_polling_watcher():
     """Patch the USB integration to not use inotify and fall back to polling."""
     with patch(
-        "homeassistant.components.usb.AIOUSBWatcher.async_start",
+        "inpui.components.usb.AIOUSBWatcher.async_start",
         side_effect=InotifyNotAvailableError,
     ):
         yield
@@ -21,7 +21,7 @@ def force_usb_polling_watcher():
 
 def patch_scanned_serial_ports(**kwargs) -> None:
     """Patch the USB integration's list of scanned serial ports."""
-    return patch("homeassistant.components.usb.scan_serial_ports", **kwargs)
+    return patch("inpui.components.usb.scan_serial_ports", **kwargs)
 
 
 async def async_request_scan(hass: HomeAssistant) -> None:

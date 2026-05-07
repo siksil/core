@@ -102,7 +102,7 @@ async def setup_iqvia_fixture(
         patch("pyiqvia.asthma.Asthma.current", return_value=data_asthma_index),
         patch("pyiqvia.disease.Disease.extended", return_value=data_disease_forecast),
         patch("pyiqvia.disease.Disease.current", return_value=data_disease_index),
-        patch("homeassistant.components.iqvia.PLATFORMS", []),
+        patch("inpui.components.iqvia.PLATFORMS", []),
     ):
         assert await async_setup_component(hass, DOMAIN, config)
         await hass.async_block_till_done()

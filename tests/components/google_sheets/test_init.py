@@ -224,7 +224,7 @@ async def test_setup_oauth_reauth_error(
     with (
         patch.object(config_entry, "async_start_reauth") as mock_async_start_reauth,
         patch(
-            "homeassistant.components.google_sheets.OAuth2Session.async_ensure_token_valid",
+            "inpui.components.google_sheets.OAuth2Session.async_ensure_token_valid",
             side_effect=OAuth2TokenRequestReauthError(
                 domain=DOMAIN, request_info=Mock()
             ),
@@ -253,7 +253,7 @@ async def test_setup_oauth_transient_error(
     )
 
     with patch(
-        "homeassistant.components.google_sheets.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.google_sheets.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestTransientError(
             domain=DOMAIN, request_info=Mock()
         ),
@@ -289,7 +289,7 @@ async def test_append_sheet(
     assert len(entries) == 1
     assert entries[0].state is ConfigEntryState.LOADED
 
-    with patch("homeassistant.components.google_sheets.services.Client") as mock_client:
+    with patch("inpui.components.google_sheets.services.Client") as mock_client:
         mock_worksheet = (
             mock_client.return_value.open_by_key.return_value.worksheet.return_value
         )
@@ -325,7 +325,7 @@ async def test_get_sheet(
     assert len(entries) == 1
     assert entries[0].state is ConfigEntryState.LOADED
 
-    with patch("homeassistant.components.google_sheets.services.Client") as mock_client:
+    with patch("inpui.components.google_sheets.services.Client") as mock_client:
         mock_client.return_value.open_by_key.return_value.worksheet.return_value.get_values.return_value = [
             ["col1", "col2"],
             ["a", "b"],
@@ -358,7 +358,7 @@ async def test_append_sheet_multiple_rows(
     assert len(entries) == 1
     assert entries[0].state is ConfigEntryState.LOADED
 
-    with patch("homeassistant.components.google_sheets.services.Client") as mock_client:
+    with patch("inpui.components.google_sheets.services.Client") as mock_client:
         await hass.services.async_call(
             DOMAIN,
             "append_sheet",
@@ -390,7 +390,7 @@ async def test_append_sheet_api_error(
     with (
         pytest.raises(HomeAssistantError),
         patch(
-            "homeassistant.components.google_sheets.services.Client.request",
+            "inpui.components.google_sheets.services.Client.request",
             side_effect=APIError(response),
         ),
     ):
@@ -545,7 +545,7 @@ async def test_get_sheet_invalid_worksheet(
     assert config_entry2.state is ConfigEntryState.LOADED
 
     # Exercise service call on a worksheet that does not exist
-    with patch("homeassistant.components.google_sheets.services.Client") as mock_client:
+    with patch("inpui.components.google_sheets.services.Client") as mock_client:
         mock_client.return_value.open_by_key.return_value.worksheet.side_effect = (
             APIError(Response())
         )
@@ -571,7 +571,7 @@ async def test_oauth_implementation_not_available(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.google_sheets.async_get_config_entry_implementation",
+        "inpui.components.google_sheets.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

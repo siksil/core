@@ -48,7 +48,7 @@ def hassio_env_fixture(supervisor_is_connected: AsyncMock):
 def gethostbyaddr_mock():
     """Fixture to mock out I/O on getting host by address."""
     with patch(
-        "homeassistant.components.http.ban.gethostbyaddr",
+        "inpui.components.http.ban.gethostbyaddr",
         return_value=("example.com", ["0.0.0.0.in-addr.arpa"], ["0.0.0.0"]),
     ):
         yield
@@ -64,7 +64,7 @@ async def test_access_from_banned_ip(
     set_real_ip = mock_real_ip(app)
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         return_value={
             banned_ip: {"banned_at": "2016-11-16T19:20:03"} for banned_ip in BANNED_IPS
         },
@@ -96,7 +96,7 @@ async def test_access_from_banned_ip_with_partially_broken_yaml_file(
     data["5.3.3.3"] = {"banned_at": "garbage"}
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         return_value=data,
     ):
         client = await aiohttp_client(app)
@@ -139,7 +139,7 @@ async def test_access_from_banned_ip_with_invalid_ip_entry(
     }
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         return_value=data,
     ):
         client = await aiohttp_client(app)
@@ -162,7 +162,7 @@ async def test_access_from_banned_ip_with_invalid_ip_entry(
     # Check that both invalid IP entries were logged
     for ip in ("Eo128.199.160.243", "invalidip"):
         assert (
-            "homeassistant.components.http.ban",
+            "inpui.components.http.ban",
             logging.ERROR,
             f"Failed to load IP ban: invalid IP address {ip}",
         ) in caplog.record_tuples
@@ -178,7 +178,7 @@ async def test_no_ip_bans_file(
     set_real_ip = mock_real_ip(app)
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         side_effect=FileNotFoundError,
     ):
         client = await aiohttp_client(app)
@@ -198,7 +198,7 @@ async def test_failure_loading_ip_bans_file(
     set_real_ip = mock_real_ip(app)
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         side_effect=HomeAssistantError,
     ):
         client = await aiohttp_client(app)
@@ -220,7 +220,7 @@ async def test_ip_ban_manager_never_started(
     set_real_ip = mock_real_ip(app)
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         side_effect=FileNotFoundError,
     ):
         client = await aiohttp_client(app)
@@ -273,7 +273,7 @@ async def test_access_from_supervisor_ip(
     mock_real_ip(app)(remote_addr)
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         return_value={},
     ):
         client = await aiohttp_client(app)
@@ -286,7 +286,7 @@ async def test_access_from_supervisor_ip(
 
     with (
         patch.dict(os.environ, {"SUPERVISOR": SUPERVISOR_IP}),
-        patch("homeassistant.components.http.ban.open", m_open, create=True),
+        patch("inpui.components.http.ban.open", m_open, create=True),
     ):
         resp = await client.get("/")
         assert resp.status == HTTPStatus.UNAUTHORIZED
@@ -301,7 +301,7 @@ async def test_access_from_supervisor_ip(
 
 async def test_ban_middleware_not_loaded_by_config(hass: HomeAssistant) -> None:
     """Test accessing to server from banned IP when feature is off."""
-    with patch("homeassistant.components.http.setup_bans") as mock_setup:
+    with patch("inpui.components.http.setup_bans") as mock_setup:
         await async_setup_component(
             hass, "http", {"http": {http.CONF_IP_BAN_ENABLED: False}}
         )
@@ -311,7 +311,7 @@ async def test_ban_middleware_not_loaded_by_config(hass: HomeAssistant) -> None:
 
 async def test_ban_middleware_loaded_by_default(hass: HomeAssistant) -> None:
     """Test accessing to server from banned IP when feature is off."""
-    with patch("homeassistant.components.http.setup_bans") as mock_setup:
+    with patch("inpui.components.http.setup_bans") as mock_setup:
         await async_setup_component(hass, "http", {"http": {}})
 
     assert len(mock_setup.mock_calls) == 1
@@ -335,7 +335,7 @@ async def test_ip_bans_file_creation(
     mock_real_ip(app)("200.201.202.204")
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         return_value={
             banned_ip: {"banned_at": "2016-11-16T19:20:03"} for banned_ip in BANNED_IPS
         },
@@ -345,7 +345,7 @@ async def test_ip_bans_file_creation(
     manager = app[KEY_BAN_MANAGER]
     m_open = mock_open()
 
-    with patch("homeassistant.components.http.ban.open", m_open, create=True):
+    with patch("inpui.components.http.ban.open", m_open, create=True):
         resp = await client.get("/example")
         assert resp.status == HTTPStatus.UNAUTHORIZED
         assert len(manager.ip_bans_lookup) == len(BANNED_IPS)
@@ -465,7 +465,7 @@ async def test_single_ban_file_entry(
     manager = app[KEY_BAN_MANAGER]
     m_open = mock_open()
 
-    with patch("homeassistant.components.http.ban.open", m_open, create=True):
+    with patch("inpui.components.http.ban.open", m_open, create=True):
         remote_ip = ip_address("200.201.202.204")
         await manager.async_add_ban(remote_ip)
         await manager.async_add_ban(remote_ip)
@@ -483,7 +483,7 @@ async def test_unix_socket_skips_ban_check(
     set_real_ip = mock_real_ip(app)
 
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
         return_value={
             banned_ip: {"banned_at": "2016-11-16T19:20:03"} for banned_ip in BANNED_IPS
         },
@@ -497,7 +497,7 @@ async def test_unix_socket_skips_ban_check(
 
     # Unix socket requests should bypass ban checks
     with patch(
-        "homeassistant.components.http.ban.is_supervisor_unix_socket_request",
+        "inpui.components.http.ban.is_supervisor_unix_socket_request",
         return_value=True,
     ):
         resp = await client.get("/")

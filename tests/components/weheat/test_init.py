@@ -61,7 +61,7 @@ async def test_setup_fail(
     """Test the Weheat setup with invalid token setup."""
     with (
         patch(
-            "homeassistant.components.weheat.OAuth2Session.async_ensure_token_valid",
+            "inpui.components.weheat.OAuth2Session.async_ensure_token_valid",
             side_effect=ClientResponseError(
                 Mock(real_url="http://example.com"), None, status=setup_exception
             ),
@@ -97,7 +97,7 @@ async def test_oauth_implementation_not_available(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.weheat.async_get_config_entry_implementation",
+        "inpui.components.weheat.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

@@ -74,7 +74,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.ondilo_ico.async_setup_entry", return_value=True
+        "inpui.components.ondilo_ico.async_setup_entry", return_value=True
     ) as mock_setup:
         await hass.config_entries.flow.async_configure(result["flow_id"])
 

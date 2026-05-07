@@ -24,7 +24,7 @@ async def test_binary_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test spa binary sensors."""
-    with patch("homeassistant.components.balboa.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.balboa.PLATFORMS", [Platform.BINARY_SENSOR]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

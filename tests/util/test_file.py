@@ -40,7 +40,7 @@ def test_write_utf8_file_fails_at_creation(tmpdir: py.path.local) -> None:
     with (
         pytest.raises(WriteError),
         patch(
-            "homeassistant.util.file.tempfile.NamedTemporaryFile", side_effect=OSError
+            "inpui.util.file.tempfile.NamedTemporaryFile", side_effect=OSError
         ),
     ):
         write_utf8_file(test_file, '{"some":"data"}', False)
@@ -57,7 +57,7 @@ def test_write_utf8_file_fails_at_rename(
 
     with (
         pytest.raises(WriteError),
-        patch("homeassistant.util.file.os.replace", side_effect=OSError),
+        patch("inpui.util.file.os.replace", side_effect=OSError),
     ):
         write_utf8_file(test_file, '{"some":"data"}', False)
 
@@ -75,8 +75,8 @@ def test_write_utf8_file_fails_at_rename_and_remove(
 
     with (
         pytest.raises(WriteError),
-        patch("homeassistant.util.file.os.remove", side_effect=OSError),
-        patch("homeassistant.util.file.os.replace", side_effect=OSError),
+        patch("inpui.util.file.os.remove", side_effect=OSError),
+        patch("inpui.util.file.os.replace", side_effect=OSError),
     ):
         write_utf8_file(test_file, '{"some":"data"}', False)
 
@@ -103,7 +103,7 @@ def test_write_utf8_file_atomic_fails(tmpdir: py.path.local) -> None:
 
     with (
         pytest.raises(WriteError),
-        patch("homeassistant.util.file.AtomicWriter.open", side_effect=OSError),
+        patch("inpui.util.file.AtomicWriter.open", side_effect=OSError),
     ):
         write_utf8_file_atomic(test_file, '{"some":"data"}', False)
 

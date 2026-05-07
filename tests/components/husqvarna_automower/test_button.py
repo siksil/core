@@ -135,7 +135,7 @@ async def test_button_snapshot(
 ) -> None:
     """Snapshot tests of the button entities."""
     with patch(
-        "homeassistant.components.husqvarna_automower.PLATFORMS",
+        "inpui.components.husqvarna_automower.PLATFORMS",
         [Platform.BUTTON],
     ):
         await setup_integration(hass, mock_config_entry)

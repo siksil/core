@@ -43,7 +43,7 @@ async def test_setup(
 ) -> None:
     """Test setup of platform."""
     device = FritzDeviceCoverMock()
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.COVER]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )

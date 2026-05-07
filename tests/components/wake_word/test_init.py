@@ -337,7 +337,7 @@ async def test_list_wake_words_timeout(
 
     with (
         patch.object(setup, "get_supported_wake_words", partial(asyncio.sleep, 1)),
-        patch("homeassistant.components.wake_word.TIMEOUT_FETCH_WAKE_WORDS", 0),
+        patch("inpui.components.wake_word.TIMEOUT_FETCH_WAKE_WORDS", 0),
     ):
         await client.send_json(
             {

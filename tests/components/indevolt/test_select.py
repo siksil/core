@@ -32,7 +32,7 @@ async def test_select(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test select entity registration and states."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -55,7 +55,7 @@ async def test_select_option(
     expected_value: int,
 ) -> None:
     """Test selecting all valid energy mode options."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration
@@ -87,7 +87,7 @@ async def test_select_set_option_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test error handling when selecting an option."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     # Mock set_data to raise an error
@@ -123,7 +123,7 @@ async def test_select_unavailable_outdoor_portable(
     mock_indevolt.fetch_data.return_value[KEY_READ_ENERGY_MODE] = 0
 
     # Initialize platform to test availability logic
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     # Verify entity state is unavailable
@@ -139,7 +139,7 @@ async def test_select_availability(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test select entity availability when coordinator fails."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     # Confirm initial state is available

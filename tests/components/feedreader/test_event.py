@@ -28,7 +28,7 @@ async def test_event_entity(
     entry = create_mock_entry(VALID_CONFIG_DEFAULT)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get",
+        "inpui.components.feedreader.coordinator.feedparser.http.get",
         side_effect=[feed_one_event, feed_two_event, feed_only_summary],
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -81,7 +81,7 @@ async def test_event_htmlentities(
     entry = create_mock_entry(VALID_CONFIG_DEFAULT)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get",
+        "inpui.components.feedreader.coordinator.feedparser.http.get",
         side_effect=[request.getfixturevalue(fixture_name)],
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

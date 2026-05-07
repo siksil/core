@@ -28,7 +28,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 def setup_platforms():
     """Patch PLATFORMS for all tests in this file."""
-    with patch("homeassistant.components.lutron.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.lutron.PLATFORMS", [Platform.LIGHT]):
         yield
 
 

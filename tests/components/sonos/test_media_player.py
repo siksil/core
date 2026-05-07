@@ -1081,7 +1081,7 @@ async def test_service_snapshot_restore(
     soco_factory.cache_mock(MockSoCo(), "10.10.10.2", "Bedroom")
     await _setup_hass(hass)
     with patch(
-        "homeassistant.components.sonos.speaker.Snapshot.snapshot"
+        "inpui.components.sonos.speaker.Snapshot.snapshot"
     ) as mock_snapshot:
         await hass.services.async_call(
             DOMAIN,
@@ -1094,7 +1094,7 @@ async def test_service_snapshot_restore(
     assert mock_snapshot.call_count == 2
 
     with patch(
-        "homeassistant.components.sonos.speaker.Snapshot.restore"
+        "inpui.components.sonos.speaker.Snapshot.restore"
     ) as mock_restore:
         await hass.services.async_call(
             DOMAIN,

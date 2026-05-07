@@ -42,7 +42,7 @@ TEST_VEHICLE_EVENT_DELAY = 0.05
 def short_vehicle_delay():
     """Use a short delay for vehicle event tests."""
     with patch(
-        "homeassistant.components.unifiprotect.event.VEHICLE_EVENT_DELAY_SECONDS",
+        "inpui.components.unifiprotect.event.VEHICLE_EVENT_DELAY_SECONDS",
         TEST_VEHICLE_EVENT_DELAY,
     ):
         yield

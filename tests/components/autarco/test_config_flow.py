@@ -114,7 +114,7 @@ async def test_step_reauth(
     assert result.get("type") is FlowResultType.FORM
     assert result.get("step_id") == "reauth_confirm"
 
-    with patch("homeassistant.components.autarco.config_flow.Autarco", autospec=True):
+    with patch("inpui.components.autarco.config_flow.Autarco", autospec=True):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={CONF_PASSWORD: "new-password"},

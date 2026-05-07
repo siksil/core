@@ -28,7 +28,7 @@ from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE
 def lock_platform_only():
     """Only set up the lock and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.DEVICE_TRACKER,
             Platform.LOCK,

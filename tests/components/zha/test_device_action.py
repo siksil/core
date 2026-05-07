@@ -32,7 +32,7 @@ COMMAND_SINGLE = "single"
 def required_platforms_only():
     """Only set up the required platforms and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.BINARY_SENSOR,
             Platform.BUTTON,

@@ -124,11 +124,11 @@ async def test_setup_and_unload_entry(
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=TEST_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -149,7 +149,7 @@ async def test_setup_entry_lookup_failure(
     java_mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+        "inpui.components.minecraft_server.api.JavaServer.async_lookup",
         side_effect=ValueError,
     ):
         assert not await hass.config_entries.async_setup(
@@ -167,7 +167,7 @@ async def test_setup_entry_init_failure(
     java_mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.minecraft_server.api.MinecraftServer.async_initialize",
+        "inpui.components.minecraft_server.api.MinecraftServer.async_initialize",
         side_effect=None,
     ):
         assert not await hass.config_entries.async_setup(
@@ -186,11 +186,11 @@ async def test_setup_entry_not_ready(
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=OSError,
         ),
     ):
@@ -222,7 +222,7 @@ async def test_entry_migration(
     # Trigger migration.
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             side_effect=[
                 ValueError,  # async_migrate_entry
                 JavaServer(host=TEST_HOST, port=TEST_PORT),  # async_migrate_entry
@@ -230,7 +230,7 @@ async def test_entry_migration(
             ],
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=TEST_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -287,11 +287,11 @@ async def test_entry_migration_host_only(
     # Trigger migration.
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=TEST_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -324,7 +324,7 @@ async def test_entry_migration_v3_failure(
 
     # Trigger migration.
     with patch(
-        "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+        "inpui.components.minecraft_server.api.JavaServer.async_lookup",
         side_effect=[
             ValueError,  # async_migrate_entry
             ValueError,  # async_migrate_entry

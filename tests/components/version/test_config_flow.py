@@ -57,7 +57,7 @@ async def test_basic_form(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.version.async_setup_entry",
+        "inpui.components.version.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -98,7 +98,7 @@ async def test_advanced_form_pypi(hass: HomeAssistant) -> None:
     assert result["step_id"] == "version_source"
 
     with patch(
-        "homeassistant.components.version.async_setup_entry",
+        "inpui.components.version.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -139,7 +139,7 @@ async def test_advanced_form_container(hass: HomeAssistant) -> None:
     assert result["step_id"] == "version_source"
 
     with patch(
-        "homeassistant.components.version.async_setup_entry",
+        "inpui.components.version.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -180,7 +180,7 @@ async def test_advanced_form_supervisor(hass: HomeAssistant) -> None:
     assert result["step_id"] == "version_source"
 
     with patch(
-        "homeassistant.components.version.async_setup_entry",
+        "inpui.components.version.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

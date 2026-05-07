@@ -274,7 +274,7 @@ async def test_on_connection_lost(
 
     assert mock_nice_go.listen.call_count == 3
 
-    with patch("homeassistant.components.nice_go.coordinator.RECONNECT_DELAY", 0):
+    with patch("inpui.components.nice_go.coordinator.RECONNECT_DELAY", 0):
         await mock_nice_go.listen.call_args_list[2][0][1](
             {"exception": ValueError("test")}
         )
@@ -308,7 +308,7 @@ async def test_on_connection_lost_reconnect(
 
     assert hass.states.get("cover.test_garage_1").state == "closed"
 
-    with patch("homeassistant.components.nice_go.coordinator.RECONNECT_DELAY", 0):
+    with patch("inpui.components.nice_go.coordinator.RECONNECT_DELAY", 0):
         await mock_nice_go.listen.call_args_list[2][0][1](
             {"exception": ValueError("test")}
         )
@@ -361,8 +361,8 @@ async def test_connection_attempts_exhausted(
     mock_nice_go.connect.side_effect = ApiError
 
     with (
-        patch("homeassistant.components.nice_go.coordinator.RECONNECT_ATTEMPTS", 1),
-        patch("homeassistant.components.nice_go.coordinator.RECONNECT_DELAY", 0),
+        patch("inpui.components.nice_go.coordinator.RECONNECT_ATTEMPTS", 1),
+        patch("inpui.components.nice_go.coordinator.RECONNECT_DELAY", 0),
     ):
         await setup_integration(hass, mock_config_entry, [Platform.COVER])
 
@@ -391,8 +391,8 @@ async def test_reconnect_hass_stopping(
     hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_ha_stop)
 
     with (
-        patch("homeassistant.components.nice_go.coordinator.RECONNECT_DELAY", 0.1),
-        patch("homeassistant.components.nice_go.coordinator.RECONNECT_ATTEMPTS", 20),
+        patch("inpui.components.nice_go.coordinator.RECONNECT_DELAY", 0.1),
+        patch("inpui.components.nice_go.coordinator.RECONNECT_ATTEMPTS", 20),
     ):
         await setup_integration(hass, mock_config_entry, [Platform.COVER])
         await hass.async_block_till_done()

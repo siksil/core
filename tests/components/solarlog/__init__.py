@@ -14,7 +14,7 @@ async def setup_platform(
     """Set up the SolarLog platform."""
     config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.solarlog.PLATFORMS", platforms):
+    with patch("inpui.components.solarlog.PLATFORMS", platforms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 

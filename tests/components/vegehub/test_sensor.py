@@ -39,7 +39,7 @@ async def test_sensor_entities(
 ) -> None:
     """Test all entities."""
 
-    with patch("homeassistant.components.vegehub.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.vegehub.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mocked_config_entry)
 
     assert TEST_WEBHOOK_ID in hass.data["webhook"], "Webhook was not registered"

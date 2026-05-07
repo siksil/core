@@ -73,7 +73,7 @@ async def test_zeroconf(hass: HomeAssistant) -> None:
 async def internal_test_link(hass: HomeAssistant) -> None:
     """Test linking internal, common to both router modes."""
     with patch(
-        "homeassistant.components.freebox.async_setup_entry",
+        "inpui.components.freebox.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -143,7 +143,7 @@ async def test_on_link_failed(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.freebox.router.Freepybox.open",
+        "inpui.components.freebox.router.Freepybox.open",
         side_effect=AuthorizationError(),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -151,7 +151,7 @@ async def test_on_link_failed(hass: HomeAssistant) -> None:
         assert result["errors"] == {"base": "register_failed"}
 
     with patch(
-        "homeassistant.components.freebox.router.Freepybox.open",
+        "inpui.components.freebox.router.Freepybox.open",
         side_effect=HttpRequestError(),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -159,7 +159,7 @@ async def test_on_link_failed(hass: HomeAssistant) -> None:
         assert result["errors"] == {"base": "cannot_connect"}
 
     with patch(
-        "homeassistant.components.freebox.router.Freepybox.open",
+        "inpui.components.freebox.router.Freepybox.open",
         side_effect=InvalidTokenError(),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})

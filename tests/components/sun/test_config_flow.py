@@ -22,7 +22,7 @@ async def test_full_user_flow(hass: HomeAssistant) -> None:
     assert result.get("step_id") == "user"
 
     with patch(
-        "homeassistant.components.sun.async_setup_entry",
+        "inpui.components.sun.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

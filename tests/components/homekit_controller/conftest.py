@@ -32,7 +32,7 @@ def controller() -> Generator[FakeController]:
     """Replace aiohomekit.Controller with an instance of aiohomekit.testing.FakeController."""
     instance = FakeController()
     with patch(
-        "homeassistant.components.homekit_controller.utils.Controller",
+        "inpui.components.homekit_controller.utils.Controller",
         return_value=instance,
     ):
         yield instance

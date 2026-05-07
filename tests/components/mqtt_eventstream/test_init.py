@@ -82,7 +82,7 @@ async def test_state_changed_event_sends_message(
     e_id = "fake.entity"
     pub_topic = "bar"
     with patch(
-        ("homeassistant.core.dt_util.utcnow"),
+        ("inpui.core.dt_util.utcnow"),
         return_value=now,
     ):
         # Add the eventstream component for publishing events

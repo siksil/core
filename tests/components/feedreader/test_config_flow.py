@@ -24,7 +24,7 @@ def feedparser_fixture(feed_one_event: bytes) -> Mock:
     """Patch libraries."""
     with (
         patch(
-            "homeassistant.components.feedreader.config_flow.feedparser.http.get",
+            "inpui.components.feedreader.config_flow.feedparser.http.get",
             return_value=feed_one_event,
         ) as feedparser,
     ):
@@ -35,7 +35,7 @@ def feedparser_fixture(feed_one_event: bytes) -> Mock:
 def setup_entry_fixture(feed_one_event: bytes) -> Mock:
     """Patch libraries."""
     with (
-        patch("homeassistant.components.feedreader.async_setup_entry") as setup_entry,
+        patch("inpui.components.feedreader.async_setup_entry") as setup_entry,
     ):
         yield setup_entry
 
@@ -106,7 +106,7 @@ async def test_reconfigure(hass: HomeAssistant, feedparser) -> None:
 
     # success
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_reload"
+        "inpui.config_entries.ConfigEntries.async_reload"
     ) as mock_async_reload:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -203,7 +203,7 @@ async def test_feed_htmlentities(
 ) -> None:
     """Test starting a flow by user from a feed with HTML Entities in the title."""
     with patch(
-        "homeassistant.components.feedreader.config_flow.feedparser.http.get",
+        "inpui.components.feedreader.config_flow.feedparser.http.get",
         side_effect=[request.getfixturevalue(fixture_name)],
     ):
         # init user flow

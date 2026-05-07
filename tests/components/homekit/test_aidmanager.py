@@ -44,7 +44,7 @@ async def test_aid_generation(
     hass.states.async_set("remote.has_no_unique_id", "on")
 
     with patch(
-        "homeassistant.components.homekit.aidmanager.AccessoryAidStorage.async_schedule_save"
+        "inpui.components.homekit.aidmanager.AccessoryAidStorage.async_schedule_save"
     ):
         aid_storage = AccessoryAidStorage(hass, config_entry)
     await aid_storage.async_initialize()
@@ -105,7 +105,7 @@ async def test_no_aid_collision(
     )
 
     with patch(
-        "homeassistant.components.homekit.aidmanager.AccessoryAidStorage.async_schedule_save"
+        "inpui.components.homekit.aidmanager.AccessoryAidStorage.async_schedule_save"
     ):
         aid_storage = AccessoryAidStorage(hass, config_entry)
     await aid_storage.async_initialize()
@@ -630,7 +630,7 @@ async def test_handle_unique_id_change(
     config_entry = MockConfigEntry(domain="test", data={})
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.homekit.aidmanager.AccessoryAidStorage.async_schedule_save"
+        "inpui.components.homekit.aidmanager.AccessoryAidStorage.async_schedule_save"
     ):
         aid_storage = AccessoryAidStorage(hass, config_entry)
     await aid_storage.async_initialize()

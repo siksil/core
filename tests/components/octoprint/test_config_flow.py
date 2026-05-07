@@ -50,10 +50,10 @@ async def test_form(hass: HomeAssistant) -> None:
             return_value=DiscoverySettings({"upnpUuid": "uuid"}),
         ),
         patch(
-            "homeassistant.components.octoprint.async_setup", return_value=True
+            "inpui.components.octoprint.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.octoprint.async_setup_entry",
+            "inpui.components.octoprint.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -224,9 +224,9 @@ async def test_show_zerconf_form(hass: HomeAssistant) -> None:
             "pyoctoprintapi.OctoprintClient.get_discovery_info",
             return_value=DiscoverySettings({"upnpUuid": "uuid"}),
         ),
-        patch("homeassistant.components.octoprint.async_setup", return_value=True),
+        patch("inpui.components.octoprint.async_setup", return_value=True),
         patch(
-            "homeassistant.components.octoprint.async_setup_entry",
+            "inpui.components.octoprint.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -293,9 +293,9 @@ async def test_show_ssdp_form(hass: HomeAssistant) -> None:
             "pyoctoprintapi.OctoprintClient.get_discovery_info",
             return_value=DiscoverySettings({"upnpUuid": "uuid"}),
         ),
-        patch("homeassistant.components.octoprint.async_setup", return_value=True),
+        patch("inpui.components.octoprint.async_setup", return_value=True),
         patch(
-            "homeassistant.components.octoprint.async_setup_entry",
+            "inpui.components.octoprint.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -330,9 +330,9 @@ async def test_import_yaml(hass: HomeAssistant) -> None:
         patch(
             "pyoctoprintapi.OctoprintClient.request_app_key", return_value="test-key"
         ),
-        patch("homeassistant.components.octoprint.async_setup", return_value=True),
+        patch("inpui.components.octoprint.async_setup", return_value=True),
         patch(
-            "homeassistant.components.octoprint.async_setup_entry",
+            "inpui.components.octoprint.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -496,10 +496,10 @@ async def test_user_duplicate_entry(hass: HomeAssistant) -> None:
             return_value=DiscoverySettings({"upnpUuid": "uuid"}),
         ),
         patch(
-            "homeassistant.components.octoprint.async_setup", return_value=True
+            "inpui.components.octoprint.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.octoprint.async_setup_entry",
+            "inpui.components.octoprint.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -598,7 +598,7 @@ async def test_reauth_form(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.SHOW_PROGRESS
 
     with patch(
-        "homeassistant.components.octoprint.async_setup_entry",
+        "inpui.components.octoprint.async_setup_entry",
         return_value=True,
     ):
         result2 = await hass.config_entries.flow.async_configure(

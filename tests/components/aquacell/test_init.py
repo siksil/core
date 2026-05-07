@@ -75,7 +75,7 @@ async def test_coordinator_update_expired_refresh_token(
 
     now = datetime.now()
     with patch(
-        "homeassistant.components.aquacell.coordinator.datetime"
+        "inpui.components.aquacell.coordinator.datetime"
     ) as datetime_mock:
         datetime_mock.now.return_value = now
         await setup_integration(hass, mock_config_entry_expired)

@@ -29,7 +29,7 @@ async def test_entities(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test all button entities match the snapshot."""
-    with patch("homeassistant.components.casper_glow.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.casper_glow.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 

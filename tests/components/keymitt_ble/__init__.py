@@ -25,7 +25,7 @@ USER_INPUT_INVALID = {
 def patch_async_setup_entry(return_value=True):
     """Patch async setup entry to return True."""
     return patch(
-        "homeassistant.components.keymitt_ble.async_setup_entry",
+        "inpui.components.keymitt_ble.async_setup_entry",
         return_value=return_value,
     )
 

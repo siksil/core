@@ -135,12 +135,12 @@ async def test_setup_works(hass: HomeAssistant) -> None:
     hass.config.components.add("network")
     with (
         patch(
-            "homeassistant.components.emulated_hue.async_create_upnp_datagram_endpoint",
+            "inpui.components.emulated_hue.async_create_upnp_datagram_endpoint",
             AsyncMock(),
         ) as mock_create_upnp_datagram_endpoint,
-        patch("homeassistant.components.emulated_hue.async_get_source_ip"),
+        patch("inpui.components.emulated_hue.async_get_source_ip"),
         patch(
-            "homeassistant.components.emulated_hue.web.TCPSite",
+            "inpui.components.emulated_hue.web.TCPSite",
             return_value=Mock(spec_set=web.TCPSite),
         ),
     ):

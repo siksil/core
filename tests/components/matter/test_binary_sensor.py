@@ -27,7 +27,7 @@ from .common import (
 def binary_sensor_platform() -> Generator[None]:
     """Load only the binary sensor platform."""
     with patch(
-        "homeassistant.components.matter.discovery.DISCOVERY_SCHEMAS",
+        "inpui.components.matter.discovery.DISCOVERY_SCHEMAS",
         new={
             Platform.BINARY_SENSOR: BINARY_SENSOR_SCHEMAS,
         },

@@ -10,7 +10,7 @@ from inpui.core import HomeAssistant
 @pytest.fixture
 def mock_error_handler():
     """Create a mock for add_error_handler."""
-    with patch("homeassistant.components.risco.RiscoLocal.add_error_handler") as mock:
+    with patch("inpui.components.risco.RiscoLocal.add_error_handler") as mock:
         yield mock
 
 

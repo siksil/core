@@ -104,7 +104,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.plugwise.async_setup_entry", return_value=True
+        "inpui.components.plugwise.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -113,7 +113,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_smile_config_flow() -> Generator[MagicMock]:
     """Return a mocked Smile client."""
     with patch(
-        "homeassistant.components.plugwise.config_flow.Smile",
+        "inpui.components.plugwise.config_flow.Smile",
         autospec=True,
     ) as api_mock:
         api = api_mock.return_value
@@ -146,7 +146,7 @@ async def setup_platform(
 
     mock_config_entry.add_to_hass(hass)
 
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         assert await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
         yield mock_config_entry
@@ -159,10 +159,10 @@ def mock_smile_adam() -> Generator[MagicMock]:
     data = _read_json(chosen_env, "data")
     with (
         patch(
-            "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+            "inpui.components.plugwise.coordinator.Smile", autospec=True
         ) as api_mock,
         patch(
-            "homeassistant.components.plugwise.config_flow.Smile",
+            "inpui.components.plugwise.config_flow.Smile",
             new=api_mock,
         ),
     ):
@@ -193,7 +193,7 @@ def mock_smile_adam_heat_cool(
     """Create a special base Mock Adam type for testing with different datasets."""
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 
@@ -221,7 +221,7 @@ def mock_smile_adam_jip() -> Generator[MagicMock]:
     chosen_env = "m_adam_jip"
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 
@@ -248,7 +248,7 @@ def mock_smile_anna(chosen_env: str, cooling_present: bool) -> Generator[MagicMo
     """Create a Mock Anna type for testing."""
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 
@@ -276,7 +276,7 @@ def mock_smile_anna_p1() -> Generator[MagicMock]:
     chosen_env = "anna_p1"
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 
@@ -303,7 +303,7 @@ def mock_smile_p1(chosen_env: str, gateway_id: str) -> Generator[MagicMock]:
     """Create a base Mock P1 type for testing with different datasets and gateway-ids."""
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 
@@ -330,7 +330,7 @@ def mock_smile_legacy_anna() -> Generator[MagicMock]:
     chosen_env = "legacy_anna"
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 
@@ -357,7 +357,7 @@ def mock_stretch() -> Generator[MagicMock]:
     chosen_env = "stretch_v31"
     data = _read_json(chosen_env, "data")
     with patch(
-        "homeassistant.components.plugwise.coordinator.Smile", autospec=True
+        "inpui.components.plugwise.coordinator.Smile", autospec=True
     ) as api_mock:
         api = api_mock.return_value
 

@@ -39,7 +39,7 @@ async def test_switch(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test switch platform entities against snapshot."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -61,7 +61,7 @@ async def test_no_switch(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test switch platform entities are not created."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
     assert not er.async_entries_for_config_entry(entity_registry, config_entry.entry_id)
 
@@ -75,7 +75,7 @@ async def test_switch_grid_operation(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test switch platform operation for grid switches."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.data.enpower.serial_number
@@ -121,7 +121,7 @@ async def test_switch_grid_operation_with_error(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test switch platform operation for grid switches when error occurs."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.data.enpower.serial_number
@@ -169,7 +169,7 @@ async def test_switch_charge_from_grid_operation(
     use_serial: str,
 ) -> None:
     """Test switch platform operation for charge from grid switches."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"{Platform.SWITCH}.{use_serial}_charge_from_grid"
@@ -222,7 +222,7 @@ async def test_switch_charge_from_grid_operation_with_error(
     use_serial: str,
 ) -> None:
     """Test switch platform operation for charge from grid switches."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"{Platform.SWITCH}.{use_serial}_charge_from_grid"
@@ -275,7 +275,7 @@ async def test_switch_relay_operation(
     entity_states: dict[str, tuple[str, int, int]],
 ) -> None:
     """Test enphase_envoy switch relay entities operation."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SWITCH}."
@@ -335,7 +335,7 @@ async def test_switch_relay_operation_with_error(
     relay: str,
 ) -> None:
     """Test enphase_envoy switch relay entities operation."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SWITCH}."

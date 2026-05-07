@@ -23,7 +23,7 @@ from tests.common import MockConfigEntry
 MIGRATE_OPTIONS_KEYS = {CONF_COOL_AWAY_TEMPERATURE, CONF_HEAT_AWAY_TEMPERATURE}
 
 
-@patch("homeassistant.components.honeywell.UPDATE_LOOP_SLEEP_TIME", 0)
+@patch("inpui.components.honeywell.UPDATE_LOOP_SLEEP_TIME", 0)
 async def test_setup_entry(hass: HomeAssistant, config_entry: MockConfigEntry) -> None:
     """Initialize the config entry."""
     config_entry.add_to_hass(hass)
@@ -35,7 +35,7 @@ async def test_setup_entry(hass: HomeAssistant, config_entry: MockConfigEntry) -
     )  # 1 climate entity; 2 sensor entities
 
 
-@patch("homeassistant.components.honeywell.UPDATE_LOOP_SLEEP_TIME", 0)
+@patch("inpui.components.honeywell.UPDATE_LOOP_SLEEP_TIME", 0)
 async def test_setup_multiple_entry(
     hass: HomeAssistant, config_entry: MockConfigEntry, config_entry2: MockConfigEntry
 ) -> None:

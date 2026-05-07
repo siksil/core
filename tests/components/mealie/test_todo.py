@@ -40,7 +40,7 @@ async def test_entities(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test todo entities."""
-    with patch("homeassistant.components.mealie.PLATFORMS", [Platform.TODO]):
+    with patch("inpui.components.mealie.PLATFORMS", [Platform.TODO]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

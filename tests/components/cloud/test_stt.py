@@ -25,7 +25,7 @@ from tests.typing import ClientSessionGenerator
 @pytest.fixture(autouse=True)
 async def delay_save_fixture() -> AsyncGenerator[None]:
     """Load the homeassistant integration."""
-    with patch("homeassistant.helpers.collection.SAVE_DELAY", new=0):
+    with patch("inpui.helpers.collection.SAVE_DELAY", new=0):
         yield
 
 

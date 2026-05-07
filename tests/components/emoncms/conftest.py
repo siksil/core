@@ -104,7 +104,7 @@ def config_single_feed() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.emoncms.async_setup_entry", return_value=True
+        "inpui.components.emoncms.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -114,10 +114,10 @@ async def emoncms_client() -> AsyncGenerator[AsyncMock]:
     """Mock pyemoncms success response."""
     with (
         patch(
-            "homeassistant.components.emoncms.EmoncmsClient", autospec=True
+            "inpui.components.emoncms.EmoncmsClient", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.emoncms.config_flow.EmoncmsClient",
+            "inpui.components.emoncms.config_flow.EmoncmsClient",
             new=mock_client,
         ),
     ):

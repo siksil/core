@@ -42,7 +42,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.bsblan.async_setup_entry", return_value=True
+        "inpui.components.bsblan.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -51,8 +51,8 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_bsblan() -> Generator[MagicMock]:
     """Return a mocked BSBLAN client."""
     with (
-        patch("homeassistant.components.bsblan.BSBLAN", autospec=True) as bsblan_mock,
-        patch("homeassistant.components.bsblan.config_flow.BSBLAN", new=bsblan_mock),
+        patch("inpui.components.bsblan.BSBLAN", autospec=True) as bsblan_mock,
+        patch("inpui.components.bsblan.config_flow.BSBLAN", new=bsblan_mock),
     ):
         bsblan = bsblan_mock.return_value
         bsblan.info.return_value = Info.model_validate_json(

@@ -180,7 +180,7 @@ def mock_blackbird() -> MockBlackbird:
 async def setup_blackbird(hass: HomeAssistant, mock_blackbird: MockBlackbird) -> None:
     """Set up blackbird."""
     with mock.patch(
-        "homeassistant.components.blackbird.media_player.get_blackbird",
+        "inpui.components.blackbird.media_player.get_blackbird",
         return_value=mock_blackbird,
     ):
         await async_setup_component(

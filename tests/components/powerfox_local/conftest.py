@@ -31,7 +31,7 @@ def _local_response() -> LocalResponse:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.powerfox_local.async_setup_entry", return_value=True
+        "inpui.components.powerfox_local.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -41,11 +41,11 @@ def mock_powerfox_local_client() -> Generator[AsyncMock]:
     """Mock a PowerfoxLocal client."""
     with (
         patch(
-            "homeassistant.components.powerfox_local.coordinator.PowerfoxLocal",
+            "inpui.components.powerfox_local.coordinator.PowerfoxLocal",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.powerfox_local.config_flow.PowerfoxLocal",
+            "inpui.components.powerfox_local.config_flow.PowerfoxLocal",
             new=mock_client,
         ),
     ):

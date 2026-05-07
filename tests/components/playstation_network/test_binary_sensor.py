@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def binary_sensor_only() -> Generator[None]:
     """Enable only the binary sensor platform."""
     with patch(
-        "homeassistant.components.playstation_network.PLATFORMS",
+        "inpui.components.playstation_network.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         yield

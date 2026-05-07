@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.intellifire.async_setup_entry", return_value=True
+        "inpui.components.intellifire.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -118,11 +118,11 @@ def mock_cloud_interface(single_eco_device) -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.intelliclima.IntelliClimaAPI",
+            "inpui.components.intelliclima.IntelliClimaAPI",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.intelliclima.config_flow.IntelliClimaAPI",
+            "inpui.components.intelliclima.config_flow.IntelliClimaAPI",
             new=mock_client,
         ),
     ):

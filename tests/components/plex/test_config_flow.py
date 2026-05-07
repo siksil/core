@@ -633,7 +633,7 @@ async def test_manual_config(hass: HomeAssistant, mock_plex_calls) -> None:
     assert result["errors"]["base"] == "ssl_error"
 
     with patch(
-        "homeassistant.components.plex.PlexServer.connect",
+        "inpui.components.plex.PlexServer.connect",
         side_effect=requests.exceptions.SSLError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -645,8 +645,8 @@ async def test_manual_config(hass: HomeAssistant, mock_plex_calls) -> None:
     assert result["errors"]["base"] == "ssl_error"
 
     with (
-        patch("homeassistant.components.plex.PlexWebsocket", autospec=True),
-        patch("homeassistant.components.plex.GDM", return_value=MockGDM(disabled=True)),
+        patch("inpui.components.plex.PlexWebsocket", autospec=True),
+        patch("inpui.components.plex.GDM", return_value=MockGDM(disabled=True)),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input=MANUAL_SERVER
@@ -687,8 +687,8 @@ async def test_manual_config_with_token(
     assert result["step_id"] == "manual_setup"
 
     with (
-        patch("homeassistant.components.plex.GDM", return_value=MockGDM(disabled=True)),
-        patch("homeassistant.components.plex.PlexWebsocket", autospec=True),
+        patch("inpui.components.plex.GDM", return_value=MockGDM(disabled=True)),
+        patch("inpui.components.plex.PlexWebsocket", autospec=True),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={CONF_TOKEN: MOCK_TOKEN}
@@ -714,7 +714,7 @@ async def test_integration_discovery(hass: HomeAssistant) -> None:
     """Test integration self-discovery."""
     mock_gdm = MockGDM()
 
-    with patch("homeassistant.components.plex.config_flow.GDM", return_value=mock_gdm):
+    with patch("inpui.components.plex.config_flow.GDM", return_value=mock_gdm):
         await config_flow.async_discover(hass)
         await hass.async_block_till_done(wait_background_tasks=True)
 
@@ -856,7 +856,7 @@ async def test_client_header_issues(hass: HomeAssistant) -> None:
         patch("plexauth.PlexAuth.initiate_auth"),
         patch("plexauth.PlexAuth.token", return_value=None),
         patch(
-            "homeassistant.helpers.http.current_request.get",
+            "inpui.helpers.http.current_request.get",
             return_value=MockRequest(),
         ),
         pytest.raises(

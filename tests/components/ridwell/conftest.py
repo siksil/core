@@ -86,11 +86,11 @@ def mock_aioridwell_fixture(client: Mock, config: dict[str, Any]) -> Generator[N
     """Define a fixture to patch aioridwell."""
     with (
         patch(
-            "homeassistant.components.ridwell.config_flow.async_get_client",
+            "inpui.components.ridwell.config_flow.async_get_client",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.ridwell.coordinator.async_get_client",
+            "inpui.components.ridwell.coordinator.async_get_client",
             return_value=client,
         ),
     ):

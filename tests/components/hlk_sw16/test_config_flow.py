@@ -67,14 +67,14 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hlk_sw16.config_flow.create_hlk_sw16_connection",
+            "inpui.components.hlk_sw16.config_flow.create_hlk_sw16_connection",
             return_value=mock_hlk_sw16_connection,
         ),
         patch(
-            "homeassistant.components.hlk_sw16.async_setup", return_value=True
+            "inpui.components.hlk_sw16.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.hlk_sw16.async_setup_entry",
+            "inpui.components.hlk_sw16.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -96,7 +96,7 @@ async def test_form(hass: HomeAssistant) -> None:
     mock_hlk_sw16_connection = await create_mock_hlk_sw16_connection(False)
 
     with patch(
-        "homeassistant.components.hlk_sw16.config_flow.create_hlk_sw16_connection",
+        "inpui.components.hlk_sw16.config_flow.create_hlk_sw16_connection",
         return_value=mock_hlk_sw16_connection,
     ):
         result3 = await hass.config_entries.flow.async_init(
@@ -132,14 +132,14 @@ async def test_import(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hlk_sw16.config_flow.connect_client",
+            "inpui.components.hlk_sw16.config_flow.connect_client",
             return_value=mock_hlk_sw16_connection,
         ),
         patch(
-            "homeassistant.components.hlk_sw16.async_setup", return_value=True
+            "inpui.components.hlk_sw16.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.hlk_sw16.async_setup_entry",
+            "inpui.components.hlk_sw16.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -173,7 +173,7 @@ async def test_form_invalid_data(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.hlk_sw16.config_flow.connect_client",
+        "inpui.components.hlk_sw16.config_flow.connect_client",
         return_value=mock_hlk_sw16_connection,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -197,7 +197,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.hlk_sw16.config_flow.connect_client",
+        "inpui.components.hlk_sw16.config_flow.connect_client",
         side_effect=TimeoutError,
         return_value=None,
     ):

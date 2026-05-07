@@ -34,7 +34,7 @@ async def test_climate_snapshot(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test climate setup for cloud connection."""
-    with patch("homeassistant.components.senz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.senz.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
         await snapshot_platform(
@@ -50,9 +50,9 @@ async def test_set_target(
     """Test setting of target temperature."""
 
     with (
-        patch("homeassistant.components.senz.PLATFORMS", [Platform.CLIMATE]),
+        patch("inpui.components.senz.PLATFORMS", [Platform.CLIMATE]),
         patch(
-            "homeassistant.components.senz.coordinator.Thermostat.manual",
+            "inpui.components.senz.coordinator.Thermostat.manual",
             return_value=None,
         ) as mock_manual,
     ):
@@ -74,9 +74,9 @@ async def test_set_target_fail(
     """Test that failed set_temperature is handled."""
 
     with (
-        patch("homeassistant.components.senz.PLATFORMS", [Platform.CLIMATE]),
+        patch("inpui.components.senz.PLATFORMS", [Platform.CLIMATE]),
         patch(
-            "homeassistant.components.senz.coordinator.Thermostat.manual",
+            "inpui.components.senz.coordinator.Thermostat.manual",
             side_effect=RequestError("API error"),
         ) as mock_manual,
     ):
@@ -108,13 +108,13 @@ async def test_set_hvac_mode(
     """Test setting of hvac mode."""
 
     with (
-        patch("homeassistant.components.senz.PLATFORMS", [Platform.CLIMATE]),
+        patch("inpui.components.senz.PLATFORMS", [Platform.CLIMATE]),
         patch(
-            "homeassistant.components.senz.coordinator.Thermostat.manual",
+            "inpui.components.senz.coordinator.Thermostat.manual",
             return_value=None,
         ) as mock_manual,
         patch(
-            "homeassistant.components.senz.coordinator.Thermostat.auto",
+            "inpui.components.senz.coordinator.Thermostat.auto",
             return_value=None,
         ) as mock_auto,
     ):
@@ -137,9 +137,9 @@ async def test_set_hvac_mode_fail(
     """Test that failed set_hvac_mode is handled."""
 
     with (
-        patch("homeassistant.components.senz.PLATFORMS", [Platform.CLIMATE]),
+        patch("inpui.components.senz.PLATFORMS", [Platform.CLIMATE]),
         patch(
-            "homeassistant.components.senz.coordinator.Thermostat.manual",
+            "inpui.components.senz.coordinator.Thermostat.manual",
             side_effect=RequestError("API error"),
         ) as mock_manual,
     ):

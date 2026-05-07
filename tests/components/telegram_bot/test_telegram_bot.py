@@ -141,7 +141,7 @@ async def test_polling_platform_init_failed(
 ) -> None:
     """Test failed initialization of the polling platform."""
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.get_me",
+        "inpui.components.telegram_bot.bot.Bot.get_me",
         side_effect=NetworkError("mock network error"),
     ) as mock_get_me:
         mock_polling_config_entry.add_to_hass(hass)
@@ -291,7 +291,7 @@ async def test_send_message_with_inline_keyboard(
     events = async_capture_events(hass, "telegram_sent")
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.send_message",
+        "inpui.components.telegram_bot.bot.Bot.send_message",
         AsyncMock(
             return_value=Message(
                 message_id=12345,
@@ -349,10 +349,10 @@ async def test_send_sticker_partial_error(
 
     with (
         patch(
-            "homeassistant.components.telegram_bot.bot.load_data",
+            "inpui.components.telegram_bot.bot.load_data",
         ) as mock_load_data,
         patch(
-            "homeassistant.components.telegram_bot.bot.Bot.send_sticker"
+            "inpui.components.telegram_bot.bot.Bot.send_sticker"
         ) as mock_send_sticker,
     ):
         mock_send_sticker.side_effect = NetworkError("mock network error")
@@ -382,7 +382,7 @@ async def test_send_sticker_partial_error(
 async def test_send_sticker_error(hass: HomeAssistant, webhook_bot) -> None:
     """Test the send_message service with an error."""
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.send_sticker",
+        "inpui.components.telegram_bot.bot.Bot.send_sticker",
     ) as mock_bot:
         mock_bot.side_effect = NetworkError("mock network error")
 
@@ -467,7 +467,7 @@ async def _run_download_file_service_with_mocks(
 
     with (
         patch(
-            "homeassistant.components.telegram_bot.bot.Bot.get_file",
+            "inpui.components.telegram_bot.bot.Bot.get_file",
             AsyncMock(return_value=telegram_file),
         ) as get_file_mock,
         patch(
@@ -525,7 +525,7 @@ async def test_send_chat_action(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.send_chat_action",
+        "inpui.components.telegram_bot.bot.Bot.send_chat_action",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -567,7 +567,7 @@ async def test_send_file(hass: HomeAssistant, webhook_bot, service: str) -> None
 
     # Mock the file handler read with our base64 encoded dummy file
     with patch(
-        "homeassistant.components.telegram_bot.bot._read_file_as_bytesio",
+        "inpui.components.telegram_bot.bot._read_file_as_bytesio",
         _read_file_as_bytesio_mock,
     ):
         response = await hass.services.async_call(
@@ -794,7 +794,7 @@ async def test_polling_platform_message_text_update(
     events = async_capture_events(hass, "telegram_text")
 
     with patch(
-        "homeassistant.components.telegram_bot.polling.ApplicationBuilder"
+        "inpui.components.telegram_bot.polling.ApplicationBuilder"
     ) as application_builder_class:
         # Set up the integration with the polling platform inside the patch context manager.
         application = (
@@ -861,7 +861,7 @@ async def test_polling_platform_add_error_handler(
 ) -> None:
     """Test polling add error handler."""
     with patch(
-        "homeassistant.components.telegram_bot.polling.ApplicationBuilder"
+        "inpui.components.telegram_bot.polling.ApplicationBuilder"
     ) as application_builder_class:
         application = (
             application_builder_class.return_value.bot.return_value.build.return_value
@@ -907,7 +907,7 @@ async def test_polling_platform_start_polling_error_callback(
 ) -> None:
     """Test polling add error handler."""
     with patch(
-        "homeassistant.components.telegram_bot.polling.ApplicationBuilder"
+        "inpui.components.telegram_bot.polling.ApplicationBuilder"
     ) as application_builder_class:
         application = (
             application_builder_class.return_value.bot.return_value.build.return_value
@@ -1195,7 +1195,7 @@ async def test_delete_message(
     }
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.delete_message",
+        "inpui.components.telegram_bot.bot.Bot.delete_message",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1250,7 +1250,7 @@ async def test_edit_message_media(
     write_utf8_file("/tmp/mock", "mock file contents")  # noqa: S108
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.edit_message_media",
+        "inpui.components.telegram_bot.bot.Bot.edit_message_media",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1291,7 +1291,7 @@ async def test_edit_message(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.edit_message_text",
+        "inpui.components.telegram_bot.bot.Bot.edit_message_text",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1319,7 +1319,7 @@ async def test_edit_message(
     )
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.edit_message_caption",
+        "inpui.components.telegram_bot.bot.Bot.edit_message_caption",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1346,7 +1346,7 @@ async def test_edit_message(
     )
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.edit_message_reply_markup",
+        "inpui.components.telegram_bot.bot.Bot.edit_message_reply_markup",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1367,7 +1367,7 @@ async def test_async_setup_entry_failed(
     mock_broadcast_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.telegram_bot.Bot.get_me",
+        "inpui.components.telegram_bot.Bot.get_me",
     ) as mock_bot:
         mock_bot.side_effect = InvalidToken("mock invalid token error")
 
@@ -1389,7 +1389,7 @@ async def test_answer_callback_query(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.answer_callback_query"
+        "inpui.components.telegram_bot.bot.Bot.answer_callback_query"
     ) as mock:
         await hass.services.async_call(
             DOMAIN,
@@ -1423,7 +1423,7 @@ async def test_leave_chat(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.leave_chat",
+        "inpui.components.telegram_bot.bot.Bot.leave_chat",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1511,7 +1511,7 @@ async def test_send_video(
     # test: 404 error
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.httpx.AsyncClient.get"
+        "inpui.components.telegram_bot.bot.httpx.AsyncClient.get"
     ) as mock_get:
         mock_get.return_value = AsyncMock(status_code=404, text="Success")
 
@@ -1624,7 +1624,7 @@ async def test_send_video(
     # test: success with url
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.httpx.AsyncClient.get"
+        "inpui.components.telegram_bot.bot.httpx.AsyncClient.get"
     ) as mock_get:
         mock_get.return_value = AsyncMock(status_code=200, content=b"mock content")
 
@@ -1665,7 +1665,7 @@ async def test_set_message_reaction(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.set_message_reaction",
+        "inpui.components.telegram_bot.bot.Bot.set_message_reaction",
         AsyncMock(return_value=True),
     ) as mock:
         await hass.services.async_call(
@@ -1782,7 +1782,7 @@ async def test_send_message_multi_target(
 
     hass.config.allowlist_external_dirs.add("/media/")
     with patch(
-        "homeassistant.components.telegram_bot.bot._read_file_as_bytesio",
+        "inpui.components.telegram_bot.bot._read_file_as_bytesio",
         _read_file_as_bytesio_mock,
     ):
         response = await hass.services.async_call(
@@ -2300,7 +2300,7 @@ async def test_download_file_when_bot_failed_to_get_file(
 
     with (
         patch(
-            "homeassistant.components.telegram_bot.bot.Bot.get_file",
+            "inpui.components.telegram_bot.bot.Bot.get_file",
             AsyncMock(side_effect=TelegramError("failed to get file")),
         ),
         pytest.raises(HomeAssistantError) as err,
@@ -2386,7 +2386,7 @@ async def test_download_file_when_error_when_downloading(
 
     with (
         patch(
-            "homeassistant.components.telegram_bot.bot.Bot.get_file",
+            "inpui.components.telegram_bot.bot.Bot.get_file",
             AsyncMock(return_value=telegram_file),
         ),
         patch(
@@ -2419,7 +2419,7 @@ async def test_send_media_group(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.httpx.AsyncClient.get"
+        "inpui.components.telegram_bot.bot.httpx.AsyncClient.get"
     ) as mock_get:
         mock_get.return_value = AsyncMock(status_code=200, content=b"mock content")
 

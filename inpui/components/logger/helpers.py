@@ -83,7 +83,7 @@ def _clear_logger_overwrites(hass: HomeAssistant) -> None:
 
 async def get_integration_loggers(hass: HomeAssistant, domain: str) -> set[str]:
     """Get loggers for an integration."""
-    loggers: set[str] = {f"homeassistant.components.{domain}"}
+    loggers: set[str] = {f"inpui.components.{domain}"}
     with contextlib.suppress(IntegrationNotFound):
         integration = await async_get_integration(hass, domain)
         loggers.add(integration.pkg_path)

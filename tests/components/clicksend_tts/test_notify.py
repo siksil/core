@@ -41,7 +41,7 @@ CONFIG = {
 def mock_clicksend_tts_notify():
     """Mock Clicksend TTS notify service."""
     with patch(
-        "homeassistant.components.clicksend_tts.notify.get_service", autospec=True
+        "inpui.components.clicksend_tts.notify.get_service", autospec=True
     ) as ns:
         yield ns
 

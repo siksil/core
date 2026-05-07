@@ -18,7 +18,7 @@ from tests.typing import ClientSessionGenerator
 async def image_only() -> None:
     """Enable only the image platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.IMAGE],
     ):
         yield

@@ -174,7 +174,7 @@ async def test_state_sensors(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -199,7 +199,7 @@ async def test_unknown_state_sensors(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -231,7 +231,7 @@ async def test_stale_options(
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -260,7 +260,7 @@ async def test_state_ambient_translation(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

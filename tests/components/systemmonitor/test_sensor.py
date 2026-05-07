@@ -811,7 +811,7 @@ async def test_psi_sensor_unavailable(
     )
 
     with patch(
-        "homeassistant.components.systemmonitor.coordinator.get_all_pressure_info",
+        "inpui.components.systemmonitor.coordinator.get_all_pressure_info",
         return_value={},
     ):
         mock_config_entry.add_to_hass(hass)

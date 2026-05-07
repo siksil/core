@@ -43,9 +43,9 @@ def mock_controller(
 ) -> Generator[AsyncMock]:
     """Mock a successful velbus controller."""
     with (
-        patch("homeassistant.components.velbus.Velbus", autospec=True) as controller,
+        patch("inpui.components.velbus.Velbus", autospec=True) as controller,
         patch(
-            "homeassistant.components.velbus.config_flow.velbusaio.controller.Velbus",
+            "inpui.components.velbus.config_flow.velbusaio.controller.Velbus",
             new=controller,
         ),
     ):

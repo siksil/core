@@ -45,7 +45,7 @@ async def test_oauth_implementation_not_available(
     """Test that an unavailable OAuth implementation raises ConfigEntryNotReady."""
 
     with patch(
-        "homeassistant.components.senz.async_get_config_entry_implementation",
+        "inpui.components.senz.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

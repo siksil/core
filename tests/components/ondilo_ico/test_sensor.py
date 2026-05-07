@@ -23,7 +23,7 @@ async def test_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that I can get all pools data when no error."""
-    with patch("homeassistant.components.ondilo_ico.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.ondilo_ico.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry, mock_ondilo_client)
 
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

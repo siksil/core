@@ -15,26 +15,26 @@ from . import assert_adds_messages, assert_no_messages
     ("module_name", "import_from", "import_what"),
     [
         (
-            "homeassistant.components.pylint_test.sensor",
-            "homeassistant.const",
+            "inpui.components.pylint_test.sensor",
+            "inpui.const",
             "CONSTANT",
         ),
         (
-            "homeassistant.components.pylint_test.sensor",
-            "homeassistant.components.pylint_testing",
+            "inpui.components.pylint_test.sensor",
+            "inpui.components.pylint_testing",
             "CONSTANT",
         ),
-        ("homeassistant.components.pylint_test.sensor", ".const", "CONSTANT"),
-        ("homeassistant.components.pylint_test.sensor", ".", "CONSTANT"),
-        ("homeassistant.components.pylint_test.sensor", "..", "pylint_test"),
+        ("inpui.components.pylint_test.sensor", ".const", "CONSTANT"),
+        ("inpui.components.pylint_test.sensor", ".", "CONSTANT"),
+        ("inpui.components.pylint_test.sensor", "..", "pylint_test"),
         (
-            "homeassistant.components.pylint_test.api.hub",
-            "homeassistant.const",
+            "inpui.components.pylint_test.api.hub",
+            "inpui.const",
             "CONSTANT",
         ),
-        ("homeassistant.components.pylint_test.api.hub", "..const", "CONSTANT"),
-        ("homeassistant.components.pylint_test.api.hub", "..", "CONSTANT"),
-        ("homeassistant.components.pylint_test.api.hub", "...", "pylint_test"),
+        ("inpui.components.pylint_test.api.hub", "..const", "CONSTANT"),
+        ("inpui.components.pylint_test.api.hub", "..", "CONSTANT"),
+        ("inpui.components.pylint_test.api.hub", "...", "pylint_test"),
         ("tests.components.pylint_test.api.hub", "..const", "CONSTANT"),
     ],
 )
@@ -61,44 +61,44 @@ def test_good_import(
     ("module_name", "import_from", "import_what", "error_code"),
     [
         (
-            "homeassistant.components.pylint_test.sensor",
-            "homeassistant.components.pylint_test.const",
+            "inpui.components.pylint_test.sensor",
+            "inpui.components.pylint_test.const",
             "CONSTANT",
             "hass-relative-import",
         ),
         (
-            "homeassistant.components.pylint_test.sensor",
+            "inpui.components.pylint_test.sensor",
             "..const",
             "CONSTANT",
             "hass-absolute-import",
         ),
         (
-            "homeassistant.components.pylint_test.sensor",
+            "inpui.components.pylint_test.sensor",
             "...const",
             "CONSTANT",
             "hass-absolute-import",
         ),
         (
-            "homeassistant.components.pylint_test.api.hub",
-            "homeassistant.components.pylint_test.api.const",
+            "inpui.components.pylint_test.api.hub",
+            "inpui.components.pylint_test.api.const",
             "CONSTANT",
             "hass-relative-import",
         ),
         (
-            "homeassistant.components.pylint_test.api.hub",
+            "inpui.components.pylint_test.api.hub",
             "...const",
             "CONSTANT",
             "hass-absolute-import",
         ),
         (
-            "homeassistant.components.pylint_test.api.hub",
-            "homeassistant.components",
+            "inpui.components.pylint_test.api.hub",
+            "inpui.components",
             "pylint_test",
             "hass-relative-import",
         ),
         (
-            "homeassistant.components.pylint_test.api.hub",
-            "homeassistant.components.pylint_test.const",
+            "inpui.components.pylint_test.api.hub",
+            "inpui.components.pylint_test.const",
             "CONSTANT",
             "hass-relative-import",
         ),
@@ -152,11 +152,11 @@ def test_bad_import(
     [
         (
             "from inpui.components import climate",
-            "homeassistant.components.pylint_test.climate",
+            "inpui.components.pylint_test.climate",
         ),
         (
             "from inpui.components.climate import ClimateEntityFeature",
-            "homeassistant.components.pylint_test.climate",
+            "inpui.components.pylint_test.climate",
         ),
         (
             "from inpui.components.pylint_test import const",
@@ -198,19 +198,19 @@ def test_good_root_import(
     [
         (
             "import inpui.components.climate.const as climate",
-            "homeassistant.components.pylint_test.climate",
+            "inpui.components.pylint_test.climate",
         ),
         (
             "from inpui.components.climate import const",
-            "homeassistant.components.pylint_test.climate",
+            "inpui.components.pylint_test.climate",
         ),
         (
             "from inpui.components.climate.const import ClimateEntityFeature",
-            "homeassistant.components.pylint_test.climate",
+            "inpui.components.pylint_test.climate",
         ),
         (
             "from inpui.components.climate.entity import ClimateEntityFeature",
-            "homeassistant.components.pylint_test.climate",
+            "inpui.components.pylint_test.climate",
         ),
         (
             "from inpui.components.climate import const",
@@ -270,7 +270,7 @@ def test_bad_root_import(
             "tests.components.pylint_test.climate",
             (
                 "async_get",
-                "homeassistant.helpers.issue_registry",
+                "inpui.helpers.issue_registry",
                 "ir",
                 "ir",
                 "async_get",
@@ -281,7 +281,7 @@ def test_bad_root_import(
             "tests.components.pylint_test.climate",
             (
                 "async_get",
-                "homeassistant.helpers.issue_registry",
+                "inpui.helpers.issue_registry",
                 "ir",
                 "ir",
                 "async_get",
@@ -323,12 +323,12 @@ def test_bad_namespace_import(
     ("module_name", "import_string", "end_col_offset"),
     [
         (
-            "homeassistant.components.pylint_test.sensor",
+            "inpui.components.pylint_test.sensor",
             "from inpui.components.other import DOMAIN as OTHER_DOMAIN",
             -1,
         ),
         (
-            "homeassistant.components.pylint_test.sensor",
+            "inpui.components.pylint_test.sensor",
             "from inpui.components.other import DOMAIN",
             49,
         ),

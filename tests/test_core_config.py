@@ -516,7 +516,7 @@ async def test_loading_configuration_default_media_dirs_docker(
     hass: HomeAssistant,
 ) -> None:
     """Test loading core config onto hass object."""
-    with patch("homeassistant.core_config.is_docker_env", return_value=True):
+    with patch("inpui.core_config.is_docker_env", return_value=True):
         await async_process_ha_core_config(
             hass,
             {
@@ -1074,14 +1074,14 @@ async def test_top_level_components(hass: HomeAssistant) -> None:
     hass.config.components.add("homeassistant")
     assert hass.config.components == {"homeassistant"}
     assert hass.config.top_level_components == {"homeassistant"}
-    hass.config.components.add("homeassistant.scene")
-    assert hass.config.components == {"homeassistant", "homeassistant.scene"}
+    hass.config.components.add("inpui.scene")
+    assert hass.config.components == {"homeassistant", "inpui.scene"}
     assert hass.config.top_level_components == {"homeassistant"}
     hass.config.components.remove("homeassistant")
-    assert hass.config.components == {"homeassistant.scene"}
+    assert hass.config.components == {"inpui.scene"}
     assert hass.config.top_level_components == set()
     with pytest.raises(ValueError):
-        hass.config.components.remove("homeassistant.scene")
+        hass.config.components.remove("inpui.scene")
     with pytest.raises(NotImplementedError):
         hass.config.components.discard("homeassistant")
 

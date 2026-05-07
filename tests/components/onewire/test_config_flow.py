@@ -65,7 +65,7 @@ async def test_user_flow(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -86,7 +86,7 @@ async def test_user_flow_recovery(hass: HomeAssistant) -> None:
 
     # Invalid server
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
         side_effect=OWServerConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -100,7 +100,7 @@ async def test_user_flow_recovery(hass: HomeAssistant) -> None:
 
     # Valid server
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -148,7 +148,7 @@ async def test_reconfigure_flow(
 
     # Invalid server
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
         side_effect=OWServerConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -162,7 +162,7 @@ async def test_reconfigure_flow(
 
     # Valid server
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -222,7 +222,7 @@ async def test_hassio_flow(hass: HomeAssistant) -> None:
 
     # Cannot connect to server => retry
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
         side_effect=OWServerConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -236,7 +236,7 @@ async def test_hassio_flow(hass: HomeAssistant) -> None:
 
     # Connect OK
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -274,7 +274,7 @@ async def test_zeroconf_flow(hass: HomeAssistant) -> None:
 
     # Cannot connect to server => retry
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
         side_effect=OWServerConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -288,7 +288,7 @@ async def test_zeroconf_flow(hass: HomeAssistant) -> None:
 
     # Connect OK
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy.validate",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy.validate",
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

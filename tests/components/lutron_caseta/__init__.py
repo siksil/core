@@ -400,7 +400,7 @@ async def async_setup_integration(
         )
 
     with patch(
-        "homeassistant.components.lutron_caseta.Smartbridge.create_tls",
+        "inpui.components.lutron_caseta.Smartbridge.create_tls",
         create_tls_factory,
     ):
         await hass.config_entries.async_setup(config_entry_id)

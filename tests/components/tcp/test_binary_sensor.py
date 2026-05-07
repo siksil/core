@@ -23,9 +23,9 @@ TEST_ENTITY = "binary_sensor.test_name"
 def mock_socket_fixture():
     """Mock the socket."""
     with (
-        patch("homeassistant.components.tcp.entity.socket.socket") as mock_socket,
+        patch("inpui.components.tcp.entity.socket.socket") as mock_socket,
         patch(
-            "homeassistant.components.tcp.entity.select.select",
+            "inpui.components.tcp.entity.select.select",
             return_value=(True, False, False),
         ),
     ):

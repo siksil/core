@@ -28,7 +28,7 @@ def mocked_upb(sync_complete=True, config_ok=True):
         _add_handler if sync_complete else _dummy_add_handler
     )
     return patch(
-        "homeassistant.components.upb.config_flow.upb_lib.UpbPim", return_value=upb_mock
+        "inpui.components.upb.config_flow.upb_lib.UpbPim", return_value=upb_mock
     )
 
 
@@ -39,7 +39,7 @@ async def valid_tcp_flow(
 
     with (
         mocked_upb(sync_complete, config_ok),
-        patch("homeassistant.components.upb.async_setup_entry", return_value=True),
+        patch("inpui.components.upb.async_setup_entry", return_value=True),
     ):
         flow = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -56,7 +56,7 @@ async def test_full_upb_flow_with_serial_port(hass: HomeAssistant) -> None:
     with (
         mocked_upb(),
         patch(
-            "homeassistant.components.upb.async_setup_entry", return_value=True
+            "inpui.components.upb.async_setup_entry", return_value=True
         ) as mock_setup_entry,
     ):
         flow = await hass.config_entries.flow.async_init(
@@ -96,7 +96,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     """Test we handle cannot connect error."""
 
     with patch(
-        "homeassistant.components.upb.config_flow.asyncio.timeout",
+        "inpui.components.upb.config_flow.asyncio.timeout",
         side_effect=TimeoutError,
     ):
         result = await valid_tcp_flow(hass, sync_complete=False)

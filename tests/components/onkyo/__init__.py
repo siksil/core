@@ -53,11 +53,11 @@ def mock_discovery(receiver_infos: Iterable[ReceiverInfo] | None) -> Generator[N
 
     with (
         patch(
-            "homeassistant.components.onkyo.receiver.aioonkyo.discover",
+            "inpui.components.onkyo.receiver.aioonkyo.discover",
             **discover_kwargs,
         ),
         patch(
-            "homeassistant.components.onkyo.receiver.aioonkyo.interview",
+            "inpui.components.onkyo.receiver.aioonkyo.interview",
             **interview_kwargs,
         ),
     ):

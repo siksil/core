@@ -122,7 +122,7 @@ async def test_form_with_query_template(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.sql.async_setup_entry",
+        "inpui.components.sql.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -171,7 +171,7 @@ async def test_form_with_broken_query_template(
         )
 
     with patch(
-        "homeassistant.components.sql.async_setup_entry",
+        "inpui.components.sql.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -238,7 +238,7 @@ async def test_flow_fails_db_url(hass: HomeAssistant) -> None:
     assert result["step_id"] == config_entries.SOURCE_USER
 
     with patch(
-        "homeassistant.components.sql.config_flow.sqlalchemy.create_engine",
+        "inpui.components.sql.config_flow.sqlalchemy.create_engine",
         side_effect=SQLAlchemyError("error_message"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -517,7 +517,7 @@ async def test_options_flow_fails_db_url(hass: HomeAssistant) -> None:
     result = await hass.config_entries.options.async_init(entry.entry_id)
 
     with patch(
-        "homeassistant.components.sql.config_flow.sqlalchemy.create_engine",
+        "inpui.components.sql.config_flow.sqlalchemy.create_engine",
         side_effect=SQLAlchemyError("error_message"),
     ):
         result = await hass.config_entries.options.async_configure(

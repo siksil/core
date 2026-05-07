@@ -20,11 +20,11 @@ def mock_meteo_lt_api() -> Generator[AsyncMock]:
     """Mock MeteoLtAPI with fixture data."""
     with (
         patch(
-            "homeassistant.components.meteo_lt.coordinator.MeteoLtAPI",
+            "inpui.components.meteo_lt.coordinator.MeteoLtAPI",
             autospec=True,
         ) as mock_api_class,
         patch(
-            "homeassistant.components.meteo_lt.config_flow.MeteoLtAPI",
+            "inpui.components.meteo_lt.config_flow.MeteoLtAPI",
             new=mock_api_class,
         ),
     ):
@@ -52,7 +52,7 @@ def mock_meteo_lt_api() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.meteo_lt.async_setup_entry", return_value=True
+        "inpui.components.meteo_lt.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

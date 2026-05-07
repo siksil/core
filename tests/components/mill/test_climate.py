@@ -45,7 +45,7 @@ async def mock_mill():
 
     with (
         patch(
-            "homeassistant.components.mill.Mill",
+            "inpui.components.mill.Mill",
             autospec=True,
         ) as mock_mill_class,
     ):
@@ -62,7 +62,7 @@ async def mock_mill_local():
 
     with (
         patch(
-            "homeassistant.components.mill.MillLocal",
+            "inpui.components.mill.MillLocal",
             autospec=True,
         ) as mock_mill_local_class,
     ):
@@ -124,7 +124,7 @@ async def cloud_heater(hass: HomeAssistant, mock_mill: MagicMock) -> Heater:
     config_entry.add_to_hass(hass)
 
     # We just need to load the climate component.
-    with patch("homeassistant.components.mill.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.mill.PLATFORMS", [Platform.CLIMATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
 
     await hass.async_block_till_done()
@@ -205,7 +205,7 @@ async def local_heater(hass: HomeAssistant, mock_mill_local: MagicMock) -> dict:
     config_entry.add_to_hass(hass)
 
     # We just need to load the climate component.
-    with patch("homeassistant.components.mill.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.mill.PLATFORMS", [Platform.CLIMATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
 
     await hass.async_block_till_done()

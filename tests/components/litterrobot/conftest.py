@@ -169,7 +169,7 @@ async def setup_integration(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.litterrobot.coordinator.Account",
+        "inpui.components.litterrobot.coordinator.Account",
         return_value=mock_account,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

@@ -315,7 +315,7 @@ async def test_measure_multiple(recorder_mock: Recorder, hass: HomeAssistant) ->
         }
 
     with patch(
-        "homeassistant.components.recorder.history.state_changes_during_period",
+        "inpui.components.recorder.history.state_changes_during_period",
         _fake_states,
     ):
         await async_setup_component(
@@ -410,7 +410,7 @@ async def test_measure(recorder_mock: Recorder, hass: HomeAssistant) -> None:
         }
 
     with patch(
-        "homeassistant.components.recorder.history.state_changes_during_period",
+        "inpui.components.recorder.history.state_changes_during_period",
         _fake_states,
     ):
         await async_setup_component(
@@ -497,7 +497,7 @@ async def test_async_on_entire_period(
         }
 
     with patch(
-        "homeassistant.components.recorder.history.state_changes_during_period",
+        "inpui.components.recorder.history.state_changes_during_period",
         _fake_states,
     ):
         await async_setup_component(
@@ -625,7 +625,7 @@ async def test_async_off_entire_period(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.recorder.history.state_changes_during_period",
+        "inpui.components.recorder.history.state_changes_during_period",
         _fake_states,
     ):
         for i in range(1, 5):
@@ -665,7 +665,7 @@ async def test_async_start_from_history_and_switch_to_watching_state_changes_sin
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -766,7 +766,7 @@ async def test_async_start_from_history_and_switch_to_watching_state_changes_sin
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -883,7 +883,7 @@ async def test_async_start_from_history_and_switch_to_watching_state_changes_mul
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -1054,7 +1054,7 @@ async def test_start_from_history_then_watch_state_changes_sliding(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -1219,7 +1219,7 @@ async def test_does_not_work_into_the_future(
         }
 
     with patch(
-        "homeassistant.components.recorder.history.state_changes_during_period",
+        "inpui.components.recorder.history.state_changes_during_period",
         _fake_states,
     ):
         with freeze_time(start_time):
@@ -1309,7 +1309,7 @@ async def test_does_not_work_into_the_future(
     past_the_window = start_time + timedelta(hours=25)
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             return_value=[],
         ),
         freeze_time(past_the_window),
@@ -1334,7 +1334,7 @@ async def test_does_not_work_into_the_future(
     past_the_window_with_data = start_time + timedelta(hours=26)
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_off_states,
         ),
         freeze_time(past_the_window_with_data),
@@ -1347,7 +1347,7 @@ async def test_does_not_work_into_the_future(
     at_the_next_window_with_data = start_time + timedelta(days=1, hours=23)
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_off_states,
         ),
         freeze_time(at_the_next_window_with_data),
@@ -1425,7 +1425,7 @@ async def test_measure_sliding_window(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -1488,7 +1488,7 @@ async def test_measure_sliding_window(
     past_next_update = start_time + timedelta(minutes=30)
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(past_next_update),
@@ -1526,7 +1526,7 @@ async def test_measure_from_end_going_backwards(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -1622,7 +1622,7 @@ async def test_measure_cet(recorder_mock: Recorder, hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time + timedelta(minutes=60)),
@@ -1707,7 +1707,7 @@ async def test_state_change_during_window_rollover(
     # The test begins at 23:00, and queries from the database that the sensor has been on since 12:00.
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -1800,7 +1800,7 @@ async def test_state_change_during_window_rollover(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states_t6,
         ),
         freeze_time(t6),
@@ -1861,7 +1861,7 @@ async def test_end_time_with_microseconds_zeroed(
     with (
         freeze_time(time_200),
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
     ):
@@ -2057,7 +2057,7 @@ async def test_history_stats_handles_floored_timestamps(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -2189,7 +2189,7 @@ async def test_async_around_min_state_duration(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -2298,7 +2298,7 @@ async def test_async_around_min_state_duration_sliding_window(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -2413,7 +2413,7 @@ async def test_measure_multiple_with_min_state_duration(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(start_time),
@@ -2520,7 +2520,7 @@ async def test_open_block_precision_same_second(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(base),

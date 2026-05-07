@@ -959,7 +959,7 @@ async def test_recorder_setup_failure(hass: HomeAssistant) -> None:
     recorder_helper.async_initialize_recorder(hass)
     with (
         patch.object(Recorder, "_setup_connection") as setup,
-        patch("homeassistant.components.recorder.core.time.sleep"),
+        patch("inpui.components.recorder.core.time.sleep"),
     ):
         setup.side_effect = ImportError("driver not found")
         rec = _default_recorder(hass)
@@ -980,9 +980,9 @@ async def test_recorder_validate_schema_failure(
     recorder_helper.async_initialize_recorder(hass)
     with (
         patch(
-            f"homeassistant.components.recorder.migration.{function_to_patch}"
+            f"inpui.components.recorder.migration.{function_to_patch}"
         ) as inspect_schema_version,
-        patch("homeassistant.components.recorder.core.time.sleep"),
+        patch("inpui.components.recorder.core.time.sleep"),
     ):
         inspect_schema_version.side_effect = ImportError("driver not found")
         rec = _default_recorder(hass)
@@ -1000,7 +1000,7 @@ async def test_recorder_setup_failure_without_event_listener(
     recorder_helper.async_initialize_recorder(hass)
     with (
         patch.object(Recorder, "_setup_connection") as setup,
-        patch("homeassistant.components.recorder.core.time.sleep"),
+        patch("inpui.components.recorder.core.time.sleep"),
     ):
         setup.side_effect = ImportError("driver not found")
         rec = _default_recorder(hass)
@@ -1020,7 +1020,7 @@ async def test_defaults_set(hass: HomeAssistant) -> None:
         recorder_config = config["recorder"]
         return True
 
-    with patch("homeassistant.components.recorder.async_setup", side_effect=mock_setup):
+    with patch("inpui.components.recorder.async_setup", side_effect=mock_setup):
         assert await async_setup_component(hass, "history", {})
 
     assert recorder_config is not None
@@ -1056,10 +1056,10 @@ async def test_auto_purge(hass: HomeAssistant, setup_recorder: None) -> None:
 
     with (
         patch(
-            "homeassistant.components.recorder.purge.purge_old_data", return_value=True
+            "inpui.components.recorder.purge.purge_old_data", return_value=True
         ) as purge_old_data,
         patch(
-            "homeassistant.components.recorder.tasks.periodic_db_cleanups"
+            "inpui.components.recorder.tasks.periodic_db_cleanups"
         ) as periodic_db_cleanups,
     ):
         assert len(purge_old_data.mock_calls) == 0
@@ -1118,13 +1118,13 @@ async def test_auto_purge_auto_repack_on_second_sunday(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.is_second_sunday", return_value=True
+            "inpui.components.recorder.core.is_second_sunday", return_value=True
         ),
         patch(
-            "homeassistant.components.recorder.purge.purge_old_data", return_value=True
+            "inpui.components.recorder.purge.purge_old_data", return_value=True
         ) as purge_old_data,
         patch(
-            "homeassistant.components.recorder.tasks.periodic_db_cleanups"
+            "inpui.components.recorder.tasks.periodic_db_cleanups"
         ) as periodic_db_cleanups,
     ):
         assert len(purge_old_data.mock_calls) == 0
@@ -1162,13 +1162,13 @@ async def test_auto_purge_auto_repack_disabled_on_second_sunday(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.is_second_sunday", return_value=True
+            "inpui.components.recorder.core.is_second_sunday", return_value=True
         ),
         patch(
-            "homeassistant.components.recorder.purge.purge_old_data", return_value=True
+            "inpui.components.recorder.purge.purge_old_data", return_value=True
         ) as purge_old_data,
         patch(
-            "homeassistant.components.recorder.tasks.periodic_db_cleanups"
+            "inpui.components.recorder.tasks.periodic_db_cleanups"
         ) as periodic_db_cleanups,
     ):
         assert len(purge_old_data.mock_calls) == 0
@@ -1205,14 +1205,14 @@ async def test_auto_purge_no_auto_repack_on_not_second_sunday(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.is_second_sunday",
+            "inpui.components.recorder.core.is_second_sunday",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.recorder.purge.purge_old_data", return_value=True
+            "inpui.components.recorder.purge.purge_old_data", return_value=True
         ) as purge_old_data,
         patch(
-            "homeassistant.components.recorder.tasks.periodic_db_cleanups"
+            "inpui.components.recorder.tasks.periodic_db_cleanups"
         ) as periodic_db_cleanups,
     ):
         assert len(purge_old_data.mock_calls) == 0
@@ -1249,10 +1249,10 @@ async def test_auto_purge_disabled(
 
     with (
         patch(
-            "homeassistant.components.recorder.purge.purge_old_data", return_value=True
+            "inpui.components.recorder.purge.purge_old_data", return_value=True
         ) as purge_old_data,
         patch(
-            "homeassistant.components.recorder.tasks.periodic_db_cleanups"
+            "inpui.components.recorder.tasks.periodic_db_cleanups"
         ) as periodic_db_cleanups,
     ):
         assert len(purge_old_data.mock_calls) == 0
@@ -1312,7 +1312,7 @@ async def test_auto_statistics(
 
     real_compile_statistics = statistics.compile_statistics
     with patch(
-        "homeassistant.components.recorder.statistics.compile_statistics",
+        "inpui.components.recorder.statistics.compile_statistics",
         side_effect=real_compile_statistics,
         autospec=True,
     ) as compile_statistics:
@@ -1359,7 +1359,7 @@ async def test_statistics_runs_initiated(
     """Test statistics_runs is initiated when DB is created."""
     now = dt_util.utcnow()
     with patch(
-        "homeassistant.components.recorder.core.dt_util.utcnow", return_value=now
+        "inpui.components.recorder.core.dt_util.utcnow", return_value=now
     ):
         await async_setup_recorder_instance(hass)
 
@@ -1958,7 +1958,7 @@ async def test_database_lock_and_overflow_checks_available_memory(
             )
 
     with patch(
-        "homeassistant.components.recorder.core.QUEUE_CHECK_INTERVAL",
+        "inpui.components.recorder.core.QUEUE_CHECK_INTERVAL",
         timedelta(seconds=1),
     ):
         await async_setup_recorder_instance(hass, config)
@@ -2241,9 +2241,9 @@ async def test_disable_echo(
     mock_event = MockEvent()
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine"
+            "inpui.components.recorder.core.create_engine"
         ) as create_engine_mock,
-        patch("homeassistant.components.recorder.core.sqlalchemy_event", mock_event),
+        patch("inpui.components.recorder.core.sqlalchemy_event", mock_event),
     ):
         await async_setup_component(hass, DOMAIN, {DOMAIN: {CONF_DB_URL: db_url}})
         create_engine_mock.assert_called_once()
@@ -2300,9 +2300,9 @@ async def test_mysql_missing_utf8mb4(
     mock_event = MockEvent()
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine"
+            "inpui.components.recorder.core.create_engine"
         ) as create_engine_mock,
-        patch("homeassistant.components.recorder.core.sqlalchemy_event", mock_event),
+        patch("inpui.components.recorder.core.sqlalchemy_event", mock_event),
     ):
         await async_setup_component(hass, DOMAIN, {DOMAIN: {CONF_DB_URL: config_url}})
         create_engine_mock.assert_called_once()
@@ -2528,7 +2528,7 @@ async def test_clean_shutdown_when_recorder_thread_raises_during_initialize_data
     """Test we still shutdown cleanly when the recorder thread raises during initialize_database."""
     with (
         patch.object(migration, "initialize_database", side_effect=Exception),
-        patch("homeassistant.components.recorder.ALLOW_IN_MEMORY_DB", True),
+        patch("inpui.components.recorder.ALLOW_IN_MEMORY_DB", True),
     ):
         if recorder.DOMAIN not in hass.data:
             recorder_helper.async_initialize_recorder(hass)
@@ -2556,7 +2556,7 @@ async def test_clean_shutdown_when_recorder_thread_raises_during_validate_db_sch
     """Test we still shutdown cleanly when the recorder thread raises during validate_db_schema."""
     with (
         patch.object(migration, "validate_db_schema", side_effect=Exception),
-        patch("homeassistant.components.recorder.ALLOW_IN_MEMORY_DB", True),
+        patch("inpui.components.recorder.ALLOW_IN_MEMORY_DB", True),
     ):
         if recorder.DOMAIN not in hass.data:
             recorder_helper.async_initialize_recorder(hass)
@@ -2594,7 +2594,7 @@ async def test_clean_shutdown_when_schema_migration_fails(
     """Test we still shutdown cleanly when schema migration fails."""
     with (
         patch.object(migration, "_get_current_schema_version", side_effect=[None, 1]),
-        patch("homeassistant.components.recorder.ALLOW_IN_MEMORY_DB", True),
+        patch("inpui.components.recorder.ALLOW_IN_MEMORY_DB", True),
         patch.object(
             migration,
             func_to_patch,
@@ -2639,7 +2639,7 @@ async def test_setup_fails_after_downgrade(
             "_get_current_schema_version",
             side_effect=[None, SCHEMA_VERSION + 1],
         ),
-        patch("homeassistant.components.recorder.ALLOW_IN_MEMORY_DB", True),
+        patch("inpui.components.recorder.ALLOW_IN_MEMORY_DB", True),
     ):
         if recorder.DOMAIN not in hass.data:
             recorder_helper.async_initialize_recorder(hass)
@@ -2810,7 +2810,7 @@ async def test_setting_up_recorder_fails_entity_registry_listener(
     """Test recorder setup fails if an entity registry listener is in place."""
     async_track_entity_registry_updated_event(hass, "test.test", lambda x: x)
     recorder_helper.async_initialize_recorder(hass)
-    with patch("homeassistant.components.recorder.ALLOW_IN_MEMORY_DB", True):
+    with patch("inpui.components.recorder.ALLOW_IN_MEMORY_DB", True):
         assert not await async_setup_component(
             hass,
             recorder.DOMAIN,

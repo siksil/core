@@ -25,14 +25,14 @@ from tests.common import MockConfigEntry
 def silent_ssdp_scanner() -> Generator[None]:
     """Start SSDP component and get Scanner, prevent actual SSDP traffic."""
     with (
-        patch("homeassistant.components.ssdp.Scanner._async_start_ssdp_listeners"),
-        patch("homeassistant.components.ssdp.Scanner._async_stop_ssdp_listeners"),
-        patch("homeassistant.components.ssdp.Scanner.async_scan"),
+        patch("inpui.components.ssdp.Scanner._async_start_ssdp_listeners"),
+        patch("inpui.components.ssdp.Scanner._async_stop_ssdp_listeners"),
+        patch("inpui.components.ssdp.Scanner.async_scan"),
         patch(
-            "homeassistant.components.ssdp.Server._async_start_upnp_servers",
+            "inpui.components.ssdp.Server._async_start_upnp_servers",
         ),
         patch(
-            "homeassistant.components.ssdp.Server._async_stop_upnp_servers",
+            "inpui.components.ssdp.Server._async_stop_upnp_servers",
         ),
     ):
         yield
@@ -42,7 +42,7 @@ def silent_ssdp_scanner() -> Generator[None]:
 def mock_setup_entry():
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.yamaha_musiccast.async_setup_entry", return_value=True
+        "inpui.components.yamaha_musiccast.async_setup_entry", return_value=True
     ):
         yield
 
@@ -105,7 +105,7 @@ def mock_ssdp_no_yamaha():
 def mock_valid_discovery_information():
     """Mock that the ssdp scanner returns a useful upnp description."""
     with patch(
-        "homeassistant.components.ssdp.async_get_discovery_info_by_st",
+        "inpui.components.ssdp.async_get_discovery_info_by_st",
         return_value=[
             SsdpServiceInfo(
                 ssdp_usn="mock_usn",
@@ -125,7 +125,7 @@ def mock_valid_discovery_information():
 def mock_empty_discovery_information():
     """Mock that the ssdp scanner returns no upnp description."""
     with patch(
-        "homeassistant.components.ssdp.async_get_discovery_info_by_st", return_value=[]
+        "inpui.components.ssdp.async_get_discovery_info_by_st", return_value=[]
     ):
         yield
 

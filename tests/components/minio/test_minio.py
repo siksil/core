@@ -26,7 +26,7 @@ from .common import TEST_EVENT
 @pytest.fixture(name="minio_client")
 def minio_client_fixture():
     """Patch Minio client."""
-    with patch("homeassistant.components.minio.minio_helper.Minio") as minio_mock:
+    with patch("inpui.components.minio.minio_helper.Minio") as minio_mock:
         minio_client_mock = minio_mock.return_value
 
         yield minio_client_mock
@@ -35,7 +35,7 @@ def minio_client_fixture():
 @pytest.fixture(name="minio_client_event")
 def minio_client_event_fixture():
     """Patch helper function for minio notification stream."""
-    with patch("homeassistant.components.minio.minio_helper.Minio") as minio_mock:
+    with patch("inpui.components.minio.minio_helper.Minio") as minio_mock:
         minio_client_mock = minio_mock.return_value
 
         response_mock = MagicMock()

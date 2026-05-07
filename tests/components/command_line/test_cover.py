@@ -259,7 +259,7 @@ async def test_updating_to_often(
             await wait_till_event.wait()
 
     with patch(
-        "homeassistant.components.command_line.cover.CommandCover",
+        "inpui.components.command_line.cover.CommandCover",
         side_effect=MockCommandCover,
     ):
         await setup.async_setup_component(
@@ -326,7 +326,7 @@ async def test_updating_manually(
             called.append(1)
 
     with patch(
-        "homeassistant.components.command_line.cover.CommandCover",
+        "inpui.components.command_line.cover.CommandCover",
         side_effect=MockCommandCover,
     ):
         await setup.async_setup_component(

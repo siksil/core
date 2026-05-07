@@ -12,7 +12,7 @@ from . import get_device
 
 from tests.common import async_fire_time_changed
 
-DEVICE_PING = "homeassistant.components.broadlink.heartbeat.blk.ping"
+DEVICE_PING = "inpui.components.broadlink.heartbeat.blk.ping"
 
 
 async def test_heartbeat_trigger_startup(hass: HomeAssistant) -> None:

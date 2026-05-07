@@ -25,11 +25,11 @@ async def test_set_webhooks_failed(
 
     with (
         patch(
-            "homeassistant.components.telegram_bot.webhooks.secrets.choice",
+            "inpui.components.telegram_bot.webhooks.secrets.choice",
             return_value="DEADBEEF12345678DEADBEEF87654321",
         ),
         patch(
-            "homeassistant.components.telegram_bot.webhooks.Bot.set_webhook",
+            "inpui.components.telegram_bot.webhooks.Bot.set_webhook",
         ) as mock_set_webhook,
     ):
         mock_set_webhook.side_effect = [TimedOut("mock timeout"), False]
@@ -104,7 +104,7 @@ async def test_webhooks_unauthorized_network(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.telegram_bot.webhooks.ip_address",
+        "inpui.components.telegram_bot.webhooks.ip_address",
         return_value=IPv4Network("1.2.3.4"),
     ) as mock_remote:
         response = await client.post(
@@ -128,7 +128,7 @@ async def test_webhooks_deregister_failed(
     assert config_entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.telegram_bot.webhooks.Bot.delete_webhook",
+        "inpui.components.telegram_bot.webhooks.Bot.delete_webhook",
     ) as mock_delete_webhook:
         mock_delete_webhook.side_effect = TimedOut("mock timeout")
         await hass.config_entries.async_unload(config_entry.entry_id)

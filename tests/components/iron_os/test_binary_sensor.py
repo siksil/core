@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 async def binary_sensor_only() -> AsyncGenerator[None]:
     """Enable only the binary sensor platform."""
     with patch(
-        "homeassistant.components.iron_os.PLATFORMS",
+        "inpui.components.iron_os.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         yield

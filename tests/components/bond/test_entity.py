@@ -34,7 +34,7 @@ async def test_bpup_goes_offline_and_recovers_same_entity(hass: HomeAssistant) -
     """
     bpup_subs = BPUPSubscriptions()
     with patch(
-        "homeassistant.components.bond.BPUPSubscriptions",
+        "inpui.components.bond.BPUPSubscriptions",
         return_value=bpup_subs,
     ):
         await setup_platform(
@@ -119,7 +119,7 @@ async def test_bpup_goes_offline_and_recovers_different_entity(
     """
     bpup_subs = BPUPSubscriptions()
     with patch(
-        "homeassistant.components.bond.BPUPSubscriptions",
+        "inpui.components.bond.BPUPSubscriptions",
         return_value=bpup_subs,
     ):
         await setup_platform(

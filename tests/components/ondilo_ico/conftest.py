@@ -36,7 +36,7 @@ def mock_ondilo_client(
     """Mock a Homeassistant Ondilo client."""
     with (
         patch(
-            "homeassistant.components.ondilo_ico.OndiloClient",
+            "inpui.components.ondilo_ico.OndiloClient",
             autospec=True,
         ) as mock_ondilo,
     ):

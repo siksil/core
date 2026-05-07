@@ -37,7 +37,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(autouse=True)
 def no_wait_on_state_change():
     """Disable waiting for state change in tests."""
-    with patch("homeassistant.components.flux_led.select.STATE_CHANGE_LATENCY", 0):
+    with patch("inpui.components.flux_led.select.STATE_CHANGE_LATENCY", 0):
         yield
 
 
@@ -160,7 +160,7 @@ async def test_select_addressable_strip_config(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.flux_led.async_setup_entry"
+        "inpui.components.flux_led.async_setup_entry"
     ) as mock_setup_entry:
         await hass.services.async_call(
             SELECT_DOMAIN,
@@ -202,7 +202,7 @@ async def test_select_mutable_0x25_strip_config(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.flux_led.async_setup_entry"
+        "inpui.components.flux_led.async_setup_entry"
     ) as mock_setup_entry:
         await hass.services.async_call(
             SELECT_DOMAIN,
@@ -286,7 +286,7 @@ async def test_select_white_channel_type(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.flux_led.async_setup_entry"
+        "inpui.components.flux_led.async_setup_entry"
     ) as mock_setup_entry:
         await hass.services.async_call(
             SELECT_DOMAIN,

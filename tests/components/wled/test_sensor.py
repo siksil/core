@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.wled.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.wled.PLATFORMS", [Platform.SENSOR]):
         yield
 
 

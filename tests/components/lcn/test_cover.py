@@ -51,7 +51,7 @@ async def test_setup_lcn_cover(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the setup of cover."""
-    with patch("homeassistant.components.lcn.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.lcn.PLATFORMS", [Platform.COVER]):
         await init_integration(hass, entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

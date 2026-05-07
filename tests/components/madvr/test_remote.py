@@ -43,7 +43,7 @@ async def test_remote_setup(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test setup of the remote entity."""
-    with patch("homeassistant.components.madvr.PLATFORMS", [Platform.REMOTE]):
+    with patch("inpui.components.madvr.PLATFORMS", [Platform.REMOTE]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

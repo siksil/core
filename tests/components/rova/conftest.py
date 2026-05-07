@@ -21,10 +21,10 @@ def mock_rova():
 
     with (
         patch(
-            "homeassistant.components.rova.config_flow.Rova",
+            "inpui.components.rova.config_flow.Rova",
             return_value=api,
         ) as api,
-        patch("homeassistant.components.rova.Rova", return_value=api),
+        patch("inpui.components.rova.Rova", return_value=api),
     ):
         api.is_rova_area.return_value = True
         api.get_calendar_items.return_value = load_json_array_fixture(

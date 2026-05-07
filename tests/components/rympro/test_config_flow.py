@@ -46,15 +46,15 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.login",
+            "inpui.components.rympro.config_flow.RymPro.login",
             return_value="test-token",
         ),
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.account_info",
+            "inpui.components.rympro.config_flow.RymPro.account_info",
             return_value={"accountNumber": TEST_DATA[CONF_UNIQUE_ID]},
         ),
         patch(
-            "homeassistant.components.rympro.async_setup_entry",
+            "inpui.components.rympro.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -87,7 +87,7 @@ async def test_login_error(hass: HomeAssistant, exception, error) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.rympro.config_flow.RymPro.login",
+        "inpui.components.rympro.config_flow.RymPro.login",
         side_effect=exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -104,15 +104,15 @@ async def test_login_error(hass: HomeAssistant, exception, error) -> None:
 
     with (
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.login",
+            "inpui.components.rympro.config_flow.RymPro.login",
             return_value="test-token",
         ),
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.account_info",
+            "inpui.components.rympro.config_flow.RymPro.account_info",
             return_value={"accountNumber": TEST_DATA[CONF_UNIQUE_ID]},
         ),
         patch(
-            "homeassistant.components.rympro.async_setup_entry",
+            "inpui.components.rympro.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -139,11 +139,11 @@ async def test_form_already_exists(hass: HomeAssistant, config_entry) -> None:
 
     with (
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.login",
+            "inpui.components.rympro.config_flow.RymPro.login",
             return_value="test-token",
         ),
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.account_info",
+            "inpui.components.rympro.config_flow.RymPro.account_info",
             return_value={"accountNumber": TEST_DATA[CONF_UNIQUE_ID]},
         ),
     ):
@@ -169,15 +169,15 @@ async def test_form_reauth(hass: HomeAssistant, config_entry: MockConfigEntry) -
 
     with (
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.login",
+            "inpui.components.rympro.config_flow.RymPro.login",
             return_value="test-token",
         ),
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.account_info",
+            "inpui.components.rympro.config_flow.RymPro.account_info",
             return_value={"accountNumber": TEST_DATA[CONF_UNIQUE_ID]},
         ),
         patch(
-            "homeassistant.components.rympro.async_setup_entry",
+            "inpui.components.rympro.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -207,15 +207,15 @@ async def test_form_reauth_with_new_account(
 
     with (
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.login",
+            "inpui.components.rympro.config_flow.RymPro.login",
             return_value="test-token",
         ),
         patch(
-            "homeassistant.components.rympro.config_flow.RymPro.account_info",
+            "inpui.components.rympro.config_flow.RymPro.account_info",
             return_value={"accountNumber": "new-account-number"},
         ),
         patch(
-            "homeassistant.components.rympro.async_setup_entry",
+            "inpui.components.rympro.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

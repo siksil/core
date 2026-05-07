@@ -163,7 +163,7 @@ def process_before_send(
         matches = LOGGER_INFO_REGEX.findall(event["logger"])
         if matches:
             group1, group2, group3, group4 = matches[0]
-            # Handle the "homeassistant." package differently
+            # Handle the "inpui." package differently
             if group1 == "homeassistant" and group2 and group3:
                 if group2 == "components":
                     # This logger is from a component

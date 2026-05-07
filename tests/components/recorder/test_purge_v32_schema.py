@@ -64,7 +64,7 @@ def db_schema_32(hass: HomeAssistant) -> Generator[None]:
 def mock_use_sqlite(request: pytest.FixtureRequest) -> Generator[None]:
     """Pytest fixture to switch purge method."""
     with patch(
-        "homeassistant.components.recorder.core.Recorder.dialect_name",
+        "inpui.components.recorder.core.Recorder.dialect_name",
         return_value=SupportedDialect.SQLITE
         if request.param
         else SupportedDialect.MYSQL,
@@ -190,10 +190,10 @@ async def test_purge_old_states_encouters_database_corruption(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.move_away_broken_database"
+            "inpui.components.recorder.core.move_away_broken_database"
         ) as move_away,
         patch(
-            "homeassistant.components.recorder.purge.purge_old_data",
+            "inpui.components.recorder.purge.purge_old_data",
             side_effect=sqlite3_exception,
         ),
     ):
@@ -224,9 +224,9 @@ async def test_purge_old_states_encounters_temporary_mysql_error(
     mysql_exception.orig = Exception(1205, "retryable")
 
     with (
-        patch("homeassistant.components.recorder.util.time.sleep") as sleep_mock,
+        patch("inpui.components.recorder.util.time.sleep") as sleep_mock,
         patch(
-            "homeassistant.components.recorder.purge._purge_old_recorder_runs",
+            "inpui.components.recorder.purge._purge_old_recorder_runs",
             side_effect=[mysql_exception, None],
         ),
         patch.object(recorder_mock.engine.dialect, "name", "mysql"),
@@ -254,7 +254,7 @@ async def test_purge_old_states_encounters_operational_error(
     exception = OperationalError("statement", {}, [])
 
     with patch(
-        "homeassistant.components.recorder.purge._purge_old_recorder_runs",
+        "inpui.components.recorder.purge._purge_old_recorder_runs",
         side_effect=exception,
     ):
         await hass.services.async_call(DOMAIN, SERVICE_PURGE, {"keep_days": 0})

@@ -74,7 +74,7 @@ MOCK_CONFIG_RESPONSE = """<?xml version="1.0" encoding="UTF-8"?>
 </configuration>
 """
 
-INTEGRATION = "homeassistant.components.isy994"
+INTEGRATION = "inpui.components.isy994"
 PATCH_CONNECTION = f"{INTEGRATION}.config_flow.Connection.test_connection"
 PATCH_ASYNC_SETUP = f"{INTEGRATION}.async_setup"
 PATCH_ASYNC_SETUP_ENTRY = f"{INTEGRATION}.async_setup_entry"
@@ -687,7 +687,7 @@ async def test_reauth(hass: HomeAssistant) -> None:
     with (
         patch(PATCH_CONNECTION, return_value=MOCK_CONFIG_RESPONSE),
         patch(
-            "homeassistant.components.isy994.async_setup_entry",
+            "inpui.components.isy994.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

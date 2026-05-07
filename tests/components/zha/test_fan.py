@@ -45,7 +45,7 @@ OFF = 0
 def fan_platform_only():
     """Only set up the fan and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.BUTTON,
             Platform.BINARY_SENSOR,

@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sabnzbd.async_setup_entry", return_value=True
+        "inpui.components.sabnzbd.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -26,7 +26,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_sabnzbd() -> Generator[AsyncMock]:
     """Mock the Sabnzbd API."""
     with patch(
-        "homeassistant.components.sabnzbd.helpers.SabnzbdApi", autospec=True
+        "inpui.components.sabnzbd.helpers.SabnzbdApi", autospec=True
     ) as mock_sabnzbd:
         mock = mock_sabnzbd.return_value
         mock.return_value.check_available = True

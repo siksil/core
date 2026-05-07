@@ -53,7 +53,7 @@ SLEEPIQ_CONFIG = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sleepiq.async_setup_entry", return_value=True
+        "inpui.components.sleepiq.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -118,7 +118,7 @@ def mock_asyncsleepiq_single_foundation(
     mock_bed: MagicMock,
 ) -> Generator[MagicMock]:
     """Mock an AsyncSleepIQ object with a single foundation."""
-    with patch("homeassistant.components.sleepiq.AsyncSleepIQ", autospec=True) as mock:
+    with patch("inpui.components.sleepiq.AsyncSleepIQ", autospec=True) as mock:
         client = mock.return_value
         client.beds = {BED_ID: mock_bed}
 
@@ -153,7 +153,7 @@ def mock_asyncsleepiq_single_foundation(
 @pytest.fixture
 def mock_asyncsleepiq(mock_bed: MagicMock) -> Generator[MagicMock]:
     """Mock an AsyncSleepIQ object with a split foundation."""
-    with patch("homeassistant.components.sleepiq.AsyncSleepIQ", autospec=True) as mock:
+    with patch("inpui.components.sleepiq.AsyncSleepIQ", autospec=True) as mock:
         client = mock.return_value
         client.beds = {BED_ID: mock_bed}
 
@@ -232,7 +232,7 @@ async def setup_platform(
     mock_entry.add_to_hass(hass)
 
     if platform:
-        with patch("homeassistant.components.sleepiq.PLATFORMS", [platform]):
+        with patch("inpui.components.sleepiq.PLATFORMS", [platform]):
             assert await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()
 

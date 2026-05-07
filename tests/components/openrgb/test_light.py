@@ -50,7 +50,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 def light_only() -> Generator[None]:
     """Enable only the light platform."""
     with patch(
-        "homeassistant.components.openrgb.PLATFORMS",
+        "inpui.components.openrgb.PLATFORMS",
         [Platform.LIGHT],
     ):
         yield

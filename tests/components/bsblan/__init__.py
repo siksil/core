@@ -13,6 +13,6 @@ async def setup_with_selected_platforms(
 ) -> None:
     """Set up the BSBLAN integration with the selected platforms."""
     config_entry.add_to_hass(hass)
-    with patch("homeassistant.components.bsblan.PLATFORMS", platforms):
+    with patch("inpui.components.bsblan.PLATFORMS", platforms):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()

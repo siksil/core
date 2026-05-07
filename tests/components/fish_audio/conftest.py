@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.fish_audio.async_setup_entry", return_value=True
+        "inpui.components.fish_audio.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -79,11 +79,11 @@ def mock_fishaudio_client() -> Generator[AsyncMock]:
     """Mock AsyncFishAudio client."""
     with (
         patch(
-            "homeassistant.components.fish_audio.AsyncFishAudio",
+            "inpui.components.fish_audio.AsyncFishAudio",
             autospec=True,
         ) as client_mock,
         patch(
-            "homeassistant.components.fish_audio.config_flow.AsyncFishAudio",
+            "inpui.components.fish_audio.config_flow.AsyncFishAudio",
             new=client_mock,
         ),
     ):

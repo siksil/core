@@ -27,7 +27,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 
 _MODEL_INFORMATION = {
     "dmaker.fan.p5": {
-        "patch_class": "homeassistant.components.xiaomi_miio.FanP5",
+        "patch_class": "inpui.components.xiaomi_miio.FanP5",
         "mock_status": FanStatusP5(
             {
                 "roll_angle": 60,
@@ -43,7 +43,7 @@ _MODEL_INFORMATION = {
         ),
     },
     "dmaker.fan.p18": {
-        "patch_class": "homeassistant.components.xiaomi_miio.FanMiot",
+        "patch_class": "inpui.components.xiaomi_miio.FanMiot",
         "mock_status": FanStatusMiot(
             {
                 "swing_mode_angle": 90,
@@ -81,7 +81,7 @@ def setup_device(model_code: str) -> Generator[MagicMock]:
 
     with (
         patch(
-            "homeassistant.components.xiaomi_miio.get_platforms",
+            "inpui.components.xiaomi_miio.get_platforms",
             return_value=[Platform.FAN],
         ),
         patch(model_information["patch_class"]) as mock_fan_cls,

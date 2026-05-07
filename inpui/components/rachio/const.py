@@ -107,4 +107,4 @@ LISTEN_EVENT_TYPES = [
     "RAIN_SENSOR_DETECTION_EVENT",
     "SCHEDULE_STATUS_EVENT",
 ]
-WEBHOOK_CONST_ID = "homeassistant.rachio:"
+WEBHOOK_CONST_ID = "inpui.rachio:"

@@ -96,7 +96,7 @@ async def test_exception_handling(
     )
 
     with patch(
-        "homeassistant.components.websocket_api.connection.current_request",
+        "inpui.components.websocket_api.connection.current_request",
     ) as current_request:
         current_request.get.return_value = mocked_request
         conn = websocket_api.ActiveConnection(

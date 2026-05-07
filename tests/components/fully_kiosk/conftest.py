@@ -42,7 +42,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.fully_kiosk.async_setup_entry", return_value=True
+        "inpui.components.fully_kiosk.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -51,7 +51,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_fully_kiosk_config_flow() -> Generator[MagicMock]:
     """Return a mocked Fully Kiosk client for the config flow."""
     with patch(
-        "homeassistant.components.fully_kiosk.config_flow.FullyKiosk",
+        "inpui.components.fully_kiosk.config_flow.FullyKiosk",
         autospec=True,
     ) as client_mock:
         client = client_mock.return_value
@@ -67,7 +67,7 @@ def mock_fully_kiosk_config_flow() -> Generator[MagicMock]:
 def mock_fully_kiosk() -> Generator[MagicMock]:
     """Return a mocked Fully Kiosk client."""
     with patch(
-        "homeassistant.components.fully_kiosk.coordinator.FullyKiosk",
+        "inpui.components.fully_kiosk.coordinator.FullyKiosk",
         autospec=True,
     ) as client_mock:
         client = client_mock.return_value

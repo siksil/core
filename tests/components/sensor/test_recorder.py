@@ -139,7 +139,7 @@ def setup_recorder(recorder_mock: Recorder) -> Recorder:
 def disable_mariadb_issue() -> None:
     """Disable creating issue about outdated MariaDB version."""
     with patch(
-        "homeassistant.components.recorder.util._async_create_mariadb_range_index_regression_issue"
+        "inpui.components.recorder.util._async_create_mariadb_range_index_regression_issue"
     ):
         yield
 
@@ -2921,7 +2921,7 @@ async def test_compile_hourly_statistics_fails(
     # Wait for the sensor recorder platform to be added
     await async_recorder_block_till_done(hass)
     with patch(
-        "homeassistant.components.sensor.recorder.compile_statistics",
+        "inpui.components.sensor.recorder.compile_statistics",
         side_effect=Exception,
     ):
         do_adhoc_statistics(hass, start=zero)
@@ -6831,7 +6831,7 @@ async def test_validate_statistics_mean_type_changed(
     ]
 
     expected_log_entry = (
-        "homeassistant.components.sensor.recorder",
+        "inpui.components.sensor.recorder",
         logging.WARNING,
         (
             "The statistics mean algorithm for sensor.wind_direction have changed from"

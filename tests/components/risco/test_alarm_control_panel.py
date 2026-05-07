@@ -102,7 +102,7 @@ def two_part_cloud_alarm():
             new_callable=PropertyMock(return_value=partition_mocks),
         ),
         patch(
-            "homeassistant.components.risco.RiscoCloud.get_state",
+            "inpui.components.risco.RiscoCloud.get_state",
             return_value=alarm_mock,
         ),
     ):
@@ -127,11 +127,11 @@ def two_part_local_alarm():
             partition_mocks[1], "name", new_callable=PropertyMock(return_value="Name 1")
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.zones",
+            "inpui.components.risco.RiscoLocal.zones",
             new_callable=PropertyMock(return_value={}),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.partitions",
+            "inpui.components.risco.RiscoLocal.partitions",
             new_callable=PropertyMock(return_value=partition_mocks),
         ),
     ):
@@ -277,7 +277,7 @@ async def _test_cloud_service_call(
     *args: Any,
     **kwargs: Any,
 ) -> None:
-    with patch(f"homeassistant.components.risco.RiscoCloud.{method}") as set_mock:
+    with patch(f"inpui.components.risco.RiscoCloud.{method}") as set_mock:
         await _call_alarm_service(hass, service, entity_id, **kwargs)
         set_mock.assert_awaited_once_with(partition_id, *args)
 
@@ -290,7 +290,7 @@ async def _test_cloud_no_service_call(
     partition_id: int,
     **kwargs: Any,
 ) -> None:
-    with patch(f"homeassistant.components.risco.RiscoCloud.{method}") as set_mock:
+    with patch(f"inpui.components.risco.RiscoCloud.{method}") as set_mock:
         await _call_alarm_service(hass, service, entity_id, **kwargs)
         set_mock.assert_not_awaited()
 
@@ -592,7 +592,7 @@ async def test_local_setup(
     )
     assert device is not None
     assert device.manufacturer == "Risco"
-    with patch("homeassistant.components.risco.RiscoLocal.disconnect") as mock_close:
+    with patch("inpui.components.risco.RiscoLocal.disconnect") as mock_close:
         await hass.config_entries.async_unload(setup_risco_local.entry_id)
         mock_close.assert_awaited_once()
 
@@ -616,7 +616,7 @@ async def _check_local_state(
 def mock_partition_handler():
     """Create a mock for add_partition_handler."""
     with patch(
-        "homeassistant.components.risco.RiscoLocal.add_partition_handler"
+        "inpui.components.risco.RiscoLocal.add_partition_handler"
     ) as mock:
         yield mock
 

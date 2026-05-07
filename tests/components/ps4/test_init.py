@@ -121,10 +121,10 @@ async def test_ps4_integration_setup(hass: HomeAssistant) -> None:
 
 async def test_creating_entry_sets_up_media_player(hass: HomeAssistant) -> None:
     """Test setting up PS4 loads the media player."""
-    mock_flow = "homeassistant.components.ps4.PlayStation4FlowHandler.async_step_user"
+    mock_flow = "inpui.components.ps4.PlayStation4FlowHandler.async_step_user"
     with (
         patch(
-            "homeassistant.components.ps4.media_player.async_setup_entry",
+            "inpui.components.ps4.media_player.async_setup_entry",
             return_value=True,
         ) as mock_setup,
         patch(mock_flow, return_value=MOCK_FLOW_RESULT),
@@ -167,11 +167,11 @@ async def test_config_flow_entry_migrate(
 
     with (
         patch(
-            "homeassistant.util.location.async_detect_location_info",
+            "inpui.util.location.async_detect_location_info",
             return_value=MOCK_LOCATION,
         ),
         patch(
-            "homeassistant.helpers.entity_registry.async_get",
+            "inpui.helpers.entity_registry.async_get",
             return_value=entity_registry,
         ),
     ):
@@ -218,7 +218,7 @@ def test_games_reformat_to_dict(
     """Test old data format is converted to new format."""
     patch_load_json_object.return_value = MOCK_GAMES_DATA_OLD_STR_FORMAT
     with (
-        patch("homeassistant.components.ps4.save_json", side_effect=MagicMock()),
+        patch("inpui.components.ps4.save_json", side_effect=MagicMock()),
         patch("os.path.isfile", return_value=True),
     ):
         mock_games = ps4.load_games(hass, MOCK_ENTRY_ID)
@@ -240,7 +240,7 @@ def test_load_games(hass: HomeAssistant, patch_load_json_object: MagicMock) -> N
     """Test that games are loaded correctly."""
     patch_load_json_object.return_value = MOCK_GAMES
     with (
-        patch("homeassistant.components.ps4.save_json", side_effect=MagicMock()),
+        patch("inpui.components.ps4.save_json", side_effect=MagicMock()),
         patch("os.path.isfile", return_value=True),
     ):
         mock_games = ps4.load_games(hass, MOCK_ENTRY_ID)
@@ -261,7 +261,7 @@ def test_loading_games_returns_dict(
     """Test that loading games always returns a dict."""
     patch_load_json_object.side_effect = HomeAssistantError
     with (
-        patch("homeassistant.components.ps4.save_json", side_effect=MagicMock()),
+        patch("inpui.components.ps4.save_json", side_effect=MagicMock()),
         patch("os.path.isfile", return_value=True),
     ):
         mock_games = ps4.load_games(hass, MOCK_ENTRY_ID)
@@ -274,7 +274,7 @@ async def test_send_command(hass: HomeAssistant) -> None:
     """Test send_command service."""
     await setup_mock_component(hass)
 
-    mock_func = "homeassistant.components.ps4.media_player.PS4Device.async_send_command"
+    mock_func = "inpui.components.ps4.media_player.PS4Device.async_send_command"
 
     mock_devices = hass.data[PS4_DATA].devices
     assert len(mock_devices) == 1

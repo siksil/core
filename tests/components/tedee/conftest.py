@@ -41,7 +41,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.tedee.async_setup_entry", return_value=True
+        "inpui.components.tedee.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -51,10 +51,10 @@ def mock_tedee() -> Generator[MagicMock]:
     """Return a mocked Tedee client."""
     with (
         patch(
-            "homeassistant.components.tedee.coordinator.TedeeLocalClient", autospec=True
+            "inpui.components.tedee.coordinator.TedeeLocalClient", autospec=True
         ) as tedee_mock,
         patch(
-            "homeassistant.components.tedee.config_flow.TedeeLocalClient",
+            "inpui.components.tedee.config_flow.TedeeLocalClient",
             new=tedee_mock,
         ),
     ):

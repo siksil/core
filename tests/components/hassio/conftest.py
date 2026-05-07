@@ -24,7 +24,7 @@ from tests.typing import ClientSessionGenerator
 def disable_security_filter() -> Generator[None]:
     """Disable the security filter to ensure the integration is secure."""
     with patch(
-        "homeassistant.components.http.security_filter.FILTERS",
+        "inpui.components.http.security_filter.FILTERS",
         re.compile("not-matching-anything"),
     ):
         yield

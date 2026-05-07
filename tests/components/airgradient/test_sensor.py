@@ -32,7 +32,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.airgradient.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.airgradient.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -48,7 +48,7 @@ async def test_create_entities(
     mock_airgradient_client.get_current_measures.return_value = Measures.from_json(
         await async_load_fixture(hass, "measures_after_boot.json", DOMAIN)
     )
-    with patch("homeassistant.components.airgradient.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.airgradient.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     assert len(hass.states.async_all()) == 0

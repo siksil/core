@@ -37,7 +37,7 @@ from tests.typing import ClientSessionGenerator
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.telegram_bot.async_setup_entry", return_value=True
+        "inpui.components.telegram_bot.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -89,7 +89,7 @@ async def test_reconfigure_flow_broadcast(
     # test: invalid proxy url
 
     with patch(
-        "homeassistant.components.telegram_bot.config_flow.Bot.get_me",
+        "inpui.components.telegram_bot.config_flow.Bot.get_me",
     ) as mock_bot:
         mock_bot.side_effect = NetworkError("mock invalid proxy")
 
@@ -259,7 +259,7 @@ async def test_reconfigure_flow_logout_failed(
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.log_out",
+        "inpui.components.telegram_bot.bot.Bot.log_out",
         AsyncMock(side_effect=side_effect),
     ):
         # first logout attempt fails
@@ -339,7 +339,7 @@ async def test_create_entry(
     # test: telegram error
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.get_me",
+        "inpui.components.telegram_bot.bot.Bot.get_me",
         side_effect=NetworkError("mock network error"),
     ) as mock_get_me:
         result = await hass.config_entries.flow.async_configure(
@@ -363,7 +363,7 @@ async def test_create_entry(
     # test: valid input, to continue with webhooks step
 
     with patch(
-        "homeassistant.components.telegram_bot.config_flow.Bot.get_me",
+        "inpui.components.telegram_bot.config_flow.Bot.get_me",
         return_value=User(123456, "Testbot", True),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -435,7 +435,7 @@ async def test_create_webhook_entry(
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.telegram_bot.config_flow.Bot.get_me",
+        "inpui.components.telegram_bot.config_flow.Bot.get_me",
         return_value=User(123456, "Testbot", True),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -488,7 +488,7 @@ async def test_reauth_flow(
     # test: reauth invalid api key
 
     with patch(
-        "homeassistant.components.telegram_bot.config_flow.Bot.get_me"
+        "inpui.components.telegram_bot.config_flow.Bot.get_me"
     ) as mock_bot:
         mock_bot.side_effect = InvalidToken("mock invalid token error")
 
@@ -505,11 +505,11 @@ async def test_reauth_flow(
 
     with (
         patch(
-            "homeassistant.components.telegram_bot.config_flow.Bot.get_me",
+            "inpui.components.telegram_bot.config_flow.Bot.get_me",
             return_value=User(123456, "Testbot", True),
         ),
         patch(
-            "homeassistant.components.telegram_bot.webhooks.PushBot",
+            "inpui.components.telegram_bot.webhooks.PushBot",
         ) as mock_pushbot,
     ):
         mock_pushbot.return_value.start_application = AsyncMock()
@@ -603,7 +603,7 @@ async def test_subentry_flow_chat_error(
 
     # test: network error
 
-    with patch("homeassistant.components.telegram_bot.bot.Bot.get_chat") as mock_bot:
+    with patch("inpui.components.telegram_bot.bot.Bot.get_chat") as mock_bot:
         mock_bot.side_effect = NetworkError("mock network error")
 
         result = await hass.config_entries.subentries.async_configure(
@@ -619,7 +619,7 @@ async def test_subentry_flow_chat_error(
 
     # test: chat not found
 
-    with patch("homeassistant.components.telegram_bot.bot.Bot.get_chat") as mock_bot:
+    with patch("inpui.components.telegram_bot.bot.Bot.get_chat") as mock_bot:
         mock_bot.side_effect = BadRequest("mock chat not found")
 
         result = await hass.config_entries.subentries.async_configure(
@@ -718,7 +718,7 @@ async def test_subentry_flow_broadcast_without_update(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.get_updates", return_value=()
+        "inpui.components.telegram_bot.bot.Bot.get_updates", return_value=()
     ):
         result = await hass.config_entries.subentries.async_init(
             (mock_broadcast_config_entry.entry_id, SUBENTRY_TYPE_ALLOWED_CHAT_IDS),
@@ -747,7 +747,7 @@ async def test_subentry_flow_broadcast_update_error(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.get_updates",
+        "inpui.components.telegram_bot.bot.Bot.get_updates",
         side_effect=NetworkError("mock network error"),
     ):
         result = await hass.config_entries.subentries.async_init(
@@ -777,7 +777,7 @@ async def test_duplicate_entry(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.telegram_bot.config_flow.Bot.get_me",
+        "inpui.components.telegram_bot.config_flow.Bot.get_me",
         return_value=User(123456, "Testbot", True),
     ):
         # test: import first entry success

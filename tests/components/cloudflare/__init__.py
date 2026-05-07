@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 ENTRY_CONFIG = {
     CONF_API_TOKEN: "mock-api-token",
     CONF_ZONE: "mock.com",
-    CONF_RECORDS: ["ha.mock.com", "homeassistant.mock.com"],
+    CONF_RECORDS: ["ha.mock.com", "inpui.mock.com"],
 }
 
 ENTRY_OPTIONS = {}
@@ -28,7 +28,7 @@ USER_INPUT = {
 
 USER_INPUT_ZONE = {CONF_ZONE: "mock.com"}
 
-USER_INPUT_RECORDS = {CONF_RECORDS: ["ha.mock.com", "homeassistant.mock.com"]}
+USER_INPUT_RECORDS = {CONF_RECORDS: ["ha.mock.com", "inpui.mock.com"]}
 
 MOCK_ZONE: pycfdns.ZoneModel = {"name": "mock.com", "id": "mock-zone-id"}
 MOCK_ZONE_RECORDS: list[pycfdns.RecordModel] = [
@@ -42,7 +42,7 @@ MOCK_ZONE_RECORDS: list[pycfdns.RecordModel] = [
     {
         "id": "zone-record-id-2",
         "type": "A",
-        "name": "homeassistant.mock.com",
+        "name": "inpui.mock.com",
         "proxied": True,
         "content": "127.0.0.1",
     },
@@ -94,6 +94,6 @@ def get_mock_client() -> Mock:
 def patch_async_setup_entry() -> AsyncMock:
     """Patch the async_setup_entry method and return a mock."""
     return patch(
-        "homeassistant.components.cloudflare.async_setup_entry",
+        "inpui.components.cloudflare.async_setup_entry",
         return_value=True,
     )

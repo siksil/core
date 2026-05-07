@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.altruist.async_setup_entry",
+        "inpui.components.altruist.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -49,11 +49,11 @@ def mock_altruist_client(mock_altruist_device: Mock) -> Generator[AsyncMock]:
     """Return a mock AltruistClient."""
     with (
         patch(
-            "homeassistant.components.altruist.coordinator.AltruistClient",
+            "inpui.components.altruist.coordinator.AltruistClient",
             autospec=True,
         ) as mock_client_class,
         patch(
-            "homeassistant.components.altruist.config_flow.AltruistClient",
+            "inpui.components.altruist.config_flow.AltruistClient",
             new=mock_client_class,
         ),
     ):
@@ -76,7 +76,7 @@ def mock_altruist_client(mock_altruist_device: Mock) -> Generator[AsyncMock]:
 def mock_altruist_client_fails_once(mock_altruist_client: AsyncMock) -> Generator[None]:
     """Patch AltruistClient to fail once and then succeed."""
     with patch(
-        "homeassistant.components.altruist.config_flow.AltruistClient.from_ip_address",
+        "inpui.components.altruist.config_flow.AltruistClient.from_ip_address",
         side_effect=[AltruistError("Connection failed"), mock_altruist_client],
     ):
         yield

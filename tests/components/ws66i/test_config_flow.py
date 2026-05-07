@@ -35,10 +35,10 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ws66i.config_flow.get_ws66i",
+            "inpui.components.ws66i.config_flow.get_ws66i",
         ) as mock_ws66i,
         patch(
-            "homeassistant.components.ws66i.async_setup_entry",
+            "inpui.components.ws66i.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -65,7 +65,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
 
-    with patch("homeassistant.components.ws66i.config_flow.get_ws66i") as mock_ws66i:
+    with patch("inpui.components.ws66i.config_flow.get_ws66i") as mock_ws66i:
         ws66i_instance = mock_ws66i.return_value
         ws66i_instance.open.side_effect = ConnectionError
         result2 = await hass.config_entries.flow.async_configure(
@@ -82,7 +82,7 @@ async def test_form_wrong_ip(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
 
-    with patch("homeassistant.components.ws66i.config_flow.get_ws66i") as mock_ws66i:
+    with patch("inpui.components.ws66i.config_flow.get_ws66i") as mock_ws66i:
         ws66i_instance = mock_ws66i.return_value
         ws66i_instance.zone_status.return_value = None
         result2 = await hass.config_entries.flow.async_configure(
@@ -99,7 +99,7 @@ async def test_generic_exception(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
 
-    with patch("homeassistant.components.ws66i.config_flow.get_ws66i") as mock_ws66i:
+    with patch("inpui.components.ws66i.config_flow.get_ws66i") as mock_ws66i:
         ws66i_instance = mock_ws66i.return_value
         ws66i_instance.open.side_effect = Exception
         result2 = await hass.config_entries.flow.async_configure(
@@ -121,7 +121,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     )
     config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.ws66i.get_ws66i") as mock_ws66i:
+    with patch("inpui.components.ws66i.get_ws66i") as mock_ws66i:
         ws66i_instance = mock_ws66i.return_value
         ws66i_instance.zone_status.return_value = AttrDict(
             power=True, volume=0, mute=True, source=1, treble=0, bass=0, balance=10

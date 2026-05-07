@@ -42,7 +42,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.ipp.async_setup_entry", return_value=True
+        "inpui.components.ipp.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -65,7 +65,7 @@ def mock_ipp_config_flow(mock_printer: Printer) -> Generator[MagicMock]:
     """Return a mocked IPP client."""
 
     with patch(
-        "homeassistant.components.ipp.config_flow.IPP", autospec=True
+        "inpui.components.ipp.config_flow.IPP", autospec=True
     ) as ipp_mock:
         client = ipp_mock.return_value
         client.printer.return_value = mock_printer
@@ -77,7 +77,7 @@ def mock_ipp(mock_printer: Printer) -> Generator[MagicMock]:
     """Return a mocked IPP client."""
 
     with patch(
-        "homeassistant.components.ipp.coordinator.IPP", autospec=True
+        "inpui.components.ipp.coordinator.IPP", autospec=True
     ) as ipp_mock:
         client = ipp_mock.return_value
         client.printer.return_value = mock_printer

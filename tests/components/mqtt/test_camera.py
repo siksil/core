@@ -301,7 +301,7 @@ async def test_discovery_update_unchanged_camera(
     """Test update of discovered camera."""
     data1 = '{ "name": "Beer", "topic": "test_topic"}'
     with patch(
-        "homeassistant.components.mqtt.camera.MqttCamera.discovery_update"
+        "inpui.components.mqtt.camera.MqttCamera.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, camera.DOMAIN, data1, discovery_update

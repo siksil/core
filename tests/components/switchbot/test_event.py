@@ -65,7 +65,7 @@ async def test_keypad_vision_pro_doorbell_event(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.switchbot.sensor.switchbot.SwitchbotKeypadVision.update",
+        "inpui.components.switchbot.sensor.switchbot.SwitchbotKeypadVision.update",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

@@ -70,11 +70,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
+            "inpui.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
             new_callable=AsyncMock,
         ),
         patch(
-            "homeassistant.components.openai_conversation.async_setup_entry",
+            "inpui.components.openai_conversation.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -136,7 +136,7 @@ async def test_duplicate_entry(hass: HomeAssistant) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
+        "inpui.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -190,7 +190,7 @@ async def test_creating_conversation_subentry_not_loaded(
     """Test creating a conversation subentry when entry is not loaded."""
     await hass.config_entries.async_unload(mock_config_entry.entry_id)
     with patch(
-        "homeassistant.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
+        "inpui.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
         return_value=[],
     ):
@@ -477,7 +477,7 @@ async def test_form_invalid_auth(hass: HomeAssistant, side_effect, error) -> Non
     )
 
     with patch(
-        "homeassistant.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
+        "inpui.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
         side_effect=side_effect,
     ):
@@ -1365,11 +1365,11 @@ async def test_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
+            "inpui.components.openai_conversation.config_flow.openai.resources.models.AsyncModels.list",
             new_callable=AsyncMock,
         ),
         patch(
-            "homeassistant.components.openai_conversation.async_setup_entry",
+            "inpui.components.openai_conversation.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -1414,7 +1414,7 @@ async def test_reconfigure_conversation_subentry_llm_api_schema(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.openai_conversation.config_flow.openai.AsyncOpenAI.models",
+        "inpui.components.openai_conversation.config_flow.openai.AsyncOpenAI.models",
     ):
         subentry_flow = await mock_config_entry.start_subentry_reconfigure_flow(
             hass, subentry.subentry_id

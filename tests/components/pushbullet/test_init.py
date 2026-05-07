@@ -29,7 +29,7 @@ async def test_async_setup_entry_success(
     assert entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.pushbullet.api.PushBulletNotificationProvider.start"
+        "inpui.components.pushbullet.api.PushBulletNotificationProvider.start"
     ) as mock_start:
         hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
@@ -44,7 +44,7 @@ async def test_setup_entry_failed_invalid_key(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.pushbullet.PushBullet",
+        "inpui.components.pushbullet.PushBullet",
         side_effect=InvalidKeyError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -60,7 +60,7 @@ async def test_setup_entry_failed_conn_error(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.pushbullet.PushBullet",
+        "inpui.components.pushbullet.PushBullet",
         side_effect=PushbulletError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

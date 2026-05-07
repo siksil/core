@@ -414,7 +414,7 @@ async def test_options_flow_zigbee_to_thread_zha_configured(
 
     # Pretend ZHA is using the stick
     with patch(
-        "homeassistant.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+        "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
         return_value=[
             FirmwareInfo(
                 device=TEST_DEVICE,
@@ -470,7 +470,7 @@ async def test_options_flow_thread_to_zigbee_otbr_configured(
 
     # Pretend OTBR is using the stick
     with patch(
-        "homeassistant.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+        "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
         return_value=[
             FirmwareInfo(
                 device=TEST_DEVICE,

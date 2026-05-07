@@ -46,7 +46,7 @@ Default_Response = zcl_f.GENERAL_COMMANDS[zcl_f.GeneralCommand.Default_Response]
 def cover_platform_only():
     """Only set up the cover and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.COVER,
             Platform.DEVICE_TRACKER,

@@ -30,11 +30,11 @@ def mock_sanix():
     fixture = load_json_object_fixture("get_measurements.json", DOMAIN)
     with (
         patch(
-            "homeassistant.components.sanix.config_flow.Sanix",
+            "inpui.components.sanix.config_flow.Sanix",
             autospec=True,
         ) as mock_sanix_api,
         patch(
-            "homeassistant.components.sanix.Sanix",
+            "inpui.components.sanix.Sanix",
             new=mock_sanix_api,
         ),
     ):
@@ -70,7 +70,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sanix.async_setup_entry",
+        "inpui.components.sanix.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

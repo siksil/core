@@ -47,7 +47,7 @@ async def test_setup_raises_config_entry_not_ready(
 ) -> None:
     """Test that setup raises ConfigEntryNotReady on device/request exceptions."""
     with patch(
-        "homeassistant.components.wiim.async_create_wiim_device",
+        "inpui.components.wiim.async_create_wiim_device",
         side_effect=exc,
     ):
         await setup_integration(hass, mock_config_entry)

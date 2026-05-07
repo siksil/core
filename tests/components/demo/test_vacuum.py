@@ -52,7 +52,7 @@ ENTITY_VACUUM_NONE = f"{VACUUM_DOMAIN}.{DEMO_VACUUM_NONE}".replace(" ", "_").low
 async def vacuum_only() -> None:
     """Enable only the datetime platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.VACUUM],
     ):
         yield

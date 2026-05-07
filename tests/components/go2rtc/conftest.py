@@ -27,7 +27,7 @@ from tests.common import (
     setup_test_component_platform,
 )
 
-GO2RTC_PATH = "homeassistant.components.go2rtc"
+GO2RTC_PATH = "inpui.components.go2rtc"
 
 
 @pytest.fixture
@@ -35,9 +35,9 @@ def rest_client() -> Generator[AsyncMock]:
     """Mock a go2rtc rest client."""
     with (
         patch(
-            "homeassistant.components.go2rtc.Go2RtcRestClient", autospec=True
+            "inpui.components.go2rtc.Go2RtcRestClient", autospec=True
         ) as mock_client,
-        patch("homeassistant.components.go2rtc.server.Go2RtcRestClient", mock_client),
+        patch("inpui.components.go2rtc.server.Go2RtcRestClient", mock_client),
     ):
         client = mock_client.return_value
         client.schemes = schemes = Mock(spec_set=_SchemesClient)
@@ -70,7 +70,7 @@ def rest_client() -> Generator[AsyncMock]:
 def ws_client() -> Generator[Mock]:
     """Mock a go2rtc websocket client."""
     with patch(
-        "homeassistant.components.go2rtc.Go2RtcWsClient", autospec=True
+        "inpui.components.go2rtc.Go2RtcWsClient", autospec=True
     ) as ws_client_mock:
         yield ws_client_mock.return_value
 
@@ -140,7 +140,7 @@ def is_docker_env_fixture() -> bool:
 def mock_is_docker_env(is_docker_env: bool) -> Generator[Mock]:
     """Mock is_docker_env."""
     with patch(
-        "homeassistant.components.go2rtc.is_docker_env",
+        "inpui.components.go2rtc.is_docker_env",
         return_value=is_docker_env,
     ) as mock_is_docker_env:
         yield mock_is_docker_env
@@ -156,7 +156,7 @@ def go2rtc_binary_fixture() -> str:
 def mock_get_binary(go2rtc_binary: str) -> Generator[Mock]:
     """Mock _get_binary."""
     with patch(
-        "homeassistant.components.go2rtc.shutil.which",
+        "inpui.components.go2rtc.shutil.which",
         return_value=go2rtc_binary,
     ) as mock_which:
         yield mock_which
@@ -237,7 +237,7 @@ def server_dir(tmp_path: Path) -> Generator[Path]:
     server_dir = tmp_path / "go2rtc"
     server_dir.mkdir()
     with patch(
-        "homeassistant.components.go2rtc.mkdtemp",
+        "inpui.components.go2rtc.mkdtemp",
         return_value=str(server_dir),
     ):
         yield server_dir

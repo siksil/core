@@ -62,12 +62,12 @@ def mock_solarlog_connector():
 
     with (
         patch(
-            "homeassistant.components.solarlog.SolarLogConnector",
+            "inpui.components.solarlog.SolarLogConnector",
             autospec=True,
             return_value=mock_solarlog_api,
         ),
         patch(
-            "homeassistant.components.solarlog.config_flow.SolarLogConnector",
+            "inpui.components.solarlog.config_flow.SolarLogConnector",
             autospec=True,
             return_value=mock_solarlog_api,
         ),
@@ -79,7 +79,7 @@ def mock_solarlog_connector():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.solarlog.async_setup_entry", return_value=True
+        "inpui.components.solarlog.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -88,7 +88,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_test_connection():
     """Mock a successful _test_connection."""
     with patch(
-        "homeassistant.components.solarlog.config_flow.SolarLogConfigFlow._test_connection",
+        "inpui.components.solarlog.config_flow.SolarLogConfigFlow._test_connection",
         return_value=True,
     ):
         yield

@@ -327,8 +327,8 @@ async def test_stream_retries(
 
     with (
         patch("av.open") as av_open,
-        patch("homeassistant.components.stream.Stream._set_state", set_state_wrapper),
-        patch("homeassistant.components.stream.STREAM_RESTART_INCREMENT", 0),
+        patch("inpui.components.stream.Stream._set_state", set_state_wrapper),
+        patch("inpui.components.stream.STREAM_RESTART_INCREMENT", 0),
     ):
         av_open.side_effect = av_open_side_effect
         # Request stream. Enable retries which are disabled by default in tests.
@@ -545,7 +545,7 @@ async def test_remove_incomplete_segment_on_exit(
     assert len(segments) == 3
     assert not segments[-1].complete
     stream_worker_sync.resume()
-    with patch("homeassistant.components.stream.Stream.remove_provider"):
+    with patch("inpui.components.stream.Stream.remove_provider"):
         # Patch remove_provider so the deque is not cleared
         stream._thread_quit.set()
         stream._thread.join()

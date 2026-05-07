@@ -226,11 +226,11 @@ async def reload_satellite(
     """Reload config entry with satellite info and returns new device."""
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.run"
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.run"
         ) as _run_mock,
     ):
         # _run_mock: satellite task does not actually run

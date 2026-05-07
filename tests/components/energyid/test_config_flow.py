@@ -35,7 +35,7 @@ MAX_POLLING_ATTEMPTS = 60
 def mock_polling_interval_fixture() -> Generator[int]:
     """Mock polling interval to 0 for faster tests."""
     with patch(
-        "homeassistant.components.energyid.config_flow.POLLING_INTERVAL", new=0
+        "inpui.components.energyid.config_flow.POLLING_INTERVAL", new=0
     ) as polling_interval:
         yield polling_interval
 
@@ -48,7 +48,7 @@ async def test_config_flow_user_step_success_claimed(hass: HomeAssistant) -> Non
     mock_client.recordName = TEST_RECORD_NAME
 
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -102,10 +102,10 @@ async def test_config_flow_auth_and_claim_step_success(hass: HomeAssistant) -> N
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             side_effect=mock_webhook_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -143,11 +143,11 @@ async def test_config_flow_claim_timeout(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             return_value=mock_unclaimed_client,
         ),
         patch(
-            "homeassistant.components.energyid.config_flow.asyncio.sleep",
+            "inpui.components.energyid.config_flow.asyncio.sleep",
         ) as mock_sleep,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -205,15 +205,15 @@ async def test_duplicate_unique_id_prevented(hass: HomeAssistant) -> None:
     # Mock to return the same device_id that already exists
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             return_value=mock_client,
         ),
         patch(
-            "homeassistant.components.energyid.config_flow.async_get_instance_id",
+            "inpui.components.energyid.config_flow.async_get_instance_id",
             return_value="test_instance",
         ),
         patch(
-            "homeassistant.components.energyid.config_flow.asyncio.get_event_loop"
+            "inpui.components.energyid.config_flow.asyncio.get_event_loop"
         ) as mock_loop,
     ):
         # Force the same device_id to be generated
@@ -259,7 +259,7 @@ async def test_multiple_different_devices_allowed(hass: HomeAssistant) -> None:
     mock_client.recordName = TEST_RECORD_NAME
 
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         return_value=mock_client,
     ):
         # Check initial result
@@ -294,7 +294,7 @@ async def test_multiple_different_devices_allowed(hass: HomeAssistant) -> None:
 async def test_config_flow_connection_error(hass: HomeAssistant) -> None:
     """Test connection error during authentication."""
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient.authenticate",
+        "inpui.components.energyid.config_flow.WebhookClient.authenticate",
         side_effect=ClientError("Connection failed"),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -318,7 +318,7 @@ async def test_config_flow_connection_error(hass: HomeAssistant) -> None:
 async def test_config_flow_unexpected_error(hass: HomeAssistant) -> None:
     """Test unexpected error during authentication."""
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient.authenticate",
+        "inpui.components.energyid.config_flow.WebhookClient.authenticate",
         side_effect=Exception("Unexpected error"),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -360,7 +360,7 @@ async def test_config_flow_external_step_claimed_during_display(
         return mock_client
 
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         side_effect=create_mock_client,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -399,7 +399,7 @@ async def test_config_flow_auth_and_claim_step_not_claimed(hass: HomeAssistant) 
     mock_client.authenticate = AsyncMock(return_value=False)
     mock_client.get_claim_info.return_value = {"claim_url": "http://claim.me"}
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -448,7 +448,7 @@ async def test_config_flow_reauth_success(
     mock_client.recordName = "My Test Site"
 
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         return_value=mock_client,
     ):
         # Start reauth flow
@@ -500,7 +500,7 @@ async def test_config_flow_client_response_error(
     )
 
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -543,10 +543,10 @@ async def test_config_flow_reauth_needs_claim(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             return_value=mock_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -604,10 +604,10 @@ async def test_polling_stops_on_invalid_auth_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             side_effect=mock_webhook_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -652,10 +652,10 @@ async def test_polling_stops_on_cannot_connect_error(hass: HomeAssistant) -> Non
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             side_effect=mock_webhook_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -704,10 +704,10 @@ async def test_auth_and_claim_subsequent_auth_error(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             side_effect=mock_webhook_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -760,7 +760,7 @@ async def test_reauth_with_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.energyid.config_flow.WebhookClient",
+        "inpui.components.energyid.config_flow.WebhookClient",
         return_value=mock_client,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -812,10 +812,10 @@ async def test_polling_cancellation_on_auth_failure(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             side_effect=mock_webhook_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -885,10 +885,10 @@ async def test_polling_cancellation_on_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.energyid.config_flow.WebhookClient",
+            "inpui.components.energyid.config_flow.WebhookClient",
             side_effect=mock_webhook_client,
         ),
-        patch("homeassistant.components.energyid.config_flow.asyncio.sleep"),
+        patch("inpui.components.energyid.config_flow.asyncio.sleep"),
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}

@@ -89,7 +89,7 @@ async def test_setup_entry_encrypted_missing_device_info_none(
     mock_remote = get_mock_remote(device_info=None)
 
     with patch(
-        "homeassistant.components.panasonic_viera.RemoteControl",
+        "inpui.components.panasonic_viera.RemoteControl",
         return_value=mock_remote,
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)
@@ -174,7 +174,7 @@ async def test_setup_entry_unencrypted_missing_device_info_none(
     mock_remote = get_mock_remote(device_info=None)
 
     with patch(
-        "homeassistant.components.panasonic_viera.RemoteControl",
+        "inpui.components.panasonic_viera.RemoteControl",
         return_value=mock_remote,
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)
@@ -199,7 +199,7 @@ async def test_setup_config_flow_initiated(hass: HomeAssistant) -> None:
     mock_remote.get_device_info = Mock(side_effect=OSError)
 
     with patch(
-        "homeassistant.components.panasonic_viera.config_flow.RemoteControl",
+        "inpui.components.panasonic_viera.config_flow.RemoteControl",
         return_value=mock_remote,
     ):
         assert (

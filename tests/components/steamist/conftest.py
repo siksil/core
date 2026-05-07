@@ -10,7 +10,7 @@ import pytest
 def mock_aio_discovery() -> Generator[MagicMock]:
     """Mock AIODiscovery30303."""
     with patch(
-        "homeassistant.components.steamist.discovery.AIODiscovery30303"
+        "inpui.components.steamist.discovery.AIODiscovery30303"
     ) as mock_aio_discovery:
         mock_aio_discovery.return_value.async_scan = AsyncMock()
         yield mock_aio_discovery

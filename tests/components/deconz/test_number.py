@@ -85,7 +85,7 @@ async def test_number_entities(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of number entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.NUMBER]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

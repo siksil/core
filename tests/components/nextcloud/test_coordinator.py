@@ -39,7 +39,7 @@ async def test_data_update(
 
     with (
         patch(
-            "homeassistant.components.nextcloud.NextcloudMonitor", spec=NextcloudMonitor
+            "inpui.components.nextcloud.NextcloudMonitor", spec=NextcloudMonitor
         ) as mock_nextcloud_monitor,
     ):
         mock_nextcloud_monitor.return_value.update = Mock(

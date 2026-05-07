@@ -33,7 +33,7 @@ async def test_flow_user(hass: HomeAssistant, anova_api: AnovaApi) -> None:
 async def test_flow_wrong_login(hass: HomeAssistant) -> None:
     """Test incorrect login throwing error."""
     with patch(
-        "homeassistant.components.anova.config_flow.AnovaApi.authenticate",
+        "inpui.components.anova.config_flow.AnovaApi.authenticate",
         side_effect=InvalidLogin,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -51,7 +51,7 @@ async def test_flow_wrong_login(hass: HomeAssistant) -> None:
 async def test_flow_unknown_error(hass: HomeAssistant) -> None:
     """Test unknown error throwing error."""
     with patch(
-        "homeassistant.components.anova.config_flow.AnovaApi.authenticate",
+        "inpui.components.anova.config_flow.AnovaApi.authenticate",
         side_effect=Exception(),
     ):
         result = await hass.config_entries.flow.async_init(

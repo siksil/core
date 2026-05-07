@@ -73,8 +73,8 @@ async def setup_integration(
     entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.openhome.PLATFORMS", [Platform.UPDATE]),
-        patch("homeassistant.components.openhome.Device", MagicMock()) as mock_device,
+        patch("inpui.components.openhome.PLATFORMS", [Platform.UPDATE]),
+        patch("inpui.components.openhome.Device", MagicMock()) as mock_device,
     ):
         mock_device.return_value.init = AsyncMock()
         mock_device.return_value.uuid = MagicMock(return_value="uuid")

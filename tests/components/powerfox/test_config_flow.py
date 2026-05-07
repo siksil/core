@@ -185,7 +185,7 @@ async def test_step_reauth(
     assert result.get("step_id") == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.powerfox.config_flow.Powerfox",
+        "inpui.components.powerfox.config_flow.Powerfox",
         autospec=True,
     ):
         result = await hass.config_entries.flow.async_configure(

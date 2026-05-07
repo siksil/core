@@ -25,7 +25,7 @@ async def test_all_binary_sensors(
 ) -> None:
     """Test that all binary sensors are working."""
     with patch(
-        "homeassistant.components.hydrawise.PLATFORMS",
+        "inpui.components.hydrawise.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         config_entry = await mock_add_config_entry()

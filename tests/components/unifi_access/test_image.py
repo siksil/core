@@ -39,7 +39,7 @@ def _get_ws_handlers(
 def mock_getrandbits() -> Generator[None]:
     """Mock image access token which normally is randomized."""
     with patch(
-        "homeassistant.components.image.SystemRandom.getrandbits",
+        "inpui.components.image.SystemRandom.getrandbits",
         return_value=1,
     ):
         yield
@@ -53,7 +53,7 @@ async def test_image_entities(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test image entities are created with expected state."""
-    with patch("homeassistant.components.unifi_access.PLATFORMS", [Platform.IMAGE]):
+    with patch("inpui.components.unifi_access.PLATFORMS", [Platform.IMAGE]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

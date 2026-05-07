@@ -24,7 +24,7 @@ async def test_event_entity(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test automatic backup event entity."""
-    with patch("homeassistant.components.backup.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.backup.PLATFORMS", [Platform.EVENT]):
         await setup_backup_integration(hass, with_hassio=False)
         await hass.async_block_till_done(wait_background_tasks=True)
 
@@ -37,7 +37,7 @@ async def test_event_entity_backup_completed(
     hass_ws_client: WebSocketGenerator,
 ) -> None:
     """Test completed automatic backup event."""
-    with patch("homeassistant.components.backup.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.backup.PLATFORMS", [Platform.EVENT]):
         await setup_backup_integration(hass, with_hassio=False)
         await hass.async_block_till_done(wait_background_tasks=True)
 
@@ -69,7 +69,7 @@ async def test_event_entity_backup_failed(
     create_backup: AsyncMock,
 ) -> None:
     """Test failed automatic backup event."""
-    with patch("homeassistant.components.backup.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.backup.PLATFORMS", [Platform.EVENT]):
         await setup_backup_integration(hass, with_hassio=False)
         await hass.async_block_till_done(wait_background_tasks=True)
 

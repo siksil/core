@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def auth_client():
     """Mock a pycync.Auth client."""
     with patch(
-        "homeassistant.components.cync.config_flow.Auth", autospec=True
+        "inpui.components.cync.config_flow.Auth", autospec=True
     ) as sc_class_mock:
         client_mock = sc_class_mock.return_value
         client_mock.user = MOCKED_USER
@@ -38,11 +38,11 @@ def cync_client():
     """Mock a pycync.Cync client."""
     with (
         patch(
-            "homeassistant.components.cync.coordinator.Cync",
+            "inpui.components.cync.coordinator.Cync",
             spec=Cync,
         ) as cync_mock,
         patch(
-            "homeassistant.components.cync.Cync",
+            "inpui.components.cync.Cync",
             new=cync_mock,
         ),
     ):
@@ -69,7 +69,7 @@ def cync_client():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.cync.async_setup_entry", return_value=True
+        "inpui.components.cync.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

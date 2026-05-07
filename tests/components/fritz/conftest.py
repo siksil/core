@@ -116,7 +116,7 @@ def fc_data_mock() -> dict[str, dict[str, Any]]:
 def fc_class_mock(fc_data: dict[str, dict[str, Any]]) -> Generator[MagicMock]:
     """Fixture that sets up a mocked FritzConnection class."""
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzConnectionCached",
+        "inpui.components.fritz.coordinator.FritzConnectionCached",
         autospec=True,
     ) as result:
         result.return_value = FritzConnectionMock(fc_data)
@@ -128,7 +128,7 @@ def fh_class_mock() -> Generator[type[FritzHosts]]:
     """Fixture that sets up a mocked FritzHosts class."""
     with (
         patch(
-            "homeassistant.components.fritz.coordinator.FritzHosts",
+            "inpui.components.fritz.coordinator.FritzHosts",
             new=FritzHosts,
         ) as result,
         patch.object(
@@ -150,7 +150,7 @@ def fs_class_mock() -> Generator[type[FritzStatus]]:
     """Fixture that sets up a mocked FritzStatus class."""
     with (
         patch(
-            "homeassistant.components.fritz.coordinator.FritzStatus",
+            "inpui.components.fritz.coordinator.FritzStatus",
             new=FritzStatus,
         ) as result,
         patch.object(

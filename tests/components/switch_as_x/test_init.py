@@ -172,7 +172,7 @@ async def test_entity_registry_events(
 
     # Check changing name does not reload the config entry
     with patch(
-        "homeassistant.components.switch_as_x.async_unload_entry",
+        "inpui.components.switch_as_x.async_unload_entry",
     ) as mock_setup_entry:
         entity_registry.async_update_entity(new_switch_entity_id, name="New name")
         await hass.async_block_till_done()
@@ -251,7 +251,7 @@ async def test_device_registry_config_entry_1(
     # Remove the wrapped switch's config entry from the device, this removes the
     # wrapped switch
     with patch(
-        "homeassistant.components.switch_as_x.async_unload_entry",
+        "inpui.components.switch_as_x.async_unload_entry",
         wraps=switch_as_x.async_unload_entry,
     ) as mock_setup_entry:
         device_registry.async_update_device(
@@ -332,7 +332,7 @@ async def test_device_registry_config_entry_2(
 
     # Remove the wrapped switch from the device
     with patch(
-        "homeassistant.components.switch_as_x.async_unload_entry",
+        "inpui.components.switch_as_x.async_unload_entry",
         wraps=switch_as_x.async_unload_entry,
     ) as mock_setup_entry:
         entity_registry.async_update_entity(
@@ -416,7 +416,7 @@ async def test_device_registry_config_entry_3(
 
     # Move the wrapped switch to another device
     with patch(
-        "homeassistant.components.switch_as_x.async_unload_entry",
+        "inpui.components.switch_as_x.async_unload_entry",
         wraps=switch_as_x.async_unload_entry,
     ) as mock_setup_entry:
         entity_registry.async_update_entity(

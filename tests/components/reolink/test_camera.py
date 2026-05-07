@@ -28,7 +28,7 @@ async def test_camera(
     reolink_host: MagicMock,
 ) -> None:
     """Test camera entity with fluent."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -58,7 +58,7 @@ async def test_camera_no_stream_source(
     reolink_host.model = TEST_DUO_MODEL
     reolink_host.get_stream_source.return_value = None
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

@@ -16,9 +16,9 @@ from inpui.setup import async_setup_component
 def mock_ssdp():
     """Mock ssdp."""
     with (
-        patch("homeassistant.components.ssdp.Scanner.async_scan"),
-        patch("homeassistant.components.ssdp.Server.async_start"),
-        patch("homeassistant.components.ssdp.Server.async_stop"),
+        patch("inpui.components.ssdp.Scanner.async_scan"),
+        patch("inpui.components.ssdp.Server.async_start"),
+        patch("inpui.components.ssdp.Server.async_stop"),
     ):
         yield
 
@@ -26,7 +26,7 @@ def mock_ssdp():
 @pytest.fixture(autouse=True)
 def recorder_url_mock():
     """Mock recorder url."""
-    with patch("homeassistant.components.recorder.DEFAULT_URL", "sqlite://"):
+    with patch("inpui.components.recorder.DEFAULT_URL", "sqlite://"):
         yield
 
 

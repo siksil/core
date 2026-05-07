@@ -15,7 +15,7 @@ async def test_import_cannot_connect_pymata(hass: HomeAssistant) -> None:
     """Test we fail with an invalid board."""
 
     with patch(
-        "homeassistant.components.firmata.board.PymataExpress.start_aio",
+        "inpui.components.firmata.board.PymataExpress.start_aio",
         side_effect=RuntimeError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -32,7 +32,7 @@ async def test_import_cannot_connect_serial(hass: HomeAssistant) -> None:
     """Test we fail with an invalid board."""
 
     with patch(
-        "homeassistant.components.firmata.board.PymataExpress.start_aio",
+        "inpui.components.firmata.board.PymataExpress.start_aio",
         side_effect=serial.SerialException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -49,7 +49,7 @@ async def test_import_cannot_connect_serial_timeout(hass: HomeAssistant) -> None
     """Test we fail with an invalid board."""
 
     with patch(
-        "homeassistant.components.firmata.board.PymataExpress.start_aio",
+        "inpui.components.firmata.board.PymataExpress.start_aio",
         side_effect=serial.SerialTimeoutException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -66,12 +66,12 @@ async def test_import(hass: HomeAssistant) -> None:
     """Test we create an entry from config."""
 
     with (
-        patch("homeassistant.components.firmata.board.PymataExpress", autospec=True),
+        patch("inpui.components.firmata.board.PymataExpress", autospec=True),
         patch(
-            "homeassistant.components.firmata.async_setup", return_value=True
+            "inpui.components.firmata.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.firmata.async_setup_entry", return_value=True
+            "inpui.components.firmata.async_setup_entry", return_value=True
         ) as mock_setup_entry,
     ):
         result = await hass.config_entries.flow.async_init(

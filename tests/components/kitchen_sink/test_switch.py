@@ -24,7 +24,7 @@ SWITCH_ENTITY_IDS = ["switch.outlet_1", "switch.outlet_2"]
 def switch_only() -> Generator[None]:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.SWITCH],
     ):
         yield

@@ -19,7 +19,7 @@ async def test_sensors(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all sensors created by the integration."""
-    with patch("homeassistant.components.openuv.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.openuv.PLATFORMS", [Platform.SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 

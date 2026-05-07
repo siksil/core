@@ -30,7 +30,7 @@ def mock_current_request_mock():
     """Mock the current request."""
     mock_current_request = Mock(name="mock_request")
     with patch(
-        "homeassistant.helpers.network.http.current_request",
+        "inpui.helpers.network.http.current_request",
         Mock(get=mock_current_request),
     ):
         yield mock_current_request
@@ -63,7 +63,7 @@ async def test_get_url_internal(hass: HomeAssistant) -> None:
         _get_internal_url(hass, require_current_request=True)
 
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="example.local"
+        "inpui.helpers.network._get_request_host", return_value="example.local"
     ):
         assert (
             _get_internal_url(hass, require_current_request=True)
@@ -80,7 +80,7 @@ async def test_get_url_internal(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="no_match.example.local",
         ),
         pytest.raises(NoURLAvailableError),
@@ -162,7 +162,7 @@ async def test_get_url_internal(hass: HomeAssistant) -> None:
         _get_internal_url(hass, allow_ip=False)
 
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="192.168.0.1"
+        "inpui.helpers.network._get_request_host", return_value="192.168.0.1"
     ):
         assert (
             _get_internal_url(hass, require_current_request=True)
@@ -266,7 +266,7 @@ async def test_get_url_external(hass: HomeAssistant) -> None:
         _get_external_url(hass, require_current_request=True)
 
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="example.com"
+        "inpui.helpers.network._get_request_host", return_value="example.com"
     ):
         assert (
             _get_external_url(hass, require_current_request=True)
@@ -283,7 +283,7 @@ async def test_get_url_external(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="no_match.example.com",
         ),
         pytest.raises(NoURLAvailableError),
@@ -352,7 +352,7 @@ async def test_get_url_external(hass: HomeAssistant) -> None:
         _get_external_url(hass, require_ssl=True)
 
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="192.168.0.1"
+        "inpui.helpers.network._get_request_host", return_value="192.168.0.1"
     ):
         assert (
             _get_external_url(hass, require_current_request=True)
@@ -369,7 +369,7 @@ async def test_get_url_external(hass: HomeAssistant) -> None:
         _get_external_url(hass, require_cloud=True)
 
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         hass.config.components.add("cloud")
@@ -384,7 +384,7 @@ async def test_get_cloud_url(hass: HomeAssistant) -> None:
     hass.config.components.add("cloud")
 
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         assert _get_cloud_url(hass) == "https://example.nabu.casa"
@@ -393,7 +393,7 @@ async def test_get_cloud_url(hass: HomeAssistant) -> None:
             _get_cloud_url(hass, require_current_request=True)
 
         with patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="example.nabu.casa",
         ):
             assert (
@@ -403,7 +403,7 @@ async def test_get_cloud_url(hass: HomeAssistant) -> None:
 
         with (
             patch(
-                "homeassistant.helpers.network._get_request_host",
+                "inpui.helpers.network._get_request_host",
                 return_value="no_match.nabu.casa",
             ),
             pytest.raises(NoURLAvailableError),
@@ -412,7 +412,7 @@ async def test_get_cloud_url(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.cloud.async_remote_ui_url",
+            "inpui.components.cloud.async_remote_ui_url",
             side_effect=cloud.CloudNotAvailable,
         ),
         pytest.raises(NoURLAvailableError),
@@ -436,7 +436,7 @@ async def test_get_external_url_cloud_fallback(hass: HomeAssistant) -> None:
     # Add Cloud to the previous test
     hass.config.components.add("cloud")
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         assert _get_external_url(hass, allow_cloud=False) == "http://1.1.1.1:8123"
@@ -461,7 +461,7 @@ async def test_get_external_url_cloud_fallback(hass: HomeAssistant) -> None:
     # Add Cloud to the previous test
     hass.config.components.add("cloud")
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         assert _get_external_url(hass, allow_cloud=False) == "https://example.com"
@@ -535,10 +535,10 @@ async def test_get_url(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="example.com",
         ),
-        patch("homeassistant.helpers.http.current_request"),
+        patch("inpui.helpers.http.current_request"),
     ):
         assert get_url(hass, require_current_request=True) == "https://example.com"
         assert (
@@ -551,10 +551,10 @@ async def test_get_url(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="example.local",
         ),
-        patch("homeassistant.helpers.http.current_request"),
+        patch("inpui.helpers.http.current_request"),
     ):
         assert get_url(hass, require_current_request=True) == "http://example.local"
 
@@ -566,7 +566,7 @@ async def test_get_url(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="no_match.example.com",
         ),
         pytest.raises(NoURLAvailableError),
@@ -592,7 +592,7 @@ async def test_get_request_host_with_port(hass: HomeAssistant) -> None:
     with pytest.raises(NoURLAvailableError):
         _get_request_host()
 
-    with patch("homeassistant.helpers.http.current_request") as mock_request_context:
+    with patch("inpui.helpers.http.current_request") as mock_request_context:
         mock_request = Mock()
         mock_request.headers = CIMultiDictProxy(
             CIMultiDict({hdrs.HOST: "example.com:8123"})
@@ -609,7 +609,7 @@ async def test_get_request_host_without_port(hass: HomeAssistant) -> None:
     with pytest.raises(NoURLAvailableError):
         _get_request_host()
 
-    with patch("homeassistant.helpers.http.current_request") as mock_request_context:
+    with patch("inpui.helpers.http.current_request") as mock_request_context:
         mock_request = Mock()
         mock_request.headers = CIMultiDictProxy(CIMultiDict({hdrs.HOST: "example.com"}))
         mock_request.url = URL("http://example.com/test/request")
@@ -624,7 +624,7 @@ async def test_get_request_ipv6_address(hass: HomeAssistant) -> None:
     with pytest.raises(NoURLAvailableError):
         _get_request_host()
 
-    with patch("homeassistant.helpers.http.current_request") as mock_request_context:
+    with patch("inpui.helpers.http.current_request") as mock_request_context:
         mock_request = Mock()
         mock_request.headers = CIMultiDictProxy(CIMultiDict({hdrs.HOST: "[::1]:8123"}))
         mock_request.url = URL("http://[::1]:8123/test/request")
@@ -639,7 +639,7 @@ async def test_get_request_ipv6_address_without_port(hass: HomeAssistant) -> Non
     with pytest.raises(NoURLAvailableError):
         _get_request_host()
 
-    with patch("homeassistant.helpers.http.current_request") as mock_request_context:
+    with patch("inpui.helpers.http.current_request") as mock_request_context:
         mock_request = Mock()
         mock_request.headers = CIMultiDictProxy(CIMultiDict({hdrs.HOST: "[::1]"}))
         mock_request.url = URL("http://[::1]/test/request")
@@ -654,7 +654,7 @@ async def test_get_request_host_no_host_header(hass: HomeAssistant) -> None:
     with pytest.raises(NoURLAvailableError):
         _get_request_host()
 
-    with patch("homeassistant.helpers.http.current_request") as mock_request_context:
+    with patch("inpui.helpers.http.current_request") as mock_request_context:
         mock_request = Mock()
         mock_request.headers = CIMultiDictProxy(CIMultiDict())
         mock_request.url = URL("/test/request")
@@ -663,9 +663,9 @@ async def test_get_request_host_no_host_header(hass: HomeAssistant) -> None:
         assert _get_request_host() is None
 
 
-@patch("homeassistant.helpers.hassio.is_hassio", Mock(return_value=True))
+@patch("inpui.helpers.hassio.is_hassio", Mock(return_value=True))
 @patch(
-    "homeassistant.components.hassio.get_host_info",
+    "inpui.components.hassio.get_host_info",
     Mock(return_value={"hostname": "homeassistant"}),
 )
 async def test_get_current_request_url_with_known_host(
@@ -680,7 +680,7 @@ async def test_get_current_request_url_with_known_host(
 
     # Ensure we accept localhost
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="localhost"
+        "inpui.helpers.network._get_request_host", return_value="localhost"
     ):
         assert get_url(hass, require_current_request=True) == "http://localhost:8123"
         with pytest.raises(NoURLAvailableError):
@@ -690,7 +690,7 @@ async def test_get_current_request_url_with_known_host(
 
     # Ensure we accept local loopback ip (e.g., 127.0.0.1)
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="127.0.0.8"
+        "inpui.helpers.network._get_request_host", return_value="127.0.0.8"
     ):
         assert get_url(hass, require_current_request=True) == "http://127.0.0.8:8123"
         with pytest.raises(NoURLAvailableError):
@@ -700,8 +700,8 @@ async def test_get_current_request_url_with_known_host(
     mock_component(hass, "hassio")
 
     with patch(
-        "homeassistant.helpers.network._get_request_host",
-        return_value="homeassistant.local",
+        "inpui.helpers.network._get_request_host",
+        return_value="inpui.local",
     ):
         assert (
             get_url(hass, require_current_request=True)
@@ -709,7 +709,7 @@ async def test_get_current_request_url_with_known_host(
         )
 
     with patch(
-        "homeassistant.helpers.network._get_request_host",
+        "inpui.helpers.network._get_request_host",
         return_value="homeassistant",
     ):
         assert (
@@ -718,7 +718,7 @@ async def test_get_current_request_url_with_known_host(
 
     with (
         patch(
-            "homeassistant.helpers.network._get_request_host",
+            "inpui.helpers.network._get_request_host",
             return_value="unknown.local",
         ),
         pytest.raises(NoURLAvailableError),
@@ -727,11 +727,11 @@ async def test_get_current_request_url_with_known_host(
 
 
 @patch(
-    "homeassistant.helpers.network.is_hassio",
+    "inpui.helpers.network.is_hassio",
     Mock(return_value={"hostname": "homeassistant"}),
 )
 @patch(
-    "homeassistant.components.hassio.get_host_info",
+    "inpui.components.hassio.get_host_info",
     Mock(return_value={"hostname": "hellohost"}),
 )
 async def test_is_internal_request(hass: HomeAssistant, mock_current_request) -> None:
@@ -834,7 +834,7 @@ async def test_is_hass_url(hass: HomeAssistant) -> None:
     assert is_hass_url(hass, "http://example.com") is False
 
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://example.nabu.casa",
     ):
         assert is_hass_url(hass, "https://example.nabu.casa") is False

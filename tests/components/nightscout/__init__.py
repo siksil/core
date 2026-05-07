@@ -39,11 +39,11 @@ async def init_integration(hass: HomeAssistant) -> MockConfigEntry:
     )
     with (
         patch(
-            "homeassistant.components.nightscout.NightscoutAPI.get_sgvs",
+            "inpui.components.nightscout.NightscoutAPI.get_sgvs",
             return_value=GLUCOSE_READINGS,
         ),
         patch(
-            "homeassistant.components.nightscout.NightscoutAPI.get_server_status",
+            "inpui.components.nightscout.NightscoutAPI.get_server_status",
             return_value=SERVER_STATUS,
         ),
     ):
@@ -62,11 +62,11 @@ async def init_integration_unavailable(hass: HomeAssistant) -> MockConfigEntry:
     )
     with (
         patch(
-            "homeassistant.components.nightscout.NightscoutAPI.get_sgvs",
+            "inpui.components.nightscout.NightscoutAPI.get_sgvs",
             side_effect=ClientConnectionError(),
         ),
         patch(
-            "homeassistant.components.nightscout.NightscoutAPI.get_server_status",
+            "inpui.components.nightscout.NightscoutAPI.get_server_status",
             return_value=SERVER_STATUS,
         ),
     ):
@@ -85,11 +85,11 @@ async def init_integration_empty_response(hass: HomeAssistant) -> MockConfigEntr
     )
     with (
         patch(
-            "homeassistant.components.nightscout.NightscoutAPI.get_sgvs",
+            "inpui.components.nightscout.NightscoutAPI.get_sgvs",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.nightscout.NightscoutAPI.get_server_status",
+            "inpui.components.nightscout.NightscoutAPI.get_server_status",
             return_value=SERVER_STATUS,
         ),
     ):

@@ -61,9 +61,9 @@ def get_pyegps_device_mock() -> MagicMock:
 def patch_get_device(pyegps_device_mock: MagicMock) -> Generator[MagicMock]:
     """Fixture to patch the `get_device` api method."""
     with (
-        patch("homeassistant.components.energenie_power_sockets.get_device") as m1,
+        patch("inpui.components.energenie_power_sockets.get_device") as m1,
         patch(
-            "homeassistant.components.energenie_power_sockets.config_flow.get_device",
+            "inpui.components.energenie_power_sockets.config_flow.get_device",
             new=m1,
         ) as mock,
     ):
@@ -77,7 +77,7 @@ def patch_search_devices(
 ) -> Generator[MagicMock]:
     """Fixture to patch the `search_for_devices` api method."""
     with patch(
-        "homeassistant.components.energenie_power_sockets.config_flow.search_for_devices",
+        "inpui.components.energenie_power_sockets.config_flow.search_for_devices",
         return_value=[pyegps_device_mock],
     ) as mock:
         yield mock

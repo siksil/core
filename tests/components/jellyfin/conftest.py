@@ -40,7 +40,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.jellyfin.async_setup_entry", return_value=True
+        "inpui.components.jellyfin.async_setup_entry", return_value=True
     ) as setup_mock:
         yield setup_mock
 
@@ -49,7 +49,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_client_device_id() -> Generator[MagicMock]:
     """Mock generating device id."""
     with patch(
-        "homeassistant.components.jellyfin.config_flow._generate_client_device_id"
+        "inpui.components.jellyfin.config_flow._generate_client_device_id"
     ) as id_mock:
         id_mock.return_value = "TEST-UUID"
         yield id_mock
@@ -112,7 +112,7 @@ def mock_client(
 def mock_jellyfin(mock_client: MagicMock) -> Generator[MagicMock]:
     """Return a mocked Jellyfin."""
     with patch(
-        "homeassistant.components.jellyfin.client_wrapper.Jellyfin", autospec=True
+        "inpui.components.jellyfin.client_wrapper.Jellyfin", autospec=True
     ) as jellyfin_mock:
         jf = jellyfin_mock.return_value
         jf.get_client.return_value = mock_client

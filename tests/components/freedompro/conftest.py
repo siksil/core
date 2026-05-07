@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.freedompro.async_setup_entry", return_value=True
+        "inpui.components.freedompro.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -31,14 +31,14 @@ def mock_freedompro():
     """Mock freedompro get_list and get_states."""
     with (
         patch(
-            "homeassistant.components.freedompro.coordinator.get_list",
+            "inpui.components.freedompro.coordinator.get_list",
             return_value={
                 "state": True,
                 "devices": DEVICES,
             },
         ),
         patch(
-            "homeassistant.components.freedompro.coordinator.get_states",
+            "inpui.components.freedompro.coordinator.get_states",
             return_value=DEVICES_STATE,
         ),
     ):
@@ -78,14 +78,14 @@ async def init_integration_no_state(hass: HomeAssistant) -> MockConfigEntry:
 
     with (
         patch(
-            "homeassistant.components.freedompro.coordinator.get_list",
+            "inpui.components.freedompro.coordinator.get_list",
             return_value={
                 "state": True,
                 "devices": DEVICES,
             },
         ),
         patch(
-            "homeassistant.components.freedompro.coordinator.get_states",
+            "inpui.components.freedompro.coordinator.get_states",
             return_value=[],
         ),
     ):

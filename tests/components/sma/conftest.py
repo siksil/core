@@ -38,7 +38,7 @@ def mock_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock the setup entry."""
     with patch(
-        "homeassistant.components.sma.async_setup_entry", return_value=True
+        "inpui.components.sma.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -47,7 +47,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_sma_client() -> Generator[MagicMock]:
     """Mock the SMA client."""
     with patch(
-        "homeassistant.components.sma.coordinator.SMAWebConnect", autospec=True
+        "inpui.components.sma.coordinator.SMAWebConnect", autospec=True
     ) as sma_cls:
         sma_instance: MagicMock = sma_cls.return_value
         sma_instance.device_info = AsyncMock(return_value=MOCK_DEVICE)
@@ -81,10 +81,10 @@ def mock_sma_client() -> Generator[MagicMock]:
 
         with (
             patch(
-                "homeassistant.components.sma.config_flow.SMAWebConnect",
+                "inpui.components.sma.config_flow.SMAWebConnect",
                 new=sma_cls,
             ),
-            patch("homeassistant.components.sma.SMAWebConnect", new=sma_cls),
+            patch("inpui.components.sma.SMAWebConnect", new=sma_cls),
             patch("pysma.SMAWebConnect", new=sma_cls),
         ):
             yield sma_instance

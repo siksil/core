@@ -356,7 +356,7 @@ async def test_media_player_entity_with_source(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.media_source.async_resolve_media",
+        "inpui.components.media_source.async_resolve_media",
         return_value=play_media,
     ):
         await hass.services.async_call(
@@ -477,7 +477,7 @@ async def test_media_player_proxy(
 
     with (
         patch(
-            "homeassistant.components.esphome.media_player.async_create_proxy_url",
+            "inpui.components.esphome.media_player.async_create_proxy_url",
             return_value=proxy_url,
         ) as mock_async_create_proxy_url,
     ):

@@ -37,12 +37,12 @@ async def test_form_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.solax.config_flow.real_time_api",
+            "inpui.components.solax.config_flow.real_time_api",
             return_value=__mock_real_time_api_success(),
         ),
         patch("solax.RealTimeAPI.get_data", return_value=__mock_get_data()),
         patch(
-            "homeassistant.components.solax.async_setup_entry",
+            "inpui.components.solax.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -71,7 +71,7 @@ async def test_form_connect_error(hass: HomeAssistant) -> None:
     assert flow["errors"] == {}
 
     with patch(
-        "homeassistant.components.solax.config_flow.real_time_api",
+        "inpui.components.solax.config_flow.real_time_api",
         side_effect=ConnectionError,
     ):
         entry_result = await hass.config_entries.flow.async_configure(
@@ -92,7 +92,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     assert flow["errors"] == {}
 
     with patch(
-        "homeassistant.components.solax.config_flow.real_time_api",
+        "inpui.components.solax.config_flow.real_time_api",
         side_effect=Exception,
     ):
         entry_result = await hass.config_entries.flow.async_configure(

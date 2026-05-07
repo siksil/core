@@ -53,7 +53,7 @@ async def test_config_entry_migration_v2(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_sky_connect.guess_firmware_info",
+        "inpui.components.homeassistant_sky_connect.guess_firmware_info",
         return_value=FirmwareInfo(
             device="/dev/serial/by-id/usb-Nabu_Casa_SkyConnect_v1.0_9e2adbd75b8beb119fe564a0f320645d-if00-port0",
             firmware_version=None,
@@ -106,7 +106,7 @@ async def test_setup_fails_on_missing_usb_port(hass: HomeAssistant) -> None:
 
     # Set up the config entry
     with patch(
-        "homeassistant.components.homeassistant_sky_connect.os.path.exists"
+        "inpui.components.homeassistant_sky_connect.os.path.exists"
     ) as mock_exists:
         mock_exists.return_value = False
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -153,7 +153,7 @@ async def test_usb_device_reactivity(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_sky_connect.os.path.exists"
+        "inpui.components.homeassistant_sky_connect.os.path.exists"
     ) as mock_exists:
         mock_exists.return_value = False
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -265,7 +265,7 @@ async def test_bad_config_entry_fixing(hass: HomeAssistant) -> None:
     fixable_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_sky_connect.scan_serial_ports",
+        "inpui.components.homeassistant_sky_connect.scan_serial_ports",
         return_value=[
             USBDevice(
                 device="/dev/serial/by-id/usb-Nabu_Casa_SkyConnect_v1.0_4f5f3b26d59f8714a78b599690741999-if00-port0",

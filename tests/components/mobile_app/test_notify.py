@@ -371,7 +371,7 @@ async def test_notify_ws_not_confirming(
     )
 
     with patch(
-        "homeassistant.components.mobile_app.push_notification.PUSH_CONFIRM_TIMEOUT", 0
+        "inpui.components.mobile_app.push_notification.PUSH_CONFIRM_TIMEOUT", 0
     ):
         await hass.services.async_call(
             "notify", "mobile_app_test", {"message": "Hello world 2"}, blocking=True

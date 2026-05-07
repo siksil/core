@@ -31,7 +31,7 @@ async def internal_url_mock(hass: HomeAssistant) -> None:
 async def disable_platforms() -> None:
     """Disable demo platforms."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [],
     ):
         yield

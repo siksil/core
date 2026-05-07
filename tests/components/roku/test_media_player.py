@@ -808,7 +808,7 @@ async def test_media_browse_internal(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.helpers.network._get_request_host", return_value="example.local"
+        "inpui.helpers.network._get_request_host", return_value="example.local"
     ):
         await client.send_json(
             {

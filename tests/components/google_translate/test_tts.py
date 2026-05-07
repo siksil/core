@@ -48,7 +48,7 @@ async def setup_internal_url(hass: HomeAssistant) -> None:
 @pytest.fixture
 def mock_gtts() -> Generator[MagicMock]:
     """Mock gtts."""
-    with patch("homeassistant.components.google_translate.tts.gTTS") as mock_gtts:
+    with patch("inpui.components.google_translate.tts.gTTS") as mock_gtts:
         yield mock_gtts
 
 

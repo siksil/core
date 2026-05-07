@@ -52,7 +52,7 @@ def server(
 ) -> Generator[Server]:
     """Fixture to initialize the Server."""
     with patch(
-        "homeassistant.components.go2rtc.server.get_go2rtc_unix_socket_path",
+        "inpui.components.go2rtc.server.get_go2rtc_unix_socket_path",
         return_value="/test/path/go2rtc.sock",
     ):
         yield Server(
@@ -70,7 +70,7 @@ def server(
 def mock_tempfile() -> Generator[Mock]:
     """Fixture to mock NamedTemporaryFile."""
     with patch(
-        "homeassistant.components.go2rtc.server.NamedTemporaryFile", autospec=True
+        "inpui.components.go2rtc.server.NamedTemporaryFile", autospec=True
     ) as mock_tempfile:
         file = mock_tempfile.return_value.__enter__.return_value
         file.name = "test.yaml"
@@ -87,7 +87,7 @@ def _assert_server_output_logged(
     for entry in server_stdout:
         assert (
             (
-                "homeassistant.components.go2rtc.server",
+                "inpui.components.go2rtc.server",
                 loglevel,
                 entry,
             )
@@ -174,7 +174,7 @@ async def test_server_timeout_on_stop(
     # Simulate timeout
     mock_create_subprocess.return_value.wait.side_effect = sleep
 
-    with patch("homeassistant.components.go2rtc.server._TERMINATE_TIMEOUT", new=0.1):
+    with patch("inpui.components.go2rtc.server._TERMINATE_TIMEOUT", new=0.1):
         await server.stop()
 
     # Ensure terminate and kill were called due to timeout
@@ -200,7 +200,7 @@ async def test_server_failed_to_start(
 ) -> None:
     """Test server, where an exception is raised if the expected log entry was not received until the timeout."""
     with (
-        patch("homeassistant.components.go2rtc.server._SETUP_TIMEOUT", new=0.1),
+        patch("inpui.components.go2rtc.server._SETUP_TIMEOUT", new=0.1),
         pytest.raises(HomeAssistantError, match="Go2rtc server didn't start correctly"),
     ):
         await server.start()
@@ -210,7 +210,7 @@ async def test_server_failed_to_start(
     assert_server_output_logged(server_stdout, caplog, logging.WARNING)
 
     assert (
-        "homeassistant.components.go2rtc.server",
+        "inpui.components.go2rtc.server",
         logging.ERROR,
         "Go2rtc server didn't start correctly",
     ) in caplog.record_tuples
@@ -255,7 +255,7 @@ async def test_server_failed_to_start(
         )
     ],
 )
-@patch("homeassistant.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
+@patch("inpui.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
 async def test_log_level_mapping(
     hass: HomeAssistant,
     mock_create_subprocess: MagicMock,
@@ -281,7 +281,7 @@ async def test_log_level_mapping(
     # Verify go2rtc binary stdout was logged with default level
     for i, entry in enumerate(server_stdout):
         assert (
-            "homeassistant.components.go2rtc.server",
+            "inpui.components.go2rtc.server",
             expected_loglevel[i],
             entry,
         ) in caplog.record_tuples
@@ -295,7 +295,7 @@ async def test_log_level_mapping(
     await server.stop()
 
 
-@patch("homeassistant.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
+@patch("inpui.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
 async def test_server_restart_process_exit(
     hass: HomeAssistant,
     mock_create_subprocess: AsyncMock,
@@ -333,7 +333,7 @@ async def test_server_restart_process_exit(
     await server.stop()
 
 
-@patch("homeassistant.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
+@patch("inpui.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
 async def test_server_restart_process_error(
     hass: HomeAssistant,
     mock_create_subprocess: AsyncMock,
@@ -362,7 +362,7 @@ async def test_server_restart_process_error(
     await server.stop()
 
 
-@patch("homeassistant.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
+@patch("inpui.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
 async def test_server_restart_api_error(
     hass: HomeAssistant,
     mock_create_subprocess: AsyncMock,
@@ -391,7 +391,7 @@ async def test_server_restart_api_error(
     await server.stop()
 
 
-@patch("homeassistant.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
+@patch("inpui.components.go2rtc.server._RESPAWN_COOLDOWN", 0)
 async def test_server_restart_error(
     hass: HomeAssistant,
     mock_create_subprocess: AsyncMock,

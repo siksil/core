@@ -35,7 +35,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.proxmoxve.PLATFORMS",
+        "inpui.components.proxmoxve.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)

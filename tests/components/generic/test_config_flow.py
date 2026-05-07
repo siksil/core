@@ -202,7 +202,7 @@ async def test_form_still_preview_cam_off(
     """Test camera errors are triggered during preview."""
     with (
         patch(
-            "homeassistant.components.generic.camera.GenericCamera.is_on",
+            "inpui.components.generic.camera.GenericCamera.is_on",
             new_callable=PropertyMock(return_value=False),
         ),
     ):
@@ -444,7 +444,7 @@ async def test_form_only_stream(
     }
 
     with patch(
-        "homeassistant.components.camera._async_get_stream_image",
+        "inpui.components.camera._async_get_stream_image",
         return_value=fakeimgbytes_jpg,
     ):
         image_obj = await async_get_image(hass, "camera.127_0_0_1")
@@ -622,7 +622,7 @@ async def test_form_stream_not_set_up(hass: HomeAssistant, user_flow) -> None:
     """Test we handle if stream has not been set up."""
 
     with patch(
-        "homeassistant.components.generic.config_flow.create_stream",
+        "inpui.components.generic.config_flow.create_stream",
         side_effect=HomeAssistantError("Stream integration is not set up."),
     ):
         result1 = await hass.config_entries.flow.async_configure(
@@ -641,7 +641,7 @@ async def test_form_stream_other_error(hass: HomeAssistant, user_flow) -> None:
 
     with (
         patch(
-            "homeassistant.components.generic.config_flow.create_stream",
+            "inpui.components.generic.config_flow.create_stream",
             side_effect=HomeAssistantError("Some other error."),
         ),
         pytest.raises(HomeAssistantError),
@@ -660,7 +660,7 @@ async def test_form_stream_permission_error(
 ) -> None:
     """Test we handle permission error."""
     with patch(
-        "homeassistant.components.generic.config_flow.create_stream",
+        "inpui.components.generic.config_flow.create_stream",
         side_effect=PermissionError(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -678,7 +678,7 @@ async def test_form_no_route_to_host(
 ) -> None:
     """Test we handle no route to host."""
     with patch(
-        "homeassistant.components.generic.config_flow.create_stream",
+        "inpui.components.generic.config_flow.create_stream",
         side_effect=OSError(errno.EHOSTUNREACH, "No route to host"),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -696,7 +696,7 @@ async def test_form_stream_io_error(
 ) -> None:
     """Test we handle an io error when setting up stream."""
     with patch(
-        "homeassistant.components.generic.config_flow.create_stream",
+        "inpui.components.generic.config_flow.create_stream",
         side_effect=OSError(errno.EIO, "Input/output error"),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -713,7 +713,7 @@ async def test_form_oserror(hass: HomeAssistant, user_flow: ConfigFlowResult) ->
     """Test we handle OS error when setting up stream."""
     with (
         patch(
-            "homeassistant.components.generic.config_flow.create_stream",
+            "inpui.components.generic.config_flow.create_stream",
             side_effect=OSError("Some other OSError"),
         ),
         pytest.raises(OSError),
@@ -885,7 +885,7 @@ async def test_options_permission_error(
 
     result = await hass.config_entries.options.async_init(config_entry.entry_id)
     with patch(
-        "homeassistant.components.generic.config_flow.create_stream",
+        "inpui.components.generic.config_flow.create_stream",
         side_effect=PermissionError("Some message"),
     ):
         result2 = await hass.config_entries.options.async_configure(

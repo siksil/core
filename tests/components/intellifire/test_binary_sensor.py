@@ -26,7 +26,7 @@ async def test_all_binary_sensor_entities(
 
     with (
         patch(
-            "homeassistant.components.intellifire.PLATFORMS", [Platform.BINARY_SENSOR]
+            "inpui.components.intellifire.PLATFORMS", [Platform.BINARY_SENSOR]
         ),
     ):
         await setup_integration(hass, mock_config_entry_current)

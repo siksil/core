@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def fixture_mock_device() -> Generator[MagicMock]:
     """Return a mocked Kaleidescape device."""
     with patch(
-        "homeassistant.components.kaleidescape.KaleidescapeDevice", autospec=True
+        "inpui.components.kaleidescape.KaleidescapeDevice", autospec=True
     ) as mock:
         host = MOCK_HOST
 

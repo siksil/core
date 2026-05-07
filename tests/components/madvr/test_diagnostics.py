@@ -32,7 +32,7 @@ async def test_entry_diagnostics(
     positive_payload: dict,
 ) -> None:
     """Test config entry diagnostics."""
-    with patch("homeassistant.components.madvr.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.madvr.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     update_callback = get_update_callback(mock_madvr_client)

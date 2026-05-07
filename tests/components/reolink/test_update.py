@@ -34,7 +34,7 @@ async def test_no_update(
     entity_name: str,
 ) -> None:
     """Test update state when no update available."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -53,7 +53,7 @@ async def test_update_str(
     """Test update state when update available with string from API."""
     reolink_host.firmware_update_available.return_value = "New firmware available"
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -81,7 +81,7 @@ async def test_update_firm(
     )
     reolink_host.firmware_update_available.return_value = new_firmware
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -178,7 +178,7 @@ async def test_update_firm_keeps_available(
     )
     reolink_host.firmware_update_available.return_value = new_firmware
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -192,7 +192,7 @@ async def test_update_firm_keeps_available(
     reolink_host.update_firmware = mock_update_firmware
 
     # test install
-    with patch("homeassistant.components.reolink.update.POLL_PROGRESS", 0.000001):
+    with patch("inpui.components.reolink.update.POLL_PROGRESS", 0.000001):
         await hass.services.async_call(
             UPDATE_DOMAIN,
             SERVICE_INSTALL,
@@ -224,7 +224,7 @@ async def test_external_firmware_update_detected(
     )
     reolink_host.firmware_update_available.return_value = new_firmware
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

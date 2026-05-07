@@ -24,7 +24,7 @@ from tests.typing import ClientSessionGenerator
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.onewire._PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.onewire._PLATFORMS", [Platform.SWITCH]):
         yield
 
 

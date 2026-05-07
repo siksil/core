@@ -90,8 +90,8 @@ async def test_token_refresh_success(
 
     assert config_entry.state is ConfigEntryState.NOT_LOADED
     with (
-        patch("homeassistant.components.home_connect.PLATFORMS", platforms),
-        patch("homeassistant.components.home_connect.HomeConnectClient") as client_mock,
+        patch("inpui.components.home_connect.PLATFORMS", platforms),
+        patch("inpui.components.home_connect.HomeConnectClient") as client_mock,
     ):
         client_mock.side_effect = MagicMock(side_effect=init_side_effect)
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -121,7 +121,7 @@ async def test_setup_implementation_unavailable(
     """Test setup when OAuth2 implementation is unavailable."""
 
     with patch(
-        "homeassistant.components.home_connect.async_get_config_entry_implementation",
+        "inpui.components.home_connect.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         assert not await integration_setup(MagicMock())
@@ -173,7 +173,7 @@ async def test_token_refresh_error(
 
     assert config_entry.state is ConfigEntryState.NOT_LOADED
     with patch(
-        "homeassistant.components.home_connect.HomeConnectClient", return_value=client
+        "inpui.components.home_connect.HomeConnectClient", return_value=client
     ):
         assert not await integration_setup(client)
         await hass.async_block_till_done()
@@ -235,7 +235,7 @@ async def test_client_rate_limit_error(
 
     assert config_entry.state is ConfigEntryState.NOT_LOADED
     with patch(
-        "homeassistant.components.home_connect.coordinator.asyncio_sleep",
+        "inpui.components.home_connect.coordinator.asyncio_sleep",
     ) as asyncio_sleep_mock:
         assert await integration_setup(client)
     assert config_entry.state is ConfigEntryState.LOADED
@@ -337,9 +337,9 @@ async def test_entity_migration(
         )
 
     with (
-        patch("homeassistant.components.home_connect.PLATFORMS", platforms),
+        patch("inpui.components.home_connect.PLATFORMS", platforms),
         patch(
-            "homeassistant.components.home_connect.async_setup_entry",
+            "inpui.components.home_connect.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -371,7 +371,7 @@ async def test_config_entry_unique_id_migration(
     assert config_entry_v1_2.minor_version == 2
 
     with patch(
-        "homeassistant.components.home_connect.async_setup_entry",
+        "inpui.components.home_connect.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(config_entry_v1_2.entry_id)

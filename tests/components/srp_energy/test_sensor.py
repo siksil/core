@@ -51,7 +51,7 @@ async def test_srp_entity_update_failed(
     """Test the SrpEntity."""
 
     with patch(
-        "homeassistant.components.srp_energy.SrpEnergyClient", autospec=True
+        "inpui.components.srp_energy.SrpEnergyClient", autospec=True
     ) as srp_energy_mock:
         client = srp_energy_mock.return_value
         client.validate.return_value = True
@@ -73,9 +73,9 @@ async def test_srp_entity_timeout(
 
     with (
         patch(
-            "homeassistant.components.srp_energy.SrpEnergyClient", autospec=True
+            "inpui.components.srp_energy.SrpEnergyClient", autospec=True
         ) as srp_energy_mock,
-        patch("homeassistant.components.srp_energy.coordinator.TIMEOUT", 0),
+        patch("inpui.components.srp_energy.coordinator.TIMEOUT", 0),
     ):
         client = srp_energy_mock.return_value
         client.validate.return_value = True

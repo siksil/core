@@ -1371,7 +1371,7 @@ async def test_area_filter(
 
     # Get status with device missing
     with patch(
-        "homeassistant.helpers.device_registry.DeviceRegistry.async_get",
+        "inpui.helpers.device_registry.DeviceRegistry.async_get",
         return_value=None,
     ):
         result = await intent.async_handle(
@@ -1386,7 +1386,7 @@ async def test_area_filter(
 
     # Get status with area missing
     with patch(
-        "homeassistant.helpers.area_registry.AreaRegistry.async_get_area",
+        "inpui.helpers.area_registry.AreaRegistry.async_get_area",
         return_value=None,
     ):
         result = await intent.async_handle(
@@ -1443,7 +1443,7 @@ async def test_start_timer_with_conversation_command(
             language=hass.config.language,
         )
 
-    with patch("homeassistant.components.conversation.async_converse") as mock_converse:
+    with patch("inpui.components.conversation.async_converse") as mock_converse:
         result = await intent.async_handle(
             hass,
             "test",
@@ -1478,7 +1478,7 @@ async def test_start_timer_with_sentence_trigger_validation(
     agent_id = None  # Default agent
 
     with patch(
-        "homeassistant.components.conversation.async_get_agent"
+        "inpui.components.conversation.async_get_agent"
     ) as mock_get_agent:
         mock_agent = MagicMock(spec=conversation.default_agent.DefaultAgent)
         mock_agent.async_recognize_sentence_trigger = AsyncMock(

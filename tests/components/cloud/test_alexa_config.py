@@ -349,9 +349,9 @@ def patch_sync_helper():
         return True
 
     with (
-        patch("homeassistant.components.cloud.alexa_config.SYNC_DELAY", 0),
+        patch("inpui.components.cloud.alexa_config.SYNC_DELAY", 0),
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig._sync_helper",
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig._sync_helper",
             side_effect=sync_helper,
         ),
     ):
@@ -510,10 +510,10 @@ async def test_alexa_update_report_state(
 
     with (
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig.async_sync_entities",
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig.async_sync_entities",
         ) as mock_sync,
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig.async_enable_proactive_mode",
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig.async_enable_proactive_mode",
         ),
     ):
         await cloud_prefs.async_update(alexa_report_state=True)
@@ -550,7 +550,7 @@ async def test_alexa_handle_logout(
     await aconf.async_initialize()
 
     with patch(
-        "homeassistant.components.alexa.config.async_enable_proactive_mode",
+        "inpui.components.alexa.config.async_enable_proactive_mode",
         return_value=Mock(),
     ) as mock_enable:
         await aconf.async_enable_proactive_mode()

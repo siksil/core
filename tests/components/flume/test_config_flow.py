@@ -35,7 +35,7 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.flume.async_setup_entry",
+            "inpui.components.flume.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -146,10 +146,10 @@ async def test_reauth(hass: HomeAssistant, requests_mock: Mocker) -> None:
 
     with (
         patch(
-            "homeassistant.components.flume.config_flow.os.path.exists",
+            "inpui.components.flume.config_flow.os.path.exists",
             return_value=True,
         ),
-        patch("homeassistant.components.flume.config_flow.os.unlink") as mock_unlink,
+        patch("inpui.components.flume.config_flow.os.unlink") as mock_unlink,
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"],
@@ -174,7 +174,7 @@ async def test_reauth(hass: HomeAssistant, requests_mock: Mocker) -> None:
 
     with (
         patch(
-            "homeassistant.components.flume.async_setup_entry",
+            "inpui.components.flume.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

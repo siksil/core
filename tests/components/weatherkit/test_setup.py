@@ -27,11 +27,11 @@ async def test_auth_error_handling(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.weatherkit.WeatherKitApiClient.get_weather_data",
+            "inpui.components.weatherkit.WeatherKitApiClient.get_weather_data",
             side_effect=WeatherKitApiClientAuthenticationError,
         ),
         patch(
-            "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+            "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
             side_effect=WeatherKitApiClientAuthenticationError,
         ),
     ):
@@ -53,11 +53,11 @@ async def test_client_error_handling(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.weatherkit.WeatherKitApiClient.get_weather_data",
+            "inpui.components.weatherkit.WeatherKitApiClient.get_weather_data",
             side_effect=WeatherKitApiClientError,
         ),
         patch(
-            "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+            "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
             side_effect=WeatherKitApiClientError,
         ),
     ):

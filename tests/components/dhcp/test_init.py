@@ -209,7 +209,7 @@ async def test_dhcp_start_using_multiple_interfaces(
     with (
         patch("aiodhcpwatcher.async_start") as mock_start,
         patch(
-            "homeassistant.components.dhcp.network.async_get_adapters",
+            "inpui.components.dhcp.network.async_get_adapters",
             return_value=_generate_mock_adapters(),
         ),
     ):
@@ -607,7 +607,7 @@ async def test_setup_and_stop(hass: HomeAssistant) -> None:
             "resolve_iface",
         ) as resolve_iface_call,
         patch("scapy.arch.common.compile_filter"),
-        patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
+        patch("inpui.components.dhcp.DiscoverHosts.async_discover"),
     ):
         hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
@@ -639,7 +639,7 @@ async def test_setup_fails_as_root(
             "resolve_iface",
             side_effect=Scapy_Exception,
         ),
-        patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
+        patch("inpui.components.dhcp.DiscoverHosts.async_discover"),
     ):
         hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
@@ -670,7 +670,7 @@ async def test_setup_fails_non_root(
             "resolve_iface",
             side_effect=Scapy_Exception,
         ),
-        patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
+        patch("inpui.components.dhcp.DiscoverHosts.async_discover"),
     ):
         hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
@@ -701,7 +701,7 @@ async def test_setup_fails_with_broken_libpcap(
             interfaces,
             "resolve_iface",
         ) as resolve_iface_call,
-        patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
+        patch("inpui.components.dhcp.DiscoverHosts.async_discover"),
     ):
         hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
@@ -1068,7 +1068,7 @@ async def test_aiodiscover_finds_new_hosts(hass: HomeAssistant) -> None:
     with (
         patch.object(hass.config_entries.flow, "async_init") as mock_init,
         patch(
-            "homeassistant.components.dhcp.DiscoverHosts.async_discover",
+            "inpui.components.dhcp.DiscoverHosts.async_discover",
             return_value=[
                 {
                     dhcp.DISCOVERY_IP_ADDRESS: "192.168.210.56",
@@ -1118,7 +1118,7 @@ async def test_aiodiscover_does_not_call_again_on_shorter_hostname(
     with (
         patch.object(hass.config_entries.flow, "async_init") as mock_init,
         patch(
-            "homeassistant.components.dhcp.DiscoverHosts.async_discover",
+            "inpui.components.dhcp.DiscoverHosts.async_discover",
             return_value=[
                 {
                     dhcp.DISCOVERY_IP_ADDRESS: "192.168.210.56",
@@ -1181,7 +1181,7 @@ async def test_aiodiscover_finds_new_hosts_after_interval(hass: HomeAssistant) -
     with (
         patch.object(hass.config_entries.flow, "async_init") as mock_init,
         patch(
-            "homeassistant.components.dhcp.DiscoverHosts.async_discover",
+            "inpui.components.dhcp.DiscoverHosts.async_discover",
             return_value=[],
         ),
     ):
@@ -1204,7 +1204,7 @@ async def test_aiodiscover_finds_new_hosts_after_interval(hass: HomeAssistant) -
     with (
         patch.object(hass.config_entries.flow, "async_init") as mock_init,
         patch(
-            "homeassistant.components.dhcp.DiscoverHosts.async_discover",
+            "inpui.components.dhcp.DiscoverHosts.async_discover",
             return_value=[
                 {
                     dhcp.DISCOVERY_IP_ADDRESS: "192.168.210.56",

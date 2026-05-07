@@ -711,7 +711,7 @@ async def test_exception_from_update_method(
 
     processor = PassiveBluetoothDataProcessor(_async_generate_mock_data)
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         unregister_processor = coordinator.async_register_processor(processor)
@@ -776,7 +776,7 @@ async def test_bad_data_from_update_method(hass: HomeAssistant) -> None:
 
     processor = PassiveBluetoothDataProcessor(_async_generate_mock_data)
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         unregister_processor = coordinator.async_register_processor(processor)

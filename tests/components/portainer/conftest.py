@@ -36,7 +36,7 @@ TEST_INSTANCE_ID = "299ab403-70a8-4c05-92f7-bf7a994d50df"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.portainer.async_setup_entry", return_value=True
+        "inpui.components.portainer.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -46,10 +46,10 @@ def mock_portainer_client() -> Generator[AsyncMock]:
     """Mock Portainer client with dynamic exception injection support."""
     with (
         patch(
-            "homeassistant.components.portainer.Portainer", autospec=True
+            "inpui.components.portainer.Portainer", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.portainer.config_flow.Portainer", new=mock_client
+            "inpui.components.portainer.config_flow.Portainer", new=mock_client
         ),
     ):
         client = mock_client.return_value

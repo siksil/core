@@ -42,7 +42,7 @@ async def test_flow_discovered_bridges(
     hass: HomeAssistant, aioclient_mock: AiohttpClientMocker
 ) -> None:
     """Test that config flow works for discovered bridges."""
-    logging.getLogger("homeassistant.components.deconz").setLevel(logging.DEBUG)
+    logging.getLogger("inpui.components.deconz").setLevel(logging.DEBUG)
     aioclient_mock.get(
         pydeconz.utils.URL_DISCOVER,
         json=[
@@ -143,7 +143,7 @@ async def test_flow_manual_configuration(
     hass: HomeAssistant, aioclient_mock: AiohttpClientMocker
 ) -> None:
     """Test that config flow works with manual configuration after no discovered bridges."""
-    logging.getLogger("homeassistant.components.deconz").setLevel(logging.DEBUG)
+    logging.getLogger("inpui.components.deconz").setLevel(logging.DEBUG)
     aioclient_mock.get(
         pydeconz.utils.URL_DISCOVER,
         json=[],
@@ -481,7 +481,7 @@ async def test_ssdp_discovery_update_configuration(
 ) -> None:
     """Test if a discovered bridge is configured but updates with new attributes."""
     with patch(
-        "homeassistant.components.deconz.async_setup_entry",
+        "inpui.components.deconz.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -581,7 +581,7 @@ async def test_flow_hassio_discovery(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.deconz.async_setup_entry",
+        "inpui.components.deconz.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -604,7 +604,7 @@ async def test_hassio_discovery_update_configuration(
 ) -> None:
     """Test we can update an existing config entry."""
     with patch(
-        "homeassistant.components.deconz.async_setup_entry",
+        "inpui.components.deconz.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(

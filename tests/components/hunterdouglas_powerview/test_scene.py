@@ -109,7 +109,7 @@ async def test_scenes(
     )
 
     with patch(
-        "homeassistant.components.hunterdouglas_powerview.scene.PvScene.activate"
+        "inpui.components.hunterdouglas_powerview.scene.PvScene.activate"
     ) as mock_activate:
         await hass.services.async_call(
             SCENE_DOMAIN,

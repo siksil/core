@@ -45,11 +45,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.rachio.config_flow.Rachio",
+            "inpui.components.rachio.config_flow.Rachio",
             return_value=rachio_mock,
         ),
         patch(
-            "homeassistant.components.rachio.async_setup_entry",
+            "inpui.components.rachio.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -84,7 +84,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
         info=({"status": 412}, {"error": "auth fail"}),
     )
     with patch(
-        "homeassistant.components.rachio.config_flow.Rachio", return_value=rachio_mock
+        "inpui.components.rachio.config_flow.Rachio", return_value=rachio_mock
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -106,7 +106,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
         info=({"status": 200}, {"id": "myid"}),
     )
     with patch(
-        "homeassistant.components.rachio.config_flow.Rachio", return_value=rachio_mock
+        "inpui.components.rachio.config_flow.Rachio", return_value=rachio_mock
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],

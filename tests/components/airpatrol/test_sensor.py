@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, SnapshotAssertion, snapshot_platform
 def override_platforms() -> Generator[None]:
     """Override the platforms to load for airpatrol."""
     with patch(
-        "homeassistant.components.airpatrol.PLATFORMS",
+        "inpui.components.airpatrol.PLATFORMS",
         [Platform.SENSOR],
     ):
         yield

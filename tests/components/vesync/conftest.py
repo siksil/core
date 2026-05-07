@@ -135,7 +135,7 @@ def manager_fixture():
     mock_vesync.account_id = "account_id"
     mock_vesync.time_zone = "America/New_York"
 
-    with patch("homeassistant.components.vesync.VeSync", return_value=mock_vesync):
+    with patch("inpui.components.vesync.VeSync", return_value=mock_vesync):
         yield mock_vesync
 
 

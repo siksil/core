@@ -126,7 +126,7 @@ class HomeFactory:
 
         self.hmip_config_entry.add_to_hass(self.hass)
         with patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipHAP.get_hap",
+            "inpui.components.homematicip_cloud.hap.HomematicipHAP.get_hap",
             return_value=mock_home,
         ):
             assert await async_setup_component(self.hass, DOMAIN, {})

@@ -41,7 +41,7 @@ HYDROLOGICAL_DATA = HydrologicalData(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.imgw_pib.async_setup_entry", return_value=True
+        "inpui.components.imgw_pib.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -51,10 +51,10 @@ def mock_imgw_pib_client() -> Generator[AsyncMock]:
     """Mock a ImgwPib client."""
     with (
         patch(
-            "homeassistant.components.imgw_pib.ImgwPib", autospec=True
+            "inpui.components.imgw_pib.ImgwPib", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.imgw_pib.config_flow.ImgwPib",
+            "inpui.components.imgw_pib.config_flow.ImgwPib",
             new=mock_client,
         ),
     ):

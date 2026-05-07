@@ -30,7 +30,7 @@ async def test_send_message(
     events = async_capture_events(hass, "telegram_sent")
 
     with patch(
-        "homeassistant.components.telegram_bot.bot.Bot.send_message",
+        "inpui.components.telegram_bot.bot.Bot.send_message",
         AsyncMock(
             return_value=Message(
                 message_id=12345,

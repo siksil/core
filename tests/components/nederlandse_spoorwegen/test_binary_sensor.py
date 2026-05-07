@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def mock_binary_sensor_platform() -> Generator:
     """Override PLATFORMS for NS integration."""
     with patch(
-        "homeassistant.components.nederlandse_spoorwegen.PLATFORMS",
+        "inpui.components.nederlandse_spoorwegen.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ) as mock_platform:
         yield mock_platform

@@ -516,7 +516,7 @@ class MQTT:
         """Initialize paho client."""
         with async_pause_setup(self.hass, SetupPhases.WAIT_IMPORT_PACKAGES):
             await async_import_module(
-                self.hass, "homeassistant.components.mqtt.async_client"
+                self.hass, "inpui.components.mqtt.async_client"
             )
 
         mqttc_setup = MqttClientSetup(self.conf)

@@ -32,7 +32,7 @@ pytestmark = pytest.mark.usefixtures("mock_setup_entry")
 def mock_random() -> Mock:
     """Mock random to generate predictable client id."""
     with patch(
-        "homeassistant.components.husqvarna_automower_ble.config_flow.random"
+        "inpui.components.husqvarna_automower_ble.config_flow.random"
     ) as mock_random:
         mock_random.randint.return_value = 1197489078
         yield mock_random
@@ -51,7 +51,7 @@ async def test_user_selection(hass: HomeAssistant) -> None:
 
     # mock connection error
     with patch(
-        "homeassistant.components.husqvarna_automower_ble.config_flow.HusqvarnaAutomowerBleConfigFlow.probe_mower",
+        "inpui.components.husqvarna_automower_ble.config_flow.HusqvarnaAutomowerBleConfigFlow.probe_mower",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(

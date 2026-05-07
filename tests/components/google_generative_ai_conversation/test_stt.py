@@ -51,7 +51,7 @@ def mock_genai_client() -> Generator[AsyncMock]:
         )
     )
     with patch(
-        "homeassistant.components.google_generative_ai_conversation.Client",
+        "inpui.components.google_generative_ai_conversation.Client",
         return_value=client,
     ) as mock_client:
         yield mock_client.return_value
@@ -130,7 +130,7 @@ async def test_stt_process_audio_stream_success(
     audio_stream = _async_get_audio_stream(b"test_audio_bytes")
 
     with patch(
-        "homeassistant.components.google_generative_ai_conversation.stt.convert_to_wav",
+        "inpui.components.google_generative_ai_conversation.stt.convert_to_wav",
         return_value=b"converted_wav_bytes",
     ) as mock_convert_to_wav:
         result = await entity.async_process_audio_stream(metadata, audio_stream)

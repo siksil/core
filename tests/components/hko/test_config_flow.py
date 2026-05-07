@@ -34,7 +34,7 @@ async def test_config_flow_default(hass: HomeAssistant) -> None:
 
 async def test_config_flow_cannot_connect(hass: HomeAssistant) -> None:
     """Test user config flow without connection to the API."""
-    with patch("homeassistant.components.hko.config_flow.HKO.weather") as client_mock:
+    with patch("inpui.components.hko.config_flow.HKO.weather") as client_mock:
         client_mock.side_effect = HKOError()
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -60,7 +60,7 @@ async def test_config_flow_cannot_connect(hass: HomeAssistant) -> None:
 
 async def test_config_flow_timeout(hass: HomeAssistant) -> None:
     """Test user config flow with timedout connection to the API."""
-    with patch("homeassistant.components.hko.config_flow.HKO.weather") as client_mock:
+    with patch("inpui.components.hko.config_flow.HKO.weather") as client_mock:
         client_mock.side_effect = TimeoutError()
         result = await hass.config_entries.flow.async_init(
             DOMAIN,

@@ -67,7 +67,7 @@ async def test_bluetooth_discovery(hass: HomeAssistant) -> None:
 async def test_integration_discovery(hass: HomeAssistant) -> None:
     """Test discovery via bluetooth with a valid device."""
     with patch(
-        "homeassistant.components.kulersky.config_flow.async_last_service_info",
+        "inpui.components.kulersky.config_flow.async_last_service_info",
         return_value=KULERSKY_SERVICE_INFO,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -101,7 +101,7 @@ async def test_integration_discovery_no_last_service_info(hass: HomeAssistant) -
 async def test_user_setup(hass: HomeAssistant) -> None:
     """Test the user manually setting up the integration."""
     with patch(
-        "homeassistant.components.kulersky.config_flow.async_discovered_service_info",
+        "inpui.components.kulersky.config_flow.async_discovered_service_info",
         return_value=[
             KULERSKY_SERVICE_INFO,
             KULERSKY_SERVICE_INFO,
@@ -131,7 +131,7 @@ async def test_user_setup(hass: HomeAssistant) -> None:
 async def test_user_setup_no_devices(hass: HomeAssistant) -> None:
     """Test the user manually setting up the integration."""
     with patch(
-        "homeassistant.components.kulersky.config_flow.async_discovered_service_info",
+        "inpui.components.kulersky.config_flow.async_discovered_service_info",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -195,7 +195,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.kulersky.config_flow.async_discovered_service_info",
+        "inpui.components.kulersky.config_flow.async_discovered_service_info",
         return_value=[KULERSKY_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(

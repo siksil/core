@@ -72,18 +72,18 @@ async def test_cloud_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.login",
+            "inpui.components.risco.config_flow.RiscoCloud.login",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.site_name",
+            "inpui.components.risco.config_flow.RiscoCloud.site_name",
             new_callable=PropertyMock(return_value=TEST_SITE_NAME),
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.close"
+            "inpui.components.risco.config_flow.RiscoCloud.close"
         ) as mock_close,
         patch(
-            "homeassistant.components.risco.async_setup_entry",
+            "inpui.components.risco.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -117,7 +117,7 @@ async def test_cloud_error(hass: HomeAssistant, login_with_error, error) -> None
     )
 
     with patch(
-        "homeassistant.components.risco.config_flow.RiscoCloud.close"
+        "inpui.components.risco.config_flow.RiscoCloud.close"
     ) as mock_close:
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"], TEST_CLOUD_DATA
@@ -165,18 +165,18 @@ async def test_form_reauth(
 
     with (
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.login",
+            "inpui.components.risco.config_flow.RiscoCloud.login",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.site_name",
+            "inpui.components.risco.config_flow.RiscoCloud.site_name",
             new_callable=PropertyMock(return_value=TEST_SITE_NAME),
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.close",
+            "inpui.components.risco.config_flow.RiscoCloud.close",
         ),
         patch(
-            "homeassistant.components.risco.async_setup_entry",
+            "inpui.components.risco.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -202,18 +202,18 @@ async def test_form_reauth_with_new_username(
 
     with (
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.login",
+            "inpui.components.risco.config_flow.RiscoCloud.login",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.site_name",
+            "inpui.components.risco.config_flow.RiscoCloud.site_name",
             new_callable=PropertyMock(return_value=TEST_SITE_NAME),
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoCloud.close",
+            "inpui.components.risco.config_flow.RiscoCloud.close",
         ),
         patch(
-            "homeassistant.components.risco.async_setup_entry",
+            "inpui.components.risco.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -245,18 +245,18 @@ async def test_local_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.risco.config_flow.RiscoLocal.connect",
+            "inpui.components.risco.config_flow.RiscoLocal.connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoLocal.id",
+            "inpui.components.risco.config_flow.RiscoLocal.id",
             new_callable=PropertyMock(return_value=TEST_SITE_NAME),
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoLocal.disconnect"
+            "inpui.components.risco.config_flow.RiscoLocal.disconnect"
         ) as mock_close,
         patch(
-            "homeassistant.components.risco.async_setup_entry",
+            "inpui.components.risco.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -322,15 +322,15 @@ async def test_form_local_already_exists(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.risco.config_flow.RiscoLocal.connect",
+            "inpui.components.risco.config_flow.RiscoLocal.connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoLocal.id",
+            "inpui.components.risco.config_flow.RiscoLocal.id",
             new_callable=PropertyMock(return_value=TEST_SITE_NAME),
         ),
         patch(
-            "homeassistant.components.risco.config_flow.RiscoLocal.disconnect",
+            "inpui.components.risco.config_flow.RiscoLocal.disconnect",
         ),
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -371,7 +371,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "ha_to_risco"
 
-    with patch("homeassistant.components.risco.async_setup_entry", return_value=True):
+    with patch("inpui.components.risco.async_setup_entry", return_value=True):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
             user_input=TEST_HA_TO_RISCO,
@@ -417,7 +417,7 @@ async def test_advanced_options_flow(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "ha_to_risco"
 
-    with patch("homeassistant.components.risco.async_setup_entry", return_value=True):
+    with patch("inpui.components.risco.async_setup_entry", return_value=True):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
             user_input=TEST_HA_TO_RISCO,

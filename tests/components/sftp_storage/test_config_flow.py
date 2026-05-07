@@ -41,7 +41,7 @@ def mock_process_uploaded_file(hass: HomeAssistant):
     Path(hass.config.path(STORAGE_DIR)).mkdir(parents=True, exist_ok=True)
     with (
         patch(
-            "homeassistant.components.sftp_storage.config_flow.process_uploaded_file"
+            "inpui.components.sftp_storage.config_flow.process_uploaded_file"
         ) as mock_process_uploaded_file,
         patch("shutil.move") as mock_shutil_move,
         NamedTemporaryFile() as f,
@@ -178,7 +178,7 @@ async def test_config_entry_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.sftp_storage.config_flow.SSHClientConnectionOptions",
+            "inpui.components.sftp_storage.config_flow.SSHClientConnectionOptions",
             side_effect=KeyImportError("Invalid key"),
         ),
     ):

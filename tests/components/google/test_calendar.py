@@ -384,7 +384,7 @@ async def test_update_error(
     aioclient_mock.clear_requests()
     mock_events_list({}, exc=ClientError())
 
-    with patch("homeassistant.util.utcnow", return_value=now):
+    with patch("inpui.util.utcnow", return_value=now):
         async_fire_time_changed(hass, now)
         await hass.async_block_till_done()
         # Ensure coordinator update completes
@@ -416,7 +416,7 @@ async def test_update_error(
         }
     )
 
-    with patch("homeassistant.util.utcnow", return_value=now):
+    with patch("inpui.util.utcnow", return_value=now):
         async_fire_time_changed(hass, now)
         await hass.async_block_till_done()
         # Ensure coordinator update completes

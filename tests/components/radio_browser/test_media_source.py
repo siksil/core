@@ -90,7 +90,7 @@ async def test_browsing_exceptions(
     """Test browsing exceptions."""
 
     with patch(
-        "homeassistant.components.radio_browser.RadioBrowser",
+        "inpui.components.radio_browser.RadioBrowser",
         autospec=True,
     ) as mock_browser:
         mock_config_entry.add_to_hass(hass)
@@ -115,7 +115,7 @@ async def test_browsing_not_ready(
     """Test browsing config entry not ready."""
 
     with patch(
-        "homeassistant.components.radio_browser.RadioBrowser",
+        "inpui.components.radio_browser.RadioBrowser",
         autospec=True,
     ) as mock_browser:
         mock_browser.return_value.stats.side_effect = RadioBrowserError
@@ -145,7 +145,7 @@ async def test_resolve_media_exceptions(
     """Test resolving media exceptions."""
 
     with patch(
-        "homeassistant.components.radio_browser.RadioBrowser",
+        "inpui.components.radio_browser.RadioBrowser",
         autospec=True,
     ) as mock_browser:
         mock_config_entry.add_to_hass(hass)
@@ -170,7 +170,7 @@ async def test_resolve_media_not_ready(
     """Test resolving media config entry not ready."""
 
     with patch(
-        "homeassistant.components.radio_browser.RadioBrowser",
+        "inpui.components.radio_browser.RadioBrowser",
         autospec=True,
     ) as mock_browser:
         mock_browser.return_value.stats.side_effect = RadioBrowserError

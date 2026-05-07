@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def platforms_fixture() -> Generator[None]:
     """Return the platforms to be loaded for this test."""
     # Arbitrary platform to ensure notifications are loaded
-    with patch("homeassistant.components.flume.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.flume.PLATFORMS", [Platform.BINARY_SENSOR]):
         yield
 
 

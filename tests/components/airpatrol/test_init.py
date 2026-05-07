@@ -60,7 +60,7 @@ async def test_update_data_auth_failure(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.airpatrol.coordinator.AirPatrolAPI.authenticate",
+        "inpui.components.airpatrol.coordinator.AirPatrolAPI.authenticate",
         side_effect=AirPatrolAuthenticationError("fail"),
     ):
         get_client.get_data.side_effect = AirPatrolAuthenticationError("fail")

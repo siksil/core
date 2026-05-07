@@ -18,7 +18,7 @@ from . import MockConnection, async_add_model
 @pytest.fixture(autouse=True)
 async def fixture_single_platform():
     """Only allow this platform to load."""
-    with patch("homeassistant.components.nibe_heatpump.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.nibe_heatpump.PLATFORMS", [Platform.NUMBER]):
         yield
 
 

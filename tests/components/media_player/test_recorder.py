@@ -30,7 +30,7 @@ from tests.components.recorder.common import async_wait_recording_done
 async def media_player_only() -> None:
     """Enable only the media_player platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.MEDIA_PLAYER],
     ):
         yield

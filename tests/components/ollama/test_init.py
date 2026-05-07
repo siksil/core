@@ -71,7 +71,7 @@ async def test_init_with_api_key(
     # Create entry with API key in data (version 3.0 after migration)
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.ollama.ollama.AsyncClient") as mock_client:
+    with patch("inpui.components.ollama.ollama.AsyncClient") as mock_client:
         mock_client.return_value.list = AsyncMock(return_value={"models": []})
 
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -90,7 +90,7 @@ async def test_init_without_api_key(
     # Create entry without API key in data (version 3.0 after migration)
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.ollama.ollama.AsyncClient") as mock_client:
+    with patch("inpui.components.ollama.ollama.AsyncClient") as mock_client:
         mock_client.return_value.list = AsyncMock(return_value={"models": []})
 
         assert await async_setup_component(hass, ollama.DOMAIN, {})
@@ -120,7 +120,7 @@ async def test_async_setup_entry_auth_failed_on_response_error(
     """Test async_setup_entry raises auth failed on 401/403 response."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.ollama.ollama.AsyncClient") as mock_client:
+    with patch("inpui.components.ollama.ollama.AsyncClient") as mock_client:
         mock_client.return_value.list = AsyncMock(
             side_effect=ResponseError(error="Unauthorized", status_code=status_code)
         )
@@ -166,7 +166,7 @@ async def test_migration_from_v1(
 
     # Run migration
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -289,7 +289,7 @@ async def test_migration_from_v1_with_multiple_urls(
 
     # Run migration
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -397,7 +397,7 @@ async def test_migration_from_v1_with_same_urls(
 
     # Run migration
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -592,7 +592,7 @@ async def test_migration_from_v1_disabled(
 
     # Run migration
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -739,7 +739,7 @@ async def test_migration_from_v2_1(
 
     # Run migration
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -831,7 +831,7 @@ async def test_migration_from_v2_2(hass: HomeAssistant) -> None:
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -870,7 +870,7 @@ async def test_migration_from_v3_1_without_subentry(hass: HomeAssistant) -> None
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1048,7 +1048,7 @@ async def test_migrate_entry_from_v3_2(
 
     # Run setup to trigger migration
     with patch(
-        "homeassistant.components.ollama.async_setup_entry",
+        "inpui.components.ollama.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.async_setup(mock_config_entry.entry_id)

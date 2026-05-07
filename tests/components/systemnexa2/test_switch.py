@@ -37,7 +37,7 @@ async def test_switch_entities(
 
     # Only load the switch platform for snapshot testing
     with patch(
-        "homeassistant.components.systemnexa2.PLATFORMS",
+        "inpui.components.systemnexa2.PLATFORMS",
         [Platform.SWITCH],
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

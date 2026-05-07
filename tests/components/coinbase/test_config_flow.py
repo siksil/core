@@ -46,7 +46,7 @@ async def test_form(hass: HomeAssistant) -> None:
             return_value={"data": mock_get_exchange_rates()},
         ),
         patch(
-            "homeassistant.components.coinbase.async_setup_entry",
+            "inpui.components.coinbase.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

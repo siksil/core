@@ -36,11 +36,11 @@ def mock_twinkly_client() -> Generator[AsyncMock]:
     """Mock the Twinkly client."""
     with (
         patch(
-            "homeassistant.components.twinkly.Twinkly",
+            "inpui.components.twinkly.Twinkly",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.twinkly.config_flow.Twinkly",
+            "inpui.components.twinkly.config_flow.Twinkly",
             new=mock_client,
         ),
     ):
@@ -67,5 +67,5 @@ def mock_twinkly_client() -> Generator[AsyncMock]:
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.twinkly.async_setup_entry", return_value=True):
+    with patch("inpui.components.twinkly.async_setup_entry", return_value=True):
         yield

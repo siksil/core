@@ -417,7 +417,7 @@ async def test_discovery_update_unchanged_binary_sensor(
     config["swc"][0] = 1
     config["swn"][0] = "Test"
     with patch(
-        "homeassistant.components.tasmota.binary_sensor.TasmotaBinarySensor.discovery_update"
+        "inpui.components.tasmota.binary_sensor.TasmotaBinarySensor.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock, caplog, Platform.BINARY_SENSOR, config, discovery_update

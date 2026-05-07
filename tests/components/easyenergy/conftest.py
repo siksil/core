@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, async_load_json_array_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.easyenergy.async_setup_entry", return_value=True
+        "inpui.components.easyenergy.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -36,7 +36,7 @@ def mock_config_entry() -> MockConfigEntry:
 async def mock_easyenergy(hass: HomeAssistant) -> AsyncGenerator[MagicMock]:
     """Return a mocked easyEnergy client."""
     with patch(
-        "homeassistant.components.easyenergy.coordinator.EasyEnergy", autospec=True
+        "inpui.components.easyenergy.coordinator.EasyEnergy", autospec=True
     ) as easyenergy_mock:
         client = easyenergy_mock.return_value
         client.energy_prices.return_value = Electricity.from_dict(

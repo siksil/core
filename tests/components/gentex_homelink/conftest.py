@@ -26,7 +26,7 @@ def mock_srp_access_token() -> str:
 def mock_srp_auth(mock_srp_access_token: str) -> Generator[AsyncMock]:
     """Mock SRP authentication."""
     with patch(
-        "homeassistant.components.gentex_homelink.config_flow.SRPAuth"
+        "inpui.components.gentex_homelink.config_flow.SRPAuth"
     ) as mock_srp_auth:
         instance = mock_srp_auth.return_value
         instance.async_get_access_token.return_value = {
@@ -50,7 +50,7 @@ def aioclient_mock_fixture(aioclient_mock: AiohttpClientMocker) -> None:
 def mock_mqtt_provider(mock_device: AsyncMock) -> Generator[AsyncMock]:
     """Mock MQTT provider."""
     with patch(
-        "homeassistant.components.gentex_homelink.MQTTProvider", autospec=True
+        "inpui.components.gentex_homelink.MQTTProvider", autospec=True
     ) as mock_mqtt_provider:
         instance = mock_mqtt_provider.return_value
         instance.discover.return_value = [mock_device]
@@ -96,6 +96,6 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.gentex_homelink.async_setup_entry", return_value=True
+        "inpui.components.gentex_homelink.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

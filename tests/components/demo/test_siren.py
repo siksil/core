@@ -30,7 +30,7 @@ ENTITY_SIREN_WITH_ALL_FEATURES = "siren.siren_with_all_features"
 async def siren_only() -> None:
     """Enable only the datetime platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.SIREN],
     ):
         yield
@@ -121,7 +121,7 @@ async def test_toggle(hass: HomeAssistant) -> None:
 async def test_turn_on_strip_attributes(hass: HomeAssistant) -> None:
     """Test attributes are stripped from turn_on service call when not supported."""
     with patch(
-        "homeassistant.components.demo.siren.DemoSiren.async_turn_on"
+        "inpui.components.demo.siren.DemoSiren.async_turn_on"
     ) as svc_call:
         await hass.services.async_call(
             SIREN_DOMAIN,

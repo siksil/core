@@ -35,12 +35,12 @@ async def setup_test(hass: HomeAssistant):
 
     with (
         patch(
-            "homeassistant.components.xiaomi_miio.get_platforms",
+            "inpui.components.xiaomi_miio.get_platforms",
             return_value=[
                 Platform.BUTTON,
             ],
         ),
-        patch("homeassistant.components.xiaomi_miio.RoborockVacuum") as mock_vacuum_cls,
+        patch("inpui.components.xiaomi_miio.RoborockVacuum") as mock_vacuum_cls,
     ):
         mock_vacuum_cls.return_value = mock_vacuum
         yield mock_vacuum

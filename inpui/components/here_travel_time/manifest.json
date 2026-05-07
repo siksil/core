@@ -6,6 +6,6 @@
   "documentation": "https://www.home-assistant.io/integrations/here_travel_time",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "loggers": ["here_routing", "here_transit", "homeassistant.helpers.location"],
+  "loggers": ["here_routing", "here_transit", "inpui.helpers.location"],
   "requirements": ["here-routing==1.2.0", "here-transit==1.2.1"]
 }

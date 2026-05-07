@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.palazzetti.async_setup_entry",
+        "inpui.components.palazzetti.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -39,11 +39,11 @@ def mock_palazzetti_client() -> Generator[AsyncMock]:
     """Return a mocked PalazzettiClient."""
     with (
         patch(
-            "homeassistant.components.palazzetti.coordinator.PalazzettiClient",
+            "inpui.components.palazzetti.coordinator.PalazzettiClient",
             autospec=True,
         ) as client,
         patch(
-            "homeassistant.components.palazzetti.config_flow.PalazzettiClient",
+            "inpui.components.palazzetti.config_flow.PalazzettiClient",
             new=client,
         ),
     ):

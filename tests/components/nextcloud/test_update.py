@@ -23,7 +23,7 @@ async def test_async_setup_entry(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test a successful setup entry."""
-    with patch("homeassistant.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
         entry = await init_integration(hass, VALID_CONFIG, NC_DATA)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)
@@ -33,7 +33,7 @@ async def test_setup_entity_without_update(
     hass: HomeAssistant, snapshot: SnapshotAssertion
 ) -> None:
     """Test update entity is created w/o available update."""
-    with patch("homeassistant.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
         await init_integration(hass, VALID_CONFIG, NC_DATA)
 
     states = hass.states.async_all()
@@ -53,7 +53,7 @@ async def test_setup_entity_with_update(
     data = deepcopy(NC_DATA)
     data["nextcloud"]["system"]["update"]["available"] = True
     data["nextcloud"]["system"]["update"]["available_version"] = "30.0.0.0"
-    with patch("homeassistant.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
         await init_integration(hass, VALID_CONFIG, data)
 
     states = hass.states.async_all()
@@ -70,7 +70,7 @@ async def test_setup_no_entity(hass: HomeAssistant) -> None:
     """Test no update entity is created, when no data available."""
     data = deepcopy(NC_DATA)
     data["nextcloud"]["system"].pop("update")  # only nc<28.0.0
-    with patch("homeassistant.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.nextcloud.PLATFORMS", [Platform.UPDATE]):
         await init_integration(hass, VALID_CONFIG, data)
 
     states = hass.states.async_all()

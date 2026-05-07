@@ -120,7 +120,7 @@ async def test_http_api_handle_failure(
     def async_handle_error(*args, **kwargs):
         raise intent.IntentHandleError
 
-    with patch("homeassistant.helpers.intent.async_handle", new=async_handle_error):
+    with patch("inpui.helpers.intent.async_handle", new=async_handle_error):
         resp = await client.post(
             "/api/conversation/process", json={"text": "turn on the kitchen"}
         )
@@ -148,7 +148,7 @@ async def test_http_api_unexpected_failure(
     def async_handle_error(*args, **kwargs):
         raise intent.IntentUnexpectedError
 
-    with patch("homeassistant.helpers.intent.async_handle", new=async_handle_error):
+    with patch("inpui.helpers.intent.async_handle", new=async_handle_error):
         resp = await client.post(
             "/api/conversation/process", json={"text": "turn on the kitchen"}
         )
@@ -185,7 +185,7 @@ async def test_http_processing_intent_with_device_satellite_ids(
     mock_result.async_set_speech("test")
 
     with patch(
-        "homeassistant.components.conversation.http.async_converse",
+        "inpui.components.conversation.http.async_converse",
         return_value=ConversationResult(response=mock_result),
     ) as mock_converse:
         resp = await client.post(
@@ -263,7 +263,7 @@ async def test_ws_api_with_device_satellite_ids(
     mock_result.async_set_speech("test")
 
     with patch(
-        "homeassistant.components.conversation.http.async_converse",
+        "inpui.components.conversation.http.async_converse",
         return_value=ConversationResult(response=mock_result),
     ) as mock_converse:
         await client.send_json_auto_id(
@@ -435,7 +435,7 @@ async def test_ws_hass_agent_debug_null_result(
         return await self.async_recognize(user_input, *args, **kwargs)
 
     with patch(
-        "homeassistant.components.conversation.default_agent.DefaultAgent.async_recognize_intent",
+        "inpui.components.conversation.default_agent.DefaultAgent.async_recognize_intent",
         async_recognize_intent,
     ):
         await client.send_json_auto_id(
@@ -765,7 +765,7 @@ async def test_ws_chat_log_index_subscription(
 
         # Trigger session cleanup
         with patch(
-            "homeassistant.helpers.chat_session.CONVERSATION_TIMEOUT",
+            "inpui.helpers.chat_session.CONVERSATION_TIMEOUT",
             timedelta(0),
         ):
             async_fire_time_changed(hass, fire_all=True)
@@ -957,7 +957,7 @@ async def test_ws_chat_log_subscription(
 
         # Trigger session cleanup
         with patch(
-            "homeassistant.helpers.chat_session.CONVERSATION_TIMEOUT",
+            "inpui.helpers.chat_session.CONVERSATION_TIMEOUT",
             timedelta(0),
         ):
             async_fire_time_changed(hass, fire_all=True)

@@ -86,19 +86,19 @@ async def test_curtain3_controlling(
 
     with (
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotCurtain.open",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotCurtain.open",
             new=AsyncMock(return_value=True),
         ) as mock_open,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotCurtain.close",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotCurtain.close",
             new=AsyncMock(return_value=True),
         ) as mock_close,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotCurtain.stop",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotCurtain.stop",
             new=AsyncMock(return_value=True),
         ) as mock_stop,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotCurtain.set_position",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotCurtain.set_position",
             new=AsyncMock(return_value=True),
         ) as mock_set_position,
     ):
@@ -196,11 +196,11 @@ async def test_curtain3_custom_speed_controlling(
 
     with (
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotCurtain.open",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotCurtain.open",
             new=AsyncMock(return_value=True),
         ) as mock_open,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotCurtain.close",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotCurtain.close",
             new=AsyncMock(return_value=True),
         ) as mock_close,
     ):
@@ -246,7 +246,7 @@ async def test_blindtilt_setup(
 
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.update",
+        "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.update",
         new=AsyncMock(return_value=True),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -275,23 +275,23 @@ async def test_blindtilt_controlling(
     }
     with (
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
             new=AsyncMock(return_value=info),
         ),
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.open",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.open",
             new=AsyncMock(return_value=True),
         ) as mock_open,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.close",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.close",
             new=AsyncMock(return_value=True),
         ) as mock_close,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.stop",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.stop",
             new=AsyncMock(return_value=True),
         ) as mock_stop,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.set_position",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.set_position",
             new=AsyncMock(return_value=True),
         ) as mock_set_position,
     ):
@@ -311,7 +311,7 @@ async def test_blindtilt_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -334,7 +334,7 @@ async def test_blindtilt_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -356,7 +356,7 @@ async def test_blindtilt_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -378,7 +378,7 @@ async def test_blindtilt_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotBlindTilt.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -414,7 +414,7 @@ async def test_roller_shade_setup(
 
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.update",
+        "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.update",
         new=AsyncMock(return_value=True),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -436,23 +436,23 @@ async def test_roller_shade_controlling(
     info = {"battery": 39}
     with (
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
             new=AsyncMock(return_value=info),
         ),
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.open",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.open",
             new=AsyncMock(return_value=True),
         ) as mock_open,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.close",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.close",
             new=AsyncMock(return_value=True),
         ) as mock_close,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.stop",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.stop",
             new=AsyncMock(return_value=True),
         ) as mock_stop,
         patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.set_position",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.set_position",
             new=AsyncMock(return_value=True),
         ) as mock_set_position,
     ):
@@ -472,7 +472,7 @@ async def test_roller_shade_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
             new=AsyncMock(return_value=info),
         ):
             inject_bluetooth_service_info(
@@ -494,7 +494,7 @@ async def test_roller_shade_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -516,7 +516,7 @@ async def test_roller_shade_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -538,7 +538,7 @@ async def test_roller_shade_controlling(
             blocking=True,
         )
         with patch(
-            "homeassistant.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
+            "inpui.components.switchbot.cover.switchbot.SwitchbotRollerShade.get_basic_info",
             return_value=info,
         ):
             inject_bluetooth_service_info(
@@ -689,7 +689,7 @@ async def test_exception_handling_cover_service(
     entity_id = "cover.test_name"
 
     with patch.multiple(
-        f"homeassistant.components.switchbot.cover.switchbot.{class_name}",
+        f"inpui.components.switchbot.cover.switchbot.{class_name}",
         update=AsyncMock(return_value=None),
         **{mock_method: AsyncMock(side_effect=exception)},
     ):
@@ -727,7 +727,7 @@ async def test_garage_door_opener_controlling(
 
     mocked_instance = AsyncMock(return_value=True)
     with patch.multiple(
-        "homeassistant.components.switchbot.cover.switchbot.SwitchbotGarageDoorOpener",
+        "inpui.components.switchbot.cover.switchbot.SwitchbotGarageDoorOpener",
         update=AsyncMock(),
         **{mock_method: mocked_instance},
     ):

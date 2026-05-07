@@ -39,7 +39,7 @@ async def test_update(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the smarla update platform."""
-    with patch("homeassistant.components.smarla.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.smarla.PLATFORMS", [Platform.UPDATE]):
         assert await setup_integration(hass, mock_config_entry)
 
         await snapshot_platform(

@@ -83,7 +83,7 @@ def _gas_report() -> DeviceReport:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.powerfox.async_setup_entry", return_value=True
+        "inpui.components.powerfox.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -93,11 +93,11 @@ def mock_powerfox_client() -> Generator[AsyncMock]:
     """Mock a Powerfox client."""
     with (
         patch(
-            "homeassistant.components.powerfox.Powerfox",
+            "inpui.components.powerfox.Powerfox",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.powerfox.config_flow.Powerfox",
+            "inpui.components.powerfox.config_flow.Powerfox",
             new=mock_client,
         ),
     ):

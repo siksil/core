@@ -20,7 +20,7 @@ def mock_onboarding_done() -> Generator[MagicMock]:
     Enabled to prevent creating default dashboards during test execution.
     """
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=True,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -58,7 +58,7 @@ async def test_system_health_info_yaml(hass: HomeAssistant) -> None:
     assert await async_setup_component(hass, "lovelace", {"lovelace": {"mode": "YAML"}})
     await hass.async_block_till_done()
     with patch(
-        "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+        "inpui.components.lovelace.dashboard.load_yaml_dict",
         return_value={"views": [{"cards": []}]},
     ):
         info = await get_system_health_info(hass, "lovelace")

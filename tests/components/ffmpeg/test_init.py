@@ -204,7 +204,7 @@ async def test_async_get_image_with_width_height(hass: HomeAssistant) -> None:
 
     get_image_mock = AsyncMock()
     with patch(
-        "homeassistant.components.ffmpeg.ImageFrame",
+        "inpui.components.ffmpeg.ImageFrame",
         return_value=Mock(get_image=get_image_mock),
     ):
         await ffmpeg.async_get_image(hass, "rtsp://fake", width=640, height=480)
@@ -223,7 +223,7 @@ async def test_async_get_image_with_extra_cmd_overlapping_width_height(
 
     get_image_mock = AsyncMock()
     with patch(
-        "homeassistant.components.ffmpeg.ImageFrame",
+        "inpui.components.ffmpeg.ImageFrame",
         return_value=Mock(get_image=get_image_mock),
     ):
         await ffmpeg.async_get_image(
@@ -242,7 +242,7 @@ async def test_async_get_image_with_extra_cmd_width_height(hass: HomeAssistant) 
 
     get_image_mock = AsyncMock()
     with patch(
-        "homeassistant.components.ffmpeg.ImageFrame",
+        "inpui.components.ffmpeg.ImageFrame",
         return_value=Mock(get_image=get_image_mock),
     ):
         await ffmpeg.async_get_image(
@@ -272,9 +272,9 @@ async def test_legacy_ffmpeg(
     with (
         assert_setup_component(1),
         patch(
-            "homeassistant.components.ffmpeg.FFVersion.get_version", return_value="3.0"
+            "inpui.components.ffmpeg.FFVersion.get_version", return_value="3.0"
         ),
-        patch("homeassistant.components.ffmpeg.is_official_image", return_value=False),
+        patch("inpui.components.ffmpeg.is_official_image", return_value=False),
     ):
         await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
 
@@ -288,7 +288,7 @@ async def test_ffmpeg_using_official_image(
     """Test ffmpeg using official image is the new ffmpeg content type."""
     with (
         assert_setup_component(1),
-        patch("homeassistant.components.ffmpeg.is_official_image", return_value=True),
+        patch("inpui.components.ffmpeg.is_official_image", return_value=True),
     ):
         await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
 

@@ -116,13 +116,13 @@ async def setup_watttime_fixture(
     """Define a fixture to set up WattTime."""
     with (
         patch(
-            "homeassistant.components.watttime.Client.async_login", return_value=client
+            "inpui.components.watttime.Client.async_login", return_value=client
         ),
         patch(
-            "homeassistant.components.watttime.config_flow.Client.async_login",
+            "inpui.components.watttime.config_flow.Client.async_login",
             return_value=client,
         ),
-        patch("homeassistant.components.watttime.PLATFORMS", []),
+        patch("inpui.components.watttime.PLATFORMS", []),
     ):
         assert await async_setup_component(
             hass, DOMAIN, {**config_auth, **config_coordinates}

@@ -37,7 +37,7 @@ async def test_sensor_platform(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test paperless_ngx update sensors."""
-    with patch("homeassistant.components.paperless_ngx.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.paperless_ngx.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

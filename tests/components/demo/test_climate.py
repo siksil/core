@@ -54,7 +54,7 @@ ENTITY_HEATPUMP = "climate.heatpump"
 def climate_only() -> Generator[None]:
     """Enable only the climate platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.CLIMATE],
     ):
         yield

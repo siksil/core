@@ -77,7 +77,7 @@ MOCK_DISCOVERY: Final = SsdpServiceInfo(
 def mock_setup_entry() -> Generator[Mock]:
     """Avoid setting up the entire integration."""
     with patch(
-        "homeassistant.components.dlna_dms.async_setup_entry",
+        "inpui.components.dlna_dms.async_setup_entry",
         return_value=True,
     ) as mock:
         yield mock
@@ -134,7 +134,7 @@ async def test_user_flow_no_devices(
 
 async def test_ssdp_flow_success(hass: HomeAssistant) -> None:
     """Test that SSDP discovery with an available device works."""
-    logging.getLogger("homeassistant.components.dlna_dms.config_flow").setLevel(
+    logging.getLogger("inpui.components.dlna_dms.config_flow").setLevel(
         logging.DEBUG
     )
     result = await hass.config_entries.flow.async_init(

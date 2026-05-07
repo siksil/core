@@ -253,7 +253,7 @@ async def test_clean_area_service_failure(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.core.ServiceRegistry.async_call",
+            "inpui.core.ServiceRegistry.async_call",
             side_effect=RuntimeError("Service failed"),
         ),
         pytest.raises(intent.IntentHandleError) as err,

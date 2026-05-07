@@ -113,7 +113,7 @@ def config_flow_handler(
 def options_flow_poll_addon_state() -> Generator[None]:
     """Fixture for patching options flow addon state polling."""
     with patch(
-        "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.WaitingAddonManager.async_wait_until_addon_state"
+        "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.WaitingAddonManager.async_wait_until_addon_state"
     ):
         yield
 
@@ -174,7 +174,7 @@ def get_suggested(schema, key):
 
 
 @patch(
-    "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.ADDON_STATE_POLL_INTERVAL",
+    "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.ADDON_STATE_POLL_INTERVAL",
     0,
 )
 @pytest.mark.usefixtures(
@@ -328,7 +328,7 @@ async def test_option_flow_install_multi_pan_addon_zha(
     )
     assert multipan_manager._channel is None
     with patch(
-        "homeassistant.components.zha.silabs_multiprotocol.async_get_channel",
+        "inpui.components.zha.silabs_multiprotocol.async_get_channel",
         return_value=11,
     ):
         result = await hass.config_entries.options.async_configure(result["flow_id"])
@@ -465,7 +465,7 @@ async def test_option_flow_non_hassio(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
+        "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
         return_value=False,
     ):
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
@@ -1007,7 +1007,7 @@ async def test_option_flow_flasher_addon_flash_failure(
 
 @pytest.mark.parametrize("ignore_translations_for_mock_domains", ["test"])
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_initiate_migration",
+    "inpui.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_initiate_migration",
     side_effect=Exception("Boom!"),
 )
 async def test_option_flow_uninstall_migration_initiate_failure(
@@ -1069,7 +1069,7 @@ async def test_option_flow_uninstall_migration_initiate_failure(
 
 @pytest.mark.parametrize("ignore_translations_for_mock_domains", ["test"])
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_finish_migration",
+    "inpui.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_finish_migration",
     side_effect=Exception("Boom!"),
 )
 async def test_option_flow_uninstall_migration_finish_failure(
@@ -1345,7 +1345,7 @@ async def test_option_flow_addon_info_fails(
 
 @pytest.mark.parametrize("ignore_translations_for_mock_domains", ["test"])
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_initiate_migration",
+    "inpui.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_initiate_migration",
     side_effect=Exception("Boom!"),
 )
 async def test_option_flow_install_multi_pan_addon_zha_migration_fails_step_1(
@@ -1401,7 +1401,7 @@ async def test_option_flow_install_multi_pan_addon_zha_migration_fails_step_1(
 
 @pytest.mark.parametrize("ignore_translations_for_mock_domains", ["test"])
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_finish_migration",
+    "inpui.components.zha.radio_manager.ZhaMultiPANMigrationHelper.async_finish_migration",
     side_effect=Exception("Boom!"),
 )
 async def test_option_flow_install_multi_pan_addon_zha_migration_fails_step_2(
@@ -1610,11 +1610,11 @@ async def test_check_multi_pan_addon_no_hassio(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
+            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
+            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
             autospec=True,
         ) as mock_get_addon_manager,
     ):
@@ -1637,7 +1637,7 @@ async def test_check_multi_pan_addon_bad_state(hass: HomeAssistant) -> None:
     """Test `check_multi_pan_addon` where the addon is in an unexpected state."""
 
     with patch(
-        "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
+        "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
         return_value=Mock(
             spec_set=silabs_multiprotocol_addon.MultiprotocolAddonManager
         ),
@@ -1691,7 +1691,7 @@ async def test_multi_pan_addon_using_device_no_hassio(hass: HomeAssistant) -> No
     """Test `multi_pan_addon_using_device` without hassio."""
 
     with patch(
-        "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
+        "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
         return_value=False,
     ):
         assert (

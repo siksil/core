@@ -49,11 +49,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+            "inpui.components.volumio.config_flow.Volumio.get_system_info",
             return_value=TEST_SYSTEM_INFO,
         ),
         patch(
-            "homeassistant.components.volumio.async_setup_entry",
+            "inpui.components.volumio.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -90,11 +90,11 @@ async def test_form_updates_unique_id(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+            "inpui.components.volumio.config_flow.Volumio.get_system_info",
             return_value=TEST_SYSTEM_INFO,
         ),
         patch(
-            "homeassistant.components.volumio.async_setup_entry",
+            "inpui.components.volumio.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -120,11 +120,11 @@ async def test_empty_system_info(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+            "inpui.components.volumio.config_flow.Volumio.get_system_info",
             return_value={},
         ),
         patch(
-            "homeassistant.components.volumio.async_setup_entry",
+            "inpui.components.volumio.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -153,7 +153,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+        "inpui.components.volumio.config_flow.Volumio.get_system_info",
         side_effect=CannotConnectError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -172,7 +172,7 @@ async def test_form_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+        "inpui.components.volumio.config_flow.Volumio.get_system_info",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -193,11 +193,11 @@ async def test_discovery(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+            "inpui.components.volumio.config_flow.Volumio.get_system_info",
             return_value=TEST_SYSTEM_INFO,
         ),
         patch(
-            "homeassistant.components.volumio.async_setup_entry",
+            "inpui.components.volumio.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -225,7 +225,7 @@ async def test_discovery_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.volumio.config_flow.Volumio.get_system_info",
+        "inpui.components.volumio.config_flow.Volumio.get_system_info",
         side_effect=CannotConnectError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -269,7 +269,7 @@ async def test_discovery_updates_unique_id(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.volumio.async_setup_entry",
+        "inpui.components.volumio.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(

@@ -86,7 +86,7 @@ def serial_number(model: str) -> str | None:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.bosch_alarm.async_setup_entry",
+        "inpui.components.bosch_alarm.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -173,9 +173,9 @@ def mock_panel(
     """Define a fixture to set up Bosch Alarm."""
     with (
         patch(
-            "homeassistant.components.bosch_alarm.Panel", autospec=True
+            "inpui.components.bosch_alarm.Panel", autospec=True
         ) as mock_panel,
-        patch("homeassistant.components.bosch_alarm.config_flow.Panel", new=mock_panel),
+        patch("inpui.components.bosch_alarm.config_flow.Panel", new=mock_panel),
     ):
         client = mock_panel.return_value
         client.areas = {1: area}

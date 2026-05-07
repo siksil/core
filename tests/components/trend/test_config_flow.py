@@ -32,7 +32,7 @@ async def test_form(hass: HomeAssistant) -> None:
 
     # test step 2 of config flow: settings of trend sensor
     with patch(
-        "homeassistant.components.trend.async_setup_entry", wraps=async_setup_entry
+        "inpui.components.trend.async_setup_entry", wraps=async_setup_entry
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

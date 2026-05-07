@@ -33,7 +33,7 @@ from tests.common import mock_restore_cache
 def select_select_only():
     """Only set up the select and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.BUTTON,
             Platform.DEVICE_TRACKER,

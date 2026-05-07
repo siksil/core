@@ -37,7 +37,7 @@ from tests.common import MockConfigEntry
 def mock_supervisor_fixture() -> Generator[None]:
     """Mock Supervisor."""
     with patch(
-        "homeassistant.components.homeassistant_hardware.firmware_config_flow.is_hassio",
+        "inpui.components.homeassistant_hardware.firmware_config_flow.is_hassio",
         return_value=True,
     ):
         yield
@@ -47,7 +47,7 @@ def mock_supervisor_fixture() -> Generator[None]:
 def setup_entry_fixture() -> Generator[AsyncMock]:
     """Mock entry setup."""
     with patch(
-        "homeassistant.components.homeassistant_connect_zbt2.async_setup_entry",
+        "inpui.components.homeassistant_connect_zbt2.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -90,7 +90,7 @@ async def test_config_flow_zigbee(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -192,7 +192,7 @@ async def test_config_flow_thread(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareConfigFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -285,15 +285,15 @@ async def test_options_flow(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.FirmwareUpdateClient",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.FirmwareUpdateClient",
             return_value=mock_update_client,
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware",
             return_value=FirmwareInfo(
                 device=usb_data.device,
                 firmware_type=ApplicationType.EZSP,
@@ -303,7 +303,7 @@ async def test_options_flow(
             ),
         ) as flash_mock,
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
             side_effect=[
                 # First call: probe before installation (returns current SPINEL firmware)
                 FirmwareInfo(
@@ -324,7 +324,7 @@ async def test_options_flow(
             ],
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
         ),
     ):
         pick_result = await hass.config_entries.options.async_configure(
@@ -469,7 +469,7 @@ async def test_firmware_callback_auto_creates_entry(hass: HomeAssistant) -> None
     )
 
     with patch(
-        "homeassistant.components.homeassistant_hardware.helpers.usb_device_from_path",
+        "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
         return_value=usb_device,
     ):
         await async_notify_firmware_info(
@@ -541,7 +541,7 @@ async def test_firmware_callback_updates_existing_entry(hass: HomeAssistant) -> 
     )
 
     with patch(
-        "homeassistant.components.homeassistant_hardware.helpers.usb_device_from_path",
+        "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
         return_value=usb_device,
     ):
         await async_notify_firmware_info(

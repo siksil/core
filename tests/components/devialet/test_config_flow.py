@@ -87,7 +87,7 @@ async def test_full_user_flow_implementation(
 
     user_input = MOCK_USER_INPUT.copy()
     with patch(
-        "homeassistant.components.devialet.async_setup_entry", return_value=True
+        "inpui.components.devialet.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -114,7 +114,7 @@ async def test_zeroconf_devialet(
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.devialet.async_setup_entry",
+        "inpui.components.devialet.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(

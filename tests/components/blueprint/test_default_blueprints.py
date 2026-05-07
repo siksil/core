@@ -17,7 +17,7 @@ LOGGER = logging.getLogger(__name__)
 @pytest.mark.parametrize("domain", DOMAINS)
 def test_default_blueprints(domain: str) -> None:
     """Validate a folder of blueprints."""
-    integration = importlib.import_module(f"homeassistant.components.{domain}")
+    integration = importlib.import_module(f"inpui.components.{domain}")
     blueprint_folder = pathlib.Path(integration.__file__).parent / BLUEPRINT_FOLDER
     items = list(blueprint_folder.glob("*"))
     assert len(items) > 0, "Folder cannot be empty"

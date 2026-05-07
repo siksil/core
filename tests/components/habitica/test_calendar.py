@@ -19,7 +19,7 @@ from tests.typing import ClientSessionGenerator
 def calendar_only() -> Generator[None]:
     """Enable only the calendar platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.CALENDAR],
     ):
         yield

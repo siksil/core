@@ -58,7 +58,7 @@ async def test_migrate_camera_entities_unique_ids(hass: HomeAssistant) -> None:
         config_entry=config_entry,
     )
 
-    with patch("homeassistant.components.onvif.ONVIFDevice") as mock_device:
+    with patch("inpui.components.onvif.ONVIFDevice") as mock_device:
         setup_mock_device(
             mock_device,
             capabilities=None,

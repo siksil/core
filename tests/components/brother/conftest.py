@@ -85,7 +85,7 @@ BROTHER_DATA = BrotherSensors(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.brother.async_setup_entry", return_value=True
+        "inpui.components.brother.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -94,8 +94,8 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_brother() -> Generator[AsyncMock]:
     """Mock the Brother class."""
     with (
-        patch("homeassistant.components.brother.Brother", autospec=True) as mock_class,
-        patch("homeassistant.components.brother.config_flow.Brother", new=mock_class),
+        patch("inpui.components.brother.Brother", autospec=True) as mock_class,
+        patch("inpui.components.brother.config_flow.Brother", new=mock_class),
     ):
         yield mock_class
 

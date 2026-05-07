@@ -69,7 +69,7 @@ async def setup_evil_genius_labs(
             return_value=product_fixture,
         ),
         patch(
-            "homeassistant.components.evil_genius_labs.PLATFORMS",
+            "inpui.components.evil_genius_labs.PLATFORMS",
             platforms,
         ),
     ):

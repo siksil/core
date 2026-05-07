@@ -30,7 +30,7 @@ async def test_locks(
 
     # Test lock set value functions
     entity_id = "lock.test_lock"
-    with patch("homeassistant.components.tessie.lock.lock") as mock_run:
+    with patch("inpui.components.tessie.lock.lock") as mock_run:
         await hass.services.async_call(
             LOCK_DOMAIN,
             SERVICE_LOCK,
@@ -40,7 +40,7 @@ async def test_locks(
         mock_run.assert_called_once()
     assert hass.states.get(entity_id).state == LockState.LOCKED
 
-    with patch("homeassistant.components.tessie.lock.unlock") as mock_run:
+    with patch("inpui.components.tessie.lock.unlock") as mock_run:
         await hass.services.async_call(
             LOCK_DOMAIN,
             SERVICE_UNLOCK,
@@ -61,7 +61,7 @@ async def test_locks(
         )
 
     with patch(
-        "homeassistant.components.tessie.lock.open_unlock_charge_port"
+        "inpui.components.tessie.lock.open_unlock_charge_port"
     ) as mock_run:
         await hass.services.async_call(
             LOCK_DOMAIN,

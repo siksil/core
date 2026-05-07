@@ -76,51 +76,51 @@ def motion_blinds_connect_fixture():
     """Mock Motionblinds connection and entry setup."""
     with (
         patch(
-            "homeassistant.components.motion_blinds.gateway.MotionGateway.GetDeviceList",
+            "inpui.components.motion_blinds.gateway.MotionGateway.GetDeviceList",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.MotionGateway.Update",
+            "inpui.components.motion_blinds.gateway.MotionGateway.Update",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.MotionGateway.Check_gateway_multicast",
+            "inpui.components.motion_blinds.gateway.MotionGateway.Check_gateway_multicast",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.MotionGateway.device_list",
+            "inpui.components.motion_blinds.gateway.MotionGateway.device_list",
             TEST_DEVICE_LIST,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.MotionGateway.mac",
+            "inpui.components.motion_blinds.gateway.MotionGateway.mac",
             TEST_MAC,
         ),
         patch(
-            "homeassistant.components.motion_blinds.config_flow.MotionDiscovery.discover",
+            "inpui.components.motion_blinds.config_flow.MotionDiscovery.discover",
             return_value=TEST_DISCOVERY_1,
         ),
         patch(
-            "homeassistant.components.motion_blinds.config_flow.MotionGateway.GetDeviceList",
+            "inpui.components.motion_blinds.config_flow.MotionGateway.GetDeviceList",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.config_flow.MotionGateway.available",
+            "inpui.components.motion_blinds.config_flow.MotionGateway.available",
             True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.AsyncMotionMulticast.Start_listen",
+            "inpui.components.motion_blinds.gateway.AsyncMotionMulticast.Start_listen",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.AsyncMotionMulticast.Stop_listen",
+            "inpui.components.motion_blinds.gateway.AsyncMotionMulticast.Stop_listen",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.motion_blinds.gateway.network.async_get_adapters",
+            "inpui.components.motion_blinds.gateway.network.async_get_adapters",
             return_value=TEST_INTERFACES,
         ),
         patch(
-            "homeassistant.components.motion_blinds.async_setup_entry",
+            "inpui.components.motion_blinds.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -180,7 +180,7 @@ async def test_config_flow_discovery_1_success(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.gateway.AsyncMotionMulticast.Stop_listen",
+        "inpui.components.motion_blinds.gateway.AsyncMotionMulticast.Stop_listen",
         side_effect=socket.gaierror,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -208,7 +208,7 @@ async def test_config_flow_discovery_2_success(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.config_flow.MotionDiscovery.discover",
+        "inpui.components.motion_blinds.config_flow.MotionDiscovery.discover",
         return_value=TEST_DISCOVERY_2,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -234,7 +234,7 @@ async def test_config_flow_discovery_2_success(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.gateway.MotionGateway.Check_gateway_multicast",
+        "inpui.components.motion_blinds.gateway.MotionGateway.Check_gateway_multicast",
         side_effect=socket.timeout,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -271,7 +271,7 @@ async def test_config_flow_connection_error(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.gateway.MotionGateway.GetDeviceList",
+        "inpui.components.motion_blinds.gateway.MotionGateway.GetDeviceList",
         side_effect=socket.timeout,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -294,7 +294,7 @@ async def test_config_flow_discovery_fail(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.config_flow.MotionDiscovery.discover",
+        "inpui.components.motion_blinds.config_flow.MotionDiscovery.discover",
         return_value={},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -327,7 +327,7 @@ async def test_config_flow_invalid_interface(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.gateway.AsyncMotionMulticast.Start_listen",
+        "inpui.components.motion_blinds.gateway.AsyncMotionMulticast.Start_listen",
         side_effect=socket.gaierror,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -361,7 +361,7 @@ async def test_dhcp_flow(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.motion_blinds.gateway.AsyncMotionMulticast.Start_listen",
+        "inpui.components.motion_blinds.gateway.AsyncMotionMulticast.Start_listen",
         side_effect=OSError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -387,7 +387,7 @@ async def test_dhcp_flow_abort(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.motion_blinds.config_flow.MotionGateway.GetDeviceList",
+        "inpui.components.motion_blinds.config_flow.MotionGateway.GetDeviceList",
         side_effect=socket.timeout,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -407,7 +407,7 @@ async def test_dhcp_flow_abort_invalid_response(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.motion_blinds.config_flow.MotionGateway.available",
+        "inpui.components.motion_blinds.config_flow.MotionGateway.available",
         False,
     ):
         result = await hass.config_entries.flow.async_init(

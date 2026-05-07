@@ -149,7 +149,7 @@ MOCK_ENTRY_OPTIONS = {
 def mock_finish_setup() -> Generator[MagicMock]:
     """Mock out the finish setup method."""
     with patch(
-        "homeassistant.components.mqtt.MQTT.async_connect", return_value=True
+        "inpui.components.mqtt.MQTT.async_connect", return_value=True
     ) as mock_finish:
         yield mock_finish
 
@@ -158,7 +158,7 @@ def mock_finish_setup() -> Generator[MagicMock]:
 def mock_client_cert_check_fail() -> Generator[MagicMock]:
     """Mock the client certificate check."""
     with patch(
-        "homeassistant.components.mqtt.config_flow.load_pem_x509_certificate",
+        "inpui.components.mqtt.config_flow.load_pem_x509_certificate",
         side_effect=ValueError,
     ) as mock_cert_check:
         yield mock_cert_check
@@ -168,7 +168,7 @@ def mock_client_cert_check_fail() -> Generator[MagicMock]:
 def mock_client_key_check_fail() -> Generator[MagicMock]:
     """Mock the client key file check."""
     with patch(
-        "homeassistant.components.mqtt.config_flow.load_pem_private_key",
+        "inpui.components.mqtt.config_flow.load_pem_private_key",
         side_effect=ValueError,
     ) as mock_key_check:
         yield mock_key_check
@@ -184,18 +184,18 @@ def mock_context_client_key() -> bytes:
 def mock_ssl_context(mock_context_client_key: bytes) -> Generator[dict[str, MagicMock]]:
     """Mock the SSL context used to load the cert chain and to load verify locations."""
     with (
-        patch("homeassistant.components.mqtt.config_flow.SSLContext") as mock_context,
+        patch("inpui.components.mqtt.config_flow.SSLContext") as mock_context,
         patch(
-            "homeassistant.components.mqtt.config_flow.load_pem_private_key"
+            "inpui.components.mqtt.config_flow.load_pem_private_key"
         ) as mock_pem_key_check,
         patch(
-            "homeassistant.components.mqtt.config_flow.load_der_private_key"
+            "inpui.components.mqtt.config_flow.load_der_private_key"
         ) as mock_der_key_check,
         patch(
-            "homeassistant.components.mqtt.config_flow.load_pem_x509_certificate"
+            "inpui.components.mqtt.config_flow.load_pem_x509_certificate"
         ) as mock_pem_cert_check,
         patch(
-            "homeassistant.components.mqtt.config_flow.load_der_x509_certificate"
+            "inpui.components.mqtt.config_flow.load_der_x509_certificate"
         ) as mock_der_cert_check,
     ):
         mock_pem_key_check().private_bytes.return_value = mock_context_client_key
@@ -215,7 +215,7 @@ def mock_ssl_context(mock_context_client_key: bytes) -> Generator[dict[str, Magi
 def mock_reload_after_entry_update() -> Generator[MagicMock]:
     """Mock out the reload after updating the entry."""
     with patch(
-        "homeassistant.components.mqtt._async_config_entry_updated"
+        "inpui.components.mqtt._async_config_entry_updated"
     ) as mock_reload:
         yield mock_reload
 
@@ -223,7 +223,7 @@ def mock_reload_after_entry_update() -> Generator[MagicMock]:
 @pytest.fixture
 def mock_try_connection() -> Generator[MagicMock]:
     """Mock the try connection method."""
-    with patch("homeassistant.components.mqtt.config_flow.try_connection") as mock_try:
+    with patch("inpui.components.mqtt.config_flow.try_connection") as mock_try:
         yield mock_try
 
 
@@ -253,7 +253,7 @@ def mock_try_connection_success() -> Generator[MqttMockPahoClient]:
         return (0, mid)
 
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         mock_client().loop_start = loop_start
         mock_client().subscribe = _subscribe
@@ -269,9 +269,9 @@ def mock_try_connection_time_out() -> Generator[MagicMock]:
     # Patch prevent waiting 5 sec for a timeout
     with (
         patch(
-            "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+            "inpui.components.mqtt.async_client.AsyncMQTTClient"
         ) as mock_client,
-        patch("homeassistant.components.mqtt.config_flow.MQTT_TIMEOUT", 0),
+        patch("inpui.components.mqtt.config_flow.MQTT_TIMEOUT", 0),
     ):
         mock_client().loop_start = lambda *args: 1
         yield mock_client()
@@ -328,7 +328,7 @@ def mock_process_uploaded_file(
             pytest.fail(f"Unexpected file_id: {file_id}")
 
     with patch(
-        "homeassistant.components.mqtt.config_flow.process_uploaded_file",
+        "inpui.components.mqtt.config_flow.process_uploaded_file",
         side_effect=_mock_process_uploaded_file,
     ) as mock_upload:
         mock_upload.file_id = {
@@ -343,7 +343,7 @@ def mock_process_uploaded_file(
 def supervisor_fixture() -> Generator[MagicMock]:
     """Mock Supervisor."""
     with patch(
-        "homeassistant.components.mqtt.config_flow.is_hassio", return_value=True
+        "inpui.components.mqtt.config_flow.is_hassio", return_value=True
     ) as is_hassio:
         yield is_hassio
 
@@ -352,7 +352,7 @@ def supervisor_fixture() -> Generator[MagicMock]:
 def addon_setup_time_fixture() -> Generator[int]:
     """Mock add-on setup sleep time."""
     with patch(
-        "homeassistant.components.mqtt.config_flow.ADDON_SETUP_TIMEOUT", new=0
+        "inpui.components.mqtt.config_flow.ADDON_SETUP_TIMEOUT", new=0
     ) as addon_setup_time:
         yield addon_setup_time
 
@@ -1087,7 +1087,7 @@ async def test_option_flow(
 ) -> None:
     """Test config flow options."""
     with patch(
-        "homeassistant.config.async_hass_config_yaml", AsyncMock(return_value={})
+        "inpui.config.async_hass_config_yaml", AsyncMock(return_value={})
     ) as yaml_mock:
         await mqtt_mock_entry()
         config_entry = hass.config_entries.async_entries(mqtt.DOMAIN)[0]

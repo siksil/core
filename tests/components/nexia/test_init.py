@@ -56,7 +56,7 @@ async def test_device_remove_devices(
 
 async def test_migrate_entry_minor_version_1_2(hass: HomeAssistant) -> None:
     """Test migrating a 1.1 config entry to 1.2."""
-    with patch("homeassistant.components.nexia.async_setup_entry", return_value=True):
+    with patch("inpui.components.nexia.async_setup_entry", return_value=True):
         entry = MockConfigEntry(
             domain=DOMAIN,
             data={CONF_USERNAME: "mock", CONF_PASSWORD: "mock"},

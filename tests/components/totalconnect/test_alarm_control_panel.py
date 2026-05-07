@@ -41,7 +41,7 @@ ENTITY_ID_2 = "alarm_control_panel.test_partition_2"
 DATA = {ATTR_ENTITY_ID: ENTITY_ID}
 DELAY = timedelta(seconds=10)
 
-ARMING_HELPER = "homeassistant.components.totalconnect.alarm_control_panel.ArmingHelper"
+ARMING_HELPER = "inpui.components.totalconnect.alarm_control_panel.ArmingHelper"
 
 
 async def test_entities(
@@ -53,7 +53,7 @@ async def test_entities(
 ) -> None:
     """Test the alarm control panel attributes are correct."""
     with patch(
-        "homeassistant.components.totalconnect.PLATFORMS",
+        "inpui.components.totalconnect.PLATFORMS",
         [Platform.ALARM_CONTROL_PANEL],
     ):
         await setup_integration(hass, mock_config_entry)

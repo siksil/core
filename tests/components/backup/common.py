@@ -132,12 +132,12 @@ async def setup_backup_integration(
     """Set up the Backup integration."""
     backups = backups or {}
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=with_hassio),
+        patch("inpui.components.backup.is_hassio", return_value=with_hassio),
         patch(
-            "homeassistant.components.backup.backup.is_hassio", return_value=with_hassio
+            "inpui.components.backup.backup.is_hassio", return_value=with_hassio
         ),
         patch(
-            "homeassistant.components.backup.services.is_hassio",
+            "inpui.components.backup.services.is_hassio",
             return_value=with_hassio,
         ),
     ):

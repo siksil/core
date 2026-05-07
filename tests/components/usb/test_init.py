@@ -78,10 +78,10 @@ async def test_aiousbwatcher_discovery(
 
     with (
         patch("sys.platform", "linux"),
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch(
-            "homeassistant.components.usb.AIOUSBWatcher", return_value=MockAIOUSBWatcher
+            "inpui.components.usb.AIOUSBWatcher", return_value=MockAIOUSBWatcher
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -153,10 +153,10 @@ async def test_polling_discovery(
     with (
         patch("sys.platform", "linux"),
         patch(
-            "homeassistant.components.usb.POLLING_MONITOR_SCAN_PERIOD",
+            "inpui.components.usb.POLLING_MONITOR_SCAN_PERIOD",
             timedelta(seconds=0.01),
         ),
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(side_effect=scan_serial_ports) as mock_ports,
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -194,7 +194,7 @@ async def test_removal_by_aiousbwatcher_before_started(hass: HomeAssistant) -> N
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -230,7 +230,7 @@ async def test_discovered_by_websocket_scan(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -269,7 +269,7 @@ async def test_discovered_by_websocket_scan_limited_by_description_matcher(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -309,7 +309,7 @@ async def test_most_targeted_matcher_wins(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -348,7 +348,7 @@ async def test_discovered_by_websocket_scan_rejected_by_description_matcher(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -391,7 +391,7 @@ async def test_discovered_by_websocket_scan_limited_by_serial_number_matcher(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -430,7 +430,7 @@ async def test_discovered_by_websocket_scan_rejected_by_serial_number_matcher(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -473,7 +473,7 @@ async def test_discovered_by_websocket_scan_limited_by_manufacturer_matcher(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -517,7 +517,7 @@ async def test_discovered_by_websocket_scan_rejected_by_manufacturer_matcher(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -555,7 +555,7 @@ async def test_discovered_by_websocket_rejected_with_empty_serial_number_only(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -591,7 +591,7 @@ async def test_discovered_by_websocket_scan_match_vid_only(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -628,7 +628,7 @@ async def test_discovered_by_websocket_scan_match_vid_wrong_pid(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -664,7 +664,7 @@ async def test_discovered_by_websocket_no_vid_pid(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -700,7 +700,7 @@ async def test_non_matching_discovered_by_scanner_after_started(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -735,7 +735,7 @@ async def test_aiousbwatcher_on_wsl_fallback_without_throwing_exception(
     ]
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=mock_ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -779,10 +779,10 @@ async def test_discovered_by_aiousbwatcher_before_started(hass: HomeAssistant) -
 
     with (
         patch("sys.platform", "linux"),
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=initial_ports),
         patch(
-            "homeassistant.components.usb.AIOUSBWatcher", return_value=MockAIOUSBWatcher
+            "inpui.components.usb.AIOUSBWatcher", return_value=MockAIOUSBWatcher
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -894,7 +894,7 @@ async def test_web_socket_triggers_discovery_request_callbacks(
     mock_callback = Mock()
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=[]),
+        patch("inpui.components.usb.async_get_usb", return_value=[]),
         patch_scanned_serial_ports(return_value=[]),
         patch.object(hass.config_entries.flow, "async_init"),
     ):
@@ -930,7 +930,7 @@ async def test_initial_scan_callback(
     mock_callback_2 = Mock()
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=[]),
+        patch("inpui.components.usb.async_get_usb", return_value=[]),
         patch_scanned_serial_ports(return_value=[]),
         patch.object(hass.config_entries.flow, "async_init"),
     ):
@@ -965,7 +965,7 @@ async def test_cancel_initial_scan_callback(
     mock_callback = Mock()
 
     with (
-        patch("homeassistant.components.usb.async_get_usb", return_value=[]),
+        patch("inpui.components.usb.async_get_usb", return_value=[]),
         patch_scanned_serial_ports(return_value=[]),
         patch.object(hass.config_entries.flow, "async_init"),
     ):
@@ -1068,7 +1068,7 @@ async def test_cp2102n_ordering_on_macos(
 
     with (
         patch("sys.platform", "darwin"),
-        patch("homeassistant.components.usb.async_get_usb", return_value=new_usb),
+        patch("inpui.components.usb.async_get_usb", return_value=new_usb),
         patch_scanned_serial_ports(return_value=ports),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
@@ -1090,7 +1090,7 @@ async def test_cp2102n_ordering_on_macos(
 
 
 @pytest.mark.usefixtures("force_usb_polling_watcher")
-@patch("homeassistant.components.usb.REQUEST_SCAN_COOLDOWN", 0)
+@patch("inpui.components.usb.REQUEST_SCAN_COOLDOWN", 0)
 async def test_register_port_event_callback(
     hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1183,7 +1183,7 @@ async def test_register_port_event_callback(
 
 
 @pytest.mark.usefixtures("force_usb_polling_watcher")
-@patch("homeassistant.components.usb.REQUEST_SCAN_COOLDOWN", 0)
+@patch("inpui.components.usb.REQUEST_SCAN_COOLDOWN", 0)
 async def test_register_port_event_callback_failure(
     hass: HomeAssistant,
     hass_ws_client: WebSocketGenerator,
@@ -1229,7 +1229,7 @@ async def test_register_port_event_callback_failure(
     # Add two new ports
     with (
         patch_scanned_serial_ports(return_value=[port1, port2]),
-        caplog.at_level(logging.ERROR, logger="homeassistant.components.usb"),
+        caplog.at_level(logging.ERROR, logger="inpui.components.usb"),
     ):
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
         response = await ws_client.receive_json()
@@ -1283,7 +1283,7 @@ def test_scan_serial_ports_with_unique_symlinks() -> None:
         patch("os.scandir", return_value=[entry1, entry2]),
         patch("os.path.realpath", side_effect=mock_realpath),
         patch(
-            "homeassistant.components.usb.utils.comports",
+            "inpui.components.usb.utils.comports",
             return_value=[mock_port1, mock_port2],
         ),
     ):
@@ -1310,7 +1310,7 @@ def test_scan_serial_ports_without_unique_symlinks() -> None:
         patch("os.path.isdir", return_value=False),
         patch("os.path.realpath", side_effect=lambda x: x),
         patch(
-            "homeassistant.components.usb.utils.comports",
+            "inpui.components.usb.utils.comports",
             return_value=[mock_port],
         ),
     ):
@@ -1340,7 +1340,7 @@ def test_usb_device_from_path_finds_by_symlink() -> None:
 
     with (
         patch(
-            "homeassistant.components.usb.utils.scan_serial_ports",
+            "inpui.components.usb.utils.scan_serial_ports",
             return_value=[scanned_device],
         ),
         patch("os.path.realpath", side_effect=mock_realpath),
@@ -1363,7 +1363,7 @@ def test_usb_device_from_path_finds_by_realpath() -> None:
 
     with (
         patch(
-            "homeassistant.components.usb.utils.scan_serial_ports",
+            "inpui.components.usb.utils.scan_serial_ports",
             return_value=[scanned_device],
         ),
         patch("os.path.realpath", side_effect=lambda x: x),
@@ -1386,7 +1386,7 @@ def test_usb_device_from_path_returns_none_when_not_found() -> None:
 
     with (
         patch(
-            "homeassistant.components.usb.utils.scan_serial_ports",
+            "inpui.components.usb.utils.scan_serial_ports",
             return_value=[scanned_device],
         ),
         patch("os.path.realpath", side_effect=lambda x: x),
@@ -1397,7 +1397,7 @@ def test_usb_device_from_path_returns_none_when_not_found() -> None:
 
 
 @pytest.mark.usefixtures("force_usb_polling_watcher")
-@patch("homeassistant.components.usb.REQUEST_SCAN_COOLDOWN", 0)
+@patch("inpui.components.usb.REQUEST_SCAN_COOLDOWN", 0)
 async def test_removal_aborts_discovery_flows(
     hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1472,7 +1472,7 @@ async def test_removal_aborts_discovery_flows(
 
     with (
         patch(
-            "homeassistant.components.usb.async_get_usb",
+            "inpui.components.usb.async_get_usb",
             return_value=[
                 # Domain `test1` matches devices 1 and 2
                 {"domain": "test1", "vid": "1234", "pid": "5678"},

@@ -15,7 +15,7 @@ def test_set_get_delete_token(hass: HomeAssistant) -> None:
     """Test set, get and delete token."""
     open_mock = mock_open()
     with patch(
-        "homeassistant.components.remember_the_milk.storage.Path.open", open_mock
+        "inpui.components.remember_the_milk.storage.Path.open", open_mock
     ):
         config = rtm.RememberTheMilkConfiguration(hass)
         assert open_mock.return_value.write.call_count == 0
@@ -44,7 +44,7 @@ def test_config_load(hass: HomeAssistant) -> None:
     """Test loading from the file."""
     with (
         patch(
-            "homeassistant.components.remember_the_milk.storage.Path.open",
+            "inpui.components.remember_the_milk.storage.Path.open",
             mock_open(read_data=JSON_STRING),
         ),
     ):
@@ -63,7 +63,7 @@ def test_config_load_file_error(hass: HomeAssistant, side_effect: Exception) -> 
     config = rtm.RememberTheMilkConfiguration(hass)
     with (
         patch(
-            "homeassistant.components.remember_the_milk.storage.Path.open",
+            "inpui.components.remember_the_milk.storage.Path.open",
             side_effect=side_effect,
         ),
     ):
@@ -80,7 +80,7 @@ def test_config_load_invalid_data(hass: HomeAssistant) -> None:
     config = rtm.RememberTheMilkConfiguration(hass)
     with (
         patch(
-            "homeassistant.components.remember_the_milk.storage.Path.open",
+            "inpui.components.remember_the_milk.storage.Path.open",
             mock_open(read_data="random characters"),
         ),
     ):
@@ -101,7 +101,7 @@ def test_config_set_delete_id(hass: HomeAssistant) -> None:
     open_mock = mock_open()
     config = rtm.RememberTheMilkConfiguration(hass)
     with patch(
-        "homeassistant.components.remember_the_milk.storage.Path.open", open_mock
+        "inpui.components.remember_the_milk.storage.Path.open", open_mock
     ):
         config = rtm.RememberTheMilkConfiguration(hass)
         assert open_mock.return_value.write.call_count == 0

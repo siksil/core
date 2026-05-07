@@ -167,7 +167,7 @@ async def load_auth_provider_module(
     """Load an auth provider."""
     try:
         module = await async_import_module(
-            hass, f"homeassistant.auth.providers.{provider}"
+            hass, f"inpui.auth.providers.{provider}"
         )
     except ImportError as err:
         _LOGGER.error("Unable to load auth provider %s: %s", provider, err)

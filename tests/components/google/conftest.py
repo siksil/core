@@ -165,7 +165,7 @@ def mock_calendars_yaml(
     mocked_open_function = mock_open(
         read_data=yaml.dump(calendars_config) if calendars_config else None
     )
-    with patch("homeassistant.components.google.open", mocked_open_function):
+    with patch("inpui.components.google.open", mocked_open_function):
         yield mocked_open_function
 
 

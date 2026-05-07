@@ -43,7 +43,7 @@ async def setup_platform(
     if platforms is None:
         await hass.config_entries.async_setup(mock_entry.entry_id)
     else:
-        with patch("homeassistant.components.teslemetry.PLATFORMS", platforms):
+        with patch("inpui.components.teslemetry.PLATFORMS", platforms):
             await hass.config_entries.async_setup(mock_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -58,7 +58,7 @@ async def reload_platform(
     if platforms is None:
         await hass.config_entries.async_reload(entry.entry_id)
     else:
-        with patch("homeassistant.components.teslemetry.PLATFORMS", platforms):
+        with patch("inpui.components.teslemetry.PLATFORMS", platforms):
             await hass.config_entries.async_reload(entry.entry_id)
     await hass.async_block_till_done()
 

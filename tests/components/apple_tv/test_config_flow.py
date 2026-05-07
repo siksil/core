@@ -62,7 +62,7 @@ def use_mocked_zeroconf(mock_async_zeroconf: MagicMock) -> None:
 def mock_setup_entry() -> Generator[Mock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.apple_tv.async_setup_entry", return_value=True
+        "inpui.components.apple_tv.async_setup_entry", return_value=True
     ) as setup_entry:
         yield setup_entry
 
@@ -682,7 +682,7 @@ async def test_zeroconf_ip_change(hass: HomeAssistant, mock_scan: AsyncMock) -> 
     ]
 
     with patch(
-        "homeassistant.components.apple_tv.async_setup_entry", return_value=True
+        "inpui.components.apple_tv.async_setup_entry", return_value=True
     ) as mock_async_setup:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -720,7 +720,7 @@ async def test_zeroconf_ip_change_after_ip_conflict_with_ignored_entry(
     ]
 
     with patch(
-        "homeassistant.components.apple_tv.async_setup_entry", return_value=True
+        "inpui.components.apple_tv.async_setup_entry", return_value=True
     ) as mock_async_setup:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -761,7 +761,7 @@ async def test_zeroconf_ip_change_via_secondary_identifier(
     ]
 
     with patch(
-        "homeassistant.components.apple_tv.async_setup_entry", return_value=True
+        "inpui.components.apple_tv.async_setup_entry", return_value=True
     ) as mock_async_setup:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -804,7 +804,7 @@ async def test_zeroconf_updates_identifiers_for_ignored_entries(
     ]
 
     with patch(
-        "homeassistant.components.apple_tv.async_setup_entry", return_value=True
+        "inpui.components.apple_tv.async_setup_entry", return_value=True
     ) as mock_async_setup:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,

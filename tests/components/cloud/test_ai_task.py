@@ -50,7 +50,7 @@ def mock_cloud_ai_task_entity(hass: HomeAssistant) -> CloudAITaskEntity:
 def mock_handle_chat_log_fixture() -> AsyncMock:
     """Patch the chat log handler."""
     with patch(
-        "homeassistant.components.cloud.ai_task.CloudAITaskEntity._async_handle_chat_log",
+        "inpui.components.cloud.ai_task.CloudAITaskEntity._async_handle_chat_log",
         AsyncMock(),
     ) as mock:
         yield mock
@@ -60,7 +60,7 @@ def mock_handle_chat_log_fixture() -> AsyncMock:
 def mock_prepare_generation_attachments_fixture() -> AsyncMock:
     """Patch image generation attachment preparation."""
     with patch(
-        "homeassistant.components.cloud.ai_task.async_prepare_image_generation_attachments",
+        "inpui.components.cloud.ai_task.async_prepare_image_generation_attachments",
         AsyncMock(),
     ) as mock:
         yield mock

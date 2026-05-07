@@ -29,7 +29,7 @@ BAD_CORE_CONFIG = "homeassistant:\n  unit_system: bad\n\n\n"
 @pytest.fixture(autouse=True)
 def reset_log_level():
     """Reset log level after each test case."""
-    logger = logging.getLogger("homeassistant.loader")
+    logger = logging.getLogger("inpui.loader")
     orig_level = logger.level
     yield
     logger.setLevel(orig_level)
@@ -161,8 +161,8 @@ def test_package_invalid() -> None:
     assert res["components"].keys() == {"homeassistant"}
     assert res["secret_cache"] == {}
     assert res["secrets"] == {}
-    assert res["warn"].keys() == {"homeassistant.packages.p1.group"}
-    assert res["warn"]["homeassistant.packages.p1.group"][1] == {"group": ["a"]}
+    assert res["warn"].keys() == {"inpui.packages.p1.group"}
+    assert res["warn"]["inpui.packages.p1.group"][1] == {"group": ["a"]}
     assert len(res["yaml_files"]) == 1
 
 

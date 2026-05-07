@@ -542,27 +542,27 @@ async def async_init_integration(
 
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_device_config",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_device_config",
             side_effect=mock_get_device_config,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_device_status",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_device_status",
             side_effect=mock_get_device_status,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_installation",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_installation",
             return_value=GET_INSTALLATION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_installations",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_installations",
             return_value=GET_INSTALLATIONS_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_webserver",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_webserver",
             side_effect=mock_get_webserver,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.login",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.login",
             return_value=None,
         ),
     ):

@@ -1690,11 +1690,11 @@ async def test_failure_scenarios(
 
     with (
         patch(
-            "homeassistant.components.zwave_js.device_trigger.async_get_node_from_device_id",
+            "inpui.components.zwave_js.device_trigger.async_get_node_from_device_id",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.zwave_js.helpers.get_zwave_value_from_config",
+            "inpui.components.zwave_js.helpers.get_zwave_value_from_config",
             return_value=None,
         ),
     ):

@@ -52,7 +52,7 @@ async def test_binary_sensor_entities(
 ) -> None:
     """Test binary sensor entities are created with expected state."""
     with patch(
-        "homeassistant.components.unifi_access.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.unifi_access.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

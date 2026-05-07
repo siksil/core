@@ -12,7 +12,7 @@ from tests.common import assert_setup_component
 async def test_setup_full(hass: HomeAssistant) -> None:
     """Test valid configuration."""
     with patch(
-        "homeassistant.components.homematic.HMConnection",
+        "inpui.components.homematic.HMConnection",
         return_value=MagicMock(),
     ):
         await async_setup_component(
@@ -42,7 +42,7 @@ async def test_setup_full(hass: HomeAssistant) -> None:
 async def test_setup_without_optional(hass: HomeAssistant) -> None:
     """Test valid configuration without optional."""
     with patch(
-        "homeassistant.components.homematic.HMConnection",
+        "inpui.components.homematic.HMConnection",
         return_value=MagicMock(),
     ):
         await async_setup_component(

@@ -24,7 +24,7 @@ def mock_onboarding_done() -> Generator[MagicMock]:
     Enabled to prevent creating default dashboards during test execution.
     """
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=True,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -200,7 +200,7 @@ async def test_lovelace_migration_completes_when_both_files_exist(
         "data": {"config": {"views": [{"title": "New"}]}},
     }
 
-    with patch("homeassistant.components.lovelace.os.rename") as mock_rename:
+    with patch("inpui.components.lovelace.os.rename") as mock_rename:
         assert await async_setup_component(hass, "lovelace", {})
 
     # Old file should be renamed as backup
@@ -299,7 +299,7 @@ async def test_lovelace_from_yaml(
     events = async_capture_events(hass, const.EVENT_LOVELACE_UPDATED)
 
     with patch(
-        "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+        "inpui.components.lovelace.dashboard.load_yaml_dict",
         return_value={"hello": "yo"},
     ):
         await client.send_json({"id": 7, "type": "lovelace/config"})
@@ -312,7 +312,7 @@ async def test_lovelace_from_yaml(
 
     # Fake new data to see we fire event
     with patch(
-        "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+        "inpui.components.lovelace.dashboard.load_yaml_dict",
         return_value={"hello": "yo2"},
     ):
         await client.send_json({"id": 8, "type": "lovelace/config", "force": True})
@@ -326,11 +326,11 @@ async def test_lovelace_from_yaml(
     # Make sure when the mtime changes, we reload the config
     with (
         patch(
-            "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+            "inpui.components.lovelace.dashboard.load_yaml_dict",
             return_value={"hello": "yo3"},
         ),
         patch(
-            "homeassistant.components.lovelace.dashboard.os.path.getmtime",
+            "inpui.components.lovelace.dashboard.os.path.getmtime",
             return_value=time.time(),
         ),
     ):
@@ -345,11 +345,11 @@ async def test_lovelace_from_yaml(
     # If the mtime is lower, preserve the cache
     with (
         patch(
-            "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+            "inpui.components.lovelace.dashboard.load_yaml_dict",
             return_value={"hello": "yo4"},
         ),
         patch(
-            "homeassistant.components.lovelace.dashboard.os.path.getmtime",
+            "inpui.components.lovelace.dashboard.os.path.getmtime",
             return_value=0,
         ),
     ):
@@ -459,7 +459,7 @@ async def test_dashboard_from_yaml(
     events = async_capture_events(hass, const.EVENT_LOVELACE_UPDATED)
 
     with patch(
-        "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+        "inpui.components.lovelace.dashboard.load_yaml_dict",
         return_value={"hello": "yo"},
     ):
         await client.send_json(
@@ -474,7 +474,7 @@ async def test_dashboard_from_yaml(
 
     # Fake new data to see we fire event
     with patch(
-        "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+        "inpui.components.lovelace.dashboard.load_yaml_dict",
         return_value={"hello": "yo2"},
     ):
         await client.send_json(

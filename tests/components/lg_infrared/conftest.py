@@ -80,7 +80,7 @@ def mock_make_lg_tv_command() -> Generator[None]:
     rather than the raw NEC timings.
     """
     with patch(
-        "homeassistant.components.lg_infrared.entity.make_lg_tv_command",
+        "inpui.components.lg_infrared.entity.make_lg_tv_command",
         side_effect=lambda code, **kwargs: code,
     ):
         yield
@@ -103,7 +103,7 @@ async def init_integration(
 
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.lg_infrared.PLATFORMS", platforms):
+    with patch("inpui.components.lg_infrared.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

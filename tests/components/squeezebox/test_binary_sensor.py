@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed
 def squeezebox_binary_sensor_platform():
     """Only set up the binary_sensor platform for squeezebox tests."""
     with patch(
-        "homeassistant.components.squeezebox.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.squeezebox.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         yield
 
@@ -32,7 +32,7 @@ async def test_binary_server_sensor(
 ) -> None:
     """Test binary sensor states and attributes."""
     with patch(
-        "homeassistant.components.squeezebox.Server.async_query",
+        "inpui.components.squeezebox.Server.async_query",
         return_value=deepcopy(FAKE_QUERY_RESPONSE),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -57,7 +57,7 @@ async def mock_player(
     lms.async_prepared_status.return_value = {
         "dummy": False,
     }
-    with patch("homeassistant.components.squeezebox.Server", return_value=lms):
+    with patch("inpui.components.squeezebox.Server", return_value=lms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done(wait_background_tasks=True)
 

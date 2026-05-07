@@ -23,9 +23,9 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with (
-        patch("homeassistant.components.dexcom.config_flow.Dexcom"),
+        patch("inpui.components.dexcom.config_flow.Dexcom"),
         patch(
-            "homeassistant.components.dexcom.async_setup_entry",
+            "inpui.components.dexcom.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -48,7 +48,7 @@ async def test_form_account_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.dexcom.config_flow.Dexcom",
+        "inpui.components.dexcom.config_flow.Dexcom",
         side_effect=AccountError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -67,7 +67,7 @@ async def test_form_session_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.dexcom.config_flow.Dexcom",
+        "inpui.components.dexcom.config_flow.Dexcom",
         side_effect=SessionError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -86,7 +86,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.dexcom.config_flow.Dexcom",
+        "inpui.components.dexcom.config_flow.Dexcom",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

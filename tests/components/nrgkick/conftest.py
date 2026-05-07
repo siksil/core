@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.nrgkick.async_setup_entry", return_value=True
+        "inpui.components.nrgkick.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -33,11 +33,11 @@ def mock_nrgkick_api(
     """Mock the NRGkick API client and patch it where used."""
     with (
         patch(
-            "homeassistant.components.nrgkick.NRGkickAPI",
+            "inpui.components.nrgkick.NRGkickAPI",
             autospec=True,
         ) as mock_api_cls,
         patch(
-            "homeassistant.components.nrgkick.config_flow.NRGkickAPI",
+            "inpui.components.nrgkick.config_flow.NRGkickAPI",
             new=mock_api_cls,
         ),
     ):

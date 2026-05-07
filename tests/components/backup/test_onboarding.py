@@ -157,7 +157,7 @@ async def test_onboarding_backup_info(
     }
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_get_backups",
+        "inpui.components.backup.manager.BackupManager.async_get_backups",
         return_value=(backups, {}),
     ):
         resp = await client.get("/api/onboarding/backup/info")
@@ -235,7 +235,7 @@ async def test_onboarding_backup_restore(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_restore_backup",
+        "inpui.components.backup.manager.BackupManager.async_restore_backup",
     ) as mock_restore:
         resp = await client.post("/api/onboarding/backup/restore", json=params)
     assert resp.status == 200
@@ -331,7 +331,7 @@ async def test_onboarding_backup_restore_error(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_restore_backup",
+        "inpui.components.backup.manager.BackupManager.async_restore_backup",
         side_effect=restore_error,
     ) as mock_restore:
         resp = await client.post("/api/onboarding/backup/restore", json=params)
@@ -374,7 +374,7 @@ async def test_onboarding_backup_restore_unexpected_error(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_restore_backup",
+        "inpui.components.backup.manager.BackupManager.async_restore_backup",
         side_effect=restore_error,
     ) as mock_restore:
         resp = await client.post("/api/onboarding/backup/restore", json=params)
@@ -399,7 +399,7 @@ async def test_onboarding_backup_upload(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_receive_backup",
+        "inpui.components.backup.manager.BackupManager.async_receive_backup",
         return_value="abc123",
     ) as mock_receive:
         resp = await client.post(

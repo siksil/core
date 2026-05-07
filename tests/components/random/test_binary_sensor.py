@@ -11,7 +11,7 @@ async def test_random_binary_sensor_on(hass: HomeAssistant) -> None:
     config = {"binary_sensor": {"platform": "random", "name": "test"}}
 
     with patch(
-        "homeassistant.components.random.binary_sensor.getrandbits",
+        "inpui.components.random.binary_sensor.getrandbits",
         return_value=1,
     ):
         assert await async_setup_component(
@@ -31,7 +31,7 @@ async def test_random_binary_sensor_off(hass: HomeAssistant) -> None:
     config = {"binary_sensor": {"platform": "random", "name": "test"}}
 
     with patch(
-        "homeassistant.components.random.binary_sensor.getrandbits",
+        "inpui.components.random.binary_sensor.getrandbits",
         return_value=False,
     ):
         assert await async_setup_component(

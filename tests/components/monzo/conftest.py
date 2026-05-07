@@ -101,7 +101,7 @@ def mock_basic_monzo():
     mock.user_account = mock_user_account
 
     with patch(
-        "homeassistant.components.monzo.AuthenticatedMonzoAPI",
+        "inpui.components.monzo.AuthenticatedMonzoAPI",
         return_value=mock,
     ):
         yield mock
@@ -120,7 +120,7 @@ def mock_monzo():
     mock.user_account = mock_user_account
 
     with patch(
-        "homeassistant.components.monzo.AuthenticatedMonzoAPI",
+        "inpui.components.monzo.AuthenticatedMonzoAPI",
         return_value=mock,
     ):
         yield mock

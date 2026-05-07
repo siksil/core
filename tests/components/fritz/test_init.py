@@ -60,7 +60,7 @@ async def test_options_reload(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_reload",
+        "inpui.config_entries.ConfigEntries.async_reload",
         return_value=None,
     ) as mock_reload:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -87,7 +87,7 @@ async def test_setup_auth_fail(hass: HomeAssistant, error) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzConnectionCached",
+        "inpui.components.fritz.coordinator.FritzConnectionCached",
         side_effect=error,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -107,7 +107,7 @@ async def test_setup_fail(hass: HomeAssistant, error) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzConnectionCached",
+        "inpui.components.fritz.coordinator.FritzConnectionCached",
         side_effect=error,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -130,7 +130,7 @@ async def test_upnp_missing(
 
     with (
         patch(
-            "homeassistant.components.fritz.coordinator.AvmWrapper.async_get_upnp_configuration",
+            "inpui.components.fritz.coordinator.AvmWrapper.async_get_upnp_configuration",
             return_value={"NewEnable": False},
         ),
     ):

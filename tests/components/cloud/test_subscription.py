@@ -54,7 +54,7 @@ async def test_fetching_subscription_with_timeout_error(
 ) -> None:
     """Test that we handle timeout error."""
     mocked_cloud.payments.subscription_info = lambda: asyncio.sleep(1)
-    with patch("homeassistant.components.cloud.subscription.REQUEST_TIMEOUT", 0):
+    with patch("inpui.components.cloud.subscription.REQUEST_TIMEOUT", 0):
         assert await async_subscription_info(mocked_cloud) is None
 
     assert (

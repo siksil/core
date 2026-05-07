@@ -11,7 +11,7 @@ from inpui.components.azure_data_explorer.const import (
     CONF_USE_QUEUED_CLIENT,
 )
 
-AZURE_DATA_EXPLORER_PATH = "homeassistant.components.azure_data_explorer"
+AZURE_DATA_EXPLORER_PATH = "inpui.components.azure_data_explorer"
 CLIENT_PATH = f"{AZURE_DATA_EXPLORER_PATH}.AzureDataExplorer"
 
 

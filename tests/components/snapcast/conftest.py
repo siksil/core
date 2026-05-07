@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.snapcast.async_setup_entry", return_value=True
+        "inpui.components.snapcast.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -28,7 +28,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_server(mock_create_server: AsyncMock) -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.snapcast.config_flow.snapcast.control.create_server",
+        "inpui.components.snapcast.config_flow.snapcast.control.create_server",
         return_value=mock_create_server,
     ) as mock_server:
         yield mock_server
@@ -45,7 +45,7 @@ def mock_create_server(
 ) -> Generator[AsyncMock]:
     """Create mock snapcast connection."""
     with patch(
-        "homeassistant.components.snapcast.coordinator.Snapserver", autospec=True
+        "inpui.components.snapcast.coordinator.Snapserver", autospec=True
     ) as mock_snapserver:
         mock_server = mock_snapserver.return_value
         mock_server.groups = [mock_group_1, mock_group_2]

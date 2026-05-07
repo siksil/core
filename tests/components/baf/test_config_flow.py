@@ -21,7 +21,7 @@ def _patch_device_config_flow(side_effect=None):
     def _create_mock_baf(*args, **kwargs):
         return MockBAFDevice(side_effect)
 
-    return patch("homeassistant.components.baf.config_flow.Device", _create_mock_baf)
+    return patch("inpui.components.baf.config_flow.Device", _create_mock_baf)
 
 
 async def test_form_user(hass: HomeAssistant) -> None:
@@ -36,7 +36,7 @@ async def test_form_user(hass: HomeAssistant) -> None:
     with (
         _patch_device_config_flow(),
         patch(
-            "homeassistant.components.baf.async_setup_entry",
+            "inpui.components.baf.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -104,7 +104,7 @@ async def test_zeroconf_discovery(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.baf.async_setup_entry",
+        "inpui.components.baf.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -188,7 +188,7 @@ async def test_user_flow_is_not_blocked_by_discovery(hass: HomeAssistant) -> Non
     with (
         _patch_device_config_flow(),
         patch(
-            "homeassistant.components.baf.async_setup_entry",
+            "inpui.components.baf.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

@@ -43,7 +43,7 @@ async def test_empty_config(hass: HomeAssistant) -> None:
     """Test a default config will be create for empty config."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(hass, "aws", {"aws": {}})
         await hass.async_block_till_done()
@@ -56,7 +56,7 @@ async def test_empty_credential(hass: HomeAssistant) -> None:
     """Test a default config will be create for empty credential section."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,
@@ -86,7 +86,7 @@ async def test_profile_credential(hass: HomeAssistant) -> None:
     """Test credentials with profile name."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,
@@ -121,7 +121,7 @@ async def test_access_key_credential(hass: HomeAssistant) -> None:
     """Test credentials with access key."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,
@@ -164,10 +164,10 @@ async def test_notify_credential(hass: HomeAssistant) -> None:
     mock_session = MockAioSession()
     with (
         async_patch(
-            "homeassistant.components.aws.AioSession", return_value=mock_session
+            "inpui.components.aws.AioSession", return_value=mock_session
         ),
         async_patch(
-            "homeassistant.components.aws.notify.AioSession", return_value=mock_session
+            "inpui.components.aws.notify.AioSession", return_value=mock_session
         ),
     ):
         await async_setup_component(
@@ -201,10 +201,10 @@ async def test_notify_credential_profile(hass: HomeAssistant) -> None:
     mock_session = MockAioSession()
     with (
         async_patch(
-            "homeassistant.components.aws.AioSession", return_value=mock_session
+            "inpui.components.aws.AioSession", return_value=mock_session
         ),
         async_patch(
-            "homeassistant.components.aws.notify.AioSession", return_value=mock_session
+            "inpui.components.aws.notify.AioSession", return_value=mock_session
         ),
     ):
         await async_setup_component(
@@ -235,7 +235,7 @@ async def test_credential_skip_validate(hass: HomeAssistant) -> None:
     """Test credential can skip validate."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,
@@ -262,7 +262,7 @@ async def test_service_call_extra_data(hass: HomeAssistant) -> None:
     """Test service call extra data are parsed properly."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,
@@ -306,7 +306,7 @@ async def test_events_service_call(hass: HomeAssistant) -> None:
     """Test events service (EventBridge) call works as expected."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,
@@ -359,7 +359,7 @@ async def test_events_service_call_10_targets(hass: HomeAssistant) -> None:
     """Test events service (EventBridge) call works with more than 10 targets."""
     mock_session = MockAioSession()
     with async_patch(
-        "homeassistant.components.aws.AioSession", return_value=mock_session
+        "inpui.components.aws.AioSession", return_value=mock_session
     ):
         await async_setup_component(
             hass,

@@ -42,7 +42,7 @@ async def test_update_entities_initialized(
     entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 
@@ -64,7 +64,7 @@ async def test_update_available(
     entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 
@@ -85,10 +85,10 @@ async def test_available_update_can_be_installed(
 
     with (
         patch(
-            "homeassistant.components.fritz.coordinator.FritzBoxTools.async_trigger_firmware_update",
+            "inpui.components.fritz.coordinator.FritzBoxTools.async_trigger_firmware_update",
             return_value=True,
         ) as mocked_update_call,
-        patch("homeassistant.components.fritz.PLATFORMS", [Platform.UPDATE]),
+        patch("inpui.components.fritz.PLATFORMS", [Platform.UPDATE]),
     ):
         entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
         entry.add_to_hass(hass)

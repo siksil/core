@@ -44,7 +44,7 @@ async def test_form(hass: HomeAssistant) -> None:
     with (
         RuckusAjaxApiPatchContext(),
         patch(
-            "homeassistant.components.ruckus_unleashed.async_setup_entry",
+            "inpui.components.ruckus_unleashed.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

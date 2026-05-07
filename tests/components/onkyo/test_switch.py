@@ -66,10 +66,10 @@ async def auto_setup_integration(
 
     with (
         patch(
-            "homeassistant.components.onkyo.coordinator.POWER_ON_QUERY_DELAY",
+            "inpui.components.onkyo.coordinator.POWER_ON_QUERY_DELAY",
             0,
         ),
-        patch("homeassistant.components.onkyo.PLATFORMS", [Platform.SWITCH]),
+        patch("inpui.components.onkyo.PLATFORMS", [Platform.SWITCH]),
     ):
         await setup_integration(hass, mock_config_entry)
         writes.clear()

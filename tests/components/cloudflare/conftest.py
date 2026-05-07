@@ -10,7 +10,7 @@ from inpui.util.location import LocationInfo
 from . import get_mock_client
 
 LOCATION_PATCH_TARGET = (
-    "homeassistant.components.cloudflare.coordinator.async_detect_location_info"
+    "inpui.components.cloudflare.coordinator.async_detect_location_info"
 )
 
 
@@ -19,7 +19,7 @@ def cfupdate() -> Generator[MagicMock]:
     """Mock the CloudflareUpdater for easier testing."""
     mock_cfupdate = get_mock_client()
     with patch(
-        "homeassistant.components.cloudflare.coordinator.pycfdns.Client",
+        "inpui.components.cloudflare.coordinator.pycfdns.Client",
         return_value=mock_cfupdate,
     ) as mock_api:
         yield mock_api
@@ -30,7 +30,7 @@ def cfupdate_flow() -> Generator[MagicMock]:
     """Mock the CloudflareUpdater for easier config flow testing."""
     mock_cfupdate = get_mock_client()
     with patch(
-        "homeassistant.components.cloudflare.config_flow.pycfdns.Client",
+        "inpui.components.cloudflare.config_flow.pycfdns.Client",
         return_value=mock_cfupdate,
     ) as mock_api:
         yield mock_api

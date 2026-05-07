@@ -651,7 +651,7 @@ async def test_discovery_update_unchanged_image(
     """Test update of discovered image."""
     data1 = '{ "name": "Beer", "image_topic": "test_topic"}'
     with patch(
-        "homeassistant.components.mqtt.image.MqttImage.discovery_update"
+        "inpui.components.mqtt.image.MqttImage.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, image.DOMAIN, data1, discovery_update

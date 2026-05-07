@@ -27,11 +27,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airtouch4.config_flow.AirTouch",
+            "inpui.components.airtouch4.config_flow.AirTouch",
             return_value=mock_airtouch,
         ),
         patch(
-            "homeassistant.components.airtouch4.async_setup_entry",
+            "inpui.components.airtouch4.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -57,7 +57,7 @@ async def test_form_timeout(hass: HomeAssistant) -> None:
     mock_airtouch.UpdateInfo = AsyncMock()
     mock_airtouch.status = AirTouchStatus.CONNECTION_INTERRUPTED
     with patch(
-        "homeassistant.components.airtouch4.config_flow.AirTouch",
+        "inpui.components.airtouch4.config_flow.AirTouch",
         return_value=mock_airtouch,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -76,7 +76,7 @@ async def test_form_library_error_message(hass: HomeAssistant) -> None:
     mock_airtouch.UpdateInfo = AsyncMock()
     mock_airtouch.status = AirTouchStatus.ERROR
     with patch(
-        "homeassistant.components.airtouch4.config_flow.AirTouch",
+        "inpui.components.airtouch4.config_flow.AirTouch",
         return_value=mock_airtouch,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -95,7 +95,7 @@ async def test_form_connection_refused(hass: HomeAssistant) -> None:
     mock_airtouch.UpdateInfo = AsyncMock()
     mock_airtouch.status = AirTouchStatus.NOT_CONNECTED
     with patch(
-        "homeassistant.components.airtouch4.config_flow.AirTouch",
+        "inpui.components.airtouch4.config_flow.AirTouch",
         return_value=mock_airtouch,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -118,7 +118,7 @@ async def test_form_no_units(hass: HomeAssistant) -> None:
     mock_airtouch.GetGroups = Mock(return_value=[])
 
     with patch(
-        "homeassistant.components.airtouch4.config_flow.AirTouch",
+        "inpui.components.airtouch4.config_flow.AirTouch",
         return_value=mock_airtouch,
     ):
         result2 = await hass.config_entries.flow.async_configure(

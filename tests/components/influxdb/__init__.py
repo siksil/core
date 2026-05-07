@@ -78,7 +78,7 @@ BASE_OPTIONS = {
     CONF_BUCKET: "Home Assistant",
 }
 
-INFLUX_PATH = "homeassistant.components.influxdb"
+INFLUX_PATH = "inpui.components.influxdb"
 INFLUX_CLIENT_PATH = f"{INFLUX_PATH}.InfluxDBClient"
 
 

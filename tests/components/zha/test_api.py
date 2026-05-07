@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 @pytest.fixture(autouse=True)
 def required_platform_only():
     """Only set up the required and required base platforms to speed up tests."""
-    with patch("homeassistant.components.zha.PLATFORMS", ()):
+    with patch("inpui.components.zha.PLATFORMS", ()):
         yield
 
 
@@ -56,7 +56,7 @@ async def test_async_get_network_settings_inactive(
     controller.new = AsyncMock(return_value=zigpy_app_controller)
 
     with patch.dict(
-        "homeassistant.components.zha.api.RadioType._member_map_",
+        "inpui.components.zha.api.RadioType._member_map_",
         ezsp=MagicMock(controller=controller, description="EZSP"),
     ):
         settings = await api.async_get_network_settings(hass)

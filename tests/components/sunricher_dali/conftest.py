@@ -98,7 +98,7 @@ async def init_integration(
     """Set up the integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.sunricher_dali._PLATFORMS", platforms):
+    with patch("inpui.components.sunricher_dali._PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -185,7 +185,7 @@ def _create_scene_device_property(
 def mock_discovery(mock_gateway: MagicMock) -> Generator[MagicMock]:
     """Mock DaliGatewayDiscovery."""
     with patch(
-        "homeassistant.components.sunricher_dali.config_flow.DaliGatewayDiscovery"
+        "inpui.components.sunricher_dali.config_flow.DaliGatewayDiscovery"
     ) as mock_discovery_class:
         mock_discovery = mock_discovery_class.return_value
         mock_discovery.discover_gateways = AsyncMock(return_value=[mock_gateway])
@@ -294,10 +294,10 @@ def mock_gateway(
     """Return a mocked DaliGateway."""
     with (
         patch(
-            "homeassistant.components.sunricher_dali.DaliGateway", autospec=True
+            "inpui.components.sunricher_dali.DaliGateway", autospec=True
         ) as mock_gateway_class,
         patch(
-            "homeassistant.components.sunricher_dali.config_flow.DaliGateway",
+            "inpui.components.sunricher_dali.config_flow.DaliGateway",
             new=mock_gateway_class,
         ),
     ):
@@ -319,7 +319,7 @@ def mock_gateway(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sunricher_dali.async_setup_entry",
+        "inpui.components.sunricher_dali.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

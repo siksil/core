@@ -15,7 +15,7 @@ from inpui.setup import async_setup_component
 @pytest.fixture(name="mock_gf")
 def fixture_mock_gf():
     """Mock Graphite Feeder fixture."""
-    with patch("homeassistant.components.graphite.GraphiteFeeder") as mock_gf:
+    with patch("inpui.components.graphite.GraphiteFeeder") as mock_gf:
         yield mock_gf
 
 

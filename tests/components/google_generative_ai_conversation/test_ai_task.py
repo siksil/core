@@ -87,7 +87,7 @@ async def test_generate_data(
     file2 = File(name="context.txt", state=FileState.ACTIVE)
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",
@@ -131,7 +131,7 @@ async def test_generate_data(
     # Test attachments require play media with a path
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",

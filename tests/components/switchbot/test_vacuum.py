@@ -62,7 +62,7 @@ async def test_vacuum_controlling(
     mocked_instance = AsyncMock(return_value=True)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.vacuum.switchbot.SwitchbotVacuum",
+        "inpui.components.switchbot.vacuum.switchbot.SwitchbotVacuum",
         update=MagicMock(return_value=None),
         **{mock_method: mocked_instance},
     ):

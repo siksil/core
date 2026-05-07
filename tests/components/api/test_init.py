@@ -372,7 +372,7 @@ async def test_api_get_services(
 
     with (
         patch(
-            "homeassistant.helpers.service._load_services_file",
+            "inpui.helpers.service._load_services_file",
             side_effect=_load_services_file,
         ),
     ):
@@ -959,11 +959,11 @@ async def test_api_core_state_recorder_migrating(
     """Test getting core status."""
     with (
         patch(
-            "homeassistant.helpers.recorder.async_migration_in_progress",
+            "inpui.helpers.recorder.async_migration_in_progress",
             return_value=migration_in_progress,
         ),
         patch(
-            "homeassistant.helpers.recorder.async_migration_is_live",
+            "inpui.helpers.recorder.async_migration_is_live",
             return_value=migration_is_live,
         ),
     ):

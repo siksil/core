@@ -22,7 +22,7 @@ async def patch_api(
 ) -> None:
     """Mock setup of the todoist integration."""
     with patch(
-        "homeassistant.components.todoist.config_flow.TodoistAPIAsync", return_value=api
+        "inpui.components.todoist.config_flow.TodoistAPIAsync", return_value=api
     ):
         yield
 

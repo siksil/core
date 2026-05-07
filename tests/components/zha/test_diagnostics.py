@@ -35,7 +35,7 @@ from tests.typing import ClientSessionGenerator
 def required_platforms_only():
     """Only set up the required platform and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS", (Platform.ALARM_CONTROL_PANEL,)
+        "inpui.components.zha.PLATFORMS", (Platform.ALARM_CONTROL_PANEL,)
     ):
         yield
 

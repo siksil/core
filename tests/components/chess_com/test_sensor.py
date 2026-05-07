@@ -29,7 +29,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.chess_com._PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.chess_com._PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -44,7 +44,7 @@ async def test_daily_only(
     mock_chess_client.get_player_stats.return_value = PlayerStats.from_dict(
         await async_load_json_object_fixture(hass, "stats_daily_only.json", DOMAIN)
     )
-    with patch("homeassistant.components.chess_com._PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.chess_com._PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     assert hass.states.get("sensor.joost_rapid_chess_rating") is None

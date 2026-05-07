@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed
 @pytest.fixture(autouse=True)
 def squeezebox_sensor_platform():
     """Only set up the sensor platform for these tests."""
-    with patch("homeassistant.components.squeezebox.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.squeezebox.PLATFORMS", [Platform.SENSOR]):
         yield
 
 
@@ -30,7 +30,7 @@ async def test_server_sensor(
 
     # Setup component
     with patch(
-        "homeassistant.components.squeezebox.Server.async_query",
+        "inpui.components.squeezebox.Server.async_query",
         return_value=deepcopy(FAKE_QUERY_RESPONSE),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -54,7 +54,7 @@ async def test_player_sensor_next_alarm(
     lms.async_prepared_status.return_value = {
         "dummy": False,
     }
-    with patch("homeassistant.components.squeezebox.Server", return_value=lms):
+    with patch("inpui.components.squeezebox.Server", return_value=lms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done(wait_background_tasks=True)
     player = (await lms.async_get_players())[0]

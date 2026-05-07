@@ -29,7 +29,7 @@ from .conftest import instrument_migration
 from tests.common import async_test_home_assistant
 from tests.typing import RecorderInstanceContextManager
 
-CREATE_ENGINE_TARGET = "homeassistant.components.recorder.core.create_engine"
+CREATE_ENGINE_TARGET = "inpui.components.recorder.core.create_engine"
 SCHEMA_MODULE_30 = "tests.components.recorder.db_schema_30"
 SCHEMA_MODULE_32 = "tests.components.recorder.db_schema_32"
 
@@ -638,11 +638,11 @@ async def test_out_of_disk_space_while_rebuild_states_table(
     # - patching DropConstraint to raise InternalError for MySQL and PostgreSQL
     with (
         patch(
-            "homeassistant.components.recorder.migration.CreateTable",
+            "inpui.components.recorder.migration.CreateTable",
             side_effect=SQLAlchemyError,
         ),
         patch(
-            "homeassistant.components.recorder.migration.DropConstraint",
+            "inpui.components.recorder.migration.DropConstraint",
             side_effect=OperationalError(
                 None, None, OSError("No space left on device")
             ),
@@ -866,7 +866,7 @@ async def test_out_of_disk_space_while_removing_foreign_key(
                 # - patching DropConstraint to raise InternalError for MySQL and PostgreSQL
                 with (
                     patch(
-                        "homeassistant.components.recorder.migration.DropConstraint.__init__",
+                        "inpui.components.recorder.migration.DropConstraint.__init__",
                         side_effect=OperationalError(
                             None, None, OSError("No space left on device")
                         ),

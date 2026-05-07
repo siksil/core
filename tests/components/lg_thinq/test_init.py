@@ -19,7 +19,7 @@ async def test_load_unload_entry(
 ) -> None:
     """Test load and unload entry."""
     with patch(
-        "homeassistant.components.lg_thinq.ThinQMQTT.async_connect",
+        "inpui.components.lg_thinq.ThinQMQTT.async_connect",
         return_value=True,
     ):
         await setup_integration(hass, mock_config_entry)
@@ -41,7 +41,7 @@ async def test_config_not_ready(
 ) -> None:
     """Test for setup failure exception occurred."""
     with patch(
-        "homeassistant.components.lg_thinq.ThinQMQTT.async_connect",
+        "inpui.components.lg_thinq.ThinQMQTT.async_connect",
         side_effect=exception,
     ):
         await setup_integration(hass, mock_config_entry)

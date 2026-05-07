@@ -27,7 +27,7 @@ async def mock_update_data(self: Alpha2Base, hass: HomeAssistant) -> None:
 async def init_integration(hass: HomeAssistant) -> MockConfigEntry:
     """Mock integration setup."""
     with patch(
-        "homeassistant.components.moehlenhoff_alpha2.coordinator.Alpha2Base.update_data",
+        "inpui.components.moehlenhoff_alpha2.coordinator.Alpha2Base.update_data",
         partialmethod(mock_update_data, hass),
     ):
         entry = MockConfigEntry(

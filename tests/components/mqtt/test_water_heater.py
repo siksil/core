@@ -928,7 +928,7 @@ async def test_discovery_update_unchanged_water_heater(
     """Test update of discovered water heater."""
     data1 = '{ "name": "Beer" }'
     with patch(
-        "homeassistant.components.mqtt.water_heater.MqttWaterHeater.discovery_update"
+        "inpui.components.mqtt.water_heater.MqttWaterHeater.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, water_heater.DOMAIN, data1, discovery_update

@@ -32,7 +32,7 @@ async def test_setup_lcn_sensor(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the setup of sensor."""
-    with patch("homeassistant.components.lcn.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.lcn.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

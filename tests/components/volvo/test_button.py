@@ -34,7 +34,7 @@ async def test_button(
 ) -> None:
     """Test button."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.BUTTON]):
         assert await setup_integration()
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -60,7 +60,7 @@ async def test_button_press(
 ) -> None:
     """Test button press."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.BUTTON]):
         assert await setup_integration()
 
     entity_id = f"button.volvo_xc40_{command}"
@@ -96,7 +96,7 @@ async def test_button_press_error(
 ) -> None:
     """Test button press with error response."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.BUTTON]):
         assert await setup_integration()
 
     configure_mock(mock_api.async_execute_command, side_effect=VolvoApiException)
@@ -130,7 +130,7 @@ async def test_button_press_failure(
 ) -> None:
     """Test button press with business logic failure."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.BUTTON]):
         assert await setup_integration()
 
     configure_mock(

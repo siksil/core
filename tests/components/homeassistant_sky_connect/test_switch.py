@@ -97,10 +97,10 @@ async def test_switch_turn_on_off(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
+            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
         ) as mock_client,
         patch(
-            "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateCoordinator.async_refresh"
+            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateCoordinator.async_refresh"
         ) as mock_refresh,
     ):
         mock_client.return_value.async_update_data.return_value = TEST_MANIFEST

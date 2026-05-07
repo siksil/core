@@ -21,7 +21,7 @@ from tests.typing import ClientSessionGenerator
 def image_only() -> Generator[None]:
     """Enable only the image platform."""
     with patch(
-        "homeassistant.components.playstation_network.PLATFORMS",
+        "inpui.components.playstation_network.PLATFORMS",
         [Platform.IMAGE],
     ):
         yield

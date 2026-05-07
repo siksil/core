@@ -18,11 +18,11 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
 
     with (
         patch(
-            "homeassistant.components.webhook.async_generate_id",
+            "inpui.components.webhook.async_generate_id",
             return_value="webhook_id",
         ),
         patch(
-            "homeassistant.components.webhook.async_generate_url",
+            "inpui.components.webhook.async_generate_url",
             return_value="http://example.com:8123",
         ),
     ):

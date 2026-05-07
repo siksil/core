@@ -23,19 +23,19 @@ def patch_get_current_frame(stack: list[Mock]) -> Generator[None]:
     frames = extract_stack_to_frame(stack)
     with (
         patch(
-            "homeassistant.helpers.frame.linecache.getline",
+            "inpui.helpers.frame.linecache.getline",
             return_value=stack[1].line,
         ),
         patch(
-            "homeassistant.util.loop._get_line_from_cache",
+            "inpui.util.loop._get_line_from_cache",
             return_value="mock_line",
         ),
         patch(
-            "homeassistant.util.loop.get_current_frame",
+            "inpui.util.loop.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):
@@ -267,7 +267,7 @@ async def test_protect_loop_async() -> None:
     """Test protect_loop calls raise_for_blocking_call."""
     func = Mock()
     with patch(
-        "homeassistant.util.loop.raise_for_blocking_call"
+        "inpui.util.loop.raise_for_blocking_call"
     ) as mock_raise_for_blocking_call:
         haloop.protect_loop(func, threading.get_ident())(1, test=2)
     mock_raise_for_blocking_call.assert_called_once_with(

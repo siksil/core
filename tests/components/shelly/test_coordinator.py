@@ -445,7 +445,7 @@ async def test_rpc_reload_with_invalid_auth(
 ) -> None:
     """Test RPC when InvalidAuthError is raising during config entry reload."""
     with patch(
-        "homeassistant.components.shelly.coordinator.async_stop_scanner",
+        "inpui.components.shelly.coordinator.async_stop_scanner",
         side_effect=[None, InvalidAuthError, None],
     ):
         entry = await init_integration(hass, 2)
@@ -501,7 +501,7 @@ async def test_rpc_connection_error_during_unload(
     assert entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.shelly.coordinator.async_stop_scanner",
+        "inpui.components.shelly.coordinator.async_stop_scanner",
         side_effect=DeviceConnectionError,
     ):
         await hass.config_entries.async_unload(entry.entry_id)
@@ -808,7 +808,7 @@ async def test_rpc_error_running_connected_events(
     monkeypatch.delitem(mock_rpc_device.status, "cover:0")
     monkeypatch.setitem(mock_rpc_device.status["sys"], "relay_in_thermostat", False)
     with patch(
-        "homeassistant.components.shelly.coordinator.async_ensure_ble_enabled",
+        "inpui.components.shelly.coordinator.async_ensure_ble_enabled",
         side_effect=DeviceConnectionError,
     ):
         await init_integration(

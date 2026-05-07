@@ -132,7 +132,7 @@ async def test_state_change(
     assert hass.states.get(entity.ENTITY_ID).state == sun.STATE_ABOVE_HORIZON
 
     # Update core configuration
-    with patch("homeassistant.helpers.condition.dt_util.utcnow", return_value=now):
+    with patch("inpui.helpers.condition.dt_util.utcnow", return_value=now):
         await hass.config.async_update(longitude=hass.config.longitude + 90)
         await hass.async_block_till_done()
 
@@ -165,7 +165,7 @@ async def test_norway_in_june(hass: HomeAssistant) -> None:
 
     june = datetime(2016, 6, 1, tzinfo=dt_util.UTC)
 
-    with patch("homeassistant.helpers.condition.dt_util.utcnow", return_value=june):
+    with patch("inpui.helpers.condition.dt_util.utcnow", return_value=june):
         assert await async_setup_component(hass, sun.DOMAIN, {sun.DOMAIN: {}})
 
     state = hass.states.get(entity.ENTITY_ID)

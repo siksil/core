@@ -18,7 +18,7 @@ from tests.common import MockModule, MockPlatform, mock_integration, mock_platfo
 @pytest.fixture
 def mock_setup_component():
     """Mock setup component."""
-    with patch("homeassistant.setup.async_setup_component", return_value=True) as mock:
+    with patch("inpui.setup.async_setup_component", return_value=True) as mock:
         yield mock
 
 

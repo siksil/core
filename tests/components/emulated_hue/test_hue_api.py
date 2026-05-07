@@ -112,7 +112,7 @@ ENTITY_NUMBERS_BY_ID = {v: k for k, v in ENTITY_IDS_BY_NUMBER.items()}
 def patch_upnp() -> _patch:
     """Patch async_create_upnp_datagram_endpoint."""
     return patch(
-        "homeassistant.components.emulated_hue.async_create_upnp_datagram_endpoint"
+        "inpui.components.emulated_hue.async_create_upnp_datagram_endpoint"
     )
 
 
@@ -150,7 +150,7 @@ async def base_setup(hass: HomeAssistant) -> None:
 def wanted_platforms_only() -> Generator[None]:
     """Enable only the wanted demo platforms."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [
             const.Platform.CLIMATE,
             const.Platform.COVER,
@@ -1413,7 +1413,7 @@ async def test_external_ip_blocked(hue_client: TestClient) -> None:
         "/api/username/groups/0/action",
     ]
     with patch(
-        "homeassistant.components.emulated_hue.hue_api.ip_address",
+        "inpui.components.emulated_hue.hue_api.ip_address",
         return_value=ip_address("45.45.45.45"),
     ):
         for getUrl in getUrls:

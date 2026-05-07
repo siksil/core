@@ -49,7 +49,7 @@ def mock_v1_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.stookwijzer.async_setup_entry", return_value=True
+        "inpui.components.stookwijzer.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -59,15 +59,15 @@ def mock_stookwijzer() -> Generator[MagicMock]:
     """Return a mocked Stookwijzer client."""
     with (
         patch(
-            "homeassistant.components.stookwijzer.Stookwijzer",
+            "inpui.components.stookwijzer.Stookwijzer",
             autospec=True,
         ) as stookwijzer_mock,
         patch(
-            "homeassistant.components.stookwijzer.coordinator.Stookwijzer",
+            "inpui.components.stookwijzer.coordinator.Stookwijzer",
             new=stookwijzer_mock,
         ),
         patch(
-            "homeassistant.components.stookwijzer.config_flow.Stookwijzer",
+            "inpui.components.stookwijzer.config_flow.Stookwijzer",
             new=stookwijzer_mock,
         ),
     ):

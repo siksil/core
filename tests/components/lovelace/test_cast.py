@@ -23,7 +23,7 @@ def mock_onboarding_done() -> Generator[MagicMock]:
     Enabled to prevent creating default dashboards during test execution.
     """
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=True,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -60,7 +60,7 @@ async def mock_yaml_dashboard(hass: HomeAssistant) -> AsyncGenerator[None]:
 
     with (
         patch(
-            "homeassistant.components.lovelace.dashboard.load_yaml_dict",
+            "inpui.components.lovelace.dashboard.load_yaml_dict",
             return_value={
                 "title": "YAML Title",
                 "views": [
@@ -72,7 +72,7 @@ async def mock_yaml_dashboard(hass: HomeAssistant) -> AsyncGenerator[None]:
             },
         ),
         patch(
-            "homeassistant.components.lovelace.dashboard.os.path.getmtime",
+            "inpui.components.lovelace.dashboard.os.path.getmtime",
             return_value=time() + 10,
         ),
     ):

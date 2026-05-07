@@ -121,7 +121,7 @@ async def test_sensor(
         unique_id=mock_config_entry_data[CONF_STATION],
     )
     entry.add_to_hass(hass)
-    with patch("homeassistant.components.pegel_online.PegelOnline") as pegelonline:
+    with patch("inpui.components.pegel_online.PegelOnline") as pegelonline:
         pegelonline.return_value = PegelOnlineMock(
             station_details=mock_station_details,
             station_measurements=mock_station_measurement,

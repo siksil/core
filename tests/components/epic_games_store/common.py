@@ -24,7 +24,7 @@ async def setup_platform(hass: HomeAssistant, platform: str) -> MockConfigEntry:
     )
     mock_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.epic_games_store.PLATFORMS", [platform]):
+    with patch("inpui.components.epic_games_store.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
     await hass.async_block_till_done()
 

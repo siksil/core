@@ -185,9 +185,9 @@ async def anova_api(
     api_mock = anova_api_mock()
 
     with (
-        patch("homeassistant.components.anova.AnovaApi", return_value=api_mock),
+        patch("inpui.components.anova.AnovaApi", return_value=api_mock),
         patch(
-            "homeassistant.components.anova.config_flow.AnovaApi", return_value=api_mock
+            "inpui.components.anova.config_flow.AnovaApi", return_value=api_mock
         ),
     ):
         api = AnovaApi(
@@ -206,9 +206,9 @@ async def anova_api_no_devices(
     api_mock = anova_api_mock(connect_messages=[], post_connect_messages=[])
 
     with (
-        patch("homeassistant.components.anova.AnovaApi", return_value=api_mock),
+        patch("inpui.components.anova.AnovaApi", return_value=api_mock),
         patch(
-            "homeassistant.components.anova.config_flow.AnovaApi", return_value=api_mock
+            "inpui.components.anova.config_flow.AnovaApi", return_value=api_mock
         ),
     ):
         api = AnovaApi(
@@ -231,7 +231,7 @@ async def anova_api_wrong_login(
 
     api_mock.authenticate.side_effect = authenticate_side_effect
 
-    with patch("homeassistant.components.anova.AnovaApi", return_value=api_mock):
+    with patch("inpui.components.anova.AnovaApi", return_value=api_mock):
         api = AnovaApi(
             None,
             "sample@gmail.com",
@@ -247,7 +247,7 @@ async def anova_api_no_data(
     """Mock the api for Anova with a wrong login."""
     api_mock = anova_api_mock(post_connect_messages=[])
 
-    with patch("homeassistant.components.anova.AnovaApi", return_value=api_mock):
+    with patch("inpui.components.anova.AnovaApi", return_value=api_mock):
         api = AnovaApi(
             None,
             "sample@gmail.com",
@@ -268,7 +268,7 @@ async def anova_api_websocket_failure(
 
     api_mock.create_websocket.side_effect = create_websocket_side_effect
 
-    with patch("homeassistant.components.anova.AnovaApi", return_value=api_mock):
+    with patch("inpui.components.anova.AnovaApi", return_value=api_mock):
         api = AnovaApi(
             None,
             "sample@gmail.com",

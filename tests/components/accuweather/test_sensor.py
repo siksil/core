@@ -43,7 +43,7 @@ async def test_sensor(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test states of the sensor."""
-    with patch("homeassistant.components.accuweather.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.accuweather.PLATFORMS", [Platform.SENSOR]):
         entry = await init_integration(hass)
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)
 

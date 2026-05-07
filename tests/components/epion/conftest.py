@@ -16,11 +16,11 @@ def mock_epion():
     mock_epion_api = MagicMock()
     with (
         patch(
-            "homeassistant.components.epion.config_flow.Epion",
+            "inpui.components.epion.config_flow.Epion",
             return_value=mock_epion_api,
         ) as mock_epion_api,
         patch(
-            "homeassistant.components.epion.Epion",
+            "inpui.components.epion.Epion",
             return_value=mock_epion_api,
         ),
     ):

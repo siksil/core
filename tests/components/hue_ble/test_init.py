@@ -72,19 +72,19 @@ async def test_setup_error(
     entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.hue_ble.async_ble_device_from_address",
+            "inpui.components.hue_ble.async_ble_device_from_address",
             return_value=ble_device,
         ),
         patch(
-            "homeassistant.components.hue_ble.async_scanner_count",
+            "inpui.components.hue_ble.async_scanner_count",
             return_value=scanner_count,
         ),
         patch(
-            "homeassistant.components.hue_ble.HueBleLight.connect",
+            "inpui.components.hue_ble.HueBleLight.connect",
             side_effect=[connect_result],
         ),
         patch(
-            "homeassistant.components.hue_ble.HueBleLight.poll_state",
+            "inpui.components.hue_ble.HueBleLight.poll_state",
             side_effect=[poll_state_result],
         ),
     ):
@@ -103,19 +103,19 @@ async def test_setup(
     entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.hue_ble.async_ble_device_from_address",
+            "inpui.components.hue_ble.async_ble_device_from_address",
             return_value=generate_ble_device(TEST_DEVICE_MAC, TEST_DEVICE_NAME),
         ),
         patch(
-            "homeassistant.components.hue_ble.async_scanner_count",
+            "inpui.components.hue_ble.async_scanner_count",
             return_value=1,
         ),
         patch(
-            "homeassistant.components.hue_ble.HueBleLight.connect",
+            "inpui.components.hue_ble.HueBleLight.connect",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.hue_ble.HueBleLight.poll_state",
+            "inpui.components.hue_ble.HueBleLight.poll_state",
             return_value=None,
         ),
     ):

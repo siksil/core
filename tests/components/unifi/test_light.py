@@ -336,7 +336,7 @@ async def test_light_platform_snapshot(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test platform snapshot."""
-    with patch("homeassistant.components.unifi.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.unifi.PLATFORMS", [Platform.LIGHT]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

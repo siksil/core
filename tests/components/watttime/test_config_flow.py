@@ -37,7 +37,7 @@ async def test_auth_errors(
 ) -> None:
     """Test that issues with auth show the correct error."""
     with patch(
-        "homeassistant.components.watttime.config_flow.Client.async_login",
+        "inpui.components.watttime.config_flow.Client.async_login",
         side_effect=exc,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -102,7 +102,7 @@ async def test_duplicate_error(
 async def test_options_flow(hass: HomeAssistant, config_entry) -> None:
     """Test config flow options."""
     with patch(
-        "homeassistant.components.watttime.async_setup_entry", return_value=True
+        "inpui.components.watttime.async_setup_entry", return_value=True
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
@@ -153,7 +153,7 @@ async def test_step_reauth(
     """Test a full reauth flow."""
     result = await config_entry.start_reauth_flow(hass)
     with patch(
-        "homeassistant.components.watttime.async_setup_entry",
+        "inpui.components.watttime.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(

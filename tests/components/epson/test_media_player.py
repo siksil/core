@@ -26,7 +26,7 @@ async def test_set_unique_id(
         entry_id="1cb78c095906279574a0442a1f0003ef",
     )
     entry.add_to_hass(hass)
-    with patch("homeassistant.components.epson.Projector.get_power"):
+    with patch("inpui.components.epson.Projector.get_power"):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
         assert entry.unique_id is None
@@ -34,13 +34,13 @@ async def test_set_unique_id(
         assert entity_entry
         assert entity_entry.unique_id == entry.entry_id
     with (
-        patch("homeassistant.components.epson.Projector.get_power", return_value="01"),
+        patch("inpui.components.epson.Projector.get_power", return_value="01"),
         patch(
-            "homeassistant.components.epson.Projector.get_serial_number",
+            "inpui.components.epson.Projector.get_serial_number",
             return_value="123",
         ),
         patch(
-            "homeassistant.components.epson.Projector.get_property",
+            "inpui.components.epson.Projector.get_property",
         ),
     ):
         freezer.tick(timedelta(seconds=30))

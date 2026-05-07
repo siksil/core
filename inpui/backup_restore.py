@@ -110,7 +110,7 @@ def _extract_backup(
             Path(
                 tempdir,
                 "extracted",
-                f"homeassistant.tar{'.gz' if backup_meta['compressed'] else ''}",
+                f"inpui.tar{'.gz' if backup_meta['compressed'] else ''}",
             ),
             gzip=backup_meta["compressed"],
             password=restore_content.password,

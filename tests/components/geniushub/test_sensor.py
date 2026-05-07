@@ -22,7 +22,7 @@ async def test_cloud_all_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the creation of the Genius Hub sensors."""
-    with patch("homeassistant.components.geniushub.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.geniushub.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_cloud_config_entry)
 
     await snapshot_platform(

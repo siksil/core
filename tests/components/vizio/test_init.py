@@ -135,7 +135,7 @@ async def test_apps_coordinator_persists_until_last_tv_unloads(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.vizio.coordinator.gen_apps_list_from_url",
+        "inpui.components.vizio.coordinator.gen_apps_list_from_url",
         return_value=APP_LIST,
     ) as mock_fetch:
         freezer.tick(timedelta(days=1))
@@ -148,7 +148,7 @@ async def test_apps_coordinator_persists_until_last_tv_unloads(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.vizio.coordinator.gen_apps_list_from_url",
+        "inpui.components.vizio.coordinator.gen_apps_list_from_url",
         return_value=APP_LIST,
     ) as mock_fetch:
         freezer.tick(timedelta(days=2))

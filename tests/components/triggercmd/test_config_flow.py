@@ -32,11 +32,11 @@ async def test_full_flow(
 
     with (
         patch(
-            "homeassistant.components.triggercmd.client.async_connection_test",
+            "inpui.components.triggercmd.client.async_connection_test",
             return_value=200,
         ),
         patch(
-            "homeassistant.components.triggercmd.ha.Hub",
+            "inpui.components.triggercmd.ha.Hub",
         ),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -69,11 +69,11 @@ async def test_config_flow_user_invalid_token(
 
     with (
         patch(
-            "homeassistant.components.triggercmd.client.async_connection_test",
+            "inpui.components.triggercmd.client.async_connection_test",
             return_value=200,
         ),
         patch(
-            "homeassistant.components.triggercmd.ha.Hub",
+            "inpui.components.triggercmd.ha.Hub",
         ),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -108,7 +108,7 @@ async def test_config_flow_entry_already_configured(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.triggercmd.client.async_connection_test",
+            "inpui.components.triggercmd.client.async_connection_test",
             return_value=200,
         ),
     ):
@@ -130,7 +130,7 @@ async def test_config_flow_connection_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.triggercmd.client.async_connection_test",
+            "inpui.components.triggercmd.client.async_connection_test",
             side_effect=TRIGGERcmdConnectionError,
         ),
     ):
@@ -146,11 +146,11 @@ async def test_config_flow_connection_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.triggercmd.client.async_connection_test",
+            "inpui.components.triggercmd.client.async_connection_test",
             return_value=200,
         ),
         patch(
-            "homeassistant.components.triggercmd.ha.Hub",
+            "inpui.components.triggercmd.ha.Hub",
         ),
     ):
         result = await hass.config_entries.flow.async_configure(

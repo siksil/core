@@ -91,7 +91,7 @@ async def test_multiple_events_are_all_updating_the_state(
     """Test all events are respected and trigger a state write."""
     await mqtt_mock_entry()
     with patch(
-        "homeassistant.components.mqtt.entity.MqttEntity.async_write_ha_state"
+        "inpui.components.mqtt.entity.MqttEntity.async_write_ha_state"
     ) as mock_async_ha_write_state:
         async_fire_mqtt_message(
             hass, "test-topic", '{"event_type": "press", "duration": "short" }'
@@ -110,7 +110,7 @@ async def test_handling_retained_event_payloads(
     """Test if event messages with a retained flag are ignored."""
     await mqtt_mock_entry()
     with patch(
-        "homeassistant.components.mqtt.entity.MqttEntity.async_write_ha_state"
+        "inpui.components.mqtt.entity.MqttEntity.async_write_ha_state"
     ) as mock_async_ha_write_state:
         async_fire_mqtt_message(
             hass,
@@ -765,7 +765,7 @@ async def test_skipped_async_ha_write_state2(
     payload1 = '{"event_type": "press"}'
     payload2 = '{"event_type": "unknown"}'
     with patch(
-        "homeassistant.components.mqtt.entity.MqttEntity.async_write_ha_state"
+        "inpui.components.mqtt.entity.MqttEntity.async_write_ha_state"
     ) as mock_async_ha_write_state:
         assert len(mock_async_ha_write_state.mock_calls) == 0
         async_fire_mqtt_message(hass, topic, payload1)

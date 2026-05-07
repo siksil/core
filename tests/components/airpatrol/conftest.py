@@ -21,11 +21,11 @@ def mock_airpatrol_client(get_data) -> Generator[AsyncMock]:
     """Mock an AirPatrol client and config."""
     with (
         patch(
-            "homeassistant.components.airpatrol.coordinator.AirPatrolAPI",
+            "inpui.components.airpatrol.coordinator.AirPatrolAPI",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.airpatrol.config_flow.AirPatrolAPI",
+            "inpui.components.airpatrol.config_flow.AirPatrolAPI",
             new=mock_client,
         ),
     ):

@@ -48,7 +48,7 @@ async def test_smart_thermostat_radiator_controlling(
     mocked_instance = AsyncMock(return_value=True)
     mocked_none_instance = AsyncMock(return_value=None)
     with patch.multiple(
-        "homeassistant.components.switchbot.climate.switchbot.SwitchbotSmartThermostatRadiator",
+        "inpui.components.switchbot.climate.switchbot.SwitchbotSmartThermostatRadiator",
         get_basic_info=mocked_none_instance,
         update=mocked_none_instance,
         **{mock_method: mocked_instance},
@@ -101,7 +101,7 @@ async def test_exception_handling_smart_thermostat_radiator_service(
 
     mocked_none_instance = AsyncMock(return_value=None)
     with patch.multiple(
-        "homeassistant.components.switchbot.climate.switchbot.SwitchbotSmartThermostatRadiator",
+        "inpui.components.switchbot.climate.switchbot.SwitchbotSmartThermostatRadiator",
         get_basic_info=mocked_none_instance,
         update=mocked_none_instance,
         **{mock_method: AsyncMock(side_effect=exception)},

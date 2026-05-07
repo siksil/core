@@ -16,8 +16,8 @@ from tests.common import MockEntityPlatform
 def pymochad_mock():
     """Mock pymochad."""
     with (
-        mock.patch("homeassistant.components.mochad.switch.device"),
-        mock.patch("homeassistant.components.mochad.switch.MochadException"),
+        mock.patch("inpui.components.mochad.switch.device"),
+        mock.patch("inpui.components.mochad.switch.MochadException"),
     ):
         yield
 

@@ -35,11 +35,11 @@ def mock_prana_api() -> Generator[AsyncMock]:
     """Mock the Prana API client used by the integration."""
     with (
         patch(
-            "homeassistant.components.prana.config_flow.PranaLocalApiClient",
+            "inpui.components.prana.config_flow.PranaLocalApiClient",
             autospec=True,
         ) as mock_api_class,
         patch(
-            "homeassistant.components.prana.coordinator.PranaLocalApiClient",
+            "inpui.components.prana.coordinator.PranaLocalApiClient",
             mock_api_class,
         ),
     ):

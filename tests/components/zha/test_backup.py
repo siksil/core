@@ -25,7 +25,7 @@ async def test_pre_backup(
     )
 
 
-@patch("homeassistant.components.zha.backup.get_zha_gateway", side_effect=ValueError())
+@patch("inpui.components.zha.backup.get_zha_gateway", side_effect=ValueError())
 async def test_pre_backup_no_gateway(
     hass: HomeAssistant, setup_zha: Callable[..., Coroutine[None]]
 ) -> None:

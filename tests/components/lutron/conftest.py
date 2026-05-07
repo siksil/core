@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.lutron.async_setup_entry", return_value=True
+        "inpui.components.lutron.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -24,8 +24,8 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_lutron() -> Generator[MagicMock]:
     """Mock Lutron client."""
     with (
-        patch("homeassistant.components.lutron.Lutron", autospec=True) as mock_lutron,
-        patch("homeassistant.components.lutron.config_flow.Lutron", new=mock_lutron),
+        patch("inpui.components.lutron.Lutron", autospec=True) as mock_lutron,
+        patch("inpui.components.lutron.config_flow.Lutron", new=mock_lutron),
     ):
         client = mock_lutron.return_value
         client.guid = "12345678901"

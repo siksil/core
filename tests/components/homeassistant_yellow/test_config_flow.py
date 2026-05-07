@@ -39,7 +39,7 @@ from tests.common import MockConfigEntry, MockModule, mock_integration
 def config_flow_handler(hass: HomeAssistant) -> Generator[None]:
     """Fixture for a test config flow."""
     with patch(
-        "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.WaitingAddonManager.async_wait_until_addon_state"
+        "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.WaitingAddonManager.async_wait_until_addon_state"
     ):
         yield
 
@@ -48,7 +48,7 @@ def config_flow_handler(hass: HomeAssistant) -> Generator[None]:
 def mock_get_supervisor_client(supervisor_client: AsyncMock) -> Generator[None]:
     """Mock get_supervisor_client method."""
     with patch(
-        "homeassistant.components.homeassistant_yellow.config_flow.get_supervisor_client",
+        "inpui.components.homeassistant_yellow.config_flow.get_supervisor_client",
         return_value=supervisor_client,
     ):
         yield
@@ -70,7 +70,7 @@ def mock_reboot_host(supervisor_client: AsyncMock) -> AsyncMock:
 def setup_entry_fixture() -> Generator[AsyncMock]:
     """Mock entry setup."""
     with patch(
-        "homeassistant.components.homeassistant_yellow.async_setup_entry",
+        "inpui.components.homeassistant_yellow.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -83,11 +83,11 @@ async def test_config_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homeassistant_yellow.async_setup_entry",
+            "inpui.components.homeassistant_yellow.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
             return_value=FirmwareInfo(
                 device=RADIO_DEVICE,
                 firmware_type=ApplicationType.EZSP,
@@ -130,7 +130,7 @@ async def test_config_flow_single_entry(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_yellow.async_setup_entry",
+        "inpui.components.homeassistant_yellow.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -357,15 +357,15 @@ async def test_firmware_options_flow_zigbee(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.FirmwareUpdateClient",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.FirmwareUpdateClient",
             return_value=mock_update_client,
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.async_flash_silabs_firmware",
             return_value=FirmwareInfo(
                 device=RADIO_DEVICE,
                 firmware_type=fw_type,
@@ -375,7 +375,7 @@ async def test_firmware_options_flow_zigbee(hass: HomeAssistant) -> None:
             ),
         ) as flash_mock,
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.probe_silabs_firmware_info",
             side_effect=[
                 # First call: probe before installation (returns current SPINEL firmware)
                 FirmwareInfo(
@@ -396,7 +396,7 @@ async def test_firmware_options_flow_zigbee(hass: HomeAssistant) -> None:
             ],
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.util.parse_firmware_image"
+            "inpui.components.homeassistant_hardware.util.parse_firmware_image"
         ),
     ):
         pick_result = await hass.config_entries.options.async_configure(
@@ -489,11 +489,11 @@ async def test_firmware_options_flow_thread(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.guess_hardware_owners",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareInstallFlow._install_firmware_step",
+            "inpui.components.homeassistant_hardware.firmware_config_flow.BaseFirmwareInstallFlow._install_firmware_step",
             autospec=True,
             side_effect=mock_install_firmware_step,
         ),
@@ -561,15 +561,15 @@ async def test_options_flow_multipan_uninstall(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
+            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.get_multiprotocol_addon_manager",
             return_value=mock_multipan_manager,
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.get_flasher_addon_manager",
+            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.get_flasher_addon_manager",
             return_value=mock_flasher_manager,
         ),
         patch(
-            "homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
+            "inpui.components.homeassistant_hardware.silabs_multiprotocol_addon.is_hassio",
             return_value=True,
         ),
     ):

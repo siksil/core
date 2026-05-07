@@ -24,9 +24,9 @@ def override_platforms() -> Generator[None]:
     """Override PLATFORMS_WITH_AUTH."""
     with (
         patch(
-            "homeassistant.components.sfr_box.PLATFORMS_WITH_AUTH", [Platform.BUTTON]
+            "inpui.components.sfr_box.PLATFORMS_WITH_AUTH", [Platform.BUTTON]
         ),
-        patch("homeassistant.components.sfr_box.coordinator.SFRBox.authenticate"),
+        patch("inpui.components.sfr_box.coordinator.SFRBox.authenticate"),
     ):
         yield
 
@@ -54,7 +54,7 @@ async def test_reboot(hass: HomeAssistant, config_entry_with_auth: ConfigEntry) 
     # Reboot success
     service_data = {ATTR_ENTITY_ID: "button.sfr_box_restart"}
     with patch(
-        "homeassistant.components.sfr_box.button.SFRBox.system_reboot"
+        "inpui.components.sfr_box.button.SFRBox.system_reboot"
     ) as mock_action:
         await hass.services.async_call(
             BUTTON_DOMAIN, SERVICE_PRESS, service_data=service_data, blocking=True
@@ -67,7 +67,7 @@ async def test_reboot(hass: HomeAssistant, config_entry_with_auth: ConfigEntry) 
     service_data = {ATTR_ENTITY_ID: "button.sfr_box_restart"}
     with (
         patch(
-            "homeassistant.components.sfr_box.button.SFRBox.system_reboot",
+            "inpui.components.sfr_box.button.SFRBox.system_reboot",
             side_effect=SFRBoxError,
         ) as mock_action,
         pytest.raises(HomeAssistantError),

@@ -29,15 +29,15 @@ async def test_full_user_flow(
     result2 = await hass.config_entries.flow.async_configure(
         result["flow_id"],
         user_input={
-            CONF_TAILNET: "homeassistant.github",
+            CONF_TAILNET: "inpui.github",
             CONF_API_KEY: "tskey-FAKE",
         },
     )
 
     assert result2.get("type") is FlowResultType.CREATE_ENTRY
-    assert result2.get("title") == "homeassistant.github"
+    assert result2.get("title") == "inpui.github"
     assert result2.get("data") == {
-        CONF_TAILNET: "homeassistant.github",
+        CONF_TAILNET: "inpui.github",
         CONF_API_KEY: "tskey-FAKE",
     }
 
@@ -66,7 +66,7 @@ async def test_full_flow_with_authentication_error(
     result2 = await hass.config_entries.flow.async_configure(
         result["flow_id"],
         user_input={
-            CONF_TAILNET: "homeassistant.github",
+            CONF_TAILNET: "inpui.github",
             CONF_API_KEY: "tskey-INVALID",
         },
     )
@@ -82,15 +82,15 @@ async def test_full_flow_with_authentication_error(
     result3 = await hass.config_entries.flow.async_configure(
         result2["flow_id"],
         user_input={
-            CONF_TAILNET: "homeassistant.github",
+            CONF_TAILNET: "inpui.github",
             CONF_API_KEY: "tskey-VALID",
         },
     )
 
     assert result3.get("type") is FlowResultType.CREATE_ENTRY
-    assert result3.get("title") == "homeassistant.github"
+    assert result3.get("title") == "inpui.github"
     assert result3.get("data") == {
-        CONF_TAILNET: "homeassistant.github",
+        CONF_TAILNET: "inpui.github",
         CONF_API_KEY: "tskey-VALID",
     }
 
@@ -108,7 +108,7 @@ async def test_connection_error(
         DOMAIN,
         context={"source": SOURCE_USER},
         data={
-            CONF_TAILNET: "homeassistant.github",
+            CONF_TAILNET: "inpui.github",
             CONF_API_KEY: "tskey-FAKE",
         },
     )
@@ -141,7 +141,7 @@ async def test_reauth_flow(
     assert result2.get("type") is FlowResultType.ABORT
     assert result2.get("reason") == "reauth_successful"
     assert mock_config_entry.data == {
-        CONF_TAILNET: "homeassistant.github",
+        CONF_TAILNET: "inpui.github",
         CONF_API_KEY: "tskey-REAUTH",
     }
 
@@ -190,7 +190,7 @@ async def test_reauth_with_authentication_error(
     assert result3.get("type") is FlowResultType.ABORT
     assert result3.get("reason") == "reauth_successful"
     assert mock_config_entry.data == {
-        CONF_TAILNET: "homeassistant.github",
+        CONF_TAILNET: "inpui.github",
         CONF_API_KEY: "tskey-VALID",
     }
 

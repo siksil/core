@@ -25,7 +25,7 @@ async def test_play_chime_service_entity(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test chime play service."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SELECT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -91,7 +91,7 @@ async def test_play_chime_service_unloaded(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test chime play service when config entry is unloaded."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SELECT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

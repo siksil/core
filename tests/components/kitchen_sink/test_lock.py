@@ -28,7 +28,7 @@ UNLOCKED_LOCK = "lock.another_basic_lock"
 async def lock_only() -> None:
     """Enable only the lock platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.LOCK],
     ):
         yield

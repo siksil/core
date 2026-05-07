@@ -47,7 +47,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.mjpeg.async_setup_entry", return_value=True
+        "inpui.components.mjpeg.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -55,7 +55,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 @pytest.fixture
 def mock_reload_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.mjpeg.async_reload_entry") as mock_reload:
+    with patch("inpui.components.mjpeg.async_reload_entry") as mock_reload:
         yield mock_reload
 
 

@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 async def media_player_only() -> AsyncGenerator[None]:
     """Enable only the media_player platform."""
     with patch(
-        "homeassistant.components.playstation_network.PLATFORMS",
+        "inpui.components.playstation_network.PLATFORMS",
         [Platform.MEDIA_PLAYER],
     ):
         yield

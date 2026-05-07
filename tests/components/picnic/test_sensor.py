@@ -105,7 +105,7 @@ class TestPicnicSensor(unittest.IsolatedAsyncioTestCase):
         self.entity_registry = er.async_get(self.hass)
 
         # Patch the api client
-        self.picnic_patcher = patch("homeassistant.components.picnic.PicnicAPI")
+        self.picnic_patcher = patch("inpui.components.picnic.PicnicAPI")
         self.picnic_mock = self.picnic_patcher.start()
         self.picnic_mock().session.auth_token = "3q29fpwhulzes"
 

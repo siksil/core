@@ -114,7 +114,7 @@ async def test_turn_on_wol(hass: HomeAssistant) -> None:
     assert await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
     with patch(
-        "homeassistant.components.samsungtv.entity.send_magic_packet"
+        "inpui.components.samsungtv.entity.send_magic_packet"
     ) as mock_send_magic_packet:
         await hass.services.async_call(
             REMOTE_DOMAIN, SERVICE_TURN_ON, {ATTR_ENTITY_ID: ENTITY_ID}, True

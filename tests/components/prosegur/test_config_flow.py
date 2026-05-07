@@ -24,11 +24,11 @@ async def test_form(hass: HomeAssistant, mock_list_contracts) -> None:
 
     with (
         patch(
-            "homeassistant.components.prosegur.config_flow.Installation.list",
+            "inpui.components.prosegur.config_flow.Installation.list",
             return_value=mock_list_contracts,
         ) as mock_retrieve,
         patch(
-            "homeassistant.components.prosegur.async_setup_entry",
+            "inpui.components.prosegur.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -91,7 +91,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.prosegur.config_flow.Installation.list",
+        "inpui.components.prosegur.config_flow.Installation.list",
         side_effect=ConnectionError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -150,11 +150,11 @@ async def test_reauth_flow(hass: HomeAssistant, mock_list_contracts) -> None:
 
     with (
         patch(
-            "homeassistant.components.prosegur.config_flow.Installation.list",
+            "inpui.components.prosegur.config_flow.Installation.list",
             return_value=mock_list_contracts,
         ) as mock_installation,
         patch(
-            "homeassistant.components.prosegur.async_setup_entry",
+            "inpui.components.prosegur.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -203,7 +203,7 @@ async def test_reauth_flow_error(hass: HomeAssistant, exception, base_error) -> 
     result = await entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.prosegur.config_flow.Installation.list",
+        "inpui.components.prosegur.config_flow.Installation.list",
         side_effect=exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

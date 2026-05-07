@@ -33,7 +33,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture
 def mock_dsm_with_usb():
     """Mock a successful service with USB support."""
-    with patch("homeassistant.components.synology_dsm.common.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.common.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -71,7 +71,7 @@ def mock_dsm_with_usb():
 @pytest.fixture
 def mock_dsm_without_usb():
     """Mock a successful service without USB devices."""
-    with patch("homeassistant.components.synology_dsm.common.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.common.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -93,7 +93,7 @@ async def setup_dsm_with_usb(
 ):
     """Mock setup of synology dsm config entry with USB."""
     with patch(
-        "homeassistant.components.synology_dsm.common.SynologyDSM",
+        "inpui.components.synology_dsm.common.SynologyDSM",
         return_value=mock_dsm_with_usb,
     ):
         entry = MockConfigEntry(
@@ -124,7 +124,7 @@ async def setup_dsm_without_usb(
 ):
     """Mock setup of synology dsm config entry without USB."""
     with patch(
-        "homeassistant.components.synology_dsm.common.SynologyDSM",
+        "inpui.components.synology_dsm.common.SynologyDSM",
         return_value=mock_dsm_without_usb,
     ):
         entry = MockConfigEntry(

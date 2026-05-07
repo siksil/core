@@ -34,7 +34,7 @@ from tests.common import async_fire_time_changed
 def device_tracker_platforms_only():
     """Only set up the device_tracker platforms and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.DEVICE_TRACKER,
             Platform.BUTTON,

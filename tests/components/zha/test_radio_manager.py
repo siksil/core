@@ -27,14 +27,14 @@ PROBE_FUNCTION_PATH = "zigbee.application.ControllerApplication.probe"
 @pytest.fixture(autouse=True)
 def disable_platform_only():
     """Disable platforms to speed up tests."""
-    with patch("homeassistant.components.zha.PLATFORMS", []):
+    with patch("inpui.components.zha.PLATFORMS", []):
         yield
 
 
 @pytest.fixture(autouse=True)
 def reduce_reconnect_timeout():
     """Reduces reconnect timeout to speed up tests."""
-    with patch("homeassistant.components.zha.radio_manager.RETRY_DELAY_S", 0.0001):
+    with patch("inpui.components.zha.radio_manager.RETRY_DELAY_S", 0.0001):
         yield
 
 
@@ -99,13 +99,13 @@ def mock_create_zigpy_app() -> Generator[MagicMock]:
     )
 
     with patch(
-        "homeassistant.components.zha.radio_manager.ZhaRadioManager.create_zigpy_app",
+        "inpui.components.zha.radio_manager.ZhaRadioManager.create_zigpy_app",
         return_value=mock_connect_app,
     ):
         yield mock_connect_app
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migrate_matching_port(
     hass: HomeAssistant,
     mock_create_zigpy_app,
@@ -162,10 +162,10 @@ async def test_migrate_matching_port(
 
 
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
+    "inpui.components.zha.radio_manager.ZhaRadioManager.detect_radio_type",
     mock_detect_radio_type(),
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migrate_matching_port_usb(
     hass: HomeAssistant,
     mock_create_zigpy_app,
@@ -269,7 +269,7 @@ async def test_migrate_matching_port_config_entry_not_loaded(
 
 
 @patch(
-    "homeassistant.components.zha.radio_manager.ZhaRadioManager.restore_backup",
+    "inpui.components.zha.radio_manager.ZhaRadioManager.restore_backup",
     side_effect=OSError,
 )
 async def test_migrate_matching_port_retry(
@@ -459,9 +459,9 @@ async def test_detect_radio_type_failure_wrong_firmware(
 ) -> None:
     """Test radio type detection, wrong firmware."""
     with (
-        patch("homeassistant.components.zha.radio_manager.AUTOPROBE_RADIOS", ()),
+        patch("inpui.components.zha.radio_manager.AUTOPROBE_RADIOS", ()),
         patch(
-            "homeassistant.components.zha.radio_manager.repairs.wrong_silabs_firmware.warn_on_wrong_silabs_firmware",
+            "inpui.components.zha.radio_manager.repairs.wrong_silabs_firmware.warn_on_wrong_silabs_firmware",
             return_value=True,
         ),
     ):
@@ -477,9 +477,9 @@ async def test_detect_radio_type_failure_no_detect(
 ) -> None:
     """Test radio type detection, no firmware detected."""
     with (
-        patch("homeassistant.components.zha.radio_manager.AUTOPROBE_RADIOS", ()),
+        patch("inpui.components.zha.radio_manager.AUTOPROBE_RADIOS", ()),
         patch(
-            "homeassistant.components.zha.radio_manager.repairs.wrong_silabs_firmware.warn_on_wrong_silabs_firmware",
+            "inpui.components.zha.radio_manager.repairs.wrong_silabs_firmware.warn_on_wrong_silabs_firmware",
             return_value=False,
         ),
     ):

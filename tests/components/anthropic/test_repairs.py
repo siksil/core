@@ -119,7 +119,7 @@ async def test_repair_flow_iterates_subentries(
     ]
 
     with patch(
-        "homeassistant.components.anthropic.repairs.get_model_list",
+        "inpui.components.anthropic.repairs.get_model_list",
         new_callable=AsyncMock,
         return_value=model_options,
     ):

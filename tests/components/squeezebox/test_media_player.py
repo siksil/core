@@ -81,7 +81,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 def squeezebox_media_player_platform():
     """Only set up the media_player platform for squeezebox tests."""
     with patch(
-        "homeassistant.components.squeezebox.PLATFORMS", [Platform.MEDIA_PLAYER]
+        "inpui.components.squeezebox.PLATFORMS", [Platform.MEDIA_PLAYER]
     ):
         yield
 
@@ -89,7 +89,7 @@ def squeezebox_media_player_platform():
 @pytest.fixture(autouse=True)
 def mock_discovery():
     """Mock discovery of squeezebox players."""
-    with patch("homeassistant.components.squeezebox.media_player.async_discover"):
+    with patch("inpui.components.squeezebox.media_player.async_discover"):
         yield
 
 
@@ -825,11 +825,11 @@ async def test_squeezebox_server_discovery(
 
     with (
         patch(
-            "homeassistant.components.squeezebox.Server",
+            "inpui.components.squeezebox.Server",
             return_value=lms,
         ),
         patch(
-            "homeassistant.components.squeezebox.media_player.async_discover",
+            "inpui.components.squeezebox.media_player.async_discover",
             mock_async_discover,
         ),
     ):

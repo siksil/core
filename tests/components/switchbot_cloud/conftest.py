@@ -12,7 +12,7 @@ from inpui.components.switchbot_cloud import SwitchBotAPI
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.switchbot_cloud.async_setup_entry",
+        "inpui.components.switchbot_cloud.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -59,7 +59,7 @@ def mock_get_webook_configuration():
 def mock_after_command_refresh():
     """Mock after command refresh."""
     with patch(
-        "homeassistant.components.switchbot_cloud.const.AFTER_COMMAND_REFRESH", 0
+        "inpui.components.switchbot_cloud.const.AFTER_COMMAND_REFRESH", 0
     ):
         yield
 
@@ -68,7 +68,7 @@ def mock_after_command_refresh():
 def mock_after_command_refresh_for_cover():
     """Mock after command refresh."""
     with patch(
-        "homeassistant.components.switchbot_cloud.const.COVER_ENTITY_AFTER_COMMAND_REFRESH",
+        "inpui.components.switchbot_cloud.const.COVER_ENTITY_AFTER_COMMAND_REFRESH",
         0,
     ):
         yield
@@ -78,7 +78,7 @@ def mock_after_command_refresh_for_cover():
 def mock_after_command_refresh_for_smart_radiator_thermostat():
     """Mock after command refresh."""
     with patch(
-        "homeassistant.components.switchbot_cloud.const.SMART_RADIATOR_THERMOSTAT_AFTER_COMMAND_REFRESH",
+        "inpui.components.switchbot_cloud.const.SMART_RADIATOR_THERMOSTAT_AFTER_COMMAND_REFRESH",
         0,
     ):
         yield

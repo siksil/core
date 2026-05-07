@@ -55,7 +55,7 @@ from inpui.setup import async_setup_component
 def media_player_media_seek_fixture():
     """Mock demo YouTube player media seek."""
     with patch(
-        "homeassistant.components.demo.media_player.DemoYoutubePlayer.media_seek",
+        "inpui.components.demo.media_player.DemoYoutubePlayer.media_seek",
         autospec=True,
     ) as seek:
         yield seek

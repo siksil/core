@@ -35,7 +35,7 @@ def mock_idrive_client() -> Generator[AsyncMock]:
     mock_client.get_region_endpoint.return_value = USER_INPUT[CONF_ENDPOINT_URL]
 
     with patch(
-        "homeassistant.components.idrive_e2.config_flow.IDriveE2Client",
+        "inpui.components.idrive_e2.config_flow.IDriveE2Client",
         return_value=mock_client,
     ):
         yield mock_client

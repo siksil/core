@@ -157,11 +157,11 @@ async def test_async_setup_udn_mismatch(
 
     with (
         patch(
-            "homeassistant.components.ssdp.async_register_callback",
+            "inpui.components.ssdp.async_register_callback",
             side_effect=register_callback,
         ),
         patch(
-            "homeassistant.components.ssdp.async_get_discovery_info_by_st",
+            "inpui.components.ssdp.async_get_discovery_info_by_st",
             return_value=[test_discovery],
         ),
     ):

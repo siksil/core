@@ -49,7 +49,7 @@ MOCK_DATA = b"123"
 def mock_tts_get_cache_files_fixture_helper() -> Generator[MagicMock]:
     """Mock the list TTS cache function."""
     with patch(
-        "homeassistant.components.tts._get_cache_files", return_value={}
+        "inpui.components.tts._get_cache_files", return_value={}
     ) as mock_cache_files:
         yield mock_cache_files
 
@@ -59,7 +59,7 @@ def mock_tts_init_cache_dir_fixture_helper(
 ) -> Generator[MagicMock]:
     """Mock the TTS cache dir in memory."""
     with patch(
-        "homeassistant.components.tts._init_tts_cache_dir",
+        "inpui.components.tts._init_tts_cache_dir",
         side_effect=init_tts_cache_dir_side_effect,
     ) as mock_cache_dir:
         yield mock_cache_dir
@@ -99,7 +99,7 @@ def mock_tts_cache_dir_fixture_helper(
 def tts_mutagen_mock_fixture_helper() -> Generator[MagicMock]:
     """Mock writing tags."""
     with patch(
-        "homeassistant.components.tts.SpeechManager.write_tags",
+        "inpui.components.tts.SpeechManager.write_tags",
         side_effect=lambda *args: args[1],
     ) as mock_write_tags:
         yield mock_write_tags

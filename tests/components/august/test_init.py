@@ -301,7 +301,7 @@ async def test_oauth_implementation_not_available(hass: HomeAssistant) -> None:
     entry = await mock_august_config_entry(hass)
 
     with patch(
-        "homeassistant.components.august.async_get_config_entry_implementation",
+        "inpui.components.august.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -315,7 +315,7 @@ async def test_oauth_token_request_reauth_error(hass: HomeAssistant) -> None:
     entry = await mock_august_config_entry(hass)
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
+        "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestReauthError(
             request_info=Mock(real_url="https://auth.august.com/access_token"),
             status=401,
@@ -339,7 +339,7 @@ async def test_oauth_token_request_transient_error_is_retryable(
     entry = await mock_august_config_entry(hass)
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
+        "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestTransientError(
             request_info=Mock(real_url="https://auth.august.com/access_token"),
             status=500,
@@ -357,7 +357,7 @@ async def test_oauth_client_error_is_retryable(hass: HomeAssistant) -> None:
     entry = await mock_august_config_entry(hass)
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
+        "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
         side_effect=ClientError("connection error"),
     ):
         await hass.config_entries.async_setup(entry.entry_id)

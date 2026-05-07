@@ -88,7 +88,7 @@ async def test_simple_climate_device(
 
     This is a simple water heater that only supports setting temperature and on and off.
     """
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CLIMATE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -172,7 +172,7 @@ async def test_climate_device_without_cooling_support(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CLIMATE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -311,7 +311,7 @@ async def test_climate_device_with_cooling_support(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CLIMATE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -387,7 +387,7 @@ async def test_climate_device_with_fan_support(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CLIMATE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -492,7 +492,7 @@ async def test_climate_device_with_preset(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CLIMATE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -579,7 +579,7 @@ async def test_clip_climate_device(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CLIMATE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

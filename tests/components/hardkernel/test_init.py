@@ -25,7 +25,7 @@ async def test_setup_entry(hass: HomeAssistant) -> None:
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.hardkernel.get_os_info",
+        "inpui.components.hardkernel.get_os_info",
         return_value={"board": "odroid-n2"},
     ) as mock_get_os_info:
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -46,7 +46,7 @@ async def test_setup_entry_no_hassio(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     assert len(hass.config_entries.async_entries()) == 1
 
-    with patch("homeassistant.components.hardkernel.get_os_info") as mock_get_os_info:
+    with patch("inpui.components.hardkernel.get_os_info") as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -70,7 +70,7 @@ async def test_setup_entry_wrong_board(hass: HomeAssistant) -> None:
     assert len(hass.config_entries.async_entries()) == 1
 
     with patch(
-        "homeassistant.components.hardkernel.get_os_info",
+        "inpui.components.hardkernel.get_os_info",
         return_value={"board": "generic-x86-64"},
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
@@ -94,7 +94,7 @@ async def test_setup_entry_wait_hassio(hass: HomeAssistant) -> None:
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.hardkernel.get_os_info",
+        "inpui.components.hardkernel.get_os_info",
         return_value=None,
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)

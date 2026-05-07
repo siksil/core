@@ -31,14 +31,14 @@ from tests.typing import (
 @pytest.fixture
 def mock_low_queue():
     """Mock a low queue."""
-    with patch("homeassistant.components.websocket_api.http.MAX_PENDING_MSG", 1):
+    with patch("inpui.components.websocket_api.http.MAX_PENDING_MSG", 1):
         yield
 
 
 @pytest.fixture
 def mock_low_peak():
     """Mock a low queue."""
-    with patch("homeassistant.components.websocket_api.http.PENDING_MSG_PEAK", 5):
+    with patch("inpui.components.websocket_api.http.PENDING_MSG_PEAK", 5):
         yield
 
 
@@ -239,7 +239,7 @@ async def test_pending_msg_peak(
         return setup_instance
 
     with patch(
-        "homeassistant.components.websocket_api.http.WebSocketHandler",
+        "inpui.components.websocket_api.http.WebSocketHandler",
         instantiate_handler,
     ):
         websocket_client = await hass_ws_client()
@@ -277,7 +277,7 @@ async def test_pending_msg_peak_recovery(
         return setup_instance
 
     with patch(
-        "homeassistant.components.websocket_api.http.WebSocketHandler",
+        "inpui.components.websocket_api.http.WebSocketHandler",
         instantiate_handler,
     ):
         websocket_client = await hass_ws_client()
@@ -321,7 +321,7 @@ async def test_pending_msg_peak_but_does_not_overflow(
         return setup_instance
 
     with patch(
-        "homeassistant.components.websocket_api.http.WebSocketHandler",
+        "inpui.components.websocket_api.http.WebSocketHandler",
         instantiate_handler,
     ):
         websocket_client = await hass_ws_client()
@@ -377,7 +377,7 @@ async def test_prepare_fail_timeout(
     """Test failing to prepare due to timeout."""
     with (
         patch(
-            "homeassistant.components.websocket_api.http.web.WebSocketResponse.prepare",
+            "inpui.components.websocket_api.http.web.WebSocketResponse.prepare",
             side_effect=(TimeoutError, web.WebSocketResponse.prepare),
         ),
         pytest.raises(ServerDisconnectedError),
@@ -395,7 +395,7 @@ async def test_prepare_fail_connection_reset(
     """Test failing to prepare due to connection reset."""
     with (
         patch(
-            "homeassistant.components.websocket_api.http.web.WebSocketResponse.prepare",
+            "inpui.components.websocket_api.http.web.WebSocketResponse.prepare",
             side_effect=(ConnectionResetError, web.WebSocketResponse.prepare),
         ),
         pytest.raises(ServerDisconnectedError),
@@ -418,9 +418,9 @@ async def test_auth_timeout_logs_at_debug(
 
     # Patch the auth timeout to be very short (0.001 seconds)
     with (
-        caplog.at_level(logging.DEBUG, "homeassistant.components.websocket_api"),
+        caplog.at_level(logging.DEBUG, "inpui.components.websocket_api"),
         patch(
-            "homeassistant.components.websocket_api.http.AUTH_MESSAGE_TIMEOUT", 0.001
+            "inpui.components.websocket_api.http.AUTH_MESSAGE_TIMEOUT", 0.001
         ),
     ):
         # Try to connect - will timeout quickly since we don't send auth
@@ -581,7 +581,7 @@ async def test_enable_disable_debug_logging(
     """Test enabling and disabling debug logging."""
     assert await async_setup_component(hass, "logger", {"logger": {}})
     async with async_call_logger_set_level(
-        "homeassistant.components.websocket_api", "DEBUG", hass=hass, caplog=caplog
+        "inpui.components.websocket_api", "DEBUG", hass=hass, caplog=caplog
     ):
         await websocket_client.send_json({"id": 1, "type": "ping"})
         msg = await websocket_client.receive_json()
@@ -589,7 +589,7 @@ async def test_enable_disable_debug_logging(
         assert msg["type"] == "pong"
         assert 'Sending b\'{"id":1,"type":"pong"}\'' in caplog.text
     async with async_call_logger_set_level(
-        "homeassistant.components.websocket_api", "WARNING", hass=hass, caplog=caplog
+        "inpui.components.websocket_api", "WARNING", hass=hass, caplog=caplog
     ):
         await websocket_client.send_json({"id": 2, "type": "ping"})
         msg = await websocket_client.receive_json()

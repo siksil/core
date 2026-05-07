@@ -31,7 +31,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 def mock_setup_entry():
     """Mock Teslemetry async_setup_entry method."""
     with patch(
-        "homeassistant.components.teslemetry.async_setup_entry", return_value=True
+        "inpui.components.teslemetry.async_setup_entry", return_value=True
     ) as mock_async_setup_entry:
         yield mock_async_setup_entry
 

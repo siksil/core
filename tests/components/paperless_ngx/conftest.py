@@ -54,15 +54,15 @@ def mock_paperless(
     """Mock the pypaperless.Paperless client."""
     with (
         patch(
-            "homeassistant.components.paperless_ngx.coordinator.Paperless",
+            "inpui.components.paperless_ngx.coordinator.Paperless",
             autospec=True,
         ) as paperless_mock,
         patch(
-            "homeassistant.components.paperless_ngx.config_flow.Paperless",
+            "inpui.components.paperless_ngx.config_flow.Paperless",
             new=paperless_mock,
         ),
         patch(
-            "homeassistant.components.paperless_ngx.Paperless",
+            "inpui.components.paperless_ngx.Paperless",
             new=paperless_mock,
         ),
     ):

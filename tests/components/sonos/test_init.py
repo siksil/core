@@ -44,7 +44,7 @@ async def test_creating_entry_sets_up_media_player(
     )
 
     with patch(
-        "homeassistant.components.sonos.media_player.async_setup_entry",
+        "inpui.components.sonos.media_player.async_setup_entry",
     ) as mock_setup:
         result = await hass.config_entries.flow.async_init(
             sonos.DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -64,7 +64,7 @@ async def test_creating_entry_sets_up_media_player(
 async def test_configuring_sonos_creates_entry(hass: HomeAssistant) -> None:
     """Test that specifying config will create an entry."""
     with patch(
-        "homeassistant.components.sonos.async_setup_entry",
+        "inpui.components.sonos.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         await async_setup_component(
@@ -80,7 +80,7 @@ async def test_configuring_sonos_creates_entry(hass: HomeAssistant) -> None:
 async def test_not_configuring_sonos_not_creates_entry(hass: HomeAssistant) -> None:
     """Test that no config will not create an entry."""
     with patch(
-        "homeassistant.components.sonos.async_setup_entry",
+        "inpui.components.sonos.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         await async_setup_component(hass, sonos.DOMAIN, {})
@@ -452,7 +452,7 @@ async def test_async_poll_manual_hosts_6(
     speaker_2_activity = SpeakerActivity(hass, soco_2)
 
     with patch(
-        "homeassistant.components.sonos.DISCOVERY_INTERVAL"
+        "inpui.components.sonos.DISCOVERY_INTERVAL"
     ) as mock_discovery_interval:
         # Speed up manual discovery interval so second iteration runs sooner
         mock_discovery_interval.total_seconds = Mock(side_effect=[0.0, 60])

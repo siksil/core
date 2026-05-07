@@ -16,7 +16,7 @@ from inpui.data_entry_flow import FlowResultType
 def mock_setup_entry() -> Generator[MagicMock]:
     """Create a mock for the nextbus component setup."""
     with patch(
-        "homeassistant.components.nextbus.async_setup_entry",
+        "inpui.components.nextbus.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -25,7 +25,7 @@ def mock_setup_entry() -> Generator[MagicMock]:
 @pytest.fixture
 def mock_nextbus() -> Generator[MagicMock]:
     """Create a mock py_nextbus module."""
-    with patch("homeassistant.components.nextbus.config_flow.NextBusClient") as client:
+    with patch("inpui.components.nextbus.config_flow.NextBusClient") as client:
         yield client
 
 

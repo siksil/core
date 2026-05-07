@@ -32,7 +32,7 @@ def mock_thermoprodevice(
 ) -> ThermoProDevice:
     """Return downstream library mock."""
     monkeypatch.setattr(
-        "homeassistant.components.thermopro.button.ThermoProDevice",
+        "inpui.components.thermopro.button.ThermoProDevice",
         MagicMock(return_value=dummy_thermoprodevice),
     )
     return dummy_thermoprodevice
@@ -43,7 +43,7 @@ def mock_now(monkeypatch: pytest.MonkeyPatch) -> datetime:
     """Return fixed datetime for comparison."""
     fixed_now = now()
     monkeypatch.setattr(
-        "homeassistant.components.thermopro.button.now",
+        "inpui.components.thermopro.button.now",
         MagicMock(return_value=fixed_now),
     )
     return fixed_now

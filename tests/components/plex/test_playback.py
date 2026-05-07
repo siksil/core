@@ -227,7 +227,7 @@ async def test_media_player_playback(
             __qualname__="search",
         ),
         patch(
-            "homeassistant.components.plex.server.PlexServer.create_playqueue"
+            "inpui.components.plex.server.PlexServer.create_playqueue"
         ) as mock_create_playqueue,
     ):
         await hass.services.async_call(

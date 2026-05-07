@@ -54,11 +54,11 @@ def mock_weather_response(
 
     with (
         patch(
-            "homeassistant.components.weatherkit.WeatherKitApiClient.get_weather_data",
+            "inpui.components.weatherkit.WeatherKitApiClient.get_weather_data",
             return_value=weather_response,
         ),
         patch(
-            "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+            "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
             return_value=available_data_sets,
         ),
     ):

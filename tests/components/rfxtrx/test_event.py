@@ -19,7 +19,7 @@ from .conftest import setup_rfx_test_cfg
 def required_platforms_only():
     """Only set up the required platform and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.rfxtrx.PLATFORMS",
+        "inpui.components.rfxtrx.PLATFORMS",
         (Platform.EVENT,),
     ):
         yield

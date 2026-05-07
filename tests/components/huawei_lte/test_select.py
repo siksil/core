@@ -27,8 +27,8 @@ async def test_set_net_mode(hass: HomeAssistant) -> None:
     huawei_lte.add_to_hass(hass)
     client = magic_client()
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()

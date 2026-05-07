@@ -93,7 +93,7 @@ def _patch_status(status: SteamistStatus, client: Steamist | None = None):
 
     @contextmanager
     def _patcher():
-        with patch("homeassistant.components.steamist.Steamist", return_value=client):
+        with patch("inpui.components.steamist.Steamist", return_value=client):
             yield
 
     return _patcher()
@@ -110,7 +110,7 @@ def _patch_discovery(device=None, no_device=False):
     @contextmanager
     def _patcher():
         with patch(
-            "homeassistant.components.steamist.discovery.AIODiscovery30303",
+            "inpui.components.steamist.discovery.AIODiscovery30303",
             return_value=mock_aio_discovery,
         ):
             yield

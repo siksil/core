@@ -24,7 +24,7 @@ async def test_all_sensors(
 ) -> None:
     """Test all sensors."""
     with patch(
-        "homeassistant.components.garages_amsterdam.PLATFORMS", [Platform.SENSOR]
+        "inpui.components.garages_amsterdam.PLATFORMS", [Platform.SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

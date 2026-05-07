@@ -150,7 +150,7 @@ class BroadlinkDevice:
         mock_entry.add_to_hass(hass)
 
         with patch(
-            "homeassistant.components.broadlink.device.blk.gendevice",
+            "inpui.components.broadlink.device.blk.gendevice",
             return_value=mock_api,
         ) as mock_factory:
             await hass.config_entries.async_setup(mock_entry.entry_id)

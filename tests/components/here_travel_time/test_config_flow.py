@@ -47,7 +47,7 @@ from tests.common import MockConfigEntry
 def bypass_setup_fixture():
     """Prevent setup."""
     with patch(
-        "homeassistant.components.here_travel_time.async_setup_entry",
+        "inpui.components.here_travel_time.async_setup_entry",
         return_value=True,
     ):
         yield

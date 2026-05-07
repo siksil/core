@@ -53,7 +53,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.immich.async_setup_entry", return_value=True
+        "inpui.components.immich.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -288,9 +288,9 @@ async def mock_immich(
     """Mock the Immich API."""
     with (
         patch(
-            "homeassistant.components.immich.coordinator.Immich", autospec=True
+            "inpui.components.immich.coordinator.Immich", autospec=True
         ) as mock_immich,
-        patch("homeassistant.components.immich.config_flow.Immich", new=mock_immich),
+        patch("inpui.components.immich.config_flow.Immich", new=mock_immich),
     ):
         client = mock_immich.return_value
         client.albums = mock_immich_albums
@@ -314,7 +314,7 @@ async def mock_non_admin_immich(mock_immich: AsyncMock) -> AsyncMock:
 def mock_media_source() -> Generator[MagicMock]:
     """Mock the media source."""
     with patch(
-        "homeassistant.components.immich.services.async_resolve_media",
+        "inpui.components.immich.services.async_resolve_media",
         return_value=PlayMedia(
             url="media-source://media_source/local/screenshot.jpg",
             mime_type="image/jpeg",

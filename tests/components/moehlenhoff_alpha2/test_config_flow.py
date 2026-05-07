@@ -24,11 +24,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.moehlenhoff_alpha2.config_flow.Alpha2Base.update_data",
+            "inpui.components.moehlenhoff_alpha2.config_flow.Alpha2Base.update_data",
             partialmethod(mock_update_data, hass),
         ),
         patch(
-            "homeassistant.components.moehlenhoff_alpha2.async_setup_entry",
+            "inpui.components.moehlenhoff_alpha2.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

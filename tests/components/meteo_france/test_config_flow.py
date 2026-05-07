@@ -70,7 +70,7 @@ CITY_3 = Place(
 def mock_controller_client_single():
     """Mock a successful client."""
     with patch(
-        "homeassistant.components.meteo_france.config_flow.MeteoFranceClient",
+        "inpui.components.meteo_france.config_flow.MeteoFranceClient",
         update=False,
     ) as service_mock:
         service_mock.return_value.search_places.return_value = [CITY_1]
@@ -81,7 +81,7 @@ def mock_controller_client_single():
 def mock_setup():
     """Prevent setup."""
     with patch(
-        "homeassistant.components.meteo_france.async_setup_entry",
+        "inpui.components.meteo_france.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -91,7 +91,7 @@ def mock_setup():
 def mock_controller_client_multiple():
     """Mock a successful client."""
     with patch(
-        "homeassistant.components.meteo_france.config_flow.MeteoFranceClient",
+        "inpui.components.meteo_france.config_flow.MeteoFranceClient",
         update=False,
     ) as service_mock:
         service_mock.return_value.search_places.return_value = [CITY_2, CITY_3]
@@ -102,7 +102,7 @@ def mock_controller_client_multiple():
 def mock_controller_client_empty():
     """Mock a successful client."""
     with patch(
-        "homeassistant.components.meteo_france.config_flow.MeteoFranceClient",
+        "inpui.components.meteo_france.config_flow.MeteoFranceClient",
         update=False,
     ) as service_mock:
         service_mock.return_value.search_places.return_value = []

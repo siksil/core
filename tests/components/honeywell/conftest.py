@@ -250,7 +250,7 @@ def client(location):
     client_mock.discover = AsyncMock()
 
     with patch(
-        "homeassistant.components.honeywell.aiosomecomfort.AIOSomeComfort"
+        "inpui.components.honeywell.aiosomecomfort.AIOSomeComfort"
     ) as sc_class_mock:
         sc_class_mock.return_value = client_mock
         yield client_mock

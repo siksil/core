@@ -33,7 +33,7 @@ async def test_sensor(
     monkeypatch.setattr(get_ferries[0], "other_information", ["Nothing exiting"])
 
     with patch(
-        "homeassistant.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
+        "inpui.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
         return_value=get_ferries,
     ):
         async_fire_time_changed(

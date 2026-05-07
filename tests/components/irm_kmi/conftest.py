@@ -35,7 +35,7 @@ def mock_config_entry() -> MockConfigEntry:
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.irm_kmi.async_setup_entry", return_value=True):
+    with patch("inpui.components.irm_kmi.async_setup_entry", return_value=True):
         yield
 
 
@@ -43,7 +43,7 @@ def mock_setup_entry() -> Generator[None]:
 def mock_get_forecast_in_benelux():
     """Mock a call to IrmKmiApiClient.get_forecasts_coord() so that it returns something valid and in the Benelux."""
     with patch(
-        "homeassistant.components.irm_kmi.config_flow.IrmKmiApiClient.get_forecasts_coord",
+        "inpui.components.irm_kmi.config_flow.IrmKmiApiClient.get_forecasts_coord",
         return_value={"cityName": "Brussels", "country": "BE"},
     ):
         yield
@@ -53,7 +53,7 @@ def mock_get_forecast_in_benelux():
 def mock_get_forecast_out_benelux_then_in_belgium():
     """Mock a call to IrmKmiApiClient.get_forecasts_coord() so that it returns something outside Benelux."""
     with patch(
-        "homeassistant.components.irm_kmi.config_flow.IrmKmiApiClient.get_forecasts_coord",
+        "inpui.components.irm_kmi.config_flow.IrmKmiApiClient.get_forecasts_coord",
         side_effect=[
             {"cityName": "Outside the Benelux (Brussels)", "country": "BE"},
             {"cityName": "Brussels", "country": "BE"},
@@ -66,7 +66,7 @@ def mock_get_forecast_out_benelux_then_in_belgium():
 def mock_get_forecast_api_error():
     """Mock a call to IrmKmiApiClient.get_forecasts_coord() so that it raises an error."""
     with patch(
-        "homeassistant.components.irm_kmi.config_flow.IrmKmiApiClient.get_forecasts_coord",
+        "inpui.components.irm_kmi.config_flow.IrmKmiApiClient.get_forecasts_coord",
         side_effect=IrmKmiApiError,
     ):
         yield
@@ -79,7 +79,7 @@ def mock_irm_kmi_api(request: pytest.FixtureRequest) -> Generator[MagicMock]:
 
     forecast = json.loads(load_fixture(fixture, "irm_kmi"))
     with patch(
-        "homeassistant.components.irm_kmi.IrmKmiApiClientHa", autospec=True
+        "inpui.components.irm_kmi.IrmKmiApiClientHa", autospec=True
     ) as irm_kmi_api_mock:
         irm_kmi = irm_kmi_api_mock.return_value
         irm_kmi.get_forecasts_coord.return_value = forecast
@@ -92,7 +92,7 @@ def mock_irm_kmi_api_nl():
     fixture: str = "forecast_nl.json"
     forecast = json.loads(load_fixture(fixture, "irm_kmi"))
     with patch(
-        "homeassistant.components.irm_kmi.coordinator.IrmKmiApiClientHa.get_forecasts_coord",
+        "inpui.components.irm_kmi.coordinator.IrmKmiApiClientHa.get_forecasts_coord",
         return_value=forecast,
     ):
         yield
@@ -104,7 +104,7 @@ def mock_irm_kmi_api_high_low_temp():
     fixture: str = "high_low_temp.json"
     forecast = json.loads(load_fixture(fixture, "irm_kmi"))
     with patch(
-        "homeassistant.components.irm_kmi.coordinator.IrmKmiApiClientHa.get_forecasts_coord",
+        "inpui.components.irm_kmi.coordinator.IrmKmiApiClientHa.get_forecasts_coord",
         return_value=forecast,
     ):
         yield
@@ -114,7 +114,7 @@ def mock_irm_kmi_api_high_low_temp():
 def mock_exception_irm_kmi_api(request: pytest.FixtureRequest) -> Generator[MagicMock]:
     """Return a mocked IrmKmi api client that will raise an error upon refreshing data."""
     with patch(
-        "homeassistant.components.irm_kmi.IrmKmiApiClientHa", autospec=True
+        "inpui.components.irm_kmi.IrmKmiApiClientHa", autospec=True
     ) as irm_kmi_api_mock:
         irm_kmi = irm_kmi_api_mock.return_value
         irm_kmi.refresh_forecasts_coord.side_effect = IrmKmiApiError

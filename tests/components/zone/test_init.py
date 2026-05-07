@@ -325,7 +325,7 @@ async def test_reload(
     assert len(entity_registry.entities) == 0
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             DOMAIN: [

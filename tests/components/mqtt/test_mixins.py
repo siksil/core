@@ -307,7 +307,7 @@ async def test_availability_with_shared_state_topic(
         "entity_name_startswith_device_name2",
     ],
 )
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
 @pytest.mark.usefixtures("mqtt_client_mock")
 async def test_default_entity_and_device_name(
     hass: HomeAssistant,

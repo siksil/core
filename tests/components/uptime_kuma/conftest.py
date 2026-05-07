@@ -29,7 +29,7 @@ ADDON_SERVICE_INFO = HassioServiceInfo(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.uptime_kuma.async_setup_entry", return_value=True
+        "inpui.components.uptime_kuma.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -113,10 +113,10 @@ def mock_pythonkuma() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.uptime_kuma.config_flow.UptimeKuma", autospec=True
+            "inpui.components.uptime_kuma.config_flow.UptimeKuma", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.uptime_kuma.coordinator.UptimeKuma",
+            "inpui.components.uptime_kuma.coordinator.UptimeKuma",
             new=mock_client,
         ),
     ):
@@ -139,7 +139,7 @@ def mock_update_checker() -> Generator[AsyncMock]:
     """Mock Update checker."""
 
     with patch(
-        "homeassistant.components.uptime_kuma.UpdateChecker",
+        "inpui.components.uptime_kuma.UpdateChecker",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value

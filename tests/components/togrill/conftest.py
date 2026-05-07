@@ -52,7 +52,7 @@ def mock_entry_with_ambient() -> MockConfigEntry:
 def mock_unload_entry() -> Generator[AsyncMock]:
     """Override async_unload_entry."""
     with patch(
-        "homeassistant.components.togrill.async_unload_entry",
+        "inpui.components.togrill.async_unload_entry",
         return_value=True,
     ) as mock_unload_entry:
         yield mock_unload_entry
@@ -62,7 +62,7 @@ def mock_unload_entry() -> Generator[AsyncMock]:
 def mock_setup_entry(mock_unload_entry) -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.togrill.async_setup_entry",
+        "inpui.components.togrill.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -117,8 +117,8 @@ def mock_client_class() -> Generator[Mock]:
 
     with (
         patch(
-            "homeassistant.components.togrill.config_flow.Client", autospec=True
+            "inpui.components.togrill.config_flow.Client", autospec=True
         ) as client_class,
-        patch("homeassistant.components.togrill.coordinator.Client", new=client_class),
+        patch("inpui.components.togrill.coordinator.Client", new=client_class),
     ):
         yield client_class

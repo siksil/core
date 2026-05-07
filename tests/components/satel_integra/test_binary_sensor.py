@@ -28,7 +28,7 @@ from tests.common import (
 async def binary_sensor_only() -> AsyncGenerator[None]:
     """Enable only the binary sensor platform."""
     with patch(
-        "homeassistant.components.satel_integra.PLATFORMS",
+        "inpui.components.satel_integra.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         yield

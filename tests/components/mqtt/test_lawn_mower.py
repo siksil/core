@@ -543,7 +543,7 @@ async def test_discovery_update_unchanged_lawn_mower(
     """Test update of discovered lawn_mower."""
     data1 = '{ "name": "Beer", "activity_state_topic": "test-topic", "command_topic": "test-topic", "actions": ["milk", "beer"]}'
     with patch(
-        "homeassistant.components.mqtt.lawn_mower.MqttLawnMower.discovery_update"
+        "inpui.components.mqtt.lawn_mower.MqttLawnMower.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, lawn_mower.DOMAIN, data1, discovery_update

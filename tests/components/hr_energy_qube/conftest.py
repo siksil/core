@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.hr_energy_qube.async_setup_entry", return_value=True
+        "inpui.components.hr_energy_qube.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -26,11 +26,11 @@ def mock_qube_client() -> Generator[MagicMock]:
     """Mock the QubeClient for both integration and config flow."""
     with (
         patch(
-            "homeassistant.components.hr_energy_qube.QubeClient",
+            "inpui.components.hr_energy_qube.QubeClient",
             autospec=True,
         ) as mock_client_cls,
         patch(
-            "homeassistant.components.hr_energy_qube.config_flow.QubeClient",
+            "inpui.components.hr_energy_qube.config_flow.QubeClient",
             new=mock_client_cls,
         ),
     ):

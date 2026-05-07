@@ -40,10 +40,10 @@ async def test_user_form(hass: HomeAssistant, doorbird_api: DoorBird) -> None:
 
     with (
         patch(
-            "homeassistant.components.doorbird.async_setup", return_value=True
+            "inpui.components.doorbird.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.doorbird.async_setup_entry",
+            "inpui.components.doorbird.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -293,12 +293,12 @@ async def test_form_zeroconf_correct_oui(
     assert result["errors"] == {}
 
     with (
-        patch("homeassistant.components.logbook.async_setup", return_value=True),
+        patch("inpui.components.logbook.async_setup", return_value=True),
         patch(
-            "homeassistant.components.doorbird.async_setup", return_value=True
+            "inpui.components.doorbird.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.doorbird.async_setup_entry",
+            "inpui.components.doorbird.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -337,7 +337,7 @@ async def test_form_zeroconf_correct_oui_wrong_device(
     type(doorbirdapi).doorbell_state = AsyncMock(side_effect=doorbell_state_side_effect)
 
     with patch(
-        "homeassistant.components.doorbird.config_flow.DoorBird",
+        "inpui.components.doorbird.config_flow.DoorBird",
         return_value=doorbirdapi,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -366,7 +366,7 @@ async def test_form_user_cannot_connect(hass: HomeAssistant) -> None:
 
     doorbirdapi = get_mock_doorbird_api(info_side_effect=OSError)
     with patch(
-        "homeassistant.components.doorbird.config_flow.DoorBird",
+        "inpui.components.doorbird.config_flow.DoorBird",
         return_value=doorbirdapi,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -387,7 +387,7 @@ async def test_form_user_invalid_auth(hass: HomeAssistant) -> None:
     mock_error = mock_unauthorized_exception()
     doorbirdapi = get_mock_doorbird_api(info_side_effect=mock_error)
     with patch(
-        "homeassistant.components.doorbird.config_flow.DoorBird",
+        "inpui.components.doorbird.config_flow.DoorBird",
         return_value=doorbirdapi,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -410,7 +410,7 @@ async def test_form_user_doorbird_not_found(
     mock_error = mock_not_found_exception()
     doorbirdapi = get_mock_doorbird_api(info_side_effect=mock_error)
     with patch(
-        "homeassistant.components.doorbird.config_flow.DoorBird",
+        "inpui.components.doorbird.config_flow.DoorBird",
         return_value=doorbirdapi,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -423,10 +423,10 @@ async def test_form_user_doorbird_not_found(
 
     with (
         patch(
-            "homeassistant.components.doorbird.async_setup", return_value=True
+            "inpui.components.doorbird.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.doorbird.async_setup_entry",
+            "inpui.components.doorbird.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -456,7 +456,7 @@ async def test_form_user_doorbird_unknown_exception(
     )
     doorbirdapi = get_mock_doorbird_api(info_side_effect=ValueError)
     with patch(
-        "homeassistant.components.doorbird.config_flow.DoorBird",
+        "inpui.components.doorbird.config_flow.DoorBird",
         return_value=doorbirdapi,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -469,10 +469,10 @@ async def test_form_user_doorbird_unknown_exception(
 
     with (
         patch(
-            "homeassistant.components.doorbird.async_setup", return_value=True
+            "inpui.components.doorbird.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.doorbird.async_setup_entry",
+            "inpui.components.doorbird.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -505,7 +505,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.doorbird.async_setup_entry", return_value=True
+        "inpui.components.doorbird.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
 
@@ -541,7 +541,7 @@ async def test_reauth(hass: HomeAssistant) -> None:
     mock_error = mock_unauthorized_exception()
     doorbirdapi = get_mock_doorbird_api(info_side_effect=mock_error)
     with patch(
-        "homeassistant.components.doorbird.config_flow.DoorBird",
+        "inpui.components.doorbird.config_flow.DoorBird",
         return_value=doorbirdapi,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -558,14 +558,14 @@ async def test_reauth(hass: HomeAssistant) -> None:
     doorbirdapi = get_mock_doorbird_api(info={"WIFI_MAC_ADDR": "macaddr"})
     with (
         patch(
-            "homeassistant.components.doorbird.config_flow.DoorBird",
+            "inpui.components.doorbird.config_flow.DoorBird",
             return_value=doorbirdapi,
         ),
         patch(
-            "homeassistant.components.doorbird.async_setup", return_value=True
+            "inpui.components.doorbird.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.doorbird.async_setup_entry",
+            "inpui.components.doorbird.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

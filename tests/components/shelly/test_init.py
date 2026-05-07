@@ -71,15 +71,15 @@ async def test_ip_address_with_only_default_interface(
     """Test more local ip addresses with only the default interface.."""
     with (
         patch(
-            "homeassistant.components.network.async_only_default_interface_enabled",
+            "inpui.components.network.async_only_default_interface_enabled",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.network.async_get_enabled_source_ips",
+            "inpui.components.network.async_get_enabled_source_ips",
             return_value=[IPv4Address("192.168.1.10"), IPv4Address("10.10.10.10")],
         ),
         patch(
-            "homeassistant.components.shelly.utils.COAP",
+            "inpui.components.shelly.utils.COAP",
             autospec=COAP,
         ) as mock_coap_init,
     ):
@@ -100,15 +100,15 @@ async def test_ip_address_without_only_default_interface(
     """Test more local ip addresses without only the default interface.."""
     with (
         patch(
-            "homeassistant.components.network.async_only_default_interface_enabled",
+            "inpui.components.network.async_only_default_interface_enabled",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.network.async_get_enabled_source_ips",
+            "inpui.components.network.async_get_enabled_source_ips",
             return_value=[IPv4Address("192.168.1.10"), IPv4Address("10.10.10.10")],
         ),
         patch(
-            "homeassistant.components.shelly.utils.COAP",
+            "inpui.components.shelly.utils.COAP",
             autospec=COAP,
         ) as mock_coap_init,
     ):
@@ -423,7 +423,7 @@ async def test_entry_unload_not_connected(
     monkeypatch.setitem(mock_rpc_device.status["sys"], "relay_in_thermostat", False)
 
     with patch(
-        "homeassistant.components.shelly.coordinator.async_stop_scanner"
+        "inpui.components.shelly.coordinator.async_stop_scanner"
     ) as mock_stop_scanner:
         assert (
             entry := await init_integration(
@@ -453,7 +453,7 @@ async def test_entry_unload_not_connected_but_we_think_we_are(
     monkeypatch.setitem(mock_rpc_device.status["sys"], "relay_in_thermostat", False)
 
     with patch(
-        "homeassistant.components.shelly.coordinator.async_stop_scanner",
+        "inpui.components.shelly.coordinator.async_stop_scanner",
         side_effect=DeviceConnectionError,
     ) as mock_stop_scanner:
         assert (
@@ -481,7 +481,7 @@ async def test_no_attempt_to_stop_scanner_with_sleepy_devices(
 ) -> None:
     """Test we do not try to stop the scanner if its disabled with a sleepy device."""
     with patch(
-        "homeassistant.components.shelly.coordinator.async_stop_scanner",
+        "inpui.components.shelly.coordinator.async_stop_scanner",
     ) as mock_stop_scanner:
         entry = await init_integration(hass, 2, sleep_period=7200)
         assert entry.state is ConfigEntryState.LOADED
@@ -513,9 +513,9 @@ async def test_entry_missing_port(hass: HomeAssistant) -> None:
     }
     entry = await init_integration(hass, 2, data=data, skip_setup=True)
     with (
-        patch("homeassistant.components.shelly.RpcDevice.initialize"),
+        patch("inpui.components.shelly.RpcDevice.initialize"),
         patch(
-            "homeassistant.components.shelly.RpcDevice.create", return_value=Mock()
+            "inpui.components.shelly.RpcDevice.create", return_value=Mock()
         ) as rpc_device_mock,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -537,9 +537,9 @@ async def test_rpc_entry_custom_port(hass: HomeAssistant) -> None:
     }
     entry = await init_integration(hass, 2, data=data, skip_setup=True)
     with (
-        patch("homeassistant.components.shelly.RpcDevice.initialize"),
+        patch("inpui.components.shelly.RpcDevice.initialize"),
         patch(
-            "homeassistant.components.shelly.RpcDevice.create", return_value=Mock()
+            "inpui.components.shelly.RpcDevice.create", return_value=Mock()
         ) as rpc_device_mock,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -576,7 +576,7 @@ async def test_bluetooth_cleanup_on_remove_entry(
     await hass.config_entries.async_unload(entry.entry_id)
     await hass.async_block_till_done()
 
-    with patch("homeassistant.components.shelly.async_remove_scanner") as remove_mock:
+    with patch("inpui.components.shelly.async_remove_scanner") as remove_mock:
         await hass.config_entries.async_remove(entry.entry_id)
         await hass.async_block_till_done()
 

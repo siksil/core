@@ -69,7 +69,7 @@ def patch_bluetooth_time(mock_time: float) -> None:
     """Patch the bluetooth time."""
     with (
         patch(
-            "homeassistant.components.bluetooth.MONOTONIC_TIME", return_value=mock_time
+            "inpui.components.bluetooth.MONOTONIC_TIME", return_value=mock_time
         ),
         patch("habluetooth.base_scanner.monotonic_time_coarse", return_value=mock_time),
         patch("habluetooth.manager.monotonic_time_coarse", return_value=mock_time),

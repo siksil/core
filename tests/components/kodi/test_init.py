@@ -12,7 +12,7 @@ from . import init_integration
 async def test_unload_entry(hass: HomeAssistant) -> None:
     """Test successful unload of entry."""
     with patch(
-        "homeassistant.components.kodi.media_player.async_setup_entry",
+        "inpui.components.kodi.media_player.async_setup_entry",
         return_value=True,
     ):
         entry = await init_integration(hass)

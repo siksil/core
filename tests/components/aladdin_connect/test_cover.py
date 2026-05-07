@@ -25,7 +25,7 @@ ENTITY_ID = "cover.test_door"
 
 async def _setup(hass: HomeAssistant, entry: MockConfigEntry) -> None:
     """Set up integration with only the cover platform."""
-    with patch("homeassistant.components.aladdin_connect.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.aladdin_connect.PLATFORMS", [Platform.COVER]):
         await init_integration(hass, entry)
 
 

@@ -22,7 +22,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         return_value={"name": "fake_name", "yid": "fake_yid"},
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -54,7 +54,7 @@ async def test_form_invalid_auth(
     )
 
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         side_effect=NotAuthorizedException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -70,7 +70,7 @@ async def test_form_invalid_auth(
 
     # Should be recoverable after hits error
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         return_value={"name": "fake_name", "yid": "fake_yid"},
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -102,7 +102,7 @@ async def test_form_cannot_connect(
     )
 
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         side_effect=NetworkException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -118,7 +118,7 @@ async def test_form_cannot_connect(
 
     # Should be recoverable after hits error
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         return_value={"name": "fake_name", "yid": "fake_yid"},
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -150,7 +150,7 @@ async def test_form_uncategorized_error(
     )
 
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -166,7 +166,7 @@ async def test_form_uncategorized_error(
 
     # Should be recoverable after hits error
     with patch(
-        "homeassistant.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
+        "inpui.components.yardian.config_flow.AsyncYardianClient.fetch_device_info",
         return_value={"name": "fake_name", "yid": "fake_yid"},
     ):
         result3 = await hass.config_entries.flow.async_configure(

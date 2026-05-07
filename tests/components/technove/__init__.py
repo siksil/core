@@ -13,6 +13,6 @@ async def setup_with_selected_platforms(
 ) -> None:
     """Set up the TechnoVE integration with the selected platforms."""
     entry.add_to_hass(hass)
-    with patch("homeassistant.components.technove.PLATFORMS", platforms):
+    with patch("inpui.components.technove.PLATFORMS", platforms):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()

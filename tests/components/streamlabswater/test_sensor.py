@@ -21,7 +21,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.streamlabswater.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.streamlabswater.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
         entity_entries = er.async_entries_for_config_entry(
             entity_registry, mock_config_entry.entry_id

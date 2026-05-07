@@ -271,7 +271,7 @@ async def test_file(hass: HomeAssistant, setup_integration) -> None:
 
     # Mock the file handler read with our 1x1 base64 encoded fixture image
     with patch(
-        "homeassistant.components.color_extractor.services._get_file", _get_file_mock
+        "inpui.components.color_extractor.services._get_file", _get_file_mock
     ):
         await hass.services.async_call(DOMAIN, SERVICE_TURN_ON, service_data)
         await hass.async_block_till_done()
@@ -308,7 +308,7 @@ async def test_file_denied_dir(hass: HomeAssistant, setup_integration) -> None:
 
     # Mock the file handler read with our 1x1 base64 encoded fixture image
     with patch(
-        "homeassistant.components.color_extractor.services._get_file", _get_file_mock
+        "inpui.components.color_extractor.services._get_file", _get_file_mock
     ):
         await hass.services.async_call(DOMAIN, SERVICE_TURN_ON, service_data)
         await hass.async_block_till_done()

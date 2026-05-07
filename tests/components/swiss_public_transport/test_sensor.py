@@ -39,7 +39,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.cookidoo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.cookidoo.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, swiss_public_transport_config_entry)
 
     assert swiss_public_transport_config_entry.state is ConfigEntryState.LOADED

@@ -91,7 +91,7 @@ async def mock_setup_platform(
 ) -> None:
     """Mock setup of the todoist integration."""
     with patch(
-        "homeassistant.components.todoist.calendar.TodoistAPIAsync"
+        "inpui.components.todoist.calendar.TodoistAPIAsync"
     ) as todoist_api:
         todoist_api.return_value = api
         assert await setup.async_setup_component(
@@ -184,7 +184,7 @@ async def test_failed_coordinator_update(hass: HomeAssistant, api: AsyncMock) ->
     api.get_tasks.side_effect = Exception("API error")
 
     with patch(
-        "homeassistant.components.todoist.calendar.TodoistAPIAsync", return_value=api
+        "inpui.components.todoist.calendar.TodoistAPIAsync", return_value=api
     ):
         assert await setup.async_setup_component(
             hass,

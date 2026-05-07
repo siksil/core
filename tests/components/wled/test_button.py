@@ -30,7 +30,7 @@ pytestmark = [
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.wled.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.wled.PLATFORMS", [Platform.BUTTON]):
         yield
 
 

@@ -15,17 +15,17 @@ from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import get_device
 
-DEVICE_HELLO = "homeassistant.components.broadlink.config_flow.blk.hello"
-DEVICE_FACTORY = "homeassistant.components.broadlink.config_flow.blk.gendevice"
+DEVICE_HELLO = "inpui.components.broadlink.config_flow.blk.hello"
+DEVICE_FACTORY = "inpui.components.broadlink.config_flow.blk.gendevice"
 
 
 @pytest.fixture(autouse=True)
 def broadlink_setup_fixture():
     """Mock broadlink entry setup."""
     with (
-        patch("homeassistant.components.broadlink.async_setup", return_value=True),
+        patch("inpui.components.broadlink.async_setup", return_value=True),
         patch(
-            "homeassistant.components.broadlink.async_setup_entry", return_value=True
+            "inpui.components.broadlink.async_setup_entry", return_value=True
         ),
     ):
         yield

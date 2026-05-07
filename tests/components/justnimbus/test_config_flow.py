@@ -98,7 +98,7 @@ async def _set_up_justnimbus(hass: HomeAssistant, flow_id: str) -> None:
     with (
         patch("justnimbus.JustNimbusClient.get_data"),
         patch(
-            "homeassistant.components.justnimbus.async_setup_entry",
+            "inpui.components.justnimbus.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -117,7 +117,7 @@ async def _set_up_justnimbus(hass: HomeAssistant, flow_id: str) -> None:
 async def test_reauth_flow(hass: HomeAssistant) -> None:
     """Test reauth works."""
     with patch(
-        "homeassistant.components.justnimbus.config_flow.justnimbus.JustNimbusClient.get_data",
+        "inpui.components.justnimbus.config_flow.justnimbus.JustNimbusClient.get_data",
         return_value=False,
     ):
         mock_config = MockConfigEntry(
@@ -131,7 +131,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
         assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.justnimbus.config_flow.justnimbus.JustNimbusClient.get_data",
+        "inpui.components.justnimbus.config_flow.justnimbus.JustNimbusClient.get_data",
         return_value=MagicMock(api_version="1.0.0"),
     ):
         result2 = await hass.config_entries.flow.async_configure(

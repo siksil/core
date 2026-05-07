@@ -36,11 +36,11 @@ async def test_sensors(hass: HomeAssistant, device_registry: dr.DeviceRegistry) 
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -206,11 +206,11 @@ async def test_sensor_backup_reserve_unavailable(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -229,11 +229,11 @@ async def test_sensors_with_empty_meters(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -271,11 +271,11 @@ async def test_unique_id_migrate(
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)

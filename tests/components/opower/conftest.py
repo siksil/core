@@ -34,7 +34,7 @@ def mock_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def mock_opower_api() -> Generator[AsyncMock]:
     """Mock Opower API."""
     with patch(
-        "homeassistant.components.opower.coordinator.Opower", autospec=True
+        "inpui.components.opower.coordinator.Opower", autospec=True
     ) as mock_api:
         api = mock_api.return_value
         api.utility = PGE()

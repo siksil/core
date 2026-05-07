@@ -78,12 +78,12 @@ async def test_press_signing_error(
     mock_products.return_value = new_product
 
     with (
-        patch("homeassistant.components.tesla_fleet.TeslaFleetApi.get_private_key"),
+        patch("inpui.components.tesla_fleet.TeslaFleetApi.get_private_key"),
     ):
         await setup_platform(hass, normal_config_entry, [Platform.BUTTON])
 
     with (
-        patch("homeassistant.components.tesla_fleet.TeslaFleetApi.get_private_key"),
+        patch("inpui.components.tesla_fleet.TeslaFleetApi.get_private_key"),
         patch(
             "tesla_fleet_api.tesla.VehicleSigned.flash_lights",
             side_effect=NotOnWhitelistFault,

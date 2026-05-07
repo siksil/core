@@ -19,7 +19,7 @@ def add_entities(devices):
     DEVICES.extend(devices)
 
 
-@patch("homeassistant.components.kira.sensor.KiraReceiver.schedule_update_ha_state")
+@patch("inpui.components.kira.sensor.KiraReceiver.schedule_update_ha_state")
 def test_kira_sensor_callback(
     mock_schedule_update_ha_state, hass: HomeAssistant
 ) -> None:

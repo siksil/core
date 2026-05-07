@@ -60,11 +60,11 @@ def mock_uhoo_client(mock_device) -> Generator[AsyncMock]:
     """Mock uHoo client."""
     with (
         patch(
-            "homeassistant.components.uhoo.config_flow.Client",
+            "inpui.components.uhoo.config_flow.Client",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.uhoo.Client",
+            "inpui.components.uhoo.Client",
             new=mock_client,
         ),
     ):
@@ -108,7 +108,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry():
     """Mock the setup entry."""
     with patch(
-        "homeassistant.components.uhoo.async_setup_entry",
+        "inpui.components.uhoo.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

@@ -56,7 +56,7 @@ def mock_roomba() -> Generator[AsyncMock]:
     mock_roomba.roomba_connected = True
 
     with patch(
-        "homeassistant.components.roomba.RoombaFactory.create_roomba",
+        "inpui.components.roomba.RoombaFactory.create_roomba",
         return_value=mock_roomba,
     ):
         yield mock_roomba

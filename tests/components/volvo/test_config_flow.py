@@ -128,7 +128,7 @@ async def test_reauth_no_stale_data(
     old_access_token = mock_config_entry.data[CONF_TOKEN][CONF_ACCESS_TOKEN]
 
     with patch(
-        "homeassistant.components.volvo.config_flow._create_volvo_cars_api",
+        "inpui.components.volvo.config_flow._create_volvo_cars_api",
         return_value=mock_config_flow_api,
     ) as mock_create_volvo_cars_api:
         result = await mock_config_entry.start_reauth_flow(hass)
@@ -265,7 +265,7 @@ async def config_flow(
 async def mock_config_flow_api(hass: HomeAssistant) -> AsyncGenerator[AsyncMock]:
     """Mock API used in config flow."""
     with patch(
-        "homeassistant.components.volvo.config_flow.VolvoCarsApi",
+        "inpui.components.volvo.config_flow.VolvoCarsApi",
         autospec=True,
     ) as mock_api:
         api: VolvoCarsApi = mock_api.return_value

@@ -44,7 +44,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.elgato.async_setup_entry", return_value=True
+        "inpui.components.elgato.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -53,7 +53,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_onboarding() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=False,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -64,9 +64,9 @@ def mock_elgato(device_fixtures: str, state_variant: str) -> Generator[MagicMock
     """Return a mocked Elgato client."""
     with (
         patch(
-            "homeassistant.components.elgato.coordinator.Elgato", autospec=True
+            "inpui.components.elgato.coordinator.Elgato", autospec=True
         ) as elgato_mock,
-        patch("homeassistant.components.elgato.config_flow.Elgato", new=elgato_mock),
+        patch("inpui.components.elgato.config_flow.Elgato", new=elgato_mock),
     ):
         elgato = elgato_mock.return_value
         elgato.info.return_value = Info.from_json(

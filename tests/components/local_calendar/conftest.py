@@ -71,7 +71,7 @@ def mock_store(ics_content: str, store_read_side_effect: Any | None) -> Generato
         return stores[path]
 
     with patch(
-        "homeassistant.components.local_calendar.LocalCalendarStore", new=new_store
+        "inpui.components.local_calendar.LocalCalendarStore", new=new_store
     ):
         yield
 

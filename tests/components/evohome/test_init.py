@@ -35,45 +35,45 @@ LOG_HINT_OTH_AUTH = ("evohomeasync2.auth", logging.ERROR, _MSG_OTH)
 LOG_HINT_USR_AUTH = ("evohomeasync2.auth", logging.ERROR, _MSG_USR)
 
 LOG_FAIL_CONNECTION = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: Authenticator response is invalid: Connection error",
 )
 LOG_FAIL_CREDENTIALS = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: "
     "Authenticator response is invalid: {'error': 'invalid_grant'}",
 )
 LOG_FAIL_GATEWAY = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: "
     "Authenticator response is invalid: 502 Bad Gateway, response=<no response>",
 )
 LOG_FAIL_TOO_MANY = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: "
     "Authenticator response is invalid: 429 Too Many Requests, response=<no response>",
 )
 
 LOG_FGET_CONNECTION = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: "
     "GET https://tccna.resideo.com/WebAPI/emea/api/v1/userAccount: "
     "Connection error",
 )
 LOG_FGET_GATEWAY = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: "
     "GET https://tccna.resideo.com/WebAPI/emea/api/v1/userAccount: "
     "502 Bad Gateway",
 )
 LOG_FGET_TOO_MANY = (
-    "homeassistant.components.evohome",
+    "inpui.components.evohome",
     logging.ERROR,
     "Failed to fetch initial data: "
     "GET https://tccna.resideo.com/WebAPI/emea/api/v1/userAccount: "
@@ -82,7 +82,7 @@ LOG_FGET_TOO_MANY = (
 
 
 LOG_SETUP_FAILED = (
-    "homeassistant.setup",
+    "inpui.setup",
     logging.ERROR,
     "Setup failed for 'evohome': Integration failed to initialize.",
 )

@@ -63,7 +63,7 @@ def _setup_empty_ssl_pem_files(tmp_path: Path) -> tuple[Path, Path, Path]:
 def mock_stack():
     """Mock extract stack."""
     with patch(
-        "homeassistant.components.http.extract_stack",
+        "inpui.components.http.extract_stack",
         return_value=[
             Mock(
                 filename="/home/paulus/core/homeassistant/core.py",
@@ -190,7 +190,7 @@ async def test_ssl_profile_defaults_modern(hass: HomeAssistant, tmp_path: Path) 
     with (
         patch("ssl.SSLContext.load_cert_chain"),
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ) as mock_context,
     ):
@@ -220,7 +220,7 @@ async def test_ssl_profile_change_intermediate(
     with (
         patch("ssl.SSLContext.load_cert_chain"),
         patch(
-            "homeassistant.util.ssl.server_context_intermediate",
+            "inpui.util.ssl.server_context_intermediate",
             side_effect=server_context_intermediate,
         ) as mock_context,
     ):
@@ -254,7 +254,7 @@ async def test_ssl_profile_change_modern(hass: HomeAssistant, tmp_path: Path) ->
     with (
         patch("ssl.SSLContext.load_cert_chain"),
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ) as mock_context,
     ):
@@ -288,7 +288,7 @@ async def test_peer_cert(hass: HomeAssistant, tmp_path: Path) -> None:
         patch("ssl.SSLContext.load_cert_chain"),
         patch("ssl.SSLContext.load_verify_locations") as mock_load_verify_locations,
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ) as mock_context,
     ):
@@ -375,7 +375,7 @@ async def test_emergency_ssl_certificate_when_invalid_get_url_fails(
     hass.config.recovery_mode = True
 
     with patch(
-        "homeassistant.components.http.get_url", side_effect=NoURLAvailableError
+        "inpui.components.http.get_url", side_effect=NoURLAvailableError
     ) as mock_get_url:
         assert (
             await async_setup_component(
@@ -410,7 +410,7 @@ async def test_invalid_ssl_and_cannot_create_emergency_cert(
     hass.config.recovery_mode = True
 
     with patch(
-        "homeassistant.components.http.x509.CertificateBuilder", side_effect=OSError
+        "inpui.components.http.x509.CertificateBuilder", side_effect=OSError
     ) as mock_builder:
         assert (
             await async_setup_component(
@@ -447,7 +447,7 @@ async def test_invalid_ssl_and_cannot_create_emergency_cert_with_ssl_peer_cert(
     hass.config.recovery_mode = True
 
     with patch(
-        "homeassistant.components.http.x509.CertificateBuilder", side_effect=OSError
+        "inpui.components.http.x509.CertificateBuilder", side_effect=OSError
     ) as mock_builder:
         assert (
             await async_setup_component(
@@ -471,7 +471,7 @@ async def test_invalid_ssl_and_cannot_create_emergency_cert_with_ssl_peer_cert(
 
 async def test_cors_defaults(hass: HomeAssistant) -> None:
     """Test the CORS default settings."""
-    with patch("homeassistant.components.http.setup_cors") as mock_setup:
+    with patch("inpui.components.http.setup_cors") as mock_setup:
         assert await async_setup_component(hass, "http", {})
 
     assert len(mock_setup.mock_calls) == 1
@@ -550,7 +550,7 @@ async def test_ssl_issue_if_no_urls_configured(
     with (
         patch("ssl.SSLContext.load_cert_chain"),
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ),
     ):
@@ -582,7 +582,7 @@ async def test_ssl_issue_if_using_cloud(
         patch("ssl.SSLContext.load_cert_chain"),
         patch.object(cloud, "async_remote_ui_url", return_value="https://example.com"),
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ),
     ):
@@ -616,11 +616,11 @@ async def test_ssl_issue_if_not_connected_to_cloud(
     with (
         patch("ssl.SSLContext.load_cert_chain"),
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ),
         patch(
-            "homeassistant.components.cloud.async_remote_ui_url",
+            "inpui.components.cloud.async_remote_ui_url",
             side_effect=CloudNotAvailable,
         ),
     ):
@@ -662,7 +662,7 @@ async def test_ssl_issue_urls_configured(
     with (
         patch("ssl.SSLContext.load_cert_chain"),
         patch(
-            "homeassistant.util.ssl.server_context_modern",
+            "inpui.util.ssl.server_context_modern",
             side_effect=server_context_modern,
         ),
     ):
@@ -713,7 +713,7 @@ async def test_server_host(
     """Test server_host behavior."""
     mock_server = Mock()
     with (
-        patch("homeassistant.components.http.is_hassio", return_value=hassio),
+        patch("inpui.components.http.is_hassio", return_value=hassio),
         patch(
             "asyncio.BaseEventLoop.create_server", return_value=mock_server
         ) as mock_create_server,
@@ -756,7 +756,7 @@ async def test_unix_socket_started_with_supervisor(
         ),
         patch("asyncio.BaseEventLoop.create_server", return_value=Mock()),
         patch(
-            "homeassistant.components.http.web_runner.HomeAssistantUnixSite"
+            "inpui.components.http.web_runner.HomeAssistantUnixSite"
             "._create_unix_socket",
             return_value=mock_sock,
         ) as mock_create_sock,

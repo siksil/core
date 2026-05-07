@@ -82,7 +82,7 @@ async def setup_credentials(hass: HomeAssistant) -> None:
 @pytest.fixture(autouse=True)
 async def patch_sleep() -> Generator[AsyncMock]:
     """Fixture to setup credentials."""
-    with patch("homeassistant.components.spotify.media_player.AFTER_REQUEST_SLEEP", 0):
+    with patch("inpui.components.spotify.media_player.AFTER_REQUEST_SLEEP", 0):
         yield
 
 
@@ -91,10 +91,10 @@ def mock_spotify() -> Generator[AsyncMock]:
     """Mock the Spotify API."""
     with (
         patch(
-            "homeassistant.components.spotify.SpotifyClient", autospec=True
+            "inpui.components.spotify.SpotifyClient", autospec=True
         ) as spotify_mock,
         patch(
-            "homeassistant.components.spotify.config_flow.SpotifyClient",
+            "inpui.components.spotify.config_flow.SpotifyClient",
             new=spotify_mock,
         ),
     ):

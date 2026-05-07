@@ -42,7 +42,7 @@ async def test_entities(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test the calendar entities."""
-    with patch("homeassistant.components.mealie.PLATFORMS", [Platform.CALENDAR]):
+    with patch("inpui.components.mealie.PLATFORMS", [Platform.CALENDAR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -97,7 +97,7 @@ async def test_legacy_calendars(
 
     mock_mealie_client.get_about.return_value = About(version="v3.6.0")
 
-    with patch("homeassistant.components.mealie.PLATFORMS", [Platform.CALENDAR]):
+    with patch("inpui.components.mealie.PLATFORMS", [Platform.CALENDAR]):
         await setup_integration(hass, mock_config_entry)
 
     assert entity_registry.async_get("calendar.mealie_dessert") is None

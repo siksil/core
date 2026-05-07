@@ -36,7 +36,7 @@ async def test_user_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hive.config_flow.Auth.login",
+            "inpui.components.hive.config_flow.Auth.login",
             return_value={
                 "ChallengeName": "SUCCESS",
                 "AuthenticationResult": {
@@ -46,7 +46,7 @@ async def test_user_flow(hass: HomeAssistant) -> None:
             },
         ),
         patch(
-            "homeassistant.components.hive.async_setup_entry",
+            "inpui.components.hive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -84,7 +84,7 @@ async def test_user_flow_with_no_2fa(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SUCCESS",
             "AuthenticationResult": {
@@ -111,11 +111,11 @@ async def test_user_flow_with_no_2fa(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hive.config_flow.Auth.device_registration",
+            "inpui.components.hive.config_flow.Auth.device_registration",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hive.config_flow.Auth.get_device_data",
+            "inpui.components.hive.config_flow.Auth.get_device_data",
             return_value=[
                 "mock-device-group-key",
                 "mock-device-key",
@@ -123,7 +123,7 @@ async def test_user_flow_with_no_2fa(hass: HomeAssistant) -> None:
             ],
         ),
         patch(
-            "homeassistant.components.hive.async_setup_entry",
+            "inpui.components.hive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -172,7 +172,7 @@ async def test_user_flow_2fa(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -190,7 +190,7 @@ async def test_user_flow_2fa(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.sms_2fa",
+        "inpui.components.hive.config_flow.Auth.sms_2fa",
         return_value={
             "ChallengeName": "SUCCESS",
             "AuthenticationResult": {
@@ -212,11 +212,11 @@ async def test_user_flow_2fa(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hive.config_flow.Auth.device_registration",
+            "inpui.components.hive.config_flow.Auth.device_registration",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hive.config_flow.Auth.get_device_data",
+            "inpui.components.hive.config_flow.Auth.get_device_data",
             return_value=[
                 "mock-device-group-key",
                 "mock-device-key",
@@ -224,7 +224,7 @@ async def test_user_flow_2fa(hass: HomeAssistant) -> None:
             ],
         ),
         patch(
-            "homeassistant.components.hive.async_setup_entry",
+            "inpui.components.hive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -277,7 +277,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     mock_config.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         side_effect=hive_exceptions.HiveInvalidPassword(),
     ):
         result = await mock_config.start_reauth_flow(hass)
@@ -286,7 +286,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     assert result["errors"] == {"base": "invalid_password"}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SUCCESS",
             "AuthenticationResult": {
@@ -329,7 +329,7 @@ async def test_reauth_2fa_flow(hass: HomeAssistant) -> None:
     mock_config.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         side_effect=hive_exceptions.HiveInvalidPassword(),
     ):
         result = await mock_config.start_reauth_flow(hass)
@@ -338,7 +338,7 @@ async def test_reauth_2fa_flow(hass: HomeAssistant) -> None:
     assert result["errors"] == {"base": "invalid_password"}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -353,7 +353,7 @@ async def test_reauth_2fa_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hive.config_flow.Auth.sms_2fa",
+            "inpui.components.hive.config_flow.Auth.sms_2fa",
             return_value={
                 "ChallengeName": "SUCCESS",
                 "AuthenticationResult": {
@@ -363,7 +363,7 @@ async def test_reauth_2fa_flow(hass: HomeAssistant) -> None:
             },
         ),
         patch(
-            "homeassistant.components.hive.async_setup_entry",
+            "inpui.components.hive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -430,7 +430,7 @@ async def test_user_flow_2fa_send_new_code(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -448,7 +448,7 @@ async def test_user_flow_2fa_send_new_code(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -463,7 +463,7 @@ async def test_user_flow_2fa_send_new_code(hass: HomeAssistant) -> None:
     assert result3["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.sms_2fa",
+        "inpui.components.hive.config_flow.Auth.sms_2fa",
         return_value={
             "ChallengeName": "SUCCESS",
             "AuthenticationResult": {
@@ -485,11 +485,11 @@ async def test_user_flow_2fa_send_new_code(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hive.config_flow.Auth.device_registration",
+            "inpui.components.hive.config_flow.Auth.device_registration",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hive.config_flow.Auth.get_device_data",
+            "inpui.components.hive.config_flow.Auth.get_device_data",
             return_value=[
                 "mock-device-group-key",
                 "mock-device-key",
@@ -497,7 +497,7 @@ async def test_user_flow_2fa_send_new_code(hass: HomeAssistant) -> None:
             ],
         ),
         patch(
-            "homeassistant.components.hive.async_setup_entry",
+            "inpui.components.hive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -561,7 +561,7 @@ async def test_user_flow_invalid_username(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         side_effect=hive_exceptions.HiveInvalidUsername(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -584,7 +584,7 @@ async def test_user_flow_invalid_password(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         side_effect=hive_exceptions.HiveInvalidPassword(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -608,7 +608,7 @@ async def test_user_flow_no_internet_connection(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         side_effect=hive_exceptions.HiveApiError(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -632,7 +632,7 @@ async def test_user_flow_2fa_no_internet_connection(hass: HomeAssistant) -> None
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -647,7 +647,7 @@ async def test_user_flow_2fa_no_internet_connection(hass: HomeAssistant) -> None
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.sms_2fa",
+        "inpui.components.hive.config_flow.Auth.sms_2fa",
         side_effect=hive_exceptions.HiveApiError(),
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -670,7 +670,7 @@ async def test_user_flow_2fa_invalid_code(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -685,7 +685,7 @@ async def test_user_flow_2fa_invalid_code(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.sms_2fa",
+        "inpui.components.hive.config_flow.Auth.sms_2fa",
         side_effect=hive_exceptions.HiveInvalid2FACode(),
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -707,7 +707,7 @@ async def test_user_flow_unknown_error(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={"ChallengeName": "FAILED", "InvalidAuthenticationResult": {}},
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -730,7 +730,7 @@ async def test_user_flow_2fa_unknown_error(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.login",
+        "inpui.components.hive.config_flow.Auth.login",
         return_value={
             "ChallengeName": "SMS_MFA",
         },
@@ -744,7 +744,7 @@ async def test_user_flow_2fa_unknown_error(hass: HomeAssistant) -> None:
     assert result2["step_id"] == CONF_CODE
 
     with patch(
-        "homeassistant.components.hive.config_flow.Auth.sms_2fa",
+        "inpui.components.hive.config_flow.Auth.sms_2fa",
         return_value={"ChallengeName": "FAILED", "InvalidAuthenticationResult": {}},
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -758,11 +758,11 @@ async def test_user_flow_2fa_unknown_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hive.config_flow.Auth.device_registration",
+            "inpui.components.hive.config_flow.Auth.device_registration",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hive.config_flow.Auth.get_device_data",
+            "inpui.components.hive.config_flow.Auth.get_device_data",
             return_value=[
                 "mock-device-group-key",
                 "mock-device-key",

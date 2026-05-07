@@ -31,7 +31,7 @@ TEST_SET_THING_URL = (
 def patch_get(return_value=TEST_SYSTEM_DATA, side_effect=None):
     """Patch the Advantage Air async_get method."""
     return patch(
-        "homeassistant.components.advantage_air.advantage_air.async_get",
+        "inpui.components.advantage_air.advantage_air.async_get",
         new=AsyncMock(return_value=return_value, side_effect=side_effect),
     )
 
@@ -39,7 +39,7 @@ def patch_get(return_value=TEST_SYSTEM_DATA, side_effect=None):
 def patch_update(return_value=True, side_effect=None):
     """Patch the Advantage Air async_set method."""
     return patch(
-        "homeassistant.components.advantage_air.advantage_air._endpoint.async_update",
+        "inpui.components.advantage_air.advantage_air._endpoint.async_update",
         new=AsyncMock(return_value=return_value, side_effect=side_effect),
     )
 

@@ -58,7 +58,7 @@ async def test_device(
 async def test_update_failed(hass: HomeAssistant) -> None:
     """Test coordinator throws UpdateFailed after failed update."""
     with patch(
-        "homeassistant.components.netgear_lte.eternalegypt.Modem.information",
+        "inpui.components.netgear_lte.eternalegypt.Modem.information",
         side_effect=Error,
     ) as updater:
         next_update = dt_util.utcnow() + timedelta(seconds=10)

@@ -248,7 +248,7 @@ def mock_melnor_device():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Patch async setup entry to return True."""
     with patch(
-        "homeassistant.components.melnor.async_setup_entry", return_value=True
+        "inpui.components.melnor.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -258,7 +258,7 @@ def patch_async_discovered_service_info(
 ) -> _patch:
     """Patch async_discovered_service_info a mocked device info."""
     return patch(
-        "homeassistant.components.melnor.config_flow.async_discovered_service_info",
+        "inpui.components.melnor.config_flow.async_discovered_service_info",
         return_value=return_value,
     )
 
@@ -268,16 +268,16 @@ def patch_async_ble_device_from_address(
 ):
     """Patch async_ble_device_from_address to return a mocked BluetoothServiceInfoBleak."""
     return patch(
-        "homeassistant.components.bluetooth.async_ble_device_from_address",
+        "inpui.components.bluetooth.async_ble_device_from_address",
         return_value=return_value,
     )
 
 
 def patch_melnor_device(device: Device = mock_melnor_device()):
     """Patch melnor_bluetooth.device to return a mocked Melnor device."""
-    return patch("homeassistant.components.melnor.Device", return_value=device)
+    return patch("inpui.components.melnor.Device", return_value=device)
 
 
 def patch_async_register_callback():
     """Patch async_register_callback to return True."""
-    return patch("homeassistant.components.bluetooth.async_register_callback")
+    return patch("inpui.components.bluetooth.async_register_callback")

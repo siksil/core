@@ -73,27 +73,27 @@ async def init_integration(hass: HomeAssistant) -> MockConfigEntry:
 
 def _patch_async_setup_entry(return_value=True):
     return patch(
-        "homeassistant.components.nzbget.async_setup_entry",
+        "inpui.components.nzbget.async_setup_entry",
         return_value=return_value,
     )
 
 
 def _patch_history():
     return patch(
-        "homeassistant.components.nzbget.coordinator.NZBGetAPI.history",
+        "inpui.components.nzbget.coordinator.NZBGetAPI.history",
         return_value=MOCK_HISTORY,
     )
 
 
 def _patch_status():
     return patch(
-        "homeassistant.components.nzbget.coordinator.NZBGetAPI.status",
+        "inpui.components.nzbget.coordinator.NZBGetAPI.status",
         return_value=MOCK_STATUS,
     )
 
 
 def _patch_version(return_value=MOCK_VERSION):
     return patch(
-        "homeassistant.components.nzbget.coordinator.NZBGetAPI.version",
+        "inpui.components.nzbget.coordinator.NZBGetAPI.version",
         return_value=return_value,
     )

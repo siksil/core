@@ -32,15 +32,15 @@ async def test_setup_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.sentry.AioHttpIntegration"
+            "inpui.components.sentry.AioHttpIntegration"
         ) as sentry_aiohttp_mock,
         patch(
-            "homeassistant.components.sentry.SqlalchemyIntegration"
+            "inpui.components.sentry.SqlalchemyIntegration"
         ) as sentry_sqlalchemy_mock,
         patch(
-            "homeassistant.components.sentry.LoggingIntegration"
+            "inpui.components.sentry.LoggingIntegration"
         ) as sentry_logging_mock,
-        patch("homeassistant.components.sentry.sentry_sdk") as sentry_mock,
+        patch("inpui.components.sentry.sentry_sdk") as sentry_mock,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
@@ -88,10 +88,10 @@ async def test_setup_entry_with_tracing(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.sentry.AioHttpIntegration"),
-        patch("homeassistant.components.sentry.SqlalchemyIntegration"),
-        patch("homeassistant.components.sentry.LoggingIntegration"),
-        patch("homeassistant.components.sentry.sentry_sdk") as sentry_mock,
+        patch("inpui.components.sentry.AioHttpIntegration"),
+        patch("inpui.components.sentry.SqlalchemyIntegration"),
+        patch("inpui.components.sentry.LoggingIntegration"),
+        patch("inpui.components.sentry.sentry_sdk") as sentry_mock,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
@@ -155,7 +155,7 @@ async def test_event_with_platform_context(hass: HomeAssistant) -> None:
     current_platform_mock.get().domain = "light"
 
     with patch(
-        "homeassistant.components.sentry.entity_platform.current_platform",
+        "inpui.components.sentry.entity_platform.current_platform",
         new=current_platform_mock,
     ):
         result = process_before_send(
@@ -178,7 +178,7 @@ async def test_event_with_platform_context(hass: HomeAssistant) -> None:
     current_platform_mock.get().domain = "switch"
 
     with patch(
-        "homeassistant.components.sentry.entity_platform.current_platform",
+        "inpui.components.sentry.entity_platform.current_platform",
         new=current_platform_mock,
     ):
         result = process_before_send(
@@ -203,15 +203,15 @@ async def test_event_with_platform_context(hass: HomeAssistant) -> None:
     [
         ("adguard", {"package": "adguard"}),
         (
-            "homeassistant.components.hue.coordinator",
+            "inpui.components.hue.coordinator",
             {"integration": "hue", "custom_component": "no"},
         ),
         (
-            "homeassistant.components.hue.light",
+            "inpui.components.hue.light",
             {"integration": "hue", "platform": "light", "custom_component": "no"},
         ),
         (
-            "homeassistant.components.ironing_robot.switch",
+            "inpui.components.ironing_robot.switch",
             {
                 "integration": "ironing_robot",
                 "platform": "switch",
@@ -219,10 +219,10 @@ async def test_event_with_platform_context(hass: HomeAssistant) -> None:
             },
         ),
         (
-            "homeassistant.components.ironing_robot",
+            "inpui.components.ironing_robot",
             {"integration": "ironing_robot", "custom_component": "yes"},
         ),
-        ("homeassistant.helpers.network", {"helpers": "network"}),
+        ("inpui.helpers.network", {"helpers": "network"}),
         ("tuyapi.test", {"package": "tuyapi"}),
     ],
 )
@@ -258,12 +258,12 @@ async def test_logger_event_extraction(hass: HomeAssistant, logger, tags) -> Non
         ("adguard", {CONF_EVENT_THIRD_PARTY_PACKAGES: True}, True),
         ("adguard", {CONF_EVENT_THIRD_PARTY_PACKAGES: False}, False),
         (
-            "homeassistant.components.ironing_robot.switch",
+            "inpui.components.ironing_robot.switch",
             {CONF_EVENT_CUSTOM_COMPONENTS: True},
             True,
         ),
         (
-            "homeassistant.components.ironing_robot.switch",
+            "inpui.components.ironing_robot.switch",
             {CONF_EVENT_CUSTOM_COMPONENTS: False},
             False,
         ),

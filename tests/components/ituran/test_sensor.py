@@ -26,7 +26,7 @@ async def test_sensor(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test state of sensor."""
-    with patch("homeassistant.components.ituran.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.ituran.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
@@ -41,7 +41,7 @@ async def test_ev_sensor(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test state of sensor."""
-    with patch("homeassistant.components.ituran.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.ituran.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 

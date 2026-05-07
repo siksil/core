@@ -192,7 +192,7 @@ async def test_fan_error(
     aioclient_mock.post("http://192.168.1.123:80/mf", text="", status=400)
 
     with patch(
-        "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update"
+        "inpui.components.modern_forms.coordinator.ModernFormsDevice.update"
     ):
         await hass.services.async_call(
             FAN_DOMAIN,
@@ -214,10 +214,10 @@ async def test_fan_connection_error(
 
     with (
         patch(
-            "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update"
+            "inpui.components.modern_forms.coordinator.ModernFormsDevice.update"
         ),
         patch(
-            "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.fan",
+            "inpui.components.modern_forms.coordinator.ModernFormsDevice.fan",
             side_effect=ModernFormsConnectionError,
         ),
     ):

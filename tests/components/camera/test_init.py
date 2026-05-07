@@ -57,7 +57,7 @@ async def test_get_image_from_camera(hass: HomeAssistant) -> None:
     """Grab an image from camera entity."""
 
     with patch(
-        "homeassistant.components.demo.camera.Path.read_bytes",
+        "inpui.components.demo.camera.Path.read_bytes",
         autospec=True,
         return_value=b"Test",
     ) as mock_camera:
@@ -76,11 +76,11 @@ async def test_get_image_from_camera_with_width_height(hass: HomeAssistant) -> N
     )
     with (
         patch(
-            "homeassistant.components.camera.img_util.TurboJPEGSingleton.instance",
+            "inpui.components.camera.img_util.TurboJPEGSingleton.instance",
             return_value=turbo_jpeg,
         ),
         patch(
-            "homeassistant.components.demo.camera.Path.read_bytes",
+            "inpui.components.demo.camera.Path.read_bytes",
             autospec=True,
             return_value=b"Test",
         ) as mock_camera,
@@ -104,11 +104,11 @@ async def test_get_image_from_camera_with_width_height_scaled(
     )
     with (
         patch(
-            "homeassistant.components.camera.img_util.TurboJPEGSingleton.instance",
+            "inpui.components.camera.img_util.TurboJPEGSingleton.instance",
             return_value=turbo_jpeg,
         ),
         patch(
-            "homeassistant.components.demo.camera.Path.read_bytes",
+            "inpui.components.demo.camera.Path.read_bytes",
             autospec=True,
             return_value=b"Valid jpeg",
         ) as mock_camera,
@@ -131,11 +131,11 @@ async def test_get_image_from_camera_not_jpeg(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.camera.img_util.TurboJPEGSingleton.instance",
+            "inpui.components.camera.img_util.TurboJPEGSingleton.instance",
             return_value=turbo_jpeg,
         ),
         patch(
-            "homeassistant.components.demo.camera.Path.read_bytes",
+            "inpui.components.demo.camera.Path.read_bytes",
             autospec=True,
             return_value=b"png",
         ) as mock_camera,
@@ -166,7 +166,7 @@ async def test_get_image_without_exists_camera(hass: HomeAssistant) -> None:
     """Try to get image without exists camera."""
     with (
         patch(
-            "homeassistant.helpers.entity_component.EntityComponent.get_entity",
+            "inpui.helpers.entity_component.EntityComponent.get_entity",
             return_value=None,
         ),
         pytest.raises(HomeAssistantError),
@@ -179,7 +179,7 @@ async def test_get_image_with_timeout(hass: HomeAssistant) -> None:
     """Try to get image with timeout."""
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.async_camera_image",
+            "inpui.components.demo.camera.DemoCamera.async_camera_image",
             side_effect=TimeoutError,
         ),
         pytest.raises(HomeAssistantError),
@@ -192,7 +192,7 @@ async def test_get_image_fails(hass: HomeAssistant) -> None:
     """Try to get image with timeout."""
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.async_camera_image",
+            "inpui.components.demo.camera.DemoCamera.async_camera_image",
             return_value=None,
         ),
         pytest.raises(HomeAssistantError),
@@ -238,9 +238,9 @@ async def test_snapshot_service(
     mopen = mock_open()
 
     with (
-        patch("homeassistant.components.camera.open", mopen, create=True),
+        patch("inpui.components.camera.open", mopen, create=True),
         patch(
-            "homeassistant.components.camera.os.makedirs",
+            "inpui.components.camera.os.makedirs",
         ),
         patch.object(hass.config, "is_allowed_path", return_value=True),
     ):
@@ -273,9 +273,9 @@ async def test_snapshot_service_not_allowed_path(hass: HomeAssistant) -> None:
     mopen = mock_open()
 
     with (
-        patch("homeassistant.components.camera.open", mopen, create=True),
+        patch("inpui.components.camera.open", mopen, create=True),
         patch(
-            "homeassistant.components.camera.os.makedirs",
+            "inpui.components.camera.os.makedirs",
         ),
         pytest.raises(
             HomeAssistantError,
@@ -297,9 +297,9 @@ async def test_snapshot_service_not_allowed_path(hass: HomeAssistant) -> None:
 @pytest.mark.parametrize(
     ("target", "side_effect"),
     [
-        ("homeassistant.components.camera.os.makedirs", OSError),
+        ("inpui.components.camera.os.makedirs", OSError),
         (
-            "homeassistant.components.demo.camera.DemoCamera.async_camera_image",
+            "inpui.components.demo.camera.DemoCamera.async_camera_image",
             TimeoutError,
         ),
     ],
@@ -352,7 +352,7 @@ async def test_websocket_camera_stream(
     await async_setup_component(hass, "camera", {})
 
     with patch(
-        "homeassistant.components.demo.camera.DemoCamera.stream_source",
+        "inpui.components.demo.camera.DemoCamera.stream_source",
         return_value="http://example.com",
     ):
         # Request playlist through WebSocket
@@ -509,7 +509,7 @@ async def test_handle_play_stream_service(
     )
     await async_setup_component(hass, "media_player", {})
     with patch(
-        "homeassistant.components.demo.camera.DemoCamera.stream_source",
+        "inpui.components.demo.camera.DemoCamera.stream_source",
         return_value="http://example.com",
     ):
         # Call service
@@ -533,11 +533,11 @@ async def test_no_preload_stream(hass: HomeAssistant, mock_create_stream: Mock) 
     demo_settings = camera.DynamicStreamSettings()
     with (
         patch(
-            "homeassistant.components.camera.prefs.CameraPreferences.get_dynamic_stream_settings",
+            "inpui.components.camera.prefs.CameraPreferences.get_dynamic_stream_settings",
             return_value=demo_settings,
         ),
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             new_callable=PropertyMock,
         ) as mock_stream_source,
     ):
@@ -554,11 +554,11 @@ async def test_preload_stream(hass: HomeAssistant, mock_create_stream: Mock) -> 
     demo_settings = camera.DynamicStreamSettings(preload_stream=True)
     with (
         patch(
-            "homeassistant.components.camera.prefs.CameraPreferences.get_dynamic_stream_settings",
+            "inpui.components.camera.prefs.CameraPreferences.get_dynamic_stream_settings",
             return_value=demo_settings,
         ),
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="http://example.com",
         ),
     ):
@@ -623,11 +623,11 @@ async def test_record_service(
     """Test record service."""
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="http://example.com",
         ),
         patch(
-            "homeassistant.components.stream.Stream.async_record",
+            "inpui.components.stream.Stream.async_record",
             autospec=True,
         ) as mock_record,
     ):
@@ -663,7 +663,7 @@ async def test_camera_proxy_stream(hass_client: ClientSessionGenerator) -> None:
         assert response.status == HTTPStatus.OK
 
     with patch(
-        "homeassistant.components.demo.camera.DemoCamera.handle_async_mjpeg_stream",
+        "inpui.components.demo.camera.DemoCamera.handle_async_mjpeg_stream",
         return_value=None,
     ):
         async with await client.get(
@@ -688,7 +688,7 @@ async def test_stream_unavailable(
     await async_setup_component(hass, "camera", {})
 
     with patch(
-        "homeassistant.components.demo.camera.DemoCamera.stream_source",
+        "inpui.components.demo.camera.DemoCamera.stream_source",
         return_value="http://example.com",
     ):
         # Request playlist through WebSocket. We just want to create the stream
@@ -730,11 +730,11 @@ async def test_use_stream_for_stills(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value=None,
         ) as mock_stream_source,
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.use_stream_for_stills",
+            "inpui.components.demo.camera.DemoCamera.use_stream_for_stills",
             return_value=True,
         ),
     ):
@@ -751,12 +751,12 @@ async def test_use_stream_for_stills(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="rtsp://some_source",
         ) as mock_stream_source,
-        patch("homeassistant.components.camera.create_stream") as mock_create_stream,
+        patch("inpui.components.camera.create_stream") as mock_create_stream,
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.use_stream_for_stills",
+            "inpui.components.demo.camera.DemoCamera.use_stream_for_stills",
             return_value=True,
         ),
     ):
@@ -963,7 +963,7 @@ async def test_snapshot_service_webrtc_provider(
 
     with (
         patch.object(camera_obj, "use_stream_for_stills", return_value=True),
-        patch("homeassistant.components.camera.open"),
+        patch("inpui.components.camera.open"),
         patch.object(
             camera_obj._webrtc_provider,
             "async_get_image",
@@ -971,7 +971,7 @@ async def test_snapshot_service_webrtc_provider(
         ) as webrtc_get_image_mock,
         patch.object(camera_obj, "stream", AsyncMock()) as stream_mock,
         patch(
-            "homeassistant.components.camera.os.makedirs",
+            "inpui.components.camera.os.makedirs",
         ),
         patch.object(hass.config, "is_allowed_path", return_value=True),
     ):

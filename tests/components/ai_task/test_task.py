@@ -184,15 +184,15 @@ async def test_generate_data_mixed_attachments(
     """Test generating data with both camera and regular media source attachments."""
     with (
         patch(
-            "homeassistant.components.camera.async_get_image",
+            "inpui.components.camera.async_get_image",
             return_value=Image(content_type="image/jpeg", content=b"fake_camera_jpeg"),
         ) as mock_get_camera_image,
         patch(
-            "homeassistant.components.image.async_get_image",
+            "inpui.components.image.async_get_image",
             return_value=Image(content_type="image/jpeg", content=b"fake_image_jpeg"),
         ) as mock_get_image_image,
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             return_value=media_source.PlayMedia(
                 url="http://example.com/test.mp4",
                 mime_type="video/mp4",

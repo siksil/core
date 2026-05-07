@@ -90,7 +90,7 @@ async def setup_entry(
 
     inject_bluetooth_service_info(hass, AUTOMOWER_SERVICE_INFO_SERIAL)
 
-    with patch("homeassistant.components.husqvarna_automower_ble.PLATFORMS", platforms):
+    with patch("inpui.components.husqvarna_automower_ble.PLATFORMS", platforms):
         mock_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_entry.entry_id)
         await hass.async_block_till_done()

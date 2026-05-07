@@ -33,7 +33,7 @@ async def test_setup(
 ) -> None:
     """Test setup of platform."""
     device = FritzDeviceBinarySensorMock()
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.BINARY_SENSOR]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )

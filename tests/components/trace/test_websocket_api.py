@@ -586,7 +586,7 @@ async def test_trace_overflow(
 
     # Trigger "moon" enough times to overflow the max number of stored traces
     with patch(
-        "homeassistant.components.trace.models.uuid_util.random_uuid_hex",
+        "inpui.components.trace.models.uuid_util.random_uuid_hex",
         wraps=mock_random_uuid_hex,
     ):
         for _ in range(stored_traces or DEFAULT_STORED_TRACES):
@@ -666,7 +666,7 @@ async def test_restore_traces_overflow(
 
     # Trigger "moon" enough times to overflow the max number of stored traces
     with patch(
-        "homeassistant.components.trace.models.uuid_util.random_uuid_hex",
+        "inpui.components.trace.models.uuid_util.random_uuid_hex",
         wraps=mock_random_uuid_hex,
     ):
         for _ in range(DEFAULT_STORED_TRACES - num_restored_moon_traces + 1):
@@ -738,7 +738,7 @@ async def test_restore_traces_late_overflow(
 
     # Trigger "moon" enough times to overflow the max number of stored traces
     with patch(
-        "homeassistant.components.trace.models.uuid_util.random_uuid_hex",
+        "inpui.components.trace.models.uuid_util.random_uuid_hex",
         wraps=mock_random_uuid_hex,
     ):
         for _ in range(DEFAULT_STORED_TRACES - num_restored_moon_traces + 1):

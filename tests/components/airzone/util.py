@@ -387,23 +387,23 @@ async def async_init_integration(
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             return_value=HVAC_DHW_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             return_value=HVAC_SYSTEMS_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             return_value=HVAC_WEBSERVER_MOCK,
         ),
     ):

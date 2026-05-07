@@ -27,7 +27,7 @@ devices = MockDevices()
 def lock_platform_only():
     """Only setup the lock and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.insteon.INSTEON_PLATFORMS",
+        "inpui.components.insteon.INSTEON_PLATFORMS",
         (Platform.LOCK,),
     ):
         yield

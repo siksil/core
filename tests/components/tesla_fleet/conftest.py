@@ -106,7 +106,7 @@ def bad_config_entry(expires_at: int) -> MockConfigEntry:
 def mock_products() -> Generator[AsyncMock]:
     """Mock Tesla Fleet Api products method."""
     with patch(
-        "homeassistant.components.tesla_fleet.TeslaFleetApi.products",
+        "inpui.components.tesla_fleet.TeslaFleetApi.products",
         return_value=PRODUCTS,
     ) as mock_products:
         yield mock_products
@@ -166,7 +166,7 @@ def mock_site_info() -> Generator[AsyncMock]:
 def mock_find_server() -> Generator[AsyncMock]:
     """Mock Tesla Fleet find server method."""
     with patch(
-        "homeassistant.components.tesla_fleet.TeslaFleetApi.find_server",
+        "inpui.components.tesla_fleet.TeslaFleetApi.find_server",
     ) as mock_find_server:
         yield mock_find_server
 
@@ -175,7 +175,7 @@ def mock_find_server() -> Generator[AsyncMock]:
 def mock_request():
     """Mock all Tesla Fleet API requests."""
     with patch(
-        "homeassistant.components.tesla_fleet.TeslaFleetApi._request",
+        "inpui.components.tesla_fleet.TeslaFleetApi._request",
         return_value=COMMAND_OK,
     ) as mock_request:
         yield mock_request

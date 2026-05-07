@@ -88,7 +88,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.xbox.async_setup_entry", return_value=True
+        "inpui.components.xbox.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -181,7 +181,7 @@ async def test_discovery(
     )
 
     with patch(
-        "homeassistant.components.xbox.async_setup_entry", return_value=True
+        "inpui.components.xbox.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -727,7 +727,7 @@ async def test_migration_implementation_unavailable(hass: HomeAssistant) -> None
 
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.xbox.async_get_config_entry_implementation",
+        "inpui.components.xbox.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -791,7 +791,7 @@ async def test_flow_reauth(
         },
     )
     with patch(
-        "homeassistant.components.xbox.async_setup_entry", return_value=True
+        "inpui.components.xbox.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
         await hass.async_block_till_done()

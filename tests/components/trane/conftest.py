@@ -41,7 +41,7 @@ def platforms() -> list[Platform]:
 @pytest.fixture(autouse=True)
 async def mock_patch_platforms(platforms: list[Platform]) -> AsyncGenerator[None]:
     """Fixture to set up platforms for tests."""
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         yield
 
 
@@ -73,11 +73,11 @@ def mock_connection() -> Generator[MagicMock]:
     """Return a mocked ThermostatConnection."""
     with (
         patch(
-            "homeassistant.components.trane.ThermostatConnection",
+            "inpui.components.trane.ThermostatConnection",
             autospec=True,
         ) as mock_cls,
         patch(
-            "homeassistant.components.trane.config_flow.ThermostatConnection",
+            "inpui.components.trane.config_flow.ThermostatConnection",
             new=mock_cls,
         ),
     ):
@@ -101,7 +101,7 @@ def mock_connection() -> Generator[MagicMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.trane.async_setup_entry",
+        "inpui.components.trane.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

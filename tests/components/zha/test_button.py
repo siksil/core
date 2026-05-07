@@ -38,7 +38,7 @@ from .common import find_entity_id
 def button_platform_only():
     """Only set up the button and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (Platform.BINARY_SENSOR, Platform.BUTTON, Platform.SENSOR),
     ):
         yield
@@ -53,7 +53,7 @@ def speed_up_radio_mgr():
     running tests with time frozen, which otherwise blocks forever.
     """
     with (
-        patch("homeassistant.components.zha.radio_manager.CONNECT_DELAY_S", 0),
+        patch("inpui.components.zha.radio_manager.CONNECT_DELAY_S", 0),
         patch("zha.application.gateway.SHUT_DOWN_DELAY_S", 0),
     ):
         yield

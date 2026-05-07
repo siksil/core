@@ -41,7 +41,7 @@ ENTITY_ID_PREFIX = "sensor.fakemanufacturer_fakemodel_{}"
 def sensor_platform_only():
     """Only set up the sensor and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.DEVICE_TRACKER,
             Platform.SENSOR,

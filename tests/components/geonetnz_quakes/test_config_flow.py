@@ -55,11 +55,11 @@ async def test_step_import(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.geonetnz_quakes.async_setup_entry",
+            "inpui.components.geonetnz_quakes.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.geonetnz_quakes.async_setup", return_value=True
+            "inpui.components.geonetnz_quakes.async_setup", return_value=True
         ),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -86,11 +86,11 @@ async def test_step_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.geonetnz_quakes.async_setup_entry",
+            "inpui.components.geonetnz_quakes.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.geonetnz_quakes.async_setup", return_value=True
+            "inpui.components.geonetnz_quakes.async_setup", return_value=True
         ),
     ):
         result = await hass.config_entries.flow.async_init(

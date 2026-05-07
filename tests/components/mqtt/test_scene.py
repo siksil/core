@@ -212,7 +212,7 @@ async def test_discovery_update_unchanged_scene(
     """Test update of discovered scene."""
     data1 = '{ "name": "Beer",  "command_topic": "test_topic" }'
     with patch(
-        "homeassistant.components.mqtt.scene.MqttScene.discovery_update"
+        "inpui.components.mqtt.scene.MqttScene.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, scene.DOMAIN, data1, discovery_update

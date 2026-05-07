@@ -59,7 +59,7 @@ async def test_action(hass: HomeAssistant, push_registration) -> None:
     assert hass.services.has_service("notify", service_name)
 
     with patch(
-        "homeassistant.components.mobile_app.notify.MobileAppNotificationService.async_send_message"
+        "inpui.components.mobile_app.notify.MobileAppNotificationService.async_send_message"
     ) as mock_send_message:
         hass.bus.async_fire("test_notify")
         await hass.async_block_till_done()

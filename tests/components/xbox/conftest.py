@@ -91,11 +91,11 @@ def mock_authentication_manager() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.xbox.config_flow.AuthenticationManager",
+            "inpui.components.xbox.config_flow.AuthenticationManager",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.xbox.AsyncConfigEntryAuth",
+            "inpui.components.xbox.AsyncConfigEntryAuth",
             autospec=True,
         ),
     ):
@@ -109,7 +109,7 @@ def mock_oauth2_session() -> Generator[AsyncMock]:
     """Mock OAuth2 session."""
 
     with patch(
-        "homeassistant.components.xbox.OAuth2Session", autospec=True
+        "inpui.components.xbox.OAuth2Session", autospec=True
     ) as mock_client:
         client = mock_client.return_value
 
@@ -134,12 +134,12 @@ def mock_xbox_live_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.xbox.coordinator.XboxLiveClient", autospec=True
+            "inpui.components.xbox.coordinator.XboxLiveClient", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.xbox.config_flow.XboxLiveClient", new=mock_client
+            "inpui.components.xbox.config_flow.XboxLiveClient", new=mock_client
         ),
-        patch("homeassistant.components.xbox.XboxLiveClient", new=mock_client),
+        patch("inpui.components.xbox.XboxLiveClient", new=mock_client),
     ):
         client = mock_client.return_value
 

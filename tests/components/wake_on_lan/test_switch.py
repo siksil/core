@@ -39,7 +39,7 @@ async def test_valid_hostname(
     state = hass.states.get("switch.wake_on_lan")
     assert state.state == STATE_OFF
 
-    with patch("homeassistant.components.wake_on_lan.switch.sp.call", return_value=0):
+    with patch("inpui.components.wake_on_lan.switch.sp.call", return_value=0):
         await hass.services.async_call(
             switch.DOMAIN,
             SERVICE_TURN_ON,
@@ -188,7 +188,7 @@ async def test_off_script(
     state = hass.states.get("switch.wake_on_lan")
     assert state.state == STATE_OFF
 
-    with patch("homeassistant.components.wake_on_lan.switch.sp.call", return_value=0):
+    with patch("inpui.components.wake_on_lan.switch.sp.call", return_value=0):
         await hass.services.async_call(
             switch.DOMAIN,
             SERVICE_TURN_ON,
@@ -201,7 +201,7 @@ async def test_off_script(
         assert state.state == STATE_ON
         assert len(calls) == 0
 
-    with patch("homeassistant.components.wake_on_lan.switch.sp.call", return_value=1):
+    with patch("inpui.components.wake_on_lan.switch.sp.call", return_value=1):
         await hass.services.async_call(
             switch.DOMAIN,
             SERVICE_TURN_OFF,

@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.meater.async_setup_entry",
+        "inpui.components.meater.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -30,11 +30,11 @@ def mock_meater_client(mock_probe: Mock) -> Generator[AsyncMock]:
     """Mock a Meater client."""
     with (
         patch(
-            "homeassistant.components.meater.coordinator.MeaterApi",
+            "inpui.components.meater.coordinator.MeaterApi",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.meater.config_flow.MeaterApi",
+            "inpui.components.meater.config_flow.MeaterApi",
             new=mock_client,
         ),
     ):

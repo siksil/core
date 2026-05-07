@@ -493,7 +493,7 @@ Shelly.emitEvent("script_start");
 def mock_coap():
     """Mock out coap."""
     with patch(
-        "homeassistant.components.shelly.utils.COAP",
+        "inpui.components.shelly.utils.COAP",
         return_value=Mock(
             initialize=AsyncMock(),
             close=Mock(),
@@ -505,7 +505,7 @@ def mock_coap():
 @pytest.fixture(autouse=True)
 def mock_ws_server():
     """Mock out ws_server."""
-    with patch("homeassistant.components.shelly.utils.get_ws_context"):
+    with patch("inpui.components.shelly.utils.get_ws_context"):
         yield
 
 
@@ -620,7 +620,7 @@ async def mock_rpc_device():
     """Mock rpc (Gen2, Websocket) device with BLE support."""
     with (
         patch("aioshelly.rpc_device.RpcDevice.create") as rpc_device_mock,
-        patch("homeassistant.components.shelly.bluetooth.async_start_scanner"),
+        patch("inpui.components.shelly.bluetooth.async_start_scanner"),
     ):
 
         def update():
@@ -680,7 +680,7 @@ async def mock_blu_trv():
 
     with (
         patch("aioshelly.rpc_device.RpcDevice.create") as blu_trv_device_mock,
-        patch("homeassistant.components.shelly.bluetooth.async_start_scanner"),
+        patch("inpui.components.shelly.bluetooth.async_start_scanner"),
     ):
 
         def update():
@@ -795,7 +795,7 @@ async def mock_sleepy_rpc_device():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.shelly.async_setup_entry", return_value=True
+        "inpui.components.shelly.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -804,7 +804,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_setup() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.shelly.async_setup", return_value=True
+        "inpui.components.shelly.async_setup", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -817,6 +817,6 @@ def disable_async_remove_shelly_rpc_entities() -> Generator[None]:
     without it async_remove_shelly_rpc_entities will clean up the entities.
     """
     with patch(
-        "homeassistant.components.shelly.utils.async_remove_shelly_rpc_entities"
+        "inpui.components.shelly.utils.async_remove_shelly_rpc_entities"
     ):
         yield

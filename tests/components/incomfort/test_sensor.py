@@ -14,7 +14,7 @@ from tests.common import snapshot_platform
 
 
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")
-@patch("homeassistant.components.incomfort.PLATFORMS", [Platform.SENSOR])
+@patch("inpui.components.incomfort.PLATFORMS", [Platform.SENSOR])
 async def test_setup_platform(
     hass: HomeAssistant,
     mock_incomfort: MagicMock,

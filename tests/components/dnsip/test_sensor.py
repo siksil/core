@@ -50,7 +50,7 @@ async def test_sensor(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -93,7 +93,7 @@ async def test_legacy_sensor(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -139,7 +139,7 @@ async def test_sensor_no_response(
 
     dns_mock = RetrieveDNS()
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=dns_mock,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -151,7 +151,7 @@ async def test_sensor_no_response(
 
     dns_mock.error = DNSError()
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=dns_mock,
     ):
         freezer.tick(timedelta(seconds=SCAN_INTERVAL.seconds))
@@ -199,7 +199,7 @@ async def test_sensor_timeout(
 
     dns_mock = RetrieveDNS()
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=dns_mock,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -211,11 +211,11 @@ async def test_sensor_timeout(
 
     with (
         patch(
-            "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+            "inpui.components.dnsip.sensor.aiodns.DNSResolver",
             return_value=dns_mock,
         ),
         patch(
-            "homeassistant.components.dnsip.sensor.asyncio.timeout",
+            "inpui.components.dnsip.sensor.asyncio.timeout",
             side_effect=TimeoutError(),
         ),
     ):

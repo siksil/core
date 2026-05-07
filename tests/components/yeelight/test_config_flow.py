@@ -929,7 +929,7 @@ async def test_discovered_during_onboarding(hass: HomeAssistant, source, data) -
             f"{MODULE}.async_setup_entry", return_value=True
         ) as mock_async_setup_entry,
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+            "inpui.components.onboarding.async_is_onboarded", return_value=False
         ) as mock_is_onboarded,
     ):
         result = await hass.config_entries.flow.async_init(

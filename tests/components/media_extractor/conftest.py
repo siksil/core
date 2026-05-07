@@ -33,7 +33,7 @@ async def setup_media_player(hass: HomeAssistant) -> None:
 async def setup_mock_yt_dlp(hass: HomeAssistant) -> MockYoutubeDL:
     """Mock YoutubeDL."""
     mock = MockYoutubeDL({})
-    with patch("homeassistant.components.media_extractor.YoutubeDL", return_value=mock):
+    with patch("inpui.components.media_extractor.YoutubeDL", return_value=mock):
         yield mock
 
 
@@ -53,6 +53,6 @@ def audio_media_extractor_config() -> dict[str, Any]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.media_extractor.async_setup_entry", return_value=True
+        "inpui.components.media_extractor.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

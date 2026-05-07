@@ -298,7 +298,7 @@ MOCK_DEVICE_INFO = {
 @pytest.fixture(autouse=True)
 def mock_provisioning_timeout() -> Generator[None]:
     """Patch provisioning timeout to 0 for tests."""
-    with patch("homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT", 0):
+    with patch("inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT", 0):
         yield
 
 
@@ -306,7 +306,7 @@ def mock_provisioning_timeout() -> Generator[None]:
 def mock_zeroconf_async_get_instance() -> Generator[AsyncMock]:
     """Patch zeroconf async_get_async_instance for tests."""
     with patch(
-        "homeassistant.components.shelly.config_flow.zeroconf.async_get_async_instance"
+        "inpui.components.shelly.config_flow.zeroconf.async_get_async_instance"
     ) as mock_aiozc:
         mock_aiozc.return_value = AsyncMock()
         yield mock_aiozc
@@ -358,7 +358,7 @@ def mock_ble_rpc_device_class(mock_ble_rpc_device: AsyncMock) -> Generator[Magic
             aiohttp_session, ws_context, ip_or_options
         )
 
-    with patch("homeassistant.components.shelly.config_flow.RpcDevice") as mock_class:
+    with patch("inpui.components.shelly.config_flow.RpcDevice") as mock_class:
         mock_class.create = AsyncMock(side_effect=mock_create)
         yield mock_class
 
@@ -367,7 +367,7 @@ def mock_ble_rpc_device_class(mock_ble_rpc_device: AsyncMock) -> Generator[Magic
 def mock_discovery() -> Generator[AsyncMock]:
     """Mock device discovery to return empty by default."""
     with patch(
-        "homeassistant.components.shelly.config_flow.async_discover_devices",
+        "inpui.components.shelly.config_flow.async_discover_devices",
         return_value=[],
     ) as mock_disc:
         yield mock_disc
@@ -419,7 +419,7 @@ async def test_form(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "test-mac",
                 "type": MODEL_1,
@@ -455,7 +455,7 @@ async def test_user_flow_overrides_existing_discovery(
 ) -> None:
     """Test setting up from the user flow when the devices is already discovered."""
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "AABBCCDDEEFF",
             "model": MODEL_PLUS_2PM,
@@ -521,7 +521,7 @@ async def test_form_gen1_custom_port(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={"mac": "test-mac", "type": MODEL_1, "gen": 1},
         ),
         patch(
@@ -538,7 +538,7 @@ async def test_form_gen1_custom_port(
     assert result["errors"]["base"] == "custom_port_not_supported"
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "gen": 1},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -602,7 +602,7 @@ async def test_form_auth(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": True, "gen": gen},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -653,7 +653,7 @@ async def test_form_errors_get_info(
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
 
-    with patch("homeassistant.components.shelly.config_flow.get_info", side_effect=exc):
+    with patch("inpui.components.shelly.config_flow.get_info", side_effect=exc):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             {CONF_HOST: "1.1.1.1"},
@@ -663,7 +663,7 @@ async def test_form_errors_get_info(
     assert result["errors"] == {"base": base_error}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "gen": 1},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -694,7 +694,7 @@ async def test_form_missing_model_key(
     )
     monkeypatch.setattr(mock_rpc_device, "shelly", {"gen": 2})
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": False, "gen": "2"},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -717,7 +717,7 @@ async def test_form_missing_model_key_auth_enabled(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": True, "gen": 2},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -744,7 +744,7 @@ async def test_form_missing_model_key_zeroconf(
     """Test we handle missing Shelly model key via zeroconf."""
     monkeypatch.setattr(mock_rpc_device, "shelly", {"gen": 2})
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": False, "gen": 2},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -780,7 +780,7 @@ async def test_form_errors_test_connection(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={"mac": "test-mac", "auth": False},
         ),
         patch(
@@ -796,7 +796,7 @@ async def test_form_errors_test_connection(
     assert result["errors"] == {"base": base_error}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": False},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -831,7 +831,7 @@ async def test_form_already_configured(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -867,7 +867,7 @@ async def test_user_setup_ignored_device(
     )
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -901,7 +901,7 @@ async def test_user_flow_no_devices_discovered(
 
     # Complete manual entry
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "test-mac",
             "type": MODEL_1,
@@ -953,7 +953,7 @@ async def test_user_flow_with_zeroconf_devices(
     # Select the discovered device and complete setup
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_PLUS_2PM,
@@ -963,7 +963,7 @@ async def test_user_flow_with_zeroconf_devices(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Test Zeroconf Device"),
         ),
     ):
@@ -997,7 +997,7 @@ async def test_user_flow_select_zeroconf_device(
 
     # Select the discovered device
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "AABBCCDDEEFF",
             "model": MODEL_PLUS_2PM,
@@ -1047,7 +1047,7 @@ async def test_user_flow_select_manual_entry(
 
     # Complete manual entry
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "test-mac-2",
             "type": MODEL_1,
@@ -1103,7 +1103,7 @@ async def test_user_flow_both_ble_and_zeroconf_prefers_zeroconf(
 
     # Select the device and verify it uses Zeroconf connection info
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "CCBA97C2D670",
             "model": MODEL_PLUS_2PM,
@@ -1211,11 +1211,11 @@ async def test_user_flow_with_ble_devices(
     # Select network and enter WiFi credentials to complete
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("192.168.1.100", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "CCBA97C2D670",
                 "model": MODEL_PLUS_2PM,
@@ -1289,7 +1289,7 @@ async def test_user_flow_filters_already_configured_devices(
     # Select the unconfigured device and complete setup
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "112233445566",
                 "model": MODEL_PLUS_2PM,
@@ -1299,7 +1299,7 @@ async def test_user_flow_filters_already_configured_devices(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Test Device"),
         ),
     ):
@@ -1349,7 +1349,7 @@ async def test_user_flow_includes_ignored_devices(
     # Select the ignored device and complete setup
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_PLUS_2PM,
@@ -1359,7 +1359,7 @@ async def test_user_flow_includes_ignored_devices(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Test Ignored Device"),
         ),
     ):
@@ -1405,7 +1405,7 @@ async def test_user_flow_aborts_when_another_flow_finishes_while_in_progress(
 
     # User selects the device - should abort because it's now configured
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "AABBCCDDEEFF",
             "model": MODEL_PLUS_2PM,
@@ -1437,7 +1437,7 @@ async def test_user_flow_zeroconf_device_connection_error(
 
     # Select the device but connection fails when getting info
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         side_effect=DeviceConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1464,7 +1464,7 @@ async def test_user_flow_zeroconf_device_validation_connection_error(
     # Select the device but connection fails during validation
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_PLUS_2PM,
@@ -1474,7 +1474,7 @@ async def test_user_flow_zeroconf_device_validation_connection_error(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             side_effect=DeviceConnectionError,
         ),
     ):
@@ -1502,7 +1502,7 @@ async def test_user_flow_zeroconf_device_requires_auth(
 
     # Select device that requires auth
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "AABBCCDDEEFF",
             "model": MODEL_1,
@@ -1522,7 +1522,7 @@ async def test_user_flow_zeroconf_device_requires_auth(
     # Complete credentials and create entry
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_1,
@@ -1571,7 +1571,7 @@ async def test_user_flow_zeroconf_invalid_mac_filtered(
     # Complete manual entry
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_PLUS_2PM,
@@ -1581,7 +1581,7 @@ async def test_user_flow_zeroconf_invalid_mac_filtered(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Manual Entry Device"),
         ),
     ):
@@ -1620,7 +1620,7 @@ async def test_user_flow_zeroconf_no_ipv4_filtered(
     # Complete manual entry
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "112233445566",
                 "model": MODEL_PLUS_2PM,
@@ -1630,7 +1630,7 @@ async def test_user_flow_zeroconf_no_ipv4_filtered(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Manual IPv4 Device"),
         ),
     ):
@@ -1684,7 +1684,7 @@ async def test_user_flow_ble_device_without_rpc_over_ble_filtered(
     # Complete manual entry
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "DDEEFF112233",
                 "model": MODEL_PLUS_2PM,
@@ -1694,7 +1694,7 @@ async def test_user_flow_ble_device_without_rpc_over_ble_filtered(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Manual BLE Device"),
         ),
     ):
@@ -1722,7 +1722,7 @@ async def test_user_flow_select_zeroconf_device_mac_mismatch(
     # Select device but MAC address doesn't match
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_PLUS_2PM,
@@ -1732,7 +1732,7 @@ async def test_user_flow_select_zeroconf_device_mac_mismatch(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             side_effect=MacAddressMismatchError,
         ),
     ):
@@ -1767,7 +1767,7 @@ async def test_user_flow_select_zeroconf_device_custom_port_not_supported(
     # Select device but custom port not supported
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": MODEL_PLUS_2PM,
@@ -1777,7 +1777,7 @@ async def test_user_flow_select_zeroconf_device_custom_port_not_supported(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             side_effect=CustomPortNotSupported,
         ),
     ):
@@ -1805,7 +1805,7 @@ async def test_user_flow_select_zeroconf_device_not_fully_provisioned(
     # Select device but firmware not fully provisioned (empty model)
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "AABBCCDDEEFF",
                 "model": "",  # Empty model indicates not fully provisioned
@@ -1815,7 +1815,7 @@ async def test_user_flow_select_zeroconf_device_not_fully_provisioned(
             },
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("shellyplus2pm-AABBCCDDEEFF", model=""),
         ),
     ):
@@ -1878,11 +1878,11 @@ async def test_user_flow_select_ble_device(
     # Select network and enter password to provision
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("192.168.1.200", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "CCBA97C2D670",
                 "model": MODEL_PLUS_2PM,
@@ -1946,7 +1946,7 @@ async def test_user_flow_filters_devices_with_active_discovery_flows(
 
     # Complete the manual entry flow to reach terminal state
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "aabbccddeeff", "model": MODEL_PLUS_2PM, "gen": 2},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1988,7 +1988,7 @@ async def test_form_auth_errors_test_connection_gen1(
     )
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": True},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2008,7 +2008,7 @@ async def test_form_auth_errors_test_connection_gen1(
     assert result["errors"] == {"base": base_error}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": True},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2055,7 +2055,7 @@ async def test_form_auth_errors_test_connection_gen2(
     )
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": True, "gen": 2},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2074,7 +2074,7 @@ async def test_form_auth_errors_test_connection_gen2(
     assert result["errors"] == {"base": base_error}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "auth": True, "gen": 2},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2131,7 +2131,7 @@ async def test_zeroconf(
     """Test we get the form."""
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info", return_value=get_info
+        "inpui.components.shelly.config_flow.get_info", return_value=get_info
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -2179,7 +2179,7 @@ async def test_zeroconf_sleeping_device(
         {"period": 10, "unit": "m"},
     )
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "test-mac",
             "type": MODEL_1,
@@ -2222,7 +2222,7 @@ async def test_zeroconf_sleeping_device_error(hass: HomeAssistant) -> None:
     """Test sleeping device configuration via zeroconf with error."""
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "test-mac",
                 "type": MODEL_1,
@@ -2299,7 +2299,7 @@ async def test_zeroconf_already_configured(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2327,7 +2327,7 @@ async def test_zeroconf_ignored(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2349,7 +2349,7 @@ async def test_zeroconf_with_wifi_ap_ip(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2370,7 +2370,7 @@ async def test_zeroconf_with_wifi_ap_ip(hass: HomeAssistant) -> None:
 async def test_zeroconf_cannot_connect(hass: HomeAssistant) -> None:
     """Test we get the form."""
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         side_effect=DeviceConnectionError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2392,7 +2392,7 @@ async def test_zeroconf_require_auth(
     """Test zeroconf if auth is required."""
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": True},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2452,7 +2452,7 @@ async def test_reauth_successful(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": True, "gen": gen},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2499,7 +2499,7 @@ async def test_reauth_unsuccessful(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "test-mac",
                 "type": MODEL_1,
@@ -2532,7 +2532,7 @@ async def test_reauth_get_info_error(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         side_effect=DeviceConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2678,7 +2678,7 @@ async def test_zeroconf_already_configured_triggers_refresh_mac_in_name(
     assert len(mock_rpc_device.initialize.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2719,7 +2719,7 @@ async def test_zeroconf_already_configured_triggers_refresh(
     assert len(mock_rpc_device.initialize.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "AABBCCDDEEFF", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2770,7 +2770,7 @@ async def test_zeroconf_sleeping_device_not_triggers_refresh(
     assert len(mock_rpc_device.initialize.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "AABBCCDDEEFF", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2825,7 +2825,7 @@ async def test_zeroconf_sleeping_device_attempts_configure(
     assert len(mock_rpc_device.initialize.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "AABBCCDDEEFF", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2891,7 +2891,7 @@ async def test_zeroconf_sleeping_device_attempts_configure_ws_disabled(
     assert len(mock_rpc_device.initialize.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "AABBCCDDEEFF", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2957,7 +2957,7 @@ async def test_zeroconf_sleeping_device_attempts_configure_no_url_available(
     assert len(mock_rpc_device.initialize.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "AABBCCDDEEFF", "type": MODEL_1, "auth": False},
     ):
         result = await hass.config_entries.flow.async_init(
@@ -2999,12 +2999,12 @@ async def test_sleeping_device_gen2_with_new_firmware(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={"mac": "test-mac", "gen": 2},
         ),
-        patch("homeassistant.components.shelly.async_setup", return_value=True),
+        patch("inpui.components.shelly.async_setup", return_value=True),
         patch(
-            "homeassistant.components.shelly.async_setup_entry",
+            "inpui.components.shelly.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -3044,7 +3044,7 @@ async def test_reconfigure_successful(
     assert result["step_id"] == "reconfigure"
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False, "gen": gen},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -3078,7 +3078,7 @@ async def test_reconfigure_unsuccessful(
     assert result["step_id"] == "reconfigure"
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "another-mac",
             "type": MODEL_1,
@@ -3119,7 +3119,7 @@ async def test_reconfigure_with_exception(
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "reconfigure"
 
-    with patch("homeassistant.components.shelly.config_flow.get_info", side_effect=exc):
+    with patch("inpui.components.shelly.config_flow.get_info", side_effect=exc):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={CONF_HOST: "10.10.10.10", CONF_PORT: 99},
@@ -3128,7 +3128,7 @@ async def test_reconfigure_with_exception(
     assert result["errors"] == {"base": base_error}
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={"mac": "test-mac", "type": MODEL_1, "auth": False, "gen": 2},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -3169,7 +3169,7 @@ async def test_zeroconf_wrong_device_name(
     """Test zeroconf discovery with mismatched device name."""
 
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value={
             "mac": "test-mac",
             "model": MODEL_PLUS_2PM,
@@ -3244,11 +3244,11 @@ async def test_bluetooth_discovery(
     # Select network and enter password to provision
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -3296,7 +3296,7 @@ async def test_bluetooth_provisioning_clears_match_history(
     inject_bluetooth_service_info_bleak(hass, BLE_DISCOVERY_INFO_FOR_CLEAR_TEST)
 
     with patch(
-        "homeassistant.components.shelly.config_flow.async_clear_address_from_match_history",
+        "inpui.components.shelly.config_flow.async_clear_address_from_match_history",
     ) as mock_clear:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -3316,11 +3316,11 @@ async def test_bluetooth_provisioning_clears_match_history(
         # Select network and enter password to provision
         with (
             patch(
-                "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+                "inpui.components.shelly.config_flow.async_lookup_device_by_name",
                 return_value=("1.1.1.1", 80),
             ),
             patch(
-                "homeassistant.components.shelly.config_flow.get_info",
+                "inpui.components.shelly.config_flow.get_info",
                 return_value=MOCK_DEVICE_INFO,
             ),
         ):
@@ -3419,11 +3419,11 @@ async def test_bluetooth_factory_reset_rediscovery(
     # Select network and enter password to provision
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -3556,7 +3556,7 @@ async def test_bluetooth_discovery_already_configured_clears_match_history(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.shelly.config_flow.async_clear_address_from_match_history"
+        "inpui.components.shelly.config_flow.async_clear_address_from_match_history"
     ) as mock_clear:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -3625,11 +3625,11 @@ async def test_bluetooth_wifi_scan_success(
     # Select network and enter password to complete flow
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -3708,11 +3708,11 @@ async def test_bluetooth_wifi_scan_failure(
     # Select network and enter password to complete provisioning
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -3810,11 +3810,11 @@ async def test_bluetooth_wifi_credentials_and_provision_success(
     # Select network and enter password to provision
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -3879,7 +3879,7 @@ async def test_bluetooth_wifi_provision_failure(
 
     # Provision fails - wifi_setconfig will fail
     with patch(
-        "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+        "inpui.components.shelly.config_flow.async_lookup_device_by_name",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -3910,11 +3910,11 @@ async def test_bluetooth_wifi_provision_failure(
     # Provision succeeds this time
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -3998,7 +3998,7 @@ async def test_bluetooth_provision_unexpected_exception(
 
     # Provision raises unexpected exception in background task
     with patch(
-        "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+        "inpui.components.shelly.config_flow.async_lookup_device_by_name",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -4045,11 +4045,11 @@ async def test_bluetooth_provision_device_connection_error_after_wifi(
     # Provision but get_info fails
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             side_effect=DeviceConnectionError,
         ),
     ):
@@ -4106,11 +4106,11 @@ async def test_bluetooth_provision_requires_auth(
     # Provision but device requires auth
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value={
                 "mac": "C049EF8873E8",
                 "model": MODEL_PLUS_2PM,
@@ -4197,11 +4197,11 @@ async def test_bluetooth_provision_validate_input_fails(
     # Provision but validate_input fails (RpcDevice.create for IP connection fails)
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -4257,15 +4257,15 @@ async def test_bluetooth_provision_firmware_not_fully_provisioned(
     # Provision but device has no model (firmware not fully provisioned)
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=create_mock_rpc_device("Test name", model=None),
         ),
     ):
@@ -4338,19 +4338,19 @@ async def test_bluetooth_provision_with_zeroconf_discovery_fast_path(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT",
+            "inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT",
             10,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=mock_device,
         ),
     ):
@@ -4402,15 +4402,15 @@ async def test_bluetooth_provision_timeout_active_lookup_fails(
     # Keep patches active throughout to avoid socket errors from background tasks
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT",
+            "inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT",
             0.01,  # Short timeout to trigger timeout path
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=None,  # Active lookup fails
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -4491,15 +4491,15 @@ async def test_bluetooth_provision_timeout_ble_fallback_succeeds(
     # Provision WiFi but no zeroconf discovery arrives, active lookup fails, BLE fallback succeeds
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT",
+            "inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT",
             0.01,  # Short timeout to trigger timeout path
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=None,  # Active lookup fails
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -4552,11 +4552,11 @@ async def test_bluetooth_provision_timeout_ble_fallback_fails(
     # Provision WiFi but no zeroconf discovery, active lookup fails, BLE fallback fails
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT",
+            "inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT",
             0.01,  # Short timeout to trigger timeout path
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=None,  # Active lookup fails
         ),
     ):
@@ -4619,15 +4619,15 @@ async def test_bluetooth_provision_timeout_ble_exception(
     # Keep patches active until all background tasks complete to avoid socket errors
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT",
+            "inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT",
             0.01,  # Short timeout to trigger timeout path
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=None,  # Active lookup fails
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             side_effect=DeviceConnectionError,  # get_info also fails
         ),
     ):
@@ -4697,15 +4697,15 @@ async def test_bluetooth_provision_secure_device_both_enabled(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=mock_device,
         ),
     ):
@@ -4755,11 +4755,11 @@ async def test_bluetooth_provision_secure_device_both_disabled(
     # Provision - with both disabled, secure device method should not create device
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -4809,15 +4809,15 @@ async def test_bluetooth_provision_secure_device_only_ap_disabled(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=mock_device,
         ),
     ):
@@ -4871,15 +4871,15 @@ async def test_bluetooth_provision_secure_device_only_ble_disabled(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=mock_device,
         ),
     ):
@@ -4935,15 +4935,15 @@ async def test_bluetooth_provision_secure_device_with_restart_required(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=mock_device,
         ),
     ):
@@ -4997,15 +4997,15 @@ async def test_bluetooth_provision_secure_device_fails_gracefully(
 
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=("1.1.1.1", 80),
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.RpcDevice.create",
+            "inpui.components.shelly.config_flow.RpcDevice.create",
             return_value=mock_device,
         ),
     ):
@@ -5042,7 +5042,7 @@ async def test_zeroconf_aborts_idle_ble_flow(
 
     # Now start zeroconf discovery for the same device - should abort BLE flow
     with patch(
-        "homeassistant.components.shelly.config_flow.get_info",
+        "inpui.components.shelly.config_flow.get_info",
         return_value=MOCK_DEVICE_INFO,
     ):
         zeroconf_result = await hass.config_entries.flow.async_init(
@@ -5139,7 +5139,7 @@ async def test_bluetooth_ble_initialize_failure_cleans_up(
     # Confirm to proceed to WiFi scan - this will try to create BLE connection
     # but initialize() will fail
     with patch(
-        "homeassistant.components.shelly.config_flow.RpcDevice.create",
+        "inpui.components.shelly.config_flow.RpcDevice.create",
         return_value=mock_device,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -5241,15 +5241,15 @@ async def test_bluetooth_provision_ble_reconnect_fails_during_ip_fetch(
     # Provision WiFi - timeout occurs, active lookup fails, BLE reconnect fails
     with (
         patch(
-            "homeassistant.components.shelly.config_flow.PROVISIONING_TIMEOUT",
+            "inpui.components.shelly.config_flow.PROVISIONING_TIMEOUT",
             0.01,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.async_lookup_device_by_name",
+            "inpui.components.shelly.config_flow.async_lookup_device_by_name",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.shelly.config_flow.get_info",
+            "inpui.components.shelly.config_flow.get_info",
             side_effect=DeviceConnectionError,
         ),
     ):

@@ -73,7 +73,7 @@ TEST_DEVICE_ID = "FAKEID"
 TEST_PASSWORD = "password"
 TEST_TOKEN = "access_token"
 
-NIO_IMPORT_PREFIX = "homeassistant.components.matrix.nio."
+NIO_IMPORT_PREFIX = "inpui.components.matrix.nio."
 
 
 class _MockAsyncClient(AsyncClient):
@@ -272,14 +272,14 @@ MOCK_REACTION_COMMANDS = {
 @pytest.fixture
 def mock_client():
     """Return mocked AsyncClient."""
-    with patch("homeassistant.components.matrix.AsyncClient", _MockAsyncClient) as mock:
+    with patch("inpui.components.matrix.AsyncClient", _MockAsyncClient) as mock:
         yield mock
 
 
 @pytest.fixture
 def mock_save_json():
     """Prevent saving test access_tokens."""
-    with patch("homeassistant.components.matrix.save_json") as mock:
+    with patch("inpui.components.matrix.save_json") as mock:
         yield mock
 
 
@@ -287,7 +287,7 @@ def mock_save_json():
 def mock_load_json():
     """Mock loading access_tokens from a file."""
     with patch(
-        "homeassistant.components.matrix.load_json_object",
+        "inpui.components.matrix.load_json_object",
         return_value={TEST_MXID: TEST_TOKEN},
     ) as mock:
         yield mock
@@ -297,7 +297,7 @@ def mock_load_json():
 def mock_allowed_path():
     """Allow using NamedTemporaryFile for mock image."""
     with patch(
-        "homeassistant.core_config.Config.is_allowed_path", return_value=True
+        "inpui.core_config.Config.is_allowed_path", return_value=True
     ) as mock:
         yield mock
 

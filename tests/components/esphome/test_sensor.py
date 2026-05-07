@@ -48,7 +48,7 @@ async def test_generic_numeric_sensor(
     mock_esphome_device: MockESPHomeDeviceType,
 ) -> None:
     """Test a generic sensor entity."""
-    logging.getLogger("homeassistant.components.esphome").setLevel(logging.DEBUG)
+    logging.getLogger("inpui.components.esphome").setLevel(logging.DEBUG)
     entity_info = [
         SensorInfo(
             object_id="mysensor",

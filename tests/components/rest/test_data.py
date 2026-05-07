@@ -254,7 +254,7 @@ async def test_rest_data_warning_truncates_long_responses(
 
     # Check that warning was logged with truncation
     # Set the logger filter to only check our specific logger
-    caplog.set_level(logging.WARNING, logger="homeassistant.components.rest.data")
+    caplog.set_level(logging.WARNING, logger="inpui.components.rest.data")
 
     # Verify the truncated warning appears
     assert (

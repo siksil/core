@@ -38,7 +38,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.comelit.VEDO_PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.comelit.VEDO_PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_vedo_config_entry)
 
     await snapshot_platform(

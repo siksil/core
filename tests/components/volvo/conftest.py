@@ -125,7 +125,7 @@ async def mock_api(
     )
 
     with patch(
-        "homeassistant.components.volvo.VolvoCarsApi",
+        "inpui.components.volvo.VolvoCarsApi",
         return_value=api,
     ):
         api.async_execute_command = AsyncMock(return_value=mock_api_data.command_result)
@@ -197,7 +197,7 @@ async def setup_integration(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.volvo.async_setup_entry", return_value=True
+        "inpui.components.volvo.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 

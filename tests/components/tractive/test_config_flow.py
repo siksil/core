@@ -31,7 +31,7 @@ async def test_form(hass: HomeAssistant) -> None:
     with (
         patch("aiotractive.api.API.user_id", return_value="user_id"),
         patch(
-            "homeassistant.components.tractive.async_setup_entry",
+            "inpui.components.tractive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -167,7 +167,7 @@ async def test_reauthentication(hass: HomeAssistant) -> None:
     with (
         patch("aiotractive.api.API.user_id", return_value="USERID"),
         patch(
-            "homeassistant.components.tractive.async_setup_entry",
+            "inpui.components.tractive.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

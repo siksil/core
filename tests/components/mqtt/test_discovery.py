@@ -233,7 +233,7 @@ async def test_invalid_topic(
     """Test sending to invalid topic."""
     await mqtt_mock_entry()
     with patch(
-        "homeassistant.components.mqtt.discovery.async_dispatcher_send"
+        "inpui.components.mqtt.discovery.async_dispatcher_send"
     ) as mock_dispatcher_send:
         mock_dispatcher_send = AsyncMock(return_value=None)
 
@@ -262,7 +262,7 @@ async def test_invalid_json(
     """Test sending in invalid JSON."""
     await mqtt_mock_entry()
     with patch(
-        "homeassistant.components.mqtt.discovery.async_dispatcher_send"
+        "inpui.components.mqtt.discovery.async_dispatcher_send"
     ) as mock_dispatcher_send:
         mock_dispatcher_send = AsyncMock(return_value=None)
 
@@ -284,7 +284,7 @@ async def test_discovery_schema_error(
 ) -> None:
     """Test unexpected error JSON config."""
     with patch(
-        f"homeassistant.components.mqtt.{domain}.DISCOVERY_SCHEMA",
+        f"inpui.components.mqtt.{domain}.DISCOVERY_SCHEMA",
         side_effect=AttributeError("Attribute abc not found"),
     ):
         await mqtt_mock_entry()
@@ -373,7 +373,7 @@ async def test_only_valid_components(
     """Test for a valid component."""
     await mqtt_mock_entry()
     with patch(
-        "homeassistant.components.mqtt.discovery.async_dispatcher_send"
+        "inpui.components.mqtt.discovery.async_dispatcher_send"
     ) as mock_dispatcher_send:
         invalid_component = "timer"
 
@@ -2529,10 +2529,10 @@ async def test_complex_discovery_topic_prefix(
     ].discovery_already_discovered
 
 
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.0)
 @pytest.mark.parametrize(
     "reason", ["single_instance_allowed", "already_configured", "some_abort_error"]
 )
@@ -2569,7 +2569,7 @@ async def test_mqtt_integration_discovery_flow_fitering_on_redundant_payload(
     entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.mqtt.discovery.async_get_mqtt",
+            "inpui.components.mqtt.discovery.async_get_mqtt",
             return_value={"comp": ["comp/discovery/#"]},
         ),
         mock_config_flow("comp", TestFlow),
@@ -2602,10 +2602,10 @@ async def test_mqtt_integration_discovery_flow_fitering_on_redundant_payload(
         assert len(flow_calls) == 2
 
 
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.0)
 async def test_mqtt_discovery_flow_starts_once(
     hass: HomeAssistant,
     mqtt_client_mock: MqttMockPahoClient,
@@ -2641,7 +2641,7 @@ async def test_mqtt_discovery_flow_starts_once(
 
     with (
         patch(
-            "homeassistant.components.mqtt.discovery.async_get_mqtt",
+            "inpui.components.mqtt.discovery.async_get_mqtt",
             return_value={"comp": ["comp/discovery/#"]},
         ),
         mock_config_flow("comp", mock_mqtt_flow),

@@ -78,7 +78,7 @@ SUPPORT_C = 4
 def mock_handle_entity_call():
     """Mock service platform call."""
     with patch(
-        "homeassistant.helpers.service._handle_entity_call",
+        "inpui.helpers.service._handle_entity_call",
         return_value=None,
     ) as mock_call:
         yield mock_call
@@ -628,7 +628,7 @@ async def test_not_mutate_input(hass: HomeAssistant) -> None:
     assert orig == config
 
 
-@patch("homeassistant.helpers.service._LOGGER.error")
+@patch("inpui.helpers.service._LOGGER.error")
 async def test_fail_silently_if_no_service(mock_log, hass: HomeAssistant) -> None:
     """Test failing if service is missing."""
     await service.async_call_from_config(hass, None)
@@ -858,7 +858,7 @@ async def test_async_get_all_descriptions(hass: HomeAssistant) -> None:
     assert await async_setup_component(hass, SYSTEM_HEALTH_DOMAIN, {})
 
     with patch(
-        "homeassistant.helpers.service._load_services_files",
+        "inpui.helpers.service._load_services_files",
         side_effect=service._load_services_files,
     ) as proxy_load_services_files:
         descriptions = await service.async_get_all_descriptions(hass)
@@ -912,7 +912,7 @@ async def test_async_get_all_descriptions(hass: HomeAssistant) -> None:
         }
 
     with patch(
-        "homeassistant.helpers.service._load_services_file",
+        "inpui.helpers.service._load_services_file",
         side_effect=_load_services_file,
     ):
         await async_setup_component(hass, LOGGER_DOMAIN, logger_config)
@@ -1020,7 +1020,7 @@ async def test_async_get_all_descriptions_dot_keys(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.service._load_services_files",
+            "inpui.helpers.service._load_services_files",
             side_effect=service._load_services_files,
         ) as proxy_load_services_files,
         patch(
@@ -1110,7 +1110,7 @@ async def test_async_get_all_descriptions_filter(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.service._load_services_files",
+            "inpui.helpers.service._load_services_files",
             side_effect=service._load_services_files,
         ) as proxy_load_services_files,
         patch(
@@ -1225,7 +1225,7 @@ async def test_async_get_all_descriptions_failing_integration(
 
     with (
         patch(
-            "homeassistant.helpers.service.async_get_integrations",
+            "inpui.helpers.service.async_get_integrations",
             wraps=wrap_get_integrations,
         ),
     ):
@@ -1361,7 +1361,7 @@ async def test_async_get_all_descriptions_new_service_added_while_loading(
         }
 
     with patch(
-        "homeassistant.helpers.service._load_services_file",
+        "inpui.helpers.service._load_services_file",
         side_effect=_load_services_file,
     ):
         await async_setup_component(hass, logger_domain, logger_config)
@@ -1443,7 +1443,7 @@ async def test_async_get_descriptions_with_placeholders(hass: HomeAssistant) -> 
 
     with (
         patch(
-            "homeassistant.helpers.service._load_services_files",
+            "inpui.helpers.service._load_services_files",
             side_effect=service._load_services_files,
         ) as proxy_load_services_files,
         patch(
@@ -1706,7 +1706,7 @@ async def test_call_context_target_all(
 ) -> None:
     """Check we only target allowed entities if targeting all."""
     with patch(
-        "homeassistant.auth.AuthManager.async_get_user",
+        "inpui.auth.AuthManager.async_get_user",
         return_value=Mock(
             permissions=PolicyPermissions(
                 {"entities": {"entity_ids": {"light.kitchen": True}}}, None
@@ -1736,7 +1736,7 @@ async def test_call_context_target_specific(
 ) -> None:
     """Check targeting specific entities."""
     with patch(
-        "homeassistant.auth.AuthManager.async_get_user",
+        "inpui.auth.AuthManager.async_get_user",
         return_value=Mock(
             permissions=PolicyPermissions(
                 {"entities": {"entity_ids": {"light.kitchen": True}}}, None
@@ -1767,7 +1767,7 @@ async def test_call_context_target_specific_no_auth(
     with (
         pytest.raises(exceptions.Unauthorized) as err,
         patch(
-            "homeassistant.auth.AuthManager.async_get_user",
+            "inpui.auth.AuthManager.async_get_user",
             return_value=Mock(permissions=PolicyPermissions({}, None), is_admin=False),
         ),
     ):
@@ -2046,7 +2046,7 @@ async def test_domain_control_unknown(
         calls.append(call)
 
     with patch(
-        "homeassistant.helpers.entity_registry.async_get",
+        "inpui.helpers.entity_registry.async_get",
         return_value=Mock(entities=mock_entities),
     ):
         protected_mock_service = decorator(hass, "test_domain")(mock_service_log)
@@ -2795,7 +2795,7 @@ async def test_deprecated_async_extract_referenced_entity_ids(
         indirectly_referenced={"entity.indirect"},
     )
     with patch(
-        "homeassistant.helpers.target.async_extract_referenced_entity_ids",
+        "inpui.helpers.target.async_extract_referenced_entity_ids",
         return_value=mock_selected,
     ) as mock_target_func:
         call = ServiceCall(hass, "test", "test", {"entity_id": "light.test"})

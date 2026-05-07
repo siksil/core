@@ -29,7 +29,7 @@ SELECT_DIALOG_LEVEL_ENTITY = "select.zone_a_speech_enhancement"
 @pytest.fixture(name="platform_select", autouse=True)
 async def platform_binary_sensor_fixture():
     """Patch Sonos to only load select platform."""
-    with patch("homeassistant.components.sonos.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.sonos.PLATFORMS", [Platform.SELECT]):
         yield
 
 

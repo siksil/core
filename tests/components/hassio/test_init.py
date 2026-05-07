@@ -263,7 +263,7 @@ async def test_setup_api_push_api_data_default(
     """Test setup with API push default data."""
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
-        patch("homeassistant.components.hassio.config.STORE_DELAY_SAVE", 0),
+        patch("inpui.components.hassio.config.STORE_DELAY_SAVE", 0),
     ):
         result = await async_setup_component(hass, "hassio", {"http": {}, "hassio": {}})
         await hass.async_block_till_done()
@@ -368,7 +368,7 @@ async def test_setup_core_push_config(
         SupervisorOptions(timezone="testzone")
     )
 
-    with patch("homeassistant.util.dt.set_default_time_zone"):
+    with patch("inpui.util.dt.set_default_time_zone"):
         await hass.config.async_update(time_zone="America/New_York", country="US")
     await hass.async_block_till_done()
     supervisor_client.supervisor.set_options.assert_called_with(
@@ -736,7 +736,7 @@ async def test_service_calls_core(
     assert aioclient_mock.call_count + len(supervisor_client.mock_calls) == 20
 
     with patch(
-        "homeassistant.config.async_check_ha_config_file", return_value=None
+        "inpui.config.async_check_ha_config_file", return_value=None
     ) as mock_check_config:
         await hass.services.async_call("homeassistant", "restart")
         await hass.async_block_till_done()
@@ -1009,11 +1009,11 @@ async def test_setup_hardware_integration(
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
         patch(
-            f"homeassistant.components.{integration}.async_setup_entry",
+            f"inpui.components.{integration}.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.homeassistant_yellow.config_flow.probe_silabs_firmware_info",
+            "inpui.components.homeassistant_yellow.config_flow.probe_silabs_firmware_info",
             return_value=None,
         ),
     ):
@@ -1055,17 +1055,17 @@ async def test_deprecated_installation_issue_os_armv7(
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
         patch(
-            "homeassistant.components.hassio._is_32_bit",
+            "inpui.components.hassio._is_32_bit",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info", return_value={"board": board}
+            "inpui.components.hassio.get_os_info", return_value={"board": board}
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             return_value={"hassos": True, "arch": "armv7"},
         ),
-        patch("homeassistant.components.hardware.async_setup", return_value=True),
+        patch("inpui.components.hardware.async_setup", return_value=True),
     ):
         assert await async_setup_component(hass, HOMEASSISTANT_DOMAIN, {})
         config_entry = MockConfigEntry(domain=DOMAIN, data={}, unique_id=DOMAIN)
@@ -1117,18 +1117,18 @@ async def test_deprecated_installation_issue_32bit_os(
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
         patch(
-            "homeassistant.components.hassio._is_32_bit",
+            "inpui.components.hassio._is_32_bit",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             return_value={"board": "rpi3-64"},
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             return_value={"hassos": True, "arch": arch},
         ),
-        patch("homeassistant.components.hardware.async_setup", return_value=True),
+        patch("inpui.components.hardware.async_setup", return_value=True),
     ):
         assert await async_setup_component(hass, HOMEASSISTANT_DOMAIN, {})
         config_entry = MockConfigEntry(domain=DOMAIN, data={}, unique_id=DOMAIN)
@@ -1178,18 +1178,18 @@ async def test_deprecated_installation_issue_32bit_supervised(
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
         patch(
-            "homeassistant.components.hassio._is_32_bit",
+            "inpui.components.hassio._is_32_bit",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             return_value={"board": "rpi3-64"},
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             return_value={"hassos": None, "arch": arch},
         ),
-        patch("homeassistant.components.hardware.async_setup", return_value=True),
+        patch("inpui.components.hardware.async_setup", return_value=True),
     ):
         assert await async_setup_component(hass, HOMEASSISTANT_DOMAIN, {})
         config_entry = MockConfigEntry(domain=DOMAIN, data={}, unique_id=DOMAIN)
@@ -1243,18 +1243,18 @@ async def test_deprecated_installation_issue_64bit_supervised(
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
         patch(
-            "homeassistant.components.hassio._is_32_bit",
+            "inpui.components.hassio._is_32_bit",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             return_value={"board": "generic-x86-64"},
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             return_value={"hassos": None, "arch": arch},
         ),
-        patch("homeassistant.components.hardware.async_setup", return_value=True),
+        patch("inpui.components.hardware.async_setup", return_value=True),
     ):
         assert await async_setup_component(hass, HOMEASSISTANT_DOMAIN, {})
         config_entry = MockConfigEntry(domain=DOMAIN, data={}, unique_id=DOMAIN)
@@ -1306,14 +1306,14 @@ async def test_deprecated_installation_issue_supported_board(
     with (
         patch.dict(os.environ, MOCK_ENVIRON),
         patch(
-            "homeassistant.components.hassio._is_32_bit",
+            "inpui.components.hassio._is_32_bit",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info", return_value={"board": board}
+            "inpui.components.hassio.get_os_info", return_value={"board": board}
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             return_value={"hassos": True, "arch": "aarch64"},
         ),
     ):

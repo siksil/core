@@ -59,15 +59,15 @@ def mock_nintendo_authenticator() -> Generator[MagicMock]:
     """Mock Nintendo Authenticator."""
     with (
         patch(
-            "homeassistant.components.nintendo_parental_controls.Authenticator",
+            "inpui.components.nintendo_parental_controls.Authenticator",
             autospec=True,
         ) as mock_auth_class,
         patch(
-            "homeassistant.components.nintendo_parental_controls.config_flow.Authenticator",
+            "inpui.components.nintendo_parental_controls.config_flow.Authenticator",
             new=mock_auth_class,
         ),
         patch(
-            "homeassistant.components.nintendo_parental_controls.coordinator.NintendoParental.update",
+            "inpui.components.nintendo_parental_controls.coordinator.NintendoParental.update",
             return_value=None,
         ),
     ):
@@ -86,7 +86,7 @@ def mock_nintendo_authenticator() -> Generator[MagicMock]:
 def mock_nintendo_api() -> Generator[AsyncMock]:
     """Mock Nintendo API."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls.config_flow.Api",
+        "inpui.components.nintendo_parental_controls.config_flow.Api",
         autospec=True,
     ) as mock_api_class:
         mock_api_instance = MagicMock()
@@ -106,7 +106,7 @@ def mock_nintendo_client(
     mock_client_instance.devices = {"testdevid": mock_nintendo_device}
     # Now patch the NintendoParental class in the coordinator with our mock instance
     with patch(
-        "homeassistant.components.nintendo_parental_controls.coordinator.NintendoParental",
+        "inpui.components.nintendo_parental_controls.coordinator.NintendoParental",
         autospec=True,
     ) as mock_client_class:
         mock_client_class.return_value = mock_client_instance
@@ -119,7 +119,7 @@ def mock_nintendo_client(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls.async_setup_entry",
+        "inpui.components.nintendo_parental_controls.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

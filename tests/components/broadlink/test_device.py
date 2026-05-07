@@ -13,7 +13,7 @@ from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import get_device
 
-DEVICE_FACTORY = "homeassistant.components.broadlink.device.blk.gendevice"
+DEVICE_FACTORY = "inpui.components.broadlink.device.blk.gendevice"
 
 
 async def test_device_setup(hass: HomeAssistant) -> None:

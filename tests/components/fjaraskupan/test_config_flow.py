@@ -20,7 +20,7 @@ def fixture_mock_setup_entry() -> Generator[AsyncMock]:
     """Fixture for config entry."""
 
     with patch(
-        "homeassistant.components.fjaraskupan.async_setup_entry", return_value=True
+        "inpui.components.fjaraskupan.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -28,7 +28,7 @@ def fixture_mock_setup_entry() -> Generator[AsyncMock]:
 async def test_configure(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     """Test we get the form."""
     with patch(
-        "homeassistant.components.fjaraskupan.config_flow.async_discovered_service_info",
+        "inpui.components.fjaraskupan.config_flow.async_discovered_service_info",
         return_value=[COOKER_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -50,7 +50,7 @@ async def test_scan_no_devices(hass: HomeAssistant) -> None:
     """Test we get the form."""
 
     with patch(
-        "homeassistant.components.fjaraskupan.config_flow.async_discovered_service_info",
+        "inpui.components.fjaraskupan.config_flow.async_discovered_service_info",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_init(

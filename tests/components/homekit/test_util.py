@@ -363,7 +363,7 @@ async def test_async_show_setup_msg(hass: HomeAssistant, hk_driver) -> None:
     assert entry
 
     with patch(
-        "homeassistant.components.persistent_notification.async_create",
+        "inpui.components.persistent_notification.async_create",
         side_effect=async_create,
     ) as mock_create:
         async_show_setup_message(
@@ -387,7 +387,7 @@ async def test_async_show_setup_msg(hass: HomeAssistant, hk_driver) -> None:
 async def test_async_dismiss_setup_msg(hass: HomeAssistant) -> None:
     """Test dismiss setup message."""
     with patch(
-        "homeassistant.components.persistent_notification.async_dismiss",
+        "inpui.components.persistent_notification.async_dismiss",
         side_effect=async_dismiss,
     ) as mock_dismiss:
         async_dismiss_setup_message(hass, "entry_id")
@@ -400,31 +400,31 @@ async def test_async_dismiss_setup_msg(hass: HomeAssistant) -> None:
 async def test_port_is_available(hass: HomeAssistant) -> None:
     """Test we can get an available port and it is actually available."""
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(0),
     ):
         next_port = async_find_next_available_port(hass, DEFAULT_CONFIG_FLOW_PORT)
     assert next_port
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(0),
     ):
         assert async_port_is_available(next_port)
 
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(5),
     ):
         next_port = async_find_next_available_port(hass, DEFAULT_CONFIG_FLOW_PORT)
     assert next_port == DEFAULT_CONFIG_FLOW_PORT + 5
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(0),
     ):
         assert async_port_is_available(next_port)
 
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(1),
     ):
         assert not async_port_is_available(next_port)
@@ -440,7 +440,7 @@ async def test_port_is_available_skips_existing_entries(hass: HomeAssistant) -> 
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(),
     ):
         next_port = async_find_next_available_port(hass, DEFAULT_CONFIG_FLOW_PORT)
@@ -448,20 +448,20 @@ async def test_port_is_available_skips_existing_entries(hass: HomeAssistant) -> 
     assert next_port == DEFAULT_CONFIG_FLOW_PORT + 1
 
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(),
     ):
         assert async_port_is_available(next_port)
 
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(4),
     ):
         next_port = async_find_next_available_port(hass, DEFAULT_CONFIG_FLOW_PORT)
 
     assert next_port == DEFAULT_CONFIG_FLOW_PORT + 5
     with patch(
-        "homeassistant.components.homekit.util.socket.socket",
+        "inpui.components.homekit.util.socket.socket",
         return_value=_mock_socket(),
     ):
         assert async_port_is_available(next_port)
@@ -469,7 +469,7 @@ async def test_port_is_available_skips_existing_entries(hass: HomeAssistant) -> 
     with (
         pytest.raises(OSError),
         patch(
-            "homeassistant.components.homekit.util.socket.socket",
+            "inpui.components.homekit.util.socket.socket",
             return_value=_mock_socket(10),
         ),
     ):

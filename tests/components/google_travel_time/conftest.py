@@ -36,7 +36,7 @@ async def mock_config_fixture(
 def mock_setup_entry() -> Generator[None]:
     """Bypass entry setup."""
     with patch(
-        "homeassistant.components.google_travel_time.async_setup_entry",
+        "inpui.components.google_travel_time.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -47,15 +47,15 @@ def routes_mock() -> Generator[AsyncMock]:
     """Return valid API result."""
     with (
         patch(
-            "homeassistant.components.google_travel_time.helpers.RoutesAsyncClient",
+            "inpui.components.google_travel_time.helpers.RoutesAsyncClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.google_travel_time.sensor.RoutesAsyncClient",
+            "inpui.components.google_travel_time.sensor.RoutesAsyncClient",
             new=mock_client,
         ),
         patch(
-            "homeassistant.components.google_travel_time.services.RoutesAsyncClient",
+            "inpui.components.google_travel_time.services.RoutesAsyncClient",
             new=mock_client,
         ),
     ):

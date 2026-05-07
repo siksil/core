@@ -27,7 +27,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.fluss.async_setup_entry", return_value=True
+        "inpui.components.fluss.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -37,11 +37,11 @@ def mock_api_client() -> Generator[AsyncMock]:
     """Mock Fluss API client with single device."""
     with (
         patch(
-            "homeassistant.components.fluss.coordinator.FlussApiClient",
+            "inpui.components.fluss.coordinator.FlussApiClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.fluss.config_flow.FlussApiClient",
+            "inpui.components.fluss.config_flow.FlussApiClient",
             new=mock_client,
         ),
     ):

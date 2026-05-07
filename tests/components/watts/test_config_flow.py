@@ -54,7 +54,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value="user123",
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -99,7 +99,7 @@ async def test_invalid_token_flow(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -236,7 +236,7 @@ async def test_reauth_flow(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value="test-user-id",
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -291,7 +291,7 @@ async def test_reauth_account_mismatch(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value="different-user-id",
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -334,7 +334,7 @@ async def test_reconfigure_flow(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value="test-user-id",
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -384,7 +384,7 @@ async def test_reconfigure_account_mismatch(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value="different-user-id",
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -432,7 +432,7 @@ async def test_unique_config_entry(
     )
 
     with patch(
-        "homeassistant.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
+        "inpui.components.watts.config_flow.WattsVisionAuth.extract_user_id_from_token",
         return_value="user123",
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])

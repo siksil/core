@@ -35,7 +35,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def todo_only() -> Generator[None]:
     """Enable only the todo platform."""
     with patch(
-        "homeassistant.components.cookidoo.PLATFORMS",
+        "inpui.components.cookidoo.PLATFORMS",
         [Platform.TODO],
     ):
         yield
@@ -50,7 +50,7 @@ async def test_todo(
 ) -> None:
     """Snapshot test states of todo platform."""
 
-    with patch("homeassistant.components.cookidoo.PLATFORMS", [Platform.TODO]):
+    with patch("inpui.components.cookidoo.PLATFORMS", [Platform.TODO]):
         await setup_integration(hass, cookidoo_config_entry)
 
     assert cookidoo_config_entry.state is ConfigEntryState.LOADED

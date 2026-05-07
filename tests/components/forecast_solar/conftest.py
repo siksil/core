@@ -27,7 +27,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.forecast_solar.async_setup_entry", return_value=True
+        "inpui.components.forecast_solar.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -63,7 +63,7 @@ def mock_forecast_solar(hass: HomeAssistant) -> Generator[MagicMock]:
     hass fixture included because it sets the time zone.
     """
     with patch(
-        "homeassistant.components.forecast_solar.coordinator.ForecastSolar",
+        "inpui.components.forecast_solar.coordinator.ForecastSolar",
         autospec=True,
     ) as forecast_solar_mock:
         forecast_solar = forecast_solar_mock.return_value

@@ -69,15 +69,15 @@ def mock_prowlpy() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.prowl.notify.prowlpy.AsyncProwl",
+            "inpui.components.prowl.notify.prowlpy.AsyncProwl",
             return_value=mock_instance,
         ),
         patch(
-            "homeassistant.components.prowl.helpers.prowlpy.AsyncProwl",
+            "inpui.components.prowl.helpers.prowlpy.AsyncProwl",
             return_value=mock_instance,
         ),
         patch(
-            "homeassistant.components.prowl.__init__.prowlpy.AsyncProwl",
+            "inpui.components.prowl.__init__.prowlpy.AsyncProwl",
             return_value=mock_instance,
         ),
     ):

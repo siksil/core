@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.probe_plus.async_setup_entry", return_value=True
+        "inpui.components.probe_plus.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -40,7 +40,7 @@ def mock_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def mock_probe_plus() -> MagicMock:
     """Mock the Probe Plus device."""
     with patch(
-        "homeassistant.components.probe_plus.coordinator.ProbePlusDevice",
+        "inpui.components.probe_plus.coordinator.ProbePlusDevice",
         autospec=True,
     ) as mock_device:
         device = mock_device.return_value

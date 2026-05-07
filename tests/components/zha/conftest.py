@@ -280,7 +280,7 @@ def cluster_handler():
 @pytest.fixture(autouse=True)
 def speed_up_radio_mgr():
     """Speed up the radio manager connection time by removing delays."""
-    with patch("homeassistant.components.zha.radio_manager.CONNECT_DELAY_S", 0.00001):
+    with patch("inpui.components.zha.radio_manager.CONNECT_DELAY_S", 0.00001):
         yield
 
 

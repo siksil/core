@@ -54,7 +54,7 @@ async def test_setup_entry_token_error(
 ) -> None:
     """Test setup entry fails when token validation fails."""
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
+        "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
         side_effect=ClientResponseError(
             RequestInfo("", "POST", {}, ""), None, status=status
         ),
@@ -69,7 +69,7 @@ async def test_setup_entry_token_connection_error(
 ) -> None:
     """Test setup entry retries when token validation has a connection error."""
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
+        "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
         side_effect=ClientConnectionError(),
     ):
         await init_integration(hass, mock_config_entry)

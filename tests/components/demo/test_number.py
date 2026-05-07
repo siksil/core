@@ -30,7 +30,7 @@ ENTITY_SMALL_RANGE = "number.small_range"
 def number_only() -> Generator[None]:
     """Enable only the number platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.NUMBER],
     ):
         yield

@@ -27,7 +27,7 @@ async def test_config_entry_diagnostics(
     config_entry = hass.config_entries.async_entries(DOMAIN)[0]
 
     with patch(
-        "homeassistant.components.aemet.AEMET.raw_data",
+        "inpui.components.aemet.AEMET.raw_data",
         return_value={},
     ):
         result = await get_diagnostics_for_config_entry(hass, hass_client, config_entry)

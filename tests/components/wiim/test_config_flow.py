@@ -65,7 +65,7 @@ async def test_user_flow_abort_when_homeassistant_url_missing(
 ) -> None:
     """Test the user flow aborts before probing when no URL is available."""
     with patch(
-        "homeassistant.components.wiim.util.get_url",
+        "inpui.components.wiim.util.get_url",
         side_effect=NoURLAvailableError,
     ):
         result = await hass.config_entries.flow.async_init(

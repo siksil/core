@@ -91,7 +91,7 @@ async def test_async_step_user_no_devices_found(hass: HomeAssistant) -> None:
 async def test_async_step_user_with_found_devices(hass: HomeAssistant) -> None:
     """Test setup from service info cache with devices found."""
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -113,7 +113,7 @@ async def test_async_step_user_with_found_devices_waits_to_pair(
 ) -> None:
     """Test setup from service info cache with devices found that require pairing mode."""
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_NOT_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -131,7 +131,7 @@ async def test_async_step_user_with_found_devices_retries_pairing(
 ) -> None:
     """Test setup from service info cache with devices found that require pairing mode, times out, then completes."""
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_NOT_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -150,7 +150,7 @@ async def test_async_step_user_with_found_devices_retries_pairing(
 async def test_async_step_user_device_added_between_steps(hass: HomeAssistant) -> None:
     """Test the device gets added via another flow between steps."""
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -167,7 +167,7 @@ async def test_async_step_user_device_added_between_steps(hass: HomeAssistant) -
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.snooz.async_setup_entry", return_value=True):
+    with patch("inpui.components.snooz.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={CONF_NAME: TEST_SNOOZ_DISPLAY_NAME},
@@ -188,7 +188,7 @@ async def test_async_step_user_with_found_devices_already_setup(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -249,7 +249,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
     assert result["step_id"] == "bluetooth_confirm"
 
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -277,7 +277,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.snooz.config_flow.async_discovered_service_info",
+        "inpui.components.snooz.config_flow.async_discovered_service_info",
         return_value=[SNOOZ_SERVICE_INFO_PAIRING],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -308,7 +308,7 @@ async def _test_pairs(
         return service_info
 
     with patch(
-        "homeassistant.components.snooz.config_flow.async_process_advertisements",
+        "inpui.components.snooz.config_flow.async_process_advertisements",
         _async_process_advertisements,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -335,7 +335,7 @@ async def _test_pairs_timeout(
         raise TimeoutError
 
     with patch(
-        "homeassistant.components.snooz.config_flow.async_process_advertisements",
+        "inpui.components.snooz.config_flow.async_process_advertisements",
         _async_process_advertisements,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -355,7 +355,7 @@ async def _test_pairs_timeout(
 async def _test_setup_entry(
     hass: HomeAssistant, flow_id: str, user_input: dict | None = None
 ) -> None:
-    with patch("homeassistant.components.snooz.async_setup_entry", return_value=True):
+    with patch("inpui.components.snooz.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_configure(
             flow_id,
             user_input=user_input or {},

@@ -53,7 +53,7 @@ async def test_streaming_audio(
     ]
 
     with patch(
-        "homeassistant.components.wyoming.wake_word.AsyncTcpClient",
+        "inpui.components.wyoming.wake_word.AsyncTcpClient",
         MockAsyncTcpClient(client_events),
     ):
         result = await entity.async_process_audio_stream(audio_stream(), None)
@@ -79,7 +79,7 @@ async def test_streaming_audio_connection_lost(
         yield b"chunk", 1
 
     with patch(
-        "homeassistant.components.wyoming.wake_word.AsyncTcpClient",
+        "inpui.components.wyoming.wake_word.AsyncTcpClient",
         MockAsyncTcpClient([None]),
     ):
         result = await entity.async_process_audio_stream(audio_stream(), None)
@@ -105,7 +105,7 @@ async def test_streaming_audio_oserror(
 
     with (
         patch(
-            "homeassistant.components.wyoming.wake_word.AsyncTcpClient",
+            "inpui.components.wyoming.wake_word.AsyncTcpClient",
             mock_client,
         ),
         patch.object(mock_client, "read_event", side_effect=OSError("Boom!")),
@@ -132,7 +132,7 @@ async def test_detect_message_with_wake_word(
     )
 
     with patch(
-        "homeassistant.components.wyoming.wake_word.AsyncTcpClient",
+        "inpui.components.wyoming.wake_word.AsyncTcpClient",
         mock_client,
     ):
         result = await entity.async_process_audio_stream(audio_stream(), "my-wake-word")
@@ -158,7 +158,7 @@ async def test_detect_message_with_wrong_wake_word(
     )
 
     with patch(
-        "homeassistant.components.wyoming.wake_word.AsyncTcpClient",
+        "inpui.components.wyoming.wake_word.AsyncTcpClient",
         mock_client,
     ):
         result = await entity.async_process_audio_stream(audio_stream(), "my-wake-word")
@@ -214,7 +214,7 @@ async def test_dynamic_wake_word_info(
 
     # Different Wyoming info will be fetched
     with patch(
-        "homeassistant.components.wyoming.wake_word.load_wyoming_info",
+        "inpui.components.wyoming.wake_word.load_wyoming_info",
         return_value=new_info,
     ):
         assert (await entity.get_supported_wake_words()) == [

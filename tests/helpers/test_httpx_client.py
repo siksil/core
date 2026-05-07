@@ -219,11 +219,11 @@ async def test_warning_close_session_integration(
     """Test log warning message when closing the session from integration context."""
     with (
         patch(
-            "homeassistant.helpers.frame.linecache.getline",
+            "inpui.helpers.frame.linecache.getline",
             return_value="await session.aclose()",
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=extract_stack_to_frame(
                 [
                     Mock(
@@ -263,11 +263,11 @@ async def test_warning_close_session_custom(
     mock_integration(hass, MockModule("hue"), built_in=False)
     with (
         patch(
-            "homeassistant.helpers.frame.linecache.getline",
+            "inpui.helpers.frame.linecache.getline",
             return_value="await session.aclose()",
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=extract_stack_to_frame(
                 [
                     Mock(

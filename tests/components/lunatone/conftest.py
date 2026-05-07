@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.lunatone.async_setup_entry",
+        "inpui.components.lunatone.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -47,7 +47,7 @@ def mock_lunatone_devices() -> Generator[AsyncMock]:
         return device_list
 
     with patch(
-        "homeassistant.components.lunatone.Devices", autospec=True
+        "inpui.components.lunatone.Devices", autospec=True
     ) as mock_devices:
         devices = mock_devices.return_value
         devices.data = build_devices_data()
@@ -62,11 +62,11 @@ def mock_lunatone_info() -> Generator[AsyncMock]:
     """Mock a Lunatone info object."""
     with (
         patch(
-            "homeassistant.components.lunatone.Info",
+            "inpui.components.lunatone.Info",
             autospec=True,
         ) as mock_info,
         patch(
-            "homeassistant.components.lunatone.config_flow.Info",
+            "inpui.components.lunatone.config_flow.Info",
             new=mock_info,
         ),
     ):
@@ -83,7 +83,7 @@ def mock_lunatone_info() -> Generator[AsyncMock]:
 def mock_lunatone_dali_broadcast() -> Generator[AsyncMock]:
     """Mock a Lunatone DALI broadcast object."""
     with patch(
-        "homeassistant.components.lunatone.DALIBroadcast",
+        "inpui.components.lunatone.DALIBroadcast",
         autospec=True,
     ) as mock_dali_broadcast:
         dali_broadcast = mock_dali_broadcast.return_value

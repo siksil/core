@@ -32,11 +32,11 @@ async def test_form(hass: HomeAssistant, client: MagicMock) -> None:
 
     with (
         patch(
-            "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+            "inpui.components.balboa.config_flow.SpaClient.__aenter__",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.balboa.async_setup_entry",
+            "inpui.components.balboa.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -58,7 +58,7 @@ async def test_form_cannot_connect(hass: HomeAssistant, client: MagicMock) -> No
     )
 
     with patch(
-        "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+        "inpui.components.balboa.config_flow.SpaClient.__aenter__",
         return_value=client,
         side_effect=SpaConnectionError(),
     ):
@@ -77,7 +77,7 @@ async def test_form_spa_not_configured(hass: HomeAssistant, client: MagicMock) -
     )
 
     with patch(
-        "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+        "inpui.components.balboa.config_flow.SpaClient.__aenter__",
         return_value=client,
     ):
         client.async_configuration_loaded.return_value = False
@@ -96,7 +96,7 @@ async def test_unknown_error(hass: HomeAssistant, client: MagicMock) -> None:
     )
 
     with patch(
-        "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+        "inpui.components.balboa.config_flow.SpaClient.__aenter__",
         return_value=client,
         side_effect=Exception("Boom"),
     ):
@@ -122,11 +122,11 @@ async def test_already_configured(hass: HomeAssistant, client: MagicMock) -> Non
 
     with (
         patch(
-            "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+            "inpui.components.balboa.config_flow.SpaClient.__aenter__",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.balboa.async_setup_entry",
+            "inpui.components.balboa.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -154,7 +154,7 @@ async def test_options_flow(hass: HomeAssistant, client: MagicMock) -> None:
     assert result["step_id"] == "init"
 
     with patch(
-        "homeassistant.components.balboa.async_setup_entry",
+        "inpui.components.balboa.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.options.async_configure(
@@ -170,7 +170,7 @@ async def test_options_flow(hass: HomeAssistant, client: MagicMock) -> None:
 async def test_dhcp_discovery(hass: HomeAssistant, client: MagicMock) -> None:
     """Test we can process the discovery from dhcp."""
     with patch(
-        "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+        "inpui.components.balboa.config_flow.SpaClient.__aenter__",
         return_value=client,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -230,7 +230,7 @@ async def test_dhcp_discovery_failed(
 ) -> None:
     """Test failed setup from dhcp."""
     with patch(
-        "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+        "inpui.components.balboa.config_flow.SpaClient.__aenter__",
         return_value=client,
         side_effect=side_effect(),
     ):
@@ -248,7 +248,7 @@ async def test_dhcp_discovery_manual_user_setup(
 ) -> None:
     """Test dhcp discovery with manual user setup."""
     with patch(
-        "homeassistant.components.balboa.config_flow.SpaClient.__aenter__",
+        "inpui.components.balboa.config_flow.SpaClient.__aenter__",
         return_value=client,
     ):
         result = await hass.config_entries.flow.async_init(

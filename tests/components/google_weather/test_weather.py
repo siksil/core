@@ -38,7 +38,7 @@ async def test_weather(
 ) -> None:
     """Test states of the weather."""
     with patch(
-        "homeassistant.components.google_weather._PLATFORMS", [Platform.WEATHER]
+        "inpui.components.google_weather._PLATFORMS", [Platform.WEATHER]
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

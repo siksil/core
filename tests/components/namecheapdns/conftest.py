@@ -25,7 +25,7 @@ TEST_USER_INPUT = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.namecheapdns.async_setup_entry", return_value=True
+        "inpui.components.namecheapdns.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -35,7 +35,7 @@ def mock_update_namecheapdns() -> Generator[AsyncMock]:
     """Mock update_namecheapdns."""
 
     with patch(
-        "homeassistant.components.namecheapdns.config_flow.update_namecheapdns",
+        "inpui.components.namecheapdns.config_flow.update_namecheapdns",
         return_value=True,
     ) as mock:
         yield mock

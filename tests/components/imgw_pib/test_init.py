@@ -21,7 +21,7 @@ async def test_config_not_ready(
 ) -> None:
     """Test for setup failure if the connection to the service fails."""
     with patch(
-        "homeassistant.components.imgw_pib.ImgwPib.create",
+        "inpui.components.imgw_pib.ImgwPib.create",
         side_effect=ApiError("API Error"),
     ):
         await init_integration(hass, mock_config_entry)

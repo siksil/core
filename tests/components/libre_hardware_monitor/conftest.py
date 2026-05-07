@@ -33,7 +33,7 @@ REAUTH_INPUT = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.libre_hardware_monitor.async_setup_entry",
+        "inpui.components.libre_hardware_monitor.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -68,11 +68,11 @@ def mock_lhm_client() -> Generator[AsyncMock]:
     """Mock a LibreHardwareMonitor client."""
     with (
         patch(
-            "homeassistant.components.libre_hardware_monitor.config_flow.LibreHardwareMonitorClient",
+            "inpui.components.libre_hardware_monitor.config_flow.LibreHardwareMonitorClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.libre_hardware_monitor.coordinator.LibreHardwareMonitorClient",
+            "inpui.components.libre_hardware_monitor.coordinator.LibreHardwareMonitorClient",
             new=mock_client,
         ),
     ):

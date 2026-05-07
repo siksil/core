@@ -23,15 +23,15 @@ async def test_firmware_check_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.check_firmware",
+            "inpui.components.qnap_qsw.QnapQswApi.check_firmware",
             side_effect=APIError,
         ),
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.validate",
+            "inpui.components.qnap_qsw.QnapQswApi.validate",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.update",
+            "inpui.components.qnap_qsw.QnapQswApi.update",
             return_value=None,
         ),
     ):
@@ -50,15 +50,15 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.check_firmware",
+            "inpui.components.qnap_qsw.QnapQswApi.check_firmware",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.validate",
+            "inpui.components.qnap_qsw.QnapQswApi.validate",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.update",
+            "inpui.components.qnap_qsw.QnapQswApi.update",
             return_value=None,
         ),
     ):

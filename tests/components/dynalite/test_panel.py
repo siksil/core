@@ -25,7 +25,7 @@ async def test_get_config(
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -71,7 +71,7 @@ async def test_save_config(
     )
     entry1.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry1.entry_id)
@@ -82,7 +82,7 @@ async def test_save_config(
     )
     entry2.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry2.entry_id)
@@ -125,7 +125,7 @@ async def test_save_config_invalid_entry(
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -153,11 +153,11 @@ async def test_panel_registration(hass: HomeAssistant) -> None:
     """Test that the dynalite panel is registered with correct module URL format."""
     with (
         patch(
-            "homeassistant.components.dynalite.panel.locate_dir",
+            "inpui.components.dynalite.panel.locate_dir",
             return_value="/mock/path",
         ),
         patch(
-            "homeassistant.components.dynalite.panel.get_build_id", return_value="1.2.3"
+            "inpui.components.dynalite.panel.get_build_id", return_value="1.2.3"
         ),
     ):
         result = await setup.async_setup_component(hass, dynalite.DOMAIN, {})

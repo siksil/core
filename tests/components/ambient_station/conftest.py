@@ -64,7 +64,7 @@ def mock_aioambient_fixture(api: Mock) -> Generator[None]:
     """Define a fixture to patch aioambient."""
     with (
         patch(
-            "homeassistant.components.ambient_station.config_flow.API",
+            "inpui.components.ambient_station.config_flow.API",
             return_value=api,
         ),
         patch("aioambient.websocket.Websocket.connect"),

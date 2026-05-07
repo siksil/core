@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(name="ialarm_api")
 def ialarm_api_fixture():
     """Set up IAlarm API fixture."""
-    with patch("homeassistant.components.ialarm.IAlarm") as mock_ialarm_api:
+    with patch("inpui.components.ialarm.IAlarm") as mock_ialarm_api:
         yield mock_ialarm_api
 
 

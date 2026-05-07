@@ -45,9 +45,9 @@ def disable_bluetooth_auto_recovery():
 def mock_operating_system_85():
     """Mock running Home Assistant Operating system 8.5."""
     with (
-        patch("homeassistant.helpers.hassio.is_hassio", return_value=True),
+        patch("inpui.helpers.hassio.is_hassio", return_value=True),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             return_value={
                 "version": "8.5",
                 "version_latest": "10.0.dev20220912",
@@ -57,8 +57,8 @@ def mock_operating_system_85():
                 "data_disk": "/dev/mmcblk1p4",
             },
         ),
-        patch("homeassistant.components.hassio.get_info", return_value={}),
-        patch("homeassistant.components.hassio.get_host_info", return_value={}),
+        patch("inpui.components.hassio.get_info", return_value={}),
+        patch("inpui.components.hassio.get_host_info", return_value={}),
     ):
         yield
 
@@ -67,9 +67,9 @@ def mock_operating_system_85():
 def mock_operating_system_90():
     """Mock running Home Assistant Operating system 9.0."""
     with (
-        patch("homeassistant.helpers.hassio.is_hassio", return_value=True),
+        patch("inpui.helpers.hassio.is_hassio", return_value=True),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             return_value={
                 "version": "9.0.dev20220912",
                 "version_latest": "10.0.dev20220912",
@@ -79,8 +79,8 @@ def mock_operating_system_90():
                 "data_disk": "/dev/mmcblk1p4",
             },
         ),
-        patch("homeassistant.components.hassio.get_info", return_value={}),
-        patch("homeassistant.components.hassio.get_host_info", return_value={}),
+        patch("inpui.components.hassio.get_info", return_value={}),
+        patch("inpui.components.hassio.get_host_info", return_value={}),
     ):
         yield
 
@@ -91,7 +91,7 @@ def macos_adapter() -> Generator[None]:
     with (
         patch_bleak_backend_type(),
         patch(
-            "homeassistant.components.bluetooth.platform.system",
+            "inpui.components.bluetooth.platform.system",
             return_value="Darwin",
         ),
         patch(
@@ -125,7 +125,7 @@ def no_adapter_fixture() -> Generator[None]:
     """Fixture that mocks no adapters on Linux."""
     with (
         patch(
-            "homeassistant.components.bluetooth.platform.system",
+            "inpui.components.bluetooth.platform.system",
             return_value="Linux",
         ),
         patch(
@@ -153,7 +153,7 @@ def one_adapter_fixture() -> Generator[None]:
     """Fixture that mocks one adapter on Linux."""
     with (
         patch(
-            "homeassistant.components.bluetooth.platform.system",
+            "inpui.components.bluetooth.platform.system",
             return_value="Linux",
         ),
         patch(
@@ -192,7 +192,7 @@ def two_adapters_fixture() -> Generator[None]:
     """Fixture that mocks two adapters on Linux."""
     with (
         patch(
-            "homeassistant.components.bluetooth.platform.system", return_value="Linux"
+            "inpui.components.bluetooth.platform.system", return_value="Linux"
         ),
         patch(
             "habluetooth.scanner.platform.system",
@@ -236,7 +236,7 @@ def crashed_adapter_fixture():
     """Fixture that mocks one crashed adapter on Linux."""
     with (
         patch(
-            "homeassistant.components.bluetooth.platform.system",
+            "inpui.components.bluetooth.platform.system",
             return_value="Linux",
         ),
         patch(
@@ -275,7 +275,7 @@ def one_adapter_old_bluez():
     """Fixture that mocks two adapters on Linux."""
     with (
         patch(
-            "homeassistant.components.bluetooth.platform.system", return_value="Linux"
+            "inpui.components.bluetooth.platform.system", return_value="Linux"
         ),
         patch(
             "habluetooth.scanner.platform.system",
@@ -312,7 +312,7 @@ def disable_new_discovery_flows_fixture():
     ensure we do not load other integrations.
     """
     with patch(
-        "homeassistant.components.bluetooth.manager.discovery_flow.async_create_flow"
+        "inpui.components.bluetooth.manager.discovery_flow.async_create_flow"
     ) as mock_create_flow:
         yield mock_create_flow
 

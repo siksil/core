@@ -84,7 +84,7 @@ async def test_invalid_location_for_point_and_nearest(
         API_NEAREST_URL, text=await async_load_fixture(hass, "no_station.json", DOMAIN)
     )
 
-    with patch("homeassistant.components.airly.async_setup_entry", return_value=True):
+    with patch("inpui.components.airly.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_USER}, data=CONFIG
         )
@@ -118,7 +118,7 @@ async def test_create_entry(
         API_POINT_URL, text=await async_load_fixture(hass, "valid_station.json", DOMAIN)
     )
 
-    with patch("homeassistant.components.airly.async_setup_entry", return_value=True):
+    with patch("inpui.components.airly.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_USER}, data=CONFIG
         )
@@ -145,7 +145,7 @@ async def test_create_entry_with_nearest_method(
         text=await async_load_fixture(hass, "valid_station.json", DOMAIN),
     )
 
-    with patch("homeassistant.components.airly.async_setup_entry", return_value=True):
+    with patch("inpui.components.airly.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_USER}, data=CONFIG
         )

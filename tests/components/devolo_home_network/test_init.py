@@ -38,7 +38,7 @@ async def test_setup_device_not_found(hass: HomeAssistant) -> None:
     """Test setup entry."""
     entry = configure_integration(hass)
     with patch(
-        "homeassistant.components.devolo_home_network.Device.async_connect",
+        "inpui.components.devolo_home_network.Device.async_connect",
         side_effect=DeviceNotFound(IP),
     ):
         await hass.config_entries.async_setup(entry.entry_id)

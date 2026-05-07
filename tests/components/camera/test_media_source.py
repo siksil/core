@@ -74,7 +74,7 @@ async def test_browsing_webrtc(hass: HomeAssistant) -> None:
     # one raises when getting the source
     # One has a stream source, and should be the only browsable one
     with patch(
-        "homeassistant.components.camera.Camera.stream_source",
+        "inpui.components.camera.Camera.stream_source",
         side_effect=["test", None, Exception],
     ):
         item = await media_source.async_browse_media(hass, "media-source://camera")
@@ -99,7 +99,7 @@ async def test_resolving(hass: HomeAssistant) -> None:
     hass.config.components.add("stream")
 
     with patch(
-        "homeassistant.components.camera.media_source._async_stream_endpoint_url",
+        "inpui.components.camera.media_source._async_stream_endpoint_url",
         return_value="http://example.com/stream",
     ):
         item = await media_source.async_resolve_media(
@@ -131,7 +131,7 @@ async def test_resolving_errors(hass: HomeAssistant) -> None:
     with (
         pytest.raises(media_source.Unresolvable) as exc_info,
         patch(
-            "homeassistant.components.camera.Camera.camera_capabilities",
+            "inpui.components.camera.Camera.camera_capabilities",
             new_callable=PropertyMock(
                 return_value=CameraCapabilities({StreamType.WEB_RTC})
             ),

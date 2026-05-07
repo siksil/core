@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.webdav.async_setup_entry", return_value=True
+        "inpui.components.webdav.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -52,7 +52,7 @@ def mock_webdav_client() -> Generator[AsyncMock]:
     """Mock the aiowebdav client."""
     with (
         patch(
-            "homeassistant.components.webdav.helpers.Client",
+            "inpui.components.webdav.helpers.Client",
             autospec=True,
         ) as mock_webdav_client,
     ):

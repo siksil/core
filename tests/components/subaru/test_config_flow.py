@@ -34,7 +34,7 @@ from .conftest import (
 
 from tests.common import MockConfigEntry
 
-ASYNC_SETUP_ENTRY = "homeassistant.components.subaru.async_setup_entry"
+ASYNC_SETUP_ENTRY = "inpui.components.subaru.async_setup_entry"
 MOCK_2FA_CONTACTS = {
     "phone": "123-123-1234",
     "userName": "email@addr.com",

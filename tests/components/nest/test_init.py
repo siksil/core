@@ -58,7 +58,7 @@ def error_caplog(
     caplog: pytest.LogCaptureFixture,
 ) -> Generator[pytest.LogCaptureFixture]:
     """Fixture to capture nest init error messages."""
-    with caplog.at_level(logging.ERROR, logger="homeassistant.components.nest"):
+    with caplog.at_level(logging.ERROR, logger="inpui.components.nest"):
         yield caplog
 
 
@@ -67,7 +67,7 @@ def warning_caplog(
     caplog: pytest.LogCaptureFixture,
 ) -> Generator[pytest.LogCaptureFixture]:
     """Fixture to capture nest init warning messages."""
-    with caplog.at_level(logging.WARNING, logger="homeassistant.components.nest"):
+    with caplog.at_level(logging.WARNING, logger="inpui.components.nest"):
         yield caplog
 
 
@@ -144,7 +144,7 @@ async def test_setup_device_manager_failure(
     """Test device manager api failure."""
     with (
         patch(
-            "homeassistant.components.nest.api.GoogleNestSubscriber.async_get_device_manager",
+            "inpui.components.nest.api.GoogleNestSubscriber.async_get_device_manager",
             side_effect=ApiException(),
         ),
     ):

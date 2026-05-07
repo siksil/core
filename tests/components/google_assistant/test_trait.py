@@ -167,7 +167,7 @@ async def test_camera_stream(hass: HomeAssistant) -> None:
     assert trt.query_attributes() == {}
 
     with patch(
-        "homeassistant.components.camera.async_request_stream",
+        "inpui.components.camera.async_request_stream",
         return_value="/api/streams/bla",
     ):
         await trt.execute(trait.COMMAND_GET_CAMERA_STREAM, BASIC_DATA, {}, {})

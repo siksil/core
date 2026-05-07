@@ -24,10 +24,10 @@ async def test_user_valid(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.foscam.config_flow.FoscamCamera",
+            "inpui.components.foscam.config_flow.FoscamCamera",
         ) as mock_foscam_camera,
         patch(
-            "homeassistant.components.foscam.async_setup_entry",
+            "inpui.components.foscam.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -57,7 +57,7 @@ async def test_user_invalid_auth(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.foscam.config_flow.FoscamCamera",
+        "inpui.components.foscam.config_flow.FoscamCamera",
     ) as mock_foscam_camera:
         setup_mock_foscam_camera(mock_foscam_camera)
 
@@ -85,7 +85,7 @@ async def test_user_cannot_connect(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.foscam.config_flow.FoscamCamera",
+        "inpui.components.foscam.config_flow.FoscamCamera",
     ) as mock_foscam_camera:
         setup_mock_foscam_camera(mock_foscam_camera)
 
@@ -113,7 +113,7 @@ async def test_user_invalid_response(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.foscam.config_flow.FoscamCamera",
+        "inpui.components.foscam.config_flow.FoscamCamera",
     ) as mock_foscam_camera:
         setup_mock_foscam_camera(mock_foscam_camera)
 
@@ -149,7 +149,7 @@ async def test_user_already_configured(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.foscam.config_flow.FoscamCamera",
+        "inpui.components.foscam.config_flow.FoscamCamera",
     ) as mock_foscam_camera:
         setup_mock_foscam_camera(mock_foscam_camera)
 
@@ -174,7 +174,7 @@ async def test_user_unknown_exception(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.foscam.config_flow.FoscamCamera",
+        "inpui.components.foscam.config_flow.FoscamCamera",
     ) as mock_foscam_camera:
         mock_foscam_camera.side_effect = Exception("test")
 

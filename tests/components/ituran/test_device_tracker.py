@@ -24,7 +24,7 @@ async def test_device_tracker(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test state of device_tracker."""
-    with patch("homeassistant.components.ituran.PLATFORMS", [Platform.DEVICE_TRACKER]):
+    with patch("inpui.components.ituran.PLATFORMS", [Platform.DEVICE_TRACKER]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 

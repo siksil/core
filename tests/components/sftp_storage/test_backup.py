@@ -254,7 +254,7 @@ async def test_agents_upload(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_AGENT_BACKUP,
         ),
     ):
@@ -300,7 +300,7 @@ async def test_agents_upload_fail(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_AGENT_BACKUP,
         ),
     ):

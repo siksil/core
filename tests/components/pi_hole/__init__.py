@@ -303,7 +303,7 @@ def _patch_init_hole(mocked_hole):
     def side_effect(*args, **kwargs):
         return mocked_hole(**kwargs)
 
-    return patch("homeassistant.components.pi_hole.Hole", side_effect=side_effect)
+    return patch("inpui.components.pi_hole.Hole", side_effect=side_effect)
 
 
 def _patch_config_flow_hole(mocked_hole):
@@ -313,12 +313,12 @@ def _patch_config_flow_hole(mocked_hole):
         return mocked_hole(**kwargs)
 
     return patch(
-        "homeassistant.components.pi_hole.config_flow.Hole", side_effect=side_effect
+        "inpui.components.pi_hole.config_flow.Hole", side_effect=side_effect
     )
 
 
 def _patch_setup_hole():
     """Patch async_setup_entry for the integration."""
     return patch(
-        "homeassistant.components.pi_hole.async_setup_entry", return_value=True
+        "inpui.components.pi_hole.async_setup_entry", return_value=True
     )

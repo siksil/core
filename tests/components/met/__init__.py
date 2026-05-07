@@ -25,7 +25,7 @@ async def init_integration(
 
     entry = MockConfigEntry(domain=DOMAIN, data=entry_data)
     with patch(
-        "homeassistant.components.met.coordinator.metno.MetWeatherData.fetching_data",
+        "inpui.components.met.coordinator.metno.MetWeatherData.fetching_data",
         return_value=True,
     ):
         entry.add_to_hass(hass)

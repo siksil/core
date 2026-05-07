@@ -37,7 +37,7 @@ async def create_entity_from_device(hass: HomeAssistant, device: DynaliteBaseDev
     entry = MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host})
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices"
+        "inpui.components.dynalite.bridge.DynaliteDevices"
     ) as mock_dyn_dev:
         mock_dyn_dev().async_setup = AsyncMock(return_value=True)
         assert await hass.config_entries.async_setup(entry.entry_id)

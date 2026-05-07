@@ -47,7 +47,7 @@ def mock_airthings_client(
 ) -> Generator[Airthings]:
     """Mock an Airthings client."""
     with patch(
-        "homeassistant.components.airthings.Airthings",
+        "inpui.components.airthings.Airthings",
         autospec=True,
     ) as mock_airthings:
         client = mock_airthings.return_value
@@ -62,7 +62,7 @@ def mock_airthings_token() -> Generator[Airthings]:
     """Mock an Airthings client."""
     with (
         patch(
-            "homeassistant.components.airthings.config_flow.airthings.get_token",
+            "inpui.components.airthings.config_flow.airthings.get_token",
             return_value="test_token",
         ) as mock_get_token,
     ):
@@ -73,7 +73,7 @@ def mock_airthings_token() -> Generator[Airthings]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airthings.async_setup_entry",
+        "inpui.components.airthings.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

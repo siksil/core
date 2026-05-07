@@ -26,8 +26,8 @@ async def test_integration_log_info(
 
     assert await async_setup_component(hass, "logger", {})
 
-    logging.getLogger("homeassistant.components.http").setLevel(logging.DEBUG)
-    logging.getLogger("homeassistant.components.websocket_api").setLevel(logging.DEBUG)
+    logging.getLogger("inpui.components.http").setLevel(logging.DEBUG)
+    logging.getLogger("inpui.components.websocket_api").setLevel(logging.DEBUG)
 
     websocket_client = await hass_ws_client()
     await websocket_client.send_json({"id": 7, "type": "logger/log_info"})
@@ -182,7 +182,7 @@ async def test_integration_log_level(
     assert msg["success"]
 
     assert hass.data[DATA_LOGGER].overrides == {
-        "homeassistant.components.websocket_api": logging.DEBUG
+        "inpui.components.websocket_api": logging.DEBUG
     }
 
 
@@ -208,11 +208,11 @@ async def test_custom_integration_log_level(
 
     with (
         patch(
-            "homeassistant.components.logger.helpers.async_get_integration",
+            "inpui.components.logger.helpers.async_get_integration",
             return_value=integration,
         ),
         patch(
-            "homeassistant.components.logger.websocket_api.async_get_integration",
+            "inpui.components.logger.websocket_api.async_get_integration",
             return_value=integration,
         ),
     ):
@@ -232,7 +232,7 @@ async def test_custom_integration_log_level(
         assert msg["success"]
 
         assert hass.data[DATA_LOGGER].overrides == {
-            "homeassistant.components.hue": logging.DEBUG,
+            "inpui.components.hue": logging.DEBUG,
             "custom_components.hue": logging.DEBUG,
             "some_other_logger": logging.DEBUG,
         }
@@ -269,14 +269,14 @@ async def test_module_log_level(
     assert await async_setup_component(
         hass,
         "logger",
-        {"logger": {"logs": {"homeassistant.components.other_component": "warning"}}},
+        {"logger": {"logs": {"inpui.components.other_component": "warning"}}},
     )
 
     await websocket_client.send_json(
         {
             "id": 7,
             "type": "logger/log_level",
-            "module": "homeassistant.components.websocket_api",
+            "module": "inpui.components.websocket_api",
             "level": "DEBUG",
             "persistence": "none",
         }
@@ -288,8 +288,8 @@ async def test_module_log_level(
     assert msg["success"]
 
     assert hass.data[DATA_LOGGER].overrides == {
-        "homeassistant.components.websocket_api": logging.DEBUG,
-        "homeassistant.components.other_component": logging.WARNING,
+        "inpui.components.websocket_api": logging.DEBUG,
+        "inpui.components.other_component": logging.WARNING,
     }
 
 
@@ -301,18 +301,18 @@ async def test_module_log_level_override(
     assert await async_setup_component(
         hass,
         "logger",
-        {"logger": {"logs": {"homeassistant.components.websocket_api": "warning"}}},
+        {"logger": {"logs": {"inpui.components.websocket_api": "warning"}}},
     )
 
     assert hass.data[DATA_LOGGER].overrides == {
-        "homeassistant.components.websocket_api": logging.WARNING
+        "inpui.components.websocket_api": logging.WARNING
     }
 
     await websocket_client.send_json(
         {
             "id": 6,
             "type": "logger/log_level",
-            "module": "homeassistant.components.websocket_api",
+            "module": "inpui.components.websocket_api",
             "level": "ERROR",
             "persistence": "none",
         }
@@ -324,14 +324,14 @@ async def test_module_log_level_override(
     assert msg["success"]
 
     assert hass.data[DATA_LOGGER].overrides == {
-        "homeassistant.components.websocket_api": logging.ERROR
+        "inpui.components.websocket_api": logging.ERROR
     }
 
     await websocket_client.send_json(
         {
             "id": 7,
             "type": "logger/log_level",
-            "module": "homeassistant.components.websocket_api",
+            "module": "inpui.components.websocket_api",
             "level": "DEBUG",
             "persistence": "none",
         }
@@ -343,14 +343,14 @@ async def test_module_log_level_override(
     assert msg["success"]
 
     assert hass.data[DATA_LOGGER].overrides == {
-        "homeassistant.components.websocket_api": logging.DEBUG
+        "inpui.components.websocket_api": logging.DEBUG
     }
 
     await websocket_client.send_json(
         {
             "id": 8,
             "type": "logger/log_level",
-            "module": "homeassistant.components.websocket_api",
+            "module": "inpui.components.websocket_api",
             "level": "NOTSET",
             "persistence": "none",
         }
@@ -362,5 +362,5 @@ async def test_module_log_level_override(
     assert msg["success"]
 
     assert hass.data[DATA_LOGGER].overrides == {
-        "homeassistant.components.websocket_api": logging.NOTSET
+        "inpui.components.websocket_api": logging.NOTSET
     }

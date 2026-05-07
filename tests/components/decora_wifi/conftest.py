@@ -51,9 +51,9 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_person() -> Generator[MagicMock]:
     """Mock Person at library level for both __init__ and config_flow."""
     with (
-        patch("homeassistant.components.decora_wifi.Person") as mock_cls,
+        patch("inpui.components.decora_wifi.Person") as mock_cls,
         patch(
-            "homeassistant.components.decora_wifi.config_flow.Person",
+            "inpui.components.decora_wifi.config_flow.Person",
             new=mock_cls,
         ),
     ):
@@ -65,11 +65,11 @@ def mock_residence(mock_switch: MagicMock) -> Generator[MagicMock]:
     """Mock Residence and ResidentialAccount at library level."""
     with (
         patch(
-            "homeassistant.components.decora_wifi.Residence",
+            "inpui.components.decora_wifi.Residence",
             autospec=True,
         ) as mock_cls,
         patch(
-            "homeassistant.components.decora_wifi.ResidentialAccount",
+            "inpui.components.decora_wifi.ResidentialAccount",
         ),
     ):
         mock_cls.return_value.get_iot_switches.return_value = [mock_switch]
@@ -85,10 +85,10 @@ def mock_decora_wifi(
     """Mock DecoraWiFiSession at library level for both __init__ and config_flow."""
     with (
         patch(
-            "homeassistant.components.decora_wifi.DecoraWiFiSession",
+            "inpui.components.decora_wifi.DecoraWiFiSession",
         ) as mock_cls,
         patch(
-            "homeassistant.components.decora_wifi.config_flow.DecoraWiFiSession",
+            "inpui.components.decora_wifi.config_flow.DecoraWiFiSession",
             new=mock_cls,
         ),
     ):
@@ -108,6 +108,6 @@ def mock_decora_wifi(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.decora_wifi.async_setup_entry", return_value=True
+        "inpui.components.decora_wifi.async_setup_entry", return_value=True
     ) as mock_fn:
         yield mock_fn

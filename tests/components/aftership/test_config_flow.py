@@ -19,7 +19,7 @@ async def test_full_user_flow(hass: HomeAssistant, mock_setup_entry) -> None:
     )
 
     with patch(
-        "homeassistant.components.aftership.config_flow.AfterShip",
+        "inpui.components.aftership.config_flow.AfterShip",
         return_value=AsyncMock(),
     ) as mock_aftership:
         mock_aftership.return_value.trackings.return_value.list.return_value = {}
@@ -44,7 +44,7 @@ async def test_flow_cannot_connect(hass: HomeAssistant, mock_setup_entry) -> Non
     )
 
     with patch(
-        "homeassistant.components.aftership.config_flow.AfterShip",
+        "inpui.components.aftership.config_flow.AfterShip",
         return_value=AsyncMock(),
     ) as mock_aftership:
         mock_aftership.side_effect = AfterShipException
@@ -58,7 +58,7 @@ async def test_flow_cannot_connect(hass: HomeAssistant, mock_setup_entry) -> Non
         assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.aftership.config_flow.AfterShip",
+        "inpui.components.aftership.config_flow.AfterShip",
         return_value=AsyncMock(),
     ) as mock_aftership:
         mock_aftership.return_value.trackings.return_value.list.return_value = {}

@@ -49,7 +49,7 @@ def mock_hassio_user_id() -> Generator[None]:
     original_user_init = User.__init__
 
     def mock_user_init(self, *args, **kwargs):
-        with patch("homeassistant.auth.models.uuid.uuid4") as mock_uuid:
+        with patch("inpui.auth.models.uuid.uuid4") as mock_uuid:
             if kwargs.get("name") == HASSIO_USER_NAME:
                 mock_uuid.return_value = UUID(bytes=b"very_very_random", version=4)
             else:
@@ -113,7 +113,7 @@ async def test_load_config_store(
     await hass.auth.async_create_refresh_token(user)
     await hass.auth.async_update_user(user, group_ids=[GROUP_ID_ADMIN])
 
-    with patch("homeassistant.components.hassio.config.STORE_DELAY_SAVE", 0):
+    with patch("inpui.components.hassio.config.STORE_DELAY_SAVE", 0):
         assert await async_setup_component(hass, "hassio", {})
         await hass.async_block_till_done()
         await hass.async_block_till_done()
@@ -130,7 +130,7 @@ async def test_save_config_store(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test saving the config store."""
-    with patch("homeassistant.components.hassio.config.STORE_DELAY_SAVE", 0):
+    with patch("inpui.components.hassio.config.STORE_DELAY_SAVE", 0):
         assert await async_setup_component(hass, "hassio", {})
         await hass.async_block_till_done()
         await hass.async_block_till_done()

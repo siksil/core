@@ -78,7 +78,7 @@ async def test_light_entity_migration(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.hue.migration.HueBridgeV2",
+        "inpui.components.hue.migration.HueBridgeV2",
         return_value=mock_bridge_v2.api,
     ):
         await hue.migration.handle_v2_migration(hass, config_entry)
@@ -137,7 +137,7 @@ async def test_sensor_entity_migration(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.hue.migration.HueBridgeV2",
+        "inpui.components.hue.migration.HueBridgeV2",
         return_value=mock_bridge_v2.api,
     ):
         await hue.migration.handle_v2_migration(hass, config_entry)
@@ -182,7 +182,7 @@ async def test_group_entity_migration_with_v1_id(
     await mock_bridge_v2.api.load_test_data(v2_resources_test_data)
     await hass.async_block_till_done()
     with patch(
-        "homeassistant.components.hue.migration.HueBridgeV2",
+        "inpui.components.hue.migration.HueBridgeV2",
         return_value=mock_bridge_v2.api,
     ):
         await hue.migration.handle_v2_migration(hass, config_entry)
@@ -218,7 +218,7 @@ async def test_group_entity_migration_with_v2_group_id(
     await mock_bridge_v2.api.load_test_data(v2_resources_test_data)
     await hass.async_block_till_done()
     with patch(
-        "homeassistant.components.hue.migration.HueBridgeV2",
+        "inpui.components.hue.migration.HueBridgeV2",
         return_value=mock_bridge_v2.api,
     ):
         await hue.migration.handle_v2_migration(hass, config_entry)

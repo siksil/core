@@ -40,7 +40,7 @@ from tests.components.bluetooth import (
     inject_bluetooth_service_info_bleak,
 )
 
-IMPROV_BLE = "homeassistant.components.improv_ble"
+IMPROV_BLE = "inpui.components.improv_ble"
 
 # Discovery info for target flow devices (used for flow chaining tests)
 IMPROV_BLE_DISCOVERY_INFO_TARGET1 = BluetoothServiceInfoBleak(

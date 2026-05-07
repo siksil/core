@@ -40,7 +40,7 @@ async def test_diagnostics(
 
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.velux.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.velux.PLATFORMS", [Platform.COVER]):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

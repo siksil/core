@@ -34,7 +34,7 @@ async def load_integration_from_entry(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
+        "inpui.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
         return_value=get_ferries,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

@@ -26,10 +26,10 @@ async def test_setup(
 
     with (
         patch(
-            "homeassistant.components.eheimdigital.PLATFORMS", [Platform.BINARY_SENSOR]
+            "inpui.components.eheimdigital.PLATFORMS", [Platform.BINARY_SENSOR]
         ),
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):

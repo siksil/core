@@ -41,7 +41,7 @@ async def test_form_user(
 ) -> None:
     """Test a successful user initiated flow."""
     with patch(
-        "homeassistant.components.webmin.helpers.WebminInstance.update",
+        "inpui.components.webmin.helpers.WebminInstance.update",
         return_value=await async_load_json_object_fixture(hass, fixture, DOMAIN),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -83,7 +83,7 @@ async def test_form_user_errors(
 ) -> None:
     """Test we handle errors."""
     with patch(
-        "homeassistant.components.webmin.helpers.WebminInstance.update",
+        "inpui.components.webmin.helpers.WebminInstance.update",
         side_effect=exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -95,7 +95,7 @@ async def test_form_user_errors(
     assert result["errors"] == {"base": error_type}
 
     with patch(
-        "homeassistant.components.webmin.helpers.WebminInstance.update",
+        "inpui.components.webmin.helpers.WebminInstance.update",
         return_value=await async_load_json_object_fixture(
             hass, "webmin_update.json", DOMAIN
         ),
@@ -116,7 +116,7 @@ async def test_duplicate_entry(
 ) -> None:
     """Test a successful user initiated flow."""
     with patch(
-        "homeassistant.components.webmin.helpers.WebminInstance.update",
+        "inpui.components.webmin.helpers.WebminInstance.update",
         return_value=await async_load_json_object_fixture(
             hass, "webmin_update.json", DOMAIN
         ),
@@ -131,7 +131,7 @@ async def test_duplicate_entry(
     assert result["options"] == TEST_USER_INPUT
 
     with patch(
-        "homeassistant.components.webmin.helpers.WebminInstance.update",
+        "inpui.components.webmin.helpers.WebminInstance.update",
         return_value=await async_load_json_object_fixture(
             hass, "webmin_update.json", DOMAIN
         ),

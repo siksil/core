@@ -274,12 +274,12 @@ def test_default_encoder_is_passed(tmp_path: Path) -> None:
     """Test we use orjson if they pass in the default encoder."""
     fname = tmp_path / "test6.json"
     with patch(
-        "homeassistant.helpers.json.orjson.dumps", return_value=b"{}"
+        "inpui.helpers.json.orjson.dumps", return_value=b"{}"
     ) as mock_orjson_dumps:
         save_json(fname, {"any": 1}, encoder=DefaultHASSJSONEncoder)
     assert len(mock_orjson_dumps.mock_calls) == 1
     # Patch json.dumps to make sure we are using the orjson path
-    with patch("homeassistant.helpers.json.json.dumps", side_effect=Exception):
+    with patch("inpui.helpers.json.json.dumps", side_effect=Exception):
         save_json(fname, {"any": {1}}, encoder=DefaultHASSJSONEncoder)
     data = load_json(fname)
     assert data == {"any": [1]}

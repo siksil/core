@@ -36,15 +36,15 @@ async def init_integration(
     )
     with (
         patch(
-            "homeassistant.components.dexcom.Dexcom.get_current_glucose_reading",
+            "inpui.components.dexcom.Dexcom.get_current_glucose_reading",
             return_value=GLUCOSE_READING,
         ),
         patch(
-            "homeassistant.components.dexcom.Dexcom._get_account_id",
+            "inpui.components.dexcom.Dexcom._get_account_id",
             return_value=TEST_ACCOUNT_ID,
         ),
         patch(
-            "homeassistant.components.dexcom.Dexcom._get_session_id",
+            "inpui.components.dexcom.Dexcom._get_session_id",
             return_value=TEST_SESSION_ID,
         ),
     ):

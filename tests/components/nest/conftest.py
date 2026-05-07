@@ -150,7 +150,7 @@ def cleanup_media_storage(hass: HomeAssistant) -> Generator[str]:
     """Test cleanup, remove any media storage persisted during the test."""
     tmp_path = str(uuid.uuid4())
     with patch(
-        "homeassistant.components.nest.media_source.MEDIA_CACHE_PATH", new=tmp_path
+        "inpui.components.nest.media_source.MEDIA_CACHE_PATH", new=tmp_path
     ):
         full_path = hass.config.cache_path(DOMAIN, tmp_path)
         yield full_path
@@ -162,7 +162,7 @@ def cleanup_legacy_media_storage(hass: HomeAssistant) -> Generator[str]:
     """Test cleanup, remove any media storage persisted during the test."""
     tmp_path = str(uuid.uuid4())
     with patch(
-        "homeassistant.components.nest.media_source.LEGACY_MEDIA_PATH", new=tmp_path
+        "inpui.components.nest.media_source.LEGACY_MEDIA_PATH", new=tmp_path
     ):
         full_path = hass.config.path(tmp_path)
         yield full_path
@@ -197,7 +197,7 @@ def mock_subscriber() -> YieldFixture[AsyncMock]:
     """Fixture for injecting errors into the subscriber."""
     mock_subscriber = AsyncMock(GoogleNestSubscriber)
     with patch(
-        "homeassistant.components.nest.api.GoogleNestSubscriber",
+        "inpui.components.nest.api.GoogleNestSubscriber",
         return_value=mock_subscriber,
     ):
         yield mock_subscriber
@@ -321,7 +321,7 @@ async def setup_base_platform(
 ) -> YieldFixture[PlatformSetup]:
     """Fixture to setup the integration platform."""
     config_entry.add_to_hass(hass)
-    with patch("homeassistant.components.nest.PLATFORMS", platforms):
+    with patch("inpui.components.nest.PLATFORMS", platforms):
 
         async def _setup_func() -> bool:
             await hass.config_entries.async_setup(config_entry.entry_id)

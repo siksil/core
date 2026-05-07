@@ -71,7 +71,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_notify_platform() -> Generator[AsyncMock]:
     """Mock notify platform setup."""
     with patch(
-        "homeassistant.helpers.discovery.async_load_platform",
+        "inpui.helpers.discovery.async_load_platform",
     ) as mock_setup_notify_platform:
         yield mock_setup_notify_platform
 
@@ -80,7 +80,7 @@ def mock_setup_notify_platform() -> Generator[AsyncMock]:
 def mock_version() -> Generator[AsyncMock]:
     """Return a mocked Version class."""
     with patch(
-        "homeassistant.components.system_bridge.Version",
+        "inpui.components.system_bridge.Version",
         autospec=True,
     ) as mock_version:
         version = mock_version.return_value
@@ -99,11 +99,11 @@ def mock_websocket_client(
 
     with (
         patch(
-            "homeassistant.components.system_bridge.coordinator.WebSocketClient",
+            "inpui.components.system_bridge.coordinator.WebSocketClient",
             autospec=True,
         ) as mock_websocket_client,
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient",
+            "inpui.components.system_bridge.config_flow.WebSocketClient",
             new=mock_websocket_client,
         ),
     ):

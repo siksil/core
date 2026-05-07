@@ -22,7 +22,7 @@ from inpui.const import (
     CONF_USERNAME,
 )
 
-ASUSWRT_BASE = "homeassistant.components.asuswrt"
+ASUSWRT_BASE = "inpui.components.asuswrt"
 
 HOST = "myrouter.asuswrt.com"
 ROUTER_MAC_ADDR = "a1:b2:c3:d4:e5:f6"

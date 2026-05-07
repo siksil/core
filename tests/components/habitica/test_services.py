@@ -99,7 +99,7 @@ RATE_LIMIT_EXCEPTION_MSG = "Rate limit exceeded, try again in 5 seconds"
 def services_only() -> Generator[None]:
     """Enable only services."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [],
     ):
         yield

@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(autouse=True)
 async def avoid_wait() -> AsyncGenerator[None]:
     """Mock sleep."""
-    with patch("homeassistant.components.madvr.config_flow.RETRY_INTERVAL", 0):
+    with patch("inpui.components.madvr.config_flow.RETRY_INTERVAL", 0):
         yield
 
 

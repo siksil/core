@@ -22,10 +22,10 @@ async def test_full_user_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.p1_monitor.config_flow.P1Monitor.settings"
+            "inpui.components.p1_monitor.config_flow.P1Monitor.settings"
         ) as mock_p1monitor,
         patch(
-            "homeassistant.components.p1_monitor.async_setup_entry", return_value=True
+            "inpui.components.p1_monitor.async_setup_entry", return_value=True
         ) as mock_setup_entry,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -45,7 +45,7 @@ async def test_full_user_flow(hass: HomeAssistant) -> None:
 async def test_api_error(hass: HomeAssistant) -> None:
     """Test we handle cannot connect error."""
     with patch(
-        "homeassistant.components.p1_monitor.coordinator.P1Monitor.settings",
+        "inpui.components.p1_monitor.coordinator.P1Monitor.settings",
         side_effect=P1MonitorError,
     ):
         result = await hass.config_entries.flow.async_init(

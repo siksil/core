@@ -37,15 +37,15 @@ async def init_integration(
             ),
         ),
         patch(
-            "homeassistant.components.mystrom._get_mystrom_bulb",
+            "inpui.components.mystrom._get_mystrom_bulb",
             return_value=MyStromBulbMock("6001940376EB", get_default_bulb_state()),
         ),
         patch(
-            "homeassistant.components.mystrom._get_mystrom_pir",
+            "inpui.components.mystrom._get_mystrom_pir",
             return_value=MyStromPirMock(get_default_pir_state()),
         ),
         patch(
-            "homeassistant.components.mystrom._get_mystrom_switch",
+            "inpui.components.mystrom._get_mystrom_switch",
             return_value=MyStromSwitchMock(get_default_switch_state()),
         ),
     ):

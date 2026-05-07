@@ -32,7 +32,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all time entities."""
-    with patch("homeassistant.components.trmnl.PLATFORMS", [Platform.TIME]):
+    with patch("inpui.components.trmnl.PLATFORMS", [Platform.TIME]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

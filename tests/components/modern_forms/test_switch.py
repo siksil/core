@@ -111,7 +111,7 @@ async def test_switch_error(
     aioclient_mock.post("http://192.168.1.123:80/mf", text="", status=400)
 
     with patch(
-        "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update"
+        "inpui.components.modern_forms.coordinator.ModernFormsDevice.update"
     ):
         await hass.services.async_call(
             SWITCH_DOMAIN,
@@ -134,10 +134,10 @@ async def test_switch_connection_error(
 
     with (
         patch(
-            "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update"
+            "inpui.components.modern_forms.coordinator.ModernFormsDevice.update"
         ),
         patch(
-            "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.away",
+            "inpui.components.modern_forms.coordinator.ModernFormsDevice.away",
             side_effect=ModernFormsConnectionError,
         ),
     ):

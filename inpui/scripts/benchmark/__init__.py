@@ -27,7 +27,7 @@ BENCHMARKS: dict[str, Callable] = {}
 def run(args):
     """Handle benchmark commandline script."""
     # Disable logging
-    logging.getLogger("homeassistant.core").setLevel(logging.CRITICAL)
+    logging.getLogger("inpui.core").setLevel(logging.CRITICAL)
 
     parser = argparse.ArgumentParser(description="Run a Home Assistant benchmark.")
     parser.add_argument("name", choices=BENCHMARKS)

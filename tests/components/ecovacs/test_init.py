@@ -24,7 +24,7 @@ async def test_load_unload_config_entry(
 ) -> None:
     """Test loading and unloading the integration."""
     with patch(
-        "homeassistant.components.ecovacs.EcovacsController",
+        "inpui.components.ecovacs.EcovacsController",
         autospec=True,
     ):
         mock_config_entry.add_to_hass(hass)
@@ -49,7 +49,7 @@ async def test_load_unload_config_entry(
 def mock_api_client(mock_authenticator: Mock) -> Mock:
     """Mock the API client."""
     with patch(
-        "homeassistant.components.ecovacs.controller.ApiClient",
+        "inpui.components.ecovacs.controller.ApiClient",
         autospec=True,
     ) as mock_api_client:
         yield mock_api_client.return_value

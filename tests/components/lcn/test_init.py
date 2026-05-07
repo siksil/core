@@ -47,7 +47,7 @@ async def test_async_setup_multiple_entries(
     """Test a successful setup and unload of multiple entries."""
     hass.http = Mock()
     with patch(
-        "homeassistant.components.lcn.PchkConnectionManager", MockPchkConnectionManager
+        "inpui.components.lcn.PchkConnectionManager", MockPchkConnectionManager
     ):
         for config_entry in (entry, entry2):
             await init_integration(hass, config_entry)
@@ -107,7 +107,7 @@ async def test_async_setup_entry_fails(
     """Test that an error is handled properly."""
     with (
         patch(
-            "homeassistant.components.lcn.PchkConnectionManager.async_connect",
+            "inpui.components.lcn.PchkConnectionManager.async_connect",
             side_effect=exception,
         ),
     ):
@@ -128,13 +128,13 @@ async def test_async_entry_reload_on_host_event_received(
     """Test for config entry reload on certain host event received."""
     lcn_connection = await init_integration(hass, entry)
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_schedule_reload"
+        "inpui.config_entries.ConfigEntries.async_schedule_reload"
     ) as async_schedule_reload:
         lcn_connection.fire_event(event)
         async_schedule_reload.assert_called_with(entry.entry_id)
 
 
-@patch("homeassistant.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
+@patch("inpui.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
 async def test_migrate_1_1(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
     """Test migration config entry."""
     entry_v1_1 = create_config_entry("pchk_v1_1", version=(1, 1))
@@ -148,7 +148,7 @@ async def test_migrate_1_1(hass: HomeAssistant, snapshot: SnapshotAssertion) -> 
     assert entry_migrated.data == snapshot
 
 
-@patch("homeassistant.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
+@patch("inpui.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
 async def test_migrate_1_2(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
     """Test migration config entry."""
     entry_v1_2 = create_config_entry("pchk_v1_2", version=(1, 2))
@@ -162,7 +162,7 @@ async def test_migrate_1_2(hass: HomeAssistant, snapshot: SnapshotAssertion) -> 
     assert entry_migrated.data == snapshot
 
 
-@patch("homeassistant.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
+@patch("inpui.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
 async def test_migrate_2_1(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
     """Test migration config entry."""
     entry_v2_1 = create_config_entry("pchk_v2_1", version=(2, 1))
@@ -182,7 +182,7 @@ async def test_migrate_2_1(hass: HomeAssistant, snapshot: SnapshotAssertion) -> 
         ("scene.testmodule_romantic", ("-00", "-0.0")),
     ],
 )
-@patch("homeassistant.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
+@patch("inpui.components.lcn.PchkConnectionManager", MockPchkConnectionManager)
 async def test_entity_migration_on_2_1(
     hass: HomeAssistant, entity_registry: er.EntityRegistry, entity_id, replace
 ) -> None:

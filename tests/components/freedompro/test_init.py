@@ -36,7 +36,7 @@ async def test_config_not_ready(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_list",
+        "inpui.components.freedompro.coordinator.get_list",
         return_value={
             "state": False,
         },

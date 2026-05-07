@@ -34,7 +34,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.comelit.BRIDGE_PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.comelit.BRIDGE_PLATFORMS", [Platform.LIGHT]):
         await setup_integration(hass, mock_serial_bridge_config_entry)
 
     await snapshot_platform(

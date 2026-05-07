@@ -27,7 +27,7 @@ from tests.common import async_fire_time_changed
 @pytest.fixture(name="mock_remote")
 def mock_remote_fixture(camera_info):
     """Mock the nvr.UVCRemote class."""
-    with patch("homeassistant.components.uvc.camera.nvr.UVCRemote") as mock_remote:
+    with patch("inpui.components.uvc.camera.nvr.UVCRemote") as mock_remote:
 
         def setup(host, port, apikey, ssl=False):
             """Set instance attributes."""
@@ -95,7 +95,7 @@ def camera_info_fixture():
 def camera_v320_fixture():
     """Mock the v320 camera."""
     with patch(
-        "homeassistant.components.uvc.camera.uvc_camera.UVCCameraClientV320"
+        "inpui.components.uvc.camera.uvc_camera.UVCCameraClientV320"
     ) as camera:
         camera.return_value.get_snapshot.return_value = "test_image"
         yield camera
@@ -105,7 +105,7 @@ def camera_v320_fixture():
 def camera_v313_fixture():
     """Mock the v320 camera."""
     with patch(
-        "homeassistant.components.uvc.camera.uvc_camera.UVCCameraClient"
+        "inpui.components.uvc.camera.uvc_camera.UVCCameraClient"
     ) as camera:
         camera.return_value.get_snapshot.return_value = "test_image"
         yield camera

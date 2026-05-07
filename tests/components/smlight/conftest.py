@@ -61,7 +61,7 @@ def platforms() -> list[Platform]:
 @pytest.fixture(autouse=True)
 async def mock_patch_platforms(platforms: list[str]) -> AsyncGenerator[None]:
     """Fixture to set up platforms for tests."""
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         yield
 
 
@@ -69,7 +69,7 @@ async def mock_patch_platforms(platforms: list[str]) -> AsyncGenerator[None]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.smlight.async_setup_entry", return_value=True
+        "inpui.components.smlight.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -78,8 +78,8 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_smlight_client(request: pytest.FixtureRequest) -> Generator[MagicMock]:
     """Mock the SMLIGHT API client."""
     with (
-        patch("homeassistant.components.smlight.Api2", autospec=True) as smlight_mock,
-        patch("homeassistant.components.smlight.config_flow.Api2", new=smlight_mock),
+        patch("inpui.components.smlight.Api2", autospec=True) as smlight_mock,
+        patch("inpui.components.smlight.config_flow.Api2", new=smlight_mock),
     ):
         api = smlight_mock.return_value
         api.host = MOCK_HOST

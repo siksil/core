@@ -27,7 +27,7 @@ async def test_selects(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test the Imeon Inverter selects."""
-    with patch("homeassistant.components.imeon_inverter.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.imeon_inverter.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

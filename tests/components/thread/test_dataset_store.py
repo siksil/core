@@ -752,7 +752,7 @@ async def test_automatically_set_preferred_dataset(
     mock_async_zeroconf.async_get_service_info = AsyncMock()
 
     with patch(
-        "homeassistant.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
+        "inpui.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
         0.1,
     ):
         await dataset_store.async_add_dataset(
@@ -820,7 +820,7 @@ async def test_automatically_set_preferred_dataset_own_and_other_router(
     mock_async_zeroconf.async_get_service_info = AsyncMock()
 
     with patch(
-        "homeassistant.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
+        "inpui.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
         0.1,
     ):
         await dataset_store.async_add_dataset(
@@ -899,7 +899,7 @@ async def test_automatically_set_preferred_dataset_other_router(
     mock_async_zeroconf.async_get_service_info = AsyncMock()
 
     with patch(
-        "homeassistant.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
+        "inpui.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
         0.1,
     ):
         await dataset_store.async_add_dataset(
@@ -967,7 +967,7 @@ async def test_automatically_set_preferred_dataset_no_router(
     mock_async_zeroconf.async_get_service_info = AsyncMock()
 
     with patch(
-        "homeassistant.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
+        "inpui.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
         0.1,
     ):
         await dataset_store.async_add_dataset(

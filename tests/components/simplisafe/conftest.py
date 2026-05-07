@@ -102,19 +102,19 @@ def patch_simplisafe_api_fixture(api: Mock, websocket: Mock):
     """Patch the SimpliSafe API creation methods."""
     with (
         patch(
-            "homeassistant.components.simplisafe.config_flow.API.async_from_auth",
+            "inpui.components.simplisafe.config_flow.API.async_from_auth",
             return_value=api,
         ),
         patch(
-            "homeassistant.components.simplisafe.API.async_from_auth",
+            "inpui.components.simplisafe.API.async_from_auth",
             return_value=api,
         ),
         patch(
-            "homeassistant.components.simplisafe.API.async_from_refresh_token",
+            "inpui.components.simplisafe.API.async_from_refresh_token",
             return_value=api,
         ),
         patch(
-            "homeassistant.components.simplisafe.SimpliSafe._async_start_websocket_if_needed",
+            "inpui.components.simplisafe.SimpliSafe._async_start_websocket_if_needed",
         ),
     ):
         api.websocket = websocket

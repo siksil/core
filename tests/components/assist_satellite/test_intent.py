@@ -20,11 +20,11 @@ async def mock_tts(hass: HomeAssistant):
     assert await async_setup_component(hass, "tts", {})
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://bla",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
     ):
@@ -42,7 +42,7 @@ async def test_broadcast_intent(
     """Test we can invoke a broadcast intent."""
 
     with patch(
-        "homeassistant.components.tts.async_resolve_engine",
+        "inpui.components.tts.async_resolve_engine",
         return_value="tts.cloud",
     ):
         result = await intent.async_handle(
@@ -75,7 +75,7 @@ async def test_broadcast_intent(
     assert len(entity_no_features.announcements) == 0
 
     with patch(
-        "homeassistant.components.tts.async_resolve_engine",
+        "inpui.components.tts.async_resolve_engine",
         return_value="tts.cloud",
     ):
         result = await intent.async_handle(
@@ -117,7 +117,7 @@ async def test_broadcast_intent_excluded_domains(
 
     # Exclude the "test" domain
     with patch(
-        "homeassistant.components.assist_satellite.intent.EXCLUDED_DOMAINS",
+        "inpui.components.assist_satellite.intent.EXCLUDED_DOMAINS",
         new={TEST_DOMAIN},
     ):
         result = await intent.async_handle(

@@ -43,7 +43,7 @@ async def mock_weather_response(
 ) -> AsyncGenerator[None]:
     """Mock a successful response."""
     with patch(
-        "homeassistant.components.trafikverket_weatherstation.coordinator.TrafikverketWeather.async_get_weather",
+        "inpui.components.trafikverket_weatherstation.coordinator.TrafikverketWeather.async_get_weather",
         return_value=get_data,
     ):
         yield

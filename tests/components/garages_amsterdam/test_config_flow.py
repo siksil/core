@@ -54,7 +54,7 @@ async def test_error_handling(
     """Test error handling in the config flow."""
 
     with patch(
-        "homeassistant.components.garages_amsterdam.config_flow.ODPAmsterdam.all_garages",
+        "inpui.components.garages_amsterdam.config_flow.ODPAmsterdam.all_garages",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_init(

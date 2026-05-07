@@ -29,7 +29,7 @@ async def test_sensor(
     device_registry: dr.DeviceRegistry,
 ) -> None:
     """Test sensor platform."""
-    with patch("homeassistant.components.solarman.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.solarman.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -43,7 +43,7 @@ async def test_sensor_availability(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test sensor availability."""
-    with patch("homeassistant.components.solarman.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.solarman.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     assert (state := hass.states.get("sensor.smart_plug_192_168_1_100_voltage"))

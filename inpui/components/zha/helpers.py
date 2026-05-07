@@ -183,7 +183,7 @@ if TYPE_CHECKING:
 _LOGGER = logging.getLogger(__name__)
 
 DEBUG_COMP_BELLOWS = "bellows"
-DEBUG_COMP_ZHA = "homeassistant.components.zha"
+DEBUG_COMP_ZHA = "inpui.components.zha"
 DEBUG_LIB_ZHA = "zha"
 DEBUG_COMP_ZIGPY = "zigpy"
 DEBUG_COMP_ZIGPY_ZNP = "zigpy_znp"

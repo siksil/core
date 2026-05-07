@@ -34,15 +34,15 @@ async def init_integration(
     """Mock integration setup."""
     with (
         patch(
-            "homeassistant.components.plaato.PLATFORMS",
+            "inpui.components.plaato.PLATFORMS",
             [platform],
         ),
         patch(
-            "homeassistant.components.plaato.coordinator.Plaato.get_airlock_data",
+            "inpui.components.plaato.coordinator.Plaato.get_airlock_data",
             return_value=PlaatoAirlock(AIRLOCK_DATA),
         ),
         patch(
-            "homeassistant.components.plaato.coordinator.Plaato.get_keg_data",
+            "inpui.components.plaato.coordinator.Plaato.get_keg_data",
             return_value=PlaatoKeg(KEG_DATA),
         ),
     ):

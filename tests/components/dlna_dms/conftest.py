@@ -47,7 +47,7 @@ async def setup_media_source(hass: HomeAssistant) -> None:
 def upnp_factory_mock() -> Generator[Mock]:
     """Mock the UpnpFactory class to construct DMS-style UPnP devices."""
     with patch(
-        "homeassistant.components.dlna_dms.dms.UpnpFactory",
+        "inpui.components.dlna_dms.dms.UpnpFactory",
         autospec=True,
         spec_set=True,
     ) as upnp_factory:
@@ -85,7 +85,7 @@ def upnp_factory_mock() -> Generator[Mock]:
 def aiohttp_session_requester_mock() -> Generator[Mock]:
     """Mock the AiohttpSessionRequester to prevent network use."""
     with patch(
-        "homeassistant.components.dlna_dms.dms.AiohttpSessionRequester", autospec=True
+        "inpui.components.dlna_dms.dms.AiohttpSessionRequester", autospec=True
     ) as requester_mock:
         requester_mock.return_value = mock = AsyncMock()
         mock.async_http_request.return_value.body = MagicMock()
@@ -112,7 +112,7 @@ def config_entry_mock() -> MockConfigEntry:
 def dms_device_mock(upnp_factory_mock: Mock) -> Generator[Mock]:
     """Mock the async_upnp_client DMS device, initially connected."""
     with patch(
-        "homeassistant.components.dlna_dms.dms.DmsDevice", autospec=True
+        "inpui.components.dlna_dms.dms.DmsDevice", autospec=True
     ) as constructor:
         device = constructor.return_value
         device.on_event = None
@@ -132,7 +132,7 @@ def dms_device_mock(upnp_factory_mock: Mock) -> Generator[Mock]:
 @pytest.fixture(autouse=True)
 def ssdp_scanner_mock() -> Generator[Mock]:
     """Mock the SSDP Scanner."""
-    with patch("homeassistant.components.ssdp.Scanner", autospec=True) as mock_scanner:
+    with patch("inpui.components.ssdp.Scanner", autospec=True) as mock_scanner:
         reg_callback = mock_scanner.return_value.async_register_callback
         reg_callback.return_value = Mock(return_value=None)
         yield mock_scanner.return_value
@@ -141,7 +141,7 @@ def ssdp_scanner_mock() -> Generator[Mock]:
 @pytest.fixture(autouse=True)
 def ssdp_server_mock() -> Generator[None]:
     """Mock the SSDP Server."""
-    with patch("homeassistant.components.ssdp.Server", autospec=True):
+    with patch("inpui.components.ssdp.Server", autospec=True):
         yield
 
 

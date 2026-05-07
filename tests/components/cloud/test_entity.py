@@ -302,7 +302,7 @@ async def test_async_handle_chat_log_service_sets_structured_output_non_strict(
     cloud.llm.async_generate_data = AsyncMock(return_value=_empty_stream())
 
     with patch(
-        "homeassistant.components.conversation.chat_log.ChatLog.async_add_delta_content_stream",
+        "inpui.components.conversation.chat_log.ChatLog.async_add_delta_content_stream",
         _fake_delta_stream,
     ):
         await hass.services.async_call(

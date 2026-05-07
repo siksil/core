@@ -214,7 +214,7 @@ async def test_media_player_play_media_source(
             doorbell, "wait_until_audio_completes", new_callable=AsyncMock
         ) as mock_wait,
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             return_value=Mock(url="http://example.com/test.mp3"),
         ),
     ):

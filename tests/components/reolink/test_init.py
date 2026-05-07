@@ -144,7 +144,7 @@ async def test_firmware_error_twice(
 ) -> None:
     """Test when the firmware update fails 2 times."""
     reolink_host.check_new_firmware.side_effect = ReolinkError("Test error")
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.UPDATE]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -172,7 +172,7 @@ async def test_credential_error_three(
     issue_registry: ir.IssueRegistry,
 ) -> None:
     """Test when the update gives credential error 3 times."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -231,7 +231,7 @@ async def test_removing_disconnected_cams(
     assert await async_setup_component(hass, "config", {})
     client = await hass_ws_client(hass)
     # setup CH 0 and NVR switch entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -298,7 +298,7 @@ async def test_removing_chime(
     assert await async_setup_component(hass, "config", {})
     client = await hass_ws_client(hass)
     # setup CH 0 and NVR switch entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -464,7 +464,7 @@ async def test_migrate_entity_ids(
         )
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [domain]):
+    with patch("inpui.components.reolink.PLATFORMS", [domain]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -518,7 +518,7 @@ async def test_migrate_with_already_existing_device(
     assert device_registry.async_get_device(identifiers={(DOMAIN, new_dev_id)})
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [domain]):
+    with patch("inpui.components.reolink.PLATFORMS", [domain]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -589,7 +589,7 @@ async def test_migrate_with_already_existing_entity(
     assert entity_registry.async_get_entity_id(domain, DOMAIN, new_id)
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [domain]):
+    with patch("inpui.components.reolink.PLATFORMS", [domain]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -634,7 +634,7 @@ async def test_cleanup_mac_connection(
     assert device.connections == {(CONNECTION_NETWORK_MAC, TEST_MAC)}
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [domain]):
+    with patch("inpui.components.reolink.PLATFORMS", [domain]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -686,7 +686,7 @@ async def test_cleanup_combined_with_NVR(
     assert device.identifiers == start_identifiers
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [domain]):
+    with patch("inpui.components.reolink.PLATFORMS", [domain]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -743,7 +743,7 @@ async def test_cleanup_hub_and_direct_connection(
     assert device.identifiers == start_identifiers
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [domain]):
+    with patch("inpui.components.reolink.PLATFORMS", [domain]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -784,12 +784,12 @@ async def test_https_repair_issue(
     )
 
     with (
-        patch("homeassistant.components.reolink.host.FIRST_ONVIF_TIMEOUT", new=0),
+        patch("inpui.components.reolink.host.FIRST_ONVIF_TIMEOUT", new=0),
         patch(
-            "homeassistant.components.reolink.host.FIRST_ONVIF_LONG_POLL_TIMEOUT", new=0
+            "inpui.components.reolink.host.FIRST_ONVIF_LONG_POLL_TIMEOUT", new=0
         ),
         patch(
-            "homeassistant.components.reolink.host.ReolinkHost._async_long_polling",
+            "inpui.components.reolink.host.ReolinkHost._async_long_polling",
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -814,12 +814,12 @@ async def test_ssl_repair_issue(
     )
 
     with (
-        patch("homeassistant.components.reolink.host.FIRST_ONVIF_TIMEOUT", new=0),
+        patch("inpui.components.reolink.host.FIRST_ONVIF_TIMEOUT", new=0),
         patch(
-            "homeassistant.components.reolink.host.FIRST_ONVIF_LONG_POLL_TIMEOUT", new=0
+            "inpui.components.reolink.host.FIRST_ONVIF_LONG_POLL_TIMEOUT", new=0
         ),
         patch(
-            "homeassistant.components.reolink.host.ReolinkHost._async_long_polling",
+            "inpui.components.reolink.host.ReolinkHost._async_long_polling",
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -857,12 +857,12 @@ async def test_webhook_repair_issue(
     """Test repairs issue is raised when the webhook url is unreachable."""
     reolink_host.get_states = test_wait
     with (
-        patch("homeassistant.components.reolink.host.FIRST_ONVIF_TIMEOUT", new=0),
+        patch("inpui.components.reolink.host.FIRST_ONVIF_TIMEOUT", new=0),
         patch(
-            "homeassistant.components.reolink.host.FIRST_ONVIF_LONG_POLL_TIMEOUT", new=0
+            "inpui.components.reolink.host.FIRST_ONVIF_LONG_POLL_TIMEOUT", new=0
         ),
         patch(
-            "homeassistant.components.reolink.host.ReolinkHost._async_long_polling",
+            "inpui.components.reolink.host.ReolinkHost._async_long_polling",
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -925,7 +925,7 @@ async def test_new_device_discovered(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test the entry is reloaded when a new camera or chime is detected."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -979,7 +979,7 @@ async def test_privacy_mode_on(
     reolink_host.baichuan.privacy_mode.return_value = True
     reolink_host.get_states = AsyncMock(side_effect=LoginPrivacyModeError("Test error"))
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -996,7 +996,7 @@ async def test_LoginPrivacyModeError(
     reolink_host.baichuan.privacy_mode.return_value = False
     reolink_host.get_states = AsyncMock(side_effect=LoginPrivacyModeError("Test error"))
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -1036,7 +1036,7 @@ async def test_privacy_mode_change_callback(
     reolink_host.baichuan.privacy_mode.return_value = True
     reolink_host.audio_record.return_value = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -1103,9 +1103,9 @@ async def test_camera_wake_callback(
     reolink_host.audio_record.return_value = True
 
     with (
-        patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]),
+        patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]),
         patch(
-            "homeassistant.components.reolink.host.time",
+            "inpui.components.reolink.host.time",
             return_value=BATTERY_ALL_WAKE_UPDATE_INTERVAL,
         ),
     ):
@@ -1125,13 +1125,13 @@ async def test_camera_wake_callback(
     assert callback_mock.callback_func is not None
     with (
         patch(
-            "homeassistant.components.reolink.host.time",
+            "inpui.components.reolink.host.time",
             return_value=BATTERY_ALL_WAKE_UPDATE_INTERVAL
             + BATTERY_PASSIVE_WAKE_UPDATE_INTERVAL
             + 5,
         ),
         patch(
-            "homeassistant.components.reolink.time",
+            "inpui.components.reolink.time",
             return_value=BATTERY_ALL_WAKE_UPDATE_INTERVAL
             + BATTERY_PASSIVE_WAKE_UPDATE_INTERVAL
             + 5,
@@ -1200,7 +1200,7 @@ async def test_baichaun_only(
     """Test initializing a baichuan only device."""
     reolink_host.baichuan_only = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 

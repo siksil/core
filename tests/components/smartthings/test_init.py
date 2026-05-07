@@ -351,7 +351,7 @@ async def test_refreshing_expired_token(
 ) -> None:
     """Test removing stale devices."""
     with patch(
-        "homeassistant.components.smartthings.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.smartthings.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestReauthError(
             request_info=MagicMock(),
             domain=DOMAIN,
@@ -371,7 +371,7 @@ async def test_error_refreshing_token(
 ) -> None:
     """Test retrying setup after a transient token refresh error."""
     with patch(
-        "homeassistant.components.smartthings.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.smartthings.OAuth2Session.async_ensure_token_valid",
         side_effect=OAuth2TokenRequestTransientError(
             request_info=MagicMock(),
             domain=DOMAIN,
@@ -758,7 +758,7 @@ async def test_oauth_implementation_not_available(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.smartthings.async_get_config_entry_implementation",
+        "inpui.components.smartthings.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

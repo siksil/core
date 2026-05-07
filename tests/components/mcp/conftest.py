@@ -38,7 +38,7 @@ OAUTH_TOKEN_URL = "https://example-auth-server.com/token-path"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.mcp.async_setup_entry", return_value=True
+        "inpui.components.mcp.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -47,7 +47,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_sse_client() -> Generator[AsyncMock]:
     """Fixture to mock the MCP client."""
     with patch(
-        "homeassistant.components.mcp.coordinator.sse_client"
+        "inpui.components.mcp.coordinator.sse_client"
     ) as mock_sse_client:
         yield mock_sse_client
 
@@ -56,7 +56,7 @@ def mock_sse_client() -> Generator[AsyncMock]:
 def mock_http_streamable_client() -> Generator[AsyncMock]:
     """Fixture to mock the MCP client."""
     with patch(
-        "homeassistant.components.mcp.coordinator.streamable_http_client"
+        "inpui.components.mcp.coordinator.streamable_http_client"
     ) as mock_streamable_client:
         mock_streamable_client.return_value.__aenter__.return_value = (
             AsyncMock(),
@@ -72,8 +72,8 @@ def mock_mcp_client(
 ) -> Generator[AsyncMock]:
     """Fixture to mock the MCP client."""
     with (
-        patch("homeassistant.components.mcp.coordinator.ClientSession") as mock_session,
-        patch("homeassistant.components.mcp.coordinator.TIMEOUT", 1),
+        patch("inpui.components.mcp.coordinator.ClientSession") as mock_session,
+        patch("inpui.components.mcp.coordinator.TIMEOUT", 1),
     ):
         yield mock_session.return_value.__aenter__
 

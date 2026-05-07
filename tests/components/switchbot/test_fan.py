@@ -83,7 +83,7 @@ async def test_circulator_fan_controlling(
     mocked_instance = AsyncMock(return_value=True)
     mcoked_none_instance = AsyncMock(return_value=None)
     with patch.multiple(
-        "homeassistant.components.switchbot.fan.switchbot.SwitchbotFan",
+        "inpui.components.switchbot.fan.switchbot.SwitchbotFan",
         get_basic_info=mcoked_none_instance,
         **{mock_method: mocked_instance},
     ):
@@ -148,7 +148,7 @@ async def test_air_purifier_controlling(
     mocked_instance = AsyncMock(return_value=True)
     mcoked_none_instance = AsyncMock(return_value=None)
     with patch.multiple(
-        "homeassistant.components.switchbot.fan.switchbot.SwitchbotAirPurifier",
+        "inpui.components.switchbot.fan.switchbot.SwitchbotAirPurifier",
         get_basic_info=mcoked_none_instance,
         update=mcoked_none_instance,
         **{mock_method: mocked_instance},
@@ -212,7 +212,7 @@ async def test_exception_handling_air_purifier_service(
 
     mcoked_none_instance = AsyncMock(return_value=None)
     with patch.multiple(
-        "homeassistant.components.switchbot.fan.switchbot.SwitchbotAirPurifier",
+        "inpui.components.switchbot.fan.switchbot.SwitchbotAirPurifier",
         get_basic_info=mcoked_none_instance,
         update=mcoked_none_instance,
         **{mock_method: AsyncMock(side_effect=exception)},

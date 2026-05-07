@@ -35,8 +35,8 @@ async def setup_backup_integration(
 ) -> AsyncGenerator[None]:
     """Set up onedrive integration."""
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=False),
-        patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0),
+        patch("inpui.components.backup.is_hassio", return_value=False),
+        patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0),
     ):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {})
         await setup_integration(hass, mock_config_entry)
@@ -210,10 +210,10 @@ async def test_agents_upload(
     client = await hass_client()
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,

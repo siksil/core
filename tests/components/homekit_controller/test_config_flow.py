@@ -1087,7 +1087,7 @@ async def test_mdns_update_to_paired_during_pairing(
 async def test_discovery_no_bluetooth_support(hass: HomeAssistant, controller) -> None:
     """Test discovery with bluetooth support not available."""
     with patch(
-        "homeassistant.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
+        "inpui.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
         False,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1102,7 +1102,7 @@ async def test_discovery_no_bluetooth_support(hass: HomeAssistant, controller) -
 async def test_bluetooth_not_homekit(hass: HomeAssistant, controller) -> None:
     """Test bluetooth discovery with a non-homekit device."""
     with patch(
-        "homeassistant.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
+        "inpui.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
         True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1119,7 +1119,7 @@ async def test_bluetooth_valid_device_no_discovery(
 ) -> None:
     """Test bluetooth discovery  with a homekit device and discovery fails."""
     with patch(
-        "homeassistant.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
+        "inpui.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
         True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1138,7 +1138,7 @@ async def test_bluetooth_valid_device_discovery_paired(
     setup_mock_accessory(controller)
 
     with patch(
-        "homeassistant.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
+        "inpui.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
         True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1159,7 +1159,7 @@ async def test_bluetooth_valid_device_discovery_unpaired(
     storage = await async_get_entity_storage(hass)
 
     with patch(
-        "homeassistant.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
+        "inpui.components.homekit_controller.config_flow.aiohomekit_const.BLE_TRANSPORT_SUPPORTED",
         True,
     ):
         result = await hass.config_entries.flow.async_init(

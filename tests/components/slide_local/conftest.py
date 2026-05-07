@@ -40,11 +40,11 @@ def mock_slide_api() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.slide_local.coordinator.SlideLocalApi",
+            "inpui.components.slide_local.coordinator.SlideLocalApi",
             autospec=True,
         ) as mock_slide_local_api,
         patch(
-            "homeassistant.components.slide_local.config_flow.SlideLocalApi",
+            "inpui.components.slide_local.config_flow.SlideLocalApi",
             new=mock_slide_local_api,
         ),
     ):
@@ -57,6 +57,6 @@ def mock_slide_api() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.slide_local.async_setup_entry", return_value=True
+        "inpui.components.slide_local.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

@@ -18,7 +18,7 @@ from tests.typing import WebSocketGenerator
 def mock_onboarding_not_done() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=False,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -28,7 +28,7 @@ def mock_onboarding_not_done() -> Generator[MagicMock]:
 def mock_onboarding_done() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=True,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -38,7 +38,7 @@ def mock_onboarding_done() -> Generator[MagicMock]:
 def mock_add_onboarding_listener() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_add_listener",
+        "inpui.components.onboarding.async_add_listener",
     ) as mock_add_onboarding_listener:
         yield mock_add_onboarding_listener
 

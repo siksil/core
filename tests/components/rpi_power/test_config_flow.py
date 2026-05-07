@@ -9,7 +9,7 @@ from inpui.data_entry_flow import FlowResultType
 
 from tests.common import patch
 
-MODULE = "homeassistant.components.rpi_power.config_flow.new_under_voltage"
+MODULE = "inpui.components.rpi_power.config_flow.new_under_voltage"
 
 
 async def test_setup(hass: HomeAssistant) -> None:

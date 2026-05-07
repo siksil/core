@@ -572,7 +572,7 @@ async def test_get_events_with_device_ids(
     assert isinstance(results[4]["when"], float)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_excluded_entities(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -759,7 +759,7 @@ async def test_subscribe_unsubscribe_logbook_stream_excluded_entities(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_included_entities(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -969,7 +969,7 @@ async def test_subscribe_unsubscribe_logbook_stream_included_entities(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_logbook_stream_excluded_entities_inherits_filters_from_recorder(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1162,7 +1162,7 @@ async def test_logbook_stream_excluded_entities_inherits_filters_from_recorder(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1471,7 +1471,7 @@ async def test_subscribe_unsubscribe_logbook_stream(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_entities(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1571,7 +1571,7 @@ async def test_subscribe_unsubscribe_logbook_stream_entities(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_entities_with_end_time(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1675,7 +1675,7 @@ async def test_subscribe_unsubscribe_logbook_stream_entities_with_end_time(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_entities_past_only(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1745,7 +1745,7 @@ async def test_subscribe_unsubscribe_logbook_stream_entities_past_only(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_big_query(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -1847,7 +1847,7 @@ async def test_subscribe_unsubscribe_logbook_stream_big_query(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_unsubscribe_logbook_stream_device(
     recorder_mock: Recorder,
     hass: HomeAssistant,
@@ -1976,7 +1976,7 @@ async def test_event_stream_bad_start_time(
     assert response["error"]["code"] == "invalid_start_time"
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_logbook_stream_match_multiple_entities(
     recorder_mock: Recorder,
     hass: HomeAssistant,
@@ -2086,7 +2086,7 @@ async def test_logbook_stream_match_multiple_entities(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_logbook_stream_match_multiple_entities_one_with_broken_logbook_platform(
     recorder_mock: Recorder,
     hass: HomeAssistant,
@@ -2321,7 +2321,7 @@ async def test_live_stream_with_one_second_commit_interval(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_disconnected(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -2380,7 +2380,7 @@ async def test_subscribe_disconnected(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_stream_consumer_stop_processing(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -2442,7 +2442,7 @@ async def test_stream_consumer_stop_processing(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_recorder_is_far_behind(
     recorder_mock: Recorder,
     hass: HomeAssistant,
@@ -2529,7 +2529,7 @@ async def test_recorder_is_far_behind(
     assert msg["success"]
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_all_entities_are_continuous(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -2589,7 +2589,7 @@ async def test_subscribe_all_entities_are_continuous(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_all_entities_have_uom_multiple(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -2648,7 +2648,7 @@ async def test_subscribe_all_entities_have_uom_multiple(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_entities_some_have_uom_multiple(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -2755,7 +2755,7 @@ async def test_subscribe_entities_some_have_uom_multiple(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_logbook_stream_ignores_forced_updates(
     recorder_mock: Recorder, hass: HomeAssistant, hass_ws_client: WebSocketGenerator
 ) -> None:
@@ -2871,7 +2871,7 @@ async def test_logbook_stream_ignores_forced_updates(
     ) == listeners_without_writes(init_listeners)
 
 
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_subscribe_all_entities_are_continuous_with_device(
     recorder_mock: Recorder,
     hass: HomeAssistant,
@@ -3112,7 +3112,7 @@ async def test_live_stream_with_changed_state_change(
         ),
     ],
 )
-@patch("homeassistant.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
+@patch("inpui.components.logbook.websocket_api.EVENT_COALESCE_TIME", 0)
 async def test_consistent_stream_and_recorder_filtering(
     recorder_mock: Recorder,
     hass: HomeAssistant,

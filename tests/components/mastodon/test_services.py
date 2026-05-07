@@ -175,7 +175,7 @@ async def test_mute_account_duration_too_long(
     await setup_integration(hass, mock_config_entry)
 
     with (
-        patch("homeassistant.components.mastodon.services.MAX_DURATION_SECONDS", 5),
+        patch("inpui.components.mastodon.services.MAX_DURATION_SECONDS", 5),
         pytest.raises(ServiceValidationError) as err,
     ):
         await hass.services.async_call(

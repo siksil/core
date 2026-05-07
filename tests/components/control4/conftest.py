@@ -36,7 +36,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock control4 setup entry."""
     with patch(
-        "homeassistant.components.control4.async_setup_entry", return_value=True
+        "inpui.components.control4.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -46,10 +46,10 @@ def mock_c4_account() -> Generator[MagicMock]:
     """Mock a Control4 Account client."""
     with (
         patch(
-            "homeassistant.components.control4.C4Account", autospec=True
+            "inpui.components.control4.C4Account", autospec=True
         ) as mock_account_class,
         patch(
-            "homeassistant.components.control4.config_flow.C4Account",
+            "inpui.components.control4.config_flow.C4Account",
             new=mock_account_class,
         ),
     ):
@@ -72,10 +72,10 @@ def mock_c4_director() -> Generator[MagicMock]:
     """Mock a Control4 Director client."""
     with (
         patch(
-            "homeassistant.components.control4.C4Director", autospec=True
+            "inpui.components.control4.C4Director", autospec=True
         ) as mock_director_class,
         patch(
-            "homeassistant.components.control4.config_flow.C4Director",
+            "inpui.components.control4.config_flow.C4Director",
             new=mock_director_class,
         ),
     ):
@@ -110,7 +110,7 @@ def mock_update_variables() -> Generator[AsyncMock]:
         }
 
     with patch(
-        "homeassistant.components.control4.media_player.update_variables_for_config_entry",
+        "inpui.components.control4.media_player.update_variables_for_config_entry",
         new=_mock_update_variables,
     ) as mock_update:
         yield mock_update
@@ -144,7 +144,7 @@ def mock_climate_update_variables(
         return mock_climate_variables
 
     with patch(
-        "homeassistant.components.control4.climate.update_variables_for_config_entry",
+        "inpui.components.control4.climate.update_variables_for_config_entry",
         new=_mock_update_variables,
     ) as mock_update:
         yield mock_update
@@ -154,7 +154,7 @@ def mock_climate_update_variables(
 def mock_c4_climate() -> Generator[MagicMock]:
     """Mock C4Climate class."""
     with patch(
-        "homeassistant.components.control4.climate.C4Climate", autospec=True
+        "inpui.components.control4.climate.C4Climate", autospec=True
     ) as mock_class:
         mock_instance = mock_class.return_value
         mock_instance.setHvacMode = AsyncMock()
@@ -175,5 +175,5 @@ def platforms() -> list[Platform]:
 @pytest.fixture(autouse=True)
 async def mock_patch_platforms(platforms: list[Platform]) -> AsyncGenerator[None]:
     """Fixture to set up platforms for tests."""
-    with patch("homeassistant.components.control4.PLATFORMS", platforms):
+    with patch("inpui.components.control4.PLATFORMS", platforms):
         yield

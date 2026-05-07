@@ -26,7 +26,7 @@ from . import initialize_entry
 from tests.common import MockConfigEntry, snapshot_platform
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.ALARM_CONTROL_PANEL])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.ALARM_CONTROL_PANEL])
 async def test_platform_setup_and_discovery(
     hass: HomeAssistant,
     mock_manager: Manager,
@@ -41,7 +41,7 @@ async def test_platform_setup_and_discovery(
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.ALARM_CONTROL_PANEL])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.ALARM_CONTROL_PANEL])
 @pytest.mark.parametrize(
     ("mock_device_code", "entity_id"),
     [
@@ -83,7 +83,7 @@ async def test_service(
     mock_manager.send_commands.assert_called_once_with(mock_device.id, [command])
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.ALARM_CONTROL_PANEL])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.ALARM_CONTROL_PANEL])
 @pytest.mark.parametrize(
     ("mock_device_code", "entity_id"),
     [

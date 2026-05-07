@@ -190,7 +190,7 @@ async def setup_mock_motioneye_config_entry(
     client = client or create_mock_motioneye_client()
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=client,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

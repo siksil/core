@@ -24,7 +24,7 @@ async def test_form(hass: HomeAssistant, aioclient_mock_fixture) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.android_ip_webcam.async_setup_entry",
+        "inpui.components.android_ip_webcam.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(

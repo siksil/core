@@ -31,7 +31,7 @@ async def test_reload_notify(hass: HomeAssistant) -> None:
     """Verify we can reload the notify service."""
 
     with patch(
-        "homeassistant.components.smtp.notify.MailNotificationService.connection_is_valid"
+        "inpui.components.smtp.notify.MailNotificationService.connection_is_valid"
     ):
         assert await async_setup_component(
             hass,
@@ -55,7 +55,7 @@ async def test_reload_notify(hass: HomeAssistant) -> None:
     with (
         patch.object(hass_config, "YAML_CONFIG_FILE", yaml_path),
         patch(
-            "homeassistant.components.smtp.notify.MailNotificationService.connection_is_valid"
+            "inpui.components.smtp.notify.MailNotificationService.connection_is_valid"
         ),
     ):
         await hass.services.async_call(

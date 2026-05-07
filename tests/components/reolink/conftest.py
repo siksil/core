@@ -56,7 +56,7 @@ TEST_BC_PORT = 5678
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.reolink.async_setup_entry", return_value=True
+        "inpui.components.reolink.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -203,7 +203,7 @@ def _init_host_mock(host_mock: MagicMock) -> None:
 def reolink_host_class() -> Generator[MagicMock]:
     """Mock reolink connection and return both the host_mock and host_mock_class."""
     with patch(
-        "homeassistant.components.reolink.host.Host", autospec=False
+        "inpui.components.reolink.host.Host", autospec=False
     ) as host_mock_class:
         _init_host_mock(host_mock_class.return_value)
         yield host_mock_class
@@ -218,7 +218,7 @@ def reolink_host(reolink_host_class: MagicMock) -> Generator[MagicMock]:
 @pytest.fixture
 def reolink_platforms() -> Generator[None]:
     """Mock reolink entry setup."""
-    with patch("homeassistant.components.reolink.PLATFORMS", return_value=[]):
+    with patch("inpui.components.reolink.PLATFORMS", return_value=[]):
         yield
 
 

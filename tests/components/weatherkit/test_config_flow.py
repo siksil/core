@@ -50,7 +50,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
         return_value=[DataSetType.CURRENT_WEATHER],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -86,7 +86,7 @@ async def test_error_handling(
     )
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
         side_effect=exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -105,7 +105,7 @@ async def test_form_unsupported_location(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -118,7 +118,7 @@ async def test_form_unsupported_location(hass: HomeAssistant) -> None:
 
     # Test that we can recover from this error by changing the location
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
         return_value=[DataSetType.CURRENT_WEATHER],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -163,7 +163,7 @@ async def test_auto_fix_key_input(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_availability",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_availability",
         return_value=[DataSetType.CURRENT_WEATHER],
     ):
         user_input = EXAMPLE_USER_INPUT.copy()

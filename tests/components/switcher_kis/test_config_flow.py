@@ -38,7 +38,7 @@ async def test_user_setup(
     hass: HomeAssistant, mock_setup_entry: AsyncMock, mock_bridge: MagicMock
 ) -> None:
     """Test we can finish a config flow."""
-    with patch("homeassistant.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
+    with patch("inpui.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
         )
@@ -72,7 +72,7 @@ async def test_user_setup_found_token_device_valid_token(
     hass: HomeAssistant, mock_setup_entry: AsyncMock, mock_bridge: MagicMock
 ) -> None:
     """Test we can finish a config flow with token device found."""
-    with patch("homeassistant.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
+    with patch("inpui.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
         )
@@ -87,7 +87,7 @@ async def test_user_setup_found_token_device_valid_token(
     assert result2["step_id"] == "credentials"
 
     with patch(
-        "homeassistant.components.switcher_kis.config_flow.validate_token",
+        "inpui.components.switcher_kis.config_flow.validate_token",
         return_value=True,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -120,7 +120,7 @@ async def test_user_setup_found_token_device_invalid_token(
     hass: HomeAssistant, mock_setup_entry: AsyncMock
 ) -> None:
     """Test we can finish a config flow with token device found."""
-    with patch("homeassistant.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
+    with patch("inpui.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
         )
@@ -134,7 +134,7 @@ async def test_user_setup_found_token_device_invalid_token(
     assert result2["step_id"] == "credentials"
 
     with patch(
-        "homeassistant.components.switcher_kis.config_flow.validate_token",
+        "inpui.components.switcher_kis.config_flow.validate_token",
         return_value=False,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -146,7 +146,7 @@ async def test_user_setup_found_token_device_invalid_token(
     assert result3["errors"] == {"base": "invalid_auth"}
 
     with patch(
-        "homeassistant.components.switcher_kis.config_flow.validate_token",
+        "inpui.components.switcher_kis.config_flow.validate_token",
         return_value=True,
     ):
         result4 = await hass.config_entries.flow.async_configure(
@@ -168,7 +168,7 @@ async def test_user_setup_abort_no_devices_found(
     hass: HomeAssistant, mock_setup_entry: AsyncMock, mock_bridge: MagicMock
 ) -> None:
     """Test we abort a config flow if no devices found."""
-    with patch("homeassistant.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
+    with patch("inpui.components.switcher_kis.utils.DISCOVERY_TIME_SEC", 0):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
         )
@@ -222,7 +222,7 @@ async def test_reauth_successful(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.switcher_kis.config_flow.validate_token",
+        "inpui.components.switcher_kis.config_flow.validate_token",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -247,7 +247,7 @@ async def test_reauth_invalid_auth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.switcher_kis.config_flow.validate_token",
+        "inpui.components.switcher_kis.config_flow.validate_token",
         return_value=False,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -259,7 +259,7 @@ async def test_reauth_invalid_auth(hass: HomeAssistant) -> None:
     assert result2["errors"] == {"base": "invalid_auth"}
 
     with patch(
-        "homeassistant.components.switcher_kis.config_flow.validate_token",
+        "inpui.components.switcher_kis.config_flow.validate_token",
         return_value=True,
     ):
         result3 = await hass.config_entries.flow.async_configure(

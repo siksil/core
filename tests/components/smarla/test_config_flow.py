@@ -49,7 +49,7 @@ async def test_config_flow(hass: HomeAssistant) -> None:
 async def test_malformed_token(hass: HomeAssistant) -> None:
     """Test we show user form on malformed token input."""
     with patch(
-        "homeassistant.components.smarla.config_flow.Connection", side_effect=ValueError
+        "inpui.components.smarla.config_flow.Connection", side_effect=ValueError
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,

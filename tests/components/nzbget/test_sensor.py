@@ -22,7 +22,7 @@ from . import init_integration
 async def test_sensors(hass: HomeAssistant, entity_registry: er.EntityRegistry) -> None:
     """Test the creation and values of the sensors."""
     now = dt_util.utcnow().replace(microsecond=0)
-    with patch("homeassistant.components.nzbget.sensor.utcnow", return_value=now):
+    with patch("inpui.components.nzbget.sensor.utcnow", return_value=now):
         entry = await init_integration(hass)
 
     uptime = now - timedelta(seconds=600)

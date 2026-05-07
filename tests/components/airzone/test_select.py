@@ -125,7 +125,7 @@ async def test_airzone_select_sys_qadapt(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=put_q_adapt,
     ):
         await hass.services.async_call(
@@ -150,7 +150,7 @@ async def test_airzone_select_sys_qadapt(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.put_hvac",
             return_value=put_q_adapt,
         ),
         pytest.raises(HomeAssistantError),
@@ -193,7 +193,7 @@ async def test_airzone_select_sleep(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=put_hvac_sleep,
     ):
         await hass.services.async_call(
@@ -237,7 +237,7 @@ async def test_airzone_select_mode(hass: HomeAssistant) -> None:
         )
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=put_hvac_mode,
     ):
         await hass.services.async_call(
@@ -272,7 +272,7 @@ async def test_airzone_select_grille_angle(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=put_hvac_cold_angle,
     ):
         await hass.services.async_call(
@@ -300,7 +300,7 @@ async def test_airzone_select_grille_angle(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=put_hvac_heat_angle,
     ):
         await hass.services.async_call(

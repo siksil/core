@@ -55,7 +55,7 @@ async def mock_setup() -> AsyncGenerator[AsyncMock]:
     """Fixture for patching out integration setup."""
 
     with patch(
-        "homeassistant.components.rainbird.async_setup_entry",
+        "inpui.components.rainbird.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup
@@ -351,7 +351,7 @@ async def test_controller_timeout(
     """Test an error talking to the controller."""
 
     with patch(
-        "homeassistant.components.rainbird.config_flow.asyncio.timeout",
+        "inpui.components.rainbird.config_flow.asyncio.timeout",
         side_effect=TimeoutError,
     ):
         result = await complete_flow(hass)

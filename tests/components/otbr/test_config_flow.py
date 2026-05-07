@@ -174,7 +174,7 @@ async def _finish_user_flow(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.otbr.async_setup_entry",
+        "inpui.components.otbr.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -260,11 +260,11 @@ async def test_user_flow_router_not_setup(
 
     with (
         patch(
-            "homeassistant.components.otbr.config_flow.async_get_preferred_dataset",
+            "inpui.components.otbr.config_flow.async_get_preferred_dataset",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.otbr.async_setup_entry",
+            "inpui.components.otbr.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -390,7 +390,7 @@ async def test_hassio_discovery_flow(
     aioclient_mock.get(f"{url}/node/dataset/active", text="aa")
 
     with patch(
-        "homeassistant.components.otbr.async_setup_entry",
+        "inpui.components.otbr.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -427,10 +427,10 @@ async def test_hassio_discovery_flow_yellow(
 
     with (
         patch(
-            "homeassistant.components.otbr.async_setup_entry",
+            "inpui.components.otbr.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
-        patch("homeassistant.components.otbr.config_flow.yellow_hardware.async_info"),
+        patch("inpui.components.otbr.config_flow.yellow_hardware.async_info"),
     ):
         result = await hass.config_entries.flow.async_init(
             otbr.DOMAIN, context={"source": "hassio"}, data=HASSIO_DATA
@@ -486,7 +486,7 @@ async def test_hassio_discovery_flow_sky_connect(
     otbr_addon_info.return_value.options = {"device": device}
 
     with patch(
-        "homeassistant.components.otbr.async_setup_entry",
+        "inpui.components.otbr.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -686,11 +686,11 @@ async def test_hassio_discovery_flow_router_not_setup(
 
     with (
         patch(
-            "homeassistant.components.otbr.config_flow.async_get_preferred_dataset",
+            "inpui.components.otbr.config_flow.async_get_preferred_dataset",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.otbr.async_setup_entry",
+            "inpui.components.otbr.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -744,11 +744,11 @@ async def test_hassio_discovery_flow_router_not_setup_has_preferred(
 
     with (
         patch(
-            "homeassistant.components.otbr.config_flow.async_get_preferred_dataset",
+            "inpui.components.otbr.config_flow.async_get_preferred_dataset",
             return_value=DATASET_CH15.hex(),
         ),
         patch(
-            "homeassistant.components.otbr.async_setup_entry",
+            "inpui.components.otbr.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -803,11 +803,11 @@ async def test_hassio_discovery_flow_router_not_setup_has_preferred_2(
 
     with (
         patch(
-            "homeassistant.components.otbr.config_flow.async_get_preferred_dataset",
+            "inpui.components.otbr.config_flow.async_get_preferred_dataset",
             return_value=DATASET_CH16.hex(),
         ),
         patch(
-            "homeassistant.components.otbr.async_setup_entry",
+            "inpui.components.otbr.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -996,7 +996,7 @@ async def test_config_flow_additional_entry(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.otbr.async_setup_entry",
+        "inpui.components.otbr.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1024,11 +1024,11 @@ async def test_hassio_discovery_reload(
 
     with (
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.is_hassio",
+            "inpui.components.otbr.homeassistant_hardware.is_hassio",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
+            "inpui.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
             return_value=FirmwareInfo(
                 device="/dev/ttyUSB1",
                 firmware_type=ApplicationType.SPINEL,

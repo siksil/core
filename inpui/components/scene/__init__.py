@@ -38,7 +38,7 @@ def _platform_validator(config: dict[str, Any]) -> dict[str, Any]:
     platform_name = config[CONF_PLATFORM]
     try:
         platform = importlib.import_module(
-            f"homeassistant.components.{platform_name}.scene"
+            f"inpui.components.{platform_name}.scene"
         )
     except ImportError:
         raise vol.Invalid("Invalid platform specified") from None

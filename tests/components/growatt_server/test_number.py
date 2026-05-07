@@ -28,7 +28,7 @@ DOMAIN = "growatt_server"
 async def number_only() -> AsyncGenerator[None]:
     """Enable only the number platform."""
     with patch(
-        "homeassistant.components.growatt_server.PLATFORMS",
+        "inpui.components.growatt_server.PLATFORMS",
         [Platform.NUMBER],
     ):
         yield

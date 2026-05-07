@@ -36,7 +36,7 @@ pytestmark = pytest.mark.usefixtures("init_integration")
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.wled.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.wled.PLATFORMS", [Platform.SWITCH]):
         yield
 
 

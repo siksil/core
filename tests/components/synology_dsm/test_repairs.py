@@ -36,7 +36,7 @@ from tests.typing import ClientSessionGenerator, WebSocketGenerator
 @pytest.fixture
 def mock_dsm_with_filestation():
     """Mock a successful service with filestation support."""
-    with patch("homeassistant.components.synology_dsm.common.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.common.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -74,10 +74,10 @@ async def setup_dsm_with_filestation(
     """Mock setup of synology dsm config entry."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=mock_dsm_with_filestation,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,

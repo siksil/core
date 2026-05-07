@@ -248,19 +248,19 @@ async def test_airzone_create_climates(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             return_value=HVAC_DHW_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK_CHANGED,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             return_value=HVAC_SYSTEMS_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             return_value=HVAC_WEBSERVER_MOCK,
         ),
     ):
@@ -287,7 +287,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK,
     ):
         await hass.services.async_call(
@@ -312,7 +312,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK,
     ):
         await hass.services.async_call(
@@ -337,7 +337,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK,
     ):
         await hass.services.async_call(
@@ -368,7 +368,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK_1,
     ):
         await hass.services.async_call(
@@ -394,7 +394,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK_2,
     ):
         await hass.services.async_call(
@@ -420,7 +420,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK_3,
     ):
         await hass.services.async_call(
@@ -446,7 +446,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
         ]
     }
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK_4,
     ):
         await hass.services.async_call(
@@ -467,19 +467,19 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             return_value=HVAC_DHW_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK_NO_SET_POINT,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             return_value=HVAC_SYSTEMS_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             return_value=HVAC_WEBSERVER_MOCK,
         ),
     ):
@@ -507,7 +507,7 @@ async def test_airzone_climate_set_hvac_slave_error(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.put_hvac",
             return_value=HVAC_MOCK,
         ),
         pytest.raises(HomeAssistantError),
@@ -542,7 +542,7 @@ async def test_airzone_climate_set_fan_mode(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK,
     ):
         await hass.services.async_call(
@@ -576,7 +576,7 @@ async def test_airzone_climate_set_temp(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK,
     ):
         await hass.services.async_call(
@@ -602,7 +602,7 @@ async def test_airzone_climate_set_temp_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.put_hvac",
             side_effect=AirzoneError,
         ),
         pytest.raises(HomeAssistantError),
@@ -638,7 +638,7 @@ async def test_airzone_climate_set_temp_range(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone.AirzoneLocalApi.put_hvac",
+        "inpui.components.airzone.AirzoneLocalApi.put_hvac",
         return_value=HVAC_MOCK,
     ):
         await hass.services.async_call(

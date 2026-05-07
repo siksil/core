@@ -49,7 +49,7 @@ async def test_set_config_entry_unique_id(
 async def test_setup_config_entry_with_error(hass: HomeAssistant, entry) -> None:
     """Test setup component from config entry with errors."""
     with patch(
-        "homeassistant.components.plex.PlexServer.connect",
+        "inpui.components.plex.PlexServer.connect",
         side_effect=requests.exceptions.ConnectionError,
     ):
         entry.add_to_hass(hass)
@@ -60,7 +60,7 @@ async def test_setup_config_entry_with_error(hass: HomeAssistant, entry) -> None
     assert entry.state is ConfigEntryState.SETUP_RETRY
 
     with patch(
-        "homeassistant.components.plex.PlexServer.connect",
+        "inpui.components.plex.PlexServer.connect",
         side_effect=plexapi.exceptions.BadRequest,
     ):
         next_update = dt_util.utcnow() + timedelta(seconds=30)
@@ -305,7 +305,7 @@ async def test_bad_token_with_tokenless_server(
 async def test_scan_clients_schedule(hass: HomeAssistant, setup_plex_server) -> None:
     """Test scan_clients scheduled update."""
     with patch(
-        "homeassistant.components.plex.server.PlexServer._async_update_platforms"
+        "inpui.components.plex.server.PlexServer._async_update_platforms"
     ) as mock_scan_clients:
         await setup_plex_server()
         mock_scan_clients.reset_mock()

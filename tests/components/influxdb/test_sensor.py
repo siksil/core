@@ -32,7 +32,7 @@ from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 
-INFLUXDB_PATH = "homeassistant.components.influxdb"
+INFLUXDB_PATH = "inpui.components.influxdb"
 INFLUXDB_CLIENT_PATH = f"{INFLUXDB_PATH}.InfluxDBClient"
 INFLUXDB_SENSOR_PATH = f"{INFLUXDB_PATH}.sensor"
 

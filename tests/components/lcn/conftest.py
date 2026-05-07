@@ -121,7 +121,7 @@ async def init_integration(
 
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.lcn.PchkConnectionManager",
+        "inpui.components.lcn.PchkConnectionManager",
         side_effect=lcn_connection_factory,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

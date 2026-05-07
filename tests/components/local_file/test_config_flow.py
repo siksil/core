@@ -28,7 +28,7 @@ async def test_form_sensor(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> 
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):
@@ -63,7 +63,7 @@ async def test_options_flow(hass: HomeAssistant, loaded_entry: MockConfigEntry) 
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):
@@ -100,7 +100,7 @@ async def test_validation_options(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=False)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):
@@ -121,7 +121,7 @@ async def test_validation_options(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):
@@ -160,7 +160,7 @@ async def test_entry_already_exist(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):

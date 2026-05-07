@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry, async_load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.open_router.async_setup_entry",
+        "inpui.components.open_router.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -100,7 +100,7 @@ class Model:
 @pytest.fixture
 async def mock_openai_client() -> AsyncGenerator[AsyncMock]:
     """Initialize integration."""
-    with patch("homeassistant.components.open_router.AsyncOpenAI") as mock_client:
+    with patch("inpui.components.open_router.AsyncOpenAI") as mock_client:
         client = mock_client.return_value
         client.chat.completions.create = AsyncMock(
             return_value=ChatCompletion(
@@ -133,7 +133,7 @@ async def mock_openai_client() -> AsyncGenerator[AsyncMock]:
 async def mock_open_router_client(hass: HomeAssistant) -> AsyncGenerator[AsyncMock]:
     """Initialize integration."""
     with patch(
-        "homeassistant.components.open_router.config_flow.OpenRouterClient",
+        "inpui.components.open_router.config_flow.OpenRouterClient",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value

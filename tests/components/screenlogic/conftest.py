@@ -46,7 +46,7 @@ def mock_disconnect() -> Generator[None]:
         return Mock()
 
     with patch(
-        "homeassistant.components.screenlogic.ScreenLogicGateway.async_subscribe_client",
+        "inpui.components.screenlogic.ScreenLogicGateway.async_subscribe_client",
         _subscribe_client,
     ):
         yield

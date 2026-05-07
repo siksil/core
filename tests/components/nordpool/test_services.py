@@ -110,7 +110,7 @@ async def test_service_call_failures(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=error,
         ),
         pytest.raises(ServiceValidationError) as err,
@@ -137,7 +137,7 @@ async def test_empty_response_returns_empty_list(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=NordPoolEmptyResponseError,
         ),
     ):

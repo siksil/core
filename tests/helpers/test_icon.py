@@ -159,11 +159,11 @@ async def test_get_icons_while_loading_components(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.icon._load_icons_files",
+            "inpui.helpers.icon._load_icons_files",
             mock_load_icons_files,
         ),
         patch(
-            "homeassistant.helpers.icon.async_get_integrations",
+            "inpui.helpers.icon.async_get_integrations",
             return_value={"component1": integration},
         ),
     ):
@@ -184,7 +184,7 @@ async def test_caching(hass: HomeAssistant) -> None:
 
     # Patch with same method so we can count invocations
     with patch(
-        "homeassistant.helpers.icon.build_resources",
+        "inpui.helpers.icon.build_resources",
         side_effect=icon.build_resources,
     ) as mock_build:
         load1 = await icon.async_get_icons(hass, "entity_component")
@@ -215,7 +215,7 @@ async def test_caching(hass: HomeAssistant) -> None:
     # Check if new loaded component, trigger load
     hass.config.components.add("media_player")
     with patch(
-        "homeassistant.helpers.icon._load_icons_files",
+        "inpui.helpers.icon._load_icons_files",
         side_effect=icon._load_icons_files,
     ) as mock_load:
         load_sensor_only = await icon.async_get_icons(

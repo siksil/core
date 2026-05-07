@@ -126,13 +126,13 @@ def _patch_efergy():
     mocked_efergy.info["type"] = "EEEHub"
     mocked_efergy.info["version"] = "2.3.7"
     return patch(
-        "homeassistant.components.efergy.config_flow.Efergy",
+        "inpui.components.efergy.config_flow.Efergy",
         return_value=mocked_efergy,
     )
 
 
 def _patch_efergy_status():
-    return patch("homeassistant.components.efergy.config_flow.Efergy.async_status")
+    return patch("inpui.components.efergy.config_flow.Efergy.async_status")
 
 
 async def setup_platform(
@@ -145,7 +145,7 @@ async def setup_platform(
     """Set up the platform."""
     entry = await init_integration(hass, aioclient_mock, token=token, error=error)
 
-    with patch("homeassistant.components.efergy.PLATFORMS", [platform]):
+    with patch("inpui.components.efergy.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
 
     return entry

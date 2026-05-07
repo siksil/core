@@ -31,8 +31,8 @@ async def test_full_flow(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> No
     assert result["step_id"] == "user"
 
     with (
-        patch("homeassistant.components.lutron.config_flow.Lutron.load_xml_db"),
-        patch("homeassistant.components.lutron.config_flow.Lutron.guid", "12345678901"),
+        patch("inpui.components.lutron.config_flow.Lutron.load_xml_db"),
+        patch("inpui.components.lutron.config_flow.Lutron.guid", "12345678901"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -67,7 +67,7 @@ async def test_flow_failure(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.lutron.config_flow.Lutron.load_xml_db",
+        "inpui.components.lutron.config_flow.Lutron.load_xml_db",
         side_effect=raise_error,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -79,8 +79,8 @@ async def test_flow_failure(
     assert result["errors"] == {"base": text_error}
 
     with (
-        patch("homeassistant.components.lutron.config_flow.Lutron.load_xml_db"),
-        patch("homeassistant.components.lutron.config_flow.Lutron.guid", "12345678901"),
+        patch("inpui.components.lutron.config_flow.Lutron.load_xml_db"),
+        patch("inpui.components.lutron.config_flow.Lutron.guid", "12345678901"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -105,8 +105,8 @@ async def test_flow_incorrect_guid(
     assert result["step_id"] == "user"
 
     with (
-        patch("homeassistant.components.lutron.config_flow.Lutron.load_xml_db"),
-        patch("homeassistant.components.lutron.config_flow.Lutron.guid", "12345"),
+        patch("inpui.components.lutron.config_flow.Lutron.load_xml_db"),
+        patch("inpui.components.lutron.config_flow.Lutron.guid", "12345"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -117,8 +117,8 @@ async def test_flow_incorrect_guid(
         assert result["errors"] == {"base": "cannot_connect"}
 
     with (
-        patch("homeassistant.components.lutron.config_flow.Lutron.load_xml_db"),
-        patch("homeassistant.components.lutron.config_flow.Lutron.guid", "12345678901"),
+        patch("inpui.components.lutron.config_flow.Lutron.load_xml_db"),
+        patch("inpui.components.lutron.config_flow.Lutron.guid", "12345678901"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

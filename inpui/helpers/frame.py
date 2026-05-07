@@ -87,7 +87,7 @@ def get_integration_logger(fallback_name: str) -> logging.Logger:
     if integration_frame.custom_integration:
         logger_name = f"custom_components.{integration_frame.integration}"
     else:
-        logger_name = f"homeassistant.components.{integration_frame.integration}"
+        logger_name = f"inpui.components.{integration_frame.integration}"
 
     return logging.getLogger(logger_name)
 

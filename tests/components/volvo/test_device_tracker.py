@@ -27,7 +27,7 @@ async def test_device_tracker(
 ) -> None:
     """Test device tracker."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.DEVICE_TRACKER]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.DEVICE_TRACKER]):
         assert await setup_integration()
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

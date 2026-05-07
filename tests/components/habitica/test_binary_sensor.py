@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry, async_load_fixture, snapshot_platform
 def binary_sensor_only() -> Generator[None]:
     """Enable only the binarty sensor platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         yield

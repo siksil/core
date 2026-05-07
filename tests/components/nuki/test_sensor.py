@@ -21,7 +21,7 @@ async def test_sensors(
     mock_nuki_requests: requests_mock.Mocker,
 ) -> None:
     """Test sensors."""
-    with patch("homeassistant.components.nuki.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.nuki.PLATFORMS", [Platform.SENSOR]):
         entry = await init_integration(hass, mock_nuki_requests)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

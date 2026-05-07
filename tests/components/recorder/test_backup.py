@@ -14,7 +14,7 @@ from inpui.exceptions import HomeAssistantError
 async def test_async_pre_backup(hass: HomeAssistant) -> None:
     """Test pre backup."""
     with patch(
-        "homeassistant.components.recorder.core.Recorder.lock_database"
+        "inpui.components.recorder.core.Recorder.lock_database"
     ) as lock_mock:
         await async_pre_backup(hass)
     assert lock_mock.called
@@ -47,7 +47,7 @@ async def test_async_pre_backup_core_state(
     hass.set_state(core_state)
     with (  # pylint: disable=confusing-with-statement
         patch(
-            "homeassistant.components.recorder.core.Recorder.lock_database"
+            "inpui.components.recorder.core.Recorder.lock_database"
         ) as lock_mock,
         expected_result,
     ):
@@ -60,7 +60,7 @@ async def test_async_pre_backup_with_timeout(hass: HomeAssistant) -> None:
     """Test pre backup with timeout."""
     with (
         patch(
-            "homeassistant.components.recorder.core.Recorder.lock_database",
+            "inpui.components.recorder.core.Recorder.lock_database",
             side_effect=TimeoutError(),
         ) as lock_mock,
         pytest.raises(TimeoutError),
@@ -74,10 +74,10 @@ async def test_async_pre_backup_with_migration(hass: HomeAssistant) -> None:
     """Test pre backup with migration."""
     with (
         patch(
-            "homeassistant.components.recorder.core.Recorder.lock_database"
+            "inpui.components.recorder.core.Recorder.lock_database"
         ) as lock_mock,
         patch(
-            "homeassistant.components.recorder.backup.async_migration_in_progress",
+            "inpui.components.recorder.backup.async_migration_in_progress",
             return_value=True,
         ),
         pytest.raises(HomeAssistantError, match="Database migration in progress"),
@@ -90,7 +90,7 @@ async def test_async_pre_backup_with_migration(hass: HomeAssistant) -> None:
 async def test_async_post_backup(hass: HomeAssistant) -> None:
     """Test post backup."""
     with patch(
-        "homeassistant.components.recorder.core.Recorder.unlock_database"
+        "inpui.components.recorder.core.Recorder.unlock_database"
     ) as unlock_mock:
         await async_post_backup(hass)
     assert unlock_mock.called
@@ -101,7 +101,7 @@ async def test_async_post_backup_failure(hass: HomeAssistant) -> None:
     """Test post backup failure."""
     with (
         patch(
-            "homeassistant.components.recorder.core.Recorder.unlock_database",
+            "inpui.components.recorder.core.Recorder.unlock_database",
             return_value=False,
         ) as unlock_mock,
         pytest.raises(

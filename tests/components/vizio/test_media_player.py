@@ -128,15 +128,15 @@ async def _cm_for_test_setup_without_apps(
     """Context manager to setup test for Vizio devices without including app specific patches."""
     with (
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_all_settings",
+            "inpui.components.vizio.VizioAsync.get_all_settings",
             return_value=all_settings,
         ),
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_setting_options",
+            "inpui.components.vizio.VizioAsync.get_setting_options",
             return_value=EQ_LIST,
         ),
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_power_state",
+            "inpui.components.vizio.VizioAsync.get_power_state",
             return_value=vizio_power_state,
         ),
     ):
@@ -215,7 +215,7 @@ async def _cm_for_test_setup_tv_with_apps(
         True,
     ):
         with patch(
-            "homeassistant.components.vizio.VizioAsync.get_current_app_config",
+            "inpui.components.vizio.VizioAsync.get_current_app_config",
             return_value=AppConfig(**app_config),
         ):
             await _add_config_entry_to_hass(hass, config_entry)
@@ -259,7 +259,7 @@ async def _test_service(
         service_data.update(additional_service_data)
 
     with patch(
-        f"homeassistant.components.vizio.VizioAsync.{vizio_func_name}"
+        f"inpui.components.vizio.VizioAsync.{vizio_func_name}"
     ) as service_call:
         await hass.services.async_call(
             domain,
@@ -439,7 +439,7 @@ async def test_update_available_to_unavailable(
 
     # Simulate device becoming unreachable
     with patch(
-        "homeassistant.components.vizio.VizioAsync.get_power_state",
+        "inpui.components.vizio.VizioAsync.get_power_state",
         return_value=None,
     ):
         freezer.tick(timedelta(minutes=1))
@@ -458,7 +458,7 @@ async def test_update_unavailable_to_available(
 
     # First, make device unavailable
     with patch(
-        "homeassistant.components.vizio.VizioAsync.get_power_state",
+        "inpui.components.vizio.VizioAsync.get_power_state",
         return_value=None,
     ):
         freezer.tick(timedelta(minutes=1))
@@ -468,7 +468,7 @@ async def test_update_unavailable_to_available(
 
     # Then, make device available again
     with patch(
-        "homeassistant.components.vizio.VizioAsync.get_power_state",
+        "inpui.components.vizio.VizioAsync.get_power_state",
         return_value=True,
     ):
         freezer.tick(timedelta(minutes=1))
@@ -590,9 +590,9 @@ async def test_setup_with_apps_additional_apps_config(
 
     # Test that invalid app does nothing
     with (
-        patch("homeassistant.components.vizio.VizioAsync.launch_app") as service_call1,
+        patch("inpui.components.vizio.VizioAsync.launch_app") as service_call1,
         patch(
-            "homeassistant.components.vizio.VizioAsync.launch_app_config"
+            "inpui.components.vizio.VizioAsync.launch_app_config"
         ) as service_call2,
     ):
         await hass.services.async_call(
@@ -665,7 +665,7 @@ async def test_apps_update(
 ) -> None:
     """Test device setup with apps where no app is running."""
     with patch(
-        "homeassistant.components.vizio.coordinator.gen_apps_list_from_url",
+        "inpui.components.vizio.coordinator.gen_apps_list_from_url",
         return_value=None,
     ):
         async with _cm_for_test_setup_tv_with_apps(
@@ -678,7 +678,7 @@ async def test_apps_update(
             assert len(apps) == len(APPS)
 
             with patch(
-                "homeassistant.components.vizio.coordinator.gen_apps_list_from_url",
+                "inpui.components.vizio.coordinator.gen_apps_list_from_url",
                 return_value=APP_LIST,
             ):
                 async_fire_time_changed(hass, dt_util.now() + timedelta(days=2))
@@ -721,7 +721,7 @@ async def test_coordinator_update_on_to_off(
 
     # Device turns off
     with patch(
-        "homeassistant.components.vizio.VizioAsync.get_power_state",
+        "inpui.components.vizio.VizioAsync.get_power_state",
         return_value=False,
     ):
         freezer.tick(timedelta(minutes=1))
@@ -775,11 +775,11 @@ async def test_sound_mode_feature_toggling(
     # Update with audio settings that have no sound mode
     with (
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_all_settings",
+            "inpui.components.vizio.VizioAsync.get_all_settings",
             return_value={"volume": 50, "mute": "Off"},
         ),
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_power_state",
+            "inpui.components.vizio.VizioAsync.get_power_state",
             return_value=True,
         ),
     ):
@@ -808,11 +808,11 @@ async def test_sound_mode_list_cached(
     # Update with different sound mode options — cached list should persist
     with (
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_setting_options",
+            "inpui.components.vizio.VizioAsync.get_setting_options",
             return_value=["Different1", "Different2"],
         ),
         patch(
-            "homeassistant.components.vizio.VizioAsync.get_power_state",
+            "inpui.components.vizio.VizioAsync.get_power_state",
             return_value=True,
         ),
     ):

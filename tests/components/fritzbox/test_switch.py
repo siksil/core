@@ -42,7 +42,7 @@ async def test_setup(
     device = FritzDeviceSwitchMock()
     trigger = FritzTriggerMock()
 
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.SWITCH]):
         entry = await setup_config_entry(
             hass,
             MOCK_CONFIG[DOMAIN][CONF_DEVICES][0],

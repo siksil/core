@@ -30,7 +30,7 @@ async def test_config_flow(hass: HomeAssistant, snapshot: SnapshotAssertion) -> 
     assert result == snapshot(name="init", include=SNAPSHOT_FLOW_PROPS)
 
     with patch(
-        "homeassistant.components.generic_hygrostat.async_setup_entry",
+        "inpui.components.generic_hygrostat.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

@@ -23,11 +23,11 @@ async def test_form_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.mullvad.async_setup_entry",
+            "inpui.components.mullvad.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.mullvad.config_flow.MullvadAPI"
+            "inpui.components.mullvad.config_flow.MullvadAPI"
         ) as mock_mullvad_api,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -62,7 +62,7 @@ async def test_connection_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.mullvad.config_flow.MullvadAPI",
+        "inpui.components.mullvad.config_flow.MullvadAPI",
         side_effect=MullvadAPIError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -83,7 +83,7 @@ async def test_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.mullvad.config_flow.MullvadAPI",
+        "inpui.components.mullvad.config_flow.MullvadAPI",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

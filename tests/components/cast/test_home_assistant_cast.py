@@ -97,7 +97,7 @@ async def test_use_cloud_url(hass: HomeAssistant) -> None:
     calls = async_mock_signal(hass, home_assistant_cast.SIGNAL_HASS_CAST_SHOW_VIEW)
 
     with patch(
-        "homeassistant.components.cloud.async_remote_ui_url",
+        "inpui.components.cloud.async_remote_ui_url",
         return_value="https://something.nabu.casa",
     ):
         await hass.services.async_call(

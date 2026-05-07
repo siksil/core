@@ -17,8 +17,8 @@ from tests.common import MockConfigEntry, async_load_fixture, load_json_object_f
 def mock_tado_api() -> Generator[MagicMock]:
     """Mock the Tado API."""
     with (
-        patch("homeassistant.components.tado.Tado") as mock_tado,
-        patch("homeassistant.components.tado.config_flow.Tado", new=mock_tado),
+        patch("inpui.components.tado.Tado") as mock_tado,
+        patch("inpui.components.tado.config_flow.Tado", new=mock_tado),
     ):
         client = mock_tado.return_value
         client.device_verification_url.return_value = (
@@ -34,7 +34,7 @@ def mock_tado_api() -> Generator[MagicMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock the setup entry."""
     with patch(
-        "homeassistant.components.tado.async_setup_entry", return_value=True
+        "inpui.components.tado.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

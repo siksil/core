@@ -126,7 +126,7 @@ async def test_binary_sensor(
         suggested_object_id=f"{device_name}_{alert_kind}",
         config_entry=mock_config_entry,
     )
-    with patch("homeassistant.components.ring.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.ring.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await async_setup_component(hass, DOMAIN, {})
 
     on_event_cb = mock_ring_event_listener_class.return_value.add_notification_callback.call_args.args[
@@ -191,7 +191,7 @@ async def test_binary_sensor_not_exists_with_deprecation(
     entity_id = "binary_sensor.front_door_motion"
 
     assert not hass.states.get(entity_id)
-    with patch("homeassistant.components.ring.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.ring.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await async_setup_component(hass, DOMAIN, {})
 
     assert not entity_registry.async_get(entity_id)
@@ -238,7 +238,7 @@ async def test_binary_sensor_exists_with_deprecation(
     )
     assert entity.entity_id == entity_id
     assert not hass.states.get(entity_id)
-    with patch("homeassistant.components.ring.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.ring.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await async_setup_component(hass, DOMAIN, {})
 
     entity = entity_registry.async_get(entity_id)

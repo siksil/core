@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, async_load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sfr_box.async_setup_entry", return_value=True
+        "inpui.components.sfr_box.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -64,7 +64,7 @@ async def dsl_get_info(hass: HomeAssistant) -> AsyncGenerator[DslInfo]:
         **(await async_load_json_object_fixture(hass, "dsl_getInfo.json", DOMAIN))
     )
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.dsl_get_info",
+        "inpui.components.sfr_box.coordinator.SFRBox.dsl_get_info",
         return_value=dsl_info,
     ):
         yield dsl_info
@@ -77,7 +77,7 @@ async def ftth_get_info(hass: HomeAssistant) -> AsyncGenerator[FtthInfo]:
         **(await async_load_json_object_fixture(hass, "ftth_getInfo.json", DOMAIN))
     )
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.ftth_get_info",
+        "inpui.components.sfr_box.coordinator.SFRBox.ftth_get_info",
         return_value=info,
     ):
         yield info
@@ -90,7 +90,7 @@ async def system_get_info(hass: HomeAssistant) -> AsyncGenerator[SystemInfo]:
         **(await async_load_json_object_fixture(hass, "system_getInfo.json", DOMAIN))
     )
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.system_get_info",
+        "inpui.components.sfr_box.coordinator.SFRBox.system_get_info",
         return_value=info,
     ):
         yield info
@@ -103,7 +103,7 @@ async def wan_get_info(hass: HomeAssistant) -> AsyncGenerator[WanInfo]:
         **(await async_load_json_object_fixture(hass, "wan_getInfo.json", DOMAIN))
     )
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.wan_get_info",
+        "inpui.components.sfr_box.coordinator.SFRBox.wan_get_info",
         return_value=info,
     ):
         yield info

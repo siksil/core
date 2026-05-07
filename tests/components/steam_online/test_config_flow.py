@@ -30,7 +30,7 @@ async def test_flow_user(hass: HomeAssistant) -> None:
     with (
         patch_interface(),
         patch(
-            "homeassistant.components.steam_online.async_setup_entry",
+            "inpui.components.steam_online.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -137,7 +137,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     with (
         patch_interface(),
         patch(
-            "homeassistant.components.steam_online.config_flow.MAX_IDS_TO_REQUEST",
+            "inpui.components.steam_online.config_flow.MAX_IDS_TO_REQUEST",
             return_value=2,
         ),
     ):
@@ -166,7 +166,7 @@ async def test_options_flow_deselect(
     with (
         patch_interface(),
         patch(
-            "homeassistant.components.steam_online.config_flow.MAX_IDS_TO_REQUEST",
+            "inpui.components.steam_online.config_flow.MAX_IDS_TO_REQUEST",
             return_value=2,
         ),
     ):
@@ -177,7 +177,7 @@ async def test_options_flow_deselect(
     with (
         patch_interface(),
         patch(
-            "homeassistant.components.steam_online.async_setup_entry",
+            "inpui.components.steam_online.async_setup_entry",
             return_value=True,
         ),
     ):

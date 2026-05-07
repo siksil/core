@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.rituals_perfume_genie.async_setup_entry",
+        "inpui.components.rituals_perfume_genie.async_setup_entry",
         return_value=True,
     ) as mock:
         yield mock
@@ -28,11 +28,11 @@ def mock_rituals_account() -> Generator[AsyncMock]:
     """Mock Rituals Account."""
     with (
         patch(
-            "homeassistant.components.rituals_perfume_genie.config_flow.Account",
+            "inpui.components.rituals_perfume_genie.config_flow.Account",
             autospec=True,
         ) as mock_account_cls,
         patch(
-            "homeassistant.components.rituals_perfume_genie.Account",
+            "inpui.components.rituals_perfume_genie.Account",
             new=mock_account_cls,
         ),
     ):

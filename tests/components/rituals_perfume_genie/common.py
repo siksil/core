@@ -95,7 +95,7 @@ async def init_integration(
     """Initialize the Rituals Perfume Genie integration with the given Config Entry and Diffuser list."""
     mock_config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.rituals_perfume_genie.Account"
+        "inpui.components.rituals_perfume_genie.Account"
     ) as mock_account_cls:
         mock_account = mock_account_cls.return_value
         mock_account.authenticate = AsyncMock()

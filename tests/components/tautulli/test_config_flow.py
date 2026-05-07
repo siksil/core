@@ -27,7 +27,7 @@ async def test_flow_user(hass: HomeAssistant) -> None:
 
     with (
         patch_config_flow_tautulli(AsyncMock()),
-        patch("homeassistant.components.tautulli.async_setup_entry", return_value=True),
+        patch("inpui.components.tautulli.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -53,7 +53,7 @@ async def test_flow_user_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch_config_flow_tautulli(AsyncMock()),
-        patch("homeassistant.components.tautulli.async_setup_entry", return_value=True),
+        patch("inpui.components.tautulli.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -79,7 +79,7 @@ async def test_flow_user_invalid_auth(hass: HomeAssistant) -> None:
 
     with (
         patch_config_flow_tautulli(AsyncMock()),
-        patch("homeassistant.components.tautulli.async_setup_entry", return_value=True),
+        patch("inpui.components.tautulli.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -105,7 +105,7 @@ async def test_flow_user_unknown_error(hass: HomeAssistant) -> None:
 
     with (
         patch_config_flow_tautulli(AsyncMock()),
-        patch("homeassistant.components.tautulli.async_setup_entry", return_value=True),
+        patch("inpui.components.tautulli.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -152,7 +152,7 @@ async def test_flow_user_multiple_entries_allowed(hass: HomeAssistant) -> None:
     }
     with (
         patch_config_flow_tautulli(AsyncMock()),
-        patch("homeassistant.components.tautulli.async_setup_entry", return_value=True),
+        patch("inpui.components.tautulli.async_setup_entry", return_value=True),
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -169,7 +169,7 @@ async def test_flow_reauth(
     hass: HomeAssistant, aioclient_mock: AiohttpClientMocker
 ) -> None:
     """Test reauth flow."""
-    with patch("homeassistant.components.tautulli.PLATFORMS", []):
+    with patch("inpui.components.tautulli.PLATFORMS", []):
         entry = await setup_integration(hass, aioclient_mock)
     result = await entry.start_reauth_flow(hass)
     assert result["type"] is FlowResultType.FORM
@@ -180,7 +180,7 @@ async def test_flow_reauth(
     CONF_DATA[CONF_API_KEY] = "efgh"
     with (
         patch_config_flow_tautulli(AsyncMock()),
-        patch("homeassistant.components.tautulli.async_setup_entry") as mock_entry,
+        patch("inpui.components.tautulli.async_setup_entry") as mock_entry,
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -198,7 +198,7 @@ async def test_flow_reauth_error(
     hass: HomeAssistant, aioclient_mock: AiohttpClientMocker
 ) -> None:
     """Test reauth flow with invalid authentication."""
-    with patch("homeassistant.components.tautulli.PLATFORMS", []):
+    with patch("inpui.components.tautulli.PLATFORMS", []):
         entry = await setup_integration(hass, aioclient_mock)
     result = await entry.start_reauth_flow(hass)
     with patch_config_flow_tautulli(AsyncMock()) as tautullimock:

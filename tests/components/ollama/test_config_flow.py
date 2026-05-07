@@ -37,11 +37,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+            "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
             return_value={"models": [{"model": TEST_MODEL}]},
         ),
         patch(
-            "homeassistant.components.ollama.async_setup_entry",
+            "inpui.components.ollama.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -76,7 +76,7 @@ async def test_duplicate_entry(hass: HomeAssistant) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         return_value={"models": [{"model": "test_model"}]},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -358,7 +358,7 @@ async def test_reauth_flow_success(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         return_value={"models": [{"model": TEST_MODEL}]},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -399,7 +399,7 @@ async def test_reauth_flow_errors(hass: HomeAssistant, side_effect, error) -> No
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -414,7 +414,7 @@ async def test_reauth_flow_errors(hass: HomeAssistant, side_effect, error) -> No
     assert result["errors"] == {"base": error}
 
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         return_value={"models": [{"model": TEST_MODEL}]},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -448,7 +448,7 @@ async def test_form_errors(hass: HomeAssistant, side_effect, error) -> None:
     )
 
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         side_effect=side_effect,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -474,7 +474,7 @@ async def test_form_errors_recovery(hass: HomeAssistant, side_effect, error) -> 
 
     # First attempt fails
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -486,7 +486,7 @@ async def test_form_errors_recovery(hass: HomeAssistant, side_effect, error) -> 
 
     # Second attempt succeeds
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient.list",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient.list",
         return_value={"models": [{"model": TEST_MODEL}]},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -759,7 +759,7 @@ async def test_user_step_async_client_headers(
 ) -> None:
     """Test Authorization header passed to AsyncClient with/without api_key."""
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient",
     ) as mock_async_client:
         mock_async_client.return_value.list = AsyncMock(return_value={"models": []})
 
@@ -832,7 +832,7 @@ async def test_user_step_errors(
 ) -> None:
     """Test error handling when ollama returns HTTP 4xx."""
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient"
+        "inpui.components.ollama.config_flow.ollama.AsyncClient"
     ) as mock_async_client:
         mock_client_instance = AsyncMock()
         mock_async_client.return_value = mock_client_instance
@@ -859,7 +859,7 @@ async def test_user_step_errors(
 async def test_user_step_trim_url(hass: HomeAssistant) -> None:
     """Test URL is trimmed before validation and persistence."""
     with patch(
-        "homeassistant.components.ollama.config_flow.ollama.AsyncClient",
+        "inpui.components.ollama.config_flow.ollama.AsyncClient",
     ) as mock_async_client:
         mock_async_client.return_value.list = AsyncMock(return_value={"models": []})
 

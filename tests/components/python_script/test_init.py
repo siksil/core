@@ -22,10 +22,10 @@ async def test_setup(hass: HomeAssistant) -> None:
     ]
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts
+            "inpui.components.python_script.glob.iglob", return_value=scripts
         ),
     ):
         res = await async_setup_component(hass, "python_script", {})
@@ -36,11 +36,11 @@ async def test_setup(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.python_script.open",
+            "inpui.components.python_script.open",
             mock_open(read_data="fake source"),
             create=True,
         ),
-        patch("homeassistant.components.python_script.execute") as mock_ex,
+        patch("inpui.components.python_script.execute") as mock_ex,
     ):
         await hass.services.async_call(
             "python_script", "hello", {"some": "data"}, blocking=True
@@ -60,7 +60,7 @@ async def test_setup_fails_on_no_dir(
 ) -> None:
     """Test we fail setup when no dir found."""
     with patch(
-        "homeassistant.components.python_script.os.path.isdir", return_value=False
+        "inpui.components.python_script.os.path.isdir", return_value=False
     ):
         res = await async_setup_component(hass, "python_script", {})
 
@@ -367,10 +367,10 @@ async def test_reload(hass: HomeAssistant) -> None:
     ]
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts
+            "inpui.components.python_script.glob.iglob", return_value=scripts
         ),
     ):
         res = await async_setup_component(hass, "python_script", {})
@@ -386,10 +386,10 @@ async def test_reload(hass: HomeAssistant) -> None:
     ]
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts
+            "inpui.components.python_script.glob.iglob", return_value=scripts
         ),
     ):
         await hass.services.async_call("python_script", "reload", {}, blocking=True)
@@ -423,13 +423,13 @@ async def test_service_descriptions(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts1
+            "inpui.components.python_script.glob.iglob", return_value=scripts1
         ),
         patch(
-            "homeassistant.components.python_script.os.path.exists", return_value=True
+            "inpui.components.python_script.os.path.exists", return_value=True
         ),
         patch_yaml_files(
             services_yaml1,
@@ -477,13 +477,13 @@ async def test_service_descriptions(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts2
+            "inpui.components.python_script.glob.iglob", return_value=scripts2
         ),
         patch(
-            "homeassistant.components.python_script.os.path.exists", return_value=True
+            "inpui.components.python_script.os.path.exists", return_value=True
         ),
         patch_yaml_files(
             services_yaml2,
@@ -515,7 +515,7 @@ time.sleep(2)
 time.sleep(5)
 """
 
-    with patch("homeassistant.components.python_script.time.sleep"):
+    with patch("inpui.components.python_script.time.sleep"):
         hass.async_add_executor_job(execute, hass, "test.py", source, {})
         await hass.async_block_till_done(wait_background_tasks=True)
 
@@ -533,10 +533,10 @@ async def test_execute_with_output(
     ]
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts
+            "inpui.components.python_script.glob.iglob", return_value=scripts
         ),
     ):
         await async_setup_component(hass, "python_script", {})
@@ -546,7 +546,7 @@ output = {"result": f"hello {data.get('name', 'World')}"}
     """
 
     with patch(
-        "homeassistant.components.python_script.open",
+        "inpui.components.python_script.open",
         mock_open(read_data=source),
         create=True,
     ):
@@ -577,10 +577,10 @@ async def test_execute_no_output(
     ]
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts
+            "inpui.components.python_script.glob.iglob", return_value=scripts
         ),
     ):
         await async_setup_component(hass, "python_script", {})
@@ -590,7 +590,7 @@ no_output = {"result": f"hello {data.get('name', 'World')}"}
     """
 
     with patch(
-        "homeassistant.components.python_script.open",
+        "inpui.components.python_script.open",
         mock_open(read_data=source),
         create=True,
     ):
@@ -616,10 +616,10 @@ async def test_execute_wrong_output_type(hass: HomeAssistant) -> None:
     ]
     with (
         patch(
-            "homeassistant.components.python_script.os.path.isdir", return_value=True
+            "inpui.components.python_script.os.path.isdir", return_value=True
         ),
         patch(
-            "homeassistant.components.python_script.glob.iglob", return_value=scripts
+            "inpui.components.python_script.glob.iglob", return_value=scripts
         ),
     ):
         await async_setup_component(hass, "python_script", {})
@@ -630,7 +630,7 @@ output = f"hello {data.get('name', 'World')}"
 
     with (
         patch(
-            "homeassistant.components.python_script.open",
+            "inpui.components.python_script.open",
             mock_open(read_data=source),
             create=True,
         ),

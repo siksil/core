@@ -61,7 +61,7 @@ REQ_ID = "ff36a3cc-ec34-11e6-b1a0-64510650abcf"
 async def light_only() -> None:
     """Enable only the light platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.LIGHT],
     ):
         yield
@@ -1241,7 +1241,7 @@ async def test_trait_execute_adding_query_data(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.camera.async_request_stream",
+        "inpui.components.camera.async_request_stream",
         return_value="/api/streams/bla",
     ):
         result = await sh.async_handle_message(

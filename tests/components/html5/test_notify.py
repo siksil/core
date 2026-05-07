@@ -93,7 +93,7 @@ async def test_get_service_with_no_json(hass: HomeAssistant) -> None:
     """Test empty json file."""
     await async_setup_component(hass, "http", {})
     m = mock_open()
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
 
     assert service is not None
@@ -108,7 +108,7 @@ async def test_dismissing_message(mock_wp: AsyncMock, hass: HomeAssistant) -> No
     data = {"device": SUBSCRIPTION_1}
 
     m = mock_open(read_data=json.dumps(data))
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
         service.hass = hass
 
@@ -132,7 +132,7 @@ async def test_sending_message(mock_wp: AsyncMock, hass: HomeAssistant) -> None:
     data = {"device": SUBSCRIPTION_1}
 
     m = mock_open(read_data=json.dumps(data))
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
         service.hass = hass
 
@@ -161,7 +161,7 @@ async def test_fcm_key_include(mock_wp: AsyncMock, hass: HomeAssistant) -> None:
     data = {"chrome": SUBSCRIPTION_5}
 
     m = mock_open(read_data=json.dumps(data))
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
         service.hass = hass
 
@@ -190,7 +190,7 @@ async def test_fcm_send_with_unknown_priority(
     data = {"chrome": SUBSCRIPTION_5}
 
     m = mock_open(read_data=json.dumps(data))
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
         service.hass = hass
 
@@ -216,7 +216,7 @@ async def test_fcm_no_targets(mock_wp: AsyncMock, hass: HomeAssistant) -> None:
     data = {"chrome": SUBSCRIPTION_5}
 
     m = mock_open(read_data=json.dumps(data))
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
         service.hass = hass
 
@@ -242,7 +242,7 @@ async def test_fcm_additional_data(mock_wp: AsyncMock, hass: HomeAssistant) -> N
     data = {"chrome": SUBSCRIPTION_5}
 
     m = mock_open(read_data=json.dumps(data))
-    with patch("homeassistant.util.json.open", m, create=True):
+    with patch("inpui.util.json.open", m, create=True):
         service = await html5.async_get_service(hass, {}, VAPID_CONF)
         service.hass = hass
 
@@ -276,7 +276,7 @@ async def test_registering_new_device_view(
 
     client = await hass_client()
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         resp = await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_1))
 
     assert resp.status == HTTPStatus.OK
@@ -304,7 +304,7 @@ async def test_registering_new_device_view_with_name(
     SUB_WITH_NAME = SUBSCRIPTION_1.copy()
     SUB_WITH_NAME["name"] = "test device"
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         resp = await client.post(REGISTER_URL, data=json.dumps(SUB_WITH_NAME))
 
     assert resp.status == HTTPStatus.OK
@@ -329,7 +329,7 @@ async def test_registering_new_device_expiration_view(
 
     client = await hass_client()
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         resp = await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_4))
 
     assert resp.status == HTTPStatus.OK
@@ -353,7 +353,7 @@ async def test_registering_new_device_fails_view(
 
     client = await hass_client()
     with patch(
-        "homeassistant.components.html5.notify.save_json",
+        "inpui.components.html5.notify.save_json",
         side_effect=HomeAssistantError(),
     ):
         resp = await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_4))
@@ -378,7 +378,7 @@ async def test_registering_existing_device_view(
 
     client = await hass_client()
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_1))
         resp = await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_4))
 
@@ -408,7 +408,7 @@ async def test_registering_existing_device_view_with_name(
     SUB_WITH_NAME = SUBSCRIPTION_1.copy()
     SUB_WITH_NAME["name"] = "test device"
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         await client.post(REGISTER_URL, data=json.dumps(SUB_WITH_NAME))
         resp = await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_4))
 
@@ -436,7 +436,7 @@ async def test_registering_existing_device_fails_view(
 
     client = await hass_client()
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_1))
         mock_save.side_effect = HomeAssistantError
         resp = await client.post(REGISTER_URL, data=json.dumps(SUBSCRIPTION_4))
@@ -470,7 +470,7 @@ async def test_registering_new_device_validation(
     resp = await client.post(REGISTER_URL, data=json.dumps({"browser": "chrome"}))
     assert resp.status == HTTPStatus.BAD_REQUEST
 
-    with patch("homeassistant.components.html5.notify.save_json", return_value=False):
+    with patch("inpui.components.html5.notify.save_json", return_value=False):
         resp = await client.post(
             REGISTER_URL,
             data=json.dumps({"browser": "chrome", "subscription": "sub info"}),
@@ -499,7 +499,7 @@ async def test_unregistering_device_view(
 
     client = await hass_client()
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         resp = await client.delete(
             REGISTER_URL,
             data=json.dumps({"subscription": SUBSCRIPTION_1["subscription"]}),
@@ -529,7 +529,7 @@ async def test_unregister_device_view_handle_unknown_subscription(
 
     client = await hass_client()
 
-    with patch("homeassistant.components.html5.notify.save_json") as mock_save:
+    with patch("inpui.components.html5.notify.save_json") as mock_save:
         resp = await client.delete(
             REGISTER_URL,
             data=json.dumps({"subscription": SUBSCRIPTION_3["subscription"]}),
@@ -561,7 +561,7 @@ async def test_unregistering_device_view_handles_save_error(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.html5.notify.save_json",
+        "inpui.components.html5.notify.save_json",
         side_effect=HomeAssistantError(),
     ):
         resp = await client.delete(
@@ -698,7 +698,7 @@ async def test_send_fcm_expired(
     assert config_entry.state is ConfigEntryState.LOADED
     mock_wp.send_async.return_value.status = 410
     with (
-        patch("homeassistant.components.html5.notify.save_json") as mock_save,
+        patch("inpui.components.html5.notify.save_json") as mock_save,
     ):
         await hass.services.async_call(
             "notify",
@@ -731,7 +731,7 @@ async def test_send_fcm_expired_save_fails(
     mock_wp.send_async.return_value.status = 410
     with (
         patch(
-            "homeassistant.components.html5.notify.save_json",
+            "inpui.components.html5.notify.save_json",
             side_effect=HomeAssistantError(),
         ),
     ):
@@ -891,7 +891,7 @@ async def test_send_message_save_fails(
     )
     with (
         patch(
-            "homeassistant.components.html5.notify.save_json",
+            "inpui.components.html5.notify.save_json",
             side_effect=HomeAssistantError,
         ),
         pytest.raises(HomeAssistantError) as e,

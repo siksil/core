@@ -24,7 +24,7 @@ from tests.common import MockConfigEntry
 def mock_api_client_malformed_tracker() -> Generator[MagicMock]:
     """Mock the ApiClient for a malformed tracker response in _tracker_is_valid."""
     with patch(
-        "homeassistant.components.fressnapf_tracker.ApiClient",
+        "inpui.components.fressnapf_tracker.ApiClient",
         autospec=True,
     ) as mock_api_client:
         client = mock_api_client.return_value

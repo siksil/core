@@ -38,7 +38,7 @@ async def test_form(hass: HomeAssistant, info: dict[str, Any]) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.devolo_home_network.async_setup_entry",
+        "inpui.components.devolo_home_network.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -72,7 +72,7 @@ async def test_form_error(hass: HomeAssistant, exception_type, expected_error) -
     )
 
     with patch(
-        "homeassistant.components.devolo_home_network.config_flow.validate_input",
+        "inpui.components.devolo_home_network.config_flow.validate_input",
         side_effect=exception_type,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -85,11 +85,11 @@ async def test_form_error(hass: HomeAssistant, exception_type, expected_error) -
 
     with (
         patch(
-            "homeassistant.components.devolo_home_network.async_setup_entry",
+            "inpui.components.devolo_home_network.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.devolo_home_network.config_flow.Device",
+            "inpui.components.devolo_home_network.config_flow.Device",
             new=MockDevice,
         ),
     ):
@@ -127,11 +127,11 @@ async def test_zeroconf(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.devolo_home_network.async_setup_entry",
+            "inpui.components.devolo_home_network.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.devolo_home_network.config_flow.Device",
+            "inpui.components.devolo_home_network.config_flow.Device",
             new=MockDevice,
         ),
     ):
@@ -175,11 +175,11 @@ async def test_zeroconf_wrong_auth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.devolo_home_network.async_setup_entry",
+            "inpui.components.devolo_home_network.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.devolo_home_network.config_flow.Device",
+            "inpui.components.devolo_home_network.config_flow.Device",
             new=MockDeviceWrongPassword,
         ),
     ):
@@ -194,11 +194,11 @@ async def test_zeroconf_wrong_auth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.devolo_home_network.async_setup_entry",
+            "inpui.components.devolo_home_network.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.devolo_home_network.config_flow.Device",
+            "inpui.components.devolo_home_network.config_flow.Device",
             new=MockDevice,
         ),
     ):
@@ -267,11 +267,11 @@ async def test_form_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.devolo_home_network.async_setup_entry",
+            "inpui.components.devolo_home_network.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.devolo_home_network.config_flow.Device",
+            "inpui.components.devolo_home_network.config_flow.Device",
             new=MockDeviceWrongPassword,
         ),
     ):
@@ -286,11 +286,11 @@ async def test_form_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.devolo_home_network.async_setup_entry",
+            "inpui.components.devolo_home_network.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.devolo_home_network.config_flow.Device",
+            "inpui.components.devolo_home_network.config_flow.Device",
             new=MockDevice,
         ),
     ):

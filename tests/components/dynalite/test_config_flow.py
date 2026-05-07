@@ -33,7 +33,7 @@ async def test_flow(
     """Run a flow with or without errors and return result."""
     host = "1.2.3.4"
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         side_effect=[first_con, second_con],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -54,7 +54,7 @@ async def test_existing(hass: HomeAssistant) -> None:
     host = "1.2.3.4"
     MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host}).add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -77,7 +77,7 @@ async def test_existing_abort_update(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices"
+        "inpui.components.dynalite.bridge.DynaliteDevices"
     ) as mock_dyn_dev:
         mock_dyn_dev().async_setup = AsyncMock(return_value=True)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -102,7 +102,7 @@ async def test_two_entries(hass: HomeAssistant) -> None:
     host2 = "5.6.7.8"
     MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host1}).add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -127,7 +127,7 @@ async def test_setup_user(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -152,7 +152,7 @@ async def test_setup_user_existing_host(hass: HomeAssistant) -> None:
         dynalite.DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(

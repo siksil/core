@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 @pytest.mark.usefixtures("disable_platforms")
 async def test_import(hass: HomeAssistant) -> None:
     """Test that we can import a config entry."""
-    with patch("homeassistant.components.demo.async_setup_entry", return_value=True):
+    with patch("inpui.components.demo.async_setup_entry", return_value=True):
         assert await setup.async_setup_component(hass, DOMAIN, {DOMAIN: {}})
         await hass.async_block_till_done()
 
@@ -28,7 +28,7 @@ async def test_import(hass: HomeAssistant) -> None:
 async def test_import_once(hass: HomeAssistant) -> None:
     """Test that we don't create multiple config entries."""
     with patch(
-        "homeassistant.components.demo.async_setup_entry",
+        "inpui.components.demo.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -43,7 +43,7 @@ async def test_import_once(hass: HomeAssistant) -> None:
     mock_setup_entry.assert_called_once()
 
     # Test importing again doesn't create a 2nd entry
-    with patch("homeassistant.components.demo.async_setup_entry") as mock_setup_entry:
+    with patch("inpui.components.demo.async_setup_entry") as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
             context={"source": config_entries.SOURCE_IMPORT},

@@ -47,9 +47,9 @@ def authorize():
 def mock_tellduslive(supports_local_api, authorize):
     """Mock tellduslive."""
     with (
-        patch("homeassistant.components.tellduslive.config_flow.Session") as Session,
+        patch("inpui.components.tellduslive.config_flow.Session") as Session,
         patch(
-            "homeassistant.components.tellduslive.config_flow.supports_local_api"
+            "inpui.components.tellduslive.config_flow.supports_local_api"
         ) as tellduslive_supports_local_api,
     ):
         tellduslive_supports_local_api.return_value = supports_local_api
@@ -145,7 +145,7 @@ async def test_step_import_load_json_matching_host(
 
     with (
         patch(
-            "homeassistant.components.tellduslive.config_flow.load_json_object",
+            "inpui.components.tellduslive.config_flow.load_json_object",
             return_value={"tellduslive": {}},
         ),
         patch("os.path.isfile"),
@@ -163,7 +163,7 @@ async def test_step_import_load_json(hass: HomeAssistant, mock_tellduslive) -> N
 
     with (
         patch(
-            "homeassistant.components.tellduslive.config_flow.load_json_object",
+            "inpui.components.tellduslive.config_flow.load_json_object",
             return_value={"localhost": {}},
         ),
         patch("os.path.isfile"),

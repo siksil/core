@@ -22,7 +22,7 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.peco.async_setup_entry",
+        "inpui.components.peco.async_setup_entry",
         return_value=True,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -51,7 +51,7 @@ async def test_invalid_county(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.peco.async_setup_entry",
+            "inpui.components.peco.async_setup_entry",
             return_value=True,
         ),
         pytest.raises(Invalid),

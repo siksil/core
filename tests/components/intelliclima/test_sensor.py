@@ -24,7 +24,7 @@ async def setup_intelliclima_sensor_only(
 ) -> AsyncGenerator[None]:
     """Set up IntelliClima integration with only the sensor platform."""
     with (
-        patch("homeassistant.components.intelliclima.PLATFORMS", [Platform.SENSOR]),
+        patch("inpui.components.intelliclima.PLATFORMS", [Platform.SENSOR]),
     ):
         await setup_integration(hass, mock_config_entry)
         # Let tests run against this initialized state

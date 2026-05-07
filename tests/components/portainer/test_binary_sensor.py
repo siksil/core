@@ -37,7 +37,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.portainer._PLATFORMS",
+        "inpui.components.portainer._PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)

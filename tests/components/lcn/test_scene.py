@@ -27,7 +27,7 @@ async def test_setup_lcn_scene(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the setup of switch."""
-    with patch("homeassistant.components.lcn.PLATFORMS", [Platform.SCENE]):
+    with patch("inpui.components.lcn.PLATFORMS", [Platform.SCENE]):
         await init_integration(hass, entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

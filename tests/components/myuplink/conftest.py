@@ -142,7 +142,7 @@ def mock_myuplink_client(
     """Mock a myuplink client."""
 
     with patch(
-        "homeassistant.components.myuplink.MyUplinkAPI",
+        "inpui.components.myuplink.MyUplinkAPI",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value
@@ -188,7 +188,7 @@ async def setup_platform(
 ) -> AsyncGenerator[None]:
     """Set up one or all platforms."""
 
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         assert await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
         yield

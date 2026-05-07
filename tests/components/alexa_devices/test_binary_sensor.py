@@ -33,7 +33,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.alexa_devices.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.alexa_devices.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

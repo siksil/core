@@ -23,7 +23,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.ituran.async_setup_entry",
+        "inpui.components.ituran.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -77,11 +77,11 @@ def mock_ituran(request: pytest.FixtureRequest) -> Generator[AsyncMock]:
     """Return a mocked Ituran."""
     with (
         patch(
-            "homeassistant.components.ituran.coordinator.Ituran",
+            "inpui.components.ituran.coordinator.Ituran",
             autospec=True,
         ) as ituran,
         patch(
-            "homeassistant.components.ituran.config_flow.Ituran",
+            "inpui.components.ituran.config_flow.Ituran",
             new=ituran,
         ),
     ):

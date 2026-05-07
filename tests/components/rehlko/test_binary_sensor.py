@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 @pytest.fixture(name="platform_binary_sensor", autouse=True)
 async def platform_binary_sensor_fixture():
     """Patch Rehlko to only load binary_sensor platform."""
-    with patch("homeassistant.components.rehlko.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.rehlko.PLATFORMS", [Platform.BINARY_SENSOR]):
         yield
 
 

@@ -283,7 +283,7 @@ async def test_zwave_js_value_updated(
 
     clear_events()
 
-    with patch("homeassistant.config.load_yaml_dict", return_value={}):
+    with patch("inpui.config.load_yaml_dict", return_value={}):
         await hass.services.async_call(automation.DOMAIN, SERVICE_RELOAD, blocking=True)
 
 
@@ -297,7 +297,7 @@ async def test_zwave_js_value_updated_bypass_dynamic_validation(
     no_value_filter = async_capture_events(hass, "no_value_filter")
 
     with patch(
-        "homeassistant.components.zwave_js.triggers.value_updated.async_bypass_dynamic_config_validation",
+        "inpui.components.zwave_js.triggers.value_updated.async_bypass_dynamic_config_validation",
         return_value=True,
     ):
         assert await async_setup_component(
@@ -357,7 +357,7 @@ async def test_zwave_js_value_updated_bypass_dynamic_validation_no_nodes(
     no_value_filter = async_capture_events(hass, "no_value_filter")
 
     with patch(
-        "homeassistant.components.zwave_js.triggers.value_updated.async_bypass_dynamic_config_validation",
+        "inpui.components.zwave_js.triggers.value_updated.async_bypass_dynamic_config_validation",
         return_value=True,
     ):
         assert await async_setup_component(
@@ -870,7 +870,7 @@ async def test_zwave_js_event(
 
     clear_events()
 
-    with patch("homeassistant.config.load_yaml_dict", return_value={}):
+    with patch("inpui.config.load_yaml_dict", return_value={}):
         await hass.services.async_call(automation.DOMAIN, SERVICE_RELOAD, blocking=True)
 
 
@@ -884,7 +884,7 @@ async def test_zwave_js_event_bypass_dynamic_validation(
     node_no_event_data_filter = async_capture_events(hass, "node_no_event_data_filter")
 
     with patch(
-        "homeassistant.components.zwave_js.triggers.event.async_bypass_dynamic_config_validation",
+        "inpui.components.zwave_js.triggers.event.async_bypass_dynamic_config_validation",
         return_value=True,
     ):
         assert await async_setup_component(
@@ -937,7 +937,7 @@ async def test_zwave_js_event_bypass_dynamic_validation_no_nodes(
     node_no_event_data_filter = async_capture_events(hass, "node_no_event_data_filter")
 
     with patch(
-        "homeassistant.components.zwave_js.triggers.event.async_bypass_dynamic_config_validation",
+        "inpui.components.zwave_js.triggers.event.async_bypass_dynamic_config_validation",
         return_value=True,
     ):
         assert await async_setup_component(

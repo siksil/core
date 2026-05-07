@@ -141,7 +141,7 @@ async def test_hap_create(
     assert hap
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
             return_value=ConnectionContext(),
         ),
         patch.object(hap, "async_connect"),
@@ -161,11 +161,11 @@ async def test_hap_create_exception(
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
             return_value=ConnectionContext(),
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
+            "inpui.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
             side_effect=Exception,
         ),
     ):
@@ -173,11 +173,11 @@ async def test_hap_create_exception(
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
             return_value=ConnectionContext(),
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
+            "inpui.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
             side_effect=HmipConnectionError,
         ),
         pytest.raises(ConfigEntryNotReady),
@@ -193,11 +193,11 @@ async def test_auth_create(hass: HomeAssistant, simple_mock_auth) -> None:
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.Auth",
+            "inpui.components.homematicip_cloud.hap.Auth",
             return_value=simple_mock_auth,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
             return_value=ConnectionContext(),
         ),
     ):
@@ -214,11 +214,11 @@ async def test_auth_create_exception(hass: HomeAssistant, simple_mock_auth) -> N
     assert hmip_auth
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.Auth",
+            "inpui.components.homematicip_cloud.hap.Auth",
             return_value=simple_mock_auth,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
             return_value=ConnectionContext(),
         ),
     ):
@@ -226,11 +226,11 @@ async def test_auth_create_exception(hass: HomeAssistant, simple_mock_auth) -> N
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.Auth",
+            "inpui.components.homematicip_cloud.hap.Auth",
             return_value=simple_mock_auth,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
             return_value=ConnectionContext(),
         ),
     ):
@@ -261,7 +261,7 @@ async def test_get_state_after_disconnect(
         await hap.ws_disconnected_handler()
         assert hap._ws_connection_closed.is_set()
         with patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome.websocket_is_connected",
+            "inpui.components.homematicip_cloud.hap.AsyncHome.websocket_is_connected",
             return_value=True,
         ):
             await hap.ws_connected_handler()
@@ -342,7 +342,7 @@ async def test_try_get_state_handle_exception() -> None:
     future = AsyncMock()
     future.result = Mock(side_effect=expected_exception)
 
-    with patch("homeassistant.components.homematicip_cloud.hap._LOGGER") as mock_logger:
+    with patch("inpui.components.homematicip_cloud.hap._LOGGER") as mock_logger:
         hap.get_state_finished(future)
 
     mock_logger.error.assert_called_once_with(

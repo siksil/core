@@ -305,7 +305,7 @@ async def test_component_not_installed_if_requirement_fails(
     hass.config.skip_pip = False
     mock_integration(hass, MockModule("comp", requirements=["package==0.0.1"]))
 
-    with patch("homeassistant.util.package.install_package", return_value=False):
+    with patch("inpui.util.package.install_package", return_value=False):
         assert not await setup.async_setup_component(hass, "comp", {})
 
     assert "comp" not in hass.config.components
@@ -374,7 +374,7 @@ async def test_component_not_setup_already_setup_dependencies(
     hass.config.components.add("dep2")
 
     with patch(
-        "homeassistant.setup.async_setup_component",
+        "inpui.setup.async_setup_component",
         side_effect=setup.async_setup_component,
     ) as mock_setup:
         await mock_setup(hass, "comp", {})
@@ -597,7 +597,7 @@ async def test_platform_specific_config_validation(hass: HomeAssistant) -> None:
 
     with (
         assert_setup_component(0, "switch"),
-        patch("homeassistant.setup.async_notify_setup_error") as mock_notify,
+        patch("inpui.setup.async_notify_setup_error") as mock_notify,
     ):
         assert await setup.async_setup_component(
             hass,
@@ -613,7 +613,7 @@ async def test_platform_specific_config_validation(hass: HomeAssistant) -> None:
 
     with (
         assert_setup_component(0),
-        patch("homeassistant.setup.async_notify_setup_error") as mock_notify,
+        patch("inpui.setup.async_notify_setup_error") as mock_notify,
     ):
         assert await setup.async_setup_component(
             hass,
@@ -635,7 +635,7 @@ async def test_platform_specific_config_validation(hass: HomeAssistant) -> None:
 
     with (
         assert_setup_component(1, "switch"),
-        patch("homeassistant.setup.async_notify_setup_error") as mock_notify,
+        patch("inpui.setup.async_notify_setup_error") as mock_notify,
     ):
         assert await setup.async_setup_component(
             hass,
@@ -826,7 +826,7 @@ async def test_async_when_setup_or_start_already_loaded(hass: HomeAssistant) -> 
 async def test_setup_import_blows_up(hass: HomeAssistant) -> None:
     """Test that we handle it correctly when importing integration blows up."""
     with patch(
-        "homeassistant.loader.Integration.async_get_component", side_effect=ImportError
+        "inpui.loader.Integration.async_get_component", side_effect=ImportError
     ):
         assert not await setup.async_setup_component(hass, "sun", {})
 
@@ -882,7 +882,7 @@ async def test_integration_logs_is_custom(
         built_in=False,
     )
     with patch(
-        "homeassistant.setup.async_process_deps_reqs",
+        "inpui.setup.async_process_deps_reqs",
         side_effect=HomeAssistantError("Boom"),
     ):
         result = await setup.async_setup_component(hass, "test_component1", {})

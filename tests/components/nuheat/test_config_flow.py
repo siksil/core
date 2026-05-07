@@ -27,15 +27,15 @@ async def test_form_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
+            "inpui.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.get_thermostat",
+            "inpui.components.nuheat.config_flow.nuheat.NuHeat.get_thermostat",
             return_value=mock_thermostat,
         ),
         patch(
-            "homeassistant.components.nuheat.async_setup_entry", return_value=True
+            "inpui.components.nuheat.async_setup_entry", return_value=True
         ) as mock_setup_entry,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -65,7 +65,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
+        "inpui.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -83,7 +83,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     response_mock = MagicMock()
     type(response_mock).status_code = 401
     with patch(
-        "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
+        "inpui.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
         side_effect=requests.HTTPError(response=response_mock),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -110,11 +110,11 @@ async def test_form_invalid_thermostat(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
+            "inpui.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.get_thermostat",
+            "inpui.components.nuheat.config_flow.nuheat.NuHeat.get_thermostat",
             side_effect=requests.HTTPError(response=response_mock),
         ),
     ):
@@ -138,7 +138,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
+        "inpui.components.nuheat.config_flow.nuheat.NuHeat.authenticate",
         side_effect=requests.exceptions.Timeout,
     ):
         result2 = await hass.config_entries.flow.async_configure(

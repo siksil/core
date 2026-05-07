@@ -87,7 +87,7 @@ async def async_init_integration(hass: HomeAssistant):
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

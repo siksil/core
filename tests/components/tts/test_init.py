@@ -164,7 +164,7 @@ async def test_service(
     )
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert len(calls) == 1
         assert calls[0].data[ATTR_MEDIA_ANNOUNCE] is True
@@ -229,7 +229,7 @@ async def test_service_default_language(
     assert calls[0].data[ATTR_MEDIA_CONTENT_TYPE] == MediaType.MUSIC
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -293,7 +293,7 @@ async def test_service_default_special_language(
     assert calls[0].data[ATTR_MEDIA_CONTENT_TYPE] == MediaType.MUSIC
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -353,7 +353,7 @@ async def test_service_language(
     assert calls[0].data[ATTR_MEDIA_CONTENT_TYPE] == MediaType.MUSIC
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -469,7 +469,7 @@ async def test_service_options(
     assert calls[0].data[ATTR_MEDIA_CONTENT_TYPE] == MediaType.MUSIC
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -553,7 +553,7 @@ async def test_service_default_options(
     assert calls[0].data[ATTR_MEDIA_CONTENT_TYPE] == MediaType.MUSIC
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -627,7 +627,7 @@ async def test_merge_default_service_options(
     assert calls[0].data[ATTR_MEDIA_CONTENT_TYPE] == MediaType.MUSIC
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -1069,7 +1069,7 @@ async def test_setup_legacy_cache_dir(
     assert len(calls) == 1
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -1107,7 +1107,7 @@ async def test_setup_cache_dir(
 
     assert len(calls) == 1
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         assert await get_media_source_url(
             hass, calls[0].data[ATTR_MEDIA_CONTENT_ID]
@@ -1247,7 +1247,7 @@ async def test_web_get_url(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         url = "/api/tts_get_url"
         data |= {"message": "There is someone at the door."}
@@ -2090,7 +2090,7 @@ async def test_async_internal_get_tts_audio_called(
     assert mock_tts_entity.async_supports_streaming_input() is False
 
     with patch(
-        "homeassistant.components.tts.entity.TextToSpeechEntity.async_internal_get_tts_audio"
+        "inpui.components.tts.entity.TextToSpeechEntity.async_internal_get_tts_audio"
     ) as internal_get_tts_audio:
         media_source_id = tts.generate_media_source_id(
             hass,

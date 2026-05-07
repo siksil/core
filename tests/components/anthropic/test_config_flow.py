@@ -57,7 +57,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
+        "inpui.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -98,7 +98,7 @@ async def test_duplicate_entry(hass: HomeAssistant, mock_config_entry) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
+        "inpui.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -217,7 +217,7 @@ async def test_api_error(hass: HomeAssistant, side_effect, error) -> None:
     )
 
     with patch(
-        "homeassistant.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
+        "inpui.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
         side_effect=side_effect,
     ):
@@ -232,7 +232,7 @@ async def test_api_error(hass: HomeAssistant, side_effect, error) -> None:
     assert result["errors"] == {"base": error}
 
     with patch(
-        "homeassistant.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
+        "inpui.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -372,7 +372,7 @@ async def test_model_list_error(
 
     # Configure initial step
     with patch(
-        "homeassistant.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
+        "inpui.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
         side_effect=InternalServerError(
             message=None,
@@ -810,7 +810,7 @@ async def test_reauth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
+        "inpui.components.anthropic.config_flow.anthropic.resources.models.AsyncModels.list",
         new_callable=AsyncMock,
     ):
         result = await hass.config_entries.flow.async_configure(

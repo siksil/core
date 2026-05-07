@@ -74,11 +74,11 @@ def mock_register_webhook() -> Generator[None]:
     """Mock calls made by telegram_bot when (de)registering webhook."""
     with (
         patch(
-            "homeassistant.components.telegram_bot.webhooks.Bot.delete_webhook",
+            "inpui.components.telegram_bot.webhooks.Bot.delete_webhook",
             AsyncMock(),
         ),
         patch(
-            "homeassistant.components.telegram_bot.webhooks.Bot.get_webhook_info",
+            "inpui.components.telegram_bot.webhooks.Bot.get_webhook_info",
             AsyncMock(
                 return_value=WebhookInfo(
                     url="mock url",
@@ -89,7 +89,7 @@ def mock_register_webhook() -> Generator[None]:
             ),
         ),
         patch(
-            "homeassistant.components.telegram_bot.webhooks.Bot.set_webhook",
+            "inpui.components.telegram_bot.webhooks.Bot.set_webhook",
             return_value=True,
         ),
     ):
@@ -137,7 +137,7 @@ def mock_external_calls() -> Generator[None]:
         ]
 
     with (
-        patch("homeassistant.components.telegram_bot.bot.Bot", BotMock),
+        patch("inpui.components.telegram_bot.bot.Bot", BotMock),
         patch.object(BotMock, "get_chat", return_value=test_chat),
         patch.object(BotMock, "get_me", return_value=test_user),
         patch.object(BotMock, "bot", test_user),
@@ -180,7 +180,7 @@ def mock_generate_secret_token() -> Generator[str]:
     """Mock secret token generated for webhook."""
     mock_secret_token = "DEADBEEF12345678DEADBEEF87654321"
     with patch(
-        "homeassistant.components.telegram_bot.webhooks.secrets.choice",
+        "inpui.components.telegram_bot.webhooks.secrets.choice",
         side_effect=mock_secret_token,
     ):
         yield mock_secret_token
@@ -385,7 +385,7 @@ async def webhook_bot(
 def mock_polling_calls() -> Generator[None]:
     """Fixture for setting up the polling platform using appropriate config and mocks."""
     with patch(
-        "homeassistant.components.telegram_bot.polling.ApplicationBuilder"
+        "inpui.components.telegram_bot.polling.ApplicationBuilder"
     ) as application_builder_class:
         application = (
             application_builder_class.return_value.bot.return_value.build.return_value

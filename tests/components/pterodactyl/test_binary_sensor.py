@@ -27,7 +27,7 @@ async def test_binary_sensor(
 ) -> None:
     """Test binary sensor."""
     with patch(
-        "homeassistant.components.pterodactyl._PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.pterodactyl._PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         mock_config_entry = await setup_integration(hass, mock_config_entry)
 

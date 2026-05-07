@@ -124,19 +124,19 @@ async def mock_pyairvisual_fixture(
     """Define a fixture to patch pyairvisual."""
     with (
         patch(
-            "homeassistant.components.airvisual.CloudAPI",
+            "inpui.components.airvisual.CloudAPI",
             return_value=cloud_api,
         ),
         patch(
-            "homeassistant.components.airvisual.config_flow.CloudAPI",
+            "inpui.components.airvisual.config_flow.CloudAPI",
             return_value=cloud_api,
         ),
         patch(
-            "homeassistant.components.airvisual_pro.NodeSamba",
+            "inpui.components.airvisual_pro.NodeSamba",
             return_value=node_samba,
         ),
         patch(
-            "homeassistant.components.airvisual_pro.config_flow.NodeSamba",
+            "inpui.components.airvisual_pro.config_flow.NodeSamba",
             return_value=node_samba,
         ),
     ):
@@ -166,6 +166,6 @@ async def setup_config_entry_fixture(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airvisual.async_setup_entry", return_value=True
+        "inpui.components.airvisual.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

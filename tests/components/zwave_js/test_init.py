@@ -56,7 +56,7 @@ CONTROLLER_PATCH_PREFIX = "zwave_js_server.model.controller.Controller"
 @pytest.fixture(name="connect_timeout")
 def connect_timeout_fixture() -> Generator[int]:
     """Mock the connect timeout."""
-    with patch("homeassistant.components.zwave_js.CONNECT_TIMEOUT", new=0) as timeout:
+    with patch("inpui.components.zwave_js.CONNECT_TIMEOUT", new=0) as timeout:
         yield timeout
 
 
@@ -174,7 +174,7 @@ async def test_driver_ready_timeout_during_setup(
     entry.add_to_hass(hass)
     assert client.disconnect.call_count == 0
 
-    with patch("homeassistant.components.zwave_js.DRIVER_READY_TIMEOUT", new=0):
+    with patch("inpui.components.zwave_js.DRIVER_READY_TIMEOUT", new=0):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 

@@ -38,7 +38,7 @@ async def async_setup_gree(hass: HomeAssistant) -> MockConfigEntry:
     return entry
 
 
-@patch("homeassistant.components.gree.PLATFORMS", [SWITCH_DOMAIN])
+@patch("inpui.components.gree.PLATFORMS", [SWITCH_DOMAIN])
 async def test_registry_settings(
     hass: HomeAssistant,
     entity_registry: er.EntityRegistry,

@@ -55,7 +55,7 @@ async def test_fans(
     light_ws_data: WebsocketDataType,
 ) -> None:
     """Test that all supported fan entities are created."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.FAN]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.FAN]):
         config_entry = await config_entry_factory()
 
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

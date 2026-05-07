@@ -651,7 +651,7 @@ async def test_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.SENSOR]):
         config_entry = await config_entry_factory()
 
     # Enable in entity registry
@@ -735,7 +735,7 @@ async def test_allow_clip_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that CLIP sensors can be allowed."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.SENSOR]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

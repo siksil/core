@@ -662,7 +662,7 @@ async def test_entity_without_progress_support_raising(
 
     with (
         patch(
-            "homeassistant.components.update.UpdateEntity.async_install",
+            "inpui.components.update.UpdateEntity.async_install",
             side_effect=RuntimeError,
         ),
         pytest.raises(RuntimeError),

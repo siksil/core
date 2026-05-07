@@ -337,7 +337,7 @@ async def test_race_condition_in_data_loading(hass: HomeAssistant) -> None:
     provider = hass_auth.HassAuthProvider(
         hass, auth_store.AuthStore(hass), {"type": "homeassistant"}
     )
-    with patch("homeassistant.helpers.storage.Store.async_load", new=mock_load):
+    with patch("inpui.helpers.storage.Store.async_load", new=mock_load):
         task1 = provider.async_validate_login("user", "pass")
         task2 = provider.async_validate_login("user", "pass")
         results = await asyncio.gather(task1, task2, return_exceptions=True)

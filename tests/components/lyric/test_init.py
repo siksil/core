@@ -31,7 +31,7 @@ async def test_oauth_implementation_not_available(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
+        "inpui.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

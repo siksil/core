@@ -1819,7 +1819,7 @@ async def test_discovery_update_unchanged_light(
     config["rl"][0] = 2
     config["lt_st"] = 1  # 1 channel light (Dimmer)
     with patch(
-        "homeassistant.components.tasmota.light.TasmotaLight.discovery_update"
+        "inpui.components.tasmota.light.TasmotaLight.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock, caplog, Platform.LIGHT, config, discovery_update

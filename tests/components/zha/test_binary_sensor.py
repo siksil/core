@@ -29,7 +29,7 @@ OFF = 0
 def binary_sensor_platform_only():
     """Only set up the binary_sensor and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.BINARY_SENSOR,
             Platform.SENSOR,

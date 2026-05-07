@@ -179,11 +179,11 @@ async def test_chain_history(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             return_value=fake_states,
         ),
         patch(
-            "homeassistant.components.recorder.history.get_last_state_changes",
+            "inpui.components.recorder.history.get_last_state_changes",
             return_value=fake_states,
         ),
     ):
@@ -286,11 +286,11 @@ async def test_history_time(recorder_mock: Recorder, hass: HomeAssistant) -> Non
     }
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             return_value=fake_states,
         ),
         patch(
-            "homeassistant.components.recorder.history.get_last_state_changes",
+            "inpui.components.recorder.history.get_last_state_changes",
             return_value=fake_states,
         ),
     ):

@@ -27,7 +27,7 @@ async def test_number(
 ) -> None:
     """Test number platform."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.NUMBER],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -43,7 +43,7 @@ async def test_set_number(
 ) -> None:
     """Test number platform service."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.NUMBER],
     ):
         await setup_integration(hass, mock_config_entry)

@@ -111,7 +111,7 @@ async def test_reconnect_client_hub_unavailable(
     )
 
     with patch(
-        "homeassistant.components.unifi.UnifiHub.available", new_callable=PropertyMock
+        "inpui.components.unifi.UnifiHub.available", new_callable=PropertyMock
     ) as ws_mock:
         ws_mock.return_value = False
         await hass.services.async_call(
@@ -241,7 +241,7 @@ async def test_remove_clients_hub_unavailable(
     """Verify no call is made if UniFi Network is unavailable."""
     aioclient_mock.clear_requests()
     with patch(
-        "homeassistant.components.unifi.UnifiHub.available", new_callable=PropertyMock
+        "inpui.components.unifi.UnifiHub.available", new_callable=PropertyMock
     ) as ws_mock:
         ws_mock.return_value = False
         await hass.services.async_call(DOMAIN, SERVICE_REMOVE_CLIENTS, blocking=True)

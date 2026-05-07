@@ -100,7 +100,7 @@ async def test_setup_multiple(
     ufp.api.get_nvr = AsyncMock(return_value=nvr)
 
     with patch(
-        "homeassistant.components.unifiprotect.utils.ProtectApiClient"
+        "inpui.components.unifiprotect.utils.ProtectApiClient"
     ) as mock_api:
         mock_config = MockConfigEntry(
             domain=DOMAIN,
@@ -166,7 +166,7 @@ async def test_remove_entry_not_loaded(
     ufp.api.clear_session = AsyncMock()
 
     with patch(
-        "homeassistant.components.unifiprotect.async_create_api_client",
+        "inpui.components.unifiprotect.async_create_api_client",
         return_value=ufp.api,
     ):
         await hass.config_entries.async_remove(ufp.entry.entry_id)
@@ -204,7 +204,7 @@ async def test_remove_entry_not_loaded_clear_session_fails(
 
     # Mock clear_session to raise an exception for the temporary client
     with patch(
-        "homeassistant.components.unifiprotect.async_create_api_client"
+        "inpui.components.unifiprotect.async_create_api_client"
     ) as mock_create:
         mock_api = Mock(spec=ProtectApiClient)
         mock_api.clear_session = AsyncMock(side_effect=OSError("Read-only file system"))
@@ -332,7 +332,7 @@ async def test_setup_starts_discovery(
     with (
         _patch_discovery(),
         patch(
-            "homeassistant.components.unifiprotect.utils.ProtectApiClient"
+            "inpui.components.unifiprotect.utils.ProtectApiClient"
         ) as mock_api,
     ):
         ufp_config_entry.add_to_hass(hass)
@@ -584,9 +584,9 @@ async def test_migrate_entry_version_2(hass: HomeAssistant) -> None:
     """Test remove CONF_ALLOW_EA from options while migrating a 1 config entry to 2."""
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry", return_value=True
+            "inpui.components.unifiprotect.async_setup_entry", return_value=True
         ),
-        patch("homeassistant.components.unifiprotect.async_start_discovery"),
+        patch("inpui.components.unifiprotect.async_start_discovery"),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,

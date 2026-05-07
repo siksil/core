@@ -15,11 +15,11 @@ async def test_creating_entry_sets_up_climate_discovery(hass: HomeAssistant) -> 
     """Test setting up Hisense AEH-W4A1 loads the climate component."""
     with (
         patch(
-            "homeassistant.components.hisense_aehw4a1.config_flow.AehW4a1.discovery",
+            "inpui.components.hisense_aehw4a1.config_flow.AehW4a1.discovery",
             return_value=["1.2.3.4"],
         ),
         patch(
-            "homeassistant.components.hisense_aehw4a1.climate.async_setup_entry",
+            "inpui.components.hisense_aehw4a1.climate.async_setup_entry",
             return_value=True,
         ) as mock_setup,
     ):
@@ -42,11 +42,11 @@ async def test_configuring_hisense_w4a1_create_entry(hass: HomeAssistant) -> Non
     """Test that specifying config will create an entry."""
     with (
         patch(
-            "homeassistant.components.hisense_aehw4a1.config_flow.AehW4a1.check",
+            "inpui.components.hisense_aehw4a1.config_flow.AehW4a1.check",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.hisense_aehw4a1.async_setup_entry",
+            "inpui.components.hisense_aehw4a1.async_setup_entry",
             return_value=True,
         ) as mock_setup,
     ):
@@ -66,11 +66,11 @@ async def test_configuring_hisense_w4a1_not_creates_entry_for_device_not_found(
     """Test that specifying config will not create an entry."""
     with (
         patch(
-            "homeassistant.components.hisense_aehw4a1.config_flow.AehW4a1.check",
+            "inpui.components.hisense_aehw4a1.config_flow.AehW4a1.check",
             side_effect=exceptions.ConnectionError,
         ),
         patch(
-            "homeassistant.components.hisense_aehw4a1.async_setup_entry",
+            "inpui.components.hisense_aehw4a1.async_setup_entry",
             return_value=True,
         ) as mock_setup,
     ):
@@ -89,7 +89,7 @@ async def test_configuring_hisense_w4a1_not_creates_entry_for_empty_import(
 ) -> None:
     """Test that specifying config will not create an entry."""
     with patch(
-        "homeassistant.components.hisense_aehw4a1.async_setup_entry",
+        "inpui.components.hisense_aehw4a1.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         await async_setup_component(hass, hisense_aehw4a1.DOMAIN, {})

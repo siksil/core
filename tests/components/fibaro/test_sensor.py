@@ -28,7 +28,7 @@ async def test_power_sensor_detected(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_power_sensor]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.SENSOR]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert

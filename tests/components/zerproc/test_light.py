@@ -55,7 +55,7 @@ async def mock_light(hass: HomeAssistant, mock_entry: MockConfigEntry) -> MagicM
 
     with (
         patch(
-            "homeassistant.components.zerproc.light.pyzerproc.discover",
+            "inpui.components.zerproc.light.pyzerproc.discover",
             return_value=[light],
         ),
         patch.object(light, "connect"),
@@ -91,7 +91,7 @@ async def test_init(hass: HomeAssistant, mock_entry) -> None:
     mock_light_2.get_state.return_value = mock_state_2
 
     with patch(
-        "homeassistant.components.zerproc.light.pyzerproc.discover",
+        "inpui.components.zerproc.light.pyzerproc.discover",
         return_value=[mock_light_1, mock_light_2],
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)
@@ -138,7 +138,7 @@ async def test_discovery_exception(hass: HomeAssistant, mock_entry) -> None:
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.zerproc.light.pyzerproc.discover",
+        "inpui.components.zerproc.light.pyzerproc.discover",
         side_effect=pyzerproc.ZerprocException("TEST"),
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)
@@ -196,7 +196,7 @@ async def test_light_turn_on(hass: HomeAssistant, mock_light) -> None:
     mock_set_color.assert_called_with(25, 25, 25)
 
     # Make sure no discovery calls are made while we emulate time passing
-    with patch("homeassistant.components.zerproc.light.pyzerproc.discover"):
+    with patch("inpui.components.zerproc.light.pyzerproc.discover"):
         with patch.object(
             mock_light,
             "get_state",
@@ -295,7 +295,7 @@ async def test_light_update(hass: HomeAssistant, mock_light) -> None:
     }
 
     # Make sure no discovery calls are made while we emulate time passing
-    with patch("homeassistant.components.zerproc.light.pyzerproc.discover"):
+    with patch("inpui.components.zerproc.light.pyzerproc.discover"):
         # Test an exception during discovery
         with patch.object(
             mock_light, "get_state", side_effect=pyzerproc.ZerprocException("TEST")

@@ -39,10 +39,10 @@ def test_set_open_file_descriptor_limit_default(
     original_hard = 524288
     with (
         patch(
-            "homeassistant.util.resource.resource.getrlimit",
+            "inpui.util.resource.resource.getrlimit",
             return_value=(original_soft, original_hard),
         ),
-        patch("homeassistant.util.resource.resource.setrlimit") as mock_setrlimit,
+        patch("inpui.util.resource.resource.setrlimit") as mock_setrlimit,
     ):
         set_open_file_descriptor_limit()
 
@@ -77,10 +77,10 @@ def test_set_open_file_descriptor_limit_environment_variable(
     with (
         patch.dict(os.environ, {"SOFT_FILE_LIMIT": str(custom_limit)}),
         patch(
-            "homeassistant.util.resource.resource.getrlimit",
+            "inpui.util.resource.resource.getrlimit",
             return_value=(original_soft, original_hard),
         ),
-        patch("homeassistant.util.resource.resource.setrlimit") as mock_setrlimit,
+        patch("inpui.util.resource.resource.setrlimit") as mock_setrlimit,
     ):
         set_open_file_descriptor_limit()
 
@@ -100,10 +100,10 @@ def test_set_open_file_descriptor_limit_exceeds_hard_limit(
     with (
         patch.dict(os.environ, {"SOFT_FILE_LIMIT": str(excessive_limit)}),
         patch(
-            "homeassistant.util.resource.resource.getrlimit",
+            "inpui.util.resource.resource.getrlimit",
             return_value=(original_soft, original_hard),
         ),
-        patch("homeassistant.util.resource.resource.setrlimit") as mock_setrlimit,
+        patch("inpui.util.resource.resource.setrlimit") as mock_setrlimit,
     ):
         set_open_file_descriptor_limit()
 
@@ -122,11 +122,11 @@ def test_set_open_file_descriptor_limit_os_error(
     """Test handling OSError when setting file limit."""
     with (
         patch(
-            "homeassistant.util.resource.resource.getrlimit",
+            "inpui.util.resource.resource.getrlimit",
             return_value=(1024, 524288),
         ),
         patch(
-            "homeassistant.util.resource.resource.setrlimit",
+            "inpui.util.resource.resource.setrlimit",
             side_effect=OSError("Permission denied"),
         ),
     ):
@@ -143,7 +143,7 @@ def test_set_open_file_descriptor_limit_value_error(
     with (
         patch.dict(os.environ, {"SOFT_FILE_LIMIT": "invalid_value"}),
         patch(
-            "homeassistant.util.resource.resource.getrlimit",
+            "inpui.util.resource.resource.getrlimit",
             return_value=(1024, 524288),
         ),
     ):

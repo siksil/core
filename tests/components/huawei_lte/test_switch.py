@@ -26,9 +26,9 @@ async def test_huawei_lte_wifi_guest_network_config_entry_when_network_is_not_pr
     huawei_lte = MockConfigEntry(domain=DOMAIN, data={CONF_URL: "http://huawei-lte"})
     huawei_lte.add_to_hass(hass)
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
         patch(
-            "homeassistant.components.huawei_lte.Client", return_value=magic_client()
+            "inpui.components.huawei_lte.Client", return_value=magic_client()
         ),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
@@ -48,8 +48,8 @@ async def test_huawei_lte_wifi_guest_network_config_entry_when_network_is_presen
         "Ssids": {"Ssid": [{"wifiisguestnetwork": "1", "WifiEnable": "0"}]}
     }
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()
@@ -66,8 +66,8 @@ async def test_turn_on_switch_wifi_guest_network(hass: HomeAssistant) -> None:
         "Ssids": {"Ssid": [{"wifiisguestnetwork": "1", "WifiEnable": "0"}]}
     }
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()
@@ -92,8 +92,8 @@ async def test_turn_off_switch_wifi_guest_network(hass: HomeAssistant) -> None:
         "Ssids": {"Ssid": [{"wifiisguestnetwork": "1", "WifiEnable": "1"}]}
     }
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()
@@ -121,8 +121,8 @@ async def test_huawei_lte_wifi_guest_network_config_entry_when_ssid_is_str(
     client = magic_client()
     client.wlan.multi_basic_settings.return_value = {"Ssids": {"Ssid": "str"}}
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()
@@ -142,8 +142,8 @@ async def test_huawei_lte_wifi_guest_network_config_entry_when_ssid_is_none(
     client = magic_client()
     client.wlan.multi_basic_settings.return_value = {"Ssids": {"Ssid": None}}
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()

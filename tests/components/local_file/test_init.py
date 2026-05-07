@@ -37,7 +37,7 @@ async def test_file_not_readable_during_startup(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=False)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):

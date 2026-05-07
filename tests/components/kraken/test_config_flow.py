@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 async def test_config_flow(hass: HomeAssistant) -> None:
     """Test we can finish a config flow."""
     with patch(
-        "homeassistant.components.kraken.async_setup_entry",
+        "inpui.components.kraken.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -66,7 +66,7 @@ async def test_options(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.kraken.config_flow.KrakenAPI.get_tradable_asset_pairs",
+            "inpui.components.kraken.config_flow.KrakenAPI.get_tradable_asset_pairs",
             return_value=TRADEABLE_ASSET_PAIR_RESPONSE,
         ),
         patch(
@@ -115,7 +115,7 @@ async def test_deselect_removed_pair(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.kraken.config_flow.KrakenAPI.get_tradable_asset_pairs",
+            "inpui.components.kraken.config_flow.KrakenAPI.get_tradable_asset_pairs",
             return_value=TRADEABLE_ASSET_PAIR_RESPONSE,
         ),
         patch(
@@ -132,7 +132,7 @@ async def test_deselect_removed_pair(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.kraken.config_flow.KrakenAPI.get_tradable_asset_pairs",
+            "inpui.components.kraken.config_flow.KrakenAPI.get_tradable_asset_pairs",
             return_value=MISSING_PAIR_TRADEABLE_ASSET_PAIR_RESPONSE,
         ),
         patch(

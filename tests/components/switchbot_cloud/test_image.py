@@ -73,7 +73,7 @@ async def test_async_image(
 
     # 2. load after refresh
     with patch(
-        "homeassistant.components.switchbot_cloud.image.get_file_stream_from_cloud",
+        "inpui.components.switchbot_cloud.image.get_file_stream_from_cloud",
         new_callable=AsyncMock,
     ) as mock_get:
         mock_get.return_value = b"this is a bytes"

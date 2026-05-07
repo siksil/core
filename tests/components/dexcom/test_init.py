@@ -23,7 +23,7 @@ async def test_setup_entry_account_error(hass: HomeAssistant) -> None:
         options=None,
     )
     with patch(
-        "homeassistant.components.dexcom.Dexcom",
+        "inpui.components.dexcom.Dexcom",
         side_effect=AccountError,
     ):
         entry.add_to_hass(hass)
@@ -43,7 +43,7 @@ async def test_setup_entry_session_error(hass: HomeAssistant) -> None:
         options=None,
     )
     with patch(
-        "homeassistant.components.dexcom.Dexcom",
+        "inpui.components.dexcom.Dexcom",
         side_effect=SessionError,
     ):
         entry.add_to_hass(hass)

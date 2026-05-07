@@ -20,7 +20,7 @@ from inpui.util import dt as dt_util
 from tests.common import MockConfigEntry, async_fire_time_changed
 
 API_HEAT_METER_SERVICE = (
-    "homeassistant.components.landisgyr_heat_meter.ultraheat_api.HeatMeterService"
+    "inpui.components.landisgyr_heat_meter.ultraheat_api.HeatMeterService"
 )
 
 MOCK_RESPONSE_GJ = {

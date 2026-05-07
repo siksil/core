@@ -35,7 +35,7 @@ async def test_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.overseerr.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.overseerr.PLATFORMS", [Platform.EVENT]):
         await setup_integration(hass, mock_config_entry)
 
     client = await hass_client_no_auth()

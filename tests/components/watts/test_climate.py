@@ -34,7 +34,7 @@ async def test_entities(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test the climate entities."""
-    with patch("homeassistant.components.watts.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.watts.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

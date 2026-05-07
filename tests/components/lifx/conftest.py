@@ -34,7 +34,7 @@ def mock_effect_conductor():
     mock_conductor = MockConductor()
 
     with patch(
-        "homeassistant.components.lifx.manager.aiolifx_effects.Conductor",
+        "inpui.components.lifx.manager.aiolifx_effects.Conductor",
         return_value=mock_conductor,
     ):
         yield mock_conductor
@@ -56,7 +56,7 @@ def lifx_no_wait_for_timeouts():
 def lifx_mock_async_get_ipv4_broadcast_addresses():
     """Mock network util's async_get_ipv4_broadcast_addresses."""
     with patch(
-        "homeassistant.components.network.async_get_ipv4_broadcast_addresses",
+        "inpui.components.network.async_get_ipv4_broadcast_addresses",
         return_value=["255.255.255.255"],
     ):
         yield

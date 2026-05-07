@@ -26,15 +26,15 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ialarm.config_flow.IAlarm.get_status",
+            "inpui.components.ialarm.config_flow.IAlarm.get_status",
             return_value=1,
         ),
         patch(
-            "homeassistant.components.ialarm.config_flow.IAlarm.get_mac",
+            "inpui.components.ialarm.config_flow.IAlarm.get_mac",
             return_value=TEST_MAC,
         ),
         patch(
-            "homeassistant.components.ialarm.async_setup_entry",
+            "inpui.components.ialarm.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -56,7 +56,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.ialarm.config_flow.IAlarm.get_mac",
+        "inpui.components.ialarm.config_flow.IAlarm.get_mac",
         side_effect=ConnectionError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -74,7 +74,7 @@ async def test_form_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.ialarm.config_flow.IAlarm.get_mac",
+        "inpui.components.ialarm.config_flow.IAlarm.get_mac",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -100,7 +100,7 @@ async def test_form_already_exists(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.ialarm.config_flow.IAlarm.get_mac",
+        "inpui.components.ialarm.config_flow.IAlarm.get_mac",
         return_value=TEST_MAC,
     ):
         result2 = await hass.config_entries.flow.async_configure(

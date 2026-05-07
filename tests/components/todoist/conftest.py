@@ -70,7 +70,7 @@ def make_api_due(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.todoist.async_setup_entry", return_value=True
+        "inpui.components.todoist.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -216,8 +216,8 @@ async def mock_setup_integration(
     if todoist_config_entry is not None:
         todoist_config_entry.add_to_hass(hass)
     with (
-        patch("homeassistant.components.todoist.TodoistAPIAsync", return_value=api),
-        patch("homeassistant.components.todoist.PLATFORMS", platforms),
+        patch("inpui.components.todoist.TodoistAPIAsync", return_value=api),
+        patch("inpui.components.todoist.PLATFORMS", platforms),
     ):
         assert await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()

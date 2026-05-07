@@ -34,7 +34,7 @@ async def test_all_sensors(
 ) -> None:
     """Test that all sensors are working."""
     with patch(
-        "homeassistant.components.hydrawise.PLATFORMS",
+        "inpui.components.hydrawise.PLATFORMS",
         [Platform.SENSOR],
     ):
         config_entry = await mock_add_config_entry()

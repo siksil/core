@@ -25,7 +25,7 @@ from tests.typing import ClientSessionGenerator
 def sensor_only() -> Generator[None]:
     """Enable only the sensor platform."""
     with patch(
-        "homeassistant.components.sleep_as_android.PLATFORMS",
+        "inpui.components.sleep_as_android.PLATFORMS",
         [Platform.SENSOR],
     ):
         yield

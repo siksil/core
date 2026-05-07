@@ -82,10 +82,10 @@ async def test_form_user(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch("boschshcpy.session.SHCSession.authenticate") as mock_authenticate,
         patch(
-            "homeassistant.components.bosch_shc.async_setup_entry",
+            "inpui.components.bosch_shc.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -243,7 +243,7 @@ async def test_form_user_invalid_auth(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch(
             "boschshcpy.session.SHCSession.authenticate",
             side_effect=SHCAuthenticationError,
@@ -302,7 +302,7 @@ async def test_form_validate_connection_error(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch(
             "boschshcpy.session.SHCSession.authenticate",
             side_effect=SHCConnectionError,
@@ -361,7 +361,7 @@ async def test_form_validate_session_error(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch(
             "boschshcpy.session.SHCSession.authenticate",
             side_effect=SHCSessionError(""),
@@ -420,7 +420,7 @@ async def test_form_validate_exception(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch(
             "boschshcpy.session.SHCSession.authenticate",
             side_effect=Exception,
@@ -530,12 +530,12 @@ async def test_zeroconf(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch(
             "boschshcpy.session.SHCSession.authenticate",
         ),
         patch(
-            "homeassistant.components.bosch_shc.async_setup_entry",
+            "inpui.components.bosch_shc.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -685,10 +685,10 @@ async def test_reauth(hass: HomeAssistant) -> None:
             },
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch("boschshcpy.session.SHCSession.authenticate"),
         patch(
-            "homeassistant.components.bosch_shc.async_setup_entry",
+            "inpui.components.bosch_shc.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -717,7 +717,7 @@ async def test_tls_assets_writer(hass: HomeAssistant) -> None:
     with (
         patch("os.mkdir"),
         patch(
-            "homeassistant.components.bosch_shc.config_flow.open", mock_open()
+            "inpui.components.bosch_shc.config_flow.open", mock_open()
         ) as mocked_file,
     ):
         write_tls_asset(hass, unique_id, CONF_SHC_CERT, assets["cert"])
@@ -794,10 +794,10 @@ async def test_register_multiple_controllers(hass: HomeAssistant) -> None:
             return_value=controller_1["register"],
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch("boschshcpy.session.SHCSession.authenticate"),
         patch(
-            "homeassistant.components.bosch_shc.async_setup_entry",
+            "inpui.components.bosch_shc.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -850,10 +850,10 @@ async def test_register_multiple_controllers(hass: HomeAssistant) -> None:
             return_value=controller_2["register"],
         ),
         patch("os.mkdir"),
-        patch("homeassistant.components.bosch_shc.config_flow.open"),
+        patch("inpui.components.bosch_shc.config_flow.open"),
         patch("boschshcpy.session.SHCSession.authenticate"),
         patch(
-            "homeassistant.components.bosch_shc.async_setup_entry",
+            "inpui.components.bosch_shc.async_setup_entry",
             return_value=True,
         ),
     ):

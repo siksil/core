@@ -226,7 +226,7 @@ async def test_updating_to_often(
             await wait_till_event.wait()
 
     with patch(
-        "homeassistant.components.command_line.binary_sensor.CommandBinarySensor",
+        "inpui.components.command_line.binary_sensor.CommandBinarySensor",
         side_effect=MockCommandBinarySensor,
     ):
         await setup.async_setup_component(
@@ -286,7 +286,7 @@ async def test_updating_manually(
             called.append(1)
 
     with patch(
-        "homeassistant.components.command_line.binary_sensor.CommandBinarySensor",
+        "inpui.components.command_line.binary_sensor.CommandBinarySensor",
         side_effect=MockCommandBinarySensor,
     ):
         await setup.async_setup_component(

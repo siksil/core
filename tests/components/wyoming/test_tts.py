@@ -58,7 +58,7 @@ async def test_get_tts_audio(
     ]
 
     with patch(
-        "homeassistant.components.wyoming.tts.AsyncTcpClient",
+        "inpui.components.wyoming.tts.AsyncTcpClient",
         MockAsyncTcpClient(audio_events),
     ) as mock_client:
         extension, data = await tts.async_get_media_source_audio(
@@ -99,7 +99,7 @@ async def test_get_tts_audio_different_formats(
 
     # Request a different sample rate, etc.
     with patch(
-        "homeassistant.components.wyoming.tts.AsyncTcpClient",
+        "inpui.components.wyoming.tts.AsyncTcpClient",
         MockAsyncTcpClient(audio_events),
     ) as mock_client:
         extension, data = await tts.async_get_media_source_audio(
@@ -134,7 +134,7 @@ async def test_get_tts_audio_different_formats(
     ]
 
     with patch(
-        "homeassistant.components.wyoming.tts.AsyncTcpClient",
+        "inpui.components.wyoming.tts.AsyncTcpClient",
         MockAsyncTcpClient(audio_events),
     ) as mock_client:
         extension, data = await tts.async_get_media_source_audio(
@@ -158,7 +158,7 @@ async def test_get_tts_audio_connection_lost(
     """Test streaming audio and losing connection."""
     stream = tts.async_create_stream(hass, "tts.test_tts", "en-US")
     with patch(
-        "homeassistant.components.wyoming.tts.AsyncTcpClient",
+        "inpui.components.wyoming.tts.AsyncTcpClient",
         MockAsyncTcpClient([None]),
     ):
         stream.async_set_message("Hello world")
@@ -182,7 +182,7 @@ async def test_get_tts_audio_audio_oserror(
 
     with (
         patch(
-            "homeassistant.components.wyoming.tts.AsyncTcpClient",
+            "inpui.components.wyoming.tts.AsyncTcpClient",
             mock_client,
         ),
         patch.object(mock_client, "read_event", side_effect=OSError("Boom!")),
@@ -210,7 +210,7 @@ async def test_voice_speaker(
     ]
 
     with patch(
-        "homeassistant.components.wyoming.tts.AsyncTcpClient",
+        "inpui.components.wyoming.tts.AsyncTcpClient",
         MockAsyncTcpClient(audio_events),
     ) as mock_client:
         await tts.async_get_media_source_audio(
@@ -249,7 +249,7 @@ async def test_get_tts_audio_streaming(
         yield "Word."
 
     with patch(
-        "homeassistant.components.wyoming.tts.AsyncTcpClient",
+        "inpui.components.wyoming.tts.AsyncTcpClient",
         MockAsyncTcpClient(audio_events),
     ) as mock_client:
         stream = tts.async_create_stream(

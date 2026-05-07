@@ -49,7 +49,7 @@ async def test_create_entity_after_login_error(
 ) -> None:
     """Test the LIVISI integration can create an entity after the user had login errors."""
     with patch(
-        "homeassistant.components.livisi.config_flow.AioLivisi.async_set_token",
+        "inpui.components.livisi.config_flow.AioLivisi.async_set_token",
         side_effect=exception,
     ):
         result = await hass.config_entries.flow.async_init(

@@ -58,11 +58,11 @@ async def test_form_zeroconf(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -98,11 +98,11 @@ async def test_form_user_one_alias(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -148,7 +148,7 @@ async def test_form_user_multiple_aliases(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -166,11 +166,11 @@ async def test_form_user_multiple_aliases(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -211,11 +211,11 @@ async def test_form_user_one_alias_with_ignored_entry(hass: HomeAssistant) -> No
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -250,7 +250,7 @@ async def test_form_no_aliases_found(hass: HomeAssistant) -> None:
     mock_pynut = _get_mock_nutclient()
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -275,11 +275,11 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_ups",
+            "inpui.components.nut.AIONUTClient.list_ups",
             side_effect=NUTError("no route to host"),
         ),
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_vars",
+            "inpui.components.nut.AIONUTClient.list_vars",
             side_effect=NUTError("no route to host"),
         ),
     ):
@@ -299,11 +299,11 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_ups",
+            "inpui.components.nut.AIONUTClient.list_ups",
             return_value={"ups1"},
         ),
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_vars",
+            "inpui.components.nut.AIONUTClient.list_vars",
             side_effect=Exception,
         ),
     ):
@@ -325,11 +325,11 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -363,11 +363,11 @@ async def test_auth_failures(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_ups",
+            "inpui.components.nut.AIONUTClient.list_ups",
             side_effect=NUTLoginError,
         ),
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_vars",
+            "inpui.components.nut.AIONUTClient.list_vars",
             side_effect=NUTLoginError,
         ),
     ):
@@ -389,11 +389,11 @@ async def test_auth_failures(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -438,11 +438,11 @@ async def test_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_ups",
+            "inpui.components.nut.AIONUTClient.list_ups",
             side_effect=NUTLoginError,
         ),
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_vars",
+            "inpui.components.nut.AIONUTClient.list_vars",
             side_effect=NUTLoginError,
         ),
     ):
@@ -462,11 +462,11 @@ async def test_reauth(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -506,7 +506,7 @@ async def test_abort_if_already_setup(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -542,7 +542,7 @@ async def test_abort_duplicate_unique_ids(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -578,7 +578,7 @@ async def test_abort_multiple_aliases_duplicate_unique_ids(hass: HomeAssistant) 
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -601,11 +601,11 @@ async def test_abort_multiple_aliases_duplicate_unique_ids(hass: HomeAssistant) 
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -642,7 +642,7 @@ async def test_abort_if_already_setup_alias(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -657,7 +657,7 @@ async def test_abort_if_already_setup_alias(hass: HomeAssistant) -> None:
     assert result2["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -692,7 +692,7 @@ async def test_reconfigure_one_alias_successful(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -737,7 +737,7 @@ async def test_reconfigure_one_alias_nochange(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -782,7 +782,7 @@ async def test_reconfigure_one_alias_password_nochange(hass: HomeAssistant) -> N
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -837,7 +837,7 @@ async def test_reconfigure_one_alias_already_configured(hass: HomeAssistant) -> 
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -895,7 +895,7 @@ async def test_reconfigure_one_alias_unique_id_change(hass: HomeAssistant) -> No
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -956,7 +956,7 @@ async def test_reconfigure_one_alias_duplicate_unique_ids(hass: HomeAssistant) -
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -999,7 +999,7 @@ async def test_reconfigure_multiple_aliases_successful(hass: HomeAssistant) -> N
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1017,11 +1017,11 @@ async def test_reconfigure_multiple_aliases_successful(hass: HomeAssistant) -> N
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -1067,7 +1067,7 @@ async def test_reconfigure_multiple_aliases_nochange(hass: HomeAssistant) -> Non
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1085,11 +1085,11 @@ async def test_reconfigure_multiple_aliases_nochange(hass: HomeAssistant) -> Non
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -1137,7 +1137,7 @@ async def test_reconfigure_multiple_aliases_password_nochange(
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1155,11 +1155,11 @@ async def test_reconfigure_multiple_aliases_password_nochange(
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -1224,7 +1224,7 @@ async def test_reconfigure_multiple_aliases_already_configured(
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1242,11 +1242,11 @@ async def test_reconfigure_multiple_aliases_already_configured(
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -1305,7 +1305,7 @@ async def test_reconfigure_multiple_aliases_unique_id_change(
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1323,11 +1323,11 @@ async def test_reconfigure_multiple_aliases_unique_id_change(
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -1392,7 +1392,7 @@ async def test_reconfigure_multiple_aliases_duplicate_unique_ids(
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1410,11 +1410,11 @@ async def test_reconfigure_multiple_aliases_duplicate_unique_ids(
 
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient",
+            "inpui.components.nut.AIONUTClient",
             return_value=mock_pynut,
         ),
         patch(
-            "homeassistant.components.nut.async_setup_entry",
+            "inpui.components.nut.async_setup_entry",
             return_value=True,
         ),
     ):

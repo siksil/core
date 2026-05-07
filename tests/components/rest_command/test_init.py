@@ -36,7 +36,7 @@ async def test_reload(hass: HomeAssistant, setup_component: ComponentSetup) -> N
         }
     }
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=new_config,
     ):

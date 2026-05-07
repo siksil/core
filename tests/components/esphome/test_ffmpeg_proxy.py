@@ -25,7 +25,7 @@ from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 
-FFMPEG_PROXY = "homeassistant.components.esphome.ffmpeg_proxy"
+FFMPEG_PROXY = "inpui.components.esphome.ffmpeg_proxy"
 
 
 @pytest.fixture(name="wav_file_length")
@@ -62,7 +62,7 @@ async def test_async_create_proxy_url(hass: HomeAssistant) -> None:
     proxy_url = f"/api/esphome/ffmpeg_proxy/{device_id}/{convert_id}.{media_format}"
 
     with patch(
-        "homeassistant.components.esphome.ffmpeg_proxy.secrets.token_urlsafe",
+        "inpui.components.esphome.ffmpeg_proxy.secrets.token_urlsafe",
         return_value=convert_id,
     ):
         assert (
@@ -92,7 +92,7 @@ async def test_proxy_view(
 
     # Allow the URL
     with patch(
-        "homeassistant.components.esphome.ffmpeg_proxy.secrets.token_urlsafe",
+        "inpui.components.esphome.ffmpeg_proxy.secrets.token_urlsafe",
         return_value=convert_id,
     ):
         assert (

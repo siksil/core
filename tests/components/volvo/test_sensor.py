@@ -41,7 +41,7 @@ async def test_sensor(
 ) -> None:
     """Test sensor."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -58,7 +58,7 @@ async def test_distance_to_empty_battery(
 ) -> None:
     """Test using `distanceToEmptyBattery` instead of `electricRange`."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     assert hass.states.get("sensor.volvo_xc40_distance_to_empty_battery").state == "250"
@@ -76,7 +76,7 @@ async def test_skip_invalid_api_fields(
 ) -> None:
     """Test if invalid values are not creating a sensor."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     assert not hass.states.get(f"sensor.volvo_{short_model}_charging_current_limit")
@@ -93,7 +93,7 @@ async def test_charging_power_value(
 ) -> None:
     """Test if charging_power_value is zero if supported, but not charging."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     assert hass.states.get("sensor.volvo_ex30_charging_power").state == "0"
@@ -118,7 +118,7 @@ async def test_unique_ids(
 ) -> None:
     """Test sensor for unique id's."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     assert f"Platform {DOMAIN} does not generate unique IDs" not in caplog.text
@@ -136,7 +136,7 @@ async def test_availability_status_reason(
         value="UNAVAILABLE", extra_data={"unavailable_reason": "no_internet"}
     )
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     state = hass.states.get("sensor.volvo_xc40_car_connection")
@@ -153,7 +153,7 @@ async def test_time_to_service_non_value_field(
     mock_method: AsyncMock = mock_api.async_get_diagnostics
     mock_method.return_value["timeToService"] = VolvoCarsErrorResult(message="invalid")
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     state = hass.states.get("sensor.volvo_xc40_time_to_service")
@@ -172,7 +172,7 @@ async def test_time_to_service_months_conversion(
         value=3, unit="months"
     )
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     state = hass.states.get("sensor.volvo_xc40_time_to_service")
@@ -189,7 +189,7 @@ async def test_charging_power_value_fallback(
     mock_method: AsyncMock = mock_api.async_get_energy_state
     mock_method.return_value["chargingPower"] = VolvoCarsErrorResult(message="invalid")
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     state = hass.states.get("sensor.volvo_xc40_charging_power")
@@ -209,7 +209,7 @@ async def test_charging_power_status_unknown_value(
         value="unknown_status"
     )
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.SENSOR]):
         assert await setup_integration()
 
     state = hass.states.get("sensor.volvo_xc40_charging_power_status")

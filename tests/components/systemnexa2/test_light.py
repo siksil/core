@@ -37,7 +37,7 @@ async def test_light_entities(
 
     # Only load the light platform for snapshot testing
     with patch(
-        "homeassistant.components.systemnexa2.PLATFORMS",
+        "inpui.components.systemnexa2.PLATFORMS",
         [Platform.LIGHT],
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

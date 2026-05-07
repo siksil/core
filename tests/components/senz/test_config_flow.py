@@ -74,7 +74,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.senz.async_setup_entry", return_value=True
+        "inpui.components.senz.async_setup_entry", return_value=True
     ) as mock_setup:
         await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -124,7 +124,7 @@ async def test_duplicate_flow(
         },
     )
 
-    with patch("homeassistant.components.senz.async_setup_entry", return_value=True):
+    with patch("inpui.components.senz.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(result["flow_id"])
 
     assert result2["type"] is FlowResultType.ABORT

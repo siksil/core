@@ -29,7 +29,7 @@ UUID = "00000000-00000000-00000000-00000000"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.bring.async_setup_entry", return_value=True
+        "inpui.components.bring.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -39,11 +39,11 @@ def mock_bring_client() -> Generator[AsyncMock]:
     """Mock a Bring client."""
     with (
         patch(
-            "homeassistant.components.bring.Bring",
+            "inpui.components.bring.Bring",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.bring.config_flow.Bring",
+            "inpui.components.bring.config_flow.Bring",
             new=mock_client,
         ),
     ):
@@ -77,7 +77,7 @@ def mock_uuid() -> Generator[AsyncMock]:
     """Mock uuid."""
 
     with patch(
-        "homeassistant.components.bring.todo.uuid.uuid4",
+        "inpui.components.bring.todo.uuid.uuid4",
         autospec=True,
     ) as mock_client:
         mock_client.return_value = uuid.UUID("b669ad23-606a-4652-b302-995d34b1cb1c")

@@ -12,7 +12,7 @@ MOCK_SNAPSHOT_PAYLOAD = {"mock_integration": {"devices": [], "entities": []}}
 def mock_snapshot_payload() -> Generator[None]:
     """Mock _async_snapshot_payload to return non-empty data."""
     with patch(
-        "homeassistant.components.analytics.analytics._async_snapshot_payload",
+        "inpui.components.analytics.analytics._async_snapshot_payload",
         return_value=MOCK_SNAPSHOT_PAYLOAD,
     ):
         yield

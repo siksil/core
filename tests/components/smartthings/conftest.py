@@ -40,7 +40,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.smartthings.async_setup_entry",
+        "inpui.components.smartthings.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -69,11 +69,11 @@ def mock_smartthings() -> Generator[AsyncMock]:
     """Mock a SmartThings client."""
     with (
         patch(
-            "homeassistant.components.smartthings.SmartThings",
+            "inpui.components.smartthings.SmartThings",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.smartthings.config_flow.SmartThings",
+            "inpui.components.smartthings.config_flow.SmartThings",
             new=mock_client,
         ),
     ):

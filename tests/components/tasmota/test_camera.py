@@ -173,7 +173,7 @@ async def test_discovery_update_unchanged_camera(
     config = copy.deepcopy(DEFAULT_CONFIG)
     config["cam"] = 1
     with patch(
-        "homeassistant.components.tasmota.camera.TasmotaCamera.discovery_update"
+        "inpui.components.tasmota.camera.TasmotaCamera.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass,

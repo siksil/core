@@ -98,7 +98,7 @@ async def mock_client(
     hass: HomeAssistant, hass_client: ClientSessionGenerator
 ) -> TestClient:
     """Start the Home Assistant HTTP component."""
-    with patch("homeassistant.components.spaceapi", return_value=True):
+    with patch("inpui.components.spaceapi", return_value=True):
         await async_setup_component(hass, "spaceapi", CONFIG)
 
     hass.states.async_set(

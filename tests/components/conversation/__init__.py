@@ -55,7 +55,7 @@ async def mock_chat_log(hass: HomeAssistant) -> AsyncGenerator[MockChatLog]:
     # pylint: disable-next=contextmanager-generator-missing-cleanup
     with (
         patch(
-            "homeassistant.components.conversation.chat_log.ChatLog",
+            "inpui.components.conversation.chat_log.ChatLog",
             MockChatLog,
         ),
         chat_session.async_get_chat_session(hass, "mock-conversation-id") as session,

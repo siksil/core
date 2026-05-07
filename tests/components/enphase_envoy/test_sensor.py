@@ -47,7 +47,7 @@ async def test_sensor(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test sensor platform entities against snapshot."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -80,7 +80,7 @@ async def test_sensor_production_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test production entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -119,7 +119,7 @@ async def test_sensor_production_phase_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test production phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -170,7 +170,7 @@ async def test_sensor_consumption_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test consumption entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -214,7 +214,7 @@ async def test_sensor_net_consumption_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test net consumption entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -252,7 +252,7 @@ async def test_sensor_consumption_phase_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test consumption phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -297,7 +297,7 @@ async def test_sensor_net_consumption_phase_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test consumption phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -338,7 +338,7 @@ async def test_sensor_production_ct_data(
     mock_envoy: AsyncMock,
 ) -> None:
     """Test production CT phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -389,7 +389,7 @@ async def test_sensor_production_ct_phase_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test production ct phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -453,7 +453,7 @@ async def test_sensor_consumption_ct_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test consumption CT phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -511,7 +511,7 @@ async def test_sensor_consumption_ct_phase_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test consumption ct phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -581,7 +581,7 @@ async def test_sensor_storage_ct_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test storage phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -635,7 +635,7 @@ async def test_sensor_storage_ct_phase_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test storage ct phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -713,7 +713,7 @@ async def test_sensor_ct_data(
     cttype: CtType,
 ) -> None:
     """Test ct entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -800,7 +800,7 @@ async def test_sensor_ct_phase_data(
     cttype: CtType,
 ) -> None:
     """Test ct phase entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -875,7 +875,7 @@ async def test_sensor_all_phase_entities_disabled_by_integration(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all phase entities are disabled by integration."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -909,7 +909,7 @@ async def test_sensor_storage_phase_disabled_by_integration(
     mock_envoy: AsyncMock,
 ) -> None:
     """Test all storage CT phase entities are disabled by integration."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -941,7 +941,7 @@ async def test_sensor_inverter_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test enphase_envoy inverter entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SENSOR}.inverter"
@@ -969,7 +969,7 @@ async def test_sensor_inverter_detailed_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test enphase_envoy inverter detailed entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SENSOR}.inverter"
@@ -1038,7 +1038,7 @@ async def test_sensor_inverter_disabled_by_integration(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test enphase_envoy inverter disabled by integration entities."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     INVERTER_BASE = f"{Platform.SENSOR}.inverter"
@@ -1078,7 +1078,7 @@ async def test_sensor_encharge_aggregate_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test enphase_envoy encharge aggregate entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -1119,7 +1119,7 @@ async def test_sensor_encharge_enpower_data(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test enphase_envoy encharge enpower entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.data.enpower.serial_number
@@ -1160,7 +1160,7 @@ async def test_sensor_encharge_power_data(
     mock_envoy: AsyncMock,
 ) -> None:
     """Test enphase_envoy encharge_power entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     ENTITY_BASE = f"{Platform.SENSOR}.encharge"
@@ -1232,7 +1232,7 @@ async def test_sensor_acb_power_data(
     mock_envoy: AsyncMock,
 ) -> None:
     """Test enphase_envoy acb battery power entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -1281,7 +1281,7 @@ async def test_sensor_aggegated_battery_data(
     mock_envoy: AsyncMock,
 ) -> None:
     """Test enphase_envoy aggregated batteries entities values."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     sn = mock_envoy.serial_number
@@ -1342,7 +1342,7 @@ async def test_sensor_missing_data(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test enphase_envoy sensor platform missing data handling."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     ENTITY_BASE = f"{Platform.SENSOR}.envoy_{mock_envoy.serial_number}"
@@ -1430,8 +1430,8 @@ async def test_fw_update(
     caplog: pytest.LogCaptureFixture,
 ) -> None:
     """Test enphase_envoy sensor update over fw update."""
-    logging.getLogger("homeassistant.components.enphase_envoy").setLevel(logging.DEBUG)
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    logging.getLogger("inpui.components.enphase_envoy").setLevel(logging.DEBUG)
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     # force HA to detect changed data by changing raw
@@ -1468,8 +1468,8 @@ async def test_no_state_class_warnings(
     caplog: pytest.LogCaptureFixture,
 ) -> None:
     """Test enphase_envoy sensor creation does not result in deviceclass/state_class warnings."""
-    logging.getLogger("homeassistant.components.enphase_envoy").setLevel(logging.DEBUG)
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    logging.getLogger("inpui.components.enphase_envoy").setLevel(logging.DEBUG)
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     # Simple test to verify no sensor device class / state class mismatch warning is reported

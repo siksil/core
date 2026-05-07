@@ -336,7 +336,7 @@ async def test_discovery_update_unchanged_fan(
     config = copy.deepcopy(DEFAULT_CONFIG)
     config["if"] = 1
     with patch(
-        "homeassistant.components.tasmota.fan.TasmotaFan.discovery_update"
+        "inpui.components.tasmota.fan.TasmotaFan.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass,

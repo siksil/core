@@ -30,7 +30,7 @@ from tests.typing import MqttMockHAClientGenerator
 async def help_setup_yaml(hass: HomeAssistant, config: dict[str, str]) -> None:
     """Help to set up an exported MQTT device via YAML."""
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value=parse_yaml(config["yaml"]),
     ):
         await hass.services.async_call(

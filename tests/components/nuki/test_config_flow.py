@@ -26,11 +26,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nuki.config_flow.NukiBridge.info",
+            "inpui.components.nuki.config_flow.NukiBridge.info",
             return_value=MOCK_INFO,
         ),
         patch(
-            "homeassistant.components.nuki.async_setup_entry",
+            "inpui.components.nuki.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -61,7 +61,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         side_effect=InvalidCredentialsException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -84,7 +84,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         side_effect=RequestException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -107,7 +107,7 @@ async def test_form_unknown_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -131,7 +131,7 @@ async def test_form_already_configured(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         return_value=MOCK_INFO,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -160,11 +160,11 @@ async def test_dhcp_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nuki.config_flow.NukiBridge.info",
+            "inpui.components.nuki.config_flow.NukiBridge.info",
             return_value=MOCK_INFO,
         ),
         patch(
-            "homeassistant.components.nuki.async_setup_entry",
+            "inpui.components.nuki.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -212,11 +212,11 @@ async def test_reauth_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nuki.config_flow.NukiBridge.info",
+            "inpui.components.nuki.config_flow.NukiBridge.info",
             return_value=MOCK_INFO,
         ),
         patch(
-            "homeassistant.components.nuki.async_setup_entry",
+            "inpui.components.nuki.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -240,7 +240,7 @@ async def test_reauth_invalid_auth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         side_effect=InvalidCredentialsException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -262,7 +262,7 @@ async def test_reauth_cannot_connect(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         side_effect=RequestException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -284,7 +284,7 @@ async def test_reauth_unknown_exception(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.nuki.config_flow.NukiBridge.info",
+        "inpui.components.nuki.config_flow.NukiBridge.info",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

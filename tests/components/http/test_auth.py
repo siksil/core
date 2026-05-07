@@ -110,7 +110,7 @@ def trusted_networks_auth(
 
 async def test_auth_middleware_loaded_by_default(hass: HomeAssistant) -> None:
     """Test accessing to server from banned IP when feature is off."""
-    with patch("homeassistant.components.http.async_setup_auth") as mock_setup:
+    with patch("inpui.components.http.async_setup_auth") as mock_setup:
         await async_setup_component(hass, "http", {"http": {}})
 
     assert len(mock_setup.mock_calls) == 1
@@ -761,7 +761,7 @@ async def test_unix_socket_auth_with_supervisor_user(
     client = await aiohttp_client(app)
 
     with patch(
-        "homeassistant.components.http.auth.is_supervisor_unix_socket_request",
+        "inpui.components.http.auth.is_supervisor_unix_socket_request",
         return_value=True,
     ):
         req = await client.get("/")
@@ -780,7 +780,7 @@ async def test_unix_socket_auth_without_supervisor_user(
     client = await aiohttp_client(app)
 
     with patch(
-        "homeassistant.components.http.auth.is_supervisor_unix_socket_request",
+        "inpui.components.http.auth.is_supervisor_unix_socket_request",
         return_value=True,
     ):
         req = await client.get("/")
@@ -802,7 +802,7 @@ async def test_unix_socket_auth_caches_user_id(
     client = await aiohttp_client(app)
 
     with patch(
-        "homeassistant.components.http.auth.is_supervisor_unix_socket_request",
+        "inpui.components.http.auth.is_supervisor_unix_socket_request",
         return_value=True,
     ):
         # First request triggers user lookup
@@ -812,7 +812,7 @@ async def test_unix_socket_auth_caches_user_id(
     # Second request should use cached user ID
     with (
         patch(
-            "homeassistant.components.http.auth.is_supervisor_unix_socket_request",
+            "inpui.components.http.auth.is_supervisor_unix_socket_request",
             return_value=True,
         ),
         patch.object(

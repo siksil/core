@@ -37,10 +37,10 @@ def fixture_mock_auth_api():
     """Set up Auth fixture."""
     with (
         mock.patch(
-            "homeassistant.components.whirlpool.Auth", spec=auth.Auth
+            "inpui.components.whirlpool.Auth", spec=auth.Auth
         ) as mock_auth,
         mock.patch(
-            "homeassistant.components.whirlpool.config_flow.Auth", new=mock_auth
+            "inpui.components.whirlpool.config_flow.Auth", new=mock_auth
         ),
     ):
         mock_auth.return_value.is_access_token_valid.return_value = True
@@ -60,11 +60,11 @@ def fixture_mock_appliances_manager_api(
     """Set up AppliancesManager fixture."""
     with (
         mock.patch(
-            "homeassistant.components.whirlpool.AppliancesManager",
+            "inpui.components.whirlpool.AppliancesManager",
             spec=appliancesmanager.AppliancesManager,
         ) as mock_appliances_manager,
         mock.patch(
-            "homeassistant.components.whirlpool.config_flow.AppliancesManager",
+            "inpui.components.whirlpool.config_flow.AppliancesManager",
             new=mock_appliances_manager,
         ),
     ):
@@ -87,10 +87,10 @@ def fixture_mock_backend_selector_api():
     """Set up BackendSelector fixture."""
     with (
         mock.patch(
-            "homeassistant.components.whirlpool.BackendSelector"
+            "inpui.components.whirlpool.BackendSelector"
         ) as mock_backend_selector,
         mock.patch(
-            "homeassistant.components.whirlpool.config_flow.BackendSelector",
+            "inpui.components.whirlpool.config_flow.BackendSelector",
             new=mock_backend_selector,
         ),
     ):

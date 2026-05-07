@@ -37,7 +37,7 @@ async def test_setup_device_not_found(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.opendisplay.async_ble_device_from_address",
+        "inpui.components.opendisplay.async_ble_device_from_address",
         return_value=None,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -63,7 +63,7 @@ async def test_setup_connection_error(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.opendisplay.OpenDisplayDevice",
+        "inpui.components.opendisplay.OpenDisplayDevice",
         return_value=AsyncMock(__aenter__=AsyncMock(side_effect=exception)),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 @pytest.fixture(autouse=True)
 def patch_requests():
     """Stub out services that makes requests."""
-    with patch("homeassistant.components.meteo_france.MeteoFranceClient") as mock_data:
+    with patch("inpui.components.meteo_france.MeteoFranceClient") as mock_data:
         mock_data = mock_data.return_value
         mock_data.get_forecast.return_value = Forecast(
             load_json_object_fixture("raw_forecast.json", DOMAIN)

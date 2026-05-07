@@ -9,7 +9,7 @@ import pytest
 def patch_requests():
     """Stub out services that makes requests."""
     patch_client = patch(
-        "homeassistant.components.meteoclimatic.coordinator.MeteoclimaticClient"
+        "inpui.components.meteoclimatic.coordinator.MeteoclimaticClient"
     )
 
     with patch_client:

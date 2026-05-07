@@ -277,7 +277,7 @@ async def test_custom_integration_with_preview_features(
     }
 
     with patch(
-        "homeassistant.components.labs.async_get_custom_components",
+        "inpui.components.labs.async_get_custom_components",
         return_value={"custom_test": mock_integration},
     ):
         assert await async_setup_component(hass, DOMAIN, {})
@@ -309,7 +309,7 @@ async def test_preview_feature_is_built_in_flag(
             "custom_feature": {"feedback_url": "https://feedback.test"}
         }
         with patch(
-            "homeassistant.components.labs.async_get_custom_components",
+            "inpui.components.labs.async_get_custom_components",
             return_value={"custom_test": mock_integration},
         ):
             assert await async_setup_component(hass, DOMAIN, {})

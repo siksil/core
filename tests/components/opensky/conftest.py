@@ -27,7 +27,7 @@ from tests.common import MockConfigEntry, async_load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.opensky.async_setup_entry",
+        "inpui.components.opensky.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -92,11 +92,11 @@ async def opensky_client(hass: HomeAssistant) -> AsyncGenerator[AsyncMock]:
     """Mock the OpenSky client."""
     with (
         patch(
-            "homeassistant.components.opensky.OpenSky",
+            "inpui.components.opensky.OpenSky",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.opensky.config_flow.OpenSky",
+            "inpui.components.opensky.config_flow.OpenSky",
             new=mock_client,
         ),
     ):

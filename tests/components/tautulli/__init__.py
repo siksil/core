@@ -29,7 +29,7 @@ CONF_DATA = {
 def patch_config_flow_tautulli(mocked_tautulli) -> AsyncMock:
     """Mock Tautulli config flow."""
     return patch(
-        "homeassistant.components.tautulli.config_flow.PyTautulli.async_get_server_info",
+        "inpui.components.tautulli.config_flow.PyTautulli.async_get_server_info",
         return_value=mocked_tautulli,
     )
 

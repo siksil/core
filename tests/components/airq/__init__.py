@@ -27,6 +27,6 @@ async def setup_platform(hass: HomeAssistant, platform: Platform) -> None:
 
     # The patching is now handled by the mock_airq fixture.
     # We just need to load the component.
-    with patch("homeassistant.components.airq.PLATFORMS", [platform]):
+    with patch("inpui.components.airq.PLATFORMS", [platform]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()

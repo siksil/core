@@ -24,7 +24,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sensibo.async_setup_entry", return_value=True
+        "inpui.components.sensibo.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -52,7 +52,7 @@ async def load_int(
 
     config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.sensibo.PLATFORMS", load_platforms):
+    with patch("inpui.components.sensibo.PLATFORMS", load_platforms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -68,10 +68,10 @@ async def get_client(
 
     with (
         patch(
-            "homeassistant.components.sensibo.coordinator.SensiboClient",
+            "inpui.components.sensibo.coordinator.SensiboClient",
             autospec=True,
         ) as mock_client,
-        patch("homeassistant.components.sensibo.util.SensiboClient", new=mock_client),
+        patch("inpui.components.sensibo.util.SensiboClient", new=mock_client),
     ):
         client = mock_client.return_value
         client.async_get_devices_data.return_value = get_data[0]

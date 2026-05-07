@@ -272,7 +272,7 @@ async def test_flow_ssdp_discovery_changed_udn_but_st_differs(
     # UDN + mac address different: New discovery via step ssdp.
     new_udn = TEST_UDN + "2"
     with patch(
-        "homeassistant.components.upnp.device.get_mac_address",
+        "inpui.components.upnp.device.get_mac_address",
         return_value=TEST_MAC_ADDRESS + "2",
     ):
         new_discovery = deepcopy(TEST_DISCOVERY)
@@ -288,7 +288,7 @@ async def test_flow_ssdp_discovery_changed_udn_but_st_differs(
 
     # UDN + ST different: New discovery via step ssdp.
     with patch(
-        "homeassistant.components.upnp.device.get_mac_address",
+        "inpui.components.upnp.device.get_mac_address",
         return_value=TEST_MAC_ADDRESS,
     ):
         new_st = TEST_ST + "2"

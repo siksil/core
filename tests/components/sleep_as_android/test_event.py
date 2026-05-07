@@ -20,7 +20,7 @@ from tests.typing import ClientSessionGenerator
 def event_only() -> Generator[None]:
     """Enable only the event platform."""
     with patch(
-        "homeassistant.components.sleep_as_android.PLATFORMS",
+        "inpui.components.sleep_as_android.PLATFORMS",
         [Platform.EVENT],
     ):
         yield

@@ -224,8 +224,8 @@ async def test_flow_aborts_configuration_updated(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "user"
 
-    with patch("homeassistant.components.unifi.async_setup_entry") and patch(
-        "homeassistant.components.unifi.UnifiHub.available", new_callable=PropertyMock
+    with patch("inpui.components.unifi.async_setup_entry") and patch(
+        "inpui.components.unifi.UnifiHub.available", new_callable=PropertyMock
     ) as ws_mock:
         ws_mock.return_value = False
         result = await hass.config_entries.flow.async_configure(
@@ -307,7 +307,7 @@ async def test_reauth_flow_update_configuration(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.unifi.UnifiHub.available", new_callable=PropertyMock
+        "inpui.components.unifi.UnifiHub.available", new_callable=PropertyMock
     ) as ws_mock:
         ws_mock.return_value = False
         result = await hass.config_entries.flow.async_configure(

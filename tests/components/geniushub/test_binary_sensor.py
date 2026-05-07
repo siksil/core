@@ -23,7 +23,7 @@ async def test_cloud_all_sensors(
 ) -> None:
     """Test the creation of the Genius Hub binary sensors."""
     with patch(
-        "homeassistant.components.geniushub.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.geniushub.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_cloud_config_entry)
 

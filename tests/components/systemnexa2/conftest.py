@@ -52,7 +52,7 @@ def device_info(dimmable: bool) -> dict[str, Any]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.systemnexa2.async_setup_entry", return_value=True
+        "inpui.components.systemnexa2.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -62,10 +62,10 @@ def mock_system_nexa_2_device(device_info: dict[str, Any]) -> Generator[MagicMoc
     """Mock the System Nexa 2 API."""
     with (
         patch(
-            "homeassistant.components.systemnexa2.coordinator.Device", autospec=True
+            "inpui.components.systemnexa2.coordinator.Device", autospec=True
         ) as mock_device,
         patch(
-            "homeassistant.components.systemnexa2.config_flow.Device", new=mock_device
+            "inpui.components.systemnexa2.config_flow.Device", new=mock_device
         ),
     ):
         device = mock_device.return_value
@@ -126,7 +126,7 @@ def mock_config_entry(device_info: dict[str, Any]) -> MockConfigEntry:
 def mock_patch_get_host():
     """Mock call to socket gethostbyname function."""
     with patch(
-        "homeassistant.components.systemnexa2.config_flow.socket.gethostbyname",
+        "inpui.components.systemnexa2.config_flow.socket.gethostbyname",
         return_value="192.168.1.1",
     ) as get_host_mock:
         yield get_host_mock

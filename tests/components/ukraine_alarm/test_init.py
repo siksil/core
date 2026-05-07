@@ -26,11 +26,11 @@ async def test_migration_v1_to_v2_state_without_districts(
 
     with (
         patch(
-            "homeassistant.components.ukraine_alarm.Client.get_regions",
+            "inpui.components.ukraine_alarm.Client.get_regions",
             return_value=REGIONS,
         ),
         patch(
-            "homeassistant.components.ukraine_alarm.Client.get_alerts",
+            "inpui.components.ukraine_alarm.Client.get_alerts",
             return_value=[{"activeAlerts": []}],
         ),
     ):
@@ -58,7 +58,7 @@ async def test_migration_v1_to_v2_state_with_districts_fails(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ukraine_alarm.Client.get_regions",
+        "inpui.components.ukraine_alarm.Client.get_regions",
         return_value=REGIONS,
     ):
         result = await hass.config_entries.async_setup(entry.entry_id)

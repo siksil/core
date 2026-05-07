@@ -41,7 +41,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.twentemilieu.async_setup_entry", return_value=True
+        "inpui.components.twentemilieu.async_setup_entry", return_value=True
     ):
         yield
 
@@ -51,11 +51,11 @@ def mock_twentemilieu() -> Generator[MagicMock]:
     """Return a mocked Twente Milieu client."""
     with (
         patch(
-            "homeassistant.components.twentemilieu.coordinator.TwenteMilieu",
+            "inpui.components.twentemilieu.coordinator.TwenteMilieu",
             autospec=True,
         ) as twentemilieu_mock,
         patch(
-            "homeassistant.components.twentemilieu.config_flow.TwenteMilieu",
+            "inpui.components.twentemilieu.config_flow.TwenteMilieu",
             new=twentemilieu_mock,
         ),
     ):

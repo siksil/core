@@ -129,7 +129,7 @@ async def test_setup_config_entry_dynamic_instances(
     entity_client.instances = master_client.instances
 
     with patch(
-        "homeassistant.components.hyperion.client.HyperionClient",
+        "inpui.components.hyperion.client.HyperionClient",
         side_effect=[master_client, entity_client, entity_client],
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -146,7 +146,7 @@ async def test_setup_config_entry_dynamic_instances(
     ]
 
     with patch(
-        "homeassistant.components.hyperion.client.HyperionClient",
+        "inpui.components.hyperion.client.HyperionClient",
         return_value=entity_client,
     ):
         await instance_callback(
@@ -174,7 +174,7 @@ async def test_setup_config_entry_dynamic_instances(
         f"{const.KEY_INSTANCE}-{const.KEY_UPDATE}"
     ]
     with patch(
-        "homeassistant.components.hyperion.client.HyperionClient",
+        "inpui.components.hyperion.client.HyperionClient",
         return_value=entity_client,
     ):
         await instance_callback(
@@ -194,7 +194,7 @@ async def test_setup_config_entry_dynamic_instances(
 
     # == Inject a new instances update (re-add instance 1, but not running)
     with patch(
-        "homeassistant.components.hyperion.client.HyperionClient",
+        "inpui.components.hyperion.client.HyperionClient",
         return_value=entity_client,
     ):
         await instance_callback(
@@ -215,7 +215,7 @@ async def test_setup_config_entry_dynamic_instances(
 
     # == Inject a new instances update (re-add instance 1, running)
     with patch(
-        "homeassistant.components.hyperion.client.HyperionClient",
+        "inpui.components.hyperion.client.HyperionClient",
         return_value=entity_client,
     ):
         await instance_callback(
@@ -715,7 +715,7 @@ async def test_setup_entry_no_token_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hyperion.client.HyperionClient",
+            "inpui.components.hyperion.client.HyperionClient",
             return_value=client,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_flow_init,
@@ -749,7 +749,7 @@ async def test_setup_entry_bad_token_reauth(hass: HomeAssistant) -> None:
     client.async_client_login = AsyncMock(return_value=False)
     with (
         patch(
-            "homeassistant.components.hyperion.client.HyperionClient",
+            "inpui.components.hyperion.client.HyperionClient",
             return_value=client,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_flow_init,

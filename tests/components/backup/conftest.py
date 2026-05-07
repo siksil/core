@@ -43,7 +43,7 @@ def hass_config_dir(tmp_path: Path, available_backups: list[Path]) -> str:
 def instance_id_fixture(hass: HomeAssistant) -> Generator[None]:
     """Mock instance ID."""
     with patch(
-        "homeassistant.components.backup.manager.instance_id.async_get",
+        "inpui.components.backup.manager.instance_id.async_get",
         return_value="our_uuid",
     ):
         yield
@@ -53,7 +53,7 @@ def instance_id_fixture(hass: HomeAssistant) -> Generator[None]:
 def mocked_json_bytes_fixture() -> Generator[Mock]:
     """Mock json_bytes."""
     with patch(
-        "homeassistant.components.backup.manager.json_bytes",
+        "inpui.components.backup.manager.json_bytes",
         return_value=b"{}",  # Empty JSON
     ) as mocked_json_bytes:
         yield mocked_json_bytes
@@ -72,7 +72,7 @@ def mock_create_backup() -> Generator[AsyncMock]:
     fut: Future[MagicMock] = Future()
     fut.set_result(mock_written_backup)
     with patch(
-        "homeassistant.components.backup.CoreBackupReaderWriter.async_create_backup"
+        "inpui.components.backup.CoreBackupReaderWriter.async_create_backup"
     ) as mock_create_backup:
         mock_create_backup.return_value = (NewBackup(backup_job_id="abc123"), fut)
         yield mock_create_backup
@@ -86,7 +86,7 @@ def mock_ha_version_fixture(hass: HomeAssistant) -> Generator[None]:
     of tests that check the exact content of the metadata.
     """
 
-    with patch("homeassistant.components.backup.manager.HAVERSION", "2025.1.0"):
+    with patch("inpui.components.backup.manager.HAVERSION", "2025.1.0"):
         yield
 
 

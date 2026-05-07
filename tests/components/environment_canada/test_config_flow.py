@@ -40,7 +40,7 @@ def mocked_ec():
     ec_mock.update = AsyncMock()
 
     return patch(
-        "homeassistant.components.environment_canada.config_flow.ECWeather",
+        "inpui.components.environment_canada.config_flow.ECWeather",
         return_value=ec_mock,
     )
 
@@ -48,7 +48,7 @@ def mocked_ec():
 def mocked_stations():
     """Mock the station list."""
     return patch(
-        "homeassistant.components.environment_canada.config_flow.get_ec_sites_list",
+        "inpui.components.environment_canada.config_flow.get_ec_sites_list",
         return_value=FAKE_STATIONS,
     )
 
@@ -59,7 +59,7 @@ async def test_create_entry(hass: HomeAssistant) -> None:
         mocked_ec(),
         mocked_stations(),
         patch(
-            "homeassistant.components.environment_canada.async_setup_entry",
+            "inpui.components.environment_canada.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -88,7 +88,7 @@ async def test_create_same_entry_twice(hass: HomeAssistant) -> None:
         mocked_ec(),
         mocked_stations(),
         patch(
-            "homeassistant.components.environment_canada.async_setup_entry",
+            "inpui.components.environment_canada.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -119,7 +119,7 @@ async def test_exception_handling(hass: HomeAssistant, error) -> None:
     with (
         mocked_stations(),
         patch(
-            "homeassistant.components.environment_canada.config_flow.ECWeather",
+            "inpui.components.environment_canada.config_flow.ECWeather",
             side_effect=exc,
         ),
     ):
@@ -141,7 +141,7 @@ async def test_lat_lon_not_specified(hass: HomeAssistant) -> None:
         mocked_ec(),
         mocked_stations(),
         patch(
-            "homeassistant.components.environment_canada.async_setup_entry",
+            "inpui.components.environment_canada.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -163,7 +163,7 @@ async def test_coordinates_without_station(hass: HomeAssistant) -> None:
         mocked_ec(),
         mocked_stations(),
         patch(
-            "homeassistant.components.environment_canada.async_setup_entry",
+            "inpui.components.environment_canada.async_setup_entry",
             return_value=True,
         ),
     ):

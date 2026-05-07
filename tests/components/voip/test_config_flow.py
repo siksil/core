@@ -20,7 +20,7 @@ async def test_form_user(hass: HomeAssistant) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.voip.async_setup_entry",
+        "inpui.components.voip.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

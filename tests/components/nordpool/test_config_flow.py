@@ -87,7 +87,7 @@ async def test_cannot_connect(
     assert result["step_id"] == config_entries.SOURCE_USER
 
     with patch(
-        "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+        "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
         side_effect=error_message,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -157,7 +157,7 @@ async def test_reconfigure_cannot_connect(
     result = await load_int.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+        "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
         side_effect=error_message,
     ):
         result = await hass.config_entries.flow.async_configure(

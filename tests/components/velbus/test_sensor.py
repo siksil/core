@@ -20,7 +20,7 @@ async def test_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.velbus.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.velbus.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

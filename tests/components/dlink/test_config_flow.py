@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry
 
 
 def _patch_setup_entry():
-    return patch("homeassistant.components.dlink.async_setup_entry", return_value=True)
+    return patch("inpui.components.dlink.async_setup_entry", return_value=True)
 
 
 async def test_flow_user(hass: HomeAssistant, mocked_plug: MagicMock) -> None:

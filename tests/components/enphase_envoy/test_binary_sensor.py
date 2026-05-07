@@ -30,7 +30,7 @@ async def test_binary_sensor(
 ) -> None:
     """Test binary sensor platform entities against snapshot."""
     with patch(
-        "homeassistant.components.enphase_envoy.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.enphase_envoy.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
@@ -54,7 +54,7 @@ async def test_no_binary_sensor(
 ) -> None:
     """Test switch platform entities are not created."""
     with patch(
-        "homeassistant.components.enphase_envoy.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.enphase_envoy.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, config_entry)
     assert not er.async_entries_for_config_entry(entity_registry, config_entry.entry_id)
@@ -70,7 +70,7 @@ async def test_binary_sensor_data(
 ) -> None:
     """Test binary sensor entities values and names."""
     with patch(
-        "homeassistant.components.enphase_envoy.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.enphase_envoy.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, config_entry)
 

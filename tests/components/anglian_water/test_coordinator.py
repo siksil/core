@@ -194,7 +194,7 @@ async def test_coordinator_subsequent_run_missing_period_statistics(
     )
 
     with patch(
-        "homeassistant.components.anglian_water.coordinator.statistics_during_period",
+        "inpui.components.anglian_water.coordinator.statistics_during_period",
         return_value={},
     ):
         await coordinator._async_update_data()
@@ -242,7 +242,7 @@ async def test_coordinator_period_statistics_without_sum(
 
     statistic_id = f"anglian_water:{ACCOUNT_NUMBER}_testsn_usage"
     with patch(
-        "homeassistant.components.anglian_water.coordinator.statistics_during_period",
+        "inpui.components.anglian_water.coordinator.statistics_during_period",
         return_value={statistic_id: [{"start": 0.0}]},
     ):
         await coordinator._async_update_data()

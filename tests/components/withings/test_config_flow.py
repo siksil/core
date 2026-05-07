@@ -65,7 +65,7 @@ async def test_full_flow(
         },
     )
     with patch(
-        "homeassistant.components.withings.async_setup_entry", return_value=True
+        "inpui.components.withings.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -357,7 +357,7 @@ async def test_dhcp(
         },
     )
     with patch(
-        "homeassistant.components.withings.async_setup_entry", return_value=True
+        "inpui.components.withings.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 

@@ -153,7 +153,7 @@ async def test_auth_code_checks_local_only_user(
 
     # Exchange code for tokens
     with patch(
-        "homeassistant.components.auth.async_user_not_allowed_do_auth",
+        "inpui.components.auth.async_user_not_allowed_do_auth",
         return_value="User is local only",
     ):
         resp = await client.post(
@@ -335,7 +335,7 @@ async def test_refresh_token_checks_local_only_user(
     refresh_token.user.local_only = True
 
     with patch(
-        "homeassistant.components.auth.async_user_not_allowed_do_auth",
+        "inpui.components.auth.async_user_not_allowed_do_auth",
         return_value="User is local only",
     ):
         resp = await client.post(
@@ -364,7 +364,7 @@ async def test_refresh_token_provider_rejected(
 
     # Rejected by provider
     with patch(
-        "homeassistant.auth.providers.insecure_example.ExampleAuthProvider.async_validate_refresh_token",
+        "inpui.auth.providers.insecure_example.ExampleAuthProvider.async_validate_refresh_token",
         side_effect=InvalidAuthError("Invalid access"),
     ):
         resp = await client.post(
@@ -547,7 +547,7 @@ async def test_ws_delete_all_refresh_tokens_error(
 
     tokens = result["result"]
 
-    with patch("homeassistant.components.auth.DELETE_CURRENT_TOKEN_DELAY", 0.001):
+    with patch("inpui.components.auth.DELETE_CURRENT_TOKEN_DELAY", 0.001):
         await ws_client.send_json(
             {
                 "id": 6,
@@ -571,7 +571,7 @@ async def test_ws_delete_all_refresh_tokens_error(
     assert len(records) == 1
     assert records[0].levelno == logging.ERROR
     assert records[0].exc_info and str(records[0].exc_info[1]) == "I'm bad"
-    assert records[0].name == "homeassistant.components.auth"
+    assert records[0].name == "inpui.components.auth"
 
     await hass.async_block_till_done()
     for token in tokens:
@@ -632,7 +632,7 @@ async def test_ws_delete_all_refresh_tokens(
     result = await ws_client.receive_json()
     assert result["success"], result
 
-    with patch("homeassistant.components.auth.DELETE_CURRENT_TOKEN_DELAY", 0.001):
+    with patch("inpui.components.auth.DELETE_CURRENT_TOKEN_DELAY", 0.001):
         await ws_client.send_json(
             {
                 "id": 6,
@@ -673,7 +673,7 @@ async def test_ws_sign_path(
     ws_client = await hass_ws_client(hass, hass_access_token)
 
     with patch(
-        "homeassistant.components.auth.async_sign_path", return_value="hello_world"
+        "inpui.components.auth.async_sign_path", return_value="hello_world"
     ) as mock_sign:
         await ws_client.send_json(
             {

@@ -329,7 +329,7 @@ async def test_favorites_sensor(
         soco, service, {"favorites_update_id": "2", "container_update_i_ds": "FV:2,2"}
     )
     with patch(
-        "homeassistant.components.sonos.favorites.SonosFavorites.update_cache",
+        "inpui.components.sonos.favorites.SonosFavorites.update_cache",
         return_value=True,
     ):
         subscription.callback(event=favorites_updated_event)

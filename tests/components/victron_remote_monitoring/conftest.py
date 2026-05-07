@@ -39,7 +39,7 @@ CONST_FORECAST_RECORDS = [
 def mock_setup_entry(mock_vrm_client) -> Generator[AsyncMock]:
     """Override async_setup_entry while client is patched."""
     with patch(
-        "homeassistant.components.victron_remote_monitoring.async_setup_entry",
+        "inpui.components.victron_remote_monitoring.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -92,11 +92,11 @@ def mock_vrm_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.victron_remote_monitoring.coordinator.VictronVRMClient",
+            "inpui.components.victron_remote_monitoring.coordinator.VictronVRMClient",
             autospec=True,
         ) as mock_client_cls,
         patch(
-            "homeassistant.components.victron_remote_monitoring.config_flow.VictronVRMClient",
+            "inpui.components.victron_remote_monitoring.config_flow.VictronVRMClient",
             new=mock_client_cls,
         ),
     ):

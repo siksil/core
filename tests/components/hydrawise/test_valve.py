@@ -27,7 +27,7 @@ async def test_all_valves(
 ) -> None:
     """Test that all valves are working."""
     with patch(
-        "homeassistant.components.hydrawise.PLATFORMS",
+        "inpui.components.hydrawise.PLATFORMS",
         [Platform.VALVE],
     ):
         config_entry = await mock_add_config_entry()

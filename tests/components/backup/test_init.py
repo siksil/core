@@ -36,7 +36,7 @@ async def test_create_service(
     await setup_backup_integration(hass)
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as generate_backup:
         await hass.services.async_call(
             DOMAIN,
@@ -133,7 +133,7 @@ async def test_create_automatic_service(
         assert result["success"]
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as generate_backup:
         await hass.services.async_call(
             DOMAIN,
@@ -153,7 +153,7 @@ async def test_setup_entry(
     entry = MockConfigEntry(domain=DOMAIN, source=SOURCE_SYSTEM)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.backup.PLATFORMS", return_value=[]):
+    with patch("inpui.components.backup.PLATFORMS", return_value=[]):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
     assert entry.state is ConfigEntryState.LOADED

@@ -23,7 +23,7 @@ from tests.common import MockConfigEntry
 def currencies_fixture(hass: HomeAssistant) -> Generator[AsyncMock]:
     """Mock currencies."""
     with patch(
-        "homeassistant.components.openexchangerates.config_flow.Client.get_currencies",
+        "inpui.components.openexchangerates.config_flow.Client.get_currencies",
         return_value={"USD": "United States Dollar", "EUR": "Euro"},
     ) as mock_currencies:
         yield mock_currencies
@@ -155,7 +155,7 @@ async def test_currencies_timeout(hass: HomeAssistant, currencies: AsyncMock) ->
     currencies.side_effect = currencies_side_effect
 
     with patch(
-        "homeassistant.components.openexchangerates.config_flow.CLIENT_TIMEOUT", 0
+        "inpui.components.openexchangerates.config_flow.CLIENT_TIMEOUT", 0
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}
@@ -181,7 +181,7 @@ async def test_latest_rates_timeout(
     )
 
     with patch(
-        "homeassistant.components.openexchangerates.config_flow.CLIENT_TIMEOUT", 0
+        "inpui.components.openexchangerates.config_flow.CLIENT_TIMEOUT", 0
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

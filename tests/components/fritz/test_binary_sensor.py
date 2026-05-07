@@ -31,7 +31,7 @@ async def test_binary_sensor_setup(
     entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 
@@ -51,7 +51,7 @@ async def test_binary_sensor_missing_state(
     entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.BINARY_SENSOR]):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 
@@ -61,7 +61,7 @@ async def test_binary_sensor_missing_state(
     assert state.state == STATE_ON
 
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzBoxTools._async_update_data",
+        "inpui.components.fritz.coordinator.FritzBoxTools._async_update_data",
         return_value={"entity_states": {}},
     ):
         freezer.tick(SCAN_INTERVAL)

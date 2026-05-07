@@ -1413,7 +1413,7 @@ async def test_rfxtrx_tcp(
     assert connection_factory.call_args_list[0][0][1] == "1234"
 
 
-@patch("homeassistant.components.dsmr.sensor.DEFAULT_RECONNECT_INTERVAL", 0)
+@patch("inpui.components.dsmr.sensor.DEFAULT_RECONNECT_INTERVAL", 0)
 async def test_connection_errors_retry(
     hass: HomeAssistant, dsmr_connection_fixture: tuple[MagicMock, MagicMock, MagicMock]
 ) -> None:
@@ -1440,7 +1440,7 @@ async def test_connection_errors_retry(
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dsmr.sensor.create_dsmr_reader",
+        "inpui.components.dsmr.sensor.create_dsmr_reader",
         first_fail_connection_factory,
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)
@@ -1451,7 +1451,7 @@ async def test_connection_errors_retry(
         assert first_fail_connection_factory.call_count >= 2, "connecting not retried"
 
 
-@patch("homeassistant.components.dsmr.sensor.DEFAULT_RECONNECT_INTERVAL", 0)
+@patch("inpui.components.dsmr.sensor.DEFAULT_RECONNECT_INTERVAL", 0)
 async def test_reconnect(
     hass: HomeAssistant, dsmr_connection_fixture: tuple[MagicMock, MagicMock, MagicMock]
 ) -> None:

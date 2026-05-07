@@ -29,7 +29,7 @@ ENTITY_TEXT = "text.text"
 def text_only() -> Generator[None]:
     """Enable only the text platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.TEXT],
     ):
         yield

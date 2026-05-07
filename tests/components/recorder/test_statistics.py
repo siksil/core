@@ -86,7 +86,7 @@ def multiple_start_time_chunk_sizes(
     to call _generate_statistics_at_time_stmt_group_by multiple times.
     """
     with patch(
-        "homeassistant.components.recorder.statistics.MAX_IDS_FOR_INDEXED_GROUP_BY",
+        "inpui.components.recorder.statistics.MAX_IDS_FOR_INDEXED_GROUP_BY",
         ids_for_start_time_chunk_sizes,
     ):
         yield
@@ -435,7 +435,7 @@ def mock_sensor_statistics():
         )
 
     with patch(
-        "homeassistant.components.sensor.recorder.compile_statistics",
+        "inpui.components.sensor.recorder.compile_statistics",
         side_effect=get_fake_stats,
     ):
         yield
@@ -455,7 +455,7 @@ def mock_from_stats():
         return real_from_stats(metadata_id, stats, now_timestamp)
 
     with patch(
-        "homeassistant.components.recorder.statistics.StatisticsShortTerm.from_stats",
+        "inpui.components.recorder.statistics.StatisticsShortTerm.from_stats",
         side_effect=from_stats,
         autospec=True,
     ):
@@ -836,7 +836,7 @@ async def test_statistics_duplicated(
     assert "Statistics already compiled" not in caplog.text
 
     with patch(
-        "homeassistant.components.sensor.recorder.compile_statistics",
+        "inpui.components.sensor.recorder.compile_statistics",
         return_value=statistics.PlatformCompiledStatistics([], {}),
     ) as compile_statistics:
         do_adhoc_statistics(hass, start=zero)

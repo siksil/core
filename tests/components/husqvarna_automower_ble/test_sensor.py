@@ -23,7 +23,7 @@ async def test_setup(
     """Test setup creates expected entities."""
 
     with patch(
-        "homeassistant.components.husqvarna_automower_ble.PLATFORMS", [Platform.SENSOR]
+        "inpui.components.husqvarna_automower_ble.PLATFORMS", [Platform.SENSOR]
     ):
         mock_config_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

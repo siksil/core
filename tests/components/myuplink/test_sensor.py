@@ -24,7 +24,7 @@ async def test_sensor_states(
 ) -> None:
     """Test sensor state."""
 
-    with patch("homeassistant.components.myuplink.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.myuplink.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

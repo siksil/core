@@ -20,7 +20,7 @@ ENTITY_IR_TRANSMITTER = "infrared.ir_blaster_infrared_transmitter"
 async def infrared_only() -> None:
     """Enable only the infrared platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.INFRARED],
     ):
         yield

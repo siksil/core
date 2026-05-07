@@ -1127,7 +1127,7 @@ async def test_if_fails_setup_bad_for(
                         "below": below,
                         "for": {"invalid": 5},
                     },
-                    "action": {"service": "homeassistant.turn_on"},
+                    "action": {"service": "inpui.turn_on"},
                 }
             },
         )
@@ -1147,7 +1147,7 @@ async def test_if_fails_setup_for_without_above_below(hass: HomeAssistant) -> No
                         "entity_id": "test.entity",
                         "for": {"seconds": 5},
                     },
-                    "action": {"service": "homeassistant.turn_on"},
+                    "action": {"service": "inpui.turn_on"},
                 }
             },
         )

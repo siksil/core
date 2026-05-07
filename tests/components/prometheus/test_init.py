@@ -106,7 +106,7 @@ from inpui.util import dt as dt_util
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator
 
-PROMETHEUS_PATH = "homeassistant.components.prometheus"
+PROMETHEUS_PATH = "inpui.components.prometheus"
 
 
 class EntityMetric:

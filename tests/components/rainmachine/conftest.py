@@ -154,13 +154,13 @@ async def setup_rainmachine_fixture(
 ) -> AsyncGenerator[None]:
     """Define a fixture to set up RainMachine."""
     with (
-        patch("homeassistant.components.rainmachine.Client", return_value=client),
+        patch("inpui.components.rainmachine.Client", return_value=client),
         patch(
-            "homeassistant.components.rainmachine.config_flow.Client",
+            "inpui.components.rainmachine.config_flow.Client",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.rainmachine.PLATFORMS",
+            "inpui.components.rainmachine.PLATFORMS",
             [],
         ),
     ):

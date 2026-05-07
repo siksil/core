@@ -43,7 +43,7 @@ async def test_update_disabled(
     )
 
     mock_config_entry.add_to_hass(hass)
-    with patch("homeassistant.components.adguard.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.adguard.PLATFORMS", [Platform.UPDATE]):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

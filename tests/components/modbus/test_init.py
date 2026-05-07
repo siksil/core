@@ -1134,7 +1134,7 @@ async def test_pymodbus_constructor_fail(
         ]
     }
     with mock.patch(
-        "homeassistant.components.modbus.modbus.AsyncModbusTcpClient", autospec=True
+        "inpui.components.modbus.modbus.AsyncModbusTcpClient", autospec=True
     ) as mock_pb:
         caplog.set_level(logging.ERROR)
         mock_pb.side_effect = ModbusException("test no class")

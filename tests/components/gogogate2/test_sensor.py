@@ -162,7 +162,7 @@ def _mocked_ismartgate_sensor_response(battery_level: int, temperature: float):
     )
 
 
-@patch("homeassistant.components.gogogate2.common.GogoGate2Api")
+@patch("inpui.components.gogogate2.common.GogoGate2Api")
 async def test_sensor_update(gogogate2api_mock, hass: HomeAssistant) -> None:
     """Test data update."""
 
@@ -247,7 +247,7 @@ async def test_sensor_update(gogogate2api_mock, hass: HomeAssistant) -> None:
     assert not hass.states.async_entity_ids(DOMAIN)
 
 
-@patch("homeassistant.components.gogogate2.common.ISmartGateApi")
+@patch("inpui.components.gogogate2.common.ISmartGateApi")
 async def test_availability(ismartgateapi_mock, hass: HomeAssistant) -> None:
     """Test availability."""
     bat_attributes = {

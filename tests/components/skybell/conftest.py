@@ -38,10 +38,10 @@ def skybell_mock():
 
     with (
         patch(
-            "homeassistant.components.skybell.config_flow.Skybell",
+            "inpui.components.skybell.config_flow.Skybell",
             return_value=mocked_skybell,
         ),
-        patch("homeassistant.components.skybell.Skybell", return_value=mocked_skybell),
+        patch("inpui.components.skybell.Skybell", return_value=mocked_skybell),
     ):
         yield mocked_skybell
 
@@ -118,7 +118,7 @@ async def create_skybell(hass: HomeAssistant) -> Skybell:
 async def mock_skybell(hass: HomeAssistant):
     """Mock Skybell object."""
     return patch(
-        "homeassistant.components.skybell.Skybell",
+        "inpui.components.skybell.Skybell",
         return_value=await create_skybell(hass),
     )
 

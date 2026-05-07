@@ -75,7 +75,7 @@ async def test_async_step_reauth_confirm_invalid_auth(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.airpatrol.config_flow.AirPatrolAPI.authenticate",
+        "inpui.components.airpatrol.config_flow.AirPatrolAPI.authenticate",
         side_effect=AirPatrolAuthenticationError("fail"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -137,7 +137,7 @@ async def test_user_flow_error(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.airpatrol.config_flow.AirPatrolAPI.authenticate",
+        "inpui.components.airpatrol.config_flow.AirPatrolAPI.authenticate",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(

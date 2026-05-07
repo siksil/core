@@ -49,15 +49,15 @@ async def test_qnap_qsw_update(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.get_firmware_update_check",
+            "inpui.components.qnap_qsw.QnapQswApi.get_firmware_update_check",
             return_value=FIRMWARE_UPDATE_CHECK_MOCK,
         ) as mock_firmware_update_check,
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.get_users_verification",
+            "inpui.components.qnap_qsw.QnapQswApi.get_users_verification",
             return_value=USERS_VERIFICATION_MOCK,
         ) as mock_users_verification,
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.post_firmware_update_live",
+            "inpui.components.qnap_qsw.QnapQswApi.post_firmware_update_live",
             return_value=FIRMWARE_UPDATE_LIVE_MOCK,
         ) as mock_firmware_update_live,
     ):

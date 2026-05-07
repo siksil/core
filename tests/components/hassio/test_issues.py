@@ -715,7 +715,7 @@ async def test_supervisor_issues_initial_failure(
         resolution_info.return_value,
     ]
 
-    with patch("homeassistant.components.hassio.issues.REQUEST_REFRESH_DELAY", new=0.1):
+    with patch("inpui.components.hassio.issues.REQUEST_REFRESH_DELAY", new=0.1):
         result = await async_setup_component(hass, "hassio", {})
         await hass.async_block_till_done()
         assert result

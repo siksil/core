@@ -20,7 +20,7 @@ async def test_form_user(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.profiler.async_setup_entry",
+        "inpui.components.profiler.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(

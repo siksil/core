@@ -31,7 +31,7 @@ async def async_setup_config_entry(
     entry = create_mock_entry(data)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get",
+        "inpui.components.feedreader.coordinator.feedparser.http.get",
     ) as feedparser:
         if return_value:
             feedparser.return_value = return_value

@@ -23,7 +23,7 @@ async def test_unload(hass: HomeAssistant) -> None:
 async def test_auth_failure(hass: HomeAssistant) -> None:
     """Test init with an authentication failure."""
     with patch(
-        "homeassistant.components.aussie_broadband.config_flow.AussieBroadbandConfigFlow.async_step_reauth",
+        "inpui.components.aussie_broadband.config_flow.AussieBroadbandConfigFlow.async_step_reauth",
         return_value={
             "type": FlowResultType.FORM,
             "flow_id": "mock_flow",

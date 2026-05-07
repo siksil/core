@@ -25,7 +25,7 @@ async def test_binary_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.weheat.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.weheat.PLATFORMS", [Platform.BINARY_SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await hass.async_block_till_done()
@@ -43,7 +43,7 @@ async def test_create_binary_entities(
     """Test creating entities."""
     mock_weheat_discover.return_value = [mock_heat_pump_info]
 
-    with patch("homeassistant.components.weheat.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.weheat.PLATFORMS", [Platform.BINARY_SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await hass.async_block_till_done()

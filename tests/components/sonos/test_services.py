@@ -138,7 +138,7 @@ async def test_media_player_join_timeout(
 
     with (
         patch(
-            "homeassistant.components.sonos.speaker.asyncio.timeout", instant_timeout
+            "inpui.components.sonos.speaker.asyncio.timeout", instant_timeout
         ),
         pytest.raises(HomeAssistantError, match=re.escape(expected)),
     ):
@@ -174,7 +174,7 @@ async def test_media_player_unjoin_timeout(
     )
     with (
         patch(
-            "homeassistant.components.sonos.speaker.asyncio.timeout", instant_timeout
+            "inpui.components.sonos.speaker.asyncio.timeout", instant_timeout
         ),
         pytest.raises(HomeAssistantError, match=re.escape(expected)),
     ):

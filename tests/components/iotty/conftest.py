@@ -142,7 +142,7 @@ def mock_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def mock_config_entries_async_forward_entry_setup() -> Generator[AsyncMock]:
     """Mock async_forward_entry_setup."""
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_forward_entry_setups"
+        "inpui.config_entries.ConfigEntries.async_forward_entry_setups"
     ) as mock_fn:
         yield mock_fn
 
@@ -151,7 +151,7 @@ def mock_config_entries_async_forward_entry_setup() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.iotty.async_setup_entry", return_value=True
+        "inpui.components.iotty.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -160,7 +160,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_iotty() -> Generator[MagicMock]:
     """Mock IottyProxy."""
     with patch(
-        "homeassistant.components.iotty.api.IottyProxy", autospec=True
+        "inpui.components.iotty.api.IottyProxy", autospec=True
     ) as iotty_mock:
         yield iotty_mock
 
@@ -169,7 +169,7 @@ def mock_iotty() -> Generator[MagicMock]:
 def mock_coordinator() -> Generator[MagicMock]:
     """Mock IottyDataUpdateCoordinator."""
     with patch(
-        "homeassistant.components.iotty.IottyDataUpdateCoordinator",
+        "inpui.components.iotty.IottyDataUpdateCoordinator",
         autospec=True,
     ) as coordinator_mock:
         yield coordinator_mock

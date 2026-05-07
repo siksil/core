@@ -18,7 +18,7 @@ async def test_form(hass: HomeAssistant, mock_version_api) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.prusalink.async_setup_entry",
+        "inpui.components.prusalink.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -52,7 +52,7 @@ async def test_form_mk3(hass: HomeAssistant, mock_version_api) -> None:
     mock_version_api["original"] = "PrusaLink I3MK3S"
 
     with patch(
-        "homeassistant.components.prusalink.async_setup_entry",
+        "inpui.components.prusalink.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -76,7 +76,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.prusalink.config_flow.PrusaLink.get_version",
+        "inpui.components.prusalink.config_flow.PrusaLink.get_version",
         side_effect=InvalidAuth,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -99,7 +99,7 @@ async def test_form_unknown(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.prusalink.config_flow.PrusaLink.get_version",
+        "inpui.components.prusalink.config_flow.PrusaLink.get_version",
         side_effect=ValueError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -189,7 +189,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.prusalink.config_flow.PrusaLink.get_version",
+        "inpui.components.prusalink.config_flow.PrusaLink.get_version",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(

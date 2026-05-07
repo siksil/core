@@ -14,7 +14,7 @@ from tests.common import async_load_json_object_fixture
 async def mock_melissa(hass: HomeAssistant):
     """Mock the Melissa API."""
     with patch(
-        "homeassistant.components.melissa.AsyncMelissa", autospec=True
+        "inpui.components.melissa.AsyncMelissa", autospec=True
     ) as mock_client:
         mock_client.return_value.async_connect = AsyncMock()
         mock_client.return_value.async_fetch_devices.return_value = (

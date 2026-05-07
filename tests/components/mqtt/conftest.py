@@ -47,12 +47,12 @@ async def mock_temp_dir(
     mqtt_temp_dir = f"home-assistant-mqtt-{temp_dir_prefix}-{getrandbits(10):03x}"
     with (
         patch(
-            "homeassistant.components.mqtt.util.tempfile.gettempdir",
+            "inpui.components.mqtt.util.tempfile.gettempdir",
             return_value=tmp_path,
         ),
         patch(
             # Patch temp dir name to avoid tests fail running in parallel
-            "homeassistant.components.mqtt.util.TEMP_DIR_NAME",
+            "inpui.components.mqtt.util.TEMP_DIR_NAME",
             mqtt_temp_dir,
         ) as mocked_temp_dir,
     ):
@@ -77,7 +77,7 @@ def mock_debouncer(hass: HomeAssistant) -> Generator[asyncio.Event]:
 
     # We mock the import of EnsureJobAfterCooldown in client.py
     with patch(
-        "homeassistant.components.mqtt.client.EnsureJobAfterCooldown", MockDeboncer
+        "inpui.components.mqtt.client.EnsureJobAfterCooldown", MockDeboncer
     ):
         yield task_done
 
@@ -92,9 +92,9 @@ async def setup_with_birth_msg_client_mock(
     """Test sending birth message."""
     birth = asyncio.Event()
     with (
-        patch("homeassistant.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0),
-        patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0),
-        patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0),
+        patch("inpui.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0),
+        patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0),
+        patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0),
     ):
         entry = MockConfigEntry(
             domain=mqtt.DOMAIN,
@@ -140,5 +140,5 @@ def record_calls(recorded_calls: list[ReceiveMessage]) -> MessageCallbackType:
 @pytest.fixture
 def tag_mock() -> Generator[AsyncMock]:
     """Fixture to mock tag."""
-    with patch("homeassistant.components.tag.async_scan_tag") as mock_tag:
+    with patch("inpui.components.tag.async_scan_tag") as mock_tag:
         yield mock_tag

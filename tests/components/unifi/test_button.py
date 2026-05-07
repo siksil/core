@@ -145,7 +145,7 @@ async def test_entity_and_device_data(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Validate entity and device data with and without admin rights."""
-    with patch("homeassistant.components.unifi.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.unifi.PLATFORMS", [Platform.BUTTON]):
         config_entry = await config_entry_factory()
     if site_payload[0]["role"] == "admin":
         await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

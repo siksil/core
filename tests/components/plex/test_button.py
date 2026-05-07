@@ -17,7 +17,7 @@ async def test_scan_clients_button_schedule(
 ) -> None:
     """Test scan_clients button scheduled update."""
     with patch(
-        "homeassistant.components.plex.server.PlexServer._async_update_platforms"
+        "inpui.components.plex.server.PlexServer._async_update_platforms"
     ) as mock_scan_clients:
         await setup_plex_server()
         mock_scan_clients.reset_mock()

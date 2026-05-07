@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry, async_get_device_automations
 @pytest.fixture(autouse=True)
 def mock_lg_netcast() -> Generator[None]:
     """Mock LG Netcast library."""
-    with patch("homeassistant.components.lg_netcast.LgNetCastClient"):
+    with patch("inpui.components.lg_netcast.LgNetCastClient"):
         yield
 
 

@@ -34,7 +34,7 @@ async def test_registration(
     api_client = await hass_client()
 
     with patch(
-        "homeassistant.components.person.async_add_user_device_tracker",
+        "inpui.components.person.async_add_user_device_tracker",
         spec=True,
     ) as add_user_dev_track:
         resp = await api_client.post(
@@ -129,23 +129,23 @@ async def test_registration_with_cloud(
 
     with (
         patch(
-            "homeassistant.components.mobile_app.http_api.cloud.async_active_subscription",
+            "inpui.components.mobile_app.http_api.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mobile_app.http_api.cloud.async_is_connected",
+            "inpui.components.mobile_app.http_api.cloud.async_is_connected",
             return_value=cloud_is_connected,
         ),
         patch(
-            "homeassistant.components.mobile_app.http_api.async_create_cloud_hook",
+            "inpui.components.mobile_app.http_api.async_create_cloud_hook",
             return_value=cloudhook_url,
         ),
         patch(
-            "homeassistant.components.mobile_app.http_api.cloud.async_remote_ui_url",
+            "inpui.components.mobile_app.http_api.cloud.async_remote_ui_url",
             return_value="https://remote.ui",
         ),
         patch(
-            "homeassistant.components.person.async_add_user_device_tracker",
+            "inpui.components.person.async_add_user_device_tracker",
             spec=True,
         ),
     ):
@@ -175,23 +175,23 @@ async def test_registration_with_cloud_local_only_user(
 
     with (
         patch(
-            "homeassistant.components.mobile_app.http_api.cloud.async_active_subscription",
+            "inpui.components.mobile_app.http_api.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mobile_app.http_api.cloud.async_is_connected",
+            "inpui.components.mobile_app.http_api.cloud.async_is_connected",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mobile_app.http_api.async_create_cloud_hook",
+            "inpui.components.mobile_app.http_api.async_create_cloud_hook",
             return_value="https://hooks.nabu.casa/test123",
         ) as mock_create_cloud_hook,
         patch(
-            "homeassistant.components.mobile_app.http_api.cloud.async_remote_ui_url",
+            "inpui.components.mobile_app.http_api.cloud.async_remote_ui_url",
             return_value="https://remote.ui",
         ),
         patch(
-            "homeassistant.components.person.async_add_user_device_tracker",
+            "inpui.components.person.async_add_user_device_tracker",
             spec=True,
         ),
     ):

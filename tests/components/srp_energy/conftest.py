@@ -51,7 +51,7 @@ def fixture_mock_config_entry() -> MockConfigEntry:
 def fixture_mock_srp_energy() -> Generator[MagicMock]:
     """Return a mocked SrpEnergyClient client."""
     with patch(
-        "homeassistant.components.srp_energy.SrpEnergyClient", autospec=True
+        "inpui.components.srp_energy.SrpEnergyClient", autospec=True
     ) as srp_energy_mock:
         client = srp_energy_mock.return_value
         client.validate.return_value = True
@@ -63,7 +63,7 @@ def fixture_mock_srp_energy() -> Generator[MagicMock]:
 def fixture_mock_srp_energy_config_flow() -> Generator[MagicMock]:
     """Return a mocked config_flow SrpEnergyClient client."""
     with patch(
-        "homeassistant.components.srp_energy.config_flow.SrpEnergyClient", autospec=True
+        "inpui.components.srp_energy.config_flow.SrpEnergyClient", autospec=True
     ) as srp_energy_mock:
         client = srp_energy_mock.return_value
         client.validate.return_value = True
@@ -94,6 +94,6 @@ async def init_integration(
 def mock_setup_entry() -> Generator[MagicMock]:
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.srp_energy.async_setup_entry", return_value=True
+        "inpui.components.srp_energy.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

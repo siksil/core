@@ -21,7 +21,7 @@ async def test_sensor_snapshot(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test sensor setup for cloud connection."""
-    with patch("homeassistant.components.senz.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.senz.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
         await snapshot_platform(

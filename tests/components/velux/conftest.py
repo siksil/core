@@ -27,7 +27,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.velux.async_setup_entry", return_value=True
+        "inpui.components.velux.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -225,8 +225,8 @@ def mock_pyvlx(
     pyvlx.disconnect = AsyncMock()
 
     with (
-        patch("homeassistant.components.velux.PyVLX", return_value=pyvlx),
-        patch("homeassistant.components.velux.config_flow.PyVLX", return_value=pyvlx),
+        patch("inpui.components.velux.PyVLX", return_value=pyvlx),
+        patch("inpui.components.velux.config_flow.PyVLX", return_value=pyvlx),
     ):
         yield pyvlx
 
@@ -252,6 +252,6 @@ async def setup_integration(
     """Set up the integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.velux.PLATFORMS", [platform]):
+    with patch("inpui.components.velux.PLATFORMS", [platform]):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()

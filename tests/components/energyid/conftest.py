@@ -39,7 +39,7 @@ def mock_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def mock_webhook_client() -> Generator[MagicMock]:
     """Mock the WebhookClient."""
     with patch(
-        "homeassistant.components.energyid.WebhookClient", autospec=True
+        "inpui.components.energyid.WebhookClient", autospec=True
     ) as mock_client_class:
         client = mock_client_class.return_value
         client.authenticate = AsyncMock(return_value=True)

@@ -33,8 +33,8 @@ from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 
-MODULE = "homeassistant.components.flux_led"
-MODULE_CONFIG_FLOW = "homeassistant.components.flux_led.config_flow"
+MODULE = "inpui.components.flux_led"
+MODULE_CONFIG_FLOW = "inpui.components.flux_led.config_flow"
 IP_ADDRESS = "127.0.0.1"
 MODEL_NUM_HEX = "0x35"
 MODEL_NUM = 0x35
@@ -243,11 +243,11 @@ def _patch_discovery(device=None, no_device=False):
     def _patcher():
         with (
             patch(
-                "homeassistant.components.flux_led.discovery.AIOBulbScanner.async_scan",
+                "inpui.components.flux_led.discovery.AIOBulbScanner.async_scan",
                 new=_discovery,
             ),
             patch(
-                "homeassistant.components.flux_led.discovery.AIOBulbScanner.getBulbInfo",
+                "inpui.components.flux_led.discovery.AIOBulbScanner.getBulbInfo",
                 return_value=[] if no_device else [device or FLUX_DISCOVERY],
             ),
         ):
@@ -264,4 +264,4 @@ def _patch_wifibulb(device=None, no_device=False):
             return bulb
         return device or _mocked_bulb()
 
-    return patch("homeassistant.components.flux_led.AIOWifiLedBulb", new=_wifi_led_bulb)
+    return patch("inpui.components.flux_led.AIOWifiLedBulb", new=_wifi_led_bulb)

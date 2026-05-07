@@ -29,7 +29,7 @@ from tests.common import async_fire_time_changed, snapshot_platform
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.airzone.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.airzone.PLATFORMS", [Platform.SENSOR]):
         yield
 
 
@@ -60,23 +60,23 @@ async def test_airzone_sensors_availability(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             return_value=HVAC_DHW_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK_UNAVAILABLE_ZONE,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             return_value=HVAC_SYSTEMS_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             return_value=HVAC_WEBSERVER_MOCK,
         ),
     ):

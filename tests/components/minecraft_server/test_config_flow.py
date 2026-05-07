@@ -38,15 +38,15 @@ async def test_full_flow_java(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=TEST_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -71,11 +71,11 @@ async def test_full_flow_bedrock(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             return_value=BedrockServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.async_status",
+            "inpui.components.minecraft_server.api.BedrockServer.async_status",
             return_value=TEST_BEDROCK_STATUS_RESPONSE,
         ),
     ):
@@ -100,19 +100,19 @@ async def test_full_flow_legacy_java(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_lookup",
+            "inpui.components.minecraft_server.api.LegacyServer.async_lookup",
             return_value=LegacyServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_status",
+            "inpui.components.minecraft_server.api.LegacyServer.async_status",
             return_value=TEST_LEGACY_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -134,15 +134,15 @@ async def test_service_already_configured_java(
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=TEST_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -161,11 +161,11 @@ async def test_service_already_configured_bedrock(
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             return_value=BedrockServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.async_status",
+            "inpui.components.minecraft_server.api.BedrockServer.async_status",
             return_value=TEST_BEDROCK_STATUS_RESPONSE,
         ),
     ):
@@ -184,19 +184,19 @@ async def test_service_already_configured_legacy_java(
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_lookup",
+            "inpui.components.minecraft_server.api.LegacyServer.async_lookup",
             return_value=LegacyServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_status",
+            "inpui.components.minecraft_server.api.LegacyServer.async_status",
             return_value=TEST_LEGACY_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -211,19 +211,19 @@ async def test_recovery_java(hass: HomeAssistant) -> None:
     """Test config flow recovery with a Java Edition server (successful connection after a failed connection)."""
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             side_effect=OSError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_lookup",
+            "inpui.components.minecraft_server.api.LegacyServer.async_lookup",
             side_effect=ValueError,
         ),
     ):
@@ -235,15 +235,15 @@ async def test_recovery_java(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             return_value=JavaServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_status",
+            "inpui.components.minecraft_server.api.JavaServer.async_status",
             return_value=TEST_JAVA_STATUS_RESPONSE,
         ),
     ):
@@ -260,19 +260,19 @@ async def test_recovery_bedrock(hass: HomeAssistant) -> None:
     """Test config flow recovery with a Bedrock Edition server (successful connection after a failed connection)."""
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             return_value=BedrockServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.async_status",
+            "inpui.components.minecraft_server.api.BedrockServer.async_status",
             side_effect=OSError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_lookup",
+            "inpui.components.minecraft_server.api.LegacyServer.async_lookup",
             side_effect=ValueError,
         ),
     ):
@@ -284,11 +284,11 @@ async def test_recovery_bedrock(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             return_value=BedrockServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.async_status",
+            "inpui.components.minecraft_server.api.BedrockServer.async_status",
             return_value=TEST_BEDROCK_STATUS_RESPONSE,
         ),
     ):
@@ -305,19 +305,19 @@ async def test_recovery_legacy_java(hass: HomeAssistant) -> None:
     """Test config flow recovery with a legacy Java Edition server (successful connection after a failed connection)."""
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_lookup",
+            "inpui.components.minecraft_server.api.LegacyServer.async_lookup",
             return_value=LegacyServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_status",
+            "inpui.components.minecraft_server.api.LegacyServer.async_status",
             side_effect=OSError,
         ),
     ):
@@ -329,19 +329,19 @@ async def test_recovery_legacy_java(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.minecraft_server.api.BedrockServer.lookup",
+            "inpui.components.minecraft_server.api.BedrockServer.lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.JavaServer.async_lookup",
+            "inpui.components.minecraft_server.api.JavaServer.async_lookup",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_lookup",
+            "inpui.components.minecraft_server.api.LegacyServer.async_lookup",
             return_value=LegacyServer(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            "homeassistant.components.minecraft_server.api.LegacyServer.async_status",
+            "inpui.components.minecraft_server.api.LegacyServer.async_status",
             return_value=TEST_LEGACY_JAVA_STATUS_RESPONSE,
         ),
     ):

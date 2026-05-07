@@ -110,7 +110,7 @@ async def test_try_function(
     """Test try_function error translations using number entity."""
     reolink_host.volume.return_value = 80
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.NUMBER]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -153,7 +153,7 @@ async def test_get_device_uid_and_ch(
     )
 
     # setup CH 0 and host entities/device
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 

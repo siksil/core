@@ -29,7 +29,7 @@ async def test_number(
     """Test number entity with volume."""
     reolink_host.volume.return_value = 80
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.NUMBER]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -74,7 +74,7 @@ async def test_smart_ai_number(
     """Test number entity with smart ai sensitivity."""
     reolink_host.baichuan.smart_ai_sensitivity.return_value = 80
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.NUMBER]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -111,7 +111,7 @@ async def test_host_number(
     """Test number entity with volume."""
     reolink_host.alarm_volume = 85
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.NUMBER]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -159,7 +159,7 @@ async def test_chime_number(
     reolink_chime.channel = channel
     reolink_chime.volume = 3
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.NUMBER]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

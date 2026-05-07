@@ -39,13 +39,13 @@ async def test_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME, data=MOCK_UPTIMEROBOT_ACCOUNT
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -72,7 +72,7 @@ async def test_user_key_read_only(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+        "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
         return_value=mock_uptimerobot_api_response(
             api_path=API_PATH_USER_ME,
             data=MOCK_UPTIMEROBOT_ACCOUNT,
@@ -104,7 +104,7 @@ async def test_exception_thrown(hass: HomeAssistant, exception, error_key) -> No
     )
 
     with patch(
-        "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+        "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
         side_effect=exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -124,7 +124,7 @@ async def test_api_error(hass: HomeAssistant, caplog: pytest.LogCaptureFixture) 
     )
 
     with patch(
-        "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+        "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
         side_effect=UptimeRobotConnectionException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -151,14 +151,14 @@ async def test_user_unique_id_already_exists(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME,
                 data=MOCK_UPTIMEROBOT_ACCOUNT,
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -188,14 +188,14 @@ async def test_reauthentication(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME,
                 data=MOCK_UPTIMEROBOT_ACCOUNT,
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -224,11 +224,11 @@ async def test_reauthentication_failure(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             side_effect=UptimeRobotException,
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -261,14 +261,14 @@ async def test_reauthentication_failure_no_existing_entry(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME,
                 data=MOCK_UPTIMEROBOT_ACCOUNT,
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -297,7 +297,7 @@ async def test_reauthentication_failure_account_not_matching(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME,
                 data={
@@ -307,7 +307,7 @@ async def test_reauthentication_failure_account_not_matching(
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -342,13 +342,13 @@ async def test_reconfigure_successful(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME, data=MOCK_UPTIMEROBOT_ACCOUNT
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -383,11 +383,11 @@ async def test_reconfigure_failed(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             side_effect=UptimeRobotAuthenticationException,
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -404,13 +404,13 @@ async def test_reconfigure_failed(
 
     with (
         patch(
-            "homeassistant.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
+            "inpui.components.uptimerobot.config_flow.UptimeRobot.async_get_account_details",
             return_value=mock_uptimerobot_api_response(
                 api_path=API_PATH_USER_ME, data=MOCK_UPTIMEROBOT_ACCOUNT
             ),
         ),
         patch(
-            "homeassistant.components.uptimerobot.async_setup_entry",
+            "inpui.components.uptimerobot.async_setup_entry",
             return_value=True,
         ),
     ):

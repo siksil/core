@@ -90,7 +90,7 @@ def setup_api(
     resource = f"http://localhost{google_wifi.ENDPOINT}"
     now = datetime(1970, month=1, day=1)
     sensor_dict = {}
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         requests_mock.get(resource, text=data, status_code=HTTPStatus.OK)
         conditions = google_wifi.SENSOR_KEYS
         api = google_wifi.GoogleWifiAPI("localhost", conditions)
@@ -147,7 +147,7 @@ def test_state(hass: HomeAssistant, requests_mock: requests_mock.Mocker) -> None
     """Test the initial state."""
     _api, sensor_dict = setup_api(hass, MOCK_DATA, requests_mock)
     now = datetime(1970, month=1, day=1)
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         for name, value in sensor_dict.items():
             sensor = value["sensor"]
             fake_delay(hass, 2)
@@ -180,7 +180,7 @@ def test_update_when_value_changed(
     """Test state gets updated when sensor returns a new status."""
     _api, sensor_dict = setup_api(hass, MOCK_DATA_NEXT, requests_mock)
     now = datetime(1970, month=1, day=1)
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         for name, value in sensor_dict.items():
             sensor = value["sensor"]
             fake_delay(hass, 2)
@@ -205,7 +205,7 @@ def test_when_api_data_missing(
     """Test state logs an error when data is missing."""
     _api, sensor_dict = setup_api(hass, MOCK_DATA_MISSING, requests_mock)
     now = datetime(1970, month=1, day=1)
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         for value in sensor_dict.values():
             sensor = value["sensor"]
             fake_delay(hass, 2)

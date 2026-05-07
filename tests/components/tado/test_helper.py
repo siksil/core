@@ -46,7 +46,7 @@ def entry(request: pytest.FixtureRequest) -> MockConfigEntry:
 def tado() -> Tado:
     """Fixture for Tado instance."""
     with patch(
-        "homeassistant.components.tado.PyTado.interface.api.Tado.set_zone_overlay"
+        "inpui.components.tado.PyTado.interface.api.Tado.set_zone_overlay"
     ) as mock_set_zone_overlay:
         instance = MagicMock(spec=Tado)
         instance.set_zone_overlay = mock_set_zone_overlay

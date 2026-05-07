@@ -42,7 +42,7 @@ async def test_get_deconz_api_fails(
     """Failed setup."""
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.deconz.hub.api.DeconzSession.refresh_state",
+        "inpui.components.deconz.hub.api.DeconzSession.refresh_state",
         side_effect=side_effect,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -56,7 +56,7 @@ async def test_setup_entry_fails_trigger_reauth_flow(
     """Failed authentication trigger a reauthentication flow."""
     with (
         patch(
-            "homeassistant.components.deconz.get_deconz_api",
+            "inpui.components.deconz.get_deconz_api",
             side_effect=AuthenticationRequired,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_flow_init,

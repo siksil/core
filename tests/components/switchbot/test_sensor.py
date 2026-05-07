@@ -141,7 +141,7 @@ async def test_relay_switch_1pm_sensor(hass: HomeAssistant) -> None:
     inject_bluetooth_service_info(hass, WORELAY_SWITCH_1PM_SERVICE_INFO)
 
     with patch(
-        "homeassistant.components.switchbot.switch.switchbot.SwitchbotRelaySwitch.get_basic_info",
+        "inpui.components.switchbot.switch.switchbot.SwitchbotRelaySwitch.get_basic_info",
         new=AsyncMock(
             return_value={
                 "power": 4.9,
@@ -411,7 +411,7 @@ async def test_fan_sensors(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.switchbot.fan.switchbot.SwitchbotFan.update",
+        "inpui.components.switchbot.fan.switchbot.SwitchbotFan.update",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -515,7 +515,7 @@ async def test_evaporative_humidifier_sensor(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.switchbot.humidifier.switchbot.SwitchbotEvaporativeHumidifier.update",
+        "inpui.components.switchbot.humidifier.switchbot.SwitchbotEvaporativeHumidifier.update",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -560,7 +560,7 @@ async def test_plug_mini_eu_sensor(hass: HomeAssistant) -> None:
     inject_bluetooth_service_info(hass, PLUG_MINI_EU_SERVICE_INFO)
 
     with patch(
-        "homeassistant.components.switchbot.switch.switchbot.SwitchbotRelaySwitch.get_basic_info",
+        "inpui.components.switchbot.switch.switchbot.SwitchbotRelaySwitch.get_basic_info",
         new=AsyncMock(
             return_value={
                 "power": 500,
@@ -634,7 +634,7 @@ async def test_relay_switch_2pm_sensor(hass: HomeAssistant) -> None:
     inject_bluetooth_service_info(hass, RELAY_SWITCH_2PM_SERVICE_INFO)
 
     with patch(
-        "homeassistant.components.switchbot.switch.switchbot.SwitchbotRelaySwitch2PM.get_basic_info",
+        "inpui.components.switchbot.switch.switchbot.SwitchbotRelaySwitch2PM.get_basic_info",
         new=AsyncMock(
             return_value={
                 1: {
@@ -881,7 +881,7 @@ async def test_keypad_vision_sensor(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.switchbot.sensor.switchbot.SwitchbotKeypadVision.update",
+        "inpui.components.switchbot.sensor.switchbot.SwitchbotKeypadVision.update",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

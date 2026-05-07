@@ -380,7 +380,7 @@ async def test_cannot_retrieve_expired_access_token(hass: HomeAssistant) -> None
     # to the patched time. If we freeze time for the test it will be frozen for jwt
     # as well and the token will not be expired.
     with patch(
-        "homeassistant.auth.time.time",
+        "inpui.auth.time.time",
         return_value=time.time()
         - auth_const.ACCESS_TOKEN_EXPIRATION.total_seconds()
         - 11,
@@ -558,7 +558,7 @@ async def test_refresh_token_provider_validation(mock_hass) -> None:
 
     with (
         patch(
-            "homeassistant.auth.providers.insecure_example.ExampleAuthProvider.async_validate_refresh_token",
+            "inpui.auth.providers.insecure_example.ExampleAuthProvider.async_validate_refresh_token",
             side_effect=InvalidAuthError("Invalid access"),
         ) as call,
         pytest.raises(InvalidAuthError),

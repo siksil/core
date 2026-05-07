@@ -2682,7 +2682,7 @@ async def test_no_unnecessary_changes(
         identifiers={("hue", "456"), ("bla", "123")},
     )
     with patch(
-        "homeassistant.helpers.device_registry.DeviceRegistry.async_schedule_save"
+        "inpui.helpers.device_registry.DeviceRegistry.async_schedule_save"
     ) as mock_save:
         entry2 = device_registry.async_get_or_create(
             config_entry_id=mock_config_entry.entry_id, identifiers={("hue", "456")}
@@ -3776,7 +3776,7 @@ async def test_cleanup_startup(hass: HomeAssistant) -> None:
     hass.set_state(CoreState.not_running)
 
     with patch(
-        "homeassistant.helpers.device_registry.Debouncer.async_call"
+        "inpui.helpers.device_registry.Debouncer.async_call"
     ) as mock_call:
         hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
@@ -3805,7 +3805,7 @@ async def test_cleanup_entity_registry_change(
     )
 
     with patch(
-        "homeassistant.helpers.device_registry.Debouncer.async_schedule_call"
+        "inpui.helpers.device_registry.Debouncer.async_schedule_call"
     ) as mock_call:
         entity = ent_reg.async_get_or_create("light", "hue", "e1")
         await hass.async_block_till_done()
@@ -5171,7 +5171,7 @@ async def test_device_name_translation_placeholders(
     config_entry_1 = MockConfigEntry()
     config_entry_1.add_to_hass(hass)
     with patch(
-        "homeassistant.helpers.device_registry.translation.async_get_cached_translations",
+        "inpui.helpers.device_registry.translation.async_get_cached_translations",
         side_effect=async_get_cached_translations,
     ):
         entry1 = device_registry.async_get_or_create(
@@ -5267,11 +5267,11 @@ async def test_device_name_translation_placeholders_errors(
     config_entry_1.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.helpers.device_registry.translation.async_get_cached_translations",
+            "inpui.helpers.device_registry.translation.async_get_cached_translations",
             side_effect=async_get_cached_translations,
         ),
         patch(
-            "homeassistant.helpers.device_registry.get_release_channel",
+            "inpui.helpers.device_registry.get_release_channel",
             return_value=release_channel,
         ),
         expectation,

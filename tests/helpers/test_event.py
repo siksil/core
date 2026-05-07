@@ -2021,7 +2021,7 @@ async def test_track_template_result_with_group(hass: HomeAssistant) -> None:
     assert specific_runs[1] == 100.1 + 200.2 + 0
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={
             "group": {
                 "power_sensors": "sensor.power_1,sensor.power_2,sensor.power_3,sensor.power_4",
@@ -2452,7 +2452,7 @@ async def test_track_template_rate_limit(hass: HomeAssistant) -> None:
     assert refresh_runs == [0, 1]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2465,7 +2465,7 @@ async def test_track_template_rate_limit(hass: HomeAssistant) -> None:
     assert refresh_runs == [0, 1, 2]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125 * 2)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2525,7 +2525,7 @@ async def test_track_template_rate_limit_super(hass: HomeAssistant) -> None:
     assert refresh_runs == [0, 1]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2542,7 +2542,7 @@ async def test_track_template_rate_limit_super(hass: HomeAssistant) -> None:
     assert refresh_runs == [0, 1, 4]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125 * 2)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2598,7 +2598,7 @@ async def test_track_template_rate_limit_super_2(hass: HomeAssistant) -> None:
     assert refresh_runs == [1]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2614,7 +2614,7 @@ async def test_track_template_rate_limit_super_2(hass: HomeAssistant) -> None:
     assert refresh_runs == [1]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125 * 2)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2671,7 +2671,7 @@ async def test_track_template_rate_limit_super_3(hass: HomeAssistant) -> None:
     assert refresh_runs == [1, 2]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2688,7 +2688,7 @@ async def test_track_template_rate_limit_super_3(hass: HomeAssistant) -> None:
     assert refresh_runs == [1, 2]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125 * 2)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2750,7 +2750,7 @@ async def test_track_template_rate_limit_suppress_listener(hass: HomeAssistant) 
     assert refresh_runs == [0, 1]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -2777,7 +2777,7 @@ async def test_track_template_rate_limit_suppress_listener(hass: HomeAssistant) 
     }
     next_time = dt_util.utcnow() + timedelta(seconds=0.125 * 2)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -3018,7 +3018,7 @@ async def test_track_two_templates_with_different_rate_limits(
     assert refresh_runs[template_five] == [0, 1]
     next_time = dt_util.utcnow() + timedelta(seconds=0.125 * 1)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()

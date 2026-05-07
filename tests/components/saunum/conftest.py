@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry
 def patch_delayed_refresh_seconds() -> Generator[None]:
     """Patch DELAYED_REFRESH_SECONDS to 0 to avoid delays in tests."""
     with patch(
-        "homeassistant.components.saunum.climate.DELAYED_REFRESH_SECONDS",
+        "inpui.components.saunum.climate.DELAYED_REFRESH_SECONDS",
         timedelta(seconds=0),
     ):
         yield
@@ -70,9 +70,9 @@ def mock_saunum_client_class(mock_saunum_data: SaunumData) -> Generator[MagicMoc
     """Return a mocked Saunum client class for config flow and integration tests."""
     with (
         patch(
-            "homeassistant.components.saunum.config_flow.SaunumClient", autospec=True
+            "inpui.components.saunum.config_flow.SaunumClient", autospec=True
         ) as mock_client_class,
-        patch("homeassistant.components.saunum.SaunumClient", new=mock_client_class),
+        patch("inpui.components.saunum.SaunumClient", new=mock_client_class),
     ):
         mock_client = mock_client_class.return_value
         mock_client.is_connected = True
@@ -99,7 +99,7 @@ async def init_integration(
     """Set up the integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.saunum.PLATFORMS", platforms):
+    with patch("inpui.components.saunum.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -110,7 +110,7 @@ async def init_integration(
 def mock_setup_entry() -> Generator[MagicMock]:
     """Mock Saunum setup entry."""
     with patch(
-        "homeassistant.components.saunum.async_setup_entry", autospec=True
+        "inpui.components.saunum.async_setup_entry", autospec=True
     ) as mock_setup_entry:
         mock_setup_entry.return_value = True
         yield mock_setup_entry

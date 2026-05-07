@@ -1871,7 +1871,7 @@ async def test_wait_for_trigger_bad(
         return None
 
     with mock.patch(
-        "homeassistant.components.homeassistant.triggers.state.async_attach_trigger",
+        "inpui.components.homeassistant.triggers.state.async_attach_trigger",
         wraps=async_attach_trigger_mock,
     ):
         hass.async_create_task(script_obj.async_run())
@@ -1914,7 +1914,7 @@ async def test_wait_for_trigger_generated_exception(
         raise ValueError("something bad")
 
     with mock.patch(
-        "homeassistant.components.homeassistant.triggers.state.async_attach_trigger",
+        "inpui.components.homeassistant.triggers.state.async_attach_trigger",
         wraps=async_attach_trigger_mock,
     ):
         hass.async_create_task(script_obj.async_run())
@@ -2267,7 +2267,7 @@ async def test_condition_validation(
     )
 
 
-@patch("homeassistant.helpers.script.condition.async_from_config")
+@patch("inpui.helpers.script.condition.async_from_config")
 async def test_condition_created_once(async_from_config, hass: HomeAssistant) -> None:
     """Test that the conditions do not get created multiple times."""
     sequence = cv.SCRIPT_SCHEMA(
@@ -4063,7 +4063,7 @@ async def test_last_triggered(hass: HomeAssistant) -> None:
     assert script_obj.last_triggered is None
 
     time = dt_util.utcnow()
-    with mock.patch("homeassistant.helpers.script.utcnow", return_value=time):
+    with mock.patch("inpui.helpers.script.utcnow", return_value=time):
         await script_obj.async_run(context=Context())
         await hass.async_block_till_done()
 
@@ -5700,7 +5700,7 @@ async def test_validate_action_config(
     # Verify we raise if we don't know the action type
     with (
         patch(
-            "homeassistant.helpers.config_validation.determine_script_action",
+            "inpui.helpers.config_validation.determine_script_action",
             return_value="non-existing",
         ),
         pytest.raises(ValueError),
@@ -5955,7 +5955,7 @@ async def test_platform_async_validate_action_config(hass: HomeAssistant) -> Non
     """Test platform.async_validate_action_config will be called if it exists."""
     config = {CONF_DEVICE_ID: "test", CONF_DOMAIN: "test"}
     with patch(
-        "homeassistant.components.device_automation.action.async_validate_action_config",
+        "inpui.components.device_automation.action.async_validate_action_config",
         return_value=AsyncMock(),
     ) as device_automation_validate_action_mock:
         await script.async_validate_action_config(hass, config)

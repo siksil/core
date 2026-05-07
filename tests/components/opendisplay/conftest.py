@@ -24,15 +24,15 @@ def mock_ble_device() -> Generator[None]:
     ble_device = generate_ble_device(TEST_ADDRESS, TEST_TITLE)
     with (
         patch(
-            "homeassistant.components.opendisplay.async_ble_device_from_address",
+            "inpui.components.opendisplay.async_ble_device_from_address",
             return_value=ble_device,
         ),
         patch(
-            "homeassistant.components.opendisplay.config_flow.async_ble_device_from_address",
+            "inpui.components.opendisplay.config_flow.async_ble_device_from_address",
             return_value=ble_device,
         ),
         patch(
-            "homeassistant.components.opendisplay.services.async_ble_device_from_address",
+            "inpui.components.opendisplay.services.async_ble_device_from_address",
             return_value=ble_device,
         ),
     ):
@@ -44,15 +44,15 @@ def mock_opendisplay_device() -> Generator[MagicMock]:
     """Mock the OpenDisplayDevice for setup entry."""
     with (
         patch(
-            "homeassistant.components.opendisplay.OpenDisplayDevice",
+            "inpui.components.opendisplay.OpenDisplayDevice",
             autospec=True,
         ) as mock_device_init,
         patch(
-            "homeassistant.components.opendisplay.config_flow.OpenDisplayDevice",
+            "inpui.components.opendisplay.config_flow.OpenDisplayDevice",
             new=mock_device_init,
         ),
         patch(
-            "homeassistant.components.opendisplay.services.OpenDisplayDevice",
+            "inpui.components.opendisplay.services.OpenDisplayDevice",
             new=mock_device_init,
         ),
     ):

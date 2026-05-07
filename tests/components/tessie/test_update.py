@@ -28,7 +28,7 @@ async def test_updates(
     entity_id = "update.test_update"
 
     with patch(
-        "homeassistant.components.tessie.update.schedule_software_update"
+        "inpui.components.tessie.update.schedule_software_update"
     ) as mock_update:
         await hass.services.async_call(
             UPDATE_DOMAIN,

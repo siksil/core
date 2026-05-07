@@ -41,7 +41,7 @@ SETTINGS = Settings(**load_json_object_fixture("settings.json", DOMAIN))
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.nextdns.async_setup_entry", return_value=True
+        "inpui.components.nextdns.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -62,8 +62,8 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_nextdns() -> Generator[AsyncMock]:
     """Mock the NextDns class."""
     with (
-        patch("homeassistant.components.nextdns.NextDns", autospec=True) as mock_class,
-        patch("homeassistant.components.nextdns.config_flow.NextDns", new=mock_class),
+        patch("inpui.components.nextdns.NextDns", autospec=True) as mock_class,
+        patch("inpui.components.nextdns.config_flow.NextDns", new=mock_class),
     ):
         yield mock_class
 

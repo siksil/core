@@ -1928,22 +1928,22 @@ class TemplateEnvironment(ImmutableSandboxedEnvironment):
         ] = weakref.WeakValueDictionary()
         self.add_extension("jinja2.ext.loopcontrols")
         self.add_extension("jinja2.ext.do")
-        self.add_extension("homeassistant.helpers.template.extensions.AreaExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.Base64Extension")
+        self.add_extension("inpui.helpers.template.extensions.AreaExtension")
+        self.add_extension("inpui.helpers.template.extensions.Base64Extension")
         self.add_extension(
-            "homeassistant.helpers.template.extensions.CollectionExtension"
+            "inpui.helpers.template.extensions.CollectionExtension"
         )
-        self.add_extension("homeassistant.helpers.template.extensions.CryptoExtension")
+        self.add_extension("inpui.helpers.template.extensions.CryptoExtension")
         self.add_extension(
-            "homeassistant.helpers.template.extensions.DateTimeExtension"
+            "inpui.helpers.template.extensions.DateTimeExtension"
         )
-        self.add_extension("homeassistant.helpers.template.extensions.DeviceExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.FloorExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.IssuesExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.LabelExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.MathExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.RegexExtension")
-        self.add_extension("homeassistant.helpers.template.extensions.StringExtension")
+        self.add_extension("inpui.helpers.template.extensions.DeviceExtension")
+        self.add_extension("inpui.helpers.template.extensions.FloorExtension")
+        self.add_extension("inpui.helpers.template.extensions.IssuesExtension")
+        self.add_extension("inpui.helpers.template.extensions.LabelExtension")
+        self.add_extension("inpui.helpers.template.extensions.MathExtension")
+        self.add_extension("inpui.helpers.template.extensions.RegexExtension")
+        self.add_extension("inpui.helpers.template.extensions.StringExtension")
 
         self.globals["apply"] = apply
         self.globals["as_function"] = as_function

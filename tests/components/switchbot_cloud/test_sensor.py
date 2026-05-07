@@ -72,7 +72,7 @@ async def test_plug_mini_eu(
         },
     ]
 
-    with patch("homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.switchbot_cloud.PLATFORMS", [Platform.SENSOR]):
         entry = await configure_integration(hass)
     assert entry.state is ConfigEntryState.LOADED
 
@@ -105,7 +105,7 @@ async def test_no_coordinator_data(
 
     mock_get_status.return_value = None
 
-    with patch("homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.switchbot_cloud.PLATFORMS", [Platform.SENSOR]):
         entry = await configure_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)
@@ -129,7 +129,7 @@ async def test_unsupported_device_type(
     ]
     mock_get_status.return_value = {}
 
-    with patch("homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.switchbot_cloud.PLATFORMS", [Platform.SENSOR]):
         entry = await configure_integration(hass)
 
     # Assert no sensor entities were created for unsupported device type

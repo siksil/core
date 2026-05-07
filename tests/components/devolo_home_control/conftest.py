@@ -16,7 +16,7 @@ def mydevolo() -> Generator[None]:
     mydevolo.maintenance.return_value = False
     mydevolo.get_gateway_ids.return_value = ["1400000000000001", "1400000000000002"]
     with patch(
-        "homeassistant.components.devolo_home_control.Mydevolo",
+        "inpui.components.devolo_home_control.Mydevolo",
         side_effect=cycle([mydevolo]),
     ):
         yield mydevolo

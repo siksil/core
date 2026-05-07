@@ -188,7 +188,7 @@ def mock_withings():
     mock.get_workouts_in_period.return_value = workouts
 
     with patch(
-        "homeassistant.components.withings.WithingsClient",
+        "inpui.components.withings.WithingsClient",
         return_value=mock,
     ):
         yield mock
@@ -199,15 +199,15 @@ def disable_webhook_delay():
     """Disable webhook delays for faster tests."""
     with (
         patch(
-            "homeassistant.components.withings.SUBSCRIBE_DELAY",
+            "inpui.components.withings.SUBSCRIBE_DELAY",
             timedelta(seconds=0),
         ),
         patch(
-            "homeassistant.components.withings.UNSUBSCRIBE_DELAY",
+            "inpui.components.withings.UNSUBSCRIBE_DELAY",
             timedelta(seconds=0),
         ),
         patch(
-            "homeassistant.components.withings.WEBHOOK_REGISTER_DELAY",
+            "inpui.components.withings.WEBHOOK_REGISTER_DELAY",
             0,
         ),
     ):

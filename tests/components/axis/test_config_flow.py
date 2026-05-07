@@ -129,7 +129,7 @@ async def test_flow_fails_on_api(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.axis.config_flow.get_axis_api",
+        "inpui.components.axis.config_flow.get_axis_api",
         side_effect=exc,
     ):
         result = await hass.config_entries.flow.async_configure(

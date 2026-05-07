@@ -102,11 +102,11 @@ async def test_setup_cloudhook_in_bridge(
             "loqedAPI.loqed.LoqedAPI.async_get_lock_details", return_value=lock_status
         ),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value=webhooks_fixture[0]["url"],
         ),
     ):
@@ -137,11 +137,11 @@ async def test_setup_cloudhook_from_entry_in_bridge(
             "loqedAPI.loqed.LoqedAPI.async_get_lock_details", return_value=lock_status
         ),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value=webhooks_fixture[0]["url"],
         ),
     ):

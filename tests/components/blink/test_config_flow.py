@@ -21,7 +21,7 @@ async def test_form_2fa(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.blink.config_flow.Blink.start",
+        "inpui.components.blink.config_flow.Blink.start",
         side_effect=BlinkTwoFARequiredError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -33,17 +33,17 @@ async def test_form_2fa(hass: HomeAssistant) -> None:
     assert result2["step_id"] == "2fa"
 
     with (
-        patch("homeassistant.components.blink.config_flow.Blink.start"),
+        patch("inpui.components.blink.config_flow.Blink.start"),
         patch(
-            "homeassistant.components.blink.config_flow.Blink.send_2fa_code",
+            "inpui.components.blink.config_flow.Blink.send_2fa_code",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.blink.config_flow.Blink.setup_urls",
+            "inpui.components.blink.config_flow.Blink.setup_urls",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.blink.async_setup_entry", return_value=True
+            "inpui.components.blink.async_setup_entry", return_value=True
         ) as mock_setup_entry,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -65,7 +65,7 @@ async def test_form_2fa_connect_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.blink.config_flow.Blink.start",
+        "inpui.components.blink.config_flow.Blink.start",
         side_effect=BlinkTwoFARequiredError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -77,13 +77,13 @@ async def test_form_2fa_connect_error(hass: HomeAssistant) -> None:
     assert result2["step_id"] == "2fa"
 
     with (
-        patch("homeassistant.components.blink.config_flow.Blink.start"),
+        patch("inpui.components.blink.config_flow.Blink.start"),
         patch(
-            "homeassistant.components.blink.config_flow.Blink.send_2fa_code",
+            "inpui.components.blink.config_flow.Blink.send_2fa_code",
             side_effect=BlinkSetupError,
         ),
         patch(
-            "homeassistant.components.blink.async_setup_entry",
+            "inpui.components.blink.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -103,7 +103,7 @@ async def test_form_2fa_invalid_key(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.blink.config_flow.Blink.start",
+        "inpui.components.blink.config_flow.Blink.start",
         side_effect=BlinkTwoFARequiredError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -116,14 +116,14 @@ async def test_form_2fa_invalid_key(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.blink.config_flow.Blink.start",
+            "inpui.components.blink.config_flow.Blink.start",
         ),
         patch(
-            "homeassistant.components.blink.config_flow.Blink.send_2fa_code",
+            "inpui.components.blink.config_flow.Blink.send_2fa_code",
             side_effect=TokenRefreshFailed,
         ),
         patch(
-            "homeassistant.components.blink.async_setup_entry",
+            "inpui.components.blink.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -143,7 +143,7 @@ async def test_form_2fa_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.blink.config_flow.Blink.start",
+        "inpui.components.blink.config_flow.Blink.start",
         side_effect=BlinkTwoFARequiredError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -155,13 +155,13 @@ async def test_form_2fa_unknown_error(hass: HomeAssistant) -> None:
     assert result2["step_id"] == "2fa"
 
     with (
-        patch("homeassistant.components.blink.config_flow.Blink.start"),
+        patch("inpui.components.blink.config_flow.Blink.start"),
         patch(
-            "homeassistant.components.blink.config_flow.Blink.send_2fa_code",
+            "inpui.components.blink.config_flow.Blink.send_2fa_code",
             side_effect=Exception,
         ),
         patch(
-            "homeassistant.components.blink.async_setup_entry",
+            "inpui.components.blink.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -180,7 +180,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.blink.config_flow.Blink.start",
+        "inpui.components.blink.config_flow.Blink.start",
         side_effect=LoginError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -198,7 +198,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.blink.config_flow.Blink.start",
+        "inpui.components.blink.config_flow.Blink.start",
         side_effect=KeyError,
     ):
         result2 = await hass.config_entries.flow.async_configure(

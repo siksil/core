@@ -40,7 +40,7 @@ VALID_CONFIG = {
 def mock_feed():
     """Pytest fixture for homeassistant.components.geo_rss_events.sensor.GenericFeed."""
     with patch(
-        "homeassistant.components.geo_rss_events.sensor.GenericFeed"
+        "inpui.components.geo_rss_events.sensor.GenericFeed"
     ) as mock_feed:
         yield mock_feed
 

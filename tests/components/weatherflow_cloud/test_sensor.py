@@ -42,7 +42,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
+        "inpui.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 
@@ -65,7 +65,7 @@ async def test_all_entities_with_lightning_error(
     )
 
     with patch(
-        "homeassistant.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
+        "inpui.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 
@@ -99,7 +99,7 @@ async def test_websocket_sensor_observation(
     """Test the WebsocketSensorObservation class works."""
     # Set up the integration
     with patch(
-        "homeassistant.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
+        "inpui.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 
@@ -142,7 +142,7 @@ async def test_websocket_sensor_wind(
     """Test the WebsocketSensorWind class works."""
     # Set up the integration
     with patch(
-        "homeassistant.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
+        "inpui.components.weatherflow_cloud.PLATFORMS", [Platform.SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

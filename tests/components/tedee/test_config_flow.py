@@ -27,7 +27,7 @@ LOCAL_ACCESS_TOKEN = "api_token"
 async def test_flow(hass: HomeAssistant, mock_tedee: MagicMock) -> None:
     """Test config flow with one bridge."""
     with patch(
-        "homeassistant.components.tedee.config_flow.webhook_generate_id",
+        "inpui.components.tedee.config_flow.webhook_generate_id",
         return_value=WEBHOOK_ID,
     ):
         result = await hass.config_entries.flow.async_init(

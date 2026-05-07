@@ -112,7 +112,7 @@ async def test_flow_works(hass: HomeAssistant) -> None:
 
     # Check you can finish the flow
     with patch(
-        "homeassistant.components.private_ble_device.async_setup_entry",
+        "inpui.components.private_ble_device.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -150,7 +150,7 @@ async def test_flow_works_by_base64(hass: HomeAssistant) -> None:
 
     # Check you can finish the flow
     with patch(
-        "homeassistant.components.private_ble_device.async_setup_entry",
+        "inpui.components.private_ble_device.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(

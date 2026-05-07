@@ -31,11 +31,11 @@ async def test_async_step_user_success(hass: HomeAssistant, user: User) -> None:
 
     with (
         patch(
-            "homeassistant.components.aseko_pool_live.config_flow.Aseko.login",
+            "inpui.components.aseko_pool_live.config_flow.Aseko.login",
             return_value=user,
         ),
         patch(
-            "homeassistant.components.aseko_pool_live.async_setup_entry",
+            "inpui.components.aseko_pool_live.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -74,7 +74,7 @@ async def test_async_step_user_exception(
     )
 
     with patch(
-        "homeassistant.components.aseko_pool_live.config_flow.Aseko.login",
+        "inpui.components.aseko_pool_live.config_flow.Aseko.login",
         return_value=user,
         side_effect=error_web,
     ):
@@ -107,7 +107,7 @@ async def test_get_account_info_exceptions(
     )
 
     with patch(
-        "homeassistant.components.aseko_pool_live.config_flow.Aseko.login",
+        "inpui.components.aseko_pool_live.config_flow.Aseko.login",
         return_value=user,
         side_effect=error_web,
     ):
@@ -142,11 +142,11 @@ async def test_async_step_reauth_success(hass: HomeAssistant, user: User) -> Non
 
     with (
         patch(
-            "homeassistant.components.aseko_pool_live.config_flow.Aseko.login",
+            "inpui.components.aseko_pool_live.config_flow.Aseko.login",
             return_value=user,
         ),
         patch(
-            "homeassistant.components.aseko_pool_live.async_setup_entry",
+            "inpui.components.aseko_pool_live.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -185,11 +185,11 @@ async def test_async_step_reauth_mismatch(hass: HomeAssistant, user: User) -> No
 
     with (
         patch(
-            "homeassistant.components.aseko_pool_live.config_flow.Aseko.login",
+            "inpui.components.aseko_pool_live.config_flow.Aseko.login",
             return_value=user,
         ),
         patch(
-            "homeassistant.components.aseko_pool_live.async_setup_entry",
+            "inpui.components.aseko_pool_live.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -232,7 +232,7 @@ async def test_async_step_reauth_exception(
     result = await mock_entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.aseko_pool_live.config_flow.Aseko.login",
+        "inpui.components.aseko_pool_live.config_flow.Aseko.login",
         return_value=user,
         side_effect=error_web,
     ):

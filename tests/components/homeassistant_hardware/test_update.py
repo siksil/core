@@ -258,7 +258,7 @@ async def mock_update_config_entry(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
+            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient",
             autospec=True,
         ) as mock_update_client,
         mock_config_flow(TEST_DOMAIN, ConfigFlow),
@@ -345,7 +345,7 @@ async def test_update_entity_installation(
     # When we install it, the other integration is reloaded
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.update.async_flash_silabs_firmware",
+            "inpui.components.homeassistant_hardware.update.async_flash_silabs_firmware",
             side_effect=mock_flash_firmware,
         ),
     ):
@@ -412,7 +412,7 @@ async def test_update_entity_installation_failure(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.update.async_flash_silabs_firmware",
+            "inpui.components.homeassistant_hardware.update.async_flash_silabs_firmware",
             side_effect=HomeAssistantError("Failed to flash firmware"),
         ),
         pytest.raises(HomeAssistantError, match="Failed to flash firmware"),
@@ -456,7 +456,7 @@ async def test_update_entity_installation_probe_failure(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.update.async_flash_silabs_firmware",
+            "inpui.components.homeassistant_hardware.update.async_flash_silabs_firmware",
             side_effect=HomeAssistantError(
                 "Failed to probe the firmware after flashing"
             ),
@@ -628,7 +628,7 @@ async def test_early_firmware_check_handles_errors(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
+            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
         ) as mock_update_client,
     ):
         mock_update_client.return_value.async_update_data.side_effect = error
@@ -662,7 +662,7 @@ async def test_early_firmware_check_skipped_with_restored_state(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
+            "inpui.components.homeassistant_hardware.coordinator.FirmwareUpdateClient"
         ) as mock_update_client,
     ):
         assert await hass.config_entries.async_setup(update_config_entry.entry_id)

@@ -26,7 +26,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.slimproto.async_setup_entry",
+        "inpui.components.slimproto.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

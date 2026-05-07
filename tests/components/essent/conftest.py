@@ -27,7 +27,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry for config flow tests."""
     with patch(
-        "homeassistant.components.essent.async_setup_entry",
+        "inpui.components.essent.async_setup_entry",
         return_value=True,
     ) as mock:
         yield mock
@@ -38,11 +38,11 @@ def mock_essent_client() -> Generator[AsyncMock]:
     """Mock EssentClient."""
     with (
         patch(
-            "homeassistant.components.essent.coordinator.EssentClient",
+            "inpui.components.essent.coordinator.EssentClient",
             autospec=True,
         ) as mock_client_class,
         patch(
-            "homeassistant.components.essent.config_flow.EssentClient",
+            "inpui.components.essent.config_flow.EssentClient",
             new=mock_client_class,
         ),
     ):

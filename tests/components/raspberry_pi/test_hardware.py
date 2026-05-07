@@ -30,7 +30,7 @@ async def test_hardware_info(
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.raspberry_pi.get_os_info",
+        "inpui.components.raspberry_pi.get_os_info",
         return_value={"board": "rpi"},
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -39,7 +39,7 @@ async def test_hardware_info(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.raspberry_pi.hardware.get_os_info",
+        "inpui.components.raspberry_pi.hardware.get_os_info",
         return_value={"board": "rpi"},
     ):
         await client.send_json({"id": 1, "type": "hardware/info"})
@@ -83,7 +83,7 @@ async def test_hardware_info_fail(
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.raspberry_pi.get_os_info",
+        "inpui.components.raspberry_pi.get_os_info",
         return_value={"board": "rpi"},
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -92,7 +92,7 @@ async def test_hardware_info_fail(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.raspberry_pi.hardware.get_os_info",
+        "inpui.components.raspberry_pi.hardware.get_os_info",
         return_value=os_info,
     ):
         await client.send_json({"id": 1, "type": "hardware/info"})

@@ -148,7 +148,7 @@ def mocked_requests(*args, **kwargs):
 
 
 @patch(
-    "homeassistant.components.xiaomi.device_tracker.XiaomiDeviceScanner",
+    "inpui.components.xiaomi.device_tracker.XiaomiDeviceScanner",
     return_value=MagicMock(),
 )
 async def test_config(xiaomi_mock, hass: HomeAssistant) -> None:
@@ -173,7 +173,7 @@ async def test_config(xiaomi_mock, hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.xiaomi.device_tracker.XiaomiDeviceScanner",
+    "inpui.components.xiaomi.device_tracker.XiaomiDeviceScanner",
     return_value=MagicMock(),
 )
 async def test_config_full(xiaomi_mock, hass: HomeAssistant) -> None:

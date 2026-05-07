@@ -259,7 +259,7 @@ async def test_get_integration_exceptions(hass: HomeAssistant) -> None:
     with (
         pytest.raises(ImportError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ValueError("Boom"),
         ),
     ):
@@ -268,7 +268,7 @@ async def test_get_integration_exceptions(hass: HomeAssistant) -> None:
     with (
         pytest.raises(ImportError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ValueError("Boom"),
         ),
     ):
@@ -287,7 +287,7 @@ async def test_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -296,7 +296,7 @@ async def test_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -306,7 +306,7 @@ async def test_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -318,7 +318,7 @@ async def test_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -338,7 +338,7 @@ async def test_get_platform_only_cached_module_not_found_when_component_loaded(
     with (
         pytest.raises(ImportError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ImportError("Boom"),
         ),
     ):
@@ -347,7 +347,7 @@ async def test_get_platform_only_cached_module_not_found_when_component_loaded(
     with (
         pytest.raises(ImportError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ImportError("Boom"),
         ),
     ):
@@ -357,7 +357,7 @@ async def test_get_platform_only_cached_module_not_found_when_component_loaded(
     with (
         pytest.raises(ImportError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ImportError("Boom"),
         ),
     ):
@@ -369,7 +369,7 @@ async def test_get_platform_only_cached_module_not_found_when_component_loaded(
     with (
         pytest.raises(ImportError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ImportError("Boom"),
         ),
     ):
@@ -391,7 +391,7 @@ async def test_async_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -400,7 +400,7 @@ async def test_async_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -410,7 +410,7 @@ async def test_async_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -422,7 +422,7 @@ async def test_async_get_platform_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -448,7 +448,7 @@ async def test_async_get_platforms_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -457,7 +457,7 @@ async def test_async_get_platforms_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -467,7 +467,7 @@ async def test_async_get_platforms_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -479,7 +479,7 @@ async def test_async_get_platforms_caches_failures_when_component_loaded(
     with (
         pytest.raises(ModuleNotFoundError),
         patch(
-            "homeassistant.loader.importlib.import_module",
+            "inpui.loader.importlib.import_module",
             side_effect=ModuleNotFoundError("Boom"),
         ),
     ):
@@ -515,7 +515,7 @@ def test_integration_properties(hass: HomeAssistant) -> None:
     """Test integration properties."""
     integration = loader.Integration(
         hass,
-        "homeassistant.components.hue",
+        "inpui.components.hue",
         None,
         {
             "name": "Philips Hue",
@@ -651,7 +651,7 @@ def _get_test_integration(
     """Return a generated test integration."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -674,7 +674,7 @@ def _get_test_integration_with_application_credentials(
     """Return a generated test integration with application_credentials support."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -696,7 +696,7 @@ def _get_test_integration_with_zeroconf_matcher(
     """Return a generated test integration with a zeroconf matcher."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -717,7 +717,7 @@ def _get_test_integration_with_legacy_zeroconf_matcher(
     """Return a generated test integration with a legacy zeroconf matcher."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -746,7 +746,7 @@ def _get_test_integration_with_dhcp_matcher(
     """Return a generated test integration with a dhcp matcher."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -772,7 +772,7 @@ def _get_test_integration_with_bluetooth_matcher(
     """Return a generated test integration with a bluetooth matcher."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -793,7 +793,7 @@ def _get_test_integration_with_usb_matcher(
     """Return a generated test integration with a usb matcher."""
     return loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -825,7 +825,7 @@ async def test_get_custom_components(hass: HomeAssistant) -> None:
     test_1_integration = _get_test_integration(hass, "test_1", False)
     test_2_integration = _get_test_integration(hass, "test_2", True)
 
-    name = "homeassistant.loader._get_custom_components"
+    name = "inpui.loader._get_custom_components"
     with patch(name) as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
@@ -866,7 +866,7 @@ async def test_get_config_flows(hass: HomeAssistant) -> None:
     test_1_integration = _get_test_integration(hass, "test_1", False)
     test_2_integration = _get_test_integration(hass, "test_2", True)
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -883,7 +883,7 @@ async def test_get_zeroconf(hass: HomeAssistant) -> None:
         hass, "test_2", True
     )
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -902,7 +902,7 @@ async def test_get_application_credentials(hass: HomeAssistant) -> None:
         hass, "test_2"
     )
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -919,7 +919,7 @@ async def test_get_zeroconf_back_compat(hass: HomeAssistant) -> None:
         hass, "test_2", True
     )
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -945,7 +945,7 @@ async def test_get_bluetooth(hass: HomeAssistant) -> None:
         hass, "test_1", True
     )
     test_2_integration = _get_test_integration_with_dhcp_matcher(hass, "test_2", True)
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -963,7 +963,7 @@ async def test_get_dhcp(hass: HomeAssistant) -> None:
     """Verify that custom components with dhcp are found."""
     test_1_integration = _get_test_integration_with_dhcp_matcher(hass, "test_1", True)
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
         }
@@ -980,7 +980,7 @@ async def test_get_usb(hass: HomeAssistant) -> None:
     """Verify that custom components with usb matchers are found."""
     test_1_integration = _get_test_integration_with_usb_matcher(hass, "test_1", True)
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
         }
@@ -999,7 +999,7 @@ async def test_get_homekit(hass: HomeAssistant) -> None:
     test_1_integration = _get_test_integration(hass, "test_1", True)
     test_2_integration = _get_test_integration(hass, "test_2", True)
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -1014,7 +1014,7 @@ async def test_get_ssdp(hass: HomeAssistant) -> None:
     test_1_integration = _get_test_integration(hass, "test_1", True)
     test_2_integration = _get_test_integration(hass, "test_2", True)
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -1029,7 +1029,7 @@ async def test_get_mqtt(hass: HomeAssistant) -> None:
     test_1_integration = _get_test_integration(hass, "test_1", True)
     test_2_integration = _get_test_integration(hass, "test_2", True)
 
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {
             "test_1": test_1_integration,
             "test_2": test_2_integration,
@@ -1084,7 +1084,7 @@ async def test_custom_integration_missing_version(hass: HomeAssistant) -> None:
 
 async def test_custom_integration_missing(hass: HomeAssistant) -> None:
     """Test trying to load a custom integration that is missing twice not deadlock."""
-    with patch("homeassistant.loader.async_get_custom_components") as mock_get:
+    with patch("inpui.loader.async_get_custom_components") as mock_get:
         mock_get.return_value = {}
 
         with pytest.raises(loader.IntegrationNotFound):
@@ -1105,7 +1105,7 @@ async def test_loggers(hass: HomeAssistant) -> None:
     name = "dummy"
     integration = loader.Integration(
         hass,
-        f"homeassistant.components.{name}",
+        f"inpui.components.{name}",
         None,
         {
             "name": name,
@@ -1140,11 +1140,11 @@ CUSTOM_ISSUE_TRACKER = "https://blablabla.com"
     [
         # If no information is available, open issue on core
         (None, None, CORE_ISSUE_TRACKER),
-        ("hue", "homeassistant.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
+        ("hue", "inpui.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
         ("hue", None, CORE_ISSUE_TRACKER_HUE),
         ("bla_built_in", None, CORE_ISSUE_TRACKER_BUILT_IN),
-        (None, "homeassistant.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
-        ("hue", "homeassistant.components.mqtt.sensor", CORE_ISSUE_TRACKER_HUE),
+        (None, "inpui.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
+        ("hue", "inpui.components.mqtt.sensor", CORE_ISSUE_TRACKER_HUE),
         # Loaded custom integration with known issue tracker
         (None, "custom_components.bla_custom.sensor", CUSTOM_ISSUE_TRACKER),
         ("bla_custom", "custom_components.bla_custom.sensor", CUSTOM_ISSUE_TRACKER),
@@ -1160,7 +1160,7 @@ CUSTOM_ISSUE_TRACKER = "https://blablabla.com"
         # Unloaded custom integration without known issue tracker
         ("bla_custom_not_loaded_no_tracker", None, None),
         # Integration domain has priority over module
-        ("bla_custom_no_tracker", "homeassistant.components.bla_custom.sensor", None),
+        ("bla_custom_no_tracker", "inpui.components.bla_custom.sensor", None),
     ],
 )
 async def test_async_get_issue_tracker(
@@ -1216,11 +1216,11 @@ async def test_async_get_issue_tracker(
     [
         # If no information is available, open issue on core
         (None, None, CORE_ISSUE_TRACKER),
-        ("hue", "homeassistant.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
+        ("hue", "inpui.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
         ("hue", None, CORE_ISSUE_TRACKER_HUE),
         ("bla_built_in", None, CORE_ISSUE_TRACKER_BUILT_IN),
-        (None, "homeassistant.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
-        ("hue", "homeassistant.components.mqtt.sensor", CORE_ISSUE_TRACKER_HUE),
+        (None, "inpui.components.hue.sensor", CORE_ISSUE_TRACKER_HUE),
+        ("hue", "inpui.components.mqtt.sensor", CORE_ISSUE_TRACKER_HUE),
         # Custom integration with known issue tracker - can't find it without hass
         ("bla_custom", "custom_components.bla_custom.sensor", None),
         # Assumed to be a core integration without hass and without module
@@ -1310,7 +1310,7 @@ async def test_async_get_component_preloads_config_and_config_flow(
     )
     assert executor_import_integration.import_executor is True
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
 
     platform_exists_calls = []
@@ -1320,7 +1320,7 @@ async def test_async_get_component_preloads_config_and_config_flow(
         return platforms
 
     with (
-        patch("homeassistant.loader.importlib.import_module") as mock_import,
+        patch("inpui.loader.importlib.import_module") as mock_import,
         patch.object(
             executor_import_integration, "platforms_exists", mock_platforms_exists
         ),
@@ -1331,16 +1331,16 @@ async def test_async_get_component_preloads_config_and_config_flow(
     assert mock_import.call_count == 1 + len(loader.BASE_PRELOAD_PLATFORMS)
     assert (
         mock_import.call_args_list[0][0][0]
-        == "homeassistant.components.executor_import"
+        == "inpui.components.executor_import"
     )
     checked_platforms = {
         mock_import.call_args_list[i][0][0]
         for i in range(1, len(mock_import.call_args_list))
     }
     assert checked_platforms == {
-        "homeassistant.components.executor_import.config_flow",
+        "inpui.components.executor_import.config_flow",
         *(
-            f"homeassistant.components.executor_import.{platform}"
+            f"inpui.components.executor_import.{platform}"
             for platform in loader.BASE_PRELOAD_PLATFORMS
         ),
     }
@@ -1381,7 +1381,7 @@ async def test_async_get_component_loads_loop_if_already_in_sys_modules(
             {**modules_without_config_flow, integration.pkg_path: module_mock},
             clear=True,
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         module = await integration.async_get_component()
 
@@ -1400,7 +1400,7 @@ async def test_async_get_component_loads_loop_if_already_in_sys_modules(
                 config_flow_module_name: config_flow_module_mock,
             },
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         module = await integration.async_get_component()
 
@@ -1451,7 +1451,7 @@ async def test_async_get_component_concurrent_loads(hass: HomeAssistant) -> None
             {**modules_without_integration},
             clear=True,
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         load_task1 = asyncio.create_task(integration.async_get_component())
         load_task2 = asyncio.create_task(integration.async_get_component())
@@ -1482,7 +1482,7 @@ async def test_async_get_component_deadlock_fallback(
 
     def mock_import(module: str, *args: Any, **kwargs: Any) -> Any:
         nonlocal import_attempts
-        if module == "homeassistant.components.executor_import":
+        if module == "inpui.components.executor_import":
             import_attempts += 1
 
         if import_attempts == 1:
@@ -1493,9 +1493,9 @@ async def test_async_get_component_deadlock_fallback(
 
         return module_mock
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
-    with patch("homeassistant.loader.importlib.import_module", mock_import):
+    with patch("inpui.loader.importlib.import_module", mock_import):
         module = await executor_import_integration.async_get_component()
 
     assert (
@@ -1522,30 +1522,30 @@ async def test_async_get_component_deadlock_fallback_module_not_found(
 
     def mock_import(module: str, *args: Any, **kwargs: Any) -> Any:
         nonlocal import_attempts
-        if module == "homeassistant.components.executor_import":
+        if module == "inpui.components.executor_import":
             import_attempts += 1
 
         if import_attempts == 1:
             raise ModuleNotFoundError(
-                "homeassistant.components.executor_import not found",
-                name="homeassistant.components.executor_import",
+                "inpui.components.executor_import not found",
+                name="inpui.components.executor_import",
             )
 
         return module_mock
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
     with (
-        patch("homeassistant.loader.importlib.import_module", mock_import),
+        patch("inpui.loader.importlib.import_module", mock_import),
         pytest.raises(
-            ModuleNotFoundError, match="homeassistant.components.executor_import"
+            ModuleNotFoundError, match="inpui.components.executor_import"
         ),
     ):
         await executor_import_integration.async_get_component()
 
     # We should not have tried to fall back to the event loop import
     assert "loaded_executor=False" not in caplog.text
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
     assert import_attempts == 1
 
@@ -1563,7 +1563,7 @@ async def test_async_get_component_raises_after_import_failure(
 
     def mock_import(module: str, *args: Any, **kwargs: Any) -> Any:
         nonlocal import_attempts
-        if module == "homeassistant.components.executor_import":
+        if module == "inpui.components.executor_import":
             import_attempts += 1
 
         if import_attempts == 1:
@@ -1576,10 +1576,10 @@ async def test_async_get_component_raises_after_import_failure(
             raise ImportError("Failed import inpui.components.executor_import")
         return module_mock
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
     with (
-        patch("homeassistant.loader.importlib.import_module", mock_import),
+        patch("inpui.loader.importlib.import_module", mock_import),
         pytest.raises(ImportError),
     ):
         await executor_import_integration.async_get_component()
@@ -1604,7 +1604,7 @@ async def test_async_get_platform_deadlock_fallback(
 
     def mock_import(module: str, *args: Any, **kwargs: Any) -> Any:
         nonlocal import_attempts
-        if module == "homeassistant.components.executor_import.config_flow":
+        if module == "inpui.components.executor_import.config_flow":
             import_attempts += 1
 
         if import_attempts == 1:
@@ -1615,9 +1615,9 @@ async def test_async_get_platform_deadlock_fallback(
 
         return module_mock
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
-    with patch("homeassistant.loader.importlib.import_module", mock_import):
+    with patch("inpui.loader.importlib.import_module", mock_import):
         module = await executor_import_integration.async_get_platform("config_flow")
 
     assert (
@@ -1646,24 +1646,24 @@ async def test_async_get_platform_deadlock_fallback_module_not_found(
 
     def mock_import(module: str, *args: Any, **kwargs: Any) -> Any:
         nonlocal import_attempts
-        if module == "homeassistant.components.executor_import.config_flow":
+        if module == "inpui.components.executor_import.config_flow":
             import_attempts += 1
 
         if import_attempts == 1:
             raise ModuleNotFoundError(
                 "Not found homeassistant.components.executor_import.config_flow",
-                name="homeassistant.components.executor_import.config_flow",
+                name="inpui.components.executor_import.config_flow",
             )
 
         return module_mock
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
     with (
-        patch("homeassistant.loader.importlib.import_module", mock_import),
+        patch("inpui.loader.importlib.import_module", mock_import),
         pytest.raises(
             ModuleNotFoundError,
-            match="homeassistant.components.executor_import.config_flow",
+            match="inpui.components.executor_import.config_flow",
         ),
     ):
         await executor_import_integration.async_get_platform("config_flow")
@@ -1671,7 +1671,7 @@ async def test_async_get_platform_deadlock_fallback_module_not_found(
     # We should not have tried to fall back to the event loop import
     assert "executor=['config_flow']" in caplog.text
     assert "loop=['config_flow']" not in caplog.text
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
     assert import_attempts == 1
 
@@ -1689,7 +1689,7 @@ async def test_async_get_platform_raises_after_import_failure(
 
     def mock_import(module: str, *args: Any, **kwargs: Any) -> Any:
         nonlocal import_attempts
-        if module == "homeassistant.components.executor_import.config_flow":
+        if module == "inpui.components.executor_import.config_flow":
             import_attempts += 1
 
         if import_attempts == 1:
@@ -1706,10 +1706,10 @@ async def test_async_get_platform_raises_after_import_failure(
 
         return module_mock
 
-    assert "homeassistant.components.executor_import" not in sys.modules
+    assert "inpui.components.executor_import" not in sys.modules
     assert "custom_components.executor_import" not in sys.modules
     with (
-        patch("homeassistant.loader.importlib.import_module", mock_import),
+        patch("inpui.loader.importlib.import_module", mock_import),
         pytest.raises(ImportError),
     ):
         await executor_import_integration.async_get_platform("config_flow")
@@ -1732,7 +1732,7 @@ async def test_platforms_exists(hass: HomeAssistant) -> None:
         paths.append(path)
         return original_os_listdir(path)
 
-    with patch("homeassistant.loader.os.listdir", mock_list_dir):
+    with patch("inpui.loader.os.listdir", mock_list_dir):
         integration = await loader.async_get_integration(
             hass, "test_integration_platform"
         )
@@ -1742,7 +1742,7 @@ async def test_platforms_exists(hass: HomeAssistant) -> None:
     assert integration.file_path in paths
 
     # component is loaded, should now return False
-    with patch("homeassistant.loader.os.listdir", wraps=os.listdir) as mock_exists:
+    with patch("inpui.loader.os.listdir", wraps=os.listdir) as mock_exists:
         component = integration.get_component()
     assert component.DOMAIN == "test_integration_platform"
 
@@ -1751,14 +1751,14 @@ async def test_platforms_exists(hass: HomeAssistant) -> None:
     assert mock_exists.call_count == 0
 
     # component is loaded, should now return False
-    with patch("homeassistant.loader.os.listdir", wraps=os.listdir) as mock_exists:
+    with patch("inpui.loader.os.listdir", wraps=os.listdir) as mock_exists:
         assert integration.platforms_exists(("non_existing",)) == []
 
     # We should remember which files exist
     assert mock_exists.call_count == 0
 
     # component is loaded, should now return False
-    with patch("homeassistant.loader.os.listdir", wraps=os.listdir) as mock_exists:
+    with patch("inpui.loader.os.listdir", wraps=os.listdir) as mock_exists:
         assert integration.platforms_exists(("non_existing",)) == []
 
     # We should remember the file does not exist
@@ -1822,7 +1822,7 @@ async def test_async_get_platforms_loads_loop_if_already_in_sys_modules(
             modules_without_button,
             clear=True,
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         module = (await integration.async_get_platforms(["button"]))["button"]
 
@@ -1841,7 +1841,7 @@ async def test_async_get_platforms_loads_loop_if_already_in_sys_modules(
                 button_module_name: button_module_mock,
             },
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         module = (await integration.async_get_platforms(["button"]))["button"]
 
@@ -1860,7 +1860,7 @@ async def test_async_get_platforms_loads_loop_if_already_in_sys_modules(
             {**modules_without_switch, light_module_name: light_module_mock},
             clear=True,
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         modules = await integration.async_get_platforms(["button", "switch", "light"])
 
@@ -1924,7 +1924,7 @@ async def test_async_get_platforms_concurrent_loads(hass: HomeAssistant) -> None
             modules_without_button,
             clear=True,
         ),
-        patch("homeassistant.loader.importlib.import_module", import_module),
+        patch("inpui.loader.importlib.import_module", import_module),
     ):
         load_task1 = asyncio.create_task(integration.async_get_platforms(["button"]))
         load_task2 = asyncio.create_task(integration.async_get_platforms(["button"]))

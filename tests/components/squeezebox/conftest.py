@@ -114,7 +114,7 @@ FAKE_QUERY_RESPONSE = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.squeezebox.async_setup_entry", return_value=True
+        "inpui.components.squeezebox.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -133,7 +133,7 @@ def mock_config_entry():
 def mock_server():
     """Fixture to mock pysqueezebox.Server per test run."""
     # Patch without autospec, so we can add arbitrary attributes
-    with patch("homeassistant.components.squeezebox.config_flow.Server") as server_cls:
+    with patch("inpui.components.squeezebox.config_flow.Server") as server_cls:
         server_mock = server_cls.return_value
 
         # async methods
@@ -157,7 +157,7 @@ def mock_discover():
         return [DummyServer()]
 
     with patch(
-        "homeassistant.components.squeezebox.config_flow.async_discover",
+        "inpui.components.squeezebox.config_flow.async_discover",
         side_effect=_mock_discover_success,
     ) as mock:
         yield mock
@@ -166,7 +166,7 @@ def mock_discover():
 @pytest.fixture(autouse=True)
 def mock_discover_timeout():
     """Mock the discovery timeout so tests run fast."""
-    with patch("homeassistant.components.squeezebox.config_flow.TIMEOUT", 0):
+    with patch("inpui.components.squeezebox.config_flow.TIMEOUT", 0):
         yield
 
 
@@ -340,7 +340,7 @@ def mock_pysqueezebox_player(uuid: str) -> MagicMock:
     """Mock a Lyrion Media Server player."""
     assert uuid
     with patch(
-        "homeassistant.components.squeezebox.Player", autospec=True
+        "inpui.components.squeezebox.Player", autospec=True
     ) as mock_player:
         mock_player.async_browse = AsyncMock(side_effect=mock_async_browse)
         mock_player.async_query = AsyncMock(return_value=MagicMock())
@@ -395,7 +395,7 @@ def mock_pysqueezebox_server(
     player_factory: MagicMock, player_count: int, uuid: str
 ) -> MagicMock:
     """Create a mock Lyrion Media Server with the given number of mock players attached."""
-    with patch("homeassistant.components.squeezebox.Server", autospec=True) as mock_lms:
+    with patch("inpui.components.squeezebox.Server", autospec=True) as mock_lms:
         players = [player_factory(TEST_MAC[index]) for index in range(player_count)]
         mock_lms.async_get_players = AsyncMock(return_value=players)
 
@@ -418,10 +418,10 @@ async def configure_squeezebox_media_player_platform(
     """Configure a squeezebox config entry with appropriate mocks for media_player."""
     with (
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.MEDIA_PLAYER],
         ),
-        patch("homeassistant.components.squeezebox.Server", return_value=lms),
+        patch("inpui.components.squeezebox.Server", return_value=lms),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done(wait_background_tasks=True)
@@ -435,10 +435,10 @@ async def configure_squeezebox_media_player_button_platform(
     """Configure a squeezebox config entry with appropriate mocks for media_player."""
     with (
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.BUTTON],
         ),
-        patch("homeassistant.components.squeezebox.Server", return_value=lms),
+        patch("inpui.components.squeezebox.Server", return_value=lms),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done(wait_background_tasks=True)
@@ -449,7 +449,7 @@ async def setup_squeezebox(
     hass: HomeAssistant, config_entry: MockConfigEntry, lms: MagicMock
 ) -> MockConfigEntry:
     """Fixture setting up a squeezebox config entry with one player."""
-    with patch("homeassistant.components.squeezebox.Server", return_value=lms):
+    with patch("inpui.components.squeezebox.Server", return_value=lms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
     return config_entry
@@ -475,7 +475,7 @@ async def configured_players(
     """Fixture mocking calls to multiple pysqueezebox Players from a configured squeezebox."""
     lms = lms_factory(3, uuid=SERVER_UUIDS[0])
 
-    with patch("homeassistant.components.squeezebox.Server", return_value=lms):
+    with patch("inpui.components.squeezebox.Server", return_value=lms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 

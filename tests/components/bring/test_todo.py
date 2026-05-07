@@ -28,7 +28,7 @@ from tests.common import MockConfigEntry, async_load_fixture, snapshot_platform
 def todo_only() -> Generator[None]:
     """Enable only the todo platform."""
     with patch(
-        "homeassistant.components.bring.PLATFORMS",
+        "inpui.components.bring.PLATFORMS",
         [Platform.TODO],
     ):
         yield

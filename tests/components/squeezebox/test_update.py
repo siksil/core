@@ -34,11 +34,11 @@ async def test_update_lms(
     # Setup component
     with (
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.UPDATE],
         ),
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=copy.deepcopy(FAKE_QUERY_RESPONSE),
         ),
     ):
@@ -60,11 +60,11 @@ async def test_update_plugins_install_fallback(
     # Setup component
     with (
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.UPDATE],
         ),
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=copy.deepcopy(FAKE_QUERY_RESPONSE),
         ),
     ):
@@ -78,11 +78,11 @@ async def test_update_plugins_install_fallback(
     polltime = 30
     with (
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.squeezebox.update.POLL_AFTER_INSTALL",
+            "inpui.components.squeezebox.update.POLL_AFTER_INSTALL",
             polltime,
         ),
     ):
@@ -101,7 +101,7 @@ async def test_update_plugins_install_fallback(
 
     with (
         patch(
-            "homeassistant.components.squeezebox.Server.async_status",
+            "inpui.components.squeezebox.Server.async_status",
             return_value=copy.deepcopy(FAKE_QUERY_RESPONSE),
         ),
     ):
@@ -129,11 +129,11 @@ async def test_update_plugins_install_restart_fail(
     # Setup component
     with (
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.UPDATE],
         ),
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=copy.deepcopy(FAKE_QUERY_RESPONSE),
         ),
     ):
@@ -142,7 +142,7 @@ async def test_update_plugins_install_restart_fail(
 
     with (
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=True,
         ),
         pytest.raises(HomeAssistantError),
@@ -173,11 +173,11 @@ async def test_update_plugins_install_ok(
     # Setup component
     with (
         patch(
-            "homeassistant.components.squeezebox.PLATFORMS",
+            "inpui.components.squeezebox.PLATFORMS",
             [Platform.UPDATE],
         ),
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=copy.deepcopy(FAKE_QUERY_RESPONSE),
         ),
     ):
@@ -186,7 +186,7 @@ async def test_update_plugins_install_ok(
 
     with (
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=False,
         ),
     ):
@@ -210,11 +210,11 @@ async def test_update_plugins_install_ok(
 
     with (
         patch(
-            "homeassistant.components.squeezebox.Server.async_status",
+            "inpui.components.squeezebox.Server.async_status",
             return_value=resp,
         ),
         patch(
-            "homeassistant.components.squeezebox.Server.async_query",
+            "inpui.components.squeezebox.Server.async_query",
             return_value=copy.deepcopy(FAKE_QUERY_RESPONSE),
         ),
     ):

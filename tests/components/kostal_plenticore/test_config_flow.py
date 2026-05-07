@@ -29,7 +29,7 @@ def mock_apiclient() -> ApiClient:
 def mock_apiclient_class(mock_apiclient) -> Generator[type[ApiClient]]:
     """Return a mocked ApiClient class."""
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient",
+        "inpui.components.kostal_plenticore.config_flow.ApiClient",
         autospec=True,
     ) as mock_api_class:
         mock_api_class.return_value = mock_apiclient
@@ -50,7 +50,7 @@ async def test_form_g1(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.kostal_plenticore.async_setup_entry",
+        "inpui.components.kostal_plenticore.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         # mock of the context manager instance
@@ -116,7 +116,7 @@ async def test_form_g2(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.kostal_plenticore.async_setup_entry",
+        "inpui.components.kostal_plenticore.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         # mock of the context manager instance
@@ -182,7 +182,7 @@ async def test_form_g2_with_service_code(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.kostal_plenticore.async_setup_entry",
+        "inpui.components.kostal_plenticore.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         # mock of the context manager instance
@@ -245,7 +245,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient"
+        "inpui.components.kostal_plenticore.config_flow.ApiClient"
     ) as mock_api_class:
         # mock of the context manager instance
         mock_api_ctx = MagicMock()
@@ -279,7 +279,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient"
+        "inpui.components.kostal_plenticore.config_flow.ApiClient"
     ) as mock_api_class:
         # mock of the context manager instance
         mock_api_ctx = MagicMock()
@@ -313,7 +313,7 @@ async def test_form_unexpected_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient"
+        "inpui.components.kostal_plenticore.config_flow.ApiClient"
     ) as mock_api_class:
         # mock of the context manager instance
         mock_api_ctx = MagicMock()
@@ -401,7 +401,7 @@ async def test_reconfigure(
     )
 
     with patch(
-        "homeassistant.components.kostal_plenticore.async_setup_entry",
+        "inpui.components.kostal_plenticore.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -436,7 +436,7 @@ async def test_reconfigure_invalid_auth(
     result = await mock_config_entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient"
+        "inpui.components.kostal_plenticore.config_flow.ApiClient"
     ) as mock_api_class:
         # mock of the context manager instance
         mock_api_ctx = MagicMock()
@@ -473,7 +473,7 @@ async def test_reconfigure_cannot_connect(
     result = await mock_config_entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient"
+        "inpui.components.kostal_plenticore.config_flow.ApiClient"
     ) as mock_api_class:
         # mock of the context manager instance
         mock_api_ctx = MagicMock()
@@ -508,7 +508,7 @@ async def test_reconfigure_unexpected_error(
     result = await mock_config_entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.kostal_plenticore.config_flow.ApiClient"
+        "inpui.components.kostal_plenticore.config_flow.ApiClient"
     ) as mock_api_class:
         # mock of the context manager instance
         mock_api_ctx = MagicMock()

@@ -24,7 +24,7 @@ async def test_sensors(
 ) -> None:
     """Test the Immich sensor platform."""
 
-    with patch("homeassistant.components.immich.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.immich.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

@@ -30,7 +30,7 @@ async def test_user_flow_create_entry(
     assert result.get("step_id") == "user"
 
     with patch(
-        "homeassistant.components.soundtouch.async_setup_entry", return_value=True
+        "inpui.components.soundtouch.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -97,7 +97,7 @@ async def test_zeroconf_flow_create_entry(
     assert result.get("description_placeholders") == {"name": DEVICE_1_NAME}
 
     with patch(
-        "homeassistant.components.soundtouch.async_setup_entry", return_value=True
+        "inpui.components.soundtouch.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}

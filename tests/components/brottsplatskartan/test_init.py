@@ -24,7 +24,7 @@ async def test_load_unload_entry(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.brottsplatskartan.sensor.BrottsplatsKartan",
+        "inpui.components.brottsplatskartan.sensor.BrottsplatsKartan",
     ):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()

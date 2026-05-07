@@ -209,11 +209,11 @@ def mock_client(mock_device_info) -> Generator[APIClient]:
 
     with (
         patch(
-            "homeassistant.components.esphome.manager.ReconnectLogic",
+            "inpui.components.esphome.manager.ReconnectLogic",
             BaseMockReconnectLogic,
         ),
-        patch("homeassistant.components.esphome.APIClient", mock_client),
-        patch("homeassistant.components.esphome.config_flow.APIClient", mock_client),
+        patch("inpui.components.esphome.APIClient", mock_client),
+        patch("inpui.components.esphome.config_flow.APIClient", mock_client),
     ):
         yield mock_client
 
@@ -573,7 +573,7 @@ async def _mock_generic_device_entry(
             self._is_stopped = True
 
     with patch(
-        "homeassistant.components.esphome.manager.ReconnectLogic", MockReconnectLogic
+        "inpui.components.esphome.manager.ReconnectLogic", MockReconnectLogic
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
         async with asyncio.timeout(2):

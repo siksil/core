@@ -30,7 +30,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.pvoutput.async_setup_entry", return_value=True
+        "inpui.components.pvoutput.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -40,10 +40,10 @@ def mock_pvoutput() -> Generator[MagicMock]:
     """Return a mocked PVOutput client."""
     with (
         patch(
-            "homeassistant.components.pvoutput.coordinator.PVOutput", autospec=True
+            "inpui.components.pvoutput.coordinator.PVOutput", autospec=True
         ) as pvoutput_mock,
         patch(
-            "homeassistant.components.pvoutput.config_flow.PVOutput", new=pvoutput_mock
+            "inpui.components.pvoutput.config_flow.PVOutput", new=pvoutput_mock
         ),
     ):
         pvoutput = pvoutput_mock.return_value

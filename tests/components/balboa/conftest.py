@@ -26,7 +26,7 @@ async def integration_fixture(hass: HomeAssistant) -> MockConfigEntry:
 def client_fixture() -> Generator[MagicMock]:
     """Mock balboa spa client."""
     with patch(
-        "homeassistant.components.balboa.SpaClient", autospec=True
+        "inpui.components.balboa.SpaClient", autospec=True
     ) as mock_balboa:
         client = mock_balboa.return_value
         callback: list[Callable] = []

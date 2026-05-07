@@ -167,7 +167,7 @@ async def test_connectivity_bad(
     """Test a timeout error on the setup flow."""
 
     with patch(
-        "homeassistant.components.intellifire.UnifiedFireplace.build_fireplace_from_common",
+        "inpui.components.intellifire.UnifiedFireplace.build_fireplace_from_common",
         new_callable=AsyncMock,
         side_effect=TimeoutError,
     ):
@@ -357,7 +357,7 @@ async def test_coordinator_performs_poll(
     _mock_local, _mock_cloud, mock_fp = mock_apis_single_fp
 
     with patch(
-        "homeassistant.components.intellifire.UnifiedFireplace.build_fireplace_from_common",
+        "inpui.components.intellifire.UnifiedFireplace.build_fireplace_from_common",
         new_callable=AsyncMock,
         return_value=mock_fp,
     ) as mock_build:

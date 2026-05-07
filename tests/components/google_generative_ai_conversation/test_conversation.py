@@ -43,7 +43,7 @@ def freeze_the_time():
 @pytest.fixture(autouse=True)
 def mock_ulid_tools():
     """Mock generated ULIDs for tool calls."""
-    with patch("homeassistant.helpers.llm.ulid_now", return_value="mock-tool-call"):
+    with patch("inpui.helpers.llm.ulid_now", return_value="mock-tool-call"):
         yield
 
 

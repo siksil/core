@@ -45,7 +45,7 @@ async def test_api_create_ok(
 
 
 @patch(
-    "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.valid_token", False
+    "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.valid_token", False
 )
 async def test_api_getaccesstoken_tokennotvalid_reloadtoken(
     hass: HomeAssistant,

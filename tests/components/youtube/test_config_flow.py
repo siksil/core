@@ -57,10 +57,10 @@ async def test_full_flow(
 
     with (
         patch(
-            "homeassistant.components.youtube.async_setup_entry", return_value=True
+            "inpui.components.youtube.async_setup_entry", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.youtube.config_flow.YouTube",
+            "inpui.components.youtube.config_flow.YouTube",
             return_value=MockYouTube(hass),
         ),
     ):
@@ -116,9 +116,9 @@ async def test_flow_abort_without_channel(
 
     service = MockYouTube(hass, channel_fixture="get_no_channel.json")
     with (
-        patch("homeassistant.components.youtube.async_setup_entry", return_value=True),
+        patch("inpui.components.youtube.async_setup_entry", return_value=True),
         patch(
-            "homeassistant.components.youtube.config_flow.YouTube", return_value=service
+            "inpui.components.youtube.config_flow.YouTube", return_value=service
         ),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -161,9 +161,9 @@ async def test_flow_abort_without_subscriptions(
         subscriptions_fixture="get_no_subscriptions.json",
     )
     with (
-        patch("homeassistant.components.youtube.async_setup_entry", return_value=True),
+        patch("inpui.components.youtube.async_setup_entry", return_value=True),
         patch(
-            "homeassistant.components.youtube.config_flow.YouTube", return_value=service
+            "inpui.components.youtube.config_flow.YouTube", return_value=service
         ),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -202,9 +202,9 @@ async def test_flow_without_subscriptions(
 
     service = MockYouTube(hass, subscriptions_fixture="get_no_subscriptions.json")
     with (
-        patch("homeassistant.components.youtube.async_setup_entry", return_value=True),
+        patch("inpui.components.youtube.async_setup_entry", return_value=True),
         patch(
-            "homeassistant.components.youtube.config_flow.YouTube", return_value=service
+            "inpui.components.youtube.config_flow.YouTube", return_value=service
         ),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -264,7 +264,7 @@ async def test_flow_http_error(
     assert resp.headers["content-type"] == "text/html; charset=utf-8"
 
     with patch(
-        "homeassistant.components.youtube.config_flow.YouTube.get_user_channels",
+        "inpui.components.youtube.config_flow.YouTube.get_user_channels",
         side_effect=ForbiddenError(
             "YouTube Data API v3 has not been used in project 0 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=0 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
         ),
@@ -356,10 +356,10 @@ async def test_reauth(
     youtube = MockYouTube(hass, channel_fixture=f"{fixture}.json")
     with (
         patch(
-            "homeassistant.components.youtube.async_setup_entry", return_value=True
+            "inpui.components.youtube.async_setup_entry", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.youtube.config_flow.YouTube",
+            "inpui.components.youtube.config_flow.YouTube",
             return_value=youtube,
         ),
     ):
@@ -409,7 +409,7 @@ async def test_flow_exception(
     assert resp.headers["content-type"] == "text/html; charset=utf-8"
 
     with patch(
-        "homeassistant.components.youtube.config_flow.YouTube", side_effect=Exception
+        "inpui.components.youtube.config_flow.YouTube", side_effect=Exception
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
         assert result["type"] is FlowResultType.ABORT
@@ -422,7 +422,7 @@ async def test_options_flow(
     """Test the full options flow."""
     await setup_integration()
     with patch(
-        "homeassistant.components.youtube.config_flow.YouTube",
+        "inpui.components.youtube.config_flow.YouTube",
         return_value=MockYouTube(hass),
     ):
         entry = hass.config_entries.async_entries(DOMAIN)[0]
@@ -473,10 +473,10 @@ async def test_own_channel_included(
 
     with (
         patch(
-            "homeassistant.components.youtube.async_setup_entry", return_value=True
+            "inpui.components.youtube.async_setup_entry", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.youtube.config_flow.YouTube",
+            "inpui.components.youtube.config_flow.YouTube",
             return_value=MockYouTube(hass),
         ),
     ):
@@ -522,7 +522,7 @@ async def test_options_flow_own_channel(
     """Test the options flow includes the user's own channel."""
     await setup_integration()
     with patch(
-        "homeassistant.components.youtube.config_flow.YouTube",
+        "inpui.components.youtube.config_flow.YouTube",
         return_value=MockYouTube(hass),
     ):
         entry = hass.config_entries.async_entries(DOMAIN)[0]

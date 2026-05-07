@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry
 async def test_user_step_success(hass: HomeAssistant) -> None:
     """Test user step success path."""
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_discovered_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_discovered_service_info",
         return_value=[NOT_DKEY_DISCOVERY_INFO, DKEY_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -48,7 +48,7 @@ async def test_user_step_success(hass: HomeAssistant) -> None:
 async def test_user_step_no_devices_found(hass: HomeAssistant) -> None:
     """Test user step with no devices found."""
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_discovered_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_discovered_service_info",
         return_value=[NOT_DKEY_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -69,7 +69,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_discovered_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_discovered_service_info",
         return_value=[DKEY_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -82,7 +82,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
 async def test_user_step_device_added_between_steps_1(hass: HomeAssistant) -> None:
     """Test the device gets added via another flow between steps."""
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_discovered_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_discovered_service_info",
         return_value=[DKEY_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -119,7 +119,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
     assert result["step_id"] == "bluetooth_confirm"
 
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_discovered_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_discovered_service_info",
         return_value=[DKEY_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -155,7 +155,7 @@ async def test_user_setup_removes_ignored_entry(hass: HomeAssistant) -> None:
     assert hass.config_entries.async_entries(DOMAIN) == [ignored_entry]
 
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_discovered_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_discovered_service_info",
         return_value=[NOT_DKEY_DISCOVERY_INFO, DKEY_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -205,11 +205,11 @@ async def _test_common_success(hass: HomeAssistant, result: FlowResult) -> None:
 
     with (
         patch(
-            "homeassistant.components.dormakaba_dkey.config_flow.DKEYLock.associate",
+            "inpui.components.dormakaba_dkey.config_flow.DKEYLock.associate",
             return_value=AssociationData(b"1234", b"AABBCCDD"),
         ) as mock_associate,
         patch(
-            "homeassistant.components.dormakaba_dkey.async_setup_entry",
+            "inpui.components.dormakaba_dkey.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -290,7 +290,7 @@ async def test_bluetooth_step_cannot_connect(hass: HomeAssistant, exc, error) ->
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.DKEYLock.associate",
+        "inpui.components.dormakaba_dkey.config_flow.DKEYLock.associate",
         side_effect=exc,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -329,7 +329,7 @@ async def test_bluetooth_step_cannot_associate(hass: HomeAssistant, exc, error) 
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.DKEYLock.associate",
+        "inpui.components.dormakaba_dkey.config_flow.DKEYLock.associate",
         side_effect=exc,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -353,7 +353,7 @@ async def test_reauth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_last_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_last_service_info",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -367,7 +367,7 @@ async def test_reauth(hass: HomeAssistant) -> None:
     assert result["errors"] == {"base": "no_longer_in_range"}
 
     with patch(
-        "homeassistant.components.dormakaba_dkey.config_flow.async_last_service_info",
+        "inpui.components.dormakaba_dkey.config_flow.async_last_service_info",
         return_value=DKEY_DISCOVERY_INFO,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -382,11 +382,11 @@ async def test_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.dormakaba_dkey.config_flow.DKEYLock.associate",
+            "inpui.components.dormakaba_dkey.config_flow.DKEYLock.associate",
             return_value=AssociationData(b"1234", b"AABBCCDD"),
         ) as mock_associate,
         patch(
-            "homeassistant.components.dormakaba_dkey.async_setup_entry",
+            "inpui.components.dormakaba_dkey.async_setup_entry",
             return_value=True,
         ),
     ):

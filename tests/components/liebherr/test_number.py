@@ -93,7 +93,7 @@ async def test_single_zone_number(
     )
 
     mock_config_entry.add_to_hass(hass)
-    with patch("homeassistant.components.liebherr.PLATFORMS", platforms):
+    with patch("inpui.components.liebherr.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -220,7 +220,7 @@ async def test_number_with_none_min_max(
     )
 
     mock_config_entry.add_to_hass(hass)
-    with patch("homeassistant.components.liebherr.PLATFORMS", platforms):
+    with patch("inpui.components.liebherr.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

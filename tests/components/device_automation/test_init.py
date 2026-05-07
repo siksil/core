@@ -713,7 +713,7 @@ async def test_async_get_device_automations_all_devices_action_exception_throw(
         "light", "test", "5678", device_id=device_entry.id
     )
     with patch(
-        "homeassistant.components.light.device_trigger.async_get_triggers",
+        "inpui.components.light.device_trigger.async_get_triggers",
         side_effect=KeyError,
     ):
         result = await device_automation.async_get_device_automations(
@@ -1291,7 +1291,7 @@ BAD_TRIGGERS = BAD_CONDITIONS = [
 ]
 
 
-@patch("homeassistant.helpers.device_registry.DeviceEntry", MockDeviceEntry)
+@patch("inpui.helpers.device_registry.DeviceEntry", MockDeviceEntry)
 @pytest.mark.parametrize(("action", "expected_error"), BAD_AUTOMATIONS)
 async def test_automation_with_bad_action(
     hass: HomeAssistant,
@@ -1325,7 +1325,7 @@ async def test_automation_with_bad_action(
     assert expected_error.format(path="['actions'][0]") in caplog.text
 
 
-@patch("homeassistant.helpers.device_registry.DeviceEntry", MockDeviceEntry)
+@patch("inpui.helpers.device_registry.DeviceEntry", MockDeviceEntry)
 @pytest.mark.parametrize(("condition", "expected_error"), BAD_CONDITIONS)
 async def test_automation_with_bad_condition_action(
     hass: HomeAssistant,
@@ -1359,7 +1359,7 @@ async def test_automation_with_bad_condition_action(
     assert expected_error.format(path="['actions'][0]") in caplog.text
 
 
-@patch("homeassistant.helpers.device_registry.DeviceEntry", MockDeviceEntry)
+@patch("inpui.helpers.device_registry.DeviceEntry", MockDeviceEntry)
 @pytest.mark.parametrize(("condition", "expected_error"), BAD_CONDITIONS)
 async def test_automation_with_bad_condition(
     hass: HomeAssistant,
@@ -1522,7 +1522,7 @@ async def test_automation_with_sub_condition(
     )
 
 
-@patch("homeassistant.helpers.device_registry.DeviceEntry", MockDeviceEntry)
+@patch("inpui.helpers.device_registry.DeviceEntry", MockDeviceEntry)
 @pytest.mark.parametrize(("condition", "expected_error"), BAD_CONDITIONS)
 async def test_automation_with_bad_sub_condition(
     hass: HomeAssistant,
@@ -1560,7 +1560,7 @@ async def test_automation_with_bad_sub_condition(
     assert expected_error.format(path=path) in caplog.text
 
 
-@patch("homeassistant.helpers.device_registry.DeviceEntry", MockDeviceEntry)
+@patch("inpui.helpers.device_registry.DeviceEntry", MockDeviceEntry)
 @pytest.mark.parametrize(("trigger", "expected_error"), BAD_TRIGGERS)
 async def test_automation_with_bad_trigger(
     hass: HomeAssistant,
@@ -1736,7 +1736,7 @@ async def test_async_get_device_automations_platform_reraises_exceptions(
     await async_setup_component(hass, "device_automation", {})
     with (
         patch(
-            "homeassistant.components.device_automation.async_get_integration_with_requirements",
+            "inpui.components.device_automation.async_get_integration_with_requirements",
             side_effect=exc,
         ),
         pytest.raises(InvalidDeviceAutomationConfig),

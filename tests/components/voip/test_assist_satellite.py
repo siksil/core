@@ -40,10 +40,10 @@ async def test_timer_events(
 
     with (
         patch(
-            "homeassistant.components.voip.assist_satellite.VoipAssistSatellite._resolve_announcement_media_id",
+            "inpui.components.voip.assist_satellite.VoipAssistSatellite._resolve_announcement_media_id",
         ) as mock_resolve,
         patch(
-            "homeassistant.components.voip.assist_satellite.VoipAssistSatellite.async_announce",
+            "inpui.components.voip.assist_satellite.VoipAssistSatellite.async_announce",
         ) as mock_announce,
     ):
         await intent_helper.async_handle(

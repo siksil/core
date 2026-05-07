@@ -78,7 +78,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.point.async_setup_entry", return_value=True
+        "inpui.components.point.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -147,9 +147,9 @@ async def test_reauthentication_flow(
     )
 
     with (
-        patch("homeassistant.components.point.api.AsyncConfigEntryAuth"),
+        patch("inpui.components.point.api.AsyncConfigEntryAuth"),
         patch(
-            f"homeassistant.components.{DOMAIN}.async_setup_entry", return_value=True
+            f"inpui.components.{DOMAIN}.async_setup_entry", return_value=True
         ),
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])

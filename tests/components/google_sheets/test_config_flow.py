@@ -45,7 +45,7 @@ async def setup_credentials(hass: HomeAssistant) -> None:
 async def mock_client() -> Generator[Mock]:
     """Fixture to setup a fake spreadsheet client library."""
     with patch(
-        "homeassistant.components.google_sheets.config_flow.Client"
+        "inpui.components.google_sheets.config_flow.Client"
     ) as mock_client:
         yield mock_client
 
@@ -98,7 +98,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.google_sheets.async_setup_entry", return_value=True
+        "inpui.components.google_sheets.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -233,7 +233,7 @@ async def test_reauth(
     )
 
     with patch(
-        "homeassistant.components.google_sheets.async_setup_entry", return_value=True
+        "inpui.components.google_sheets.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
         await hass.async_block_till_done()

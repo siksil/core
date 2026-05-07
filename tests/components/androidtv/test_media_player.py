@@ -832,7 +832,7 @@ async def test_get_image_http(
         patchers.patch_shell("11")[patch_key],
         patchers.PATCH_SCREENCAP as patch_screen_cap,
         patch(
-            "homeassistant.components.androidtv.media_player.utcnow",
+            "inpui.components.androidtv.media_player.utcnow",
             return_value=next_update,
         ),
     ):
@@ -845,7 +845,7 @@ async def test_get_image_http(
         patchers.patch_shell("11")[patch_key],
         patchers.PATCH_SCREENCAP as patch_screen_cap,
         patch(
-            "homeassistant.components.androidtv.media_player.utcnow",
+            "inpui.components.androidtv.media_player.utcnow",
             return_value=next_update,
         ),
     ):

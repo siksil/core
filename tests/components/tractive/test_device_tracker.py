@@ -23,7 +23,7 @@ async def test_device_tracker(
 ) -> None:
     """Test states of the device_tracker."""
     with patch(
-        "homeassistant.components.tractive.PLATFORMS", [Platform.DEVICE_TRACKER]
+        "inpui.components.tractive.PLATFORMS", [Platform.DEVICE_TRACKER]
     ):
         await init_integration(hass, mock_config_entry)
 
@@ -98,7 +98,7 @@ async def test_device_tracker_with_empty_hw_info(
     mock_tractive_client.tracker.return_value.hw_info = AsyncMock(return_value={})
 
     with patch(
-        "homeassistant.components.tractive.PLATFORMS", [Platform.DEVICE_TRACKER]
+        "inpui.components.tractive.PLATFORMS", [Platform.DEVICE_TRACKER]
     ):
         await init_integration(hass, mock_config_entry)
 

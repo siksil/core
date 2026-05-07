@@ -419,17 +419,17 @@ def test_service() -> None:
     with pytest.raises(vol.MultipleInvalid):
         schema("invalid_turn_on")
 
-    schema("homeassistant.turn_on")
+    schema("inpui.turn_on")
 
 
 @pytest.mark.parametrize(
     "config",
     [
-        {"service": "homeassistant.turn_on"},
-        {"service": "homeassistant.turn_on", "entity_id": "light.kitchen"},
+        {"service": "inpui.turn_on"},
+        {"service": "inpui.turn_on", "entity_id": "light.kitchen"},
         {"service": "light.turn_on", "entity_id": "all"},
         {
-            "service": "homeassistant.turn_on",
+            "service": "inpui.turn_on",
             "entity_id": ["light.kitchen", "light.ceiling"],
         },
         {
@@ -438,11 +438,11 @@ def test_service() -> None:
             "alias": "turn on kitchen lights",
         },
         {"service": "scene.turn_on", "metadata": {}},
-        {"action": "homeassistant.turn_on"},
-        {"action": "homeassistant.turn_on", "entity_id": "light.kitchen"},
+        {"action": "inpui.turn_on"},
+        {"action": "inpui.turn_on", "entity_id": "light.kitchen"},
         {"action": "light.turn_on", "entity_id": "all"},
         {
-            "action": "homeassistant.turn_on",
+            "action": "inpui.turn_on",
             "entity_id": ["light.kitchen", "light.ceiling"],
         },
         {
@@ -473,25 +473,25 @@ def test_service_schema(hass: HomeAssistant, config: dict[str, Any]) -> None:
         None,
         {"data": {"entity_id": "light.kitchen"}},
         {
-            "service": "homeassistant.turn_on",
-            "service_template": "homeassistant.turn_on",
+            "service": "inpui.turn_on",
+            "service_template": "inpui.turn_on",
         },
-        {"service": "homeassistant.turn_on", "data": None},
+        {"service": "inpui.turn_on", "data": None},
         {
-            "service": "homeassistant.turn_on",
+            "service": "inpui.turn_on",
             "data_template": {"brightness": "{{ no_end"},
         },
         {
-            "service": "homeassistant.turn_on",
-            "action": "homeassistant.turn_on",
+            "service": "inpui.turn_on",
+            "action": "inpui.turn_on",
         },
         {
-            "action": "homeassistant.turn_on",
-            "service_template": "homeassistant.turn_on",
+            "action": "inpui.turn_on",
+            "service_template": "inpui.turn_on",
         },
-        {"action": "homeassistant.turn_on", "data": None},
+        {"action": "inpui.turn_on", "data": None},
         {
-            "action": "homeassistant.turn_on",
+            "action": "inpui.turn_on",
             "data_template": {"brightness": "{{ no_end"},
         },
     ],
@@ -943,7 +943,7 @@ def test_deprecated_with_no_optionals(caplog: pytest.LogCaptureFixture, schema) 
     assert len(caplog.records) == 1
     assert caplog.records[0].name in [
         __name__,
-        "homeassistant.helpers.config_validation",
+        "inpui.helpers.config_validation",
     ]
     assert (
         "The 'mars' option is deprecated, please remove it from your configuration"
@@ -1051,7 +1051,7 @@ def test_deprecated_with_default(caplog: pytest.LogCaptureFixture, schema) -> No
 
     test_data = {"mars": True}
     with patch(
-        "homeassistant.helpers.config_validation.get_integration_logger",
+        "inpui.helpers.config_validation.get_integration_logger",
         return_value=logging.getLogger(__name__),
     ):
         output = deprecated_schema(test_data.copy())
@@ -1711,7 +1711,7 @@ def test_config_entry_only_schema_no_hass(
 ) -> None:
     """Test if the hass context is not set in our context."""
     with patch(
-        "homeassistant.helpers.config_validation.async_get_hass",
+        "inpui.helpers.config_validation.async_get_hass",
         side_effect=HomeAssistantError,
     ):
         cv.config_entry_only_config_schema("test_domain")(
@@ -1821,7 +1821,7 @@ async def test_async_validate(hass: HomeAssistant, tmpdir: py.path.local) -> Non
         calls.append(threading.get_ident())
         return real_func(*args)
 
-    CV_PREFIX = "homeassistant.helpers.config_validation"
+    CV_PREFIX = "inpui.helpers.config_validation"
     with (
         patch(f"{CV_PREFIX}.isdir", wraps=partial(_mock_validator_schema, cv.isdir)),
         patch(f"{CV_PREFIX}.string", wraps=partial(_mock_validator_schema, cv.string)),

@@ -48,7 +48,7 @@ async def test_locks(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test tedee locks."""
-    with patch("homeassistant.components.tedee.PLATFORMS", [Platform.LOCK]):
+    with patch("inpui.components.tedee.PLATFORMS", [Platform.LOCK]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

@@ -24,7 +24,7 @@ async def test_all_binary_sensors(
 ) -> None:
     """Test all binary sensors."""
     with patch(
-        "homeassistant.components.garages_amsterdam.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.garages_amsterdam.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

@@ -487,7 +487,7 @@ async def test_read_time_segments_api_error(
     # Mock API error by making coordinator.read_time_segments raise an exception
     with (
         patch(
-            "homeassistant.components.growatt_server.coordinator.GrowattCoordinator.read_time_segments",
+            "inpui.components.growatt_server.coordinator.GrowattCoordinator.read_time_segments",
             side_effect=HomeAssistantError(
                 translation_domain=DOMAIN,
                 translation_key="api_error",

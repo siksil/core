@@ -100,17 +100,17 @@ def mock_pymodbus_fixture(do_exception, register_words):
         mock_pb.write_coils.side_effect = exc
     with (
         mock.patch(
-            "homeassistant.components.modbus.modbus.AsyncModbusTcpClient",
+            "inpui.components.modbus.modbus.AsyncModbusTcpClient",
             return_value=mock_pb,
             autospec=True,
         ),
         mock.patch(
-            "homeassistant.components.modbus.modbus.AsyncModbusSerialClient",
+            "inpui.components.modbus.modbus.AsyncModbusSerialClient",
             return_value=mock_pb,
             autospec=True,
         ),
         mock.patch(
-            "homeassistant.components.modbus.modbus.AsyncModbusUdpClient",
+            "inpui.components.modbus.modbus.AsyncModbusUdpClient",
             return_value=mock_pb,
             autospec=True,
         ),
@@ -153,7 +153,7 @@ async def mock_modbus_fixture(
     }
     now = dt_util.utcnow()
     with mock.patch(
-        "homeassistant.helpers.event.dt_util.utcnow",
+        "inpui.helpers.event.dt_util.utcnow",
         return_value=now,
         autospec=True,
     ):
@@ -199,7 +199,7 @@ async def mock_modbus_to_test_errors_config_fixture(
     }
     now = dt_util.utcnow()
     with mock.patch(
-        "homeassistant.helpers.event.dt_util.utcnow",
+        "inpui.helpers.event.dt_util.utcnow",
         return_value=now,
         autospec=True,
     ):

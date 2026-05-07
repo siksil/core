@@ -116,7 +116,7 @@ async def test_unload_does_not_disconnect_if_platform_unload_fails(
 
     # Mock platform unload to fail
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload_platforms",
+        "inpui.config_entries.ConfigEntries.async_unload_platforms",
         return_value=False,
     ):
         result = await hass.config_entries.async_unload(mock_config_entry.entry_id)

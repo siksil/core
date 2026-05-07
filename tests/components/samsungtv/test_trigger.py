@@ -66,14 +66,14 @@ async def test_turn_on_trigger_device_id(
     assert service_calls[1].data["some"] == device.id
     assert service_calls[1].data["id"] == 0
 
-    with patch("homeassistant.config.load_yaml_dict", return_value={}):
+    with patch("inpui.config.load_yaml_dict", return_value={}):
         await hass.services.async_call(automation.DOMAIN, SERVICE_RELOAD, blocking=True)
 
     service_calls.clear()
 
     # Ensure WOL backup is called when trigger not present
     with patch(
-        "homeassistant.components.samsungtv.entity.send_magic_packet"
+        "inpui.components.samsungtv.entity.send_magic_packet"
     ) as mock_send_magic_packet:
         await hass.services.async_call(
             entity_domain, SERVICE_TURN_ON, {"entity_id": entity_id}, blocking=True

@@ -262,7 +262,7 @@ async def test_async_add_hass_job_schedule_corofunction_eager_start() -> None:
 
     with (
         patch(
-            "homeassistant.core.create_eager_task", wraps=create_eager_task
+            "inpui.core.create_eager_task", wraps=create_eager_task
         ) as mock_create_eager_task,
         patch.object(loop, "call_soon") as mock_loop_call_soon,
     ):
@@ -285,7 +285,7 @@ async def test_async_add_hass_job_schedule_partial_corofunction_eager_start() ->
 
     with (
         patch(
-            "homeassistant.core.create_eager_task", wraps=create_eager_task
+            "inpui.core.create_eager_task", wraps=create_eager_task
         ) as mock_create_eager_task,
         patch.object(loop, "call_soon") as mock_loop_call_soon,
     ):
@@ -729,7 +729,7 @@ async def test_shutdown_calls_block_till_done_after_shutdown_run_callback_thread
     with (
         patch.object(hass, "async_block_till_done", _record_block_till_done),
         patch(
-            "homeassistant.core.shutdown_run_callback_threadsafe",
+            "inpui.core.shutdown_run_callback_threadsafe",
             _record_shutdown_run_callback_threadsafe,
         ),
     ):
@@ -1460,7 +1460,7 @@ async def test_statemachine_async_set_internal_invalid_state(
     )
     assert hass.states.get("light.bowl").state == STATE_UNKNOWN
     assert (
-        "homeassistant.core",
+        "inpui.core",
         logging.ERROR,
         f"State {long_state} for light.bowl is longer than 255, "
         f"falling back to {STATE_UNKNOWN}",
@@ -2773,21 +2773,21 @@ async def test_state_changed_events_to_not_leak_contexts(hass: HomeAssistant) ->
     gc.collect()
     # Other tests can log Contexts which keep them in memory
     # so we need to look at how many exist at the start
-    init_count = len(_get_by_type("homeassistant.core.Context"))
+    init_count = len(_get_by_type("inpui.core.Context"))
 
-    assert len(_get_by_type("homeassistant.core.Context")) == init_count
+    assert len(_get_by_type("inpui.core.Context")) == init_count
     for i in range(20):
         hass.states.async_set("light.switch", str(i))
     await hass.async_block_till_done()
     gc.collect()
 
-    assert len(_get_by_type("homeassistant.core.Context")) == init_count + 2
+    assert len(_get_by_type("inpui.core.Context")) == init_count + 2
 
     hass.states.async_remove("light.switch")
     await hass.async_block_till_done()
     gc.collect()
 
-    assert len(_get_by_type("homeassistant.core.Context")) == init_count
+    assert len(_get_by_type("inpui.core.Context")) == init_count
 
 
 @pytest.mark.parametrize("eager_start", [True, False])
@@ -2905,7 +2905,7 @@ async def test_get_release_channel(
     version: str, release_channel: ReleaseChannel
 ) -> None:
     """Test if release channel detection works from Home Assistant version number."""
-    with patch("homeassistant.core.__version__", f"{version}"):
+    with patch("inpui.core.__version__", f"{version}"):
         assert get_release_channel() == release_channel
 
 
@@ -3091,7 +3091,7 @@ async def test_eventbus_lazy_object_creation(hass: HomeAssistant) -> None:
     unsub = hass.bus.async_listen("test_1", listener, event_filter=mock_filter)
 
     # Test lazy creation of Event objects
-    with patch("homeassistant.core.Event") as mock_event:
+    with patch("inpui.core.Event") as mock_event:
         # Fire an event which is filtered out by its listener
         hass.bus.async_fire("test_1", {"filtered": True})
         await hass.async_block_till_done()
@@ -3112,7 +3112,7 @@ async def test_eventbus_lazy_object_creation(hass: HomeAssistant) -> None:
 
     calls = []
     # Test lazy creation of Context objects
-    with patch("homeassistant.core.Context") as mock_context:
+    with patch("inpui.core.Context") as mock_context:
         # Fire an event which is filtered out by its listener
         hass.bus.async_fire("test_1", {"filtered": True})
         await hass.async_block_till_done()

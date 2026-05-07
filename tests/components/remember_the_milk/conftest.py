@@ -16,9 +16,9 @@ def client_fixture() -> Generator[MagicMock]:
     client = MagicMock()
     with (
         patch(
-            "homeassistant.components.remember_the_milk.entity.Rtm"
+            "inpui.components.remember_the_milk.entity.Rtm"
         ) as entity_client_class,
-        patch("homeassistant.components.remember_the_milk.Rtm") as client_class,
+        patch("inpui.components.remember_the_milk.Rtm") as client_class,
     ):
         entity_client_class.return_value = client
         client_class.return_value = client
@@ -40,7 +40,7 @@ def client_fixture() -> Generator[MagicMock]:
 async def storage(hass: HomeAssistant, client) -> AsyncGenerator[MagicMock]:
     """Mock the config storage."""
     with patch(
-        "homeassistant.components.remember_the_milk.RememberTheMilkConfiguration"
+        "inpui.components.remember_the_milk.RememberTheMilkConfiguration"
     ) as storage_class:
         storage = storage_class.return_value
         storage.get_token.return_value = TOKEN

@@ -106,10 +106,10 @@ async def mock_habiticalib(hass: HomeAssistant) -> AsyncGenerator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.habitica.Habitica", autospec=True
+            "inpui.components.habitica.Habitica", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.habitica.config_flow.Habitica", new=mock_client
+            "inpui.components.habitica.config_flow.Habitica", new=mock_client
         ),
     ):
         client = mock_client.return_value
@@ -191,7 +191,7 @@ async def mock_habiticalib(hass: HomeAssistant) -> AsyncGenerator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.habitica.async_setup_entry", return_value=True
+        "inpui.components.habitica.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -200,7 +200,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_uuid4() -> Generator[MagicMock]:
     """Mock uuid4."""
     with patch(
-        "homeassistant.components.habitica.services.uuid4", autospec=True
+        "inpui.components.habitica.services.uuid4", autospec=True
     ) as mock_uuid4:
         mock_uuid4.return_value = UUID("12345678-1234-5678-1234-567812345678")
         yield mock_uuid4

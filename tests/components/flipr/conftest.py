@@ -48,7 +48,7 @@ MOCK_HUB_MODE_MANUAL = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.flipr.async_setup_entry", return_value=True
+        "inpui.components.flipr.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -73,11 +73,11 @@ def mock_flipr_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.flipr.FliprAPIRestClient",
+            "inpui.components.flipr.FliprAPIRestClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.flipr.config_flow.FliprAPIRestClient",
+            "inpui.components.flipr.config_flow.FliprAPIRestClient",
             new=mock_client,
         ),
     ):

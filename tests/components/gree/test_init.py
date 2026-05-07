@@ -17,11 +17,11 @@ async def test_setup_simple(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.gree.climate.async_setup_entry",
+            "inpui.components.gree.climate.async_setup_entry",
             return_value=True,
         ) as climate_setup,
         patch(
-            "homeassistant.components.gree.switch.async_setup_entry",
+            "inpui.components.gree.switch.async_setup_entry",
             return_value=True,
         ) as switch_setup,
     ):

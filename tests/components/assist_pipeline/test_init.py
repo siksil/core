@@ -37,7 +37,7 @@ from tests.typing import WebSocketGenerator
 def mock_chat_session_id() -> Generator[Mock]:
     """Mock the conversation ID of chat sessions."""
     with patch(
-        "homeassistant.helpers.chat_session.ulid_now", return_value="mock-ulid"
+        "inpui.helpers.chat_session.ulid_now", return_value="mock-ulid"
     ) as mock_ulid_now:
         yield mock_ulid_now
 
@@ -68,7 +68,7 @@ async def test_pipeline_from_audio_stream_auto(
         yield b""
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await assist_pipeline.async_pipeline_from_audio_stream(
             hass,
@@ -134,7 +134,7 @@ async def test_pipeline_from_audio_stream_legacy(
     pipeline_id = msg["result"]["id"]
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         # Use the created pipeline
         await assist_pipeline.async_pipeline_from_audio_stream(
@@ -202,7 +202,7 @@ async def test_pipeline_from_audio_stream_entity(
     pipeline_id = msg["result"]["id"]
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         # Use the created pipeline
         await assist_pipeline.async_pipeline_from_audio_stream(
@@ -415,7 +415,7 @@ async def test_pipeline_from_audio_stream_wake_word(
         yield b""
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await assist_pipeline.async_pipeline_from_audio_stream(
             hass,
@@ -680,7 +680,7 @@ async def test_pipeline_saved_audio_empty_queue(
             )
 
         with patch(
-            "homeassistant.components.assist_pipeline.pipeline._pipeline_debug_recording_thread_proc",
+            "inpui.components.assist_pipeline.pipeline._pipeline_debug_recording_thread_proc",
             proc_wrapper,
         ):
             await assist_pipeline.async_pipeline_from_audio_stream(

@@ -12,7 +12,7 @@ from tests.common import MockConfigEntry
 
 
 @patch(
-    "homeassistant.components.ipp.coordinator.IPP._request",
+    "inpui.components.ipp.coordinator.IPP._request",
     side_effect=IPPConnectionError,
 )
 async def test_config_entry_not_ready(

@@ -219,7 +219,7 @@ async def test_entity_migration_data(
     # This patch simulates bad data being added to ENTITY_MIGRATIONS
     with (
         patch.dict(
-            "homeassistant.components.screenlogic.data.ENTITY_MIGRATIONS",
+            "inpui.components.screenlogic.data.ENTITY_MIGRATIONS",
             {
                 "missing_device": {
                     "new_key": "state",

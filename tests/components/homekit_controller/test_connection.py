@@ -655,7 +655,7 @@ async def test_async_setup_handles_unparsable_response(
     pairing = fake_controller.pairings["00:00:00:00:00:00"]
 
     with (
-        caplog.at_level("DEBUG", logger="homeassistant.components.homekit_controller"),
+        caplog.at_level("DEBUG", logger="inpui.components.homekit_controller"),
         mock.patch.object(pairing, "get_characteristics", mock_get_characteristics),
     ):
         # Set up the config entry - this will trigger async_setup

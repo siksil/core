@@ -23,7 +23,7 @@ async def test_setup_entry_fails(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.axis.get_axis_api",
+        "inpui.components.axis.get_axis_api",
         side_effect=axis.CannotConnect,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -55,7 +55,7 @@ async def test_migrate_entry(
     mock_device.api.vapix.light_control = None
     mock_device.api.vapix.params.image_format = None
 
-    with patch("homeassistant.components.axis.async_setup_entry", return_value=True):
+    with patch("inpui.components.axis.async_setup_entry", return_value=True):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
 
     assert config_entry.state is ConfigEntryState.LOADED

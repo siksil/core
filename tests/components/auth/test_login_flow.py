@@ -107,7 +107,7 @@ async def test_fetch_auth_providers_onboarding(
     """Test fetching auth providers."""
     client = await async_setup_auth(hass, aiohttp_client)
     with patch(
-        "homeassistant.components.onboarding.async_is_user_onboarded",
+        "inpui.components.onboarding.async_is_user_onboarded",
         return_value=False,
     ):
         resp = await client.get("/auth/providers")
@@ -145,7 +145,7 @@ async def test_invalid_username_password(
 
     # Incorrect username
     with patch(
-        "homeassistant.components.auth.login_flow.process_wrong_login"
+        "inpui.components.auth.login_flow.process_wrong_login"
     ) as mock_process_wrong_login:
         resp = await client.post(
             f"/auth/login_flow/{step['flow_id']}",
@@ -165,7 +165,7 @@ async def test_invalid_username_password(
 
     # Incorrect password
     with patch(
-        "homeassistant.components.auth.login_flow.process_wrong_login"
+        "inpui.components.auth.login_flow.process_wrong_login"
     ) as mock_process_wrong_login:
         resp = await client.post(
             f"/auth/login_flow/{step['flow_id']}",
@@ -185,7 +185,7 @@ async def test_invalid_username_password(
 
     # Incorrect username and invalid redirect URI fails on wrong login
     with patch(
-        "homeassistant.components.auth.login_flow.process_wrong_login"
+        "inpui.components.auth.login_flow.process_wrong_login"
     ) as mock_process_wrong_login:
         resp = await client.post(
             f"/auth/login_flow/{step['flow_id']}",
@@ -222,11 +222,11 @@ async def test_invalid_redirect_uri(
 
     with (
         patch(
-            "homeassistant.components.auth.indieauth.fetch_redirect_uris",
+            "inpui.components.auth.indieauth.fetch_redirect_uris",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.http.ban.process_wrong_login"
+            "inpui.components.http.ban.process_wrong_login"
         ) as mock_process_wrong_login,
     ):
         resp = await client.post(
@@ -267,7 +267,7 @@ async def test_login_exist_user(
     step = await resp.json()
 
     with patch(
-        "homeassistant.components.auth.login_flow.process_success_login"
+        "inpui.components.auth.login_flow.process_success_login"
     ) as mock_process_success_login:
         resp = await client.post(
             f"/auth/login_flow/{step['flow_id']}",
@@ -308,7 +308,7 @@ async def test_login_local_only_user(
     step = await resp.json()
 
     with patch(
-        "homeassistant.components.auth.login_flow.async_user_not_allowed_do_auth",
+        "inpui.components.auth.login_flow.async_user_not_allowed_do_auth",
         return_value="User is local only",
     ) as mock_not_allowed_do_auth:
         resp = await client.post(

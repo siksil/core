@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def mock_login():
     """Mock pymelcloud login."""
     with patch(
-        "homeassistant.components.melcloud.config_flow.pymelcloud.login"
+        "inpui.components.melcloud.config_flow.pymelcloud.login"
     ) as mock:
         mock.return_value = "test-token"
         yield mock
@@ -30,7 +30,7 @@ def mock_login():
 def mock_get_devices():
     """Mock pymelcloud get_devices."""
     with patch(
-        "homeassistant.components.melcloud.config_flow.pymelcloud.get_devices"
+        "inpui.components.melcloud.config_flow.pymelcloud.get_devices"
     ) as mock:
         mock.return_value = {
             pymelcloud.DEVICE_TYPE_ATA: [],
@@ -56,7 +56,7 @@ async def test_form(hass: HomeAssistant, mock_login, mock_get_devices) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry", return_value=True
+        "inpui.components.melcloud.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -132,7 +132,7 @@ async def test_token_refresh(hass: HomeAssistant, mock_login, mock_get_devices) 
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry", return_value=True
+        "inpui.components.melcloud.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -174,7 +174,7 @@ async def test_token_reauthentication(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -210,7 +210,7 @@ async def test_form_errors_reauthentication(
     result = await mock_entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -224,7 +224,7 @@ async def test_form_errors_reauthentication(
 
     mock_login.side_effect = None
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -260,7 +260,7 @@ async def test_client_errors_reauthentication(
     result = await mock_entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -274,7 +274,7 @@ async def test_client_errors_reauthentication(
 
     mock_login.side_effect = None
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -312,7 +312,7 @@ async def test_reconfigure_flow(
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -326,7 +326,7 @@ async def test_reconfigure_flow(
 
     mock_login.side_effect = None
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -369,7 +369,7 @@ async def test_form_errors_reconfigure(
     result = await mock_entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -383,7 +383,7 @@ async def test_form_errors_reconfigure(
 
     mock_login.side_effect = None
     with patch(
-        "homeassistant.components.melcloud.async_setup_entry",
+        "inpui.components.melcloud.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(

@@ -32,7 +32,7 @@ async def test_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.niko_home_control.PLATFORMS", [Platform.LIGHT]
+        "inpui.components.niko_home_control.PLATFORMS", [Platform.LIGHT]
     ):
         await setup_integration(hass, mock_config_entry)
 

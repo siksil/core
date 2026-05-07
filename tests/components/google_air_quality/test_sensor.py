@@ -25,7 +25,7 @@ async def test_sensor_snapshot(
     assert mock_config_entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.google_air_quality.PLATFORMS",
+        "inpui.components.google_air_quality.PLATFORMS",
         [Platform.SENSOR],
     ):
         await snapshot_platform(

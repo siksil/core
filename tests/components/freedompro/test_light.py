@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(autouse=True)
 def mock_freedompro_put_state():
     """Mock freedompro put_state."""
-    with patch("homeassistant.components.freedompro.light.put_state"):
+    with patch("inpui.components.freedompro.light.put_state"):
         yield
 
 

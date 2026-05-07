@@ -25,23 +25,23 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.login",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.logout",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.logout",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.list_installations",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.list_installations",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.update_installation",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.update_installation",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.update",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.update",
             return_value=None,
         ),
     ):
@@ -58,7 +58,7 @@ async def test_init_api_timeout(hass: HomeAssistant) -> None:
     """Test API timeouts when loading the Airzone Cloud integration."""
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.login",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.login",
         side_effect=AirzoneTimeout,
     ):
         config_entry = MockConfigEntry(

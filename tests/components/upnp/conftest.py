@@ -74,7 +74,7 @@ TEST_DISCOVERY = SsdpServiceInfo(
 def mock_async_create_device():
     """Mock async_upnp_client create device."""
     with patch(
-        "homeassistant.components.upnp.device.UpnpFactory.async_create_device"
+        "inpui.components.upnp.device.UpnpFactory.async_create_device"
     ) as mock_create:
         yield mock_create
 
@@ -118,15 +118,15 @@ def mock_igd_device(mock_async_create_device) -> IgdDevice:
 
     with (
         patch(
-            "homeassistant.components.upnp.device.async_get_local_ip",
+            "inpui.components.upnp.device.async_get_local_ip",
             return_value=(socket.AF_INET, "127.0.0.1"),
         ),
         patch(
-            "homeassistant.components.upnp.device.IgdDevice.__new__",
+            "inpui.components.upnp.device.IgdDevice.__new__",
             return_value=mock_igd_device,
         ),
         patch(
-            "homeassistant.components.upnp.device.AiohttpNotifyServer.__new__",
+            "inpui.components.upnp.device.AiohttpNotifyServer.__new__",
             return_value=mock_notify_server,
         ),
     ):
@@ -137,7 +137,7 @@ def mock_igd_device(mock_async_create_device) -> IgdDevice:
 def mock_mac_address_from_host():
     """Get mac address."""
     with patch(
-        "homeassistant.components.upnp.device.get_mac_address",
+        "inpui.components.upnp.device.get_mac_address",
         return_value=TEST_MAC_ADDRESS,
     ):
         yield
@@ -147,7 +147,7 @@ def mock_mac_address_from_host():
 def mock_no_mac_address_from_host():
     """Get no mac address."""
     with patch(
-        "homeassistant.components.upnp.device.get_mac_address",
+        "inpui.components.upnp.device.get_mac_address",
         return_value=None,
     ):
         yield
@@ -157,7 +157,7 @@ def mock_no_mac_address_from_host():
 def mock_setup_entry():
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.upnp.async_setup_entry",
+        "inpui.components.upnp.async_setup_entry",
         return_value=AsyncMock(True),
     ) as mock_setup:
         yield mock_setup
@@ -167,14 +167,14 @@ def mock_setup_entry():
 def silent_ssdp_scanner() -> Generator[None]:
     """Start SSDP component and get Scanner, prevent actual SSDP traffic."""
     with (
-        patch("homeassistant.components.ssdp.Scanner._async_start_ssdp_listeners"),
-        patch("homeassistant.components.ssdp.Scanner._async_stop_ssdp_listeners"),
-        patch("homeassistant.components.ssdp.Scanner.async_scan"),
+        patch("inpui.components.ssdp.Scanner._async_start_ssdp_listeners"),
+        patch("inpui.components.ssdp.Scanner._async_stop_ssdp_listeners"),
+        patch("inpui.components.ssdp.Scanner.async_scan"),
         patch(
-            "homeassistant.components.ssdp.Server._async_start_upnp_servers",
+            "inpui.components.ssdp.Server._async_start_upnp_servers",
         ),
         patch(
-            "homeassistant.components.ssdp.Server._async_stop_upnp_servers",
+            "inpui.components.ssdp.Server._async_stop_upnp_servers",
         ),
     ):
         yield
@@ -198,11 +198,11 @@ async def ssdp_instant_discovery():
 
     with (
         patch(
-            "homeassistant.components.ssdp.async_register_callback",
+            "inpui.components.ssdp.async_register_callback",
             side_effect=register_callback,
         ) as mock_register,
         patch(
-            "homeassistant.components.ssdp.async_get_discovery_info_by_st",
+            "inpui.components.ssdp.async_get_discovery_info_by_st",
             return_value=[TEST_DISCOVERY],
         ) as mock_get_info,
     ):
@@ -231,11 +231,11 @@ async def ssdp_instant_discovery_multi_location():
 
     with (
         patch(
-            "homeassistant.components.ssdp.async_register_callback",
+            "inpui.components.ssdp.async_register_callback",
             side_effect=register_callback,
         ) as mock_register,
         patch(
-            "homeassistant.components.ssdp.async_get_discovery_info_by_st",
+            "inpui.components.ssdp.async_get_discovery_info_by_st",
             return_value=[test_discovery],
         ) as mock_get_info,
     ):
@@ -259,11 +259,11 @@ async def ssdp_no_discovery():
 
     with (
         patch(
-            "homeassistant.components.ssdp.async_register_callback",
+            "inpui.components.ssdp.async_register_callback",
             side_effect=register_callback,
         ) as mock_register,
         patch(
-            "homeassistant.components.ssdp.async_get_discovery_info_by_st",
+            "inpui.components.ssdp.async_get_discovery_info_by_st",
             return_value=[],
         ) as mock_get_info,
     ):

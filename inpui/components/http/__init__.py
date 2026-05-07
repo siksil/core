@@ -600,7 +600,7 @@ class HomeAssistantHTTP:
         try:
             host = cast(str, URL(get_url(self.hass, prefer_external=True)).host)
         except NoURLAvailableError:
-            host = "homeassistant.local"
+            host = "inpui.local"
         key = rsa.generate_private_key(
             public_exponent=65537,
             key_size=2048,

@@ -136,7 +136,7 @@ async def test_serialize_discovery_partly_fails(
 
     # Simulate fetching the interfaces fails for fan entity
     with patch(
-        "homeassistant.components.alexa.entities.FanCapabilities.interfaces",
+        "inpui.components.alexa.entities.FanCapabilities.interfaces",
         side_effect=TypeError(),
     ):
         msg = await _mock_discovery()
@@ -155,7 +155,7 @@ async def test_serialize_discovery_partly_fails(
 
     # Simulate serializing properties fails for sensor entity
     with patch(
-        "homeassistant.components.alexa.entities.SensorCapabilities.default_display_categories",
+        "inpui.components.alexa.entities.SensorCapabilities.default_display_categories",
         side_effect=ValueError(),
     ):
         msg = await _mock_discovery()
@@ -182,7 +182,7 @@ async def test_serialize_discovery_recovers(
     hass.states.async_set("switch.bla", "on", {"friendly_name": "Boop Woz"})
 
     with patch(
-        "homeassistant.components.alexa.capabilities.AlexaPowerController.serialize_discovery",
+        "inpui.components.alexa.capabilities.AlexaPowerController.serialize_discovery",
         side_effect=TypeError,
     ):
         msg = await smart_home.async_handle_message(

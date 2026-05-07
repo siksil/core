@@ -22,7 +22,7 @@ async def test_entity_registry(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the button is registered in entity registry."""
-    with patch("homeassistant.components.totalconnect.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.totalconnect.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

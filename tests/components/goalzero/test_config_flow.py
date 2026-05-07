@@ -20,7 +20,7 @@ from . import (
 
 
 def _patch_setup():
-    return patch("homeassistant.components.goalzero.async_setup_entry")
+    return patch("inpui.components.goalzero.async_setup_entry")
 
 
 async def test_flow_user(hass: HomeAssistant) -> None:

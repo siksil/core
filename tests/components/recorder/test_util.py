@@ -93,7 +93,7 @@ async def test_recorder_bad_execute(hass: HomeAssistant, setup_recorder: None) -
 
     with (
         pytest.raises(SQLAlchemyError),
-        patch("homeassistant.components.recorder.core.time.sleep") as e_mock,
+        patch("inpui.components.recorder.core.time.sleep") as e_mock,
     ):
         util.execute(mck1)
 
@@ -150,7 +150,7 @@ async def test_last_run_was_recently_clean(
 
         # Test last_run_was_recently_clean is not called on new DB
         with patch(
-            "homeassistant.components.recorder.util.last_run_was_recently_clean",
+            "inpui.components.recorder.util.last_run_was_recently_clean",
             wraps=_last_run_was_recently_clean,
         ) as last_run_was_recently_clean_mock:
             await async_setup_recorder_instance(hass, config)
@@ -164,7 +164,7 @@ async def test_last_run_was_recently_clean(
 
     async with async_test_home_assistant() as hass:
         with patch(
-            "homeassistant.components.recorder.util.last_run_was_recently_clean",
+            "inpui.components.recorder.util.last_run_was_recently_clean",
             wraps=_last_run_was_recently_clean,
         ) as last_run_was_recently_clean_mock:
             await async_setup_recorder_instance(hass, config)
@@ -181,11 +181,11 @@ async def test_last_run_was_recently_clean(
     async with async_test_home_assistant() as hass:
         with (
             patch(
-                "homeassistant.components.recorder.util.last_run_was_recently_clean",
+                "inpui.components.recorder.util.last_run_was_recently_clean",
                 wraps=_last_run_was_recently_clean,
             ) as last_run_was_recently_clean_mock,
             patch(
-                "homeassistant.components.recorder.core.dt_util.utcnow",
+                "inpui.components.recorder.core.dt_util.utcnow",
                 return_value=thirty_min_future_time,
             ),
         ):
@@ -784,7 +784,7 @@ async def test_combined_checks(
     # We are patching recorder.util here in order
     # to avoid creating the full database on disk
     with patch(
-        "homeassistant.components.recorder.util.basic_sanity_check", return_value=False
+        "inpui.components.recorder.util.basic_sanity_check", return_value=False
     ):
         caplog.clear()
         assert util.run_checks_on_open_db("fake_db_path", cursor) is None
@@ -792,7 +792,7 @@ async def test_combined_checks(
 
     # We are patching recorder.util here in order
     # to avoid creating the full database on disk
-    with patch("homeassistant.components.recorder.util.last_run_was_recently_clean"):
+    with patch("inpui.components.recorder.util.last_run_was_recently_clean"):
         caplog.clear()
         assert util.run_checks_on_open_db("fake_db_path", cursor) is None
         assert "restarted cleanly and passed the basic sanity check" in caplog.text
@@ -800,7 +800,7 @@ async def test_combined_checks(
     caplog.clear()
     with (
         patch(
-            "homeassistant.components.recorder.util.last_run_was_recently_clean",
+            "inpui.components.recorder.util.last_run_was_recently_clean",
             side_effect=sqlite3.DatabaseError,
         ),
         pytest.raises(sqlite3.DatabaseError),
@@ -810,7 +810,7 @@ async def test_combined_checks(
     caplog.clear()
     with (
         patch(
-            "homeassistant.components.recorder.util.last_run_was_recently_clean",
+            "inpui.components.recorder.util.last_run_was_recently_clean",
             side_effect=sqlite3.DatabaseError,
         ),
         pytest.raises(sqlite3.DatabaseError),
@@ -934,7 +934,7 @@ def test_build_mysqldb_conv() -> None:
     )
 
 
-@patch("homeassistant.components.recorder.util.QUERY_RETRY_WAIT", 0)
+@patch("inpui.components.recorder.util.QUERY_RETRY_WAIT", 0)
 async def test_execute_stmt_lambda_element(
     hass: HomeAssistant,
     setup_recorder: None,

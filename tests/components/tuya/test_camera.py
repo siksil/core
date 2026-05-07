@@ -27,13 +27,13 @@ from tests.common import MockConfigEntry, snapshot_platform
 def mock_getrandbits():
     """Mock camera access token which normally is randomized."""
     with patch(
-        "homeassistant.components.camera.SystemRandom.getrandbits",
+        "inpui.components.camera.SystemRandom.getrandbits",
         return_value=1,
     ):
         yield
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.CAMERA])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.CAMERA])
 async def test_platform_setup_and_discovery(
     hass: HomeAssistant,
     mock_manager: Manager,
@@ -54,7 +54,7 @@ async def test_platform_setup_and_discovery(
     )
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.CAMERA])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.CAMERA])
 @pytest.mark.parametrize(
     "mock_device_code",
     ["sp_rudejjigkywujjvs"],

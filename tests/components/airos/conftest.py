@@ -40,7 +40,7 @@ def ap_fixture(request: pytest.FixtureRequest) -> AirOSData:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airos.async_setup_entry", return_value=True
+        "inpui.components.airos.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -49,12 +49,12 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_airos_class() -> Generator[MagicMock]:
     """Fixture to mock the AirOS class itself."""
     with (
-        patch("homeassistant.components.airos.AirOS8", autospec=True) as mock_class,
-        patch("homeassistant.components.airos.AirOS6", new=mock_class),
-        patch("homeassistant.components.airos.config_flow.AirOS8", new=mock_class),
-        patch("homeassistant.components.airos.config_flow.AirOS6", new=mock_class),
-        patch("homeassistant.components.airos.coordinator.AirOS8", new=mock_class),
-        patch("homeassistant.components.airos.coordinator.AirOS6", new=mock_class),
+        patch("inpui.components.airos.AirOS8", autospec=True) as mock_class,
+        patch("inpui.components.airos.AirOS6", new=mock_class),
+        patch("inpui.components.airos.config_flow.AirOS8", new=mock_class),
+        patch("inpui.components.airos.config_flow.AirOS6", new=mock_class),
+        patch("inpui.components.airos.coordinator.AirOS8", new=mock_class),
+        patch("inpui.components.airos.coordinator.AirOS6", new=mock_class),
     ):
         yield mock_class
 
@@ -90,7 +90,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_discovery_method() -> Generator[AsyncMock]:
     """Mock the internal discovery method of the config flow."""
     with patch(
-        "homeassistant.components.airos.config_flow.airos_discover_devices",
+        "inpui.components.airos.config_flow.airos_discover_devices",
         new_callable=AsyncMock,
     ) as mock_method:
         yield mock_method
@@ -110,11 +110,11 @@ def mock_async_get_firmware_data(ap_fixture: AirOSData):
 
     with (
         patch(
-            "homeassistant.components.airos.config_flow.async_get_firmware_data",
+            "inpui.components.airos.config_flow.async_get_firmware_data",
             new=mock,
         ),
         patch(
-            "homeassistant.components.airos.async_get_firmware_data",
+            "inpui.components.airos.async_get_firmware_data",
             new=mock,
         ),
     ):

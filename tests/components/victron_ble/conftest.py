@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.victron_ble.async_setup_entry", return_value=True
+        "inpui.components.victron_ble.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -28,7 +28,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_discovered_service_info() -> Generator[AsyncMock]:
     """Mock discovered service info."""
     with patch(
-        "homeassistant.components.victron_ble.config_flow.async_discovered_service_info",
+        "inpui.components.victron_ble.config_flow.async_discovered_service_info",
         return_value=[VICTRON_VEBUS_SERVICE_INFO],
     ) as mock_discovered_service_info:
         yield mock_discovered_service_info

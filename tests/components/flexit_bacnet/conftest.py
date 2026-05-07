@@ -34,11 +34,11 @@ def mock_flexit_bacnet() -> Generator[AsyncMock]:
     flexit_bacnet = AsyncMock(spec=FlexitBACnet)
     with (
         patch(
-            "homeassistant.components.flexit_bacnet.config_flow.FlexitBACnet",
+            "inpui.components.flexit_bacnet.config_flow.FlexitBACnet",
             return_value=flexit_bacnet,
         ),
         patch(
-            "homeassistant.components.flexit_bacnet.coordinator.FlexitBACnet",
+            "inpui.components.flexit_bacnet.coordinator.FlexitBACnet",
             return_value=flexit_bacnet,
         ),
     ):
@@ -91,7 +91,7 @@ def mock_flexit_bacnet() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.flexit_bacnet.async_setup_entry", return_value=True
+        "inpui.components.flexit_bacnet.async_setup_entry", return_value=True
     ) as setup_entry_mock:
         yield setup_entry_mock
 

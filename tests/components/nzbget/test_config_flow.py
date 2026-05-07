@@ -90,7 +90,7 @@ async def test_user_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nzbget.coordinator.NZBGetAPI.version",
+        "inpui.components.nzbget.coordinator.NZBGetAPI.version",
         side_effect=NZBGetAPIException(),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -109,7 +109,7 @@ async def test_user_form_unexpected_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nzbget.coordinator.NZBGetAPI.version",
+        "inpui.components.nzbget.coordinator.NZBGetAPI.version",
         side_effect=Exception(),
     ):
         result = await hass.config_entries.flow.async_configure(

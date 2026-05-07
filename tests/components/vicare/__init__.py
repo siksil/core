@@ -9,7 +9,7 @@ from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 
-MODULE = "homeassistant.components.vicare"
+MODULE = "inpui.components.vicare"
 
 ENTRY_CONFIG: Final[dict[str, str]] = {
     CONF_USERNAME: "foo@bar.com",

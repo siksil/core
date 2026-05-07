@@ -49,7 +49,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.lifx.async_setup_entry", return_value=True
+        "inpui.components.lifx.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -327,7 +327,7 @@ async def test_manual_dns_error(hass: HomeAssistant) -> None:
     with (
         _patch_discovery(no_device=True),
         patch(
-            "homeassistant.components.lifx.config_flow.LIFXConnection",
+            "inpui.components.lifx.config_flow.LIFXConnection",
             MockLifxConnectonDnsError,
         ),
     ):

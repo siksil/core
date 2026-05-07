@@ -30,11 +30,11 @@ def mock_discovergy() -> Generator[AsyncMock]:
     """Mock the pydiscovergy client."""
     with (
         patch(
-            "homeassistant.components.discovergy.Discovergy",
+            "inpui.components.discovergy.Discovergy",
             autospec=True,
         ) as mock_discovergy,
         patch(
-            "homeassistant.components.discovergy.config_flow.Discovergy",
+            "inpui.components.discovergy.config_flow.Discovergy",
             new=mock_discovergy,
         ),
     ):

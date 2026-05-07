@@ -222,12 +222,12 @@ async def setup_onvif_integration(
 
     with (
         patch(
-            "homeassistant.components.onvif.config_flow.get_device"
+            "inpui.components.onvif.config_flow.get_device"
         ) as mock_onvif_camera,
         patch(
-            "homeassistant.components.onvif.config_flow.wsdiscovery"
+            "inpui.components.onvif.config_flow.wsdiscovery"
         ) as mock_discovery,
-        patch("homeassistant.components.onvif.ONVIFDevice") as mock_device,
+        patch("inpui.components.onvif.ONVIFDevice") as mock_device,
     ):
         setup_mock_onvif_camera(mock_onvif_camera, two_profiles=True)
         # no discovery
@@ -253,7 +253,7 @@ async def setup_onvif_integration(
                 return event_by_topic.get(topic)
 
             with patch(
-                "homeassistant.components.onvif.event.onvif_parsers"
+                "inpui.components.onvif.event.onvif_parsers"
             ) as mock_parsers:
                 mock_parsers.parse = mock_parse
                 mock_parsers.errors.UnknownTopicError = type(

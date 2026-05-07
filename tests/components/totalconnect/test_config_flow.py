@@ -65,7 +65,7 @@ async def test_login_errors(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.totalconnect.config_flow.TotalConnectClient",
+        "inpui.components.totalconnect.config_flow.TotalConnectClient",
     ) as client:
         client.side_effect = AuthenticationError()
 
@@ -211,7 +211,7 @@ async def test_reauth_errors(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.totalconnect.config_flow.TotalConnectClient",
+        "inpui.components.totalconnect.config_flow.TotalConnectClient",
     ) as client:
         client.side_effect = AuthenticationError()
 

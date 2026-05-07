@@ -29,7 +29,7 @@ from tests.typing import WebSocketGenerator
 async def weather_only() -> None:
     """Enable only the datetime platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.WEATHER],
     ):
         yield

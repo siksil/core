@@ -781,6 +781,6 @@ async def _help_test_form_unexpected_error(
 
 def _patch_async_setup_entry():
     return patch(
-        "homeassistant.components.bond.async_setup_entry",
+        "inpui.components.bond.async_setup_entry",
         return_value=True,
     )

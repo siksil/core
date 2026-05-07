@@ -8,7 +8,7 @@ from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 
-PATH_HOMEKIT = "homeassistant.components.homekit"
+PATH_HOMEKIT = "inpui.components.homekit"
 
 
 async def async_init_integration(hass: HomeAssistant) -> MockConfigEntry:

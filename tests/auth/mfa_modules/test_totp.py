@@ -143,7 +143,7 @@ async def test_race_condition_in_data_loading(hass: HomeAssistant) -> None:
         await asyncio.sleep(0)
 
     totp_auth_module = await auth_mfa_module_from_config(hass, {"type": "totp"})
-    with patch("homeassistant.helpers.storage.Store.async_load", new=mock_load):
+    with patch("inpui.helpers.storage.Store.async_load", new=mock_load):
         task1 = totp_auth_module.async_validate("user", {"code": "value"})
         task2 = totp_auth_module.async_validate("user", {"code": "value"})
         results = await asyncio.gather(task1, task2, return_exceptions=True)

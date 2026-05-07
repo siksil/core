@@ -60,7 +60,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(name="service")
 def mock_controller_service():
     """Mock a successful service."""
-    with patch("homeassistant.components.synology_dsm.config_flow.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.config_flow.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -81,7 +81,7 @@ def mock_controller_service():
 @pytest.fixture(name="service_2sa")
 def mock_controller_service_2sa():
     """Mock a successful service with 2SA login."""
-    with patch("homeassistant.components.synology_dsm.config_flow.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.config_flow.SynologyDSM") as dsm:
         dsm.login = AsyncMock(
             side_effect=SynologyDSMLogin2SARequiredException(USERNAME)
         )
@@ -104,7 +104,7 @@ def mock_controller_service_2sa():
 @pytest.fixture(name="service_vdsm")
 def mock_controller_service_vdsm():
     """Mock a successful service."""
-    with patch("homeassistant.components.synology_dsm.config_flow.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.config_flow.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -125,7 +125,7 @@ def mock_controller_service_vdsm():
 @pytest.fixture(name="service_with_filestation")
 def mock_controller_service_with_filestation():
     """Mock a successful service with filestation support."""
-    with patch("homeassistant.components.synology_dsm.config_flow.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.config_flow.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -158,7 +158,7 @@ def mock_controller_service_with_filestation():
 @pytest.fixture(name="service_failed")
 def mock_controller_service_failed():
     """Mock a failed service."""
-    with patch("homeassistant.components.synology_dsm.config_flow.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.config_flow.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -190,7 +190,7 @@ async def test_user(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service,
     ):
         # test with all provided
@@ -213,7 +213,7 @@ async def test_user(
 
     service.information.serial = SERIAL_2
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service,
     ):
         # test without port + False SSL
@@ -240,7 +240,7 @@ async def test_user_2sa(
 ) -> None:
     """Test user with 2sa authentication config."""
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_2sa,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -265,7 +265,7 @@ async def test_user_2sa(
     service_2sa.device_token = DEVICE_TOKEN
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_2sa,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -284,7 +284,7 @@ async def test_user_vdsm(
 ) -> None:
     """Test user config."""
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_vdsm,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -294,7 +294,7 @@ async def test_user_vdsm(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_vdsm,
     ):
         # test with all provided
@@ -324,7 +324,7 @@ async def test_user_with_filestation(
 ) -> None:
     """Test user config."""
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_with_filestation,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -334,7 +334,7 @@ async def test_user_with_filestation(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_with_filestation,
     ):
         # test with all provided
@@ -384,7 +384,7 @@ async def test_reauth(hass: HomeAssistant, service: MagicMock) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -413,11 +413,11 @@ async def test_reconfig_user(hass: HomeAssistant, service: MagicMock) -> None:
 
     with (
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload",
+            "inpui.config_entries.ConfigEntries.async_reload",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+            "inpui.components.synology_dsm.config_flow.SynologyDSM",
             return_value=service,
         ),
     ):
@@ -484,7 +484,7 @@ async def test_missing_data_after_login(
 ) -> None:
     """Test when we have errors during connection."""
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service_failed,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -520,7 +520,7 @@ async def test_form_ssdp(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -648,10 +648,10 @@ async def test_options_flow(
     """Test config flow options."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=service_with_filestation,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         config_entry = MockConfigEntry(
             domain=DOMAIN,
@@ -716,7 +716,7 @@ async def test_discovered_via_zeroconf(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.synology_dsm.config_flow.SynologyDSM",
+        "inpui.components.synology_dsm.config_flow.SynologyDSM",
         return_value=service,
     ):
         result = await hass.config_entries.flow.async_configure(

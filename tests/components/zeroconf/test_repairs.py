@@ -71,13 +71,13 @@ async def test_instance_id_conflict_creates_repair_issue_remove(
 ) -> None:
     """Test that a repair issue is created on instance ID conflict and gets removed when instance disappears."""
     with (
-        patch("homeassistant.helpers.instance_id.async_get", return_value="abc123"),
+        patch("inpui.helpers.instance_id.async_get", return_value="abc123"),
         patch.object(
             discovery, "AsyncServiceBrowser", side_effect=service_update_mock
         ) as mock_browser,
         patch.object(hass.config_entries.flow, "async_init"),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=_get_hass_service_info_mock,
         ),
     ):
@@ -117,13 +117,13 @@ async def test_instance_id_conflict_creates_repair_issue_changing_id(
 ) -> None:
     """Test that a repair issue is created on instance ID conflict and gets removed when instance ID changes."""
     with (
-        patch("homeassistant.helpers.instance_id.async_get", return_value="abc123"),
+        patch("inpui.helpers.instance_id.async_get", return_value="abc123"),
         patch.object(
             discovery, "AsyncServiceBrowser", side_effect=service_update_mock
         ) as mock_browser,
         patch.object(hass.config_entries.flow, "async_init"),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=_get_hass_service_info_mock,
         ),
     ):
@@ -145,7 +145,7 @@ async def test_instance_id_conflict_creates_repair_issue_changing_id(
 
         with (
             patch(
-                "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+                "inpui.components.zeroconf.discovery.AsyncServiceInfo",
                 side_effect=lambda service_type, name: _get_hass_service_info_mock(
                     service_type, name, instance_id="different-id"
                 ),
@@ -172,15 +172,15 @@ async def test_instance_id_no_repair_issue_own_ip(
 ) -> None:
     """Test that no repair issue is created when the other instance ID matches our IP."""
     with (
-        patch("homeassistant.helpers.instance_id.async_get", return_value="abc123"),
+        patch("inpui.helpers.instance_id.async_get", return_value="abc123"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch.object(hass.config_entries.flow, "async_init"),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=_get_hass_service_info_mock,
         ),
         patch(
-            "homeassistant.components.network.async_get_announce_addresses",
+            "inpui.components.network.async_get_announce_addresses",
             return_value=["10.0.0.1", "10.0.0.2"],
         ),
     ):
@@ -202,14 +202,14 @@ async def test_instance_id_no_conflict_no_repair_issue(
 ) -> None:
     """Test that a repair issue is not created when no instance ID conflict exists."""
     with (
-        patch("homeassistant.helpers.instance_id.async_get", return_value="xyz123"),
+        patch("inpui.helpers.instance_id.async_get", return_value="xyz123"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch.object(hass.config_entries.flow, "async_init"),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=_get_hass_service_info_mock,
         ),
-        patch("homeassistant.helpers.issue_registry.async_create_issue"),
+        patch("inpui.helpers.issue_registry.async_create_issue"),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
         hass.bus.async_fire(EVENT_INPUI_STARTED)
@@ -242,18 +242,18 @@ async def test_duplicate_repair_issue_repair_flow(
     await async_process_repairs_platforms(hass)
 
     with (
-        patch("homeassistant.helpers.instance_id.async_get", return_value="abc123"),
+        patch("inpui.helpers.instance_id.async_get", return_value="abc123"),
         patch.object(discovery, "AsyncServiceBrowser", side_effect=service_update_mock),
         patch.object(hass.config_entries.flow, "async_init"),
         patch(
-            "homeassistant.components.zeroconf.discovery.AsyncServiceInfo",
+            "inpui.components.zeroconf.discovery.AsyncServiceInfo",
             side_effect=_get_hass_service_info_mock,
         ),
         patch.object(
             instance_id, "async_recreate", return_value="new-uuid"
         ) as mock_recreate,
-        patch("homeassistant.config.async_check_ha_config_file", return_value=None),
-        patch("homeassistant.core.HomeAssistant.async_stop", return_value=None),
+        patch("inpui.config.async_check_ha_config_file", return_value=None),
+        patch("inpui.core.HomeAssistant.async_stop", return_value=None),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
         hass.bus.async_fire(EVENT_INPUI_STARTED)

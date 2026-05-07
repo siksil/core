@@ -131,7 +131,7 @@ async def test_config_flow_privacy_success(
     assert reolink_host.baichuan.set_privacy_mode.call_count == 0
     reolink_host.get_host_data.reset_mock(side_effect=True)
 
-    with patch("homeassistant.components.reolink.config_flow.API_STARTUP_TIME", new=0):
+    with patch("inpui.components.reolink.config_flow.API_STARTUP_TIME", new=0):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
 
     assert reolink_host.baichuan.set_privacy_mode.call_count == 1

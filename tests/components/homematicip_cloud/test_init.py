@@ -35,7 +35,7 @@ async def test_config_with_accesspoint_passed_to_config_entry(
     assert len(hass.config_entries.async_entries(DOMAIN)) == 0
 
     with patch(
-        "homeassistant.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
+        "inpui.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: entry_config})
 
@@ -77,7 +77,7 @@ async def test_config_already_registered_not_passed_to_config_entry(
     }
 
     with patch(
-        "homeassistant.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
+        "inpui.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: entry_config})
 
@@ -101,11 +101,11 @@ async def test_load_entry_fails_due_to_connection_error(
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
+            "inpui.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
             side_effect=HmipConnectionError,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {})
@@ -122,11 +122,11 @@ async def test_load_entry_fails_due_to_generic_exception(
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
+            "inpui.components.homematicip_cloud.hap.AsyncHome.get_current_state_async",
             side_effect=Exception,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {})
@@ -140,7 +140,7 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
     mock_config = {HMIPC_AUTHTOKEN: "123", HMIPC_HAPID: "ABC123", HMIPC_NAME: "name"}
     MockConfigEntry(domain=DOMAIN, data=mock_config).add_to_hass(hass)
 
-    with patch("homeassistant.components.homematicip_cloud.HomematicipHAP") as mock_hap:
+    with patch("inpui.components.homematicip_cloud.HomematicipHAP") as mock_hap:
         instance = mock_hap.return_value
         instance.async_setup = AsyncMock(return_value=True)
         instance.home.id = "1"
@@ -182,7 +182,7 @@ async def test_setup_services(hass: HomeAssistant) -> None:
     mock_config = {HMIPC_AUTHTOKEN: "123", HMIPC_HAPID: "ABC123", HMIPC_NAME: "name"}
     MockConfigEntry(domain=DOMAIN, data=mock_config).add_to_hass(hass)
 
-    with patch("homeassistant.components.homematicip_cloud.HomematicipHAP") as mock_hap:
+    with patch("inpui.components.homematicip_cloud.HomematicipHAP") as mock_hap:
         instance = mock_hap.return_value
         instance.async_setup = AsyncMock(return_value=True)
         instance.home.id = "1"

@@ -29,7 +29,7 @@ async def test_all_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the Powerfox Local sensors."""
-    with patch("homeassistant.components.powerfox_local.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.powerfox_local.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

@@ -21,7 +21,7 @@ async def test_siren(
     test_gateway = HomeControlMockSiren()
     test_gateway.devices["Test"].status = 0
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -51,7 +51,7 @@ async def test_siren_switching(
     test_gateway = HomeControlMockSiren()
     test_gateway.devices["Test"].status = 0
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -103,7 +103,7 @@ async def test_siren_change_default_tone(
     test_gateway = HomeControlMockSiren()
     test_gateway.devices["Test"].status = 0
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -131,7 +131,7 @@ async def test_remove_from_hass(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockSiren()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

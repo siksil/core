@@ -43,7 +43,7 @@ async def test_setup_with_tcp_push(
 ) -> None:
     """Test successful setup of the integration with TCP push callbacks."""
     reolink_host.baichuan.events_active = True
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -63,7 +63,7 @@ async def test_unloading_with_tcp_push(
 ) -> None:
     """Test successful unloading of the integration with TCP push callbacks."""
     reolink_host.baichuan.events_active = True
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -87,7 +87,7 @@ async def test_webhook_callback(
     """Test webhook callback with motion sensor."""
     reolink_host.motion_detected.return_value = False
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -310,7 +310,7 @@ async def test_register_webhook_errors(
 ) -> None:
     """Test errors while registering the webhook."""
     with patch(
-        "homeassistant.components.reolink.host.get_url",
+        "inpui.components.reolink.host.get_url",
         side_effect=NoURLAvailableError("Test error"),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id) is False

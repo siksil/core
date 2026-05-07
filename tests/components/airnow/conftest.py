@@ -66,6 +66,6 @@ def setup_airnow_fixture(mock_api_get: AsyncMock) -> Generator[None]:
     """Define a fixture to set up AirNow."""
     with (
         patch("pyairnow.WebServiceAPI._get", mock_api_get),
-        patch("homeassistant.components.airnow.PLATFORMS", []),
+        patch("inpui.components.airnow.PLATFORMS", []),
     ):
         yield

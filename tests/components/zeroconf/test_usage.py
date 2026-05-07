@@ -64,11 +64,11 @@ async def test_multiple_zeroconf_instances_gives_shared(
         )
         with (
             patch(
-                "homeassistant.helpers.frame.linecache.getline",
+                "inpui.helpers.frame.linecache.getline",
                 return_value=correct_frame.line,
             ),
             patch(
-                "homeassistant.helpers.frame.get_current_frame",
+                "inpui.helpers.frame.get_current_frame",
                 return_value=extract_stack_to_frame(
                     [
                         Mock(

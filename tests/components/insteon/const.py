@@ -75,8 +75,8 @@ MOCK_X10_CONFIG_2 = {
     CONF_DIM_STEPS: MOCK_X10_STEPS,
 }
 
-PATCH_CONNECTION = "homeassistant.components.insteon.config_flow.async_connect"
-PATCH_CONNECTION_CLOSE = "homeassistant.components.insteon.config_flow.async_close"
-PATCH_DEVICES = "homeassistant.components.insteon.config_flow.devices"
-PATCH_USB_LIST = "homeassistant.components.insteon.config_flow.async_get_usb_ports"
-PATCH_ASYNC_SETUP_ENTRY = "homeassistant.components.insteon.async_setup_entry"
+PATCH_CONNECTION = "inpui.components.insteon.config_flow.async_connect"
+PATCH_CONNECTION_CLOSE = "inpui.components.insteon.config_flow.async_close"
+PATCH_DEVICES = "inpui.components.insteon.config_flow.devices"
+PATCH_USB_LIST = "inpui.components.insteon.config_flow.async_get_usb_ports"
+PATCH_ASYNC_SETUP_ENTRY = "inpui.components.insteon.async_setup_entry"

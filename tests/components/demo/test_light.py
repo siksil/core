@@ -30,7 +30,7 @@ ENTITY_LIGHT = "light.bed_light"
 def light_only() -> Generator[None]:
     """Enable only the light platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.LIGHT],
     ):
         yield

@@ -138,7 +138,7 @@ def patch_yale_setup():
         patch.object(_RateLimitChecker, "register_wakeup") as authenticate_mock,
         patch("yalexs.manager.data.SocketIORunner") as socketio_mock,
         patch.object(socketio_mock, "run"),
-        patch("homeassistant.components.yale.async_get_config_entry_implementation"),
+        patch("inpui.components.yale.async_get_config_entry_implementation"),
     ):
         yield api_mock, authenticate_mock, socketio_mock
 

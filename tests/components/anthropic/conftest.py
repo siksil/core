@@ -165,7 +165,7 @@ def build_anthropic_pydantic_schemas() -> None:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.anthropic.async_setup_entry",
+        "inpui.components.anthropic.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

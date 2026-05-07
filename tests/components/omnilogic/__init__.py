@@ -15,15 +15,15 @@ async def init_integration(hass: HomeAssistant) -> MockConfigEntry:
     """Mock integration setup."""
     with (
         patch(
-            "homeassistant.components.omnilogic.OmniLogic.connect",
+            "inpui.components.omnilogic.OmniLogic.connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.omnilogic.OmniLogic.get_telemetry_data",
+            "inpui.components.omnilogic.OmniLogic.get_telemetry_data",
             return_value={},
         ),
         patch(
-            "homeassistant.components.omnilogic.coordinator.OmniLogicUpdateCoordinator._async_update_data",
+            "inpui.components.omnilogic.coordinator.OmniLogicUpdateCoordinator._async_update_data",
             return_value=TELEMETRY,
         ),
     ):

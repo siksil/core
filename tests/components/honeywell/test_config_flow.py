@@ -58,7 +58,7 @@ async def test_auth_error(hass: HomeAssistant, client: MagicMock) -> None:
 async def test_create_entry(hass: HomeAssistant) -> None:
     """Test that the config entry is created."""
     with patch(
-        "homeassistant.components.honeywell.async_setup_entry",
+        "inpui.components.honeywell.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -81,7 +81,7 @@ async def test_show_option_form(
     assert config_entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.honeywell.async_setup_entry",
+        "inpui.components.honeywell.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
@@ -101,7 +101,7 @@ async def test_create_option_entry(
     assert config_entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.honeywell.async_setup_entry",
+        "inpui.components.honeywell.async_setup_entry",
         return_value=True,
     ):
         options_form = await hass.config_entries.options.async_init(
@@ -136,7 +136,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.honeywell.async_setup_entry",
+        "inpui.components.honeywell.async_setup_entry",
         return_value=True,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -171,7 +171,7 @@ async def test_reauth_flow_auth_error(hass: HomeAssistant, client: MagicMock) ->
 
     client.login.side_effect = aiosomecomfort.device.AuthError
     with patch(
-        "homeassistant.components.honeywell.async_setup_entry",
+        "inpui.components.honeywell.async_setup_entry",
         return_value=True,
     ):
         result2 = await hass.config_entries.flow.async_configure(

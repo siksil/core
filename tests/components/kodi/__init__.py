@@ -33,13 +33,13 @@ async def init_integration(hass: HomeAssistant) -> MockConfigEntry:
     entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.kodi.Kodi.ping", return_value=True),
+        patch("inpui.components.kodi.Kodi.ping", return_value=True),
         patch(
-            "homeassistant.components.kodi.Kodi.get_application_properties",
+            "inpui.components.kodi.Kodi.get_application_properties",
             return_value={"version": {"major": 1, "minor": 1}},
         ),
         patch(
-            "homeassistant.components.kodi.get_kodi_connection",
+            "inpui.components.kodi.get_kodi_connection",
             return_value=MockConnection(),
         ),
     ):

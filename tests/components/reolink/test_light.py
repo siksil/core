@@ -53,7 +53,7 @@ async def test_light_state(
     reolink_host.whiteled_brightness.return_value = whiteled_brightness
     reolink_host.whiteled_color_temperature.return_value = color_temp
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -76,7 +76,7 @@ async def test_light_turn_off(
     reolink_host.whiteled_color_temperature.return_value = 3000
     reolink_host.whiteled_brightness.return_value = 75
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -112,7 +112,7 @@ async def test_light_turn_on(
     reolink_host.whiteled_color_temperature.return_value = 3000
     reolink_host.whiteled_brightness.return_value = None
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -147,7 +147,7 @@ async def test_light_turn_on_errors(
     service_data: dict,
 ) -> None:
     """Test light turn on service error cases."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -172,7 +172,7 @@ async def test_host_light_state(
     """Test host light entity state with status led."""
     reolink_host.state_light = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -197,7 +197,7 @@ async def test_host_light_turn_off(
 
     reolink_host.supported = mock_supported
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -236,7 +236,7 @@ async def test_host_light_turn_on(
 
     reolink_host.supported = mock_supported
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.LIGHT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

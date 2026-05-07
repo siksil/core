@@ -69,7 +69,7 @@ async def _load_config(
     device_info_fixture: str,
 ) -> None:
     with patch(
-        "homeassistant.components.fully_kiosk.coordinator.FullyKiosk",
+        "inpui.components.fully_kiosk.coordinator.FullyKiosk",
         autospec=True,
     ) as client_mock:
         client = client_mock.return_value

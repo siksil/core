@@ -64,7 +64,7 @@ async def test_setup(hass: HomeAssistant) -> None:
     """Test that sensor can be setup."""
     config = {"sensor": {"platform": "fail2ban", "jails": ["jail_one"]}}
     mock_fh = mock_open()
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         assert await async_setup_component(hass, "sensor", config)
         await hass.async_block_till_done()
     assert_setup_component(1, "sensor")
@@ -75,7 +75,7 @@ async def test_multi_jails(hass: HomeAssistant) -> None:
     """Test that multiple jails can be set up as sensors.."""
     config = {"sensor": {"platform": "fail2ban", "jails": ["jail_one", "jail_two"]}}
     mock_fh = mock_open()
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         assert await async_setup_component(hass, "sensor", config)
         await hass.async_block_till_done()
     assert_setup_component(2, "sensor")
@@ -88,7 +88,7 @@ async def test_single_ban(hass: HomeAssistant) -> None:
     sensor.hass = hass
     assert sensor.name == "fail2ban jail_one"
     mock_fh = mock_open(read_data=fake_log("single_ban"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor.update()
 
     assert sensor.state == "111.111.111.111"
@@ -103,7 +103,7 @@ async def test_ipv6_ban(hass: HomeAssistant) -> None:
     sensor.hass = hass
     assert sensor.name == "fail2ban jail_one"
     mock_fh = mock_open(read_data=fake_log("ipv6_ban"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor.update()
 
     assert sensor.state == "2607:f0d0:1002:51::4"
@@ -118,7 +118,7 @@ async def test_multiple_ban(hass: HomeAssistant) -> None:
     sensor.hass = hass
     assert sensor.name == "fail2ban jail_one"
     mock_fh = mock_open(read_data=fake_log("multi_ban"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor.update()
 
     assert sensor.state == "222.222.222.222"
@@ -139,7 +139,7 @@ async def test_unban_all(hass: HomeAssistant) -> None:
     sensor.hass = hass
     assert sensor.name == "fail2ban jail_one"
     mock_fh = mock_open(read_data=fake_log("unban_all"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor.update()
 
     assert sensor.state == "None"
@@ -157,7 +157,7 @@ async def test_unban_one(hass: HomeAssistant) -> None:
     sensor.hass = hass
     assert sensor.name == "fail2ban jail_one"
     mock_fh = mock_open(read_data=fake_log("unban_one"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor.update()
 
     assert sensor.state == "222.222.222.222"
@@ -178,7 +178,7 @@ async def test_multi_jail(hass: HomeAssistant) -> None:
     assert sensor1.name == "fail2ban jail_one"
     assert sensor2.name == "fail2ban jail_two"
     mock_fh = mock_open(read_data=fake_log("multi_jail"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor1.update()
         sensor2.update()
 
@@ -197,7 +197,7 @@ async def test_ban_active_after_update(hass: HomeAssistant) -> None:
     sensor.hass = hass
     assert sensor.name == "fail2ban jail_one"
     mock_fh = mock_open(read_data=fake_log("single_ban"))
-    with patch("homeassistant.components.fail2ban.sensor.open", mock_fh, create=True):
+    with patch("inpui.components.fail2ban.sensor.open", mock_fh, create=True):
         sensor.update()
         assert sensor.state == "111.111.111.111"
         sensor.update()

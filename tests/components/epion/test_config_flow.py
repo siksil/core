@@ -24,7 +24,7 @@ async def test_user_flow(hass: HomeAssistant, mock_epion: MagicMock) -> None:
     )
 
     with patch(
-        "homeassistant.components.epion.async_setup_entry",
+        "inpui.components.epion.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -69,7 +69,7 @@ async def test_form_exceptions(
     mock_epion.return_value.get_current.side_effect = None
 
     with patch(
-        "homeassistant.components.epion.async_setup_entry",
+        "inpui.components.epion.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

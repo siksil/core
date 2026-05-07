@@ -29,7 +29,7 @@ API_CALL = {
 def button_only() -> Generator[None]:
     """Enable only the button platform."""
     with patch(
-        "homeassistant.components.pyload.PLATFORMS",
+        "inpui.components.pyload.PLATFORMS",
         [Platform.BUTTON],
     ):
         yield

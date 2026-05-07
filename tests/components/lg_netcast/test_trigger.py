@@ -21,7 +21,7 @@ from tests.common import MockEntity, MockEntityPlatform
 @pytest.fixture(autouse=True)
 def mock_lg_netcast() -> Generator[None]:
     """Mock LG Netcast library."""
-    with patch("homeassistant.components.lg_netcast.LgNetCastClient"):
+    with patch("inpui.components.lg_netcast.LgNetCastClient"):
         yield
 
 
@@ -70,7 +70,7 @@ async def test_lg_netcast_turn_on_trigger_device_id(
     assert service_calls[1].data["some"] == device.id
     assert service_calls[1].data["id"] == 0
 
-    with patch("homeassistant.config.load_yaml_dict", return_value={}):
+    with patch("inpui.config.load_yaml_dict", return_value={}):
         await hass.services.async_call(automation.DOMAIN, SERVICE_RELOAD, blocking=True)
 
     service_calls.clear()

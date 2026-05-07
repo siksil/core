@@ -67,7 +67,7 @@ async def test_user_flow_errors(
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.lojack.config_flow.LoJackClient.create",
+        "inpui.components.lojack.config_flow.LoJackClient.create",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(

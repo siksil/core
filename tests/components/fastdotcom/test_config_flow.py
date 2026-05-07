@@ -22,7 +22,7 @@ async def test_user_form(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.fastdotcom.async_setup_entry",
+        "inpui.components.fastdotcom.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

@@ -22,7 +22,7 @@ def patch_async_ble_device_from_address(
 ):
     """Patch async_ble_device_from_address to return a mocked BluetoothServiceInfoBleak."""
     return patch(
-        "homeassistant.components.bluetooth.async_ble_device_from_address",
+        "inpui.components.bluetooth.async_ble_device_from_address",
         return_value=return_value,
     )
 

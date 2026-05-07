@@ -14,7 +14,7 @@ from inpui.helpers.automation import (
 @pytest.mark.parametrize(
     ("relative_key", "absolute_key"),
     [
-        ("turned_on", "homeassistant.turned_on"),
+        ("turned_on", "inpui.turned_on"),
         ("_", "homeassistant"),
         ("_state", "state"),
     ],
@@ -28,7 +28,7 @@ def test_absolute_description_key(relative_key: str, absolute_key: str) -> None:
 @pytest.mark.parametrize(
     ("relative_key", "absolute_key"),
     [
-        ("turned_on", "homeassistant.turned_on"),
+        ("turned_on", "inpui.turned_on"),
         ("_", "homeassistant"),
         ("_state", "state"),
     ],

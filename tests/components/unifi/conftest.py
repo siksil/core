@@ -70,7 +70,7 @@ class WebsocketMessageMock(Protocol):
 def fixture_discovery():
     """No real network traffic allowed."""
     with patch(
-        "homeassistant.components.unifi.config_flow._async_discover_unifi",
+        "inpui.components.unifi.config_flow._async_discover_unifi",
         return_value=None,
     ) as mock:
         yield mock

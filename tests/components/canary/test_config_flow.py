@@ -106,7 +106,7 @@ async def test_user_form_single_instance_allowed(
 
 async def test_options_flow(hass: HomeAssistant, canary) -> None:
     """Test updating options."""
-    with patch("homeassistant.components.canary.PLATFORMS", []):
+    with patch("inpui.components.canary.PLATFORMS", []):
         entry = await init_integration(hass)
 
     assert entry.options[CONF_FFMPEG_ARGUMENTS] == DEFAULT_FFMPEG_ARGUMENTS

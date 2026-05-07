@@ -10,8 +10,8 @@ from aiolookin import Climate, Device, Remote
 from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 DEVICE_ID = "98F33163"
-MODULE = "homeassistant.components.lookin"
-MODULE_CONFIG_FLOW = "homeassistant.components.lookin.config_flow"
+MODULE = "inpui.components.lookin"
+MODULE_CONFIG_FLOW = "inpui.components.lookin.config_flow"
 IP_ADDRESS = "127.0.0.1"
 
 DEVICE_NAME = "Living Room"

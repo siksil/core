@@ -89,7 +89,7 @@ def mock_genai_client() -> Generator[AsyncMock]:
         )
     )
     with patch(
-        "homeassistant.components.google_generative_ai_conversation.Client",
+        "inpui.components.google_generative_ai_conversation.Client",
         return_value=client,
     ) as mock_client:
         yield mock_client

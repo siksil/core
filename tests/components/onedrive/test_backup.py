@@ -37,8 +37,8 @@ async def setup_backup_integration(
 ) -> AsyncGenerator[None]:
     """Set up onedrive integration."""
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=False),
-        patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0),
+        patch("inpui.components.backup.is_hassio", return_value=False),
+        patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0),
     ):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {BACKUP_DOMAIN: {}})
         await setup_integration(hass, mock_config_entry)
@@ -216,10 +216,10 @@ async def test_agents_upload(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -258,10 +258,10 @@ async def test_agents_upload_corrupt_upload(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -298,10 +298,10 @@ async def test_agents_upload_metadata_upload_failed(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -355,7 +355,7 @@ async def test_error_on_agents_download(
         [],
     ]
 
-    with patch("homeassistant.components.onedrive.backup.CACHE_TTL", -1):
+    with patch("inpui.components.onedrive.backup.CACHE_TTL", -1):
         resp = await client.get(
             f"/api/backup/download/{backup_id}?agent_id={DOMAIN}.{mock_config_entry.unique_id}"
         )

@@ -1778,7 +1778,7 @@ async def test_event_listener_backlog_full(
         monotonic_time += 60
         return monotonic_time
 
-    with patch("homeassistant.components.influxdb.time.monotonic", new=fast_monotonic):
+    with patch("inpui.components.influxdb.time.monotonic", new=fast_monotonic):
         hass.states.async_set("entity.id", 1)
         await hass.async_block_till_done()
         await async_wait_for_queue_to_process(hass)

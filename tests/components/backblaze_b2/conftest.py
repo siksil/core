@@ -29,7 +29,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.backblaze_b2.async_setup_entry", return_value=True
+        "inpui.components.backblaze_b2.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -52,11 +52,11 @@ def b2_fixture():
     with (
         patch("b2sdk.v2.B2Api", return_value=sim) as mock_client,
         patch(
-            "homeassistant.components.backblaze_b2.b2_client.B2Api", return_value=sim
+            "inpui.components.backblaze_b2.b2_client.B2Api", return_value=sim
         ),
-        patch("homeassistant.components.backblaze_b2.B2Api", return_value=sim),
+        patch("inpui.components.backblaze_b2.B2Api", return_value=sim),
         patch(
-            "homeassistant.components.backblaze_b2.config_flow.B2Api", return_value=sim
+            "inpui.components.backblaze_b2.config_flow.B2Api", return_value=sim
         ),
         patch.object(
             RawSimulator,

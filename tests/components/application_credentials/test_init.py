@@ -92,7 +92,7 @@ async def mock_application_credentials_integration(
     authorization_server: AuthorizationServer,
 ):
     """Mock a application_credentials integration."""
-    with patch("homeassistant.loader.APPLICATION_CREDENTIALS", [TEST_DOMAIN]):
+    with patch("inpui.loader.APPLICATION_CREDENTIALS", [TEST_DOMAIN]):
         assert await async_setup_component(hass, DOMAIN, {})
         await setup_application_credentials_integration(
             hass, TEST_DOMAIN, authorization_server
@@ -735,7 +735,7 @@ async def test_websocket_integration_list(ws_client: ClientFixture) -> None:
     """Test websocket integration list command."""
     client = await ws_client()
     with patch(
-        "homeassistant.loader.APPLICATION_CREDENTIALS", ["example1", "example2"]
+        "inpui.loader.APPLICATION_CREDENTIALS", ["example1", "example2"]
     ):
         assert await client.cmd_result("config") == {
             "domains": ["example1", "example2"],

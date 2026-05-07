@@ -20,7 +20,7 @@ async def test_sensors(
 ) -> None:
     """Test sensors."""
     with patch(
-        "homeassistant.components.moehlenhoff_alpha2.PLATFORMS",
+        "inpui.components.moehlenhoff_alpha2.PLATFORMS",
         [Platform.SENSOR],
     ):
         entry = await init_integration(hass)

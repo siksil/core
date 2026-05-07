@@ -22,7 +22,7 @@ PASSWORD = "test-password"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.ourgroceries.async_setup_entry", return_value=True
+        "inpui.components.ourgroceries.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -62,7 +62,7 @@ async def mock_setup_integration(
     """Mock setup of the ourgroceries integration."""
     ourgroceries_config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.ourgroceries.OurGroceries", return_value=ourgroceries
+        "inpui.components.ourgroceries.OurGroceries", return_value=ourgroceries
     ):
         assert await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()

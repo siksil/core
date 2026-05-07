@@ -33,7 +33,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.vodafone_station.PLATFORMS", [Platform.BUTTON]
+        "inpui.components.vodafone_station.PLATFORMS", [Platform.BUTTON]
     ):
         await setup_integration(hass, mock_config_entry)
 

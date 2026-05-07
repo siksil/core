@@ -48,13 +48,13 @@ async def setup_test(hass: HomeAssistant):
 
     with (
         patch(
-            "homeassistant.components.xiaomi_miio.get_platforms",
+            "inpui.components.xiaomi_miio.get_platforms",
             return_value=[
                 Platform.SELECT,
             ],
         ),
         patch(
-            "homeassistant.components.xiaomi_miio.AirFreshT2017"
+            "inpui.components.xiaomi_miio.AirFreshT2017"
         ) as mock_airfresh_cls,
     ):
         mock_airfresh_cls.return_value = mock_airfresh

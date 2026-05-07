@@ -44,11 +44,11 @@ def mock_solarman(device_fixture: str) -> Generator[AsyncMock]:
     """Mock a solarman client."""
     with (
         patch(
-            "homeassistant.components.solarman.coordinator.Solarman",
+            "inpui.components.solarman.coordinator.Solarman",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.solarman.config_flow.Solarman",
+            "inpui.components.solarman.config_flow.Solarman",
             new=mock_client,
         ),
     ):
@@ -66,6 +66,6 @@ def mock_solarman(device_fixture: str) -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.solarman.async_setup_entry", return_value=True
+        "inpui.components.solarman.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

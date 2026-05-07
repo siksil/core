@@ -140,7 +140,7 @@ async def test_clean_area_no_map(
     )
     assert caplog.record_tuples == [
         (
-            "homeassistant.components.ecovacs.vacuum",
+            "inpui.components.ecovacs.vacuum",
             logging.WARNING,
             "No map information available, cannot clean segments",
         ),
@@ -191,18 +191,18 @@ async def test_clean_area_invalid_map_id(
 
     assert caplog.record_tuples == [
         (
-            "homeassistant.components.ecovacs.vacuum",
+            "inpui.components.ecovacs.vacuum",
             logging.WARNING,
             "Map ID 1 not found in available maps",
         ),
         # twice as both areas reference the same missing map ID
         (
-            "homeassistant.components.ecovacs.vacuum",
+            "inpui.components.ecovacs.vacuum",
             logging.WARNING,
             "Map ID 1 not found in available maps",
         ),
         (
-            "homeassistant.components.ecovacs.vacuum",
+            "inpui.components.ecovacs.vacuum",
             logging.WARNING,
             "No valid segments to clean after validation, skipping clean segments command",
         ),
@@ -272,7 +272,7 @@ async def test_clean_area_room_from_not_current_map(
 
     assert caplog.record_tuples == [
         (
-            "homeassistant.components.ecovacs.vacuum",
+            "inpui.components.ecovacs.vacuum",
             logging.WARNING,
             'Map "Second map" is not currently selected, skipping segment "Bedroom" (1)',
         ),
@@ -420,7 +420,7 @@ async def test_raise_segment_changed_issue(
             [],
             [
                 (
-                    "homeassistant.components.ecovacs.vacuum",
+                    "inpui.components.ecovacs.vacuum",
                     logging.WARNING,
                     "Map ID 2 not found in available maps",
                 )

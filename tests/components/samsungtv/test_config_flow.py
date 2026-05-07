@@ -139,7 +139,7 @@ async def test_user_legacy(hass: HomeAssistant) -> None:
 
     # Wrong host allow to retry
     with patch(
-        "homeassistant.components.samsungtv.config_flow.socket.gethostbyname",
+        "inpui.components.samsungtv.config_flow.socket.gethostbyname",
         side_effect=socket.gaierror("[Error -2] Name or Service not known"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -170,7 +170,7 @@ async def test_user_legacy_does_not_ok_first_time(hass: HomeAssistant) -> None:
     """Test starting a flow by user."""
     # show form
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=AccessDenied("Boom"),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -183,7 +183,7 @@ async def test_user_legacy_does_not_ok_first_time(hass: HomeAssistant) -> None:
             result["flow_id"], user_input=MOCK_USER_DATA
         )
 
-    with patch("homeassistant.components.samsungtv.bridge.Remote"):
+    with patch("inpui.components.samsungtv.bridge.Remote"):
         # entry was added
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"], user_input={}
@@ -206,7 +206,7 @@ async def test_user_legacy_does_not_ok_first_time(hass: HomeAssistant) -> None:
 async def test_user_websocket(hass: HomeAssistant) -> None:
     """Test starting a flow by user."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote", side_effect=OSError("Boom")
+        "inpui.components.samsungtv.bridge.Remote", side_effect=OSError("Boom")
     ):
         # show form
         result = await hass.config_entries.flow.async_init(
@@ -243,7 +243,7 @@ async def test_user_encrypted_websocket(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.samsungtv.config_flow.SamsungTVEncryptedWSAsyncAuthenticator",
+        "inpui.components.samsungtv.config_flow.SamsungTVEncryptedWSAsyncAuthenticator",
         autospec=True,
     ) as authenticator_mock:
         authenticator_mock.return_value.try_pin.side_effect = [
@@ -286,7 +286,7 @@ async def test_user_encrypted_websocket(
 async def test_user_legacy_missing_auth(hass: HomeAssistant) -> None:
     """Test starting a flow by user with authentication."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=AccessDenied("Boom"),
     ):
         # legacy device missing authentication
@@ -298,7 +298,7 @@ async def test_user_legacy_missing_auth(hass: HomeAssistant) -> None:
         assert result["errors"] == {"base": "auth_missing"}
 
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=OSError,
     ):
         # legacy device fails to connect after auth failed
@@ -313,7 +313,7 @@ async def test_user_legacy_missing_auth(hass: HomeAssistant) -> None:
 async def test_user_legacy_not_supported(hass: HomeAssistant) -> None:
     """Test starting a flow by user for not supported device."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=UnhandledResponse("Boom"),
     ):
         # legacy device not supported
@@ -329,11 +329,11 @@ async def test_user_websocket_not_supported(hass: HomeAssistant) -> None:
     """Test starting a flow by user for not supported device."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=WebSocketException("Boom"),
         ),
     ):
@@ -352,11 +352,11 @@ async def test_user_websocket_access_denied(
     """Test starting a flow by user for not supported device."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=ConnectionClosedError(rcvd=None, sent=frames.Close(1002, "")),
         ),
     ):
@@ -374,11 +374,11 @@ async def test_user_websocket_auth_retry(hass: HomeAssistant) -> None:
     """Test starting a flow by user for not supported device."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=UnauthorizedError,
         ),
     ):
@@ -391,11 +391,11 @@ async def test_user_websocket_auth_retry(hass: HomeAssistant) -> None:
     assert result["errors"] == {"base": "auth_missing"}
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
         ),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -415,11 +415,11 @@ async def test_user_not_successful(hass: HomeAssistant) -> None:
     """Test starting a flow by user but no connection found."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=OSError("Boom"),
         ),
     ):
@@ -435,11 +435,11 @@ async def test_user_not_successful_2(hass: HomeAssistant) -> None:
     """Test starting a flow by user but no connection found."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=ConnectionFailure("Boom"),
         ),
     ):
@@ -536,7 +536,7 @@ async def test_ssdp_noprefix(hass: HomeAssistant) -> None:
 async def test_ssdp_legacy_missing_auth(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery with authentication."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=AccessDenied("Boom"),
     ):
         # confirm to add the entry
@@ -554,7 +554,7 @@ async def test_ssdp_legacy_missing_auth(hass: HomeAssistant) -> None:
         assert result["step_id"] == "pairing"
         assert result["errors"] == {"base": "auth_missing"}
 
-    with patch("homeassistant.components.samsungtv.bridge.Remote"):
+    with patch("inpui.components.samsungtv.bridge.Remote"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}
         )
@@ -572,7 +572,7 @@ async def test_ssdp_legacy_missing_auth(hass: HomeAssistant) -> None:
 async def test_ssdp_legacy_not_supported(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery for not supported device."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVLegacyBridge.async_try_connect",
+        "inpui.components.samsungtv.bridge.SamsungTVLegacyBridge.async_try_connect",
         return_value=RESULT_NOT_SUPPORTED,
     ):
         # confirm to add the entry
@@ -661,7 +661,7 @@ async def test_ssdp_encrypted_websocket_success_populates_mac_address_and_ssdp_l
     assert result["step_id"] == "confirm"
 
     with patch(
-        "homeassistant.components.samsungtv.config_flow.SamsungTVEncryptedWSAsyncAuthenticator",
+        "inpui.components.samsungtv.config_flow.SamsungTVEncryptedWSAsyncAuthenticator",
         autospec=True,
     ) as authenticator_mock:
         authenticator_mock.return_value.try_pin.side_effect = [
@@ -707,7 +707,7 @@ async def test_ssdp_encrypted_websocket_not_supported(
 ) -> None:
     """Test starting a flow from ssdp for an unsupported device populates the mac."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVEncryptedWSAsyncRemote.start_listening",
+        "inpui.components.samsungtv.bridge.SamsungTVEncryptedWSAsyncRemote.start_listening",
         side_effect=WebSocketException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -724,15 +724,15 @@ async def test_ssdp_websocket_cannot_connect(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery and we cannot connect."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVEncryptedWSAsyncRemote.start_listening",
+            "inpui.components.samsungtv.bridge.SamsungTVEncryptedWSAsyncRemote.start_listening",
             side_effect=WebSocketException("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote",
         ) as remote_websocket,
         patch.object(remote_websocket, "open", side_effect=WebSocketException("Boom")),
     ):
@@ -764,15 +764,15 @@ async def test_ssdp_not_successful(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery but no device found."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+            "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -796,15 +796,15 @@ async def test_ssdp_not_successful_2(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery but no device found."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
             side_effect=ConnectionFailure("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+            "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
             return_value=MOCK_DEVICE_INFO,
         ),
     ):
@@ -827,7 +827,7 @@ async def test_ssdp_not_successful_2(hass: HomeAssistant) -> None:
 async def test_ssdp_already_in_progress(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery twice."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value=MOCK_DEVICE_INFO,
     ):
         # confirm to add the entry
@@ -849,7 +849,7 @@ async def test_ssdp_already_in_progress(hass: HomeAssistant) -> None:
 async def test_ssdp_already_configured(hass: HomeAssistant) -> None:
     """Test starting a flow from discovery when already configured."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value=MOCK_DEVICE_INFO,
     ):
         # entry was added
@@ -1107,14 +1107,14 @@ async def test_autodetect_websocket(hass: HomeAssistant) -> None:
     """Test for send key with autodetection of protocol."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote"
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote"
         ) as remote_websocket,
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVAsyncRest",
+            "inpui.components.samsungtv.bridge.SamsungTVAsyncRest",
         ) as rest_api_class,
     ):
         remote = Mock(SamsungTVWSAsyncRemote)
@@ -1159,14 +1159,14 @@ async def test_websocket_no_mac(hass: HomeAssistant, mac_address: Mock) -> None:
     mac_address.return_value = "gg:ee:tt:mm:aa:cc"
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote"
+            "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote"
         ) as remote_websocket,
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVAsyncRest",
+            "inpui.components.samsungtv.bridge.SamsungTVAsyncRest",
         ) as rest_api_class,
     ):
         remote = Mock(SamsungTVWSAsyncRemote)
@@ -1209,7 +1209,7 @@ async def test_websocket_no_mac(hass: HomeAssistant, mac_address: Mock) -> None:
 async def test_autodetect_auth_missing(hass: HomeAssistant) -> None:
     """Test for send key with autodetection of protocol."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=AccessDenied("Boom"),
     ) as remote:
         result = await hass.config_entries.flow.async_init(
@@ -1224,7 +1224,7 @@ async def test_autodetect_auth_missing(hass: HomeAssistant) -> None:
             call(AUTODETECT_LEGACY),
             call(AUTODETECT_LEGACY),
         ]
-    with patch("homeassistant.components.samsungtv.bridge.Remote", side_effect=OSError):
+    with patch("inpui.components.samsungtv.bridge.Remote", side_effect=OSError):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             {},
@@ -1238,7 +1238,7 @@ async def test_autodetect_auth_missing(hass: HomeAssistant) -> None:
 async def test_autodetect_not_supported(hass: HomeAssistant) -> None:
     """Test for send key with autodetection of protocol."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.Remote",
+        "inpui.components.samsungtv.bridge.Remote",
         side_effect=[UnhandledResponse("Boom")],
     ) as remote:
         result = await hass.config_entries.flow.async_init(
@@ -1266,11 +1266,11 @@ async def test_autodetect_none(hass: HomeAssistant) -> None:
     """Test for send key with autodetection of protocol."""
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote",
+            "inpui.components.samsungtv.bridge.Remote",
             side_effect=OSError("Boom"),
         ) as remote,
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVAsyncRest.rest_device_info",
+            "inpui.components.samsungtv.bridge.SamsungTVAsyncRest.rest_device_info",
             side_effect=ResponseError,
         ) as rest_device_info,
     ):
@@ -1718,11 +1718,11 @@ async def test_update_legacy_missing_mac_from_dhcp_no_unique_id(
     entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.samsungtv.bridge.Remote.__enter__",
+            "inpui.components.samsungtv.bridge.Remote.__enter__",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.samsungtv.bridge.SamsungTVEncryptedWSAsyncRemote.start_listening",
+            "inpui.components.samsungtv.bridge.SamsungTVEncryptedWSAsyncRemote.start_listening",
             side_effect=WebSocketException("Boom"),
         ),
     ):
@@ -1833,7 +1833,7 @@ async def test_reconfigure_host(hass: HomeAssistant) -> None:
     assert result["step_id"] == config_entries.SOURCE_RECONFIGURE
 
     with patch(
-        "homeassistant.components.samsungtv.config_flow.socket.gethostbyname",
+        "inpui.components.samsungtv.config_flow.socket.gethostbyname",
         return_value="10.10.12.77",
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1856,7 +1856,7 @@ async def test_reconfigure_host_invalid(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reconfigure"
 
     with patch(
-        "homeassistant.components.samsungtv.config_flow.socket.gethostbyname",
+        "inpui.components.samsungtv.config_flow.socket.gethostbyname",
         side_effect=socket.gaierror("invalid host"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1869,7 +1869,7 @@ async def test_reconfigure_host_invalid(hass: HomeAssistant) -> None:
     assert result["errors"] == {"base": "invalid_host"}
 
     with patch(
-        "homeassistant.components.samsungtv.config_flow.socket.gethostbyname",
+        "inpui.components.samsungtv.config_flow.socket.gethostbyname",
         return_value="10.10.12.77",
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1943,7 +1943,7 @@ async def test_form_reauth_websocket_not_supported(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
+        "inpui.components.samsungtv.bridge.SamsungTVWSAsyncRemote.open",
         side_effect=WebSocketException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -1972,7 +1972,7 @@ async def test_form_reauth_encrypted(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.samsungtv.config_flow.SamsungTVEncryptedWSAsyncAuthenticator",
+        "inpui.components.samsungtv.config_flow.SamsungTVEncryptedWSAsyncAuthenticator",
         autospec=True,
     ) as authenticator_mock:
         authenticator_mock.return_value.try_pin.side_effect = [
@@ -2154,7 +2154,7 @@ async def test_no_update_incorrect_udn_not_matching_mac_from_dhcp(
 async def test_ssdp_update_mac(hass: HomeAssistant) -> None:
     """Ensure that MAC address is correctly updated from SSDP."""
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value=MOCK_DEVICE_INFO,
     ):
         # entry was added
@@ -2172,7 +2172,7 @@ async def test_ssdp_update_mac(hass: HomeAssistant) -> None:
     device_info = deepcopy(MOCK_DEVICE_INFO)
     device_info["device"]["wifiMac"] = "none"
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value=device_info,
     ):
         # Updated
@@ -2189,7 +2189,7 @@ async def test_ssdp_update_mac(hass: HomeAssistant) -> None:
     device_info = deepcopy(MOCK_DEVICE_INFO)
     device_info["device"]["wifiMac"] = "aa:bb:cc:dd:ee:ff"
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value=device_info,
     ):
         # Updated
@@ -2211,7 +2211,7 @@ async def test_dhcp_while_user_flow_pending(hass: HomeAssistant) -> None:
     Covers https://github.com/home-assistant/core/issues/156591.
     """
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value=None,  # Simulate device not connectable
     ):
         # Start user flow, which will show form (cannot connect)
@@ -2227,7 +2227,7 @@ async def test_dhcp_while_user_flow_pending(hass: HomeAssistant) -> None:
         ip="10.10.12.34", macaddress="aabbccddeeff", hostname="fake_hostname"
     )
     with patch(
-        "homeassistant.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
+        "inpui.components.samsungtv.bridge.SamsungTVWSBridge.async_device_info",
         return_value={
             "device": {"modelName": "fake_model", "wifiMac": "aa:bb:cc:dd:ee:ff"}
         },

@@ -50,7 +50,7 @@ async def test_form_stt(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> Non
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=STT_INFO,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -80,7 +80,7 @@ async def test_form_tts(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> Non
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=TTS_INFO,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -108,7 +108,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=None,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -130,7 +130,7 @@ async def test_no_supported_services(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=EMPTY_INFO,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -164,7 +164,7 @@ async def test_hassio_addon_discovery(
     assert result.get("description_placeholders") == {"addon": "Piper"}
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=info,
     ) as mock_wyoming:
         result2 = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -203,7 +203,7 @@ async def test_hassio_addon_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=None,
     ):
         result2 = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -221,7 +221,7 @@ async def test_hassio_addon_no_supported_services(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=EMPTY_INFO,
     ):
         result2 = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -237,7 +237,7 @@ async def test_zeroconf_discovery(
 ) -> None:
     """Test config flow initiated by Supervisor."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=SATELLITE_INFO,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -265,7 +265,7 @@ async def test_zeroconf_discovery_no_port(
     """Test discovery when the zeroconf service does not have a port."""
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch.object(ZEROCONF_DISCOVERY, "port", None),
@@ -287,7 +287,7 @@ async def test_zeroconf_discovery_no_services(
 ) -> None:
     """Test discovery when there are no supported services on the client."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=Info(),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -313,7 +313,7 @@ async def test_zeroconf_discovery_already_configured(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=SATELLITE_INFO,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -344,7 +344,7 @@ async def test_bad_config_entry(hass: HomeAssistant) -> None:
 
     # zeroconf
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=SATELLITE_INFO,
     ):
         result = await hass.config_entries.flow.async_init(

@@ -41,7 +41,7 @@ async def test_unsupported_device_type(
     mock_get_status.return_value = {}
 
     with patch(
-        "homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.switchbot_cloud.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         entry = await configure_integration(hass)
 
@@ -77,7 +77,7 @@ async def test_binary_sensors(
     mock_get_status.return_value = json_data[index]
 
     with patch(
-        "homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.switchbot_cloud.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         entry = await configure_integration(hass)
 

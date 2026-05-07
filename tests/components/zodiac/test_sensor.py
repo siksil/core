@@ -54,7 +54,7 @@ async def test_zodiac_day(
         domain=DOMAIN,
     ).add_to_hass(hass)
 
-    with patch("homeassistant.components.zodiac.sensor.utcnow", return_value=now):
+    with patch("inpui.components.zodiac.sensor.utcnow", return_value=now):
         assert await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()
 

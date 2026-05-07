@@ -46,7 +46,7 @@ async def test_load_unload_entry(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -84,7 +84,7 @@ async def test_port_migration(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -122,7 +122,7 @@ async def test_migrate_error_from_future(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.sensor.aiodns.DNSResolver",
+        "inpui.components.dnsip.sensor.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         await hass.config_entries.async_setup(entry.entry_id)

@@ -529,9 +529,9 @@ async def test_devices_updated_on_refresh(
         return_value=ArrayOfHomeAppliances(appliances[1:3]),
     )
     with (
-        patch("homeassistant.components.home_connect.PLATFORMS", platforms),
+        patch("inpui.components.home_connect.PLATFORMS", platforms),
         patch(
-            "homeassistant.components.home_connect.HomeConnectClient",
+            "inpui.components.home_connect.HomeConnectClient",
             return_value=client,
         ),
     ):

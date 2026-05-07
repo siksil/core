@@ -28,7 +28,7 @@ from tests.components.bluetooth import generate_advertisement_data, generate_ble
 def patch_async_setup_entry(return_value=True):
     """Patch async setup entry to return True."""
     return patch(
-        "homeassistant.components.airthings_ble.async_setup_entry",
+        "inpui.components.airthings_ble.async_setup_entry",
         return_value=return_value,
     )
 
@@ -36,7 +36,7 @@ def patch_async_setup_entry(return_value=True):
 def patch_async_discovered_service_info(return_value: list[BluetoothServiceInfoBleak]):
     """Patch async_discovered_service_info to return given list."""
     return patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info",
+        "inpui.components.bluetooth.async_discovered_service_info",
         return_value=return_value,
     )
 
@@ -44,7 +44,7 @@ def patch_async_discovered_service_info(return_value: list[BluetoothServiceInfoB
 def patch_async_ble_device_from_address(return_value: BLEDevice | None):
     """Patch async ble device from address to return a given value."""
     return patch(
-        "homeassistant.components.bluetooth.async_ble_device_from_address",
+        "inpui.components.bluetooth.async_ble_device_from_address",
         return_value=return_value,
     )
 
@@ -62,7 +62,7 @@ def patch_airthings_ble(return_value=AirthingsDevice, side_effect=None):
 def patch_airthings_device_update():
     """Patch airthings-ble device."""
     return patch(
-        "homeassistant.components.airthings_ble.coordinator.AirthingsBluetoothDeviceData.update_device",
+        "inpui.components.airthings_ble.coordinator.AirthingsBluetoothDeviceData.update_device",
         return_value=WAVE_DEVICE_INFO,
     )
 

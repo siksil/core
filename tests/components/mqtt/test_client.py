@@ -89,7 +89,7 @@ async def test_mqtt_await_ack_at_disconnect(hass: HomeAssistant) -> None:
         rc = 0
 
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         mqtt_client = mock_client.return_value
         mqtt_client.connect = MagicMock(
@@ -364,8 +364,8 @@ async def test_subscribe_and_resubscribe(
     """Test resubscribing within the debounce time."""
     mqtt_client_mock = setup_with_birth_msg_client_mock
     with (
-        patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.4),
-        patch("homeassistant.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.4),
+        patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.4),
+        patch("inpui.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.4),
     ):
         mock_debouncer.clear()
         unsub = await mqtt.async_subscribe(hass, "test-topic", record_calls)
@@ -1235,7 +1235,7 @@ async def test_triggers_reauth_flow_if_auth_fails(
     assert flows[0]["context"]["source"] == "reauth"
 
 
-@patch("homeassistant.components.mqtt.client.TIMEOUT_ACK", 0.3)
+@patch("inpui.components.mqtt.client.TIMEOUT_ACK", 0.3)
 async def test_handle_mqtt_on_callback(
     hass: HomeAssistant,
     caplog: pytest.LogCaptureFixture,
@@ -1306,7 +1306,7 @@ async def test_publish_error(
 
     # simulate an Out of memory error
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         mock_client().connect = lambda **kwargs: 1
         mock_client().publish().rc = 1
@@ -1405,7 +1405,7 @@ async def test_setup_mqtt_client_clean_session_and_protocol(
 ) -> None:
     """Test MQTT client clean_session and protocol setup."""
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         await mqtt_mock_entry()
 
@@ -1457,7 +1457,7 @@ async def test_setup_mqtt_client_clean_start(
     assert mqtt_client_mock.connect.mock_calls[0] == connect_args
 
 
-@patch("homeassistant.components.mqtt.client.TIMEOUT_ACK", 0.2)
+@patch("inpui.components.mqtt.client.TIMEOUT_ACK", 0.2)
 async def test_handle_mqtt_timeout_on_callback(
     hass: HomeAssistant, caplog: pytest.LogCaptureFixture, mock_debouncer: asyncio.Event
 ) -> None:
@@ -1471,7 +1471,7 @@ async def test_handle_mqtt_timeout_on_callback(
         rc = 0
 
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
 
         def _mock_ack(topic: str, qos: int = 0) -> tuple[int, int]:
@@ -1540,7 +1540,7 @@ async def test_setup_raises_config_entry_not_ready_if_no_connect_broker(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         mock_client().connect = MagicMock(side_effect=exception)
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -1577,7 +1577,7 @@ async def test_setup_uses_certificate_on_certificate_set_to_auto_and_insecure(
         insecure_check["insecure"] = insecure_param
 
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as mock_client:
         mock_client().tls_set = mock_tls_set
         mock_client().tls_insecure_set = mock_tls_insecure_set
@@ -1618,7 +1618,7 @@ async def test_client_id_is_set(
 ) -> None:
     """Test setup defaults for tls."""
     with patch(
-        "homeassistant.components.mqtt.async_client.AsyncMQTTClient"
+        "inpui.components.mqtt.async_client.AsyncMQTTClient"
     ) as async_client_mock:
         await mqtt_mock_entry()
         await hass.async_block_till_done()
@@ -1668,9 +1668,9 @@ async def test_tls_version(
         )
     ],
 )
-@patch("homeassistant.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
 async def test_custom_birth_message(
     hass: HomeAssistant,
     mock_debouncer: asyncio.Event,
@@ -1718,9 +1718,9 @@ async def test_default_birth_message(
     ("mqtt_config_entry_data", "mqtt_config_entry_options"),
     [({mqtt.CONF_BROKER: "mock-broker"}, {mqtt.CONF_BIRTH_MESSAGE: {}})],
 )
-@patch("homeassistant.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
 async def test_no_birth_message(
     hass: HomeAssistant,
     record_calls: MessageCallbackType,
@@ -1759,7 +1759,7 @@ async def test_no_birth_message(
     ("mqtt_config_entry_data", "mqtt_config_entry_options"),
     [({mqtt.CONF_BROKER: "mock-broker"}, ENTRY_DEFAULT_BIRTH_MESSAGE)],
 )
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.2)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.2)
 async def test_delayed_birth_message(
     hass: HomeAssistant,
     mqtt_config_entry_data: dict[str, Any],
@@ -2048,8 +2048,8 @@ async def test_mqtt_subscribes_in_single_call(
 
 
 @pytest.mark.parametrize("mqtt_config_entry_options", [ENTRY_DEFAULT_BIRTH_MESSAGE])
-@patch("homeassistant.components.mqtt.client.MAX_SUBSCRIBES_PER_CALL", 2)
-@patch("homeassistant.components.mqtt.client.MAX_UNSUBSCRIBES_PER_CALL", 2)
+@patch("inpui.components.mqtt.client.MAX_SUBSCRIBES_PER_CALL", 2)
+@patch("inpui.components.mqtt.client.MAX_UNSUBSCRIBES_PER_CALL", 2)
 async def test_mqtt_subscribes_and_unsubscribes_in_chunks(
     hass: HomeAssistant,
     mock_debouncer: asyncio.Event,

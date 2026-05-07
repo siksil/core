@@ -30,18 +30,18 @@ async def load_integration_from_entry(
         """Set up a config entry with mocked trafikverket data."""
         with (
             patch(
-                "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+                "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
                 return_value=get_trains,
             ),
             patch(
-                "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
+                "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
                 return_value=get_train_stop,
             ),
             patch(
-                "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_station",
+                "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_search_train_station",
             ),
             patch(
-                "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
+                "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_station_from_signature",
             ),
         ):
             await hass.config_entries.async_setup(config_entry_id)

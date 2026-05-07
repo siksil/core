@@ -123,11 +123,11 @@ def eheimdigital_hub_mock(
     """Mock eheimdigital hub."""
     with (
         patch(
-            "homeassistant.components.eheimdigital.coordinator.EheimDigitalHub",
+            "inpui.components.eheimdigital.coordinator.EheimDigitalHub",
             spec=EheimDigitalHub,
         ) as eheimdigital_hub_mock,
         patch(
-            "homeassistant.components.eheimdigital.config_flow.EheimDigitalHub",
+            "inpui.components.eheimdigital.config_flow.EheimDigitalHub",
             new=eheimdigital_hub_mock,
         ),
     ):
@@ -149,6 +149,6 @@ async def init_integration(
 
     mock_config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.eheimdigital.coordinator.asyncio.Event", new=AsyncMock
+        "inpui.components.eheimdigital.coordinator.asyncio.Event", new=AsyncMock
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

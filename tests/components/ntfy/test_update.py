@@ -32,7 +32,7 @@ from tests.typing import WebSocketGenerator
 def update_only() -> Generator[None]:
     """Enable only the update platform."""
     with patch(
-        "homeassistant.components.ntfy.PLATFORMS",
+        "inpui.components.ntfy.PLATFORMS",
         [Platform.UPDATE],
     ):
         yield

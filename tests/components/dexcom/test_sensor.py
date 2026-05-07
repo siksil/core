@@ -26,7 +26,7 @@ async def test_sensors_unknown(hass: HomeAssistant) -> None:
     await init_integration(hass)
 
     with patch(
-        "homeassistant.components.dexcom.Dexcom.get_current_glucose_reading",
+        "inpui.components.dexcom.Dexcom.get_current_glucose_reading",
         return_value=None,
     ):
         await async_update_entity(hass, "sensor.test_username_glucose_value")
@@ -43,7 +43,7 @@ async def test_sensors_update_failed(hass: HomeAssistant) -> None:
     await init_integration(hass)
 
     with patch(
-        "homeassistant.components.dexcom.Dexcom.get_current_glucose_reading",
+        "inpui.components.dexcom.Dexcom.get_current_glucose_reading",
         side_effect=SessionError,
     ):
         await async_update_entity(hass, "sensor.test_username_glucose_value")

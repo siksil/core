@@ -141,7 +141,7 @@ async def test_lookup_media_for_other_integrations(
     assert "Plex integration not configured" in str(excinfo.value)
 
     with patch(
-        "homeassistant.components.plex.PlexServer.connect", side_effect=NotFound
+        "inpui.components.plex.PlexServer.connect", side_effect=NotFound
     ):
         # Initialize Plex integration without setting up a server
         with pytest.raises(AssertionError):

@@ -42,7 +42,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.lamarzocco.async_setup_entry", return_value=True
+        "inpui.components.lamarzocco.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -241,7 +241,7 @@ async def test_reconfigure_flow(
 
     with (
         patch(
-            "homeassistant.components.lamarzocco.config_flow.async_discovered_service_info",
+            "inpui.components.lamarzocco.config_flow.async_discovered_service_info",
             return_value=[service_info],
         ),
     ):
@@ -307,7 +307,7 @@ async def test_reconfigure_flow_no_machines(
 
     with (
         patch(
-            "homeassistant.components.lamarzocco.config_flow.async_discovered_service_info",
+            "inpui.components.lamarzocco.config_flow.async_discovered_service_info",
             return_value=discovered,
         ),
     ):

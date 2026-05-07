@@ -69,15 +69,15 @@ async def test_config_flow(hass: HomeAssistant, config_entry: MockConfigEntry) -
     """Test that the user step works."""
     with (
         patch(
-            "homeassistant.components.forked_daapd.config_flow.ForkedDaapdAPI.test_connection",
+            "inpui.components.forked_daapd.config_flow.ForkedDaapdAPI.test_connection",
             new=AsyncMock(),
         ) as mock_test_connection,
         patch(
-            "homeassistant.components.forked_daapd.ForkedDaapdAPI.get_request",
+            "inpui.components.forked_daapd.ForkedDaapdAPI.get_request",
             autospec=True,
         ) as mock_get_request,
         patch(
-            "homeassistant.components.forked_daapd.async_setup_entry",
+            "inpui.components.forked_daapd.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -134,7 +134,7 @@ async def test_config_flow_no_websocket(
 ) -> None:
     """Test config flow setup without websocket enabled on server."""
     with patch(
-        "homeassistant.components.forked_daapd.config_flow.ForkedDaapdAPI.test_connection",
+        "inpui.components.forked_daapd.config_flow.ForkedDaapdAPI.test_connection",
         new=AsyncMock(),
     ) as mock_test_connection:
         # test invalid config data
@@ -235,11 +235,11 @@ async def test_options_flow(hass: HomeAssistant, config_entry: MockConfigEntry) 
 
     with (
         patch(
-            "homeassistant.components.forked_daapd.ForkedDaapdAPI.get_request",
+            "inpui.components.forked_daapd.ForkedDaapdAPI.get_request",
             autospec=True,
         ) as mock_get_request,
         patch(
-            "homeassistant.components.forked_daapd.async_setup_entry",
+            "inpui.components.forked_daapd.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -269,7 +269,7 @@ async def test_async_setup_entry_not_ready(
     """Test that a PlatformNotReady exception is thrown during platform setup."""
 
     with patch(
-        "homeassistant.components.forked_daapd.ForkedDaapdAPI",
+        "inpui.components.forked_daapd.ForkedDaapdAPI",
         autospec=True,
     ) as mock_api:
         mock_api.return_value.get_request.return_value = None

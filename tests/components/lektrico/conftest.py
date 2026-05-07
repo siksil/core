@@ -44,15 +44,15 @@ def mock_device() -> Generator[AsyncMock]:
     """Mock a Lektrico device."""
     with (
         patch(
-            "homeassistant.components.lektrico.Device",
+            "inpui.components.lektrico.Device",
             autospec=True,
         ) as mock_device,
         patch(
-            "homeassistant.components.lektrico.config_flow.Device",
+            "inpui.components.lektrico.config_flow.Device",
             new=mock_device,
         ),
         patch(
-            "homeassistant.components.lektrico.coordinator.Device",
+            "inpui.components.lektrico.coordinator.Device",
             new=mock_device,
         ),
     ):
@@ -72,7 +72,7 @@ def mock_device() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.lektrico.async_setup_entry", return_value=True
+        "inpui.components.lektrico.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

@@ -22,7 +22,7 @@ SWITCH_ENTITY_IDS = ["switch.decorative_lights", "switch.ac"]
 def switch_only() -> Generator[None]:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.SWITCH],
     ):
         yield

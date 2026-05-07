@@ -41,7 +41,7 @@ from tests.common import async_fire_time_changed
 def siren_platform_only():
     """Only set up the siren and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.DEVICE_TRACKER,
             Platform.NUMBER,

@@ -20,7 +20,7 @@ DEVICE_IDENTIFIER = "ems_40580137858664"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.homevolt.async_setup_entry", return_value=True
+        "inpui.components.homevolt.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -44,11 +44,11 @@ def mock_homevolt_client() -> Generator[MagicMock]:
     """Return a mocked Homevolt client."""
     with (
         patch(
-            "homeassistant.components.homevolt.Homevolt",
+            "inpui.components.homevolt.Homevolt",
             autospec=True,
         ) as homevolt_mock,
         patch(
-            "homeassistant.components.homevolt.config_flow.Homevolt",
+            "inpui.components.homevolt.config_flow.Homevolt",
             new=homevolt_mock,
         ),
     ):
@@ -107,7 +107,7 @@ async def init_integration(
     """Set up the Homevolt integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.homevolt.PLATFORMS", platforms):
+    with patch("inpui.components.homevolt.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

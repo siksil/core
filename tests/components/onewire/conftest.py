@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.onewire.async_setup_entry", return_value=True
+        "inpui.components.onewire.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -57,7 +57,7 @@ def get_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def get_owproxy() -> Generator[MagicMock]:
     """Mock owproxy."""
     with patch(
-        "homeassistant.components.onewire.onewirehub.OWServerStatelessProxy",
+        "inpui.components.onewire.onewirehub.OWServerStatelessProxy",
         autospec=True,
     ) as owproxy:
         yield owproxy

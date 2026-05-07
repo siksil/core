@@ -96,7 +96,7 @@ def mock_remote_fixture():
     mock_remote = get_mock_remote()
 
     with patch(
-        "homeassistant.components.panasonic_viera.RemoteControl",
+        "inpui.components.panasonic_viera.RemoteControl",
         return_value=mock_remote,
     ):
         yield mock_remote

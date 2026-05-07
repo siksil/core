@@ -106,7 +106,7 @@ async def test_webhook_post(
 
     # Request from remote IP
     with patch(
-        "homeassistant.components.webhook.ip_address",
+        "inpui.components.webhook.ip_address",
         return_value=ip_address("123.123.123.123"),
     ):
         await client.post("/api/webhook/post_webhook", data={"hello": "world"})
@@ -166,7 +166,7 @@ async def test_webhook_allowed_methods_internet(
 
     # Request from remote IP
     with patch(
-        "homeassistant.components.webhook.ip_address",
+        "inpui.components.webhook.ip_address",
         return_value=ip_address("123.123.123.123"),
     ):
         await client.put("/api/webhook/post_webhook")
@@ -305,7 +305,7 @@ async def test_webhook_reload(
     assert events[0].data["hello"] == "yo world"
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             "automation": {

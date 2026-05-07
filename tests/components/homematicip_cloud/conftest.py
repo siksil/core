@@ -133,12 +133,12 @@ def simple_mock_home_fixture():
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome",
+            "inpui.components.homematicip_cloud.hap.AsyncHome",
             autospec=True,
             return_value=mock_home,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
+            "inpui.components.homematicip_cloud.hap.ConnectionContextBuilder.build_context_async",
         ),
     ):
         yield
@@ -150,7 +150,7 @@ def mock_connection_init_fixture():
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.AsyncHome.init_async",
+            "inpui.components.homematicip_cloud.hap.AsyncHome.init_async",
             return_value=None,
             new_callable=AsyncMock,
         ),

@@ -102,7 +102,7 @@ def mocked_plug_legacy_no_auth(mocked_plug_legacy: MagicMock) -> MagicMock:
 def patch_config_flow(mocked_plug: MagicMock):
     """Patch D-Link Smart Plug config flow."""
     return patch(
-        "homeassistant.components.dlink.config_flow.SmartPlug",
+        "inpui.components.dlink.config_flow.SmartPlug",
         return_value=mocked_plug,
     )
 
@@ -110,7 +110,7 @@ def patch_config_flow(mocked_plug: MagicMock):
 def patch_setup(mocked_plug: MagicMock):
     """Patch D-Link Smart Plug object."""
     return patch(
-        "homeassistant.components.dlink.SmartPlug",
+        "inpui.components.dlink.SmartPlug",
         return_value=mocked_plug,
     )
 

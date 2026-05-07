@@ -114,7 +114,7 @@ def sync_access_token_proxy(
 @pytest.fixture(autouse=True)
 def mock_delay_save() -> Generator[None]:
     """Mock the delay save constant."""
-    with patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0):
+    with patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0):
         yield
 
 
@@ -122,7 +122,7 @@ def mock_delay_save() -> Generator[None]:
 def mock_get_backups() -> Generator[AsyncMock]:
     """Mock manager get backups."""
     with patch(
-        "homeassistant.components.backup.BackupManager.async_get_backups"
+        "inpui.components.backup.BackupManager.async_get_backups"
     ) as mock_get_backups:
         yield mock_get_backups
 
@@ -514,7 +514,7 @@ async def test_generate_calls_create(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_initiate_backup",
+        "inpui.components.backup.manager.BackupManager.async_initiate_backup",
         return_value=NewBackup(backup_job_id="abc123"),
     ) as generate_backup:
         await client.send_json_auto_id({"type": "backup/generate"} | params)
@@ -720,7 +720,7 @@ async def test_restore_local_agent(
     with (
         patch("pathlib.Path.exists", return_value=True),
         patch("pathlib.Path.write_text"),
-        patch("homeassistant.components.backup.manager.validate_password"),
+        patch("inpui.components.backup.manager.validate_password"),
     ):
         await client.send_json_auto_id(
             {
@@ -760,7 +760,7 @@ async def test_restore_remote_agent(
     with (
         patch("pathlib.Path.write_text"),
         patch("pathlib.Path.open"),
-        patch("homeassistant.components.backup.manager.validate_password"),
+        patch("inpui.components.backup.manager.validate_password"),
     ):
         await client.send_json_auto_id(
             {
@@ -821,7 +821,7 @@ async def test_restore_wrong_password(
         patch("pathlib.Path.exists", return_value=True),
         patch("pathlib.Path.write_text"),
         patch(
-            "homeassistant.components.backup.manager.validate_password",
+            "inpui.components.backup.manager.validate_password",
             return_value=False,
         ),
     ):
@@ -864,7 +864,7 @@ async def test_backup_end(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_post_backup_actions",
+        "inpui.components.backup.manager.BackupManager.async_post_backup_actions",
     ):
         await client.send_json_auto_id({"type": "backup/end"})
         assert await client.receive_json() == snapshot
@@ -898,7 +898,7 @@ async def test_backup_start(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_pre_backup_actions",
+        "inpui.components.backup.manager.BackupManager.async_pre_backup_actions",
     ):
         await client.send_json_auto_id({"type": "backup/start"})
         assert await client.receive_json() == snapshot
@@ -927,7 +927,7 @@ async def test_backup_end_exception(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_post_backup_actions",
+        "inpui.components.backup.manager.BackupManager.async_post_backup_actions",
         side_effect=exception,
     ):
         await client.send_json_auto_id({"type": "backup/end"})
@@ -957,7 +957,7 @@ async def test_backup_start_exception(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_pre_backup_actions",
+        "inpui.components.backup.manager.BackupManager.async_pre_backup_actions",
         side_effect=exception,
     ):
         await client.send_json_auto_id({"type": "backup/start"})
@@ -1318,7 +1318,7 @@ async def test_agents_info(
     ],
 )
 @pytest.mark.usefixtures("supervisor_client")
-@patch("homeassistant.components.backup.config.random.randint", Mock(return_value=600))
+@patch("inpui.components.backup.config.random.randint", Mock(return_value=600))
 async def test_config_load_config_info(
     hass: HomeAssistant,
     hass_ws_client: WebSocketGenerator,
@@ -1496,7 +1496,7 @@ async def test_config_load_config_info(
         ],
     ],
 )
-@patch("homeassistant.components.backup.config.random.randint", Mock(return_value=600))
+@patch("inpui.components.backup.config.random.randint", Mock(return_value=600))
 async def test_config_update(
     hass: HomeAssistant,
     hass_ws_client: WebSocketGenerator,
@@ -1904,7 +1904,7 @@ async def test_config_update_errors(
         ),
     ],
 )
-@patch("homeassistant.components.backup.config.random.randint", Mock(return_value=600))
+@patch("inpui.components.backup.config.random.randint", Mock(return_value=600))
 async def test_config_schedule_logic(
     hass: HomeAssistant,
     hass_ws_client: WebSocketGenerator,
@@ -2814,7 +2814,7 @@ async def test_config_schedule_logic(
         ),
     ],
 )
-@patch("homeassistant.components.backup.config.BACKUP_START_TIME_JITTER", 0)
+@patch("inpui.components.backup.config.BACKUP_START_TIME_JITTER", 0)
 async def test_config_retention_copies_logic(
     hass: HomeAssistant,
     hass_ws_client: WebSocketGenerator,

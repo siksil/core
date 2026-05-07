@@ -82,8 +82,8 @@ def get_sensors_response_fixture() -> GetSensorsResponse:
 def mock_aiopurpleair_fixture(api: Mock) -> Generator[Mock]:
     """Define a fixture to patch aiopurpleair."""
     with (
-        patch("homeassistant.components.purpleair.config_flow.API", return_value=api),
-        patch("homeassistant.components.purpleair.coordinator.API", return_value=api),
+        patch("inpui.components.purpleair.config_flow.API", return_value=api),
+        patch("inpui.components.purpleair.coordinator.API", return_value=api),
     ):
         yield api
 

@@ -14,6 +14,6 @@ async def setup_integration(
     """Fixture for setting up the integration."""
     config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.hdfury.PLATFORMS", platforms):
+    with patch("inpui.components.hdfury.PLATFORMS", platforms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()

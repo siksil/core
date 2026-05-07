@@ -93,7 +93,7 @@ class MockProcess(Process):
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.systemmonitor.async_setup_entry",
+        "inpui.components.systemmonitor.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -147,10 +147,10 @@ def mock_psutil(mock_process: list[MockProcess]) -> Generator:
     """Mock psutil."""
     with (
         patch(
-            "homeassistant.components.systemmonitor.ha_psutil.PsutilWrapper",
+            "inpui.components.systemmonitor.ha_psutil.PsutilWrapper",
         ) as psutil_wrapper,
         patch(
-            "homeassistant.components.systemmonitor.coordinator.get_all_pressure_info",
+            "inpui.components.systemmonitor.coordinator.get_all_pressure_info",
             return_value=MOCK_PRESSURE_INFO,
         ),
     ):
@@ -253,8 +253,8 @@ def mock_os() -> Generator:
         return path != "/etc/hosts"
 
     with (
-        patch("homeassistant.components.systemmonitor.coordinator.os") as mock_os,
-        patch("homeassistant.components.systemmonitor.util.os") as mock_os_util,
+        patch("inpui.components.systemmonitor.coordinator.os") as mock_os,
+        patch("inpui.components.systemmonitor.util.os") as mock_os_util,
     ):
         mock_os.getloadavg.return_value = (1, 2, 3)
         mock_os_util.path.isdir = isdir

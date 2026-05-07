@@ -79,7 +79,7 @@ async def test_bad_trigger_platform(hass: HomeAssistant) -> None:
 async def test_trigger_subtype(hass: HomeAssistant) -> None:
     """Test trigger subtypes."""
     with patch(
-        "homeassistant.helpers.trigger.async_get_integration",
+        "inpui.helpers.trigger.async_get_integration",
         return_value=MagicMock(async_get_platform=AsyncMock()),
     ) as integration_mock:
         await _async_get_trigger_platform(hass, "test.subtype")
@@ -786,7 +786,7 @@ async def test_async_get_all_descriptions(
 
     with (
         patch(
-            "homeassistant.helpers.trigger._load_triggers_files",
+            "inpui.helpers.trigger._load_triggers_files",
             side_effect=trigger._load_triggers_files,
         ) as proxy_load_triggers_files,
         patch(
@@ -985,7 +985,7 @@ async def test_async_get_all_descriptions_with_yaml_error(
 
     with (
         patch(
-            "homeassistant.helpers.trigger.load_yaml_dict",
+            "inpui.helpers.trigger.load_yaml_dict",
             side_effect=_load_yaml_dict,
         ),
         patch.object(Integration, "has_triggers", return_value=True),
@@ -1160,7 +1160,7 @@ async def test_subscribe_triggers_experimental_triggers(
 @patch("annotatedyaml.loader.load_yaml")
 @patch.object(Integration, "has_triggers", return_value=True)
 @patch(
-    "homeassistant.components.light.trigger.async_get_triggers",
+    "inpui.components.light.trigger.async_get_triggers",
     new=AsyncMock(return_value={}),
 )
 async def test_subscribe_triggers_no_triggers(

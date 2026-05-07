@@ -33,7 +33,7 @@ async def test_form(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.progettihwsw.config_flow.ProgettiHWSWAPI.check_board",
+        "inpui.components.progettihwsw.config_flow.ProgettiHWSWAPI.check_board",
         return_value=mock_value_step_user,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -46,7 +46,7 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result2["errors"] == {}
 
     with patch(
-        "homeassistant.components.progettihwsw.async_setup_entry",
+        "inpui.components.progettihwsw.async_setup_entry",
         return_value=True,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -70,7 +70,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.progettihwsw.config_flow.ProgettiHWSWAPI.check_board",
+        "inpui.components.progettihwsw.config_flow.ProgettiHWSWAPI.check_board",
         return_value=False,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -118,7 +118,7 @@ async def test_form_user_exception(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.progettihwsw.config_flow.validate_input",
+        "inpui.components.progettihwsw.config_flow.validate_input",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

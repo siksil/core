@@ -22,7 +22,7 @@ async def test_coordinator_update_auth_error(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test coordinator handles auth error during update."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     assert mock_config_entry.state is ConfigEntryState.LOADED
@@ -44,7 +44,7 @@ async def test_coordinator_update_api_error(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test coordinator handles API error during update."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     mock_actron_api.update_status.side_effect = ActronAirAPIError("API error")

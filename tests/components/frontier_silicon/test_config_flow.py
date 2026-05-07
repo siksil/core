@@ -59,7 +59,7 @@ async def test_form_default_pin(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_radio_id",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_radio_id",
         return_value=radio_id_return_value,
         side_effect=radio_id_side_effect,
     ):
@@ -97,7 +97,7 @@ async def test_form_nondefault_pin(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
         side_effect=InvalidPinException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -111,7 +111,7 @@ async def test_form_nondefault_pin(
     assert result2["errors"] is None
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_radio_id",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_radio_id",
         return_value=radio_id_return_value,
         side_effect=radio_id_side_effect,
     ):
@@ -153,7 +153,7 @@ async def test_form_nondefault_pin_invalid(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
         side_effect=InvalidPinException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -167,7 +167,7 @@ async def test_form_nondefault_pin_invalid(
     assert result2["errors"] is None
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
         side_effect=friendly_name_error,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -217,7 +217,7 @@ async def test_invalid_device_url(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_webfsapi_endpoint",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_webfsapi_endpoint",
         side_effect=webfsapi_endpoint_error,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -257,7 +257,7 @@ async def test_ssdp(
 ) -> None:
     """Test a device being discovered."""
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_radio_id",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_radio_id",
         return_value=radio_id_return_value,
         side_effect=radio_id_side_effect,
     ):
@@ -328,7 +328,7 @@ async def test_ssdp_fail(
 ) -> None:
     """Test a device being discovered but failing to reply."""
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_webfsapi_endpoint",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_webfsapi_endpoint",
         side_effect=webfsapi_endpoint_error,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -345,7 +345,7 @@ async def test_ssdp_nondefault_pin(hass: HomeAssistant) -> None:
     """Test a device being discovered."""
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
         side_effect=InvalidPinException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -399,7 +399,7 @@ async def test_reauth_flow_friendly_name_error(
     assert result["step_id"] == "device_config"
 
     with patch(
-        "homeassistant.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
+        "inpui.components.frontier_silicon.config_flow.AFSAPI.get_friendly_name",
         side_effect=exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

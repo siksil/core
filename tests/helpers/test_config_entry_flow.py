@@ -220,7 +220,7 @@ async def test_discovery_during_onboarding(
     flow.context = {"source": source}
 
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+        "inpui.components.onboarding.async_is_onboarded", return_value=False
     ):
         result = await getattr(flow, f"async_step_{source}")({})
 

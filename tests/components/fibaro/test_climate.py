@@ -26,7 +26,7 @@ async def test_climate_setup(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_thermostat]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -59,7 +59,7 @@ async def test_climate_setup_2_quickapps(
         mock_thermostat_quickapp_2,
     ]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -82,7 +82,7 @@ async def test_hvac_mode_preset(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_thermostat]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -105,7 +105,7 @@ async def test_hvac_mode_heat(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_thermostat]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -127,7 +127,7 @@ async def test_set_hvac_mode(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_thermostat]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         await hass.services.async_call(
@@ -154,7 +154,7 @@ async def test_hvac_mode_with_operation_mode_support(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_thermostat_with_operating_mode]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -175,7 +175,7 @@ async def test_set_hvac_mode_with_operation_mode_support(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_thermostat_with_operating_mode]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         await hass.services.async_call(
@@ -208,7 +208,7 @@ async def test_fan_mode(
         mock_fan_device,
     ]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -236,7 +236,7 @@ async def test_set_fan_mode(
         mock_fan_device,
     ]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         await hass.services.async_call(
@@ -269,7 +269,7 @@ async def test_target_temperature(
         mock_fan_device,
     ]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert
@@ -296,7 +296,7 @@ async def test_set_target_temperature(
         mock_fan_device,
     ]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.CLIMATE]):
         # Act
         await init_integration(hass, mock_config_entry)
         await hass.services.async_call(

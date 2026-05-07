@@ -25,7 +25,7 @@ def mock_comports() -> Generator[AsyncMock]:
     device.description = "Test Device"
 
     with patch(
-        "homeassistant.components.route_b_smart_meter.config_flow.comports",
+        "inpui.components.route_b_smart_meter.config_flow.comports",
         return_value=[SysFS("/dev/ttyUSB41"), device],
     ) as mock:
         yield mock

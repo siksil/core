@@ -47,9 +47,9 @@ async def test_fallback_to_polling(
 
     # Ensure subscriptions are cancelled and polling methods are called when subscriptions time out
     with (
-        patch("homeassistant.components.sonos.media.SonosMedia.poll_media"),
+        patch("inpui.components.sonos.media.SonosMedia.poll_media"),
         patch(
-            "homeassistant.components.sonos.speaker.SonosSpeaker.subscription_address"
+            "inpui.components.sonos.speaker.SonosSpeaker.subscription_address"
         ),
     ):
         async_fire_time_changed(hass, dt_util.utcnow() + SCAN_INTERVAL)
@@ -65,7 +65,7 @@ async def test_subscription_creation_fails(
 ) -> None:
     """Test that subscription creation failures are handled."""
     with patch(
-        "homeassistant.components.sonos.speaker.SonosSpeaker._subscribe",
+        "inpui.components.sonos.speaker.SonosSpeaker._subscribe",
         side_effect=ConnectionError("Took too long"),
     ):
         await async_setup_sonos()

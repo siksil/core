@@ -44,7 +44,7 @@ def patch_blueprint(blueprint_path: str, data_path: str) -> Iterator[None]:
         )
 
     with patch(
-        "homeassistant.components.blueprint.models.DomainBlueprints._load_blueprint",
+        "inpui.components.blueprint.models.DomainBlueprints._load_blueprint",
         mock_load_blueprint,
     ):
         yield
@@ -81,7 +81,7 @@ async def test_confirmable_notification(
                                 "message": "Throw ring in mountain?",
                                 "confirm_action": [
                                     {
-                                        "action": "homeassistant.turn_on",
+                                        "action": "inpui.turn_on",
                                         "target": {"entity_id": "mount.doom"},
                                     }
                                 ],
@@ -96,7 +96,7 @@ async def test_confirmable_notification(
     context = Context()
 
     with patch(
-        "homeassistant.components.mobile_app.device_action.async_call_action_from_config"
+        "inpui.components.mobile_app.device_action.async_call_action_from_config"
     ) as mock_call_action:
         # Trigger script
         await hass.services.async_call(script.DOMAIN, "confirm", context=context)

@@ -45,7 +45,7 @@ async def test_show_form(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.srp_energy.async_setup_entry",
+        "inpui.components.srp_energy.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

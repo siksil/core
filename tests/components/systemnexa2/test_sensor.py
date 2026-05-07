@@ -25,7 +25,7 @@ async def test_sensor_entities(
 
     # Only load the sensor platform for snapshot testing
     with patch(
-        "homeassistant.components.systemnexa2.PLATFORMS",
+        "inpui.components.systemnexa2.PLATFORMS",
         [Platform.SENSOR],
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

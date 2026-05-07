@@ -183,19 +183,19 @@ async def test_create_eager_task_from_thread_in_integration(
     with (
         pytest.raises(RuntimeError, match="no running event loop"),
         patch(
-            "homeassistant.helpers.frame.linecache.getline",
+            "inpui.helpers.frame.linecache.getline",
             return_value="self.light.is_on",
         ),
         patch(
-            "homeassistant.util.loop._get_line_from_cache",
+            "inpui.util.loop._get_line_from_cache",
             return_value="mock_line",
         ),
         patch(
-            "homeassistant.util.loop.get_current_frame",
+            "inpui.util.loop.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):

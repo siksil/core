@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry
 async def sensor_only() -> None:
     """Enable only the sensor platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.SENSOR],
     ):
         yield

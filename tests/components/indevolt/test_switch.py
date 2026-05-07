@@ -41,7 +41,7 @@ async def test_switch(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test switch entity registration and states."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -81,7 +81,7 @@ async def test_switch_turn_on(
     on_value: int,
 ) -> None:
     """Test turning switches on."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration
@@ -140,7 +140,7 @@ async def test_switch_turn_off(
     off_value: int,
 ) -> None:
     """Test turning switches off."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration
@@ -172,7 +172,7 @@ async def test_switch_set_value_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test error handling when toggling a switch."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     # Mock set_data to raise an error
@@ -201,7 +201,7 @@ async def test_switch_availability(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test switch entity availability / non-availability."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     # Confirm current state is "on"

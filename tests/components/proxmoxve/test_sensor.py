@@ -32,7 +32,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.proxmoxve.PLATFORMS",
+        "inpui.components.proxmoxve.PLATFORMS",
         [Platform.SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -61,7 +61,7 @@ async def test_storage_missing_used_fraction(
     mock_proxmox_client._node_mock.storage.get.return_value = storage_without_fraction
 
     with patch(
-        "homeassistant.components.proxmoxve.PLATFORMS",
+        "inpui.components.proxmoxve.PLATFORMS",
         [Platform.SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)

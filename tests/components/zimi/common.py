@@ -76,7 +76,7 @@ async def setup_platform(
     )
     mock_config.add_to_hass(hass)
 
-    with patch("homeassistant.components.zimi.PLATFORMS", [platform]):
+    with patch("inpui.components.zimi.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()
 

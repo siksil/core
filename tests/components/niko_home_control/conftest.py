@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override integration setup."""
     with patch(
-        "homeassistant.components.niko_home_control.async_setup_entry",
+        "inpui.components.niko_home_control.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -102,11 +102,11 @@ def mock_niko_home_control_connection(
     """Mock a NHC client."""
     with (
         patch(
-            "homeassistant.components.niko_home_control.NHCController",
+            "inpui.components.niko_home_control.NHCController",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.niko_home_control.config_flow.NHCController",
+            "inpui.components.niko_home_control.config_flow.NHCController",
             new=mock_client,
         ),
     ):

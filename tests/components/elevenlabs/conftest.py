@@ -29,7 +29,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.elevenlabs.async_setup_entry", return_value=True
+        "inpui.components.elevenlabs.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -47,15 +47,15 @@ def mock_async_client() -> Generator[AsyncMock]:
     """Override async ElevenLabs client."""
     with (
         patch(
-            "homeassistant.components.elevenlabs.AsyncElevenLabs",
+            "inpui.components.elevenlabs.AsyncElevenLabs",
             return_value=_client_mock(),
         ) as mock_async_client,
         patch(
-            "homeassistant.components.elevenlabs.config_flow.AsyncElevenLabs",
+            "inpui.components.elevenlabs.config_flow.AsyncElevenLabs",
             new=mock_async_client,
         ),
         patch(
-            "homeassistant.components.elevenlabs.tts.AsyncElevenLabs",
+            "inpui.components.elevenlabs.tts.AsyncElevenLabs",
             new=mock_async_client,
         ),
     ):
@@ -75,11 +75,11 @@ def mock_async_client_api_error() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.elevenlabs.AsyncElevenLabs",
+            "inpui.components.elevenlabs.AsyncElevenLabs",
             return_value=client_mock,
         ) as mock_async_client,
         patch(
-            "homeassistant.components.elevenlabs.config_flow.AsyncElevenLabs",
+            "inpui.components.elevenlabs.config_flow.AsyncElevenLabs",
             new=mock_async_client,
         ),
     ):
@@ -100,7 +100,7 @@ def mock_async_client_voices_error() -> Generator[AsyncMock]:
     client_mock.voices.get_all.side_effect = api_error
 
     with patch(
-        "homeassistant.components.elevenlabs.config_flow.AsyncElevenLabs",
+        "inpui.components.elevenlabs.config_flow.AsyncElevenLabs",
         return_value=client_mock,
     ) as mock_async_client:
         yield mock_async_client
@@ -120,7 +120,7 @@ def mock_async_client_models_error() -> Generator[AsyncMock]:
     client_mock.models.list.side_effect = api_error
 
     with patch(
-        "homeassistant.components.elevenlabs.config_flow.AsyncElevenLabs",
+        "inpui.components.elevenlabs.config_flow.AsyncElevenLabs",
         return_value=client_mock,
     ) as mock_async_client:
         yield mock_async_client
@@ -134,11 +134,11 @@ def mock_async_client_connect_error() -> Generator[AsyncMock]:
     client_mock.voices.get_all.side_effect = ConnectError("Unknown")
     with (
         patch(
-            "homeassistant.components.elevenlabs.AsyncElevenLabs",
+            "inpui.components.elevenlabs.AsyncElevenLabs",
             return_value=client_mock,
         ) as mock_async_client,
         patch(
-            "homeassistant.components.elevenlabs.config_flow.AsyncElevenLabs",
+            "inpui.components.elevenlabs.config_flow.AsyncElevenLabs",
             new=mock_async_client,
         ),
     ):
@@ -173,7 +173,7 @@ async def mock_config_entry_setup(
     )
     client_mock.speech_to_text = stt_mock
     with patch(
-        "homeassistant.components.elevenlabs.AsyncElevenLabs", return_value=client_mock
+        "inpui.components.elevenlabs.AsyncElevenLabs", return_value=client_mock
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
 

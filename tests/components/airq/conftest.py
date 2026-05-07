@@ -12,7 +12,7 @@ from .common import TEST_BRIGHTNESS, TEST_DEVICE_DATA, TEST_DEVICE_INFO
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airq.async_setup_entry", return_value=True
+        "inpui.components.airq.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -26,11 +26,11 @@ def mock_airq():
 
     with (
         patch(
-            "homeassistant.components.airq.coordinator.AirQ",
+            "inpui.components.airq.coordinator.AirQ",
             autospec=True,
         ) as mock_airq_class,
         patch(
-            "homeassistant.components.airq.config_flow.AirQ",
+            "inpui.components.airq.config_flow.AirQ",
             new=mock_airq_class,
         ),
     ):

@@ -178,7 +178,7 @@ def cache_size() -> int:
 @pytest.fixture(autouse=True)
 def apply_cache_size(cache_size):
     """Fixture for patching the cache size."""
-    with patch("homeassistant.components.nest.EVENT_MEDIA_CACHE_SIZE", new=cache_size):
+    with patch("inpui.components.nest.EVENT_MEDIA_CACHE_SIZE", new=cache_size):
         yield
 
 
@@ -1106,7 +1106,7 @@ async def test_multiple_devices(
 def event_store() -> Generator[None]:
     """Persist changes to event store immediately."""
     with patch(
-        "homeassistant.components.nest.media_source.STORAGE_SAVE_DELAY_SECONDS",
+        "inpui.components.nest.media_source.STORAGE_SAVE_DELAY_SECONDS",
         new=0,
     ):
         yield
@@ -1224,7 +1224,7 @@ async def test_media_store_save_filesystem_error(
     # The client fetches the media from the server, but has a failure when
     # persisting the media to disk.
     client = await hass_client()
-    with patch("homeassistant.components.nest.media_source.open", side_effect=OSError):
+    with patch("inpui.components.nest.media_source.open", side_effect=OSError):
         await subscriber.async_receive_event(
             create_event_message(
                 create_battery_event_data(MOTION_EVENT),
@@ -1304,7 +1304,7 @@ async def test_media_store_load_filesystem_error(
 
     # Fetch the media from the server, and simluate a failure reading from disk
     client = await hass_client()
-    with patch("homeassistant.components.nest.media_source.open", side_effect=OSError):
+    with patch("inpui.components.nest.media_source.open", side_effect=OSError):
         response = await client.get(
             f"/api/nest/event_media/{device.id}/{event_identifier}"
         )
@@ -1363,7 +1363,7 @@ async def test_camera_event_media_eviction(
     ts = event_timestamp + datetime.timedelta(seconds=8)
     # Simulate a failure case removing the media on cache eviction
     with patch(
-        "homeassistant.components.nest.media_source.os.remove", side_effect=OSError
+        "inpui.components.nest.media_source.os.remove", side_effect=OSError
     ) as mock_remove:
         await subscriber.async_receive_event(
             create_event_message(
@@ -1712,7 +1712,7 @@ async def test_media_migration_failure(
 
     # Mock shutil.move to fail
     with patch(
-        "homeassistant.components.nest.media_source.shutil.move",
+        "inpui.components.nest.media_source.shutil.move",
         side_effect=OSError("Storage full"),
     ):
         # Run setup (which triggers migration)

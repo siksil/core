@@ -46,7 +46,7 @@ async def test_validate_config_ok(
     no_error.warning_str = ""
 
     with patch(
-        "homeassistant.components.config.core.check_config.async_check_ha_config_file",
+        "inpui.components.config.core.check_config.async_check_ha_config_file",
         return_value=no_error,
     ):
         resp = await client.post("/api/config/core/check_config")
@@ -63,7 +63,7 @@ async def test_validate_config_ok(
     error_warning.warning_str = "milk"
 
     with patch(
-        "homeassistant.components.config.core.check_config.async_check_ha_config_file",
+        "inpui.components.config.core.check_config.async_check_ha_config_file",
         return_value=error_warning,
     ):
         resp = await client.post("/api/config/core/check_config")
@@ -80,7 +80,7 @@ async def test_validate_config_ok(
     warning.warning_str = "milk"
 
     with patch(
-        "homeassistant.components.config.core.check_config.async_check_ha_config_file",
+        "inpui.components.config.core.check_config.async_check_ha_config_file",
         return_value=warning,
     ):
         resp = await client.post("/api/config/core/check_config")
@@ -123,9 +123,9 @@ async def test_websocket_core_update(hass: HomeAssistant, client) -> None:
     assert hass.config.radius != 150
 
     with (
-        patch("homeassistant.util.dt.set_default_time_zone") as mock_set_tz,
+        patch("inpui.util.dt.set_default_time_zone") as mock_set_tz,
         patch(
-            "homeassistant.components.config.core.async_update_suggested_units"
+            "inpui.components.config.core.async_update_suggested_units"
         ) as mock_update_sensor_units,
     ):
         await client.send_json(
@@ -170,9 +170,9 @@ async def test_websocket_core_update(hass: HomeAssistant, client) -> None:
     assert mock_set_tz.mock_calls[0][1][0] == dt_util.get_time_zone("America/New_York")
 
     with (
-        patch("homeassistant.util.dt.set_default_time_zone") as mock_set_tz,
+        patch("inpui.util.dt.set_default_time_zone") as mock_set_tz,
         patch(
-            "homeassistant.components.config.core.async_update_suggested_units"
+            "inpui.components.config.core.async_update_suggested_units"
         ) as mock_update_sensor_units,
     ):
         await client.send_json(
@@ -223,7 +223,7 @@ async def test_websocket_bad_core_update(hass: HomeAssistant, client) -> None:
 async def test_detect_config(hass: HomeAssistant, client) -> None:
     """Test detect config."""
     with patch(
-        "homeassistant.util.location.async_detect_location_info",
+        "inpui.util.location.async_detect_location_info",
         return_value=None,
     ):
         await client.send_json({"id": 1, "type": "config/core/detect"})
@@ -237,7 +237,7 @@ async def test_detect_config(hass: HomeAssistant, client) -> None:
 async def test_detect_config_fail(hass: HomeAssistant, client) -> None:
     """Test detect config."""
     with patch(
-        "homeassistant.util.location.async_detect_location_info",
+        "inpui.util.location.async_detect_location_info",
         return_value=location_util.LocationInfo(
             ip=None,
             country_code=None,

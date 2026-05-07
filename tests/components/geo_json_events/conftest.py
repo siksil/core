@@ -33,6 +33,6 @@ def config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock geo_json_events entry setup."""
     with patch(
-        "homeassistant.components.geo_json_events.async_setup_entry", return_value=True
+        "inpui.components.geo_json_events.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

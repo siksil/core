@@ -50,7 +50,7 @@ async def test_lock_get_state(
     states_response = get_states_response_for_uid(uid)
     states_response[0]["state"]["lock"] = 1
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))
@@ -79,7 +79,7 @@ async def test_lock_set_unlock(
     states_response = get_states_response_for_uid(uid)
     states_response[0]["state"]["lock"] = 1
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         await async_update_entity(hass, entity_id)
@@ -95,7 +95,7 @@ async def test_lock_set_unlock(
     assert entry
     assert entry.unique_id == uid
 
-    with patch("homeassistant.components.freedompro.lock.put_state") as mock_put_state:
+    with patch("inpui.components.freedompro.lock.put_state") as mock_put_state:
         await hass.services.async_call(
             LOCK_DOMAIN,
             SERVICE_UNLOCK,
@@ -107,7 +107,7 @@ async def test_lock_set_unlock(
     states_response = get_states_response_for_uid(uid)
     states_response[0]["state"]["lock"] = 0
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))
@@ -134,7 +134,7 @@ async def test_lock_set_lock(
     assert entry
     assert entry.unique_id == uid
 
-    with patch("homeassistant.components.freedompro.lock.put_state") as mock_put_state:
+    with patch("inpui.components.freedompro.lock.put_state") as mock_put_state:
         await hass.services.async_call(
             LOCK_DOMAIN,
             SERVICE_LOCK,
@@ -146,7 +146,7 @@ async def test_lock_set_lock(
     states_response = get_states_response_for_uid(uid)
     states_response[0]["state"]["lock"] = 1
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))

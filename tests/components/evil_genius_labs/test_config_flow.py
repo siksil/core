@@ -35,7 +35,7 @@ async def test_form(
             return_value=product_fixture,
         ),
         patch(
-            "homeassistant.components.evil_genius_labs.async_setup_entry",
+            "inpui.components.evil_genius_labs.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

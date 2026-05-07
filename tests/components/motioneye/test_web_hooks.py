@@ -117,7 +117,7 @@ async def test_setup_camera_with_wrong_webhook(
     assert not client.async_set_camera.called
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=client,
     ):
         hass.config_entries.async_update_entry(
@@ -260,7 +260,7 @@ async def test_setup_camera_with_no_home_assistant_urls(
     config_entry = create_mock_motioneye_config_entry(hass, data={CONF_URL: TEST_URL})
 
     with patch(
-        "homeassistant.components.motioneye.get_url", side_effect=NoURLAvailableError
+        "inpui.components.motioneye.get_url", side_effect=NoURLAvailableError
     ):
         await setup_mock_motioneye_config_entry(
             hass,

@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.onewire._PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.onewire._PLATFORMS", [Platform.SELECT]):
         yield
 
 

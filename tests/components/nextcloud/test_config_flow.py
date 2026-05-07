@@ -37,7 +37,7 @@ async def test_user_create_entry(
 
     # test NextcloudMonitorAuthorizationError
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         side_effect=NextcloudMonitorAuthorizationError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -51,7 +51,7 @@ async def test_user_create_entry(
 
     # test NextcloudMonitorConnectionError
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         side_effect=NextcloudMonitorConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -65,7 +65,7 @@ async def test_user_create_entry(
 
     # test NextcloudMonitorRequestError
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         side_effect=NextcloudMonitorRequestError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -79,7 +79,7 @@ async def test_user_create_entry(
 
     # test success
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -111,7 +111,7 @@ async def test_user_already_configured(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -141,7 +141,7 @@ async def test_reauth(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
 
     # test NextcloudMonitorAuthorizationError
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         side_effect=NextcloudMonitorAuthorizationError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -158,7 +158,7 @@ async def test_reauth(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
 
     # test NextcloudMonitorConnectionError
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         side_effect=NextcloudMonitorConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -175,7 +175,7 @@ async def test_reauth(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
 
     # test NextcloudMonitorRequestError
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         side_effect=NextcloudMonitorRequestError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -192,7 +192,7 @@ async def test_reauth(hass: HomeAssistant, snapshot: SnapshotAssertion) -> None:
 
     # test success
     with patch(
-        "homeassistant.components.nextcloud.config_flow.NextcloudMonitor",
+        "inpui.components.nextcloud.config_flow.NextcloudMonitor",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(

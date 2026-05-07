@@ -38,7 +38,7 @@ def config_entry(hass: HomeAssistant) -> MockConfigEntry:
 async def setup_voip(hass: HomeAssistant, config_entry: MockConfigEntry) -> None:
     """Set up VoIP integration."""
     with patch(
-        "homeassistant.components.voip._create_sip_server",
+        "inpui.components.voip._create_sip_server",
         return_value=(Mock(), AsyncMock()),
     ):
         assert await async_setup_component(hass, DOMAIN, {})

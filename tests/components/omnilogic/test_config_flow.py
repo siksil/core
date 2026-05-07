@@ -25,11 +25,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.omnilogic.config_flow.OmniLogic.connect",
+            "inpui.components.omnilogic.config_flow.OmniLogic.connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.omnilogic.async_setup_entry",
+            "inpui.components.omnilogic.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -65,7 +65,7 @@ async def test_with_invalid_credentials(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.omnilogic.OmniLogic.connect",
+        "inpui.components.omnilogic.OmniLogic.connect",
         side_effect=LoginException,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -86,7 +86,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.omnilogic.OmniLogic.connect",
+        "inpui.components.omnilogic.OmniLogic.connect",
         side_effect=OmniLogicException,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -107,7 +107,7 @@ async def test_with_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.omnilogic.OmniLogic.connect",
+        "inpui.components.omnilogic.OmniLogic.connect",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -128,7 +128,7 @@ async def test_option_flow(hass: HomeAssistant) -> None:
     assert not entry.options
 
     with patch(
-        "homeassistant.components.omnilogic.async_setup_entry", return_value=True
+        "inpui.components.omnilogic.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.options.async_init(
             entry.entry_id,

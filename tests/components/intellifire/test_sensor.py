@@ -26,7 +26,7 @@ async def test_all_sensor_entities(
     """Test all entities."""
 
     with (
-        patch("homeassistant.components.intellifire.PLATFORMS", [Platform.SENSOR]),
+        patch("inpui.components.intellifire.PLATFORMS", [Platform.SENSOR]),
     ):
         await setup_integration(hass, mock_config_entry_current)
         await snapshot_platform(

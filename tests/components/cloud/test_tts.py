@@ -52,7 +52,7 @@ from tests.typing import ClientSessionGenerator
 @pytest.fixture(autouse=True)
 async def delay_save_fixture() -> AsyncGenerator[None]:
     """Load the homeassistant integration."""
-    with patch("homeassistant.helpers.collection.SAVE_DELAY", new=0):
+    with patch("inpui.helpers.collection.SAVE_DELAY", new=0):
         yield
 
 
@@ -257,7 +257,7 @@ async def test_get_tts_audio(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         url = "/api/tts_get_url"
         data |= {"message": "There is someone at the door."}
@@ -320,7 +320,7 @@ async def test_get_tts_audio_logged_out(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         url = "/api/tts_get_url"
         data |= {"message": "There is someone at the door."}
@@ -376,7 +376,7 @@ async def test_tts_entity(
     assert state.state == STATE_UNKNOWN
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         url = "/api/tts_get_url"
         data = {
@@ -515,7 +515,7 @@ async def test_deprecated_voice(
 
     # Test with non deprecated voice.
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         url = "/api/tts_get_url"
         data |= {
@@ -567,7 +567,7 @@ async def test_deprecated_voice(
     data["options"] = {"voice": deprecated_voice}
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         req = await client.post(url, json=data)
         assert req.status == HTTPStatus.OK
@@ -689,7 +689,7 @@ async def test_deprecated_gender(
 
     # Test without deprecated gender option.
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         url = "/api/tts_get_url"
         data |= {
@@ -736,7 +736,7 @@ async def test_deprecated_gender(
     data["options"] = {"gender": gender_option}
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         req = await client.post(url, json=data)
         assert req.status == HTTPStatus.OK

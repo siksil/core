@@ -34,7 +34,7 @@ async def test_websocket_browse_media(
     )
 
     with patch(
-        "homeassistant.components.media_source.http.async_browse_media",
+        "inpui.components.media_source.http.async_browse_media",
         return_value=media,
     ):
         await client.send_json(
@@ -51,7 +51,7 @@ async def test_websocket_browse_media(
     assert media.as_dict() == msg["result"]
 
     with patch(
-        "homeassistant.components.media_source.http.async_browse_media",
+        "inpui.components.media_source.http.async_browse_media",
         side_effect=BrowseError("test"),
     ):
         await client.send_json(
@@ -85,7 +85,7 @@ async def test_websocket_resolve_media(
     )
 
     with patch(
-        "homeassistant.components.media_source.http.async_resolve_media",
+        "inpui.components.media_source.http.async_resolve_media",
         return_value=media,
     ):
         await client.send_json(
@@ -109,7 +109,7 @@ async def test_websocket_resolve_media(
     assert "authSig" in parsed.query
 
     with patch(
-        "homeassistant.components.media_source.http.async_resolve_media",
+        "inpui.components.media_source.http.async_resolve_media",
         side_effect=media_source.Unresolvable("test"),
     ):
         await client.send_json(

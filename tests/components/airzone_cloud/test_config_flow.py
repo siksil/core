@@ -26,31 +26,31 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone_cloud.async_setup_entry",
+            "inpui.components.airzone_cloud.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_device_config",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_device_config",
             side_effect=mock_get_device_config,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_device_status",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_device_status",
             side_effect=mock_get_device_status,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_installation",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_installation",
             return_value=GET_INSTALLATION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_installations",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_installations",
             return_value=GET_INSTALLATIONS_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_webserver",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_webserver",
             side_effect=mock_get_webserver,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.login",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.login",
             return_value=None,
         ),
     ):
@@ -101,27 +101,27 @@ async def test_installations_list_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone_cloud.async_setup_entry",
+            "inpui.components.airzone_cloud.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_device_config",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_device_config",
             side_effect=mock_get_device_config,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_device_status",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_device_status",
             side_effect=mock_get_device_status,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_installations",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_installations",
             side_effect=AirzoneCloudError,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_get_webserver",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_get_webserver",
             side_effect=mock_get_webserver,
         ),
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.login",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.login",
             return_value=None,
         ),
     ):
@@ -150,7 +150,7 @@ async def test_login_error(hass: HomeAssistant) -> None:
     """Test login error."""
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.login",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.login",
         side_effect=LoginError,
     ):
         result = await hass.config_entries.flow.async_init(

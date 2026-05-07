@@ -37,7 +37,7 @@ type MockFixture = Generator[MagicMock | AsyncMock]
 def crownstone_setup() -> MockFixture:
     """Mock Crownstone entry setup."""
     with patch(
-        "homeassistant.components.crownstone.async_setup_entry", return_value=True
+        "inpui.components.crownstone.async_setup_entry", return_value=True
     ) as setup_mock:
         yield setup_mock
 
@@ -66,7 +66,7 @@ def usb_comports_none_types() -> MockFixture:
 def usb_path() -> MockFixture:
     """Mock usb serial path."""
     with patch(
-        "homeassistant.components.usb.get_serial_by_id",
+        "inpui.components.usb.get_serial_by_id",
         return_value="/dev/serial/by-id/crownstone-usb",
     ) as usb_path_mock:
         yield usb_path_mock
@@ -154,7 +154,7 @@ async def start_config_flow(hass: HomeAssistant, mocked_cloud: MagicMock):
     }
 
     with patch(
-        "homeassistant.components.crownstone.config_flow.CrownstoneCloud",
+        "inpui.components.crownstone.config_flow.CrownstoneCloud",
         return_value=mocked_cloud,
     ):
         return await hass.config_entries.flow.async_init(
@@ -168,7 +168,7 @@ async def start_options_flow(
     """Patch CrownstoneEntryManager and start the flow."""
     # set up integration
     with patch(
-        "homeassistant.components.crownstone.CrownstoneEntryManager",
+        "inpui.components.crownstone.CrownstoneEntryManager",
         return_value=mocked_manager,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

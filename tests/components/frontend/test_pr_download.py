@@ -67,7 +67,7 @@ async def test_pr_download_uses_cache(
     (pr_cache_dir / ".sha").write_text("abc123def456:base789abc012")
 
     with patch(
-        "homeassistant.components.frontend.pr_download.GitHubAPI"
+        "inpui.components.frontend.pr_download.GitHubAPI"
     ) as mock_gh_class:
         mock_client = AsyncMock()
         mock_gh_class.return_value = mock_client
@@ -189,7 +189,7 @@ async def test_pr_download_session_error(
     hass.config.config_dir = str(tmp_path)
 
     with patch(
-        "homeassistant.components.frontend.pr_download.async_get_clientsession",
+        "inpui.components.frontend.pr_download.async_get_clientsession",
         side_effect=RuntimeError("Session error"),
     ):
         config = {
@@ -226,7 +226,7 @@ async def test_pr_download_github_errors(
     hass.config.config_dir = str(tmp_path)
 
     with patch(
-        "homeassistant.components.frontend.pr_download.GitHubAPI"
+        "inpui.components.frontend.pr_download.GitHubAPI"
     ) as mock_gh_class:
         mock_client = AsyncMock()
         mock_gh_class.return_value = mock_client
@@ -266,7 +266,7 @@ async def test_pr_download_artifact_search_github_errors(
     hass.config.config_dir = str(tmp_path)
 
     with patch(
-        "homeassistant.components.frontend.pr_download.GitHubAPI"
+        "inpui.components.frontend.pr_download.GitHubAPI"
     ) as mock_gh_class:
         mock_client = AsyncMock()
         mock_gh_class.return_value = mock_client
@@ -307,7 +307,7 @@ async def test_pr_download_artifact_not_found(
     hass.config.config_dir = str(tmp_path)
 
     with patch(
-        "homeassistant.components.frontend.pr_download.GitHubAPI"
+        "inpui.components.frontend.pr_download.GitHubAPI"
     ) as mock_gh_class:
         mock_client = AsyncMock()
         mock_gh_class.return_value = mock_client

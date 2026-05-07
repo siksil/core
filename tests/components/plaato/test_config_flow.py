@@ -29,11 +29,11 @@ def mock_webhook_id():
     """Mock webhook_id."""
     with (
         patch(
-            "homeassistant.components.webhook.async_generate_id",
+            "inpui.components.webhook.async_generate_id",
             return_value=WEBHOOK_ID,
         ),
         patch(
-            "homeassistant.components.webhook.async_generate_url",
+            "inpui.components.webhook.async_generate_url",
             return_value="hook_id",
         ),
     ):
@@ -108,11 +108,11 @@ async def test_show_config_form_validate_webhook(
     assert await async_setup_component(hass, "cloud", {})
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch(
             "hass_nabucasa.cloudhooks.Cloudhooks.async_create",
             return_value={"cloudhook_url": "https://hooks.nabu.casa/ABCD"},
@@ -156,11 +156,11 @@ async def test_show_config_form_validate_webhook_not_connected(
     assert await async_setup_component(hass, "cloud", {})
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=False),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=False),
         patch(
             "hass_nabucasa.cloudhooks.Cloudhooks.async_create",
             return_value={"cloudhook_url": "https://hooks.nabu.casa/ABCD"},
@@ -196,7 +196,7 @@ async def test_show_config_form_validate_token(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "api_method"
 
-    with patch("homeassistant.components.plaato.async_setup_entry", return_value=True):
+    with patch("inpui.components.plaato.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={CONF_TOKEN: "valid_token"}
         )
@@ -311,7 +311,7 @@ async def test_options(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.plaato.async_setup_entry", return_value=True
+        "inpui.components.plaato.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
@@ -345,7 +345,7 @@ async def test_options_webhook(hass: HomeAssistant, webhook_id) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.plaato.async_setup_entry", return_value=True
+        "inpui.components.plaato.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()

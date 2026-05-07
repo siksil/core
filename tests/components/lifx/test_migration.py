@@ -138,7 +138,7 @@ async def test_discovery_is_more_frequent_during_migration(
         _patch_config_flow_try_connect(device=bulb),
         patch.object(discovery, "DEFAULT_TIMEOUT", 0),
         patch(
-            "homeassistant.components.lifx.discovery.LifxDiscovery", MockLifxDiscovery
+            "inpui.components.lifx.discovery.LifxDiscovery", MockLifxDiscovery
         ),
     ):
         await async_setup_component(hass, lifx.DOMAIN, {lifx.DOMAIN: {}})

@@ -41,7 +41,7 @@ async def test_setup_login_exception(hass: HomeAssistant, config_entry) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.iaqualink.AqualinkClient.login",
+        "inpui.components.iaqualink.AqualinkClient.login",
         side_effect=AqualinkServiceException,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -55,7 +55,7 @@ async def test_setup_login_timeout(hass: HomeAssistant, config_entry) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.iaqualink.AqualinkClient.login",
+        "inpui.components.iaqualink.AqualinkClient.login",
         side_effect=TimeoutError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -70,11 +70,11 @@ async def test_setup_systems_exception(hass: HomeAssistant, config_entry) -> Non
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             side_effect=AqualinkServiceException,
         ),
     ):
@@ -90,11 +90,11 @@ async def test_setup_no_systems_recognized(hass: HomeAssistant, config_entry) ->
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             return_value={},
         ),
     ):
@@ -115,11 +115,11 @@ async def test_setup_devices_exception(
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             return_value=systems,
         ),
         patch.object(
@@ -148,11 +148,11 @@ async def test_setup_all_good_no_recognized_devices(
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             return_value=systems,
         ),
         patch.object(
@@ -200,11 +200,11 @@ async def test_setup_all_good_all_device_types(
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             return_value=systems,
         ),
     ):
@@ -240,11 +240,11 @@ async def test_multiple_updates(
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             return_value=systems,
         ),
     ):
@@ -352,11 +352,11 @@ async def test_entity_assumed_and_available(
 
     with (
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.login",
+            "inpui.components.iaqualink.AqualinkClient.login",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.iaqualink.AqualinkClient.get_systems",
+            "inpui.components.iaqualink.AqualinkClient.get_systems",
             return_value=systems,
         ),
     ):

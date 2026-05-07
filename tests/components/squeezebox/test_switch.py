@@ -26,7 +26,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 @pytest.fixture(autouse=True)
 def squeezebox_alarm_platform():
     """Only set up the switch platform for squeezebox tests."""
-    with patch("homeassistant.components.squeezebox.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.squeezebox.PLATFORMS", [Platform.SWITCH]):
         yield
 
 
@@ -50,7 +50,7 @@ async def mock_alarms_player(
         },
     ]
 
-    with patch("homeassistant.components.squeezebox.Server", return_value=lms):
+    with patch("inpui.components.squeezebox.Server", return_value=lms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 

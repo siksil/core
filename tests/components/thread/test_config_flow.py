@@ -38,7 +38,7 @@ TEST_ZEROCONF_RECORD = ZeroconfServiceInfo(
 async def test_import(hass: HomeAssistant) -> None:
     """Test the import flow."""
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -65,7 +65,7 @@ async def test_single_instance_allowed_zeroconf(
 ) -> None:
     """Test zeroconf single instance allowed abort reason."""
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -75,7 +75,7 @@ async def test_single_instance_allowed_zeroconf(
     assert result["type"] is FlowResultType.CREATE_ENTRY
 
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -90,7 +90,7 @@ async def test_single_instance_allowed_zeroconf(
 async def test_user(hass: HomeAssistant) -> None:
     """Test the user flow."""
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -120,7 +120,7 @@ async def test_zeroconf(hass: HomeAssistant) -> None:
     assert result["step_id"] == "confirm"
 
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
@@ -141,10 +141,10 @@ async def test_zeroconf_setup_onboarding(hass: HomeAssistant) -> None:
     """Test we automatically finish a zeroconf flow during onboarding."""
     with (
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded", return_value=False
+            "inpui.components.onboarding.async_is_onboarded", return_value=False
         ),
         patch(
-            "homeassistant.components.thread.async_setup_entry",
+            "inpui.components.thread.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -168,7 +168,7 @@ async def test_import_and_user(
 ) -> None:
     """Test single instance allowed for user and import."""
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -179,7 +179,7 @@ async def test_import_and_user(
     assert len(mock_setup_entry.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -201,14 +201,14 @@ async def test_zeroconf_then_import_user(
         thread.DOMAIN, context={"source": "zeroconf"}, data=TEST_ZEROCONF_RECORD
     )
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
     assert result["type"] is FlowResultType.CREATE_ENTRY
 
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -234,7 +234,7 @@ async def test_zeroconf_in_progress_then_import_user(
     assert result["step_id"] == "confirm"
 
     with patch(
-        "homeassistant.components.thread.async_setup_entry",
+        "inpui.components.thread.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(

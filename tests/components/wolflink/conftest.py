@@ -60,10 +60,10 @@ def mock_wolflink() -> Generator[MagicMock]:
     """Return a mocked wolflink client."""
     with (
         patch(
-            "homeassistant.components.wolflink.WolfClient", autospec=True
+            "inpui.components.wolflink.WolfClient", autospec=True
         ) as wolflink_mock,
         patch(
-            "homeassistant.components.wolflink.config_flow.WolfClient",
+            "inpui.components.wolflink.config_flow.WolfClient",
             new=wolflink_mock,
         ),
     ):

@@ -32,7 +32,7 @@ async def test_show_form(hass: HomeAssistant) -> None:
 async def test_invalid_auth(hass: HomeAssistant) -> None:
     """Test that errors are shown when API key is invalid."""
     with patch(
-        "homeassistant.components.freedompro.config_flow.get_list",
+        "inpui.components.freedompro.config_flow.get_list",
         return_value={
             "state": False,
             "code": -201,
@@ -50,7 +50,7 @@ async def test_invalid_auth(hass: HomeAssistant) -> None:
 async def test_connection_error(hass: HomeAssistant) -> None:
     """Test that errors are shown when API key is invalid."""
     with patch(
-        "homeassistant.components.freedompro.config_flow.get_list",
+        "inpui.components.freedompro.config_flow.get_list",
         return_value={
             "state": False,
             "code": -200,
@@ -68,7 +68,7 @@ async def test_connection_error(hass: HomeAssistant) -> None:
 async def test_create_entry(hass: HomeAssistant) -> None:
     """Test that the user step works."""
     with patch(
-        "homeassistant.components.freedompro.config_flow.get_list",
+        "inpui.components.freedompro.config_flow.get_list",
         return_value={
             "state": True,
             "devices": DEVICES,

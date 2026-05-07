@@ -43,10 +43,10 @@ def client_fixture():
     """Patch of client library for tests."""
     with (
         patch(
-            "homeassistant.components.denonavr.receiver.DenonAVR",
+            "inpui.components.denonavr.receiver.DenonAVR",
             autospec=True,
         ) as mock_client_class,
-        patch("homeassistant.components.denonavr.config_flow.denonavr.async_discover"),
+        patch("inpui.components.denonavr.config_flow.denonavr.async_discover"),
     ):
         mock_client_class.return_value.name = TEST_NAME
         mock_client_class.return_value.model_name = TEST_MODEL

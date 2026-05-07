@@ -33,10 +33,10 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+            "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         ),
         patch(
-            "homeassistant.components.trafikverket_weatherstation.async_setup_entry",
+            "inpui.components.trafikverket_weatherstation.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -91,7 +91,7 @@ async def test_flow_fails(
     assert result4["step_id"] == config_entries.SOURCE_USER
 
     with patch(
-        "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+        "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         side_effect=side_effect(),
     ):
         result4 = await hass.config_entries.flow.async_configure(
@@ -123,10 +123,10 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+            "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         ),
         patch(
-            "homeassistant.components.trafikverket_weatherstation.async_setup_entry",
+            "inpui.components.trafikverket_weatherstation.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -181,7 +181,7 @@ async def test_reauth_flow_fails(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+        "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         side_effect=side_effect(),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -212,10 +212,10 @@ async def test_reconfigure_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+            "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         ),
         patch(
-            "homeassistant.components.trafikverket_weatherstation.async_setup_entry",
+            "inpui.components.trafikverket_weatherstation.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -270,7 +270,7 @@ async def test_reconfigure_flow_fails(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+        "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         side_effect=side_effect(),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -284,10 +284,10 @@ async def test_reconfigure_flow_fails(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
+            "inpui.components.trafikverket_weatherstation.config_flow.TrafikverketWeather.async_get_weather",
         ),
         patch(
-            "homeassistant.components.trafikverket_weatherstation.async_setup_entry",
+            "inpui.components.trafikverket_weatherstation.async_setup_entry",
             return_value=True,
         ),
     ):

@@ -114,7 +114,7 @@ async def setup_vacuum_platform_test_entity(
 async def mock_frame(hass: HomeAssistant) -> AsyncGenerator[None]:
     """Mock frame."""
     with patch(
-        "homeassistant.helpers.frame.get_integration_frame",
+        "inpui.helpers.frame.get_integration_frame",
         return_value=frame.IntegrationFrame(
             custom_integration=True,
             integration="alarm_control_panel",

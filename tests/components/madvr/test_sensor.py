@@ -27,7 +27,7 @@ async def test_sensor_setup_and_states(
     mock_madvr_client: AsyncMock,
 ) -> None:
     """Test setup of the sensor entities and their states."""
-    with patch("homeassistant.components.madvr.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.madvr.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     update_callback = get_update_callback(mock_madvr_client)

@@ -51,7 +51,7 @@ async def test_setup(
     """Test setup of sensor platform for different device types."""
     device = device()
 
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.SENSOR]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )

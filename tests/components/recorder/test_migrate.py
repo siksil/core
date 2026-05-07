@@ -70,15 +70,15 @@ async def test_schema_update_calls(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
         patch(
-            "homeassistant.components.recorder.migration._apply_update",
+            "inpui.components.recorder.migration._apply_update",
             wraps=migration._apply_update,
         ) as update,
         patch(
-            "homeassistant.components.recorder.migration._migrate_schema",
+            "inpui.components.recorder.migration._migrate_schema",
             wraps=migration._migrate_schema,
         ) as migrate_schema,
     ):
@@ -146,7 +146,7 @@ async def test_migration_in_progress(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
     ):
@@ -189,19 +189,19 @@ async def test_database_migration_failed(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
         patch(
-            f"homeassistant.components.recorder.migration.{func_to_patch}",
+            f"inpui.components.recorder.migration.{func_to_patch}",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.components.persistent_notification.create",
+            "inpui.components.persistent_notification.create",
             side_effect=pn.create,
         ) as mock_create,
         patch(
-            "homeassistant.components.persistent_notification.dismiss",
+            "inpui.components.persistent_notification.dismiss",
             side_effect=pn.dismiss,
         ) as mock_dismiss,
     ):
@@ -229,11 +229,11 @@ async def test_database_migration_failed(
     ),
     [
         # Test error handling in _update_states_table_with_foreign_key_options
-        (11, "homeassistant.components.recorder.migration.DropConstraint", False, 1, 0),
+        (11, "inpui.components.recorder.migration.DropConstraint", False, 1, 0),
         # Test error handling in _modify_columns
         (12, "sqlalchemy.engine.base.Connection.execute", False, 1, 0),
         # Test error handling in _drop_foreign_key_constraints
-        (46, "homeassistant.components.recorder.migration.DropConstraint", False, 1, 0),
+        (46, "inpui.components.recorder.migration.DropConstraint", False, 1, 0),
     ],
 )
 @pytest.mark.skip_on_db_engine(["sqlite"])
@@ -254,15 +254,15 @@ async def test_database_migration_failed_non_sqlite(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
         patch(
-            "homeassistant.components.persistent_notification.create",
+            "inpui.components.persistent_notification.create",
             side_effect=pn.create,
         ) as mock_create,
         patch(
-            "homeassistant.components.persistent_notification.dismiss",
+            "inpui.components.persistent_notification.dismiss",
             side_effect=pn.dismiss,
         ) as mock_dismiss,
     ):
@@ -319,18 +319,18 @@ async def test_live_database_migration_encounters_corruption(
 
     with (
         patch(
-            "homeassistant.components.recorder.migration._schema_is_current",
+            "inpui.components.recorder.migration._schema_is_current",
             side_effect=[False],
         ),
         patch(
-            "homeassistant.components.recorder.migration.migrate_schema_live",
+            "inpui.components.recorder.migration.migrate_schema_live",
             side_effect=sqlite3_exception,
         ),
         patch(
-            "homeassistant.components.recorder.core.move_away_broken_database"
+            "inpui.components.recorder.core.move_away_broken_database"
         ) as move_away,
         patch(
-            "homeassistant.components.recorder.core.Recorder._setup_run",
+            "inpui.components.recorder.core.Recorder._setup_run",
             autospec=True,
             wraps=recorder.Recorder._setup_run,
         ) as setup_run,
@@ -367,21 +367,21 @@ async def test_non_live_database_migration_encounters_corruption(
 
     with (
         patch(
-            "homeassistant.components.recorder.migration._schema_is_current",
+            "inpui.components.recorder.migration._schema_is_current",
             side_effect=[False],
         ),
         patch(
-            "homeassistant.components.recorder.migration.migrate_schema_live",
+            "inpui.components.recorder.migration.migrate_schema_live",
         ) as migrate_schema_live,
         patch(
-            "homeassistant.components.recorder.migration.migrate_schema_non_live",
+            "inpui.components.recorder.migration.migrate_schema_non_live",
             side_effect=sqlite3_exception,
         ),
         patch(
-            "homeassistant.components.recorder.core.move_away_broken_database"
+            "inpui.components.recorder.core.move_away_broken_database"
         ) as move_away,
         patch(
-            "homeassistant.components.recorder.core.Recorder._setup_run",
+            "inpui.components.recorder.core.Recorder._setup_run",
             autospec=True,
             wraps=recorder.Recorder._setup_run,
         ) as setup_run,
@@ -424,26 +424,26 @@ async def test_database_migration_encounters_corruption_not_sqlite(
 
     with (
         patch(
-            "homeassistant.components.recorder.migration._schema_is_current",
+            "inpui.components.recorder.migration._schema_is_current",
             side_effect=[False],
         ),
         patch(
-            f"homeassistant.components.recorder.migration.{func_to_patch}",
+            f"inpui.components.recorder.migration.{func_to_patch}",
             side_effect=DatabaseError("statement", {}, []),
         ),
         patch(
-            "homeassistant.components.recorder.core.move_away_broken_database"
+            "inpui.components.recorder.core.move_away_broken_database"
         ) as move_away,
         patch(
-            "homeassistant.components.persistent_notification.create",
+            "inpui.components.persistent_notification.create",
             side_effect=pn.create,
         ) as mock_create,
         patch(
-            "homeassistant.components.persistent_notification.dismiss",
+            "inpui.components.persistent_notification.dismiss",
             side_effect=pn.dismiss,
         ) as mock_dismiss,
         patch(
-            "homeassistant.components.recorder.core.migration.live_migration",
+            "inpui.components.recorder.core.migration.live_migration",
             return_value=live_migration,
         ),
     ):
@@ -473,7 +473,7 @@ async def test_events_during_migration_are_queued(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
     ):
@@ -512,7 +512,7 @@ async def test_events_during_migration_queue_exhausted(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
         patch.object(recorder.core, "MAX_QUEUE_BACKLOG_MIN_VALUE", 1),
@@ -619,27 +619,27 @@ async def test_schema_migrate(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=_create_engine_test,
         ),
         patch(
-            "homeassistant.components.recorder.Recorder._setup_run",
+            "inpui.components.recorder.Recorder._setup_run",
             side_effect=_mock_setup_run,
             autospec=True,
         ) as setup_run,
-        patch("homeassistant.components.recorder.util.time.sleep"),
+        patch("inpui.components.recorder.util.time.sleep"),
         patch(
-            "homeassistant.components.recorder.migration._create_index",
+            "inpui.components.recorder.migration._create_index",
             wraps=_sometimes_failing_create_index,
         ),
         patch(
-            "homeassistant.components.recorder.Recorder._process_state_changed_event_into_session",
+            "inpui.components.recorder.Recorder._process_state_changed_event_into_session",
         ),
         patch(
-            "homeassistant.components.recorder.Recorder._process_non_state_changed_event_into_session",
+            "inpui.components.recorder.Recorder._process_non_state_changed_event_into_session",
         ),
         patch(
-            "homeassistant.components.recorder.Recorder._pre_process_startup_events",
+            "inpui.components.recorder.Recorder._pre_process_startup_events",
         ),
     ):
         await async_setup_recorder_instance(
@@ -741,7 +741,7 @@ def test_forgiving_drop_index(
 
         with (
             patch(
-                "homeassistant.components.recorder.migration.get_index_by_name",
+                "inpui.components.recorder.migration.get_index_by_name",
                 return_value="ix_states_context_id_bin",
             ),
             patch.object(
@@ -756,7 +756,7 @@ def test_forgiving_drop_index(
         caplog.clear()
         with (
             patch(
-                "homeassistant.components.recorder.migration.get_index_by_name",
+                "inpui.components.recorder.migration.get_index_by_name",
                 return_value="ix_states_context_id_bin",
             ),
             patch.object(
@@ -792,7 +792,7 @@ def test_forgiving_add_index_with_other_db_types(
     type(mocked_table).indexes = PropertyMock(return_value=[mocked_index])
 
     with patch(
-        "homeassistant.components.recorder.migration.Table", return_value=mocked_table
+        "inpui.components.recorder.migration.Table", return_value=mocked_table
     ):
         migration._create_index(Mock(), Mock(), "states", "ix_states_context_id")
 
@@ -1273,7 +1273,7 @@ def test_drop_duplicated_foreign_key_constraints(recorder_db_url: str) -> None:
     inspector.get_foreign_keys = Mock(name="get_foreign_keys", return_value=[])
     with (
         patch(
-            "homeassistant.components.recorder.migration.sqlalchemy.inspect",
+            "inpui.components.recorder.migration.sqlalchemy.inspect",
             return_value=inspector,
         ),
         Session(engine) as session,

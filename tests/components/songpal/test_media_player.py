@@ -426,7 +426,7 @@ async def test_disconnected(
         side_effect=[SongpalException(""), SongpalException(""), _assert_state]
     )
     notification_callbacks = mocked_device.notification_callbacks
-    with patch("homeassistant.components.songpal.media_player.INITIAL_RETRY_DELAY", 0):
+    with patch("inpui.components.songpal.media_player.INITIAL_RETRY_DELAY", 0):
         await notification_callbacks[ConnectChange](connect_change)
     warning_records = [x for x in caplog.records if x.levelno == logging.WARNING]
     assert len(warning_records) == 2

@@ -28,7 +28,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all switch entities."""
-    with patch("homeassistant.components.trmnl.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.trmnl.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

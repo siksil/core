@@ -52,7 +52,7 @@ def mock_growatt_v1_api():
     - sph_read_ac_discharge_times: Called by read_ac_discharge_times service
     """
     with patch(
-        "homeassistant.components.growatt_server.config_flow.growattServer.OpenApiV1",
+        "inpui.components.growatt_server.config_flow.growattServer.OpenApiV1",
         autospec=True,
     ) as mock_v1_api_class:
         mock_v1_api = mock_v1_api_class.return_value
@@ -305,7 +305,7 @@ def mock_growatt_classic_api():
     - tlx_detail: Provides TLX device data
     """
     with patch(
-        "homeassistant.components.growatt_server.config_flow.growattServer.GrowattApi",
+        "inpui.components.growatt_server.config_flow.growattServer.GrowattApi",
         autospec=True,
     ) as mock_classic_api_class:
         # Use the autospec'd mock instance instead of creating a new Mock()
@@ -445,7 +445,7 @@ async def init_integration(
 def mock_setup_entry():
     """Mock async_setup_entry to prevent actual setup during config flow tests."""
     with patch(
-        "homeassistant.components.growatt_server.async_setup_entry",
+        "inpui.components.growatt_server.async_setup_entry",
         return_value=True,
     ) as mock:
         yield mock

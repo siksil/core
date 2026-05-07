@@ -126,7 +126,7 @@ def mock_plenticore_client(
 ) -> Generator[ExtendedApiClient]:
     """Return a patched ExtendedApiClient."""
     with patch(
-        "homeassistant.components.kostal_plenticore.coordinator.ExtendedApiClient",
+        "inpui.components.kostal_plenticore.coordinator.ExtendedApiClient",
         autospec=True,
     ) as plenticore_client_class:
 

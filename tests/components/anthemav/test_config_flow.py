@@ -23,7 +23,7 @@ async def test_form_with_valid_connection(
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.anthemav.async_setup_entry",
+        "inpui.components.anthemav.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(

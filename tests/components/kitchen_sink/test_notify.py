@@ -24,7 +24,7 @@ ENTITY_DIRECT_MESSAGE = "notify.mybox_personal_notifier"
 async def notify_only() -> AsyncGenerator[None]:
     """Enable only the button platform."""
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [Platform.NOTIFY],
     ):
         yield

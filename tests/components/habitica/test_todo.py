@@ -47,7 +47,7 @@ from tests.typing import WebSocketGenerator
 def todo_only() -> Generator[None]:
     """Enable only the todo platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.TODO],
     ):
         yield

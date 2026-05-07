@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, async_load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.waqi.async_setup_entry", return_value=True
+        "inpui.components.waqi.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -48,11 +48,11 @@ async def mock_waqi(hass: HomeAssistant) -> AsyncGenerator[AsyncMock]:
     """Mock WAQI client."""
     with (
         patch(
-            "homeassistant.components.waqi.WAQIClient",
+            "inpui.components.waqi.WAQIClient",
             autospec=True,
         ) as mock_waqi,
         patch(
-            "homeassistant.components.waqi.config_flow.WAQIClient",
+            "inpui.components.waqi.config_flow.WAQIClient",
             new=mock_waqi,
         ),
     ):

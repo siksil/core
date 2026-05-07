@@ -66,7 +66,7 @@ async def test_invalid_credentials(hass: HomeAssistant) -> None:
     """Test that invalid credentials throws an error."""
 
     with patch(
-        "homeassistant.components.fireservicerota.coordinator.FireServiceRota.request_tokens",
+        "inpui.components.fireservicerota.coordinator.FireServiceRota.request_tokens",
         side_effect=InvalidAuthError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -80,10 +80,10 @@ async def test_step_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.fireservicerota.config_flow.FireServiceRota"
+            "inpui.components.fireservicerota.config_flow.FireServiceRota"
         ) as mock_fsr,
         patch(
-            "homeassistant.components.fireservicerota.async_setup_entry",
+            "inpui.components.fireservicerota.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -125,10 +125,10 @@ async def test_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.fireservicerota.config_flow.FireServiceRota"
+            "inpui.components.fireservicerota.config_flow.FireServiceRota"
         ) as mock_fsr,
         patch(
-            "homeassistant.components.fireservicerota.async_setup_entry",
+            "inpui.components.fireservicerota.async_setup_entry",
             return_value=True,
         ),
     ):

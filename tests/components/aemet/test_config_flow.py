@@ -34,7 +34,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     """Test that the form is served with valid input."""
 
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -85,7 +85,7 @@ async def test_form_options(
     await hass.config.async_set_time_zone("UTC")
     freezer.move_to("2021-01-09 12:00:00+00:00")
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         entry = MockConfigEntry(
@@ -127,7 +127,7 @@ async def test_form_duplicated_id(
     await hass.config.async_set_time_zone("UTC")
     freezer.move_to("2021-01-09 12:00:00+00:00")
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         entry = MockConfigEntry(
@@ -149,7 +149,7 @@ async def test_form_auth_error(hass: HomeAssistant) -> None:
     mocked_aemet.select_coordinates.side_effect = AuthError
 
     with patch(
-        "homeassistant.components.aemet.config_flow.AEMET",
+        "inpui.components.aemet.config_flow.AEMET",
         return_value=mocked_aemet,
     ):
         result = await hass.config_entries.flow.async_init(

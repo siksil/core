@@ -23,7 +23,7 @@ async def test_duplicate_error(
 ) -> None:
     """Test that errors are shown when duplicates are added."""
     with patch(
-        "homeassistant.components.simplisafe.async_setup_entry", return_value=True
+        "inpui.components.simplisafe.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": SOURCE_USER}
@@ -56,7 +56,7 @@ async def test_invalid_auth_code_length(hass: HomeAssistant) -> None:
 async def test_invalid_credentials(hass: HomeAssistant) -> None:
     """Test that invalid credentials show the correct error."""
     with patch(
-        "homeassistant.components.simplisafe.config_flow.API.async_from_auth",
+        "inpui.components.simplisafe.config_flow.API.async_from_auth",
         side_effect=InvalidCredentialsError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -76,7 +76,7 @@ async def test_invalid_credentials(hass: HomeAssistant) -> None:
 async def test_options_flow(config_entry, hass: HomeAssistant) -> None:
     """Test config flow options."""
     with patch(
-        "homeassistant.components.simplisafe.async_setup_entry", return_value=True
+        "inpui.components.simplisafe.async_setup_entry", return_value=True
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
@@ -101,9 +101,9 @@ async def test_step_reauth(
 
     with (
         patch(
-            "homeassistant.components.simplisafe.async_setup_entry", return_value=True
+            "inpui.components.simplisafe.async_setup_entry", return_value=True
         ),
-        patch("homeassistant.config_entries.ConfigEntries.async_reload"),
+        patch("inpui.config_entries.ConfigEntries.async_reload"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={CONF_AUTH_CODE: VALID_AUTH_CODE}
@@ -126,9 +126,9 @@ async def test_step_reauth_wrong_account(
 
     with (
         patch(
-            "homeassistant.components.simplisafe.async_setup_entry", return_value=True
+            "inpui.components.simplisafe.async_setup_entry", return_value=True
         ),
-        patch("homeassistant.config_entries.ConfigEntries.async_reload"),
+        patch("inpui.config_entries.ConfigEntries.async_reload"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={CONF_AUTH_CODE: VALID_AUTH_CODE}
@@ -167,9 +167,9 @@ async def test_step_user(
 
     with (
         patch(
-            "homeassistant.components.simplisafe.async_setup_entry", return_value=True
+            "inpui.components.simplisafe.async_setup_entry", return_value=True
         ),
-        patch("homeassistant.config_entries.ConfigEntries.async_reload"),
+        patch("inpui.config_entries.ConfigEntries.async_reload"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={CONF_AUTH_CODE: auth_code}
@@ -187,7 +187,7 @@ async def test_step_user(
 async def test_unknown_error(hass: HomeAssistant, setup_simplisafe) -> None:
     """Test that an unknown error shows ohe correct error."""
     with patch(
-        "homeassistant.components.simplisafe.config_flow.API.async_from_auth",
+        "inpui.components.simplisafe.config_flow.API.async_from_auth",
         side_effect=SimplipyError,
     ):
         result = await hass.config_entries.flow.async_init(

@@ -22,7 +22,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch.multiple(
-        "homeassistant.components.lektrico",
+        "inpui.components.lektrico",
         CHARGERS_PLATFORMS=[Platform.SELECT],
         LB_DEVICES_PLATFORMS=[Platform.SELECT],
     ):

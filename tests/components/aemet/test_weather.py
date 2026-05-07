@@ -129,7 +129,7 @@ async def test_forecast_subscription(
     assert forecast1 == snapshot
 
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         freezer.tick(WEATHER_UPDATE_INTERVAL + datetime.timedelta(seconds=1))

@@ -24,7 +24,7 @@ async def test_usage_prediction_caching(hass: HomeAssistant) -> None:
         raise Exception("Boom")  # noqa: TRY002
 
     with patch(
-        "homeassistant.components.usage_prediction.common_control.async_predict_common_control",
+        "inpui.components.usage_prediction.common_control.async_predict_common_control",
         mock_common_control_error,
     ):
         # First call, should trigger prediction
@@ -51,7 +51,7 @@ async def test_usage_prediction_caching(hass: HomeAssistant) -> None:
         return results
 
     with patch(
-        "homeassistant.components.usage_prediction.common_control.async_predict_common_control",
+        "inpui.components.usage_prediction.common_control.async_predict_common_control",
         mock_common_control,
     ):
         # First call, should trigger prediction

@@ -18,7 +18,7 @@ async def test_not_discovered(hass: HomeAssistant) -> None:
         context={"source": SOURCE_USER},
     )
 
-    with patch("homeassistant.components.wemo.config_flow.pywemo") as mock_pywemo:
+    with patch("inpui.components.wemo.config_flow.pywemo") as mock_pywemo:
         mock_pywemo.discover_devices.return_value = []
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
     assert result["type"] is FlowResultType.ABORT

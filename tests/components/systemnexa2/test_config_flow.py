@@ -134,7 +134,7 @@ async def test_invalid_host(hass: HomeAssistant, mock_setup_entry: AsyncMock) ->
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.systemnexa2.config_flow.socket.gethostbyname",
+        "inpui.components.systemnexa2.config_flow.socket.gethostbyname",
         side_effect=socket.gaierror(-2, "Name or service not known"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -331,7 +331,7 @@ async def test_reconfigure_flow_invalid_host(
 
     # Mock socket.gethostbyname to raise error for invalid hostname
     with patch(
-        "homeassistant.components.systemnexa2.config_flow.socket.gethostbyname",
+        "inpui.components.systemnexa2.config_flow.socket.gethostbyname",
         side_effect=socket.gaierror(-2, "Name or service not known"),
     ):
         result = await hass.config_entries.flow.async_configure(

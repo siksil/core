@@ -90,7 +90,7 @@ def mock_adguard() -> Generator[AsyncMock]:
     )
 
     with patch(
-        "homeassistant.components.adguard.AdGuardHome",
+        "inpui.components.adguard.AdGuardHome",
         return_value=adguard_mock,
     ):
         yield adguard_mock
@@ -112,7 +112,7 @@ async def init_integration(
     """Set up the AdGuard Home integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.adguard.PLATFORMS", platforms):
+    with patch("inpui.components.adguard.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

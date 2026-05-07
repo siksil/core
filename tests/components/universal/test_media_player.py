@@ -1133,11 +1133,11 @@ async def test_browse_media(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.demo.media_player.MediaPlayerEntity.supported_features",
+            "inpui.components.demo.media_player.MediaPlayerEntity.supported_features",
             MediaPlayerEntityFeature.BROWSE_MEDIA,
         ),
         patch(
-            "homeassistant.components.demo.media_player.MediaPlayerEntity.async_browse_media",
+            "inpui.components.demo.media_player.MediaPlayerEntity.async_browse_media",
             return_value=MOCK_BROWSE_MEDIA,
         ),
     ):
@@ -1168,11 +1168,11 @@ async def test_browse_media_override(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.demo.media_player.MediaPlayerEntity.supported_features",
+            "inpui.components.demo.media_player.MediaPlayerEntity.supported_features",
             MediaPlayerEntityFeature.BROWSE_MEDIA,
         ),
         patch(
-            "homeassistant.components.demo.media_player.MediaPlayerEntity.async_browse_media",
+            "inpui.components.demo.media_player.MediaPlayerEntity.async_browse_media",
             return_value=MOCK_BROWSE_MEDIA,
         ),
     ):

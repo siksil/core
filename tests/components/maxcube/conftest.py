@@ -110,7 +110,7 @@ async def cube(
     windowshutter,
 ):
     """Build and setup a cube mock with a single room and some devices."""
-    with patch("homeassistant.components.maxcube.MaxCube") as mock:
+    with patch("inpui.components.maxcube.MaxCube") as mock:
         cube = mock.return_value
         cube.rooms = [room]
         cube.devices = [thermostat, wallthermostat, windowshutter]

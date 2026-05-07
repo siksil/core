@@ -55,11 +55,11 @@ async def test_user_flow(
     assert result["errors"] is None
 
     with (
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.connect"),
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.login"),
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.disconnect"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.connect"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.login"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.disconnect"),
         patch(
-            "homeassistant.components.vlc_telnet.async_setup_entry",
+            "inpui.components.vlc_telnet.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -121,15 +121,15 @@ async def test_errors(
 
     with (
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.connect",
+            "inpui.components.vlc_telnet.config_flow.Client.connect",
             side_effect=connect_side_effect,
         ),
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.login",
+            "inpui.components.vlc_telnet.config_flow.Client.login",
             side_effect=login_side_effect,
         ),
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.disconnect",
+            "inpui.components.vlc_telnet.config_flow.Client.disconnect",
         ),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -156,11 +156,11 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     result = await entry.start_reauth_flow(hass)
 
     with (
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.connect"),
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.login"),
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.disconnect"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.connect"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.login"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.disconnect"),
         patch(
-            "homeassistant.components.vlc_telnet.async_setup_entry",
+            "inpui.components.vlc_telnet.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -205,15 +205,15 @@ async def test_reauth_errors(
 
     with (
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.connect",
+            "inpui.components.vlc_telnet.config_flow.Client.connect",
             side_effect=connect_side_effect,
         ),
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.login",
+            "inpui.components.vlc_telnet.config_flow.Client.login",
             side_effect=login_side_effect,
         ),
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.disconnect",
+            "inpui.components.vlc_telnet.config_flow.Client.disconnect",
         ),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -228,11 +228,11 @@ async def test_reauth_errors(
 async def test_hassio_flow(hass: HomeAssistant) -> None:
     """Test successful hassio flow."""
     with (
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.connect"),
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.login"),
-        patch("homeassistant.components.vlc_telnet.config_flow.Client.disconnect"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.connect"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.login"),
+        patch("inpui.components.vlc_telnet.config_flow.Client.disconnect"),
         patch(
-            "homeassistant.components.vlc_telnet.async_setup_entry",
+            "inpui.components.vlc_telnet.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -307,15 +307,15 @@ async def test_hassio_errors(
     """Test we handle hassio errors."""
     with (
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.connect",
+            "inpui.components.vlc_telnet.config_flow.Client.connect",
             side_effect=connect_side_effect,
         ),
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.login",
+            "inpui.components.vlc_telnet.config_flow.Client.login",
             side_effect=login_side_effect,
         ),
         patch(
-            "homeassistant.components.vlc_telnet.config_flow.Client.disconnect",
+            "inpui.components.vlc_telnet.config_flow.Client.disconnect",
         ),
     ):
         result = await hass.config_entries.flow.async_init(

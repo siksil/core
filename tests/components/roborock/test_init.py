@@ -86,7 +86,7 @@ async def test_reauth_started(
 ) -> None:
     """Test reauth flow started."""
     with patch(
-        "homeassistant.components.roborock.create_device_manager",
+        "inpui.components.roborock.create_device_manager",
         side_effect=side_effect,
     ):
         await async_setup_component(hass, DOMAIN, {})
@@ -111,7 +111,7 @@ async def test_mqtt_session_unauthorized_hook_called(
         return device_manager
 
     with patch(
-        "homeassistant.components.roborock.create_device_manager",
+        "inpui.components.roborock.create_device_manager",
         side_effect=create_device_manager,
     ):
         await hass.config_entries.async_setup(mock_roborock_entry.entry_id)
@@ -162,15 +162,15 @@ async def test_remove_old_storage_directory(
     """Test cleanup of old old map storage."""
     with (
         patch(
-            "homeassistant.components.roborock.roborock_storage.Path.exists",
+            "inpui.components.roborock.roborock_storage.Path.exists",
             return_value=exists,
         ),
         patch(
-            "homeassistant.components.roborock.roborock_storage.Path.is_dir",
+            "inpui.components.roborock.roborock_storage.Path.is_dir",
             return_value=is_dir,
         ),
         patch(
-            "homeassistant.components.roborock.roborock_storage.shutil.rmtree",
+            "inpui.components.roborock.roborock_storage.shutil.rmtree",
         ) as mock_rmtree,
     ):
         await hass.config_entries.async_setup(mock_roborock_entry.entry_id)
@@ -191,15 +191,15 @@ async def test_oserror_remove_storage_directory(
     """Test that we gracefully handle failing to remove old map storage."""
     with (
         patch(
-            "homeassistant.components.roborock.roborock_storage.Path.exists",
+            "inpui.components.roborock.roborock_storage.Path.exists",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.roborock.roborock_storage.Path.is_dir",
+            "inpui.components.roborock.roborock_storage.Path.is_dir",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.roborock.roborock_storage.shutil.rmtree",
+            "inpui.components.roborock.roborock_storage.shutil.rmtree",
             side_effect=OSError,
         ) as mock_rmtree,
     ):
@@ -232,7 +232,7 @@ async def test_invalid_user_agreement(
 ) -> None:
     """Test that we fail setting up if the user agreement is out of date."""
     with patch(
-        "homeassistant.components.roborock.create_device_manager",
+        "inpui.components.roborock.create_device_manager",
         side_effect=RoborockInvalidUserAgreement(),
     ):
         await hass.config_entries.async_setup(mock_roborock_entry.entry_id)
@@ -248,7 +248,7 @@ async def test_no_user_agreement(
 ) -> None:
     """Test that we fail setting up if the user has no agreement."""
     with patch(
-        "homeassistant.components.roborock.create_device_manager",
+        "inpui.components.roborock.create_device_manager",
         side_effect=RoborockNoUserAgreement(),
     ):
         await hass.config_entries.async_setup(mock_roborock_entry.entry_id)

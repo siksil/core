@@ -38,7 +38,7 @@ async def test_data_api_runtime_creates_client(hass: HomeAssistant) -> None:
         session=session,
     )
 
-    with patch("homeassistant.components.tibber.tibber.Tibber") as mock_client_cls:
+    with patch("inpui.components.tibber.tibber.Tibber") as mock_client_cls:
         mock_client = MagicMock()
         mock_client.set_access_token = AsyncMock()
         mock_client_cls.return_value = mock_client

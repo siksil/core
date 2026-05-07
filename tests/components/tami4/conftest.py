@@ -131,7 +131,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
 
     with patch(
-        "homeassistant.components.tami4.async_setup_entry", return_value=True
+        "inpui.components.tami4.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -145,7 +145,7 @@ def mock_request_otp(
     side_effect = getattr(request, "param", None)
 
     with patch(
-        "homeassistant.components.tami4.config_flow.Tami4EdgeAPI.request_otp",
+        "inpui.components.tami4.config_flow.Tami4EdgeAPI.request_otp",
         return_value=None,
         side_effect=side_effect,
     ) as mock_request_otp:
@@ -159,7 +159,7 @@ def mock_submit_otp(request: pytest.FixtureRequest) -> Generator[MagicMock]:
     side_effect = getattr(request, "param", None)
 
     with patch(
-        "homeassistant.components.tami4.config_flow.Tami4EdgeAPI.submit_otp",
+        "inpui.components.tami4.config_flow.Tami4EdgeAPI.submit_otp",
         return_value="refresh_token",
         side_effect=side_effect,
     ) as mock_submit_otp:

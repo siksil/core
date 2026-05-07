@@ -32,7 +32,7 @@ async def test_form(hass: HomeAssistant) -> None:
     with (
         patch.object(faadelays.Airport, "update", new=mock_valid_airport),
         patch(
-            "homeassistant.components.faa_delays.async_setup_entry",
+            "inpui.components.faa_delays.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

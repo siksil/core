@@ -27,7 +27,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.cookidoo.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.cookidoo.PLATFORMS", [Platform.BUTTON]):
         await setup_integration(hass, cookidoo_config_entry)
 
     assert cookidoo_config_entry.state is ConfigEntryState.LOADED

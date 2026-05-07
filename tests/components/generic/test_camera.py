@@ -360,7 +360,7 @@ async def test_stream_source(
     mock_stream.endpoint_url = Mock(return_value="http://home.assistant/playlist.m3u8")
 
     with patch(
-        "homeassistant.components.camera.create_stream",
+        "inpui.components.camera.create_stream",
         return_value=mock_stream,
     ):
         # Request playlist through WebSocket
@@ -402,7 +402,7 @@ async def test_stream_source_error(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.camera.Stream.endpoint_url",
+        "inpui.components.camera.Stream.endpoint_url",
         return_value="http://home.assistant/playlist.m3u8",
     ) as mock_stream_url:
         # Request playlist through WebSocket
@@ -464,7 +464,7 @@ async def test_no_stream_source(
     await help_setup_mock_config_entry(hass, options)
 
     with patch(
-        "homeassistant.components.camera.Stream.endpoint_url",
+        "inpui.components.camera.Stream.endpoint_url",
         return_value="http://home.assistant/playlist.m3u8",
     ) as mock_request_stream:
         # Request playlist through WebSocket
@@ -568,7 +568,7 @@ async def test_timeout_cancelled(
     respx.get("http://example.com").respond(stream=fakeimgbytes_jpg)
 
     with patch(
-        "homeassistant.components.generic.camera.GenericCamera.async_camera_image",
+        "inpui.components.generic.camera.GenericCamera.async_camera_image",
         side_effect=asyncio.CancelledError(),
     ):
         resp = await client.get("/api/camera_proxy/camera.config_test")
@@ -602,7 +602,7 @@ async def test_frame_interval_property(hass: HomeAssistant) -> None:
 
     request = Mock()
     with patch(
-        "homeassistant.components.camera.async_get_still_stream"
+        "inpui.components.camera.async_get_still_stream"
     ) as mock_get_stream:
         await async_get_mjpeg_stream(hass, request, "camera.config_test")
 

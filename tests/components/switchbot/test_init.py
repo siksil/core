@@ -59,7 +59,7 @@ async def test_exception_handling_for_device_initialization(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.switchbot.lock.switchbot.SwitchbotLock.__init__",
+        "inpui.components.switchbot.lock.switchbot.SwitchbotLock.__init__",
         side_effect=exception,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -103,7 +103,7 @@ async def test_setup_entry_meter_pro_co2_uses_non_connectable(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.bluetooth.async_ble_device_from_address",
+        "inpui.components.bluetooth.async_ble_device_from_address",
     ) as mock_ble:
         mock_ble.return_value = WOMETERTHPC_SERVICE_INFO.device
         await hass.config_entries.async_setup(entry.entry_id)
@@ -130,7 +130,7 @@ async def test_coordinator_wait_ready_timeout(
     timeout_mock.__aexit__.return_value = None
 
     with patch(
-        "homeassistant.components.switchbot.coordinator.asyncio.timeout",
+        "inpui.components.switchbot.coordinator.asyncio.timeout",
         return_value=timeout_mock,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

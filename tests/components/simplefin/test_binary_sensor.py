@@ -22,7 +22,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.simplefin.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.simplefin.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

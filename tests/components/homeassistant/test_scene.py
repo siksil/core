@@ -23,7 +23,7 @@ async def test_reload_config_service(hass: HomeAssistant) -> None:
     test_reloaded_event = async_capture_events(hass, EVENT_SCENE_RELOADED)
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={"scene": {"name": "Hallo", "entities": {"light.kitchen": "on"}}},
     ):
@@ -34,7 +34,7 @@ async def test_reload_config_service(hass: HomeAssistant) -> None:
     assert len(test_reloaded_event) == 1
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={"scene": {"name": "Bye", "entities": {"light.kitchen": "on"}}},
     ):

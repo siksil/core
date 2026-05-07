@@ -83,7 +83,7 @@ MOCK_TEST_TOKEN_OTHER_CONFIG = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.proxmoxve.async_setup_entry",
+        "inpui.components.proxmoxve.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -94,10 +94,10 @@ def mock_proxmox_client():
     """Mock Proxmox client with dynamic exception injection support."""
     with (
         patch(
-            "homeassistant.components.proxmoxve.coordinator.ProxmoxAPI", autospec=True
+            "inpui.components.proxmoxve.coordinator.ProxmoxAPI", autospec=True
         ) as mock_api,
         patch(
-            "homeassistant.components.proxmoxve.config_flow.ProxmoxAPI"
+            "inpui.components.proxmoxve.config_flow.ProxmoxAPI"
         ) as mock_api_cf,
     ):
         mock_instance = MagicMock()

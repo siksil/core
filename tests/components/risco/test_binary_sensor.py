@@ -162,7 +162,7 @@ async def _check_local_state(
 @pytest.fixture
 def mock_zone_handler():
     """Create a mock for add_zone_handler."""
-    with patch("homeassistant.components.risco.RiscoLocal.add_zone_handler") as mock:
+    with patch("inpui.components.risco.RiscoLocal.add_zone_handler") as mock:
         yield mock
 
 
@@ -257,7 +257,7 @@ async def _check_system_state(
 @pytest.fixture
 def mock_system_handler():
     """Create a mock for add_system_handler."""
-    with patch("homeassistant.components.risco.RiscoLocal.add_system_handler") as mock:
+    with patch("inpui.components.risco.RiscoLocal.add_system_handler") as mock:
         yield mock
 
 
@@ -270,15 +270,15 @@ def system_only_local():
             system, "name", new_callable=PropertyMock(return_value=TEST_SITE_NAME)
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.zones",
+            "inpui.components.risco.RiscoLocal.zones",
             new_callable=PropertyMock(return_value={}),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.partitions",
+            "inpui.components.risco.RiscoLocal.partitions",
             new_callable=PropertyMock(return_value={}),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.system",
+            "inpui.components.risco.RiscoLocal.system",
             new_callable=PropertyMock(return_value=system),
         ),
     ):

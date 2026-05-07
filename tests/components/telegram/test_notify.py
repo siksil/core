@@ -20,7 +20,7 @@ async def test_reload_notify(
 ) -> None:
     """Verify we can reload the notify service."""
 
-    with patch("homeassistant.components.telegram_bot.async_setup", return_value=True):
+    with patch("inpui.components.telegram_bot.async_setup", return_value=True):
         assert await async_setup_component(
             hass,
             notify.DOMAIN,
@@ -78,7 +78,7 @@ async def test_notify(hass: HomeAssistant) -> None:
 
     original_call = ServiceRegistry.async_call
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call", new_callable=AsyncMock
+        "inpui.core.ServiceRegistry.async_call", new_callable=AsyncMock
     ) as mock_service_call:
         # setup mock
 

@@ -87,10 +87,10 @@ def mock_tractive_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.tractive.aiotractive.Tractive", autospec=True
+            "inpui.components.tractive.aiotractive.Tractive", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.tractive.asyncio.sleep",
+            "inpui.components.tractive.asyncio.sleep",
             new_callable=AsyncMock,
         ),
     ):

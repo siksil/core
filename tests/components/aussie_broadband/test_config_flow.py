@@ -32,7 +32,7 @@ async def test_form(hass: HomeAssistant) -> None:
         patch("aussiebb.asyncio.AussieBB.login", return_value=True),
         patch("aussiebb.asyncio.AussieBB.get_services", return_value=FAKE_SERVICES),
         patch(
-            "homeassistant.components.aussie_broadband.async_setup_entry",
+            "inpui.components.aussie_broadband.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -62,7 +62,7 @@ async def test_already_configured(hass: HomeAssistant) -> None:
             "aussiebb.asyncio.AussieBB.get_services", return_value=[FAKE_SERVICES[0]]
         ),
         patch(
-            "homeassistant.components.aussie_broadband.async_setup_entry",
+            "inpui.components.aussie_broadband.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -83,7 +83,7 @@ async def test_already_configured(hass: HomeAssistant) -> None:
             "aussiebb.asyncio.AussieBB.get_services", return_value=[FAKE_SERVICES[0]]
         ),
         patch(
-            "homeassistant.components.aussie_broadband.async_setup_entry",
+            "inpui.components.aussie_broadband.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -110,7 +110,7 @@ async def test_no_services(hass: HomeAssistant) -> None:
         patch("aussiebb.asyncio.AussieBB.login", return_value=True),
         patch("aussiebb.asyncio.AussieBB.get_services", return_value=[]),
         patch(
-            "homeassistant.components.aussie_broadband.async_setup_entry",
+            "inpui.components.aussie_broadband.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

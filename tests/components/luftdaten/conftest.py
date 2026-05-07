@@ -29,7 +29,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.luftdaten.async_setup_entry", return_value=True
+        "inpui.components.luftdaten.async_setup_entry", return_value=True
     ):
         yield
 
@@ -39,10 +39,10 @@ def mock_luftdaten() -> Generator[MagicMock]:
     """Return a mocked Luftdaten client."""
     with (
         patch(
-            "homeassistant.components.luftdaten.Luftdaten", autospec=True
+            "inpui.components.luftdaten.Luftdaten", autospec=True
         ) as luftdaten_mock,
         patch(
-            "homeassistant.components.luftdaten.config_flow.Luftdaten",
+            "inpui.components.luftdaten.config_flow.Luftdaten",
             new=luftdaten_mock,
         ),
     ):

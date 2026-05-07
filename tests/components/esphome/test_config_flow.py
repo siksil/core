@@ -166,7 +166,7 @@ WRONG_NOISE_PSK = "GP+ciK+nVfTQ/gcz6uOdS+oKEdJgesU+jeu8Ssj2how="
 @pytest.fixture(autouse=False)
 def mock_setup_entry():
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.esphome.async_setup_entry", return_value=True):
+    with patch("inpui.components.esphome.async_setup_entry", return_value=True):
         yield
 
 
@@ -318,7 +318,7 @@ async def test_user_resolve_error(hass: HomeAssistant, mock_client: APIClient) -
     """Test user step with IP resolve error."""
 
     with patch(
-        "homeassistant.components.esphome.config_flow.APIConnectionError",
+        "inpui.components.esphome.config_flow.APIConnectionError",
         new_callable=lambda: ResolveAPIError,
     ) as exc:
         mock_client.device_info.side_effect = exc
@@ -540,7 +540,7 @@ async def test_user_dashboard_has_wrong_key(
     ]
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=WRONG_NOISE_PSK,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -595,7 +595,7 @@ async def test_user_discovers_name_and_gets_key_from_dashboard(
     await dashboard.async_get_dashboard(hass).async_refresh()
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -647,7 +647,7 @@ async def test_user_discovers_name_and_gets_key_from_dashboard_fails(
     await dashboard.async_get_dashboard(hass).async_refresh()
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         side_effect=dashboard_exception,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -701,7 +701,7 @@ async def test_user_discovers_name_and_dashboard_is_unavailable(
     )
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices",
         side_effect=TimeoutError,
     ):
         await dashboard.async_get_dashboard(hass).async_refresh()
@@ -1330,7 +1330,7 @@ async def test_reauth_fixed_via_dashboard(
     await dashboard.async_get_dashboard(hass).async_refresh()
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ) as mock_get_encryption_key:
         result = await entry.start_reauth_flow(hass)
@@ -1365,7 +1365,7 @@ async def test_reauth_fixed_via_dashboard_add_encryption_remove_password(
     await dashboard.async_get_dashboard(hass).async_refresh()
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ) as mock_get_encryption_key:
         result = await mock_config_entry.start_reauth_flow(hass)
@@ -1438,7 +1438,7 @@ async def test_reauth_fixed_via_dashboard_at_confirm(
     await dashboard.async_get_dashboard(hass).async_refresh()
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ) as mock_get_encryption_key:
         # We just fetch the form
@@ -1860,7 +1860,7 @@ async def test_zeroconf_encryption_key_via_dashboard(
     ]
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ) as mock_get_encryption_key:
         result = await hass.config_entries.flow.async_configure(
@@ -1926,7 +1926,7 @@ async def test_zeroconf_encryption_key_via_dashboard_with_api_encryption_prop(
     ]
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ) as mock_get_encryption_key:
         result = await hass.config_entries.flow.async_configure(
@@ -2026,7 +2026,7 @@ async def test_option_flow_allow_service_calls(
         CONF_SUBSCRIBE_LOGS: False,
     }
     with patch(
-        "homeassistant.components.esphome.async_setup_entry", return_value=True
+        "inpui.components.esphome.async_setup_entry", return_value=True
     ) as mock_reload:
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
@@ -2062,7 +2062,7 @@ async def test_option_flow_subscribe_logs(
     }
 
     with patch(
-        "homeassistant.components.esphome.async_setup_entry", return_value=True
+        "inpui.components.esphome.async_setup_entry", return_value=True
     ) as mock_reload:
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
@@ -2966,7 +2966,7 @@ async def test_zeroconf_notifies_improv_ble(
 
     # Patch improv_ble to ensure it's available and track calls
     with patch(
-        "homeassistant.components.improv_ble.async_register_next_flow"
+        "inpui.components.improv_ble.async_register_next_flow"
     ) as mock_register:
         flow = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -3008,7 +3008,7 @@ async def test_zeroconf_when_improv_ble_not_available(
 
     # Mock async_import_module to return None (simulating improv_ble not available)
     with patch(
-        "homeassistant.components.esphome.config_flow.async_import_module",
+        "inpui.components.esphome.config_flow.async_import_module",
         return_value=None,
     ):
         flow = await hass.config_entries.flow.async_init(

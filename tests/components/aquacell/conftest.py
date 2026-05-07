@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, load_json_array_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.aquacell.async_setup_entry", return_value=True
+        "inpui.components.aquacell.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -32,11 +32,11 @@ def mock_aquacell_api() -> Generator[MagicMock]:
     """Build a fixture for the Aquacell API that authenticates successfully and returns a single softener."""
     with (
         patch(
-            "homeassistant.components.aquacell.AquacellApi",
+            "inpui.components.aquacell.AquacellApi",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.aquacell.config_flow.AquacellApi",
+            "inpui.components.aquacell.config_flow.AquacellApi",
             new=mock_client,
         ),
     ):

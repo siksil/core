@@ -35,7 +35,7 @@ async def test_camera_fail(
     )
 
     with (
-        caplog.at_level(logging.ERROR, logger="homeassistant.components.prosegur"),
+        caplog.at_level(logging.ERROR, logger="inpui.components.prosegur"),
         pytest.raises(HomeAssistantError) as exc,
     ):
         await camera.async_get_image(hass, "camera.contract_1234abcd_test_cam")
@@ -70,7 +70,7 @@ async def test_request_image_fail(
 
     mock_install.request_image = AsyncMock(side_effect=ProsegurException())
 
-    with caplog.at_level(logging.ERROR, logger="homeassistant.components.prosegur"):
+    with caplog.at_level(logging.ERROR, logger="inpui.components.prosegur"):
         await hass.services.async_call(
             DOMAIN,
             "request_image",

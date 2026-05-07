@@ -143,7 +143,7 @@ async def test_command_template_variables(
 
     # Test that TemplateStateFromEntityId is not called again
     with patch(
-        "homeassistant.helpers.template.TemplateStateFromEntityId", MagicMock()
+        "inpui.helpers.template.TemplateStateFromEntityId", MagicMock()
     ) as template_state_calls:
         await hass.services.async_call(
             "select",
@@ -208,7 +208,7 @@ async def test_value_template_value(hass: HomeAssistant) -> None:
     assert val_tpl2.async_render_with_possible_json_value("bla") == "select.test"
 
     with patch(
-        "homeassistant.helpers.template.TemplateStateFromEntityId", MagicMock()
+        "inpui.helpers.template.TemplateStateFromEntityId", MagicMock()
     ) as template_state_calls:
         tpl3 = template.Template("{{ this.entity_id }}", hass=hass)
         val_tpl3 = mqtt.MqttValueTemplate(tpl3, entity=entity)
@@ -346,7 +346,7 @@ async def test_mqtt_publish_action_call_with_raw_data(
     assert mqtt_mock.async_publish.call_args[0][1] == payload
 
     with patch(
-        "homeassistant.components.mqtt.models.literal_eval"
+        "inpui.components.mqtt.models.literal_eval"
     ) as literal_eval_mock:
         await hass.services.async_call(
             mqtt.DOMAIN,
@@ -655,7 +655,7 @@ async def test_handle_logging_on_writing_the_entity_state(
     assert state is not None
     assert state.state == "initial_state"
     with patch(
-        "homeassistant.helpers.entity.Entity.async_write_ha_state",
+        "inpui.helpers.entity.Entity.async_write_ha_state",
         side_effect=side_effect,
     ):
         async_fire_mqtt_message(hass, "test/state", b"payload causing errors")
@@ -736,7 +736,7 @@ async def test_reload_entry_with_restored_subscriptions(
     )
     entry.add_to_hass(hass)
     hass.config.components.add(mqtt.DOMAIN)
-    with patch("homeassistant.config.load_yaml_config_file", return_value={}):
+    with patch("inpui.config.load_yaml_config_file", return_value={}):
         await hass.config_entries.async_setup(entry.entry_id)
 
     mock_debouncer.clear()
@@ -756,7 +756,7 @@ async def test_reload_entry_with_restored_subscriptions(
     recorded_calls.clear()
 
     # Reload the entry
-    with patch("homeassistant.config.load_yaml_config_file", return_value={}):
+    with patch("inpui.config.load_yaml_config_file", return_value={}):
         assert await hass.config_entries.async_reload(entry.entry_id)
         mock_debouncer.clear()
         assert entry.state is ConfigEntryState.LOADED
@@ -774,7 +774,7 @@ async def test_reload_entry_with_restored_subscriptions(
     recorded_calls.clear()
 
     # Reload the entry again
-    with patch("homeassistant.config.load_yaml_config_file", return_value={}):
+    with patch("inpui.config.load_yaml_config_file", return_value={}):
         assert await hass.config_entries.async_reload(entry.entry_id)
         mock_debouncer.clear()
         assert entry.state is ConfigEntryState.LOADED
@@ -1010,7 +1010,7 @@ async def test_dump_service(
     async_fire_mqtt_message(hass, "bla/1", "test1")
     async_fire_mqtt_message(hass, "bla/2", "test2")
 
-    with patch("homeassistant.components.mqtt.open", mopen):
+    with patch("inpui.components.mqtt.open", mopen):
         async_fire_time_changed(hass, utcnow() + timedelta(seconds=3))
         await hass.async_block_till_done()
 
@@ -1729,7 +1729,7 @@ async def test_disabling_and_enabling_entry(
     config_light = '{"name": "test_new", "command_topic": "test-topic_new"}'
 
     with patch(
-        "homeassistant.components.mqtt.entity.mqtt_config_entry_enabled",
+        "inpui.components.mqtt.entity.mqtt_config_entry_enabled",
         return_value=False,
     ):
         # Discovery of mqtt tag
@@ -1905,7 +1905,7 @@ async def test_link_config_entry(
     assert _check_entities() == 2
 
     # reload entry and assert again
-    with patch("homeassistant.components.mqtt.async_client.AsyncMQTTClient"):
+    with patch("inpui.components.mqtt.async_client.AsyncMQTTClient"):
         await hass.config_entries.async_reload(mqtt_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -2014,7 +2014,7 @@ async def test_reload_config_entry(
         }
     }
     with patch(
-        "homeassistant.config.load_yaml_config_file", return_value=hass_config_new
+        "inpui.config.load_yaml_config_file", return_value=hass_config_new
     ):
         assert await hass.config_entries.async_reload(entry.entry_id)
         assert entry.state is ConfigEntryState.LOADED
@@ -2047,7 +2047,7 @@ async def test_reload_config_entry(
 
     # Reload manual configured items and assert again
     with patch(
-        "homeassistant.config.load_yaml_config_file", return_value=hass_config_new
+        "inpui.config.load_yaml_config_file", return_value=hass_config_new
     ):
         await hass.services.async_call(
             "mqtt",
@@ -2106,7 +2106,7 @@ async def test_reload_with_invalid_config(
     # Reload with an invalid config and assert again
     invalid_config = {"mqtt": "some_invalid_config"}
     with patch(
-        "homeassistant.config.load_yaml_config_file", return_value=invalid_config
+        "inpui.config.load_yaml_config_file", return_value=invalid_config
     ):
         with pytest.raises(HomeAssistantError):
             await hass.services.async_call(
@@ -2144,7 +2144,7 @@ async def test_reload_with_empty_config(
     assert hass.states.get("sensor.test") is not None
 
     # Reload with an empty config and assert again
-    with patch("homeassistant.config.load_yaml_config_file", return_value={}):
+    with patch("inpui.config.load_yaml_config_file", return_value={}):
         await hass.services.async_call(
             "mqtt",
             SERVICE_RELOAD,
@@ -2195,7 +2195,7 @@ async def test_reload_with_new_platform_config(
     }
 
     # Reload with an new platform config and assert again
-    with patch("homeassistant.config.load_yaml_config_file", return_value=new_config):
+    with patch("inpui.config.load_yaml_config_file", return_value=new_config):
         await hass.services.async_call(
             "mqtt",
             SERVICE_RELOAD,

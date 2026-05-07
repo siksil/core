@@ -34,7 +34,7 @@ async def test_siren(
     reolink_host: MagicMock,
 ) -> None:
     """Test siren entity."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SIREN]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SIREN]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -94,7 +94,7 @@ async def test_siren_turn_on_errors(
     expected: Any,
 ) -> None:
     """Test errors when calling siren turn on service."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SIREN]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SIREN]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -120,7 +120,7 @@ async def test_siren_turn_off_errors(
     reolink_host: MagicMock,
 ) -> None:
     """Test errors when calling siren turn off service."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SIREN]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SIREN]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -145,7 +145,7 @@ async def test_host_siren(
     """Test siren entity."""
     config_entry.is_hub = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SIREN]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SIREN]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

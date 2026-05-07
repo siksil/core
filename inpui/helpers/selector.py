@@ -85,7 +85,7 @@ def _entity_feature_flag(domain: str, enum_name: str, feature_name: str) -> int:
     This will import a module from disk and is run from an executor when
     loading the services schema files.
     """
-    module = importlib.import_module(f"homeassistant.components.{domain}")
+    module = importlib.import_module(f"inpui.components.{domain}")
     enum = getattr(module, enum_name)
     feature = getattr(enum, feature_name)
     return cast(int, feature.value)

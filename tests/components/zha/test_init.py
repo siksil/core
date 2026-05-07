@@ -55,7 +55,7 @@ DATA_PORT_PATH = "/dev/serial/by-id/FTDI_USB__-__Serial_Cable_12345678-if00-port
 @pytest.fixture(autouse=True)
 def disable_platform_only():
     """Disable platforms to speed up tests."""
-    with patch("homeassistant.components.zha.PLATFORMS", []):
+    with patch("inpui.components.zha.PLATFORMS", []):
         yield
 
 
@@ -70,7 +70,7 @@ def config_entry_v1(hass: HomeAssistant):
 
 
 @pytest.mark.parametrize("config", [{}, {DOMAIN: {}}])
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_from_v1_no_baudrate(
     hass: HomeAssistant, config_entry_v1, config
 ) -> None:
@@ -85,7 +85,7 @@ async def test_migration_from_v1_no_baudrate(
     assert config_entry_v1.version == 5
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_from_v1_with_baudrate(
     hass: HomeAssistant, config_entry_v1
 ) -> None:
@@ -102,7 +102,7 @@ async def test_migration_from_v1_with_baudrate(
     assert config_entry_v1.version == 5
 
 
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_from_v1_wrong_baudrate(
     hass: HomeAssistant, config_entry_v1
 ) -> None:
@@ -134,7 +134,7 @@ async def test_config_depreciation(hass: HomeAssistant, zha_config) -> None:
     """Test config option depreciation."""
 
     with patch(
-        "homeassistant.components.zha.async_setup", return_value=True
+        "inpui.components.zha.async_setup", return_value=True
     ) as setup_mock:
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: zha_config})
         assert setup_mock.call_count == 1
@@ -157,7 +157,7 @@ async def test_config_depreciation(hass: HomeAssistant, zha_config) -> None:
     ],
 )
 @patch(
-    "homeassistant.components.zha.websocket_api.async_load_api", Mock(return_value=True)
+    "inpui.components.zha.websocket_api.async_load_api", Mock(return_value=True)
 )
 async def test_setup_with_v3_cleaning_uri(
     hass: HomeAssistant,
@@ -205,7 +205,7 @@ async def test_setup_with_v3_cleaning_uri(
         ("deconz", 115200, None, 115200, None),
     ],
 )
-@patch("homeassistant.components.zha.async_setup_entry", AsyncMock(return_value=True))
+@patch("inpui.components.zha.async_setup_entry", AsyncMock(return_value=True))
 async def test_migration_baudrate_and_flow_control(
     radio_type: str,
     old_baudrate: int,
@@ -241,7 +241,7 @@ async def test_migration_baudrate_and_flow_control(
 
 
 @patch(
-    "homeassistant.components.zha.PLATFORMS",
+    "inpui.components.zha.PLATFORMS",
     [Platform.LIGHT, Platform.BUTTON, Platform.SENSOR, Platform.SELECT],
 )
 async def test_zha_retry_unique_ids(
@@ -267,7 +267,7 @@ async def test_zha_retry_unique_ids(
         side_effect=[TransientConnectionError(), None],
     ) as mock_connect:
         with patch(
-            "homeassistant.config_entries.async_call_later",
+            "inpui.config_entries.async_call_later",
             lambda hass, delay, action: async_call_later(hass, 0.01, action),
         ):
             await hass.config_entries.async_setup(config_entry.entry_id)
@@ -380,7 +380,7 @@ async def test_setup_firmware_update_in_progress_prevents_silabs_warning(
             side_effect=Exception("Setup failed"),
         ),
         patch(
-            "homeassistant.components.zha.repairs.wrong_silabs_firmware.warn_on_wrong_silabs_firmware"
+            "inpui.components.zha.repairs.wrong_silabs_firmware.warn_on_wrong_silabs_firmware"
         ) as mock_check_firmware,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -424,7 +424,7 @@ async def test_device_path_migration_to_unique_path(
     )
 
     with patch(
-        "homeassistant.components.zha.usb_device_from_path",
+        "inpui.components.zha.usb_device_from_path",
         return_value=mock_usb_device,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -473,7 +473,7 @@ async def test_device_path_not_changed_when_already_unique(
 
     with (
         patch(
-            "homeassistant.components.zha.usb_device_from_path",
+            "inpui.components.zha.usb_device_from_path",
             return_value=mock_usb_device,
         ),
         caplog.at_level(logging.DEBUG),
@@ -521,11 +521,11 @@ async def test_gateway_created_with_migrated_device_path(
 
     with (
         patch(
-            "homeassistant.components.zha.usb_device_from_path",
+            "inpui.components.zha.usb_device_from_path",
             return_value=mock_usb_device,
         ),
         patch(
-            "homeassistant.components.zha.create_zha_config",
+            "inpui.components.zha.create_zha_config",
             wraps=create_zha_config,
         ) as mock_create_config,
     ):

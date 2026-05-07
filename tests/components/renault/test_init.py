@@ -21,7 +21,7 @@ from tests.typing import WebSocketGenerator
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.renault.PLATFORMS", []):
+    with patch("inpui.components.renault.PLATFORMS", []):
         yield
 
 

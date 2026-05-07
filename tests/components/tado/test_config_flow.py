@@ -160,7 +160,7 @@ async def test_tado_creation(hass: HomeAssistant) -> None:
     """Test we handle Form Exceptions."""
 
     with patch(
-        "homeassistant.components.tado.config_flow.Tado",
+        "inpui.components.tado.config_flow.Tado",
         side_effect=TadoException("Test exception"),
     ):
         result = await hass.config_entries.flow.async_init(

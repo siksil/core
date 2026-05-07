@@ -29,9 +29,9 @@ async def test_state_set_and_restore(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.conversation.default_agent.DefaultAgent.async_process"
+            "inpui.components.conversation.default_agent.DefaultAgent.async_process"
         ) as mock_process,
-        patch("homeassistant.util.dt.utcnow", return_value=now),
+        patch("inpui.util.dt.utcnow", return_value=now),
     ):
         intent_response = intent.IntentResponse(language="en")
         intent_response.async_set_speech("response text")

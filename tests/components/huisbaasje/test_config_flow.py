@@ -37,7 +37,7 @@ async def test_form(hass: HomeAssistant) -> None:
             return_value="test-id",
         ) as mock_get_user_id,
         patch(
-            "homeassistant.components.huisbaasje.async_setup_entry",
+            "inpui.components.huisbaasje.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -229,7 +229,7 @@ async def test_form_entry_exists(hass: HomeAssistant) -> None:
             return_value="test-id",
         ),
         patch(
-            "homeassistant.components.huisbaasje.async_setup_entry",
+            "inpui.components.huisbaasje.async_setup_entry",
             return_value=True,
         ),
     ):

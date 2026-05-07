@@ -26,8 +26,8 @@ async def test_entities(
 
     with (
         # Mock a valid camera instance"
-        patch("homeassistant.components.foscam.FoscamCamera") as mock_foscam_camera,
-        patch("homeassistant.components.foscam.PLATFORMS", [Platform.SWITCH]),
+        patch("inpui.components.foscam.FoscamCamera") as mock_foscam_camera,
+        patch("inpui.components.foscam.PLATFORMS", [Platform.SWITCH]),
     ):
         setup_mock_foscam_camera(mock_foscam_camera)
         assert await hass.config_entries.async_setup(entry.entry_id)

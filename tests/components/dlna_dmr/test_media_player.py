@@ -916,7 +916,7 @@ async def test_play_media_didl_metadata(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.media_source.async_resolve_media",
+        "inpui.components.media_source.async_resolve_media",
         return_value=play_media,
     ):
         await hass.services.async_call(
@@ -1275,7 +1275,7 @@ async def test_unavailable_device(
     config_entry_mock.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dlna_dmr.media_player.DmrDevice", autospec=True
+        "inpui.components.dlna_dmr.media_player.DmrDevice", autospec=True
     ) as dmr_device_constructor_mock:
         mock_entity_id = await setup_mock_component(hass, config_entry_mock)
         mock_state = hass.states.get(mock_entity_id)

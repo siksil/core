@@ -44,7 +44,7 @@ async def test_entities(
 ) -> None:
     """Test the Smarla entities."""
     with (
-        patch("homeassistant.components.smarla.PLATFORMS", [Platform.SWITCH]),
+        patch("inpui.components.smarla.PLATFORMS", [Platform.SWITCH]),
     ):
         assert await setup_integration(hass, mock_config_entry)
 

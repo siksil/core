@@ -25,7 +25,7 @@ async def test_brightness_sensor(
     entry = configure_integration(hass)
     test_gateway = HomeControlMockBrightness()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -43,7 +43,7 @@ async def test_temperature_sensor(
     entry = configure_integration(hass)
     test_gateway = HomeControlMockSensor()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -62,7 +62,7 @@ async def test_battery_sensor(
     test_gateway = HomeControlMockSensor()
     test_gateway.devices["Test"].battery_level = 25
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -85,7 +85,7 @@ async def test_consumption_sensor(
     entry = configure_integration(hass)
     test_gateway = HomeControlMockConsumption()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -118,7 +118,7 @@ async def test_voltage_sensor(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockConsumption()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -133,7 +133,7 @@ async def test_sensor_change(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockSensor()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -159,7 +159,7 @@ async def test_remove_from_hass(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockSensor()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

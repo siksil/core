@@ -96,7 +96,7 @@ async def test_update_setup(
     await hass.config_entries.async_unload(entry.entry_id)
 
 
-@patch("homeassistant.components.smlight.update.asyncio.sleep", return_value=None)
+@patch("inpui.components.smlight.update.asyncio.sleep", return_value=None)
 async def test_update_firmware(
     mock_sleep: MagicMock,
     hass: HomeAssistant,
@@ -273,7 +273,7 @@ async def test_update_firmware_failed(
     assert state.attributes[ATTR_UPDATE_PERCENTAGE] is None
 
 
-@patch("homeassistant.components.smlight.const.LOGGER.warning")
+@patch("inpui.components.smlight.const.LOGGER.warning")
 async def test_update_reboot_timeout(
     mock_warning: MagicMock,
     hass: HomeAssistant,
@@ -291,11 +291,11 @@ async def test_update_reboot_timeout(
 
     with (
         patch(
-            "homeassistant.components.smlight.update.asyncio.timeout",
+            "inpui.components.smlight.update.asyncio.timeout",
             side_effect=TimeoutError,
         ),
         patch(
-            "homeassistant.components.smlight.update.asyncio.sleep",
+            "inpui.components.smlight.update.asyncio.sleep",
             return_value=None,
         ),
     ):

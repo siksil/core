@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, patch
 
 ENTITY_ID = "binary_sensor.rpi_power_status"
 
-MODULE = "homeassistant.components.rpi_power.binary_sensor.new_under_voltage"
+MODULE = "inpui.components.rpi_power.binary_sensor.new_under_voltage"
 
 
 async def _async_setup_component(hass: HomeAssistant, detected: bool) -> MagicMock:

@@ -26,7 +26,7 @@ async def test_sensors(
     reolink_host.hdd_list = [0]
     reolink_host.hdd_storage.return_value = 95
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -53,7 +53,7 @@ async def test_hdd_sensors(
     reolink_host.hdd_storage.return_value = 85
     reolink_host.hdd_available.return_value = False
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

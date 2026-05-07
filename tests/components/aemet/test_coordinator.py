@@ -25,7 +25,7 @@ async def test_coordinator_error(
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=AemetError,
     ):
         freezer.tick(WEATHER_UPDATE_INTERVAL)

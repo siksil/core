@@ -34,7 +34,7 @@ async def test_creating_entry_has_no_devices(
     mock_govee_api.devices = []
 
     with patch(
-        "homeassistant.components.govee_light_local.config_flow.DISCOVERY_TIMEOUT",
+        "inpui.components.govee_light_local.config_flow.DISCOVERY_TIMEOUT",
         0,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -64,7 +64,7 @@ async def test_creating_entry_has_with_devices(
 
     # Mock duplicated IPs to ensure that only one GoveeController is started
     with patch(
-        "homeassistant.components.network.async_get_enabled_source_ips",
+        "inpui.components.network.async_get_enabled_source_ips",
         return_value=[IPv4Address("192.168.1.2"), IPv4Address("192.168.1.2")],
     ):
         result = await hass.config_entries.flow.async_init(

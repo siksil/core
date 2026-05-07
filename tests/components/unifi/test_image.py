@@ -32,7 +32,7 @@ from tests.typing import ClientSessionGenerator
 def mock_getrandbits():
     """Mock image access token which normally is randomized."""
     with patch(
-        "homeassistant.components.image.SystemRandom.getrandbits",
+        "inpui.components.image.SystemRandom.getrandbits",
         return_value=1,
     ):
         yield
@@ -93,7 +93,7 @@ async def test_entity_and_device_data(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Validate entity and device data with and without admin rights."""
-    with patch("homeassistant.components.unifi.PLATFORMS", [Platform.IMAGE]):
+    with patch("inpui.components.unifi.PLATFORMS", [Platform.IMAGE]):
         config_entry = await config_entry_factory()
     if site_payload[0]["role"] == "admin":
         await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

@@ -140,11 +140,11 @@ def mock_ssh_connection():
 
     with (
         patch(
-            "homeassistant.components.sftp_storage.client.connect",
+            "inpui.components.sftp_storage.client.connect",
             side_effect=mock_connect,
         ),
         patch(
-            "homeassistant.components.sftp_storage.config_flow.connect",
+            "inpui.components.sftp_storage.config_flow.connect",
             side_effect=mock_connect,
         ),
     ):

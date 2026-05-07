@@ -48,11 +48,11 @@ def electrickiwi_api() -> Generator[AsyncMock]:
     """Mock ek api and return values."""
     with (
         patch(
-            "homeassistant.components.electric_kiwi.ElectricKiwiApi",
+            "inpui.components.electric_kiwi.ElectricKiwiApi",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.electric_kiwi.config_flow.ElectricKiwiApi",
+            "inpui.components.electric_kiwi.config_flow.ElectricKiwiApi",
             new=mock_client,
         ),
     ):
@@ -155,7 +155,7 @@ def mock_migrated_config_entry(hass: HomeAssistant) -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.electric_kiwi.async_setup_entry", return_value=True
+        "inpui.components.electric_kiwi.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -164,7 +164,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def electric_kiwi_auth() -> Generator[AsyncMock]:
     """Patch access to electric kiwi access token."""
     with patch(
-        "homeassistant.components.electric_kiwi.api.ConfigEntryElectricKiwiAuth"
+        "inpui.components.electric_kiwi.api.ConfigEntryElectricKiwiAuth"
     ) as mock_auth:
         mock_auth.return_value.async_get_access_token = AsyncMock("auth_token")
         yield mock_auth

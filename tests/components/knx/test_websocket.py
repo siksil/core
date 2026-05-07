@@ -88,7 +88,7 @@ async def test_knx_project_file_process(
     )
     with (
         patch(
-            "homeassistant.components.knx.project.process_uploaded_file",
+            "inpui.components.knx.project.process_uploaded_file",
         ) as file_upload_mock,
         patch("xknxproject.XKNXProj.parse", return_value=project_data) as parse_mock,
     ):
@@ -122,7 +122,7 @@ async def test_knx_project_file_process_error(
     )
     with (
         patch(
-            "homeassistant.components.knx.project.process_uploaded_file",
+            "inpui.components.knx.project.process_uploaded_file",
         ) as file_upload_mock,
         patch("xknxproject.XKNXProj.parse", side_effect=ValueError) as parse_mock,
     ):

@@ -313,7 +313,7 @@ async def test_search(
                     "trigger": {"platform": "template", "value_template": "true"},
                     "action": [
                         {
-                            "service": "homeassistant.turn_on",
+                            "service": "inpui.turn_on",
                             "target": {"entity_id": "group.wled_hue"},
                         },
                     ],

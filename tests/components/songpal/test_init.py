@@ -23,7 +23,7 @@ def _patch_media_setup():
         return True
 
     return patch(
-        "homeassistant.components.songpal.media_player.async_setup_entry",
+        "inpui.components.songpal.media_player.async_setup_entry",
         side_effect=_async_return,
     )
 

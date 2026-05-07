@@ -19,7 +19,7 @@ DEVICE_MAC = "6001940376EB"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.mystrom.async_setup_entry", return_value=True
+        "inpui.components.mystrom.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

@@ -72,7 +72,7 @@ async def test_google_update_report_state(
     with (
         patch.object(mock_conf, "async_sync_entities") as mock_sync,
         patch(
-            "homeassistant.components.google_assistant.report_state.async_enable_report_state"
+            "inpui.components.google_assistant.report_state.async_enable_report_state"
         ) as mock_report_state,
     ):
         await cloud_prefs.async_update(google_report_state=True)
@@ -96,7 +96,7 @@ async def test_google_update_report_state_subscription_expired(
     with (
         patch.object(mock_conf, "async_sync_entities") as mock_sync,
         patch(
-            "homeassistant.components.google_assistant.report_state.async_enable_report_state"
+            "inpui.components.google_assistant.report_state.async_enable_report_state"
         ) as mock_report_state,
     ):
         await cloud_prefs.async_update(google_report_state=True)
@@ -503,7 +503,7 @@ async def test_google_handle_logout(
     await gconf.async_initialize()
 
     with patch(
-        "homeassistant.components.google_assistant.report_state.async_enable_report_state",
+        "inpui.components.google_assistant.report_state.async_enable_report_state",
     ) as mock_enable:
         gconf.async_enable_report_state()
         await hass.async_block_till_done()

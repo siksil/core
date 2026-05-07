@@ -41,9 +41,9 @@ def mocked_fing_agent(api_type: str) -> Generator[MagicMock]:
     """Mock a FingAgent instance depending on api_type."""
     with (
         patch(
-            "homeassistant.components.fing.coordinator.FingAgent", autospec=True
+            "inpui.components.fing.coordinator.FingAgent", autospec=True
         ) as mock_agent,
-        patch("homeassistant.components.fing.config_flow.FingAgent", new=mock_agent),
+        patch("inpui.components.fing.config_flow.FingAgent", new=mock_agent),
     ):
         instance = mock_agent.return_value
         instance.get_devices.return_value = DeviceResponse(

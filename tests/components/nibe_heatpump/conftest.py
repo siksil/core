@@ -19,7 +19,7 @@ from tests.common import async_fire_time_changed
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Make sure we never actually run setup."""
     with patch(
-        "homeassistant.components.nibe_heatpump.async_setup_entry", return_value=True
+        "inpui.components.nibe_heatpump.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -42,10 +42,10 @@ async def fixture_mock_connection(mock_connection_construct):
 
     with ExitStack() as stack:
         places = [
-            "homeassistant.components.nibe_heatpump.config_flow.NibeGW",
-            "homeassistant.components.nibe_heatpump.config_flow.Modbus",
-            "homeassistant.components.nibe_heatpump.NibeGW",
-            "homeassistant.components.nibe_heatpump.Modbus",
+            "inpui.components.nibe_heatpump.config_flow.NibeGW",
+            "inpui.components.nibe_heatpump.config_flow.Modbus",
+            "inpui.components.nibe_heatpump.NibeGW",
+            "inpui.components.nibe_heatpump.Modbus",
         ]
         for place in places:
             stack.enter_context(patch(place, new=construct))

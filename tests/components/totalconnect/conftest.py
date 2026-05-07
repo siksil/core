@@ -189,11 +189,11 @@ def mock_client(mock_location: TotalConnectLocation) -> Generator[TotalConnectCl
     """Mock a TotalConnectClient for testing."""
     with (
         patch(
-            "homeassistant.components.totalconnect.config_flow.TotalConnectClient",
+            "inpui.components.totalconnect.config_flow.TotalConnectClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.totalconnect.TotalConnectClient", new=mock_client
+            "inpui.components.totalconnect.TotalConnectClient", new=mock_client
         ),
     ):
         client = mock_client.return_value
@@ -243,7 +243,7 @@ def mock_config_entry(code_required: bool) -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock the setup entry for TotalConnect."""
     with patch(
-        "homeassistant.components.totalconnect.async_setup_entry",
+        "inpui.components.totalconnect.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

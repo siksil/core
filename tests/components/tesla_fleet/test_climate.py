@@ -366,7 +366,7 @@ async def test_asleep_or_offline(
     mock_wake_up.return_value = VEHICLE_ASLEEP
     mock_vehicle_state.return_value = VEHICLE_ASLEEP
     with (
-        patch("homeassistant.components.tesla_fleet.helpers.asyncio.sleep"),
+        patch("inpui.components.tesla_fleet.helpers.asyncio.sleep"),
         pytest.raises(HomeAssistantError, match="Could not wake up vehicle"),
     ):
         await hass.services.async_call(

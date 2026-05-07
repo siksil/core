@@ -63,7 +63,7 @@ def patch_blueprint(
         )
 
     with patch(
-        "homeassistant.components.blueprint.models.DomainBlueprints._load_blueprint",
+        "inpui.components.blueprint.models.DomainBlueprints._load_blueprint",
         mock_load_blueprint,
     ):
         yield
@@ -90,7 +90,7 @@ def patch_invalid_blueprint() -> Iterator[None]:
         )
 
     with patch(
-        "homeassistant.components.blueprint.models.DomainBlueprints._load_blueprint",
+        "inpui.components.blueprint.models.DomainBlueprints._load_blueprint",
         mock_load_blueprint,
     ):
         yield
@@ -201,12 +201,12 @@ async def test_reload_template_when_blueprint_changes(hass: HomeAssistant) -> No
     blueprint_config["binary_sensor"]["state"] = "{{ states(reference_entity) }}"
     with (
         patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ),
         patch(
-            "homeassistant.components.blueprint.models.yaml_util.load_yaml_dict",
+            "inpui.components.blueprint.models.yaml_util.load_yaml_dict",
             autospec=True,
             return_value=blueprint_config,
         ),
@@ -280,12 +280,12 @@ async def test_init_attribute_variables_from_blueprint(hass: HomeAssistant) -> N
     blueprint_config["sensor"]["variables"]["extrab"] = "d"
     with (
         patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ),
         patch(
-            "homeassistant.components.blueprint.models.yaml_util.load_yaml_dict",
+            "inpui.components.blueprint.models.yaml_util.load_yaml_dict",
             autospec=True,
             return_value=blueprint_config,
         ),
@@ -343,7 +343,7 @@ async def test_trigger_event_sensor(
 
     context = Context()
     now = dt_util.utcnow()
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         hass.bus.async_fire(
             "my_custom_event", {"foo": "bar", "beer": 2}, context=context
         )
@@ -428,7 +428,7 @@ async def test_blueprint_template_override(
 
     context = Context()
     now = dt_util.utcnow()
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         hass.bus.async_fire(
             "my_custom_event", {"foo": "bar", "beer": 2}, context=context
         )
@@ -440,7 +440,7 @@ async def test_blueprint_template_override(
 
     context = Context()
     now = dt_util.utcnow()
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         hass.bus.async_fire("override", {"foo": "bar", "beer": 2}, context=context)
         await hass.async_block_till_done()
 
@@ -474,7 +474,7 @@ async def test_domain_blueprint(hass: HomeAssistant) -> None:
     mock_create_file.return_value = True
 
     with patch(
-        "homeassistant.components.blueprint.models.DomainBlueprints._create_file",
+        "inpui.components.blueprint.models.DomainBlueprints._create_file",
         mock_create_file,
     ):
         await template.async_get_blueprints(hass).async_add_blueprint(

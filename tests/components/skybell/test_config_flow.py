@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def setup_entry() -> None:
     """Make sure component doesn't initialize."""
     with patch(
-        "homeassistant.components.skybell.async_setup_entry",
+        "inpui.components.skybell.async_setup_entry",
         return_value=True,
     ):
         yield

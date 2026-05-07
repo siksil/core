@@ -206,7 +206,7 @@ def mock_config_entry_with_bus_subentry(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.mta.async_setup_entry", return_value=True
+        "inpui.components.mta.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -216,10 +216,10 @@ def mock_subway_feed() -> Generator[MagicMock]:
     """Create a mock SubwayFeed for both coordinator and config flow."""
     with (
         patch(
-            "homeassistant.components.mta.coordinator.SubwayFeed", autospec=True
+            "inpui.components.mta.coordinator.SubwayFeed", autospec=True
         ) as mock_feed,
         patch(
-            "homeassistant.components.mta.config_flow.SubwayFeed",
+            "inpui.components.mta.config_flow.SubwayFeed",
             new=mock_feed,
         ),
     ):
@@ -236,10 +236,10 @@ def mock_bus_feed() -> Generator[MagicMock]:
     """Create a mock BusFeed for both coordinator and config flow."""
     with (
         patch(
-            "homeassistant.components.mta.coordinator.BusFeed", autospec=True
+            "inpui.components.mta.coordinator.BusFeed", autospec=True
         ) as mock_feed,
         patch(
-            "homeassistant.components.mta.config_flow.BusFeed",
+            "inpui.components.mta.config_flow.BusFeed",
             new=mock_feed,
         ),
     ):
@@ -255,10 +255,10 @@ def mock_bus_feed_with_direction() -> Generator[MagicMock]:
     """Create a mock BusFeed with direction info."""
     with (
         patch(
-            "homeassistant.components.mta.coordinator.BusFeed", autospec=True
+            "inpui.components.mta.coordinator.BusFeed", autospec=True
         ) as mock_feed,
         patch(
-            "homeassistant.components.mta.config_flow.BusFeed",
+            "inpui.components.mta.config_flow.BusFeed",
             new=mock_feed,
         ),
     ):

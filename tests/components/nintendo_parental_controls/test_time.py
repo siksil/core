@@ -30,7 +30,7 @@ async def test_time(
 ) -> None:
     """Test time platform."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.TIME],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -60,7 +60,7 @@ async def test_set_time(
 ) -> None:
     """Test time platform service validation errors."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.TIME],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -106,7 +106,7 @@ async def test_set_time_service_exceptions(
         mock_nintendo_device, called_function_name
     ).side_effect = BedtimeOutOfRangeError(None)
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.TIME],
     ):
         await setup_integration(hass, mock_config_entry)

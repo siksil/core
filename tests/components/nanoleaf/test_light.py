@@ -28,7 +28,7 @@ async def test_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.nanoleaf.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.nanoleaf.PLATFORMS", [Platform.LIGHT]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

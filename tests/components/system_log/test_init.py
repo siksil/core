@@ -96,7 +96,7 @@ async def async_setup_system_log(
     """Set up the system_log component."""
     WatchLogErrorHandler.instances = []
     with patch(
-        "homeassistant.components.system_log.LogErrorHandler", WatchLogErrorHandler
+        "inpui.components.system_log.LogErrorHandler", WatchLogErrorHandler
     ):
         await async_setup_component(hass, system_log.DOMAIN, config)
         await hass.async_block_till_done()
@@ -315,7 +315,7 @@ async def test_write_log(hass: HomeAssistant) -> None:
             system_log.DOMAIN, system_log.SERVICE_WRITE, {"message": "test_message"}
         )
         await hass.async_block_till_done()
-    mock_logging.assert_called_once_with("homeassistant.components.system_log.external")
+    mock_logging.assert_called_once_with("inpui.components.system_log.external")
     assert logger.method_calls[0] == ("error", ("test_message",))
 
 
@@ -386,7 +386,7 @@ async def async_log_error_from_test_path(
             _LOGGER, "findCaller", MagicMock(return_value=(call_path, 0, None, None))
         ),
         patch(
-            "homeassistant.components.system_log.sys._getframe",
+            "inpui.components.system_log.sys._getframe",
             return_value=logger_frame,
         ),
     ):
@@ -401,7 +401,7 @@ async def test_homeassistant_path(
     """Test error logged from Home Assistant path."""
 
     with patch(
-        "homeassistant.components.system_log.HOMEASSISTANT_PATH",
+        "inpui.components.system_log.HOMEASSISTANT_PATH",
         new=["venv_path/homeassistant"],
     ):
         watcher = await async_setup_system_log(hass, BASIC_CONFIG)

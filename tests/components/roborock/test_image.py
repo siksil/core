@@ -70,7 +70,7 @@ async def test_floorplan_image(
 
     with (
         patch(
-            "homeassistant.components.roborock.coordinator.dt_util.utcnow",
+            "inpui.components.roborock.coordinator.dt_util.utcnow",
             return_value=now,
         ),
     ):
@@ -108,7 +108,7 @@ async def test_fail_updating_image(
     now = dt_util.utcnow() + timedelta(seconds=91)
     with (
         patch(
-            "homeassistant.components.roborock.coordinator.dt_util.utcnow",
+            "inpui.components.roborock.coordinator.dt_util.utcnow",
             return_value=now,
         ),
     ):
@@ -155,7 +155,7 @@ async def test_map_status_change(
     }
 
     with patch(
-        "homeassistant.components.roborock.coordinator.dt_util.utcnow",
+        "inpui.components.roborock.coordinator.dt_util.utcnow",
         return_value=now,
     ):
         async_fire_time_changed(hass, now)

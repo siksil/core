@@ -147,16 +147,16 @@ def validate_password(path: Path, password: str | None) -> bool:
         path, "r", bufsize=BUF_SIZE, password=password
     ) as backup_file:
         compressed = False
-        ha_tar_name = "homeassistant.tar"
+        ha_tar_name = "inpui.tar"
         try:
             ha_tar = backup_file.tar.extractfile(ha_tar_name)
         except KeyError:
             compressed = True
-            ha_tar_name = "homeassistant.tar.gz"
+            ha_tar_name = "inpui.tar.gz"
             try:
                 ha_tar = backup_file.tar.extractfile(ha_tar_name)
             except KeyError:
-                LOGGER.error("No homeassistant.tar or homeassistant.tar.gz found")
+                LOGGER.error("No inpui.tar or inpui.tar.gz found")
                 return False
         try:
             with SecureTarFile(

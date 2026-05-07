@@ -308,7 +308,7 @@ async def test_invalid_url_setup(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.sql.util.sqlalchemy.create_engine",
+        "inpui.components.sql.util.sqlalchemy.create_engine",
         side_effect=SQLAlchemyError(url),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -339,7 +339,7 @@ async def test_invalid_url_on_update(
             raise SQLAlchemyError("sqlite://homeassistant:hunter2@homeassistant.local")
 
     with patch(
-        "homeassistant.components.sql.util.scoped_session",
+        "inpui.components.sql.util.scoped_session",
         return_value=MockSession,
     ):
         await init_integration(hass, title="count_tables", options=options)
@@ -484,7 +484,7 @@ async def test_invalid_url_setup_from_yaml(
     }
 
     with patch(
-        "homeassistant.components.sql.util.sqlalchemy.create_engine",
+        "inpui.components.sql.util.sqlalchemy.create_engine",
         side_effect=SQLAlchemyError(url),
     ):
         assert await async_setup_component(hass, DOMAIN, config)
@@ -585,7 +585,7 @@ async def test_no_issue_when_view_has_the_text_entity_id_in_it(
     """Test we do not trigger the full table scan issue for a custom view."""
 
     with patch(
-        "homeassistant.components.sql.sensor.scoped_session",
+        "inpui.components.sql.sensor.scoped_session",
     ):
         await init_integration(
             hass,
@@ -726,7 +726,7 @@ async def test_query_recover_from_rollback(
     assert state.attributes["value"] == 5
 
     with patch(
-        "homeassistant.components.sql.sensor.generate_lambda_stmt",
+        "inpui.components.sql.sensor.generate_lambda_stmt",
         return_value=generate_lambda_stmt("Faulty syntax create operational issue"),
     ):
         freezer.tick(timedelta(minutes=1))

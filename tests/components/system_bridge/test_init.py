@@ -28,7 +28,7 @@ async def test_migration_minor_1_to_2(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.system_bridge.async_setup_entry",
+        "inpui.components.system_bridge.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         config_entry.add_to_hass(hass)
@@ -68,7 +68,7 @@ async def test_migration_minor_future_version(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.system_bridge.async_setup_entry",
+        "inpui.components.system_bridge.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         config_entry.add_to_hass(hass)
@@ -121,7 +121,7 @@ async def test_coordinator_get_data_timeout(hass: HomeAssistant) -> None:
             return_value=True,
         ),
         patch(
-            "homeassistant.components.system_bridge.coordinator.SystemBridgeDataUpdateCoordinator.async_get_data",
+            "inpui.components.system_bridge.coordinator.SystemBridgeDataUpdateCoordinator.async_get_data",
             side_effect=TimeoutError,
         ),
     ):

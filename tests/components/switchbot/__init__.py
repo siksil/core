@@ -31,7 +31,7 @@ USER_INPUT_INVALID = {
 def patch_async_setup_entry(return_value=True):
     """Patch async setup entry to return True."""
     return patch(
-        "homeassistant.components.switchbot.async_setup_entry",
+        "inpui.components.switchbot.async_setup_entry",
         return_value=return_value,
     )
 
@@ -50,7 +50,7 @@ async def init_integration(hass: HomeAssistant) -> MockConfigEntry:
 def patch_async_ble_device_from_address(return_value: BluetoothServiceInfoBleak | None):
     """Patch async ble device from address to return a given value."""
     return patch(
-        "homeassistant.components.bluetooth.async_ble_device_from_address",
+        "inpui.components.bluetooth.async_ble_device_from_address",
         return_value=return_value,
     )
 

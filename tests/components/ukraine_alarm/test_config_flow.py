@@ -22,7 +22,7 @@ def mock_get_regions() -> Generator[AsyncMock]:
     """Mock the get_regions method."""
 
     with patch(
-        "homeassistant.components.ukraine_alarm.config_flow.Client.get_regions",
+        "inpui.components.ukraine_alarm.config_flow.Client.get_regions",
         return_value=REGIONS,
     ) as mock_get:
         yield mock_get
@@ -47,7 +47,7 @@ async def test_state_district(hass: HomeAssistant) -> None:
     assert result3["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.ukraine_alarm.async_setup_entry",
+        "inpui.components.ukraine_alarm.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result4 = await hass.config_entries.flow.async_configure(
@@ -96,7 +96,7 @@ async def test_state_district_community(hass: HomeAssistant) -> None:
     assert result4["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.ukraine_alarm.async_setup_entry",
+        "inpui.components.ukraine_alarm.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result5 = await hass.config_entries.flow.async_configure(

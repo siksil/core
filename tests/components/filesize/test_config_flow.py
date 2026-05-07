@@ -81,7 +81,7 @@ async def test_flow_fails_on_validation(hass: HomeAssistant, tmp_path: Path) -> 
     await async_create_file(hass, test_file)
 
     with patch(
-        "homeassistant.components.filesize.config_flow.pathlib.Path",
+        "inpui.components.filesize.config_flow.pathlib.Path",
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -94,7 +94,7 @@ async def test_flow_fails_on_validation(hass: HomeAssistant, tmp_path: Path) -> 
 
     hass.config.allowlist_external_dirs = {tmp_path}
     with patch(
-        "homeassistant.components.filesize.config_flow.pathlib.Path",
+        "inpui.components.filesize.config_flow.pathlib.Path",
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -200,7 +200,7 @@ async def test_reconfigure_flow_fails_on_validation(
     await async_create_file(hass, test_file2)
 
     with patch(
-        "homeassistant.components.filesize.config_flow.pathlib.Path",
+        "inpui.components.filesize.config_flow.pathlib.Path",
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -213,7 +213,7 @@ async def test_reconfigure_flow_fails_on_validation(
 
     hass.config.allowlist_external_dirs = {tmp_path}
     with patch(
-        "homeassistant.components.filesize.config_flow.pathlib.Path",
+        "inpui.components.filesize.config_flow.pathlib.Path",
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],

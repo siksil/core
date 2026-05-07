@@ -66,7 +66,7 @@ def entry(hass: HomeAssistant) -> MockConfigEntry:
 @pytest.fixture
 def mock_wallbox():
     """Patch Wallbox class for tests."""
-    with patch("homeassistant.components.wallbox.Wallbox") as mock:
+    with patch("inpui.components.wallbox.Wallbox") as mock:
         wallbox = MagicMock()
         wallbox.authenticate = Mock(return_value=WALLBOX_AUTHORISATION_RESPONSE)
         wallbox.lockCharger = Mock(

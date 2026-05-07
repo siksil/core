@@ -36,7 +36,7 @@ async def set_time_zone(hass: HomeAssistant) -> None:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.openuv.async_setup_entry", return_value=True
+        "inpui.components.openuv.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -95,9 +95,9 @@ async def mock_pyopenuv_fixture(client, set_time_zone):
     """Define a fixture to patch pyopenuv."""
     with (
         patch(
-            "homeassistant.components.openuv.config_flow.Client", return_value=client
+            "inpui.components.openuv.config_flow.Client", return_value=client
         ),
-        patch("homeassistant.components.openuv.Client", return_value=client),
+        patch("inpui.components.openuv.Client", return_value=client),
     ):
         yield
 

@@ -138,10 +138,10 @@ async def test_create_network(
             return_value=TEST_BORDER_AGENT_EXTENDED_ADDRESS,
         ),
         patch(
-            "homeassistant.components.thread.dataset_store.DatasetStore.async_add"
+            "inpui.components.thread.dataset_store.DatasetStore.async_add"
         ) as mock_add,
         patch(
-            "homeassistant.components.otbr.util.random.randint",
+            "inpui.components.otbr.util.random.randint",
             return_value=0x1234,
         ),
     ):

@@ -82,7 +82,7 @@ if TYPE_CHECKING:
 def required_platform_only():
     """Only set up the required and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.ALARM_CONTROL_PANEL,
             Platform.SELECT,
@@ -102,7 +102,7 @@ def speed_up_radio_mgr():
     running tests with time frozen, which otherwise blocks forever.
     """
     with (
-        patch("homeassistant.components.zha.radio_manager.CONNECT_DELAY_S", 0),
+        patch("inpui.components.zha.radio_manager.CONNECT_DELAY_S", 0),
         patch("zha.application.gateway.SHUT_DOWN_DELAY_S", 0),
     ):
         yield
@@ -1048,7 +1048,7 @@ async def test_websocket_change_channel(
     """Test websocket API to migrate the network to a new channel."""
 
     with patch(
-        "homeassistant.components.zha.websocket_api.async_change_channel",
+        "inpui.components.zha.websocket_api.async_change_channel",
         autospec=True,
     ) as change_channel_mock:
         await zha_client.send_json(
@@ -1080,7 +1080,7 @@ async def test_websocket_bind_unbind_devices(
 
     command_type, req = operation
     with patch(
-        "homeassistant.components.zha.websocket_api.async_binding_operation",
+        "inpui.components.zha.websocket_api.async_binding_operation",
         autospec=True,
     ) as binding_operation_mock:
         await zha_client.send_json(
@@ -1119,7 +1119,7 @@ async def test_websocket_bind_unbind_group(
     gateway_mock = MagicMock()
 
     with patch(
-        "homeassistant.components.zha.websocket_api.get_zha_gateway",
+        "inpui.components.zha.websocket_api.get_zha_gateway",
         return_value=gateway_mock,
     ):
         device_mock = MagicMock()

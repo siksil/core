@@ -40,8 +40,8 @@ async def setup_integration(
 ) -> AsyncGenerator[None]:
     """Set up cloud integration."""
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=False),
-        patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0),
+        patch("inpui.components.backup.is_hassio", return_value=False),
+        patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0),
     ):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {BACKUP_DOMAIN: {}})
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
@@ -333,10 +333,10 @@ async def test_agents_upload(
     )
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -409,10 +409,10 @@ async def test_agents_upload_on_progress(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -465,16 +465,16 @@ async def test_agents_upload_fail(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
-        patch("homeassistant.components.cloud.backup.asyncio.sleep"),
-        patch("homeassistant.components.cloud.backup.random.randint", return_value=60),
-        patch("homeassistant.components.cloud.backup._RETRY_LIMIT", 2),
+        patch("inpui.components.cloud.backup.asyncio.sleep"),
+        patch("inpui.components.cloud.backup.random.randint", return_value=60),
+        patch("inpui.components.cloud.backup._RETRY_LIMIT", 2),
     ):
         mocked_open.return_value.read = Mock(side_effect=[backup_data.encode(), b""])
         fetch_backup.return_value = test_backup
@@ -539,14 +539,14 @@ async def test_agents_upload_fail_non_retryable(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
-        patch("homeassistant.components.cloud.backup.calculate_b64md5"),
+        patch("inpui.components.cloud.backup.calculate_b64md5"),
     ):
         mocked_open.return_value.read = Mock(side_effect=[backup_data.encode(), b""])
         fetch_backup.return_value = test_backup
@@ -591,7 +591,7 @@ async def test_agents_upload_not_protected(
     with (
         patch("pathlib.Path.open"),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
     ):
@@ -637,10 +637,10 @@ async def test_agents_upload_not_subscribed(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -698,10 +698,10 @@ async def test_agents_upload_not_subscribed_midway(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -749,10 +749,10 @@ async def test_agents_upload_wrong_size(
     )
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,

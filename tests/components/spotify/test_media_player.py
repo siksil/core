@@ -73,7 +73,7 @@ async def test_entities(
     freezer.move_to("2023-10-21")
     with (
         patch("secrets.token_hex", return_value="mock-token"),
-        patch("homeassistant.components.spotify.PLATFORMS", [Platform.MEDIA_PLAYER]),
+        patch("inpui.components.spotify.PLATFORMS", [Platform.MEDIA_PLAYER]),
     ):
         await setup_integration(hass, mock_config_entry)
 
@@ -98,7 +98,7 @@ async def test_podcast(
     )
     with (
         patch("secrets.token_hex", return_value="mock-token"),
-        patch("homeassistant.components.spotify.PLATFORMS", [Platform.MEDIA_PLAYER]),
+        patch("inpui.components.spotify.PLATFORMS", [Platform.MEDIA_PLAYER]),
     ):
         await setup_integration(hass, mock_config_entry)
 

@@ -117,7 +117,7 @@ async def test_direct_setup(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.elmax.async_setup_entry",
+        "inpui.components.elmax.async_setup_entry",
         return_value=True,
     ):
         set_mode_result = await hass.config_entries.flow.async_configure(
@@ -143,7 +143,7 @@ async def test_direct_show_form(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.elmax.async_setup_entry",
+        "inpui.components.elmax.async_setup_entry",
         return_value=True,
     ):
         set_mode_result = await hass.config_entries.flow.async_configure(
@@ -164,7 +164,7 @@ async def test_cloud_setup(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
     with patch(
-        "homeassistant.components.elmax.async_setup_entry",
+        "inpui.components.elmax.async_setup_entry",
         return_value=True,
     ):
         show_form_result = await hass.config_entries.flow.async_configure(
@@ -616,7 +616,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     # Trigger reauth
     reauth_result = await entry.start_reauth_flow(hass)
     with patch(
-        "homeassistant.components.elmax.async_setup_entry",
+        "inpui.components.elmax.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(

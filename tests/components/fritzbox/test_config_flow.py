@@ -60,8 +60,8 @@ MOCK_SSDP_DATA = {
 def fritz_fixture() -> Mock:
     """Patch libraries."""
     with (
-        patch("homeassistant.components.fritzbox.async_setup_entry"),
-        patch("homeassistant.components.fritzbox.config_flow.Fritzhome") as fritz,
+        patch("inpui.components.fritzbox.async_setup_entry"),
+        patch("inpui.components.fritzbox.config_flow.Fritzhome") as fritz,
     ):
         yield fritz
 

@@ -26,7 +26,7 @@ async def test_unload_entry(hass: HomeAssistant, loaded_entry: MockConfigEntry) 
 
 async def test_send_magic_packet(hass: HomeAssistant) -> None:
     """Test of send magic packet service call."""
-    with patch("homeassistant.components.wake_on_lan.wakeonlan") as mocked_wakeonlan:
+    with patch("inpui.components.wake_on_lan.wakeonlan") as mocked_wakeonlan:
         mac = "aa:bb:cc:dd:ee:ff"
         bc_ip = "192.168.255.255"
         bc_port = 999

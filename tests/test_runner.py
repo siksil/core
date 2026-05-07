@@ -46,9 +46,9 @@ async def test_setup_and_run_hass(hass: HomeAssistant, tmpdir: py.path.local) ->
     default_config = runner.RuntimeConfig(test_dir)
 
     with (
-        patch("homeassistant.bootstrap.async_setup_hass", return_value=hass),
+        patch("inpui.bootstrap.async_setup_hass", return_value=hass),
         patch("threading._shutdown"),
-        patch("homeassistant.core.HomeAssistant.async_run") as mock_run,
+        patch("inpui.core.HomeAssistant.async_run") as mock_run,
     ):
         await runner.setup_and_run_hass(default_config)
         assert threading._shutdown == thread.deadlock_safe_shutdown
@@ -63,9 +63,9 @@ def test_run(hass: HomeAssistant, tmpdir: py.path.local) -> None:
 
     with (
         patch.object(runner, "TASK_CANCELATION_TIMEOUT", 1),
-        patch("homeassistant.bootstrap.async_setup_hass", return_value=hass),
+        patch("inpui.bootstrap.async_setup_hass", return_value=hass),
         patch("threading._shutdown"),
-        patch("homeassistant.core.HomeAssistant.async_run") as mock_run,
+        patch("inpui.core.HomeAssistant.async_run") as mock_run,
     ):
         runner.run(default_config)
 
@@ -82,14 +82,14 @@ def test_run_executor_shutdown_throws(
     with (
         patch.object(runner, "TASK_CANCELATION_TIMEOUT", 1),
         pytest.raises(RuntimeError),
-        patch("homeassistant.bootstrap.async_setup_hass", return_value=hass),
+        patch("inpui.bootstrap.async_setup_hass", return_value=hass),
         patch("threading._shutdown"),
         patch(
-            "homeassistant.runner.InterruptibleThreadPoolExecutor.shutdown",
+            "inpui.runner.InterruptibleThreadPoolExecutor.shutdown",
             side_effect=RuntimeError,
         ) as mock_shutdown,
         patch(
-            "homeassistant.core.HomeAssistant.async_run",
+            "inpui.core.HomeAssistant.async_run",
         ) as mock_run,
     ):
         runner.run(default_config)
@@ -127,9 +127,9 @@ def test_run_does_not_block_forever_with_shielded_task(
 
     with (
         patch.object(runner, "TASK_CANCELATION_TIMEOUT", 0.1),
-        patch("homeassistant.bootstrap.async_setup_hass", return_value=hass),
+        patch("inpui.bootstrap.async_setup_hass", return_value=hass),
         patch("threading._shutdown"),
-        patch("homeassistant.core.HomeAssistant.async_run", _async_create_tasks),
+        patch("inpui.core.HomeAssistant.async_run", _async_create_tasks),
     ):
         runner.run(default_config)
 
@@ -177,7 +177,7 @@ def test_enable_posix_spawn() -> None:
     with (
         patch.object(subprocess, "_USE_POSIX_SPAWN", False),
         patch(
-            "homeassistant.runner.packaging.tags.sys_tags",
+            "inpui.runner.packaging.tags.sys_tags",
             side_effect=_mock_sys_tags_musl,
         ),
     ):
@@ -187,7 +187,7 @@ def test_enable_posix_spawn() -> None:
     with (
         patch.object(subprocess, "_USE_POSIX_SPAWN", False),
         patch(
-            "homeassistant.runner.packaging.tags.sys_tags",
+            "inpui.runner.packaging.tags.sys_tags",
             side_effect=_mock_sys_tags_any,
         ),
     ):
@@ -361,7 +361,7 @@ def test_ensure_single_execution_with_tz_abbreviation(
 
         mock_dt.strftime.side_effect = _mock_strftime
 
-        with patch("homeassistant.runner.datetime") as mock_datetime:
+        with patch("inpui.runner.datetime") as mock_datetime:
             mock_datetime.fromtimestamp.return_value = mock_dt
             with runner.ensure_single_execution(config_dir) as lock:
                 assert lock.exit_code == 1

@@ -30,7 +30,7 @@ from tests.common import MockConfigEntry
 def patch_webhook_id() -> None:
     """Patch webhook ID generation."""
     with patch(
-        "homeassistant.components.overseerr.config_flow.async_generate_id",
+        "inpui.components.overseerr.config_flow.async_generate_id",
         return_value=WEBHOOK_ID,
     ):
         yield

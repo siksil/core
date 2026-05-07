@@ -62,7 +62,7 @@ def patch_fritzconnectioncached_globally(fc_data) -> Generator[FritzConnectionMo
 
     mock_conn = FritzConnectionMock(fc_data)
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzConnectionCached",
+        "inpui.components.fritz.coordinator.FritzConnectionCached",
         return_value=mock_conn,
     ):
         yield mock_conn
@@ -158,7 +158,7 @@ async def test_no_connection(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzConnectionCached",
+        "inpui.components.fritz.coordinator.FritzConnectionCached",
         return_value=None,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -207,7 +207,7 @@ async def test_connection_cached_call_action() -> None:
     conn = object.__new__(FritzConnectionCached)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.FritzConnection.call_action",
+        "inpui.components.fritz.coordinator.FritzConnection.call_action",
         autospec=True,
         return_value={"ok": True},
     ) as parent_call:
@@ -488,7 +488,7 @@ async def test_trigger_methods(
     await fritz_tools.async_trigger_set_guest_password("new-password", 20)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.asyncio.sleep",
+        "inpui.components.fritz.coordinator.asyncio.sleep",
         new=AsyncMock(),
     ) as sleep_mock:
         await fritz_tools.async_trigger_dial("012345", 1)

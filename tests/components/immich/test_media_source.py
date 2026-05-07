@@ -114,7 +114,7 @@ async def test_browse_media_get_root(
     """Test browse_media returning root media sources."""
     assert await async_setup_component(hass, "media_source", {})
 
-    with patch("homeassistant.components.immich.PLATFORMS", []):
+    with patch("inpui.components.immich.PLATFORMS", []):
         await setup_integration(hass, mock_config_entry)
 
     source = await async_get_media_source(hass)
@@ -201,7 +201,7 @@ async def test_browse_media_collections(
     """Test browse through collections."""
     assert await async_setup_component(hass, "media_source", {})
 
-    with patch("homeassistant.components.immich.PLATFORMS", []):
+    with patch("inpui.components.immich.PLATFORMS", []):
         await setup_integration(hass, mock_config_entry)
 
     source = await async_get_media_source(hass)
@@ -241,7 +241,7 @@ async def test_browse_media_collections_error(
     """Test browse_media with unknown collection."""
     assert await async_setup_component(hass, "media_source", {})
 
-    with patch("homeassistant.components.immich.PLATFORMS", []):
+    with patch("inpui.components.immich.PLATFORMS", []):
         await setup_integration(hass, mock_config_entry)
 
     getattr(
@@ -285,7 +285,7 @@ async def test_browse_media_collection_items_error(
     """Test browse_media returning albums."""
     assert await async_setup_component(hass, "media_source", {})
 
-    with patch("homeassistant.components.immich.PLATFORMS", []):
+    with patch("inpui.components.immich.PLATFORMS", []):
         await setup_integration(hass, mock_config_entry)
 
     source = await async_get_media_source(hass)
@@ -395,7 +395,7 @@ async def test_browse_media_collection_get_items(
     """Test browse_media returning albums."""
     assert await async_setup_component(hass, "media_source", {})
 
-    with patch("homeassistant.components.immich.PLATFORMS", []):
+    with patch("inpui.components.immich.PLATFORMS", []):
         await setup_integration(hass, mock_config_entry)
 
     source = await async_get_media_source(hass)
@@ -445,7 +445,7 @@ async def test_media_view(
 
     # setup immich
     assert await async_setup_component(hass, "media_source", {})
-    with patch("homeassistant.components.immich.PLATFORMS", []):
+    with patch("inpui.components.immich.PLATFORMS", []):
         await setup_integration(hass, mock_config_entry)
 
     # wrong url (without mime type)

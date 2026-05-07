@@ -543,7 +543,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.verisure.async_setup_entry",
+        "inpui.components.verisure.async_setup_entry",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

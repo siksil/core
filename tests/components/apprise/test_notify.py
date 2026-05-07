@@ -30,7 +30,7 @@ async def test_apprise_config_load_fail01(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.apprise.notify.apprise.AppriseConfig.add",
+        "inpui.components.apprise.notify.apprise.AppriseConfig.add",
         return_value=False,
     ):
         assert await async_setup_component(hass, BASE_COMPONENT, config)
@@ -49,11 +49,11 @@ async def test_apprise_config_load_fail02(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.apprise.notify.apprise.Apprise.add",
+            "inpui.components.apprise.notify.apprise.Apprise.add",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.apprise.notify.apprise.AppriseConfig.add",
+            "inpui.components.apprise.notify.apprise.AppriseConfig.add",
             return_value=True,
         ),
     ):
@@ -93,7 +93,7 @@ async def test_apprise_url_load_fail(hass: HomeAssistant) -> None:
         }
     }
     with patch(
-        "homeassistant.components.apprise.notify.apprise.Apprise.add",
+        "inpui.components.apprise.notify.apprise.Apprise.add",
         return_value=False,
     ):
         assert await async_setup_component(hass, BASE_COMPONENT, config)
@@ -118,7 +118,7 @@ async def test_apprise_notification(hass: HomeAssistant) -> None:
     data = {"title": "Test Title", "message": "Test Message"}
 
     with patch(
-        "homeassistant.components.apprise.notify.apprise.Apprise"
+        "inpui.components.apprise.notify.apprise.Apprise"
     ) as mock_apprise:
         obj = MagicMock()
         obj.add.return_value = True
@@ -159,7 +159,7 @@ async def test_apprise_multiple_notification(hass: HomeAssistant) -> None:
     data = {"title": "Test Title", "message": "Test Message"}
 
     with patch(
-        "homeassistant.components.apprise.notify.apprise.Apprise"
+        "inpui.components.apprise.notify.apprise.Apprise"
     ) as mock_apprise:
         obj = MagicMock()
         obj.add.return_value = True
@@ -202,7 +202,7 @@ async def test_apprise_notification_with_target(
     data = {"title": "Test Title", "message": "Test Message", "target": ["devops"]}
 
     with patch(
-        "homeassistant.components.apprise.notify.apprise.Apprise"
+        "inpui.components.apprise.notify.apprise.Apprise"
     ) as mock_apprise:
         apprise_obj = MagicMock()
         apprise_obj.add.return_value = True

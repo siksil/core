@@ -18,7 +18,7 @@ from inpui.core import HomeAssistant
 from tests.common import MockConfigEntry
 
 
-@patch("homeassistant.components.gogogate2.common.GogoGate2Api")
+@patch("inpui.components.gogogate2.common.GogoGate2Api")
 async def test_config_update(gogogate2api_mock, hass: HomeAssistant) -> None:
     """Test config setup where the config is updated."""
 
@@ -47,7 +47,7 @@ async def test_config_update(gogogate2api_mock, hass: HomeAssistant) -> None:
     }
 
 
-@patch("homeassistant.components.gogogate2.common.ISmartGateApi")
+@patch("inpui.components.gogogate2.common.ISmartGateApi")
 async def test_config_no_update(ismartgateapi_mock, hass: HomeAssistant) -> None:
     """Test config setup where the data is not updated."""
     api = MagicMock(GogoGate2Api)
@@ -92,7 +92,7 @@ async def test_api_failure_on_startup(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.gogogate2.common.ISmartGateApi.async_info",
+            "inpui.components.gogogate2.common.ISmartGateApi.async_info",
             side_effect=TimeoutError,
         ),
     ):

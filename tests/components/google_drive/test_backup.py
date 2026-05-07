@@ -303,10 +303,10 @@ async def test_agents_upload(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_AGENT_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -344,10 +344,10 @@ async def test_agents_upload_create_folder_if_missing(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_AGENT_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -421,10 +421,10 @@ async def test_agents_upload_fail(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_AGENT_BACKUP,
         ),
         patch("pathlib.Path.open") as mocked_open,

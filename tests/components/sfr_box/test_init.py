@@ -16,7 +16,7 @@ from inpui.helpers import device_registry as dr
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.sfr_box.PLATFORMS", []):
+    with patch("inpui.components.sfr_box.PLATFORMS", []):
         yield
 
 
@@ -42,7 +42,7 @@ async def test_setup_entry_exception(
 ) -> None:
     """Test ConfigEntryNotReady when API raises an exception during entry setup."""
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.system_get_info",
+        "inpui.components.sfr_box.coordinator.SFRBox.system_get_info",
         side_effect=SFRBoxError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -57,7 +57,7 @@ async def test_setup_entry_auth_exception(
 ) -> None:
     """Test ConfigEntryNotReady when API raises an exception during authentication."""
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.authenticate",
+        "inpui.components.sfr_box.coordinator.SFRBox.authenticate",
         side_effect=SFRBoxError,
     ):
         await hass.config_entries.async_setup(config_entry_with_auth.entry_id)
@@ -72,7 +72,7 @@ async def test_setup_entry_invalid_auth(
 ) -> None:
     """Test ConfigEntryAuthFailed when API raises an exception during authentication."""
     with patch(
-        "homeassistant.components.sfr_box.coordinator.SFRBox.authenticate",
+        "inpui.components.sfr_box.coordinator.SFRBox.authenticate",
         side_effect=SFRBoxAuthenticationError,
     ):
         await hass.config_entries.async_setup(config_entry_with_auth.entry_id)

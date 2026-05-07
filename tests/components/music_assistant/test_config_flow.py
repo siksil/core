@@ -482,7 +482,7 @@ async def test_hassio_flow_updates_failed_entry_and_reloads(
 
     # First, setup the entry with invalid auth to get it into SETUP_ERROR state
     with patch(
-        "homeassistant.components.music_assistant.MusicAssistantClient"
+        "inpui.components.music_assistant.MusicAssistantClient"
     ) as mock_client:
         mock_client.return_value.connect.side_effect = AuthenticationFailed(
             "Invalid token"
@@ -692,7 +692,7 @@ async def test_auth_flow_success(
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "auth_manual"
 
-    with patch("homeassistant.components.music_assistant.config_flow._test_connection"):
+    with patch("inpui.components.music_assistant.config_flow._test_connection"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             {CONF_TOKEN: "test_auth_token"},
@@ -721,7 +721,7 @@ async def test_finish_auth_token_exchange(
 
     # Mock the token exchange
     with patch(
-        "homeassistant.components.music_assistant.config_flow.create_long_lived_token",
+        "inpui.components.music_assistant.config_flow.create_long_lived_token",
         return_value="long_lived_token_12345",
     ) as mock_create_token:
         # Call async_step_finish_auth to test token exchange
@@ -777,7 +777,7 @@ async def test_reauth_with_manual_token(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.music_assistant.config_flow._test_connection"
+        "inpui.components.music_assistant.config_flow._test_connection"
     ) as mock_test_connection:
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -831,7 +831,7 @@ async def test_auth_manual_invalid_token(
     assert result["step_id"] == "auth_manual"
 
     with patch(
-        "homeassistant.components.music_assistant.config_flow._test_connection",
+        "inpui.components.music_assistant.config_flow._test_connection",
         side_effect=exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -870,7 +870,7 @@ async def test_auth_manual_connection_errors(
     assert result["step_id"] == "auth_manual"
 
     with patch(
-        "homeassistant.components.music_assistant.config_flow._test_connection",
+        "inpui.components.music_assistant.config_flow._test_connection",
         side_effect=exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -897,7 +897,7 @@ async def test_finish_auth_reauth_source(
     flow.token = "session_token"
 
     with patch(
-        "homeassistant.components.music_assistant.config_flow.create_long_lived_token",
+        "inpui.components.music_assistant.config_flow.create_long_lived_token",
         return_value="new_long_lived_token",
     ):
         result = await flow.async_step_finish_auth()
@@ -931,7 +931,7 @@ async def test_finish_auth_errors(
     flow.token = "session_token"
 
     with patch(
-        "homeassistant.components.music_assistant.config_flow.create_long_lived_token",
+        "inpui.components.music_assistant.config_flow.create_long_lived_token",
         side_effect=exception,
     ):
         result = await flow.async_step_finish_auth()
@@ -982,7 +982,7 @@ async def test_get_server_info_helper(
     )
 
     with patch(
-        "homeassistant.components.music_assistant.config_flow.get_server_info"
+        "inpui.components.music_assistant.config_flow.get_server_info"
     ) as mock_lib_get_server_info:
         mock_lib_get_server_info.return_value = expected_server_info
 
@@ -997,7 +997,7 @@ async def test_test_connection_helper(
 ) -> None:
     """Test _test_connection helper function."""
     with patch(
-        "homeassistant.components.music_assistant.config_flow.MusicAssistantClient"
+        "inpui.components.music_assistant.config_flow.MusicAssistantClient"
     ) as mock_client:
         mock_instance = AsyncMock()
         mock_client.return_value.__aenter__.return_value = mock_instance
@@ -1020,11 +1020,11 @@ async def test_auth_with_redirect_uri(
 
     with (
         patch(
-            "homeassistant.components.music_assistant.config_flow.async_get_redirect_uri",
+            "inpui.components.music_assistant.config_flow.async_get_redirect_uri",
             return_value="http://localhost:8123/auth/external/callback",
         ),
         patch(
-            "homeassistant.components.music_assistant.config_flow._encode_jwt",
+            "inpui.components.music_assistant.config_flow._encode_jwt",
             return_value="test_jwt_state",
         ),
     ):

@@ -160,7 +160,7 @@ async def test_form_unexpected_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.lacrosse_view.config_flow.validate_input",
+        "inpui.components.lacrosse_view.config_flow.validate_input",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

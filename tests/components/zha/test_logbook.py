@@ -44,7 +44,7 @@ DOWN = "down"
 @pytest.fixture(autouse=True)
 def sensor_platform_only():
     """Only set up the sensor and required base platforms to speed up tests."""
-    with patch("homeassistant.components.zha.PLATFORMS", (Platform.SENSOR,)):
+    with patch("inpui.components.zha.PLATFORMS", (Platform.SENSOR,)):
         yield
 
 

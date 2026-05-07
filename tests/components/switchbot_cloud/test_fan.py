@@ -250,7 +250,7 @@ async def test_air_purifier(
         hass, "air_purifier_status.json", DOMAIN
     )
 
-    with patch("homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.FAN]):
+    with patch("inpui.components.switchbot_cloud.PLATFORMS", [Platform.FAN]):
         entry = await configure_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

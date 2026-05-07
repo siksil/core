@@ -32,10 +32,10 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
+            "inpui.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
         ),
         patch(
-            "homeassistant.components.trafikverket_ferry.async_setup_entry",
+            "inpui.components.trafikverket_ferry.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -94,7 +94,7 @@ async def test_flow_fails(
     assert result4["step_id"] == config_entries.SOURCE_USER
 
     with patch(
-        "homeassistant.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
+        "inpui.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
         side_effect=side_effect(),
     ):
         result4 = await hass.config_entries.flow.async_configure(
@@ -133,10 +133,10 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
+            "inpui.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
         ),
         patch(
-            "homeassistant.components.trafikverket_ferry.async_setup_entry",
+            "inpui.components.trafikverket_ferry.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -196,7 +196,7 @@ async def test_reauth_flow_error(
     result = await entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
+        "inpui.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
         side_effect=side_effect(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -211,10 +211,10 @@ async def test_reauth_flow_error(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
+            "inpui.components.trafikverket_ferry.config_flow.TrafikverketFerry.async_get_next_ferry_stop",
         ),
         patch(
-            "homeassistant.components.trafikverket_ferry.async_setup_entry",
+            "inpui.components.trafikverket_ferry.async_setup_entry",
             return_value=True,
         ),
     ):

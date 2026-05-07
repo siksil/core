@@ -227,7 +227,7 @@ async def test_assist_api(
     )
 
     with patch(
-        "homeassistant.helpers.intent.async_handle", return_value=intent_response
+        "inpui.helpers.intent.async_handle", return_value=intent_response
     ) as mock_intent_handle:
         response = await api.async_call_tool(tool_input)
 
@@ -283,7 +283,7 @@ async def test_assist_api(
     llm_context.device_id = device.id
 
     with patch(
-        "homeassistant.helpers.intent.async_handle", return_value=intent_response
+        "inpui.helpers.intent.async_handle", return_value=intent_response
     ) as mock_intent_handle:
         response = await api.async_call_tool(tool_input)
 
@@ -863,7 +863,7 @@ async def test_script_tool(
     )
 
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call",
+        "inpui.core.ServiceRegistry.async_call",
         side_effect=hass.services.async_call,
     ) as mock_service_call:
         response = await api.async_call_tool(tool_input)
@@ -895,7 +895,7 @@ async def test_script_tool(
     )
 
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call",
+        "inpui.core.ServiceRegistry.async_call",
         side_effect=hass.services.async_call,
     ) as mock_service_call:
         response = await api.async_call_tool(tool_input)
@@ -933,7 +933,7 @@ async def test_script_tool(
     }
 
     with patch(
-        "homeassistant.helpers.entity_component.EntityComponent.async_prepare_reload",
+        "inpui.helpers.entity_component.EntityComponent.async_prepare_reload",
         return_value=config,
     ):
         await hass.services.async_call("script", "reload", blocking=True)
@@ -1336,7 +1336,7 @@ async def test_calendar_get_events_tool(hass: HomeAssistant) -> None:
         },
     )
     now = dt_util.now()
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         response = await api.async_call_tool(tool_input)
 
     assert len(calls) == 1
@@ -1369,7 +1369,7 @@ async def test_calendar_get_events_tool(hass: HomeAssistant) -> None:
     }
 
     tool_input.tool_args["range"] = "week"
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         response = await api.async_call_tool(tool_input)
 
     assert len(calls) == 2
@@ -1510,7 +1510,7 @@ async def test_get_date_time_tool(hass: HomeAssistant) -> None:
 
     now = dt_util.parse_datetime("2025-09-22 12:30:45Z")
 
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         result = await tool.async_call(
             hass,
             llm.ToolInput("GetDateTime", {}),

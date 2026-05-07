@@ -34,23 +34,23 @@ async def test_coordinator_client_connector_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             side_effect=HotWaterNotAvailable,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK,
         ) as mock_hvac,
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             side_effect=SystemOutOfRange,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             side_effect=InvalidMethod,
         ),
     ):
@@ -84,23 +84,23 @@ async def test_coordinator_new_devices(
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             side_effect=HotWaterNotAvailable,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK_NEW_ZONES,
         ) as mock_hvac,
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             side_effect=SystemOutOfRange,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             side_effect=InvalidMethod,
         ),
     ):

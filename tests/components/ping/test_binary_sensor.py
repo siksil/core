@@ -35,7 +35,7 @@ async def test_setup_and_update(
 
     # check if the sensor turns off.
     with patch(
-        "homeassistant.components.ping.helpers.async_ping",
+        "inpui.components.ping.helpers.async_ping",
         return_value=Host(address="10.10.10.10", packets_sent=10, rtts=[]),
     ):
         freezer.tick(timedelta(minutes=6))

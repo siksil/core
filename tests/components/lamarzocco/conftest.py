@@ -58,11 +58,11 @@ def mock_generate_installation_key() -> Generator[MagicMock]:
     """Return a mocked generate_installation_key."""
     with (
         patch(
-            "homeassistant.components.lamarzocco.generate_installation_key",
+            "inpui.components.lamarzocco.generate_installation_key",
             return_value=InstallationKey.from_json(MOCK_INSTALLATION_KEY),
         ) as mock_generate,
         patch(
-            "homeassistant.components.lamarzocco.config_flow.generate_installation_key",
+            "inpui.components.lamarzocco.config_flow.generate_installation_key",
             new=mock_generate,
         ),
     ):
@@ -80,11 +80,11 @@ def mock_cloud_client() -> Generator[MagicMock]:
     """Return a mocked LM cloud client."""
     with (
         patch(
-            "homeassistant.components.lamarzocco.config_flow.LaMarzoccoCloudClient",
+            "inpui.components.lamarzocco.config_flow.LaMarzoccoCloudClient",
             autospec=True,
         ) as cloud_client,
         patch(
-            "homeassistant.components.lamarzocco.LaMarzoccoCloudClient",
+            "inpui.components.lamarzocco.LaMarzoccoCloudClient",
             new=cloud_client,
         ),
     ):
@@ -114,7 +114,7 @@ def mock_lamarzocco(device_fixture: ModelName) -> Generator[MagicMock]:
 
     with (
         patch(
-            "homeassistant.components.lamarzocco.LaMarzoccoMachine",
+            "inpui.components.lamarzocco.LaMarzoccoMachine",
             autospec=True,
         ) as machine_mock_init,
     ):
@@ -154,7 +154,7 @@ def mock_ble_device() -> BLEDevice:
 def mock_bluetooth_client() -> Generator[MagicMock]:
     """Return a mocked Bluetooth client."""
     with patch(
-        "homeassistant.components.lamarzocco.LaMarzoccoBluetoothClient",
+        "inpui.components.lamarzocco.LaMarzoccoBluetoothClient",
         autospec=True,
     ) as mock_bt_client_cls:
         mock_bt_client = mock_bt_client_cls.return_value
@@ -169,7 +169,7 @@ def mock_ble_device_from_address(
 ) -> Generator[MagicMock]:
     """Return a mocked async_ble_device_from_address."""
     with patch(
-        "homeassistant.components.lamarzocco.async_ble_device_from_address",
+        "inpui.components.lamarzocco.async_ble_device_from_address",
         return_value=mock_ble_device,
     ) as mock_ble_device_from_address:
         yield mock_ble_device_from_address
@@ -226,7 +226,7 @@ def mock_config_entry_bluetooth(
 def mock_websocket_terminated() -> Generator[PropertyMock]:
     """Mock websocket terminated."""
     with patch(
-        "homeassistant.components.lamarzocco.coordinator.LaMarzoccoUpdateCoordinator.websocket_terminated",
+        "inpui.components.lamarzocco.coordinator.LaMarzoccoUpdateCoordinator.websocket_terminated",
         new_callable=PropertyMock,
     ) as mock_websocket_terminated:
         mock_websocket_terminated.return_value = False

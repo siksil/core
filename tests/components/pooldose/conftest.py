@@ -22,7 +22,7 @@ from tests.common import (
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.pooldose.async_setup_entry", return_value=True
+        "inpui.components.pooldose.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -38,11 +38,11 @@ def mock_pooldose_client(device_info: dict[str, Any]) -> Generator[MagicMock]:
     """Mock a PooldoseClient for end-to-end testing."""
     with (
         patch(
-            "homeassistant.components.pooldose.config_flow.PooldoseClient",
+            "inpui.components.pooldose.config_flow.PooldoseClient",
             autospec=True,
         ) as mock_client_class,
         patch(
-            "homeassistant.components.pooldose.PooldoseClient", new=mock_client_class
+            "inpui.components.pooldose.PooldoseClient", new=mock_client_class
         ),
     ):
         client = mock_client_class.return_value
@@ -105,7 +105,7 @@ async def init_integration(
     """Set up the integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.pooldose.PLATFORMS", platforms):
+    with patch("inpui.components.pooldose.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

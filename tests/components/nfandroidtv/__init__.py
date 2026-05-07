@@ -26,6 +26,6 @@ async def _create_mocked_tv(raise_exception=False):
 
 def _patch_config_flow_tv(mocked_tv):
     return patch(
-        "homeassistant.components.nfandroidtv.config_flow.Notifications",
+        "inpui.components.nfandroidtv.config_flow.Notifications",
         return_value=mocked_tv,
     )

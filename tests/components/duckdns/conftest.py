@@ -19,7 +19,7 @@ NEW_TOKEN = "11111111-2222-3333-4444-55555555"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.duckdns.async_setup_entry", return_value=True
+        "inpui.components.duckdns.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -43,7 +43,7 @@ def mock_update_duckdns() -> Generator[AsyncMock]:
     """Mock _update_duckdns."""
 
     with patch(
-        "homeassistant.components.duckdns.config_flow.update_duckdns",
+        "inpui.components.duckdns.config_flow.update_duckdns",
         return_value=True,
     ) as mock:
         yield mock

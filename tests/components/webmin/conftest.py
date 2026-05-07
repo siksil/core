@@ -32,7 +32,7 @@ TEST_USER_INPUT = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.webmin.async_setup_entry", return_value=True
+        "inpui.components.webmin.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -45,7 +45,7 @@ async def async_init_integration(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.webmin.helpers.WebminInstance.update",
+        "inpui.components.webmin.helpers.WebminInstance.update",
         return_value=await async_load_json_object_fixture(
             hass,
             "webmin_update.json"

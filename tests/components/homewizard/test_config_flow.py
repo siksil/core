@@ -639,7 +639,7 @@ async def test_manual_flow_works_with_v2_api_support(
     mock_homewizardenergy_v2.get_token.side_effect = DisabledError
 
     with patch(
-        "homeassistant.components.homewizard.config_flow.has_v2_api", return_value=True
+        "inpui.components.homewizard.config_flow.has_v2_api", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], {CONF_IP_ADDRESS: "2.2.2.2"}
@@ -679,7 +679,7 @@ async def test_manual_flow_detects_failed_user_authorization(
     mock_homewizardenergy_v2.get_token.side_effect = DisabledError
 
     with patch(
-        "homeassistant.components.homewizard.config_flow.has_v2_api", return_value=True
+        "inpui.components.homewizard.config_flow.has_v2_api", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], {CONF_IP_ADDRESS: "2.2.2.2"}
@@ -823,7 +823,7 @@ async def test_discovery_with_v2_api_ask_authorization(
     mock_homewizardenergy_v2.get_token.side_effect = DisabledError
 
     with patch(
-        "homeassistant.components.homewizard.config_flow.has_v2_api", return_value=True
+        "inpui.components.homewizard.config_flow.has_v2_api", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
 

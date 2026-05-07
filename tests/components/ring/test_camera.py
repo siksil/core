@@ -271,7 +271,7 @@ async def test_camera_handle_mjpeg_stream(
 
     # Now the stream should be returned
     stream_reader = MockStreamReader(SMALLEST_VALID_JPEG_BYTES)
-    with patch("homeassistant.components.ring.camera.CameraMjpeg") as mock_camera:
+    with patch("inpui.components.ring.camera.CameraMjpeg") as mock_camera:
         mock_camera.return_value.get_reader = AsyncMock(return_value=stream_reader)
         mock_camera.return_value.open_camera = AsyncMock()
         mock_camera.return_value.close = AsyncMock()
@@ -303,7 +303,7 @@ async def test_camera_image(
     front_camera_mock.async_recording_url.assert_not_called()
     with (
         patch(
-            "homeassistant.components.ring.camera.ffmpeg.async_get_image",
+            "inpui.components.ring.camera.ffmpeg.async_get_image",
             return_value=SMALLEST_VALID_JPEG_BYTES,
         ),
         pytest.raises(HomeAssistantError),
@@ -318,7 +318,7 @@ async def test_camera_image(
     front_camera_mock.async_recording_url.assert_called_once()
 
     with patch(
-        "homeassistant.components.ring.camera.ffmpeg.async_get_image",
+        "inpui.components.ring.camera.ffmpeg.async_get_image",
         return_value=SMALLEST_VALID_JPEG_BYTES,
     ):
         image = await async_get_image(hass, "camera.front_live_view")

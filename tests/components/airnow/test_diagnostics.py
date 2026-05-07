@@ -24,7 +24,7 @@ async def test_entry_diagnostics(
 
     # Fake LocalTimeZoneInfo
     with patch(
-        "homeassistant.util.dt.async_get_time_zone",
+        "inpui.util.dt.async_get_time_zone",
         return_value="PST",
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)

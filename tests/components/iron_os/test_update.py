@@ -21,7 +21,7 @@ from tests.typing import WebSocketGenerator
 async def update_only() -> AsyncGenerator[None]:
     """Enable only the update platform."""
     with patch(
-        "homeassistant.components.iron_os.PLATFORMS",
+        "inpui.components.iron_os.PLATFORMS",
         [Platform.UPDATE],
     ):
         yield

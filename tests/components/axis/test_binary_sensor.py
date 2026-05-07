@@ -116,7 +116,7 @@ async def test_binary_sensors(
     event: dict[str, str],
 ) -> None:
     """Test that sensors are loaded properly."""
-    with patch("homeassistant.components.axis.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.axis.PLATFORMS", [Platform.BINARY_SENSOR]):
         config_entry = await config_entry_factory()
     mock_rtsp_event(**event)
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

@@ -37,7 +37,7 @@ from tests.typing import WebSocketGenerator
 def no_sensor():
     """Remove sensors."""
     with patch(
-        "homeassistant.components.metoffice.sensor.async_setup_entry", return_value=True
+        "inpui.components.metoffice.sensor.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

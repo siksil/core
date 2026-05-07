@@ -382,7 +382,7 @@ async def test_number_entity_functionality(
         ),
     ],
 )
-@patch("homeassistant.components.home_connect.entity.API_DEFAULT_RETRY_AFTER", new=0)
+@patch("inpui.components.home_connect.entity.API_DEFAULT_RETRY_AFTER", new=0)
 async def test_fetch_constraints_after_rate_limit_error(
     hass: HomeAssistant,
     client: MagicMock,

@@ -2060,7 +2060,7 @@ async def test_discovery_update_unchanged_climate(
     """Test update of discovered climate."""
     data1 = '{ "name": "Beer" }'
     with patch(
-        "homeassistant.components.mqtt.climate.MqttClimate.discovery_update"
+        "inpui.components.mqtt.climate.MqttClimate.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, climate.DOMAIN, data1, discovery_update

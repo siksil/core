@@ -49,9 +49,9 @@ async def test_setup_heater(
     mock_config_entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.eheimdigital.PLATFORMS", [Platform.CLIMATE]),
+        patch("inpui.components.eheimdigital.PLATFORMS", [Platform.CLIMATE]),
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):
@@ -79,9 +79,9 @@ async def test_dynamic_new_devices(
     eheimdigital_hub_mock.return_value.devices = {}
 
     with (
-        patch("homeassistant.components.eheimdigital.PLATFORMS", [Platform.CLIMATE]),
+        patch("inpui.components.eheimdigital.PLATFORMS", [Platform.CLIMATE]),
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):

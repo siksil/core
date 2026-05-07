@@ -45,7 +45,7 @@ def patch_blueprint(
         )
 
     with patch(
-        "homeassistant.components.blueprint.models.DomainBlueprints._load_blueprint",
+        "inpui.components.blueprint.models.DomainBlueprints._load_blueprint",
         mock_load_blueprint,
     ):
         yield
@@ -97,7 +97,7 @@ async def test_notify_leaving_zone(
         )
 
     with patch(
-        "homeassistant.components.mobile_app.device_action.async_call_action_from_config"
+        "inpui.components.mobile_app.device_action.async_call_action_from_config"
     ) as mock_call_action:
         # Leaving zone to no zone
         set_person_state("not_home", {})

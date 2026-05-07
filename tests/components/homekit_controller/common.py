@@ -200,7 +200,7 @@ async def setup_platform(hass: HomeAssistant) -> FakeController:
     config = {"discovery": {}}
 
     with mock.patch(
-        "homeassistant.components.homekit_controller.utils.Controller", FakeController
+        "inpui.components.homekit_controller.utils.Controller", FakeController
     ):
         await async_setup_component(hass, DOMAIN, config)
 

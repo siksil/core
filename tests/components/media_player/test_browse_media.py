@@ -19,7 +19,7 @@ from tests.common import mock_component
 def fixture_mock_sign_path():
     """Mock sign path."""
     with patch(
-        "homeassistant.components.media_player.browse_media.async_sign_path",
+        "inpui.components.media_player.browse_media.async_sign_path",
         side_effect=lambda _, url, _2: url + "?authSig=bla",
     ):
         yield
@@ -60,7 +60,7 @@ async def test_process_play_media_url(hass: HomeAssistant, mock_sign_path) -> No
     with (
         pytest.raises(HomeAssistantError),
         patch(
-            "homeassistant.components.media_player.browse_media.get_url",
+            "inpui.components.media_player.browse_media.get_url",
             side_effect=NoURLAvailableError,
         ),
     ):

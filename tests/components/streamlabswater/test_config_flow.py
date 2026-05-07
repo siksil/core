@@ -19,7 +19,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["errors"] == {}
 
-    with patch("homeassistant.components.streamlabswater.config_flow.StreamlabsClient"):
+    with patch("inpui.components.streamlabswater.config_flow.StreamlabsClient"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             {CONF_API_KEY: "abc"},
@@ -41,7 +41,7 @@ async def test_form_cannot_connect(
     )
 
     with patch(
-        "homeassistant.components.streamlabswater.config_flow.StreamlabsClient.get_locations",
+        "inpui.components.streamlabswater.config_flow.StreamlabsClient.get_locations",
         return_value={},
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -52,7 +52,7 @@ async def test_form_cannot_connect(
     assert result["type"] is FlowResultType.FORM
     assert result["errors"] == {"base": "cannot_connect"}
 
-    with patch("homeassistant.components.streamlabswater.config_flow.StreamlabsClient"):
+    with patch("inpui.components.streamlabswater.config_flow.StreamlabsClient"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             {CONF_API_KEY: "abc"},
@@ -72,7 +72,7 @@ async def test_form_unknown(hass: HomeAssistant, mock_setup_entry: AsyncMock) ->
     )
 
     with patch(
-        "homeassistant.components.streamlabswater.config_flow.StreamlabsClient.get_locations",
+        "inpui.components.streamlabswater.config_flow.StreamlabsClient.get_locations",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -83,7 +83,7 @@ async def test_form_unknown(hass: HomeAssistant, mock_setup_entry: AsyncMock) ->
     assert result["type"] is FlowResultType.FORM
     assert result["errors"] == {"base": "unknown"}
 
-    with patch("homeassistant.components.streamlabswater.config_flow.StreamlabsClient"):
+    with patch("inpui.components.streamlabswater.config_flow.StreamlabsClient"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             {CONF_API_KEY: "abc"},
@@ -110,7 +110,7 @@ async def test_form_entry_already_exists(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.streamlabswater.config_flow.StreamlabsClient.get_locations",
+        "inpui.components.streamlabswater.config_flow.StreamlabsClient.get_locations",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(

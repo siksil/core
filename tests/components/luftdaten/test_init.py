@@ -31,7 +31,7 @@ async def test_load_unload_config_entry(
 
 
 @patch(
-    "homeassistant.components.luftdaten.Luftdaten.get_data",
+    "inpui.components.luftdaten.Luftdaten.get_data",
     side_effect=LuftdatenError,
 )
 async def test_config_entry_not_ready(

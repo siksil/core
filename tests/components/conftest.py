@@ -111,7 +111,7 @@ RE_REQUEST_DOMAIN = re.compile(r".*tests\/components\/([^/]+)\/.*")
 def patch_zeroconf_multiple_catcher() -> Generator[None]:
     """If installed, patch zeroconf wrapper that detects if multiple instances are used."""
     with patch(
-        "homeassistant.components.zeroconf.install_multiple_zeroconf_catcher",
+        "inpui.components.zeroconf.install_multiple_zeroconf_catcher",
         side_effect=lambda zc: None,
     ):
         yield
@@ -121,7 +121,7 @@ def patch_zeroconf_multiple_catcher() -> Generator[None]:
 def prevent_io() -> Generator[None]:
     """Fixture to prevent certain I/O from happening."""
     with patch(
-        "homeassistant.components.http.ban.load_yaml_config_file",
+        "inpui.components.http.ban.load_yaml_config_file",
     ):
         yield
 
@@ -131,11 +131,11 @@ def entity_registry_enabled_by_default() -> Generator[None]:
     """Test fixture that ensures all entities are enabled in the registry."""
     with (
         patch(
-            "homeassistant.helpers.entity.Entity.entity_registry_enabled_default",
+            "inpui.helpers.entity.Entity.entity_registry_enabled_default",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.device_tracker.config_entry.ScannerEntity.entity_registry_enabled_default",
+            "inpui.components.device_tracker.config_entry.ScannerEntity.entity_registry_enabled_default",
             return_value=True,
         ),
     ):
@@ -208,7 +208,7 @@ def mock_conversation_agent_fixture(hass: HomeAssistant) -> MockAgent:
 def prevent_ffmpeg_subprocess() -> Generator[None]:
     """If installed, prevent ffmpeg from creating a subprocess."""
     with patch(
-        "homeassistant.components.ffmpeg.FFVersion.get_version", return_value="6.0"
+        "inpui.components.ffmpeg.FFVersion.get_version", return_value="6.0"
     ):
         yield
 
@@ -813,47 +813,47 @@ def supervisor_client() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.hassio.get_supervisor_client",
+            "inpui.components.hassio.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.handler.get_supervisor_client",
+            "inpui.components.hassio.handler.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.addon_manager.get_supervisor_client",
+            "inpui.components.hassio.addon_manager.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.addon_panel.get_supervisor_client",
+            "inpui.components.hassio.addon_panel.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.backup.get_supervisor_client",
+            "inpui.components.hassio.backup.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.discovery.get_supervisor_client",
+            "inpui.components.hassio.discovery.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.coordinator.get_supervisor_client",
+            "inpui.components.hassio.coordinator.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.issues.get_supervisor_client",
+            "inpui.components.hassio.issues.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.jobs.get_supervisor_client",
+            "inpui.components.hassio.jobs.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.repairs.get_supervisor_client",
+            "inpui.components.hassio.repairs.get_supervisor_client",
             return_value=supervisor_client,
         ),
         patch(
-            "homeassistant.components.hassio.update_helper.get_supervisor_client",
+            "inpui.components.hassio.update_helper.get_supervisor_client",
             return_value=supervisor_client,
         ),
     ):
@@ -1399,19 +1399,19 @@ async def check_translations(
     # Use override functions
     with (
         patch(
-            "homeassistant.data_entry_flow.FlowManager._async_handle_step",
+            "inpui.data_entry_flow.FlowManager._async_handle_step",
             _flow_manager_async_handle_step,
         ),
         patch(
-            "homeassistant.helpers.issue_registry.IssueRegistry.async_get_or_create",
+            "inpui.helpers.issue_registry.IssueRegistry.async_get_or_create",
             _issue_registry_async_create_issue,
         ),
         patch(
-            "homeassistant.core.ServiceRegistry.async_call",
+            "inpui.core.ServiceRegistry.async_call",
             _service_registry_async_call,
         ),
         patch(
-            "homeassistant.core.ServiceRegistry.async_register",
+            "inpui.core.ServiceRegistry.async_register",
             _service_registry_async_register,
         ),
     ):
@@ -1436,7 +1436,7 @@ async def check_translations(
 def enable_labs_preview_features() -> Generator[None]:
     """Enable labs preview features."""
     with patch(
-        "homeassistant.components.labs.async_is_preview_feature_enabled",
+        "inpui.components.labs.async_is_preview_feature_enabled",
         return_value=True,
     ):
         yield

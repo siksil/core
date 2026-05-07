@@ -226,7 +226,7 @@ async def test_with_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -399,7 +399,7 @@ async def test_with_specific_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=2)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -439,7 +439,7 @@ async def test_trigger_no_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=60)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -486,7 +486,7 @@ async def test_trigger_with_delay(
 
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -590,7 +590,7 @@ async def test_trigger_with_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=2)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -600,7 +600,7 @@ async def test_trigger_with_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -640,7 +640,7 @@ async def test_trigger_with_disarm_after_trigger(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -712,7 +712,7 @@ async def test_trigger_with_unused_zero_specific_trigger_time(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -752,7 +752,7 @@ async def test_trigger_with_specific_trigger_time(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -796,7 +796,7 @@ async def test_back_to_back_trigger_with_no_disarm_after_trigger(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -810,7 +810,7 @@ async def test_back_to_back_trigger_with_no_disarm_after_trigger(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -853,7 +853,7 @@ async def test_disarm_while_pending_trigger(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -902,7 +902,7 @@ async def test_disarm_during_trigger_with_invalid_code(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -950,7 +950,7 @@ async def test_trigger_with_unused_specific_delay(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -999,7 +999,7 @@ async def test_trigger_with_specific_delay(
 
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1048,7 +1048,7 @@ async def test_trigger_with_pending_and_delay(
 
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1060,7 +1060,7 @@ async def test_trigger_with_pending_and_delay(
 
     future += timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1110,7 +1110,7 @@ async def test_trigger_with_pending_and_specific_delay(
 
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1122,7 +1122,7 @@ async def test_trigger_with_pending_and_specific_delay(
 
     future += timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1162,7 +1162,7 @@ async def test_trigger_with_specific_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=2)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1172,7 +1172,7 @@ async def test_trigger_with_specific_pending(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1217,7 +1217,7 @@ async def test_trigger_with_no_disarm_after_trigger(
 
     future = dt_util.utcnow() + timedelta(seconds=5)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1384,7 +1384,7 @@ async def test_arm_via_command_topic(
     # Fast-forward a little bit
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1466,7 +1466,7 @@ async def test_state_changes_are_published_to_mqtt(
     # Fast-forward a little bit
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1486,7 +1486,7 @@ async def test_state_changes_are_published_to_mqtt(
     # Fast-forward a little bit
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)
@@ -1506,7 +1506,7 @@ async def test_state_changes_are_published_to_mqtt(
     # Fast-forward a little bit
     future = dt_util.utcnow() + timedelta(seconds=1)
     with patch(
-        ("homeassistant.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
+        ("inpui.components.manual_mqtt.alarm_control_panel.dt_util.utcnow"),
         return_value=future,
     ):
         async_fire_time_changed(hass, future)

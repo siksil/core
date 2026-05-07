@@ -119,7 +119,7 @@ async def test_flow_user_init_data_success(
     assert result["data_schema"] == config_flow.USER_DATA_SCHEMA
 
     with patch(
-        "homeassistant.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
+        "inpui.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
         autospec=True,
         return_value=True,
     ):
@@ -162,7 +162,7 @@ async def test_flow_user_init_data_error_and_recover_on_step_1(
         config_flow.DOMAIN, context={"source": "user"}
     )
     with patch(
-        "homeassistant.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
+        "inpui.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
         autospec=True,
         side_effect=raise_error,
     ) as mock_OpendataTransport:
@@ -214,7 +214,7 @@ async def test_flow_user_init_data_error_and_recover_on_step_2(
     assert result["data_schema"] == config_flow.USER_DATA_SCHEMA
 
     with patch(
-        "homeassistant.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
+        "inpui.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
         autospec=True,
         return_value=True,
     ):
@@ -226,7 +226,7 @@ async def test_flow_user_init_data_error_and_recover_on_step_2(
         assert result["step_id"] == "time_fixed"
 
     with patch(
-        "homeassistant.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
+        "inpui.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
         autospec=True,
         side_effect=raise_error,
     ) as mock_OpendataTransport:
@@ -261,7 +261,7 @@ async def test_flow_user_init_data_already_configured(hass: HomeAssistant) -> No
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
+        "inpui.components.swiss_public_transport.config_flow.OpendataTransport.async_get_data",
         autospec=True,
         return_value=True,
     ):

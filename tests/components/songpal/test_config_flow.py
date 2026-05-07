@@ -61,7 +61,7 @@ def _flow_next(hass: HomeAssistant, flow_id: str) -> ConfigFlowResult:
 
 def _patch_setup():
     return patch(
-        "homeassistant.components.songpal.async_setup_entry",
+        "inpui.components.songpal.async_setup_entry",
         return_value=True,
     )
 

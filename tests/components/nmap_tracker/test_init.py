@@ -37,7 +37,7 @@ async def test_migrate_entry(hass: HomeAssistant) -> None:
     mock_entry.add_to_hass(hass)
     # Prevent the scanner from starting
     with patch(
-        "homeassistant.components.nmap_tracker.NmapDeviceScanner._async_start_scanner",
+        "inpui.components.nmap_tracker.NmapDeviceScanner._async_start_scanner",
         return_value=None,
     ):
         assert await async_setup_component(hass, DOMAIN, {})
@@ -80,7 +80,7 @@ async def test_migrate_entry_fails_on_downgrade(hass: HomeAssistant) -> None:
 
     # Prevent the scanner from starting
     with patch(
-        "homeassistant.components.nmap_tracker.NmapDeviceScanner._async_start_scanner",
+        "inpui.components.nmap_tracker.NmapDeviceScanner._async_start_scanner",
         return_value=None,
     ):
         assert await async_setup_component(hass, DOMAIN, {})

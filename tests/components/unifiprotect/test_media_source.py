@@ -227,7 +227,7 @@ async def test_browse_media_root_multiple_consoles(
     api2.async_disconnect_ws = AsyncMock()
 
     with patch(
-        "homeassistant.components.unifiprotect.utils.ProtectApiClient"
+        "inpui.components.unifiprotect.utils.ProtectApiClient"
     ) as mock_api:
         mock_config = MockConfigEntry(
             domain=DOMAIN,
@@ -293,7 +293,7 @@ async def test_browse_media_root_multiple_consoles_only_one_media(
     api2.async_disconnect_ws = AsyncMock()
 
     with patch(
-        "homeassistant.components.unifiprotect.utils.ProtectApiClient"
+        "inpui.components.unifiprotect.utils.ProtectApiClient"
     ) as mock_api:
         mock_config = MockConfigEntry(
             domain=DOMAIN,

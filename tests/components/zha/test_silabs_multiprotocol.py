@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 @pytest.fixture(autouse=True)
 def required_platform_only():
     """Only set up the required and required base platforms to speed up tests."""
-    with patch("homeassistant.components.zha.PLATFORMS", ()):
+    with patch("inpui.components.zha.PLATFORMS", ()):
         yield
 
 
@@ -107,7 +107,7 @@ async def test_change_channel_delay(
     await setup_zha()
 
     with patch(
-        "homeassistant.components.zha.silabs_multiprotocol.asyncio.sleep", autospec=True
+        "inpui.components.zha.silabs_multiprotocol.asyncio.sleep", autospec=True
     ) as mock_sleep:
         task = await silabs_multiprotocol.async_change_channel(hass, 20, delay=delay)
         await task

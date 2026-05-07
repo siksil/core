@@ -43,7 +43,7 @@ class FidoClientMockError(FidoClientMock):
 
 async def test_fido_sensor(hass: HomeAssistant) -> None:
     """Test the Fido number sensor."""
-    with patch("homeassistant.components.fido.sensor.FidoClient", new=FidoClientMock):
+    with patch("inpui.components.fido.sensor.FidoClient", new=FidoClientMock):
         config = {
             "sensor": {
                 "platform": "fido",
@@ -75,6 +75,6 @@ async def test_error(hass: HomeAssistant, caplog: pytest.LogCaptureFixture) -> N
         "monitored_variables": ["balance", "data_remaining"],
     }
     fake_async_add_entities = MagicMock()
-    with patch("homeassistant.components.fido.sensor.FidoClient", FidoClientMockError):
+    with patch("inpui.components.fido.sensor.FidoClient", FidoClientMockError):
         await fido.async_setup_platform(hass, config, fake_async_add_entities)
     assert fake_async_add_entities.called is False

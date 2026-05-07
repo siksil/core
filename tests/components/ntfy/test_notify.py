@@ -32,7 +32,7 @@ from tests.common import AsyncMock, MockConfigEntry, snapshot_platform
 async def notify_only() -> AsyncGenerator[None]:
     """Enable only the notify platform."""
     with patch(
-        "homeassistant.components.ntfy.PLATFORMS",
+        "inpui.components.ntfy.PLATFORMS",
         [Platform.NOTIFY],
     ):
         yield

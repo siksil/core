@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 
 
 @pytest.mark.freeze_time("2023-11-01 13:14:15+01:00")
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.EVENT])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.EVENT])
 async def test_platform_setup_and_discovery(
     hass: HomeAssistant,
     mock_manager: Manager,
@@ -59,7 +59,7 @@ async def test_platform_setup_and_discovery(
         ),
     ],
 )
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.EVENT])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.EVENT])
 async def test_alarm_message_event(
     hass: HomeAssistant,
     mock_manager: Manager,
@@ -88,7 +88,7 @@ async def test_alarm_message_event(
     "mock_device_code",
     ["wxkg_l8yaz4um5b3pwyvf"],
 )
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.EVENT])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.EVENT])
 @pytest.mark.freeze_time("2024-01-01")
 async def test_selective_state_update(
     hass: HomeAssistant,

@@ -17,7 +17,7 @@ from tests.typing import ClientSessionGenerator
 async def stt_only(hass: HomeAssistant) -> None:
     """Enable only the stt platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.STT],
     ):
         yield

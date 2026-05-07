@@ -167,7 +167,7 @@ async def test_camera_image(
     assert state is not None
 
     with patch(
-        "homeassistant.components.ffmpeg.async_get_image",
+        "inpui.components.ffmpeg.async_get_image",
         return_value=SMALLEST_VALID_JPEG_BYTES,
     ) as mock_get_image:
         image = await async_get_image(hass, "camera.my_camera_live_view")
@@ -193,7 +193,7 @@ async def test_camera_image(
 
     # Test image returns None
     with patch(
-        "homeassistant.components.ffmpeg.async_get_image",
+        "inpui.components.ffmpeg.async_get_image",
         return_value=None,
     ) as mock_get_image:
         msg = f"None camera image returned for {IP_ADDRESS3}"
@@ -227,7 +227,7 @@ async def test_no_camera_image_when_streaming(
     assert state is not None
 
     with patch(
-        "homeassistant.components.ffmpeg.async_get_image",
+        "inpui.components.ffmpeg.async_get_image",
         return_value=SMALLEST_VALID_JPEG_BYTES,
     ) as mock_get_image:
         await async_get_image(hass, "camera.my_camera_live_view")
@@ -252,7 +252,7 @@ async def test_no_camera_image_when_streaming(
 
         mock_get_image.reset_mock()
         with patch(
-            "homeassistant.components.tplink.camera.async_aiohttp_proxy_stream",
+            "inpui.components.tplink.camera.async_aiohttp_proxy_stream",
             new=_waiter,
         ):
             task = asyncio.create_task(_get_stream())
@@ -293,7 +293,7 @@ async def test_no_concurrent_camera_image(
         return SMALLEST_VALID_JPEG_BYTES
 
     with patch(
-        "homeassistant.components.ffmpeg.async_get_image",
+        "inpui.components.ffmpeg.async_get_image",
         new=_waiter,
     ):
         tasks = asyncio.gather(
@@ -334,11 +334,11 @@ async def test_camera_image_auth_error(
 
     with (
         patch(
-            "homeassistant.components.ffmpeg.async_get_image",
+            "inpui.components.ffmpeg.async_get_image",
             return_value=b"",
         ),
         patch(
-            "homeassistant.components.stream.async_check_stream_client_error",
+            "inpui.components.stream.async_check_stream_client_error",
             side_effect=stream.StreamOpenClientError(
                 "Request was unauthorized",
                 error_code=stream.StreamClientError.Unauthorized,

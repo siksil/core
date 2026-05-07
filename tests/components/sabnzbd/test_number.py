@@ -21,7 +21,7 @@ from inpui.helpers import entity_registry as er
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 
 
-@patch("homeassistant.components.sabnzbd.PLATFORMS", [Platform.NUMBER])
+@patch("inpui.components.sabnzbd.PLATFORMS", [Platform.NUMBER])
 async def test_number_setup(
     hass: HomeAssistant,
     entity_registry: er.EntityRegistry,

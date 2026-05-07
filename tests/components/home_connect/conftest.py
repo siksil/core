@@ -151,9 +151,9 @@ async def mock_integration_setup(
     async def run(client: MagicMock) -> bool:
         assert config_entry.state is ConfigEntryState.NOT_LOADED
         with (
-            patch("homeassistant.components.home_connect.PLATFORMS", platforms),
+            patch("inpui.components.home_connect.PLATFORMS", platforms),
             patch(
-                "homeassistant.components.home_connect.HomeConnectClient"
+                "inpui.components.home_connect.HomeConnectClient"
             ) as client_mock,
         ):
             client_mock.return_value = client

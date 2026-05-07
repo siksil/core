@@ -194,7 +194,7 @@ async def test_login_view_missing_entity(
 
     # We assume the user needs to login again for some reason.
     with patch(
-        "homeassistant.components.cloud.assist_pipeline.async_create_default_pipeline",
+        "inpui.components.cloud.assist_pipeline.async_create_default_pipeline",
     ) as create_pipeline_mock:
         req = await cloud_client.post(
             "/api/cloud/login", json={"email": "my_username", "password": "my_password"}
@@ -229,7 +229,7 @@ async def test_login_view_existing_pipeline(
     cloud_client = await hass_client()
 
     with patch(
-        "homeassistant.components.cloud.assist_pipeline.async_create_default_pipeline",
+        "inpui.components.cloud.assist_pipeline.async_create_default_pipeline",
     ) as create_pipeline_mock:
         req = await cloud_client.post(
             "/api/cloud/login", json={"email": "my_username", "password": "my_password"}
@@ -263,7 +263,7 @@ async def test_login_view_create_pipeline(
     cloud_client = await hass_client()
 
     with patch(
-        "homeassistant.components.cloud.assist_pipeline.async_create_default_pipeline",
+        "inpui.components.cloud.assist_pipeline.async_create_default_pipeline",
         return_value=AsyncMock(id="12345"),
     ) as create_pipeline_mock:
         req = await cloud_client.post(
@@ -303,7 +303,7 @@ async def test_login_view_create_pipeline_fail(
     cloud_client = await hass_client()
 
     with patch(
-        "homeassistant.components.cloud.assist_pipeline.async_create_default_pipeline",
+        "inpui.components.cloud.assist_pipeline.async_create_default_pipeline",
         return_value=None,
     ) as create_pipeline_mock:
         req = await cloud_client.post(
@@ -622,7 +622,7 @@ async def test_register_view_no_location(
     cloud_client = await hass_client()
     mock_cognito = cloud.auth
     with patch(
-        "homeassistant.components.cloud.http_api.async_detect_location_info",
+        "inpui.components.cloud.http_api.async_detect_location_info",
         return_value=None,
     ):
         req = await cloud_client.post(
@@ -648,7 +648,7 @@ async def test_register_view_with_location(
     cloud_client = await hass_client()
     mock_cognito = cloud.auth
     with patch(
-        "homeassistant.components.cloud.http_api.async_detect_location_info",
+        "inpui.components.cloud.http_api.async_detect_location_info",
         return_value=LocationInfo(
             country_code="XX",
             zip_code="12345",
@@ -931,12 +931,12 @@ async def test_websocket_status(
 
     with (
         patch.dict(
-            "homeassistant.components.google_assistant.const.DOMAIN_TO_GOOGLE_TYPES",
+            "inpui.components.google_assistant.const.DOMAIN_TO_GOOGLE_TYPES",
             {"light": None},
             clear=True,
         ),
         patch.dict(
-            "homeassistant.components.alexa.entities.ENTITY_ADAPTERS",
+            "inpui.components.alexa.entities.ENTITY_ADAPTERS",
             {"switch": None},
             clear=True,
         ),
@@ -1143,16 +1143,16 @@ async def test_websocket_update_preferences_alexa_report_state(
 
     with (
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig.async_sync_entities"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig.async_sync_entities"
         ),
         patch(
             (
-                "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+                "inpui.components.cloud.alexa_config.CloudAlexaConfig"
                 ".async_get_access_token"
             ),
         ),
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig.set_authorized"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig.set_authorized"
         ) as set_authorized_mock,
     ):
         set_authorized_mock.assert_not_called()
@@ -1179,13 +1179,13 @@ async def test_websocket_update_preferences_require_relink(
     with (
         patch(
             (
-                "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+                "inpui.components.cloud.alexa_config.CloudAlexaConfig"
                 ".async_get_access_token"
             ),
             side_effect=alexa_errors.RequireRelink,
         ),
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig.set_authorized"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig.set_authorized"
         ) as set_authorized_mock,
     ):
         set_authorized_mock.assert_not_called()
@@ -1212,13 +1212,13 @@ async def test_websocket_update_preferences_no_token(
     with (
         patch(
             (
-                "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+                "inpui.components.cloud.alexa_config.CloudAlexaConfig"
                 ".async_get_access_token"
             ),
             side_effect=alexa_errors.NoTokenAvailable,
         ),
         patch(
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig.set_authorized"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig.set_authorized"
         ) as set_authorized_mock,
     ):
         set_authorized_mock.assert_not_called()
@@ -1349,7 +1349,7 @@ async def test_list_google_entities(
         State("cover.garage", "open", {"device_class": "garage"}),
     )
     with patch(
-        "homeassistant.components.google_assistant.helpers.async_get_entities",
+        "inpui.components.google_assistant.helpers.async_get_entities",
         return_value=[entity, entity2],
     ):
         await client.send_json_auto_id({"type": "cloud/google_assistant/entities"})
@@ -1377,7 +1377,7 @@ async def test_list_google_entities(
     )
 
     with patch(
-        "homeassistant.components.google_assistant.helpers.async_get_entities",
+        "inpui.components.google_assistant.helpers.async_get_entities",
         return_value=[entity, entity2],
     ):
         await client.send_json_auto_id({"type": "cloud/google_assistant/entities"})
@@ -1540,7 +1540,7 @@ async def test_list_alexa_entities(
         hass, MagicMock(entity_config={}), State("light.kitchen", "on")
     )
     with patch(
-        "homeassistant.components.alexa.entities.async_get_entities",
+        "inpui.components.alexa.entities.async_get_entities",
         return_value=[entity],
     ):
         await client.send_json_auto_id({"id": 5, "type": "cloud/alexa/entities"})
@@ -1557,12 +1557,12 @@ async def test_list_alexa_entities(
     with (
         patch(
             (
-                "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+                "inpui.components.cloud.alexa_config.CloudAlexaConfig"
                 ".async_get_access_token"
             ),
         ),
         patch(
-            "homeassistant.components.cloud.alexa_config.alexa_state_report.async_send_add_or_update_message"
+            "inpui.components.cloud.alexa_config.alexa_state_report.async_send_add_or_update_message"
         ),
     ):
         # Add the entity to the entity registry
@@ -1572,7 +1572,7 @@ async def test_list_alexa_entities(
         await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.alexa.entities.async_get_entities",
+        "inpui.components.alexa.entities.async_get_entities",
         return_value=[entity],
     ):
         await client.send_json_auto_id({"type": "cloud/alexa/entities"})
@@ -1699,7 +1699,7 @@ async def test_sync_alexa_entities_timeout(
 
     with patch(
         (
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig"
             ".async_sync_entities"
         ),
         side_effect=TimeoutError,
@@ -1721,7 +1721,7 @@ async def test_sync_alexa_entities_no_token(
 
     with patch(
         (
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig"
             ".async_sync_entities"
         ),
         side_effect=alexa_errors.NoTokenAvailable,
@@ -1743,7 +1743,7 @@ async def test_enable_alexa_state_report_fail(
 
     with patch(
         (
-            "homeassistant.components.cloud.alexa_config.CloudAlexaConfig"
+            "inpui.components.cloud.alexa_config.CloudAlexaConfig"
             ".async_sync_entities"
         ),
         side_effect=alexa_errors.NoTokenAvailable,
@@ -1816,7 +1816,7 @@ async def test_login_view_dispatch_event(
     cloud_client = await hass_client()
 
     with patch(
-        "homeassistant.components.cloud.http_api.async_dispatcher_send"
+        "inpui.components.cloud.http_api.async_dispatcher_send"
     ) as async_dispatcher_send_mock:
         await cloud_client.post(
             "/api/cloud/login", json={"email": "my_username", "password": "my_password"}
@@ -1836,7 +1836,7 @@ async def test_logout_view_dispatch_event(
     cloud_client = await hass_client()
 
     with patch(
-        "homeassistant.components.cloud.http_api.async_dispatcher_send"
+        "inpui.components.cloud.http_api.async_dispatcher_send"
     ) as async_dispatcher_send_mock:
         await cloud_client.post("/api/cloud/logout")
 
@@ -1845,7 +1845,7 @@ async def test_logout_view_dispatch_event(
     assert async_dispatcher_send_mock.mock_calls[0][1][2] == {"type": "logout"}
 
 
-@patch("homeassistant.components.cloud.helpers.FixedSizeQueueLogHandler.MAX_RECORDS", 3)
+@patch("inpui.components.cloud.helpers.FixedSizeQueueLogHandler.MAX_RECORDS", 3)
 @pytest.mark.usefixtures("enable_custom_integrations")
 async def test_download_support_package(
     hass: HomeAssistant,
@@ -1933,14 +1933,14 @@ async def test_download_support_package(
     )
     logging.getLogger("hass_nabucasa.iot").info("Hass nabucasa log")
     logging.getLogger("snitun.utils.aiohttp_client").warning("Snitun log")
-    logging.getLogger("homeassistant.components.cloud.client").error("Cloud log")
+    logging.getLogger("inpui.components.cloud.client").error("Cloud log")
     freezer.move_to(now)  # Reset time otherwise hass_client auth fails
 
     cloud_client = await hass_client()
     with (
         patch.object(hass.config, "config_dir", new="config"),
         patch(
-            "homeassistant.components.homeassistant.system_health.system_info.async_get_system_info",
+            "inpui.components.homeassistant.system_health.system_info.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "version": "2025.2.0",
@@ -1958,7 +1958,7 @@ async def test_download_support_package(
             },
         ),
         patch(
-            "homeassistant.components.cloud.http_api.async_get_installed_packages",
+            "inpui.components.cloud.http_api.async_get_installed_packages",
             return_value=[
                 {"name": "homeassistant", "version": "3.2.1"},
                 {"name": "hass-nabucasa", "version": "1.2.3"},
@@ -2048,14 +2048,14 @@ async def test_download_support_package_custom_components_error(
     )
     logging.getLogger("hass_nabucasa.iot").info("Hass nabucasa log")
     logging.getLogger("snitun.utils.aiohttp_client").warning("Snitun log")
-    logging.getLogger("homeassistant.components.cloud.client").error("Cloud log")
+    logging.getLogger("inpui.components.cloud.client").error("Cloud log")
     freezer.move_to(now)
 
     cloud_client = await hass_client()
     with (
         patch.object(hass.config, "config_dir", new="config"),
         patch(
-            "homeassistant.components.homeassistant.system_health.system_info.async_get_system_info",
+            "inpui.components.homeassistant.system_health.system_info.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "version": "2025.2.0",
@@ -2073,11 +2073,11 @@ async def test_download_support_package_custom_components_error(
             },
         ),
         patch(
-            "homeassistant.components.cloud.http_api.async_get_custom_components",
+            "inpui.components.cloud.http_api.async_get_custom_components",
             side_effect=Exception("Custom components error"),
         ),
         patch(
-            "homeassistant.components.cloud.http_api.async_get_installed_packages",
+            "inpui.components.cloud.http_api.async_get_installed_packages",
             return_value=[
                 {"name": "homeassistant", "version": "3.2.1"},
                 {"name": "hass-nabucasa", "version": "1.2.3"},
@@ -2170,14 +2170,14 @@ async def test_download_support_package_integration_load_error(
     )
     logging.getLogger("hass_nabucasa.iot").info("Hass nabucasa log")
     logging.getLogger("snitun.utils.aiohttp_client").warning("Snitun log")
-    logging.getLogger("homeassistant.components.cloud.client").error("Cloud log")
+    logging.getLogger("inpui.components.cloud.client").error("Cloud log")
     freezer.move_to(now)
 
     cloud_client = await hass_client()
     with (
         patch.object(hass.config, "config_dir", new="config"),
         patch(
-            "homeassistant.components.homeassistant.system_health.system_info.async_get_system_info",
+            "inpui.components.homeassistant.system_health.system_info.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "version": "2025.2.0",
@@ -2195,7 +2195,7 @@ async def test_download_support_package_integration_load_error(
             },
         ),
         patch(
-            "homeassistant.components.cloud.http_api.async_get_loaded_integration",
+            "inpui.components.cloud.http_api.async_get_loaded_integration",
             side_effect=lambda hass, domain: (
                 Exception("Integration load error")
                 if domain == "failing_integration"
@@ -2203,7 +2203,7 @@ async def test_download_support_package_integration_load_error(
             ),
         ),
         patch(
-            "homeassistant.components.cloud.http_api.async_get_installed_packages",
+            "inpui.components.cloud.http_api.async_get_installed_packages",
             return_value=[
                 {"name": "homeassistant", "version": "3.2.1"},
                 {"name": "hass-nabucasa", "version": "1.2.3"},

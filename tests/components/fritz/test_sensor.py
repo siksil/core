@@ -37,7 +37,7 @@ async def test_sensor_setup(
     entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.SENSOR]):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 
@@ -137,9 +137,9 @@ async def test_sensor_cpu_temp_not_supported(
     entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.fritz.PLATFORMS", [Platform.SENSOR]),
+        patch("inpui.components.fritz.PLATFORMS", [Platform.SENSOR]),
         patch(
-            "homeassistant.components.fritz.coordinator.FritzStatus", fs_class_mock
+            "inpui.components.fritz.coordinator.FritzStatus", fs_class_mock
         ) as mock_status,
     ):
         mock_status.get_cpu_temperatures.side_effect = side_effect

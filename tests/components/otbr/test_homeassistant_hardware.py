@@ -49,14 +49,14 @@ async def test_get_firmware_info(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.is_hassio",
+            "inpui.components.otbr.homeassistant_hardware.is_hassio",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.AddonManager",
+            "inpui.components.otbr.homeassistant_hardware.AddonManager",
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
+            "inpui.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
             return_value=FirmwareInfo(
                 device=DEVICE_PATH,
                 firmware_type=ApplicationType.SPINEL,
@@ -116,14 +116,14 @@ async def test_get_firmware_info_no_coprocessor_version(hass: HomeAssistant) -> 
 
     with (
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.is_hassio",
+            "inpui.components.otbr.homeassistant_hardware.is_hassio",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.AddonManager",
+            "inpui.components.otbr.homeassistant_hardware.AddonManager",
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
+            "inpui.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
             return_value=FirmwareInfo(
                 device=DEVICE_PATH,
                 firmware_type=ApplicationType.SPINEL,
@@ -184,14 +184,14 @@ async def test_hardware_firmware_info_provider_notification(
 
     with (
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.is_hassio",
+            "inpui.components.otbr.homeassistant_hardware.is_hassio",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.AddonManager",
+            "inpui.components.otbr.homeassistant_hardware.AddonManager",
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
+            "inpui.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
             return_value=FirmwareInfo(
                 device=DEVICE_PATH,
                 firmware_type=ApplicationType.SPINEL,
@@ -241,14 +241,14 @@ async def test_get_firmware_info_remote_otbr(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.is_hassio",
+            "inpui.components.otbr.homeassistant_hardware.is_hassio",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.AddonManager",
+            "inpui.components.otbr.homeassistant_hardware.AddonManager",
         ),
         patch(
-            "homeassistant.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
+            "inpui.components.otbr.homeassistant_hardware.get_otbr_addon_firmware_info",
             return_value=None,
         ),
     ):

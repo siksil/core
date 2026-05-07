@@ -49,7 +49,7 @@ async def test_intent(hass: HomeAssistant, init_wyoming_intent: ConfigEntry) -> 
 
     client = MockAsyncTcpClient([test_intent.event()])
     with patch(
-        "homeassistant.components.wyoming.conversation.AsyncTcpClient",
+        "inpui.components.wyoming.conversation.AsyncTcpClient",
         client,
     ):
         result = await conversation.async_converse(
@@ -97,7 +97,7 @@ async def test_intent_handle_error(
     intent.async_register(hass, TestIntentHandler())
 
     with patch(
-        "homeassistant.components.wyoming.conversation.AsyncTcpClient",
+        "inpui.components.wyoming.conversation.AsyncTcpClient",
         MockAsyncTcpClient([test_intent.event()]),
     ):
         result = await conversation.async_converse(
@@ -120,7 +120,7 @@ async def test_not_recognized(
     agent_id = "conversation.test_intent"
 
     with patch(
-        "homeassistant.components.wyoming.conversation.AsyncTcpClient",
+        "inpui.components.wyoming.conversation.AsyncTcpClient",
         MockAsyncTcpClient([NotRecognized(text="failure").event()]),
     ):
         result = await conversation.async_converse(
@@ -146,7 +146,7 @@ async def test_handle(hass: HomeAssistant, init_wyoming_handle: ConfigEntry) -> 
 
     client = MockAsyncTcpClient([Handled(text="success").event()])
     with patch(
-        "homeassistant.components.wyoming.conversation.AsyncTcpClient",
+        "inpui.components.wyoming.conversation.AsyncTcpClient",
         client,
     ):
         result = await conversation.async_converse(
@@ -180,7 +180,7 @@ async def test_not_handled(
     agent_id = "conversation.test_handle"
 
     with patch(
-        "homeassistant.components.wyoming.conversation.AsyncTcpClient",
+        "inpui.components.wyoming.conversation.AsyncTcpClient",
         MockAsyncTcpClient([NotHandled(text="failure").event()]),
     ):
         result = await conversation.async_converse(
@@ -205,7 +205,7 @@ async def test_connection_lost(
     agent_id = "conversation.test_handle"
 
     with patch(
-        "homeassistant.components.wyoming.conversation.AsyncTcpClient",
+        "inpui.components.wyoming.conversation.AsyncTcpClient",
         MockAsyncTcpClient([None]),
     ):
         result = await conversation.async_converse(
@@ -233,7 +233,7 @@ async def test_oserror(
 
     with (
         patch(
-            "homeassistant.components.wyoming.conversation.AsyncTcpClient", mock_client
+            "inpui.components.wyoming.conversation.AsyncTcpClient", mock_client
         ),
         patch.object(mock_client, "read_event", side_effect=OSError("Boom!")),
     ):
@@ -283,7 +283,7 @@ async def test_supported_languages_empty_means_all(
     with (
         patch.object(info_obj, "languages", []),
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=Info(**info_kwargs),
         ),
     ):

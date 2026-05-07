@@ -34,7 +34,7 @@ def subprocess_call_return_value() -> int | None:
 @pytest.fixture(autouse=True)
 def mock_subprocess_call(subprocess_call_return_value: int) -> Generator[MagicMock]:
     """Mock magic packet."""
-    with patch("homeassistant.components.wake_on_lan.switch.sp.call") as mock_sp:
+    with patch("inpui.components.wake_on_lan.switch.sp.call") as mock_sp:
         mock_sp.return_value = subprocess_call_return_value
         yield mock_sp
 
@@ -43,7 +43,7 @@ def mock_subprocess_call(subprocess_call_return_value: int) -> Generator[MagicMo
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Automatically path uuid generator."""
     with patch(
-        "homeassistant.components.wake_on_lan.async_setup_entry",
+        "inpui.components.wake_on_lan.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

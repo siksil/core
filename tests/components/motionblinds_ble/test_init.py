@@ -22,10 +22,10 @@ async def test_options_update_listener(
 
     with (
         patch(
-            "homeassistant.components.motionblinds_ble.MotionDevice.set_custom_disconnect_time"
+            "inpui.components.motionblinds_ble.MotionDevice.set_custom_disconnect_time"
         ) as mock_set_custom_disconnect_time,
         patch(
-            "homeassistant.components.motionblinds_ble.MotionDevice.set_permanent_connection"
+            "inpui.components.motionblinds_ble.MotionDevice.set_permanent_connection"
         ) as set_permanent_connection,
     ):
         await options_update_listener(hass, mock_config_entry)
@@ -43,7 +43,7 @@ async def test_update_ble_device(
     await setup_integration(hass, mock_config_entry)
 
     with patch(
-        "homeassistant.components.motionblinds_ble.MotionDevice.set_ble_device"
+        "inpui.components.motionblinds_ble.MotionDevice.set_ble_device"
     ) as mock_set_ble_device:
         inject_bluetooth_service_info(hass, service_info)
         mock_set_ble_device.assert_called_once()

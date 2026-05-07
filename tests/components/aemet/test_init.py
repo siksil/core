@@ -33,7 +33,7 @@ async def test_unload_entry(
     await hass.config.async_set_time_zone("UTC")
     freezer.move_to("2021-01-09 12:00:00+00:00")
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         config_entry = MockConfigEntry(
@@ -65,7 +65,7 @@ async def test_init_town_not_found(
     await hass.config.async_set_time_zone("UTC")
     freezer.move_to("2021-01-09 12:00:00+00:00")
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=mock_api_call,
     ):
         config_entry = MockConfigEntry(
@@ -91,7 +91,7 @@ async def test_init_api_timeout(
     await hass.config.async_set_time_zone("UTC")
     freezer.move_to("2021-01-09 12:00:00+00:00")
     with patch(
-        "homeassistant.components.aemet.AEMET.api_call",
+        "inpui.components.aemet.AEMET.api_call",
         side_effect=AemetTimeout,
     ):
         config_entry = MockConfigEntry(

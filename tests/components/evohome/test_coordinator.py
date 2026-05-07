@@ -35,7 +35,7 @@ async def test_setup_platform(
     assert state is not None and state.state != STATE_UNAVAILABLE
 
     with patch(
-        "homeassistant.components.evohome.coordinator.EvoDataUpdateCoordinator._async_update_data",
+        "inpui.components.evohome.coordinator.EvoDataUpdateCoordinator._async_update_data",
         side_effect=UpdateFailed,
     ):
         freezer.tick(update_interval)

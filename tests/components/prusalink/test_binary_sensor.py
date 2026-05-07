@@ -13,7 +13,7 @@ from inpui.setup import async_setup_component
 def setup_binary_sensor_platform_only():
     """Only setup sensor platform."""
     with patch(
-        "homeassistant.components.prusalink.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.prusalink.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         yield
 

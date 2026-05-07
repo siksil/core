@@ -21,7 +21,7 @@ async def test_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test buttons."""
-    with patch("homeassistant.components.snoo.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.snoo.PLATFORMS", [Platform.BUTTON]):
         entry = await async_init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

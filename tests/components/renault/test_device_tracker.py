@@ -24,7 +24,7 @@ _TEST_VEHICLES = [v for v in MOCK_VEHICLES if v != "zoe_40"]
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.renault.PLATFORMS", [Platform.DEVICE_TRACKER]):
+    with patch("inpui.components.renault.PLATFORMS", [Platform.DEVICE_TRACKER]):
         yield
 
 

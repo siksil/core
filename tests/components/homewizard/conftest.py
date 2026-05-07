@@ -34,20 +34,20 @@ def mock_homewizardenergy(
     """Return a mock bridge."""
     with (
         patch(
-            "homeassistant.components.homewizard.HomeWizardEnergyV1",
+            "inpui.components.homewizard.HomeWizardEnergyV1",
             autospec=True,
         ) as homewizard,
         patch(
-            "homeassistant.components.homewizard.config_flow.HomeWizardEnergyV1",
+            "inpui.components.homewizard.config_flow.HomeWizardEnergyV1",
             new=homewizard,
         ),
         patch(
-            "homeassistant.components.homewizard.has_v2_api",
+            "inpui.components.homewizard.has_v2_api",
             autospec=True,
             return_value=False,
         ),
         patch(
-            "homeassistant.components.homewizard.config_flow.has_v2_api",
+            "inpui.components.homewizard.config_flow.has_v2_api",
             autospec=True,
             return_value=False,
         ),
@@ -97,11 +97,11 @@ def mock_homewizardenergy_v2(
     """Return a mock bridge."""
     with (
         patch(
-            "homeassistant.components.homewizard.HomeWizardEnergyV2",
+            "inpui.components.homewizard.HomeWizardEnergyV2",
             autospec=True,
         ) as homewizard,
         patch(
-            "homeassistant.components.homewizard.config_flow.HomeWizardEnergyV2",
+            "inpui.components.homewizard.config_flow.HomeWizardEnergyV2",
             new=homewizard,
         ),
     ):
@@ -154,7 +154,7 @@ def mock_homewizardenergy_v2(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.homewizard.async_setup_entry", return_value=True
+        "inpui.components.homewizard.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -208,7 +208,7 @@ async def init_integration(
 def mock_onboarding() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=False,
     ) as mock_onboarding:
         yield mock_onboarding

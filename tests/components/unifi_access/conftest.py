@@ -50,7 +50,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.unifi_access.async_setup_entry", return_value=True
+        "inpui.components.unifi_access.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -95,11 +95,11 @@ def mock_client() -> Generator[MagicMock]:
     """Return a mocked UniFi Access API client."""
     with (
         patch(
-            "homeassistant.components.unifi_access.UnifiAccessApiClient",
+            "inpui.components.unifi_access.UnifiAccessApiClient",
             autospec=True,
         ) as client_mock,
         patch(
-            "homeassistant.components.unifi_access.config_flow.UnifiAccessApiClient",
+            "inpui.components.unifi_access.config_flow.UnifiAccessApiClient",
             new=client_mock,
         ),
     ):

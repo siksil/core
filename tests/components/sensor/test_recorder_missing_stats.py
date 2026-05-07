@@ -37,7 +37,7 @@ POWER_SENSOR_ATTRIBUTES = {
 def disable_db_issue_creation():
     """Disable the creation of the database issue."""
     with patch(
-        "homeassistant.components.recorder.util._async_create_mariadb_range_index_regression_issue"
+        "inpui.components.recorder.util._async_create_mariadb_range_index_regression_issue"
     ):
         yield
 

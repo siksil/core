@@ -43,7 +43,7 @@ class FakeHaScanner(FakeScannerMixin, HaScanner):
         }
 
 
-@patch("homeassistant.components.bluetooth.HaScanner", FakeHaScanner)
+@patch("inpui.components.bluetooth.HaScanner", FakeHaScanner)
 @pytest.mark.usefixtures("enable_bluetooth", "two_adapters")
 async def test_diagnostics(
     hass: HomeAssistant,
@@ -59,11 +59,11 @@ async def test_diagnostics(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.diagnostics.platform.system",
+            "inpui.components.bluetooth.diagnostics.platform.system",
             return_value="Linux",
         ),
         patch(
-            "homeassistant.components.bluetooth.diagnostics.get_dbus_managed_objects",
+            "inpui.components.bluetooth.diagnostics.get_dbus_managed_objects",
             return_value={
                 "org.bluez": {
                     "/org/bluez/hci0": {
@@ -252,7 +252,7 @@ async def test_diagnostics(
         )
 
 
-@patch("homeassistant.components.bluetooth.HaScanner", FakeHaScanner)
+@patch("inpui.components.bluetooth.HaScanner", FakeHaScanner)
 @pytest.mark.usefixtures(
     "macos_adapter", "mock_bleak_scanner_start", "mock_bluetooth_adapters"
 )
@@ -272,11 +272,11 @@ async def test_diagnostics_macos(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.diagnostics.platform.system",
+            "inpui.components.bluetooth.diagnostics.platform.system",
             return_value="Darwin",
         ),
         patch(
-            "homeassistant.components.bluetooth.diagnostics.get_dbus_managed_objects",
+            "inpui.components.bluetooth.diagnostics.get_dbus_managed_objects",
             return_value={},
         ),
     ):
@@ -441,7 +441,7 @@ async def test_diagnostics_macos(
         }
 
 
-@patch("homeassistant.components.bluetooth.HaScanner", FakeHaScanner)
+@patch("inpui.components.bluetooth.HaScanner", FakeHaScanner)
 @pytest.mark.usefixtures(
     "enable_bluetooth",
     "one_adapter",
@@ -477,11 +477,11 @@ async def test_diagnostics_remote_adapter(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.diagnostics.platform.system",
+            "inpui.components.bluetooth.diagnostics.platform.system",
             return_value="Linux",
         ),
         patch(
-            "homeassistant.components.bluetooth.diagnostics.get_dbus_managed_objects",
+            "inpui.components.bluetooth.diagnostics.get_dbus_managed_objects",
             return_value={},
         ),
     ):

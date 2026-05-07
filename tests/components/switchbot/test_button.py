@@ -42,7 +42,7 @@ async def test_art_frame_button_press(
     )
     mocked_instance = AsyncMock(return_value=True)
     with patch.multiple(
-        "homeassistant.components.switchbot.button.switchbot.SwitchbotArtFrame",
+        "inpui.components.switchbot.button.switchbot.SwitchbotArtFrame",
         _get_basic_info=mock_basic_info,
         **{mock_method: mocked_instance},
     ):
@@ -86,7 +86,7 @@ async def test_meter_pro_co2_sync_datetime_button(
             mock_set_datetime,
         ),
         patch(
-            "homeassistant.components.switchbot.button.dt_util.now",
+            "inpui.components.switchbot.button.dt_util.now",
             return_value=fixed_time,
         ),
     ):
@@ -148,7 +148,7 @@ async def test_meter_pro_co2_sync_datetime_button_with_timezone(
             mock_set_datetime,
         ),
         patch(
-            "homeassistant.components.switchbot.button.dt_util.now",
+            "inpui.components.switchbot.button.dt_util.now",
             return_value=fixed_time,
         ),
     ):

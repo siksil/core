@@ -34,7 +34,7 @@ async def test_setup_entry(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
         return_value=get_client,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -81,7 +81,7 @@ async def test_migrate_entry(
     )
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
         return_value=get_client,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

@@ -676,7 +676,7 @@ async def test_set_context_expired(hass: HomeAssistant) -> None:
     """Test setting context."""
     context = Context()
 
-    with patch("homeassistant.helpers.entity.CONTEXT_RECENT_TIME_SECONDS", -5):
+    with patch("inpui.helpers.entity.CONTEXT_RECENT_TIME_SECONDS", -5):
         ent = entity.Entity()
         ent.hass = hass
         ent.entity_id = "hello.world"
@@ -784,12 +784,12 @@ async def test_warn_slow_write_state(
     mock_entity.platform_data = MagicMock(platform_name="hue")
     mock_entity._platform_state = entity.EntityPlatformState.ADDED
 
-    with patch("homeassistant.helpers.entity.timer", side_effect=[0, 10]):
+    with patch("inpui.helpers.entity.timer", side_effect=[0, 10]):
         mock_entity.async_write_ha_state()
 
     assert (
         "Updating state for comp_test.test_entity "
-        "(<class 'homeassistant.helpers.entity.Entity'>) "
+        "(<class 'inpui.helpers.entity.Entity'>) "
         "took 10.000 seconds. Please create a bug report at "
         "https://github.com/home-assistant/core/issues?"
         "q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+hue%22"
@@ -812,7 +812,7 @@ async def test_warn_slow_write_state_custom_component(
     mock_entity.platform_data = MagicMock(platform_name="hue")
     mock_entity._platform_state = entity.EntityPlatformState.ADDED
 
-    with patch("homeassistant.helpers.entity.timer", side_effect=[0, 10]):
+    with patch("inpui.helpers.entity.timer", side_effect=[0, 10]):
         mock_entity.async_write_ha_state()
 
     assert (
@@ -1153,7 +1153,7 @@ async def test_friendly_name_description_device_class_name(
         name=entity_name,
     )
     with patch(
-        "homeassistant.helpers.entity_platform.translation.async_get_translations",
+        "inpui.helpers.entity_platform.translation.async_get_translations",
         side_effect=async_get_translations,
     ):
         await _test_friendly_name(
@@ -1246,7 +1246,7 @@ async def test_entity_name_translation_placeholders(
     if placeholders is not None:
         ent._attr_translation_placeholders = placeholders
     with patch(
-        "homeassistant.helpers.entity_platform.translation.async_get_translations",
+        "inpui.helpers.entity_platform.translation.async_get_translations",
         side_effect=async_get_translations,
     ):
         await _test_friendly_name(hass, ent, expected_friendly_name)
@@ -1354,11 +1354,11 @@ async def test_entity_name_translation_placeholder_errors(
 
     with (
         patch(
-            "homeassistant.helpers.entity_platform.translation.async_get_translations",
+            "inpui.helpers.entity_platform.translation.async_get_translations",
             side_effect=async_get_translations,
         ),
         patch(
-            "homeassistant.helpers.entity.get_release_channel",
+            "inpui.helpers.entity.get_release_channel",
             return_value=release_channel,
         ),
     ):
@@ -1456,7 +1456,7 @@ async def test_friendly_name_property_device_class_name(
         name=entity_name,
     )
     with patch(
-        "homeassistant.helpers.entity_platform.translation.async_get_translations",
+        "inpui.helpers.entity_platform.translation.async_get_translations",
         side_effect=async_get_translations,
     ):
         await _test_friendly_name(
@@ -1510,7 +1510,7 @@ async def test_friendly_name_device_class_name(
         has_entity_name=has_entity_name,
     )
     with patch(
-        "homeassistant.helpers.entity_platform.translation.async_get_translations",
+        "inpui.helpers.entity_platform.translation.async_get_translations",
         side_effect=async_get_translations,
     ):
         await _test_friendly_name(
@@ -1724,7 +1724,7 @@ async def test_invalid_state(
     ent.async_write_ha_state()
     assert hass.states.get("test.test").state == STATE_UNKNOWN
     assert (
-        "homeassistant.core",
+        "inpui.core",
         logging.ERROR,
         f"State {long_state} for test.test is longer than 255, "
         f"falling back to {STATE_UNKNOWN}",

@@ -63,14 +63,14 @@ async def test_setup_in_bridge_mode(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homekit.config_flow.async_find_next_available_port",
+            "inpui.components.homekit.config_flow.async_find_next_available_port",
             return_value=12345,
         ),
         patch(
-            "homeassistant.components.homekit.async_setup", return_value=True
+            "inpui.components.homekit.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.homekit.async_setup_entry",
+            "inpui.components.homekit.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -123,14 +123,14 @@ async def test_setup_in_bridge_mode_name_taken(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homekit.config_flow.async_find_next_available_port",
+            "inpui.components.homekit.config_flow.async_find_next_available_port",
             return_value=12345,
         ),
         patch(
-            "homeassistant.components.homekit.async_setup", return_value=True
+            "inpui.components.homekit.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.homekit.async_setup_entry",
+            "inpui.components.homekit.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -209,14 +209,14 @@ async def test_setup_creates_entries_for_accessory_mode_devices(
 
     with (
         patch(
-            "homeassistant.components.homekit.config_flow.async_find_next_available_port",
+            "inpui.components.homekit.config_flow.async_find_next_available_port",
             return_value=12345,
         ),
         patch(
-            "homeassistant.components.homekit.async_setup", return_value=True
+            "inpui.components.homekit.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.homekit.async_setup_entry",
+            "inpui.components.homekit.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -276,10 +276,10 @@ async def test_import(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homekit.async_setup", return_value=True
+            "inpui.components.homekit.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.homekit.async_setup_entry",
+            "inpui.components.homekit.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -334,7 +334,7 @@ async def test_options_flow_exclude_mode_advanced(hass: HomeAssistant) -> None:
     assert result2["type"] is FlowResultType.FORM
     assert result2["step_id"] == "advanced"
 
-    with patch("homeassistant.components.homekit.async_setup_entry", return_value=True):
+    with patch("inpui.components.homekit.async_setup_entry", return_value=True):
         result3 = await hass.config_entries.options.async_configure(
             result2["flow_id"],
             user_input={},
@@ -436,7 +436,7 @@ async def test_options_flow_devices(
     demo_config_entry = MockConfigEntry(domain="domain")
     demo_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.homekit.HomeKit") as mock_homekit:
+    with patch("inpui.components.homekit.HomeKit") as mock_homekit:
         mock_homekit.return_value = homekit = Mock()
         type(homekit).async_start = AsyncMock()
         assert await async_setup_component(hass, "homekit", {"homekit": {}})
@@ -477,7 +477,7 @@ async def test_options_flow_devices(
         )
 
         with patch(
-            "homeassistant.components.homekit.async_setup_entry", return_value=True
+            "inpui.components.homekit.async_setup_entry", return_value=True
         ):
             result3 = await hass.config_entries.options.async_configure(
                 result2["flow_id"],
@@ -529,7 +529,7 @@ async def test_options_flow_devices_preserved_when_advanced_off(
     demo_config_entry = MockConfigEntry(domain="domain")
     demo_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.homekit.HomeKit") as mock_homekit:
+    with patch("inpui.components.homekit.HomeKit") as mock_homekit:
         mock_homekit.return_value = homekit = Mock()
         type(homekit).async_start = AsyncMock()
         assert await async_setup_component(hass, "homekit", {"homekit": {}})
@@ -1151,7 +1151,7 @@ async def test_options_flow_blocked_when_from_yaml(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "yaml"
 
-    with patch("homeassistant.components.homekit.async_setup_entry", return_value=True):
+    with patch("inpui.components.homekit.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.options.async_configure(
             result["flow_id"],
             user_input={},
@@ -1286,11 +1286,11 @@ async def test_converting_bridge_to_accessory_mode(
     # will not get migrated to options
     with (
         patch(
-            "homeassistant.components.homekit.config_flow.async_find_next_available_port",
+            "inpui.components.homekit.config_flow.async_find_next_available_port",
             return_value=12345,
         ),
         patch(
-            "homeassistant.components.homekit.HomeKit.async_start",
+            "inpui.components.homekit.HomeKit.async_start",
             return_value=True,
         ) as mock_async_start,
     ):
@@ -1351,10 +1351,10 @@ async def test_converting_bridge_to_accessory_mode(
 
     with (
         patch(
-            "homeassistant.components.homekit.async_setup_entry",
+            "inpui.components.homekit.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
-        patch("homeassistant.components.homekit.async_port_is_available"),
+        patch("inpui.components.homekit.async_port_is_available"),
     ):
         result3 = await hass.config_entries.options.async_configure(
             result2["flow_id"],

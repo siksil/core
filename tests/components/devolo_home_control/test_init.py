@@ -21,7 +21,7 @@ from tests.typing import WebSocketGenerator
 async def test_setup_entry(hass: HomeAssistant) -> None:
     """Test setup entry."""
     entry = configure_integration(hass)
-    with patch("homeassistant.components.devolo_home_control.HomeControl"):
+    with patch("inpui.components.devolo_home_control.HomeControl"):
         await hass.config_entries.async_setup(entry.entry_id)
         assert entry.state is ConfigEntryState.LOADED
 
@@ -51,7 +51,7 @@ async def test_setup_gateway_offline(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMock()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, GatewayOfflineError],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -62,7 +62,7 @@ async def test_setup_all_gateways_offline(hass: HomeAssistant) -> None:
     """Test setup entry fails on all gateways offline."""
     entry = configure_integration(hass)
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=GatewayOfflineError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -72,7 +72,7 @@ async def test_setup_all_gateways_offline(hass: HomeAssistant) -> None:
 async def test_unload_entry(hass: HomeAssistant) -> None:
     """Test unload entry."""
     entry = configure_integration(hass)
-    with patch("homeassistant.components.devolo_home_control.HomeControl"):
+    with patch("inpui.components.devolo_home_control.HomeControl"):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
         await hass.config_entries.async_unload(entry.entry_id)
@@ -85,7 +85,7 @@ async def test_home_assistant_stop(hass: HomeAssistant) -> None:
     test_gateway = HomeControlMock()
     test_gateway2 = HomeControlMock()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, test_gateway2],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -106,7 +106,7 @@ async def test_remove_device(
     entry = configure_integration(hass)
     test_gateway = HomeControlMockBinarySensor()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

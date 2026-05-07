@@ -210,7 +210,7 @@ async def test_switch_setup(
     entry = MockConfigEntry(domain=DOMAIN, data=MOCK_USER_DATA)
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.fritz.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.fritz.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done(wait_background_tasks=True)
 
@@ -254,7 +254,7 @@ async def test_switch_empty_port_entities_list(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_get_num_port_mapping",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_get_num_port_mapping",
         return_value=None,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -277,7 +277,7 @@ async def test_switch_no_port_entities_list(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_get_port_mapping",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_get_port_mapping",
         return_value=None,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -441,7 +441,7 @@ async def test_switch_turn_on_off(
     assert state.state == STATE_ON
 
     with patch(
-        f"homeassistant.components.fritz.coordinator.AvmWrapper.{wrapper_method}",
+        f"inpui.components.fritz.coordinator.AvmWrapper.{wrapper_method}",
     ) as mock_set_action:
         await hass.services.async_call(
             SWITCH_DOMAIN,
@@ -455,7 +455,7 @@ async def test_switch_turn_on_off(
     assert state.state == STATE_OFF
 
     with patch(
-        f"homeassistant.components.fritz.coordinator.AvmWrapper.{wrapper_method}",
+        f"inpui.components.fritz.coordinator.AvmWrapper.{wrapper_method}",
     ) as mock_set_action_2:
         await hass.services.async_call(
             SWITCH_DOMAIN,

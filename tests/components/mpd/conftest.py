@@ -25,7 +25,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.mpd.async_setup_entry", return_value=True
+        "inpui.components.mpd.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -35,7 +35,7 @@ def mock_mpd_client() -> Generator[MagicMock]:
     """Return a mock for Music Player Daemon client."""
 
     with patch(
-        "homeassistant.components.mpd.config_flow.MPDClient",
+        "inpui.components.mpd.config_flow.MPDClient",
         autospec=True,
     ) as mpd_client:
         client = mpd_client.return_value

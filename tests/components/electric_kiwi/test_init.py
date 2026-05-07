@@ -75,7 +75,7 @@ async def test_refresh_token_validity_failures(
 ) -> None:
     """Test token refresh failure status."""
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
+        "inpui.helpers.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid",
         side_effect=ClientResponseError(
             RequestInfo("", "POST", {}, ""), None, status=status
         ),

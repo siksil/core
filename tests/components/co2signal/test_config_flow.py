@@ -31,7 +31,7 @@ async def test_form_home(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.co2signal.async_setup_entry",
+        "inpui.components.co2signal.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -71,7 +71,7 @@ async def test_form_coordinates(hass: HomeAssistant) -> None:
     assert result2["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.co2signal.async_setup_entry",
+        "inpui.components.co2signal.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result3 = await hass.config_entries.flow.async_configure(
@@ -113,7 +113,7 @@ async def test_form_country(hass: HomeAssistant) -> None:
     assert result2["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.co2signal.async_setup_entry",
+        "inpui.components.co2signal.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result3 = await hass.config_entries.flow.async_configure(
@@ -203,7 +203,7 @@ async def test_reauth(
     assert init_result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.co2signal.async_setup_entry",
+        "inpui.components.co2signal.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         configure_result = await hass.config_entries.flow.async_configure(

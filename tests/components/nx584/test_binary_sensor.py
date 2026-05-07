@@ -58,8 +58,8 @@ def client(fake_zones):
 
 
 @pytest.mark.usefixtures("client")
-@mock.patch("homeassistant.components.nx584.binary_sensor.NX584Watcher")
-@mock.patch("homeassistant.components.nx584.binary_sensor.NX584ZoneSensor")
+@mock.patch("inpui.components.nx584.binary_sensor.NX584Watcher")
+@mock.patch("inpui.components.nx584.binary_sensor.NX584ZoneSensor")
 def test_nx584_sensor_setup_defaults(
     mock_nx, mock_watcher, hass: HomeAssistant, fake_zones
 ) -> None:
@@ -74,8 +74,8 @@ def test_nx584_sensor_setup_defaults(
 
 
 @pytest.mark.usefixtures("client")
-@mock.patch("homeassistant.components.nx584.binary_sensor.NX584Watcher")
-@mock.patch("homeassistant.components.nx584.binary_sensor.NX584ZoneSensor")
+@mock.patch("inpui.components.nx584.binary_sensor.NX584Watcher")
+@mock.patch("inpui.components.nx584.binary_sensor.NX584ZoneSensor")
 def test_nx584_sensor_setup_full_config(
     mock_nx, mock_watcher, hass: HomeAssistant, fake_zones
 ) -> None:

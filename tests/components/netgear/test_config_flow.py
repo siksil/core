@@ -74,8 +74,8 @@ SSDP_URL_SLL = f"https://{HOST}:{PORT}/rootDesc.xml"
 def mock_controller_service():
     """Mock a successful service."""
     with (
-        patch("homeassistant.components.netgear.async_setup_entry", return_value=True),
-        patch("homeassistant.components.netgear.router.Netgear") as service_mock,
+        patch("inpui.components.netgear.async_setup_entry", return_value=True),
+        patch("inpui.components.netgear.router.Netgear") as service_mock,
     ):
         service_mock.return_value.get_info = Mock(return_value=ROUTER_INFOS)
         service_mock.return_value.port = 80

@@ -260,11 +260,11 @@ async def test_create_omada_client_parses_args(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.tplink_omada.config_flow.OmadaClient",
+            "inpui.components.tplink_omada.config_flow.OmadaClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.tplink_omada.config_flow.async_get_clientsession",
+            "inpui.components.tplink_omada.config_flow.async_get_clientsession",
             return_value="ws",
         ) as mock_clientsession,
     ):
@@ -282,11 +282,11 @@ async def test_create_omada_client_adds_missing_scheme(hass: HomeAssistant) -> N
 
     with (
         patch(
-            "homeassistant.components.tplink_omada.config_flow.OmadaClient",
+            "inpui.components.tplink_omada.config_flow.OmadaClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.tplink_omada.config_flow.async_get_clientsession",
+            "inpui.components.tplink_omada.config_flow.async_get_clientsession",
             return_value="ws",
         ) as mock_clientsession,
     ):
@@ -314,14 +314,14 @@ async def test_create_omada_client_with_ip_creates_clientsession(
 
     with (
         patch(
-            "homeassistant.components.tplink_omada.config_flow.OmadaClient",
+            "inpui.components.tplink_omada.config_flow.OmadaClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.tplink_omada.config_flow.CookieJar", autospec=True
+            "inpui.components.tplink_omada.config_flow.CookieJar", autospec=True
         ) as mock_jar,
         patch(
-            "homeassistant.components.tplink_omada.config_flow.async_create_clientsession",
+            "inpui.components.tplink_omada.config_flow.async_create_clientsession",
             return_value="ws",
         ) as mock_create_clientsession,
     ):

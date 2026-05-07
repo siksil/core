@@ -182,7 +182,7 @@ def create_mock_zm_client(
 def mock_zoneminder_client(two_monitors: list[MagicMock]) -> Generator[MagicMock]:
     """Mock a ZoneMinder client."""
     with patch(
-        "homeassistant.components.zoneminder.ZoneMinder",
+        "inpui.components.zoneminder.ZoneMinder",
         autospec=True,
     ) as mock_cls:
         client = mock_cls.return_value

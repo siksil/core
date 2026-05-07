@@ -34,7 +34,7 @@ ZEROCONF_DISCOVERY = ZeroconfServiceInfo(
 USER_INPUT = {CONF_HOST: "eheimdigital"}
 
 
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 async def test_full_flow(hass: HomeAssistant, eheimdigital_hub_mock: AsyncMock) -> None:
     """Test full flow."""
     result = await hass.config_entries.flow.async_init(
@@ -59,7 +59,7 @@ async def test_full_flow(hass: HomeAssistant, eheimdigital_hub_mock: AsyncMock) 
     )
 
 
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 @pytest.mark.parametrize(
     ("side_effect", "error_value"),
     [(ClientConnectionError(), "cannot_connect"), (Exception(), "unknown")],
@@ -107,7 +107,7 @@ async def test_flow_errors(
     )
 
 
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 async def test_zeroconf_flow(
     hass: HomeAssistant, eheimdigital_hub_mock: AsyncMock
 ) -> None:
@@ -141,7 +141,7 @@ async def test_zeroconf_flow(
     ("side_effect", "error_value"),
     [(ClientConnectionError(), "cannot_connect"), (Exception(), "unknown")],
 )
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 async def test_zeroconf_flow_errors(
     hass: HomeAssistant,
     eheimdigital_hub_mock: MagicMock,
@@ -161,7 +161,7 @@ async def test_zeroconf_flow_errors(
     assert result["reason"] == error_value
 
 
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 async def test_abort(hass: HomeAssistant, eheimdigital_hub_mock: AsyncMock) -> None:
     """Test flow abort on matching data or unique_id."""
     result = await hass.config_entries.flow.async_init(
@@ -220,7 +220,7 @@ async def test_abort(hass: HomeAssistant, eheimdigital_hub_mock: AsyncMock) -> N
     assert result2["reason"] == "already_configured"
 
 
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 @pytest.mark.parametrize(
     ("side_effect", "error_value"),
     [(ClientConnectionError(), "cannot_connect"), (Exception(), "unknown")],
@@ -264,7 +264,7 @@ async def test_reconfigure(
     )
 
 
-@patch("homeassistant.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
+@patch("inpui.components.eheimdigital.config_flow.asyncio.Event", new=AsyncMock)
 async def test_reconfigure_different_device(
     hass: HomeAssistant,
     eheimdigital_hub_mock: AsyncMock,

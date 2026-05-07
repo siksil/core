@@ -619,7 +619,7 @@ async def test_updating_to_often(
             await wait_till_event.wait()
 
     with patch(
-        "homeassistant.components.command_line.switch.CommandSwitch",
+        "inpui.components.command_line.switch.CommandSwitch",
         side_effect=MockCommandSwitch,
     ):
         await setup.async_setup_component(
@@ -687,7 +687,7 @@ async def test_updating_manually(
             called.append(1)
 
     with patch(
-        "homeassistant.components.command_line.switch.CommandSwitch",
+        "inpui.components.command_line.switch.CommandSwitch",
         side_effect=MockCommandSwitch,
     ):
         await setup.async_setup_component(

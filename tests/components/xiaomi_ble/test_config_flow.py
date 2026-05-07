@@ -38,7 +38,7 @@ async def test_async_step_bluetooth_valid_device(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "bluetooth_confirm"
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}
@@ -54,7 +54,7 @@ async def test_async_step_bluetooth_valid_device_but_missing_payload(
 ) -> None:
     """Test discovery via bluetooth with a valid device but missing payload."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_process_advertisements",
+        "inpui.components.xiaomi_ble.config_flow.async_process_advertisements",
         side_effect=TimeoutError(),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -66,7 +66,7 @@ async def test_async_step_bluetooth_valid_device_but_missing_payload(
     assert result["step_id"] == "confirm_slow"
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}
@@ -93,7 +93,7 @@ async def test_async_step_bluetooth_valid_device_but_missing_payload_then_full(
         return service_info
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_process_advertisements",
+        "inpui.components.xiaomi_ble.config_flow.async_process_advertisements",
         _async_process_advertisements,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -110,7 +110,7 @@ async def test_async_step_bluetooth_valid_device_but_missing_payload_then_full(
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"],
@@ -126,10 +126,10 @@ async def test_async_step_bluetooth_during_onboarding(hass: HomeAssistant) -> No
     """Test discovery via bluetooth during onboarding."""
     with (
         patch(
-            "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+            "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded",
+            "inpui.components.onboarding.async_is_onboarded",
             return_value=False,
         ) as mock_onboarding,
     ):
@@ -160,7 +160,7 @@ async def test_async_step_bluetooth_valid_device_legacy_encryption(
     assert result["step_id"] == "get_encryption_key_legacy"
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -194,7 +194,7 @@ async def test_async_step_bluetooth_valid_device_legacy_encryption_wrong_key(
 
     # Test can finish flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -228,7 +228,7 @@ async def test_async_step_bluetooth_valid_device_legacy_encryption_wrong_key_len
 
     # Test can finish flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -258,7 +258,7 @@ async def test_async_step_bluetooth_valid_device_v4_encryption(
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"],
@@ -293,7 +293,7 @@ async def test_bluetooth_discovery_device_v4_encryption_from_cloud(
         bindkey="5b51a7c91cde6707c9ef18dfda143a58",
     )
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         return_value=device,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -330,7 +330,7 @@ async def test_bluetooth_discovery_device_v4_encryption_from_cloud_wrong_key(
         bindkey="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     )
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         return_value=device,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -344,7 +344,7 @@ async def test_bluetooth_discovery_device_v4_encryption_from_cloud_wrong_key(
 
     # Verify we can fallback to manual key
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result4 = await hass.config_entries.flow.async_configure(
             result3["flow_id"],
@@ -375,7 +375,7 @@ async def test_bluetooth_discovery_incorrect_cloud_account(
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         return_value=None,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -394,7 +394,7 @@ async def test_bluetooth_discovery_incorrect_cloud_account(
     )
     # Verify we can try again with the correct account
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         return_value=device,
     ):
         result4 = await hass.config_entries.flow.async_configure(
@@ -426,7 +426,7 @@ async def test_bluetooth_discovery_incorrect_cloud_auth(
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         side_effect=XiaomiCloudInvalidAuthenticationException,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -445,7 +445,7 @@ async def test_bluetooth_discovery_incorrect_cloud_auth(
     )
     # Verify we can try again with the correct password
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         return_value=device,
     ):
         result4 = await hass.config_entries.flow.async_configure(
@@ -477,7 +477,7 @@ async def test_bluetooth_discovery_cloud_offline(
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         side_effect=XiaomiCloudException,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -517,7 +517,7 @@ async def test_async_step_bluetooth_valid_device_v4_encryption_wrong_key(
 
     # Test can finish flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result4 = await hass.config_entries.flow.async_configure(
             result3["flow_id"],
@@ -558,7 +558,7 @@ async def test_async_step_bluetooth_valid_device_v4_encryption_wrong_key_length(
 
     # Test can finish flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result4 = await hass.config_entries.flow.async_configure(
             result3["flow_id"],
@@ -598,7 +598,7 @@ async def test_async_step_user_no_devices_found_2(hass: HomeAssistant) -> None:
     This variant tests with a non-Xiaomi device known to us.
     """
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_SENSOR_PUSH_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -612,7 +612,7 @@ async def test_async_step_user_no_devices_found_2(hass: HomeAssistant) -> None:
 async def test_async_step_user_with_found_devices(hass: HomeAssistant) -> None:
     """Test setup from service info cache with devices found."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[LYWSDCGQ_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -622,7 +622,7 @@ async def test_async_step_user_with_found_devices(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "user"
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -644,7 +644,7 @@ async def test_async_step_user_replace_ignored_entry(hass: HomeAssistant) -> Non
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[LYWSDCGQ_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -654,7 +654,7 @@ async def test_async_step_user_replace_ignored_entry(hass: HomeAssistant) -> Non
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "user"
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -669,7 +669,7 @@ async def test_async_step_user_replace_ignored_entry(hass: HomeAssistant) -> Non
 async def test_async_step_user_short_payload(hass: HomeAssistant) -> None:
     """Test setup from service info cache with devices found but short payloads."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[MISSING_PAYLOAD_ENCRYPTED],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -679,7 +679,7 @@ async def test_async_step_user_short_payload(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "user"
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_process_advertisements",
+        "inpui.components.xiaomi_ble.config_flow.async_process_advertisements",
         side_effect=TimeoutError(),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -690,7 +690,7 @@ async def test_async_step_user_short_payload(hass: HomeAssistant) -> None:
     assert result2["step_id"] == "confirm_slow"
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}
@@ -704,7 +704,7 @@ async def test_async_step_user_short_payload(hass: HomeAssistant) -> None:
 async def test_async_step_user_short_payload_then_full(hass: HomeAssistant) -> None:
     """Test setup from service info cache with devices found."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[MISSING_PAYLOAD_ENCRYPTED],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -725,7 +725,7 @@ async def test_async_step_user_short_payload_then_full(hass: HomeAssistant) -> N
         return service_info
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_process_advertisements",
+        "inpui.components.xiaomi_ble.config_flow.async_process_advertisements",
         _async_process_advertisements,
     ):
         result1 = await hass.config_entries.flow.async_configure(
@@ -741,7 +741,7 @@ async def test_async_step_user_short_payload_then_full(hass: HomeAssistant) -> N
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"],
@@ -758,7 +758,7 @@ async def test_async_step_user_with_found_devices_v4_encryption(
 ) -> None:
     """Test setup from service info cache with devices found, with v4 encryption."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[JTYJGD03MI_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -781,7 +781,7 @@ async def test_async_step_user_with_found_devices_v4_encryption(
     )
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result3 = await hass.config_entries.flow.async_configure(
             result2["flow_id"],
@@ -800,7 +800,7 @@ async def test_async_step_user_with_found_devices_v4_encryption_wrong_key(
     """Test setup from service info cache with devices found, with v4 encryption and wrong key."""
     # Get a list of devices
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[JTYJGD03MI_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -834,7 +834,7 @@ async def test_async_step_user_with_found_devices_v4_encryption_wrong_key(
 
     # Check can still finish flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result4 = await hass.config_entries.flow.async_configure(
             result3["flow_id"],
@@ -853,7 +853,7 @@ async def test_async_step_user_with_found_devices_v4_encryption_wrong_key_length
     """Test setup from service info cache with devices found, with v4 encryption and wrong key length."""
     # Get a list of devices
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[JTYJGD03MI_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -889,7 +889,7 @@ async def test_async_step_user_with_found_devices_v4_encryption_wrong_key_length
 
     # Check can still finish flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result4 = await hass.config_entries.flow.async_configure(
             result3["flow_id"],
@@ -907,7 +907,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption(
 ) -> None:
     """Test setup from service info cache with devices found, with legacy encryption."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[YLKG07YL_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -925,7 +925,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption(
     assert result1["step_id"] == "get_encryption_key_legacy"
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -942,7 +942,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption_wrong_key(
 ) -> None:
     """Test setup from service info cache with devices found, with legacy encryption and wrong key."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[YLKG07YL_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -970,7 +970,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption_wrong_key(
 
     # Check you can finish the flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -987,7 +987,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption_wrong_key_le
 ) -> None:
     """Test setup from service info cache with devices found, with legacy encryption and wrong key length."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[YLKG07YL_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1015,7 +1015,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption_wrong_key_le
 
     # Check you can finish the flow
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -1030,7 +1030,7 @@ async def test_async_step_user_with_found_devices_legacy_encryption_wrong_key_le
 async def test_async_step_user_device_added_between_steps(hass: HomeAssistant) -> None:
     """Test the device gets added via another flow between steps."""
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[LYWSDCGQ_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1047,7 +1047,7 @@ async def test_async_step_user_device_added_between_steps(hass: HomeAssistant) -
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -1068,7 +1068,7 @@ async def test_async_step_user_with_found_devices_already_setup(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[LYWSDCGQ_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1128,7 +1128,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
     assert result["step_id"] == "bluetooth_confirm"
 
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.async_discovered_service_info",
+        "inpui.components.xiaomi_ble.config_flow.async_discovered_service_info",
         return_value=[MMC_T201_1_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -1138,7 +1138,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
         assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.xiaomi_ble.async_setup_entry", return_value=True
+        "inpui.components.xiaomi_ble.async_setup_entry", return_value=True
     ):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -1168,7 +1168,7 @@ async def test_async_step_reauth_legacy(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -1217,7 +1217,7 @@ async def test_async_step_reauth_legacy_wrong_key(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -1274,7 +1274,7 @@ async def test_async_step_reauth_v4(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -1328,7 +1328,7 @@ async def test_async_step_reauth_v4_wrong_key(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -1390,7 +1390,7 @@ async def test_async_step_reauth_v4_from_cloud(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -1426,7 +1426,7 @@ async def test_async_step_reauth_v4_from_cloud(hass: HomeAssistant) -> None:
         bindkey="5b51a7c91cde6707c9ef18dfda143a58",
     )
     with patch(
-        "homeassistant.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
+        "inpui.components.xiaomi_ble.config_flow.XiaomiCloudTokenFetch.get_device_info",
         return_value=device,
     ):
         result3 = await hass.config_entries.flow.async_configure(

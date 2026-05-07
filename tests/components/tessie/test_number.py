@@ -28,7 +28,7 @@ async def test_numbers(
     # Test number set value functions
     entity_id = "number.test_charge_current"
     with patch(
-        "homeassistant.components.tessie.number.set_charging_amps",
+        "inpui.components.tessie.number.set_charging_amps",
     ) as mock_set_charging_amps:
         await hass.services.async_call(
             NUMBER_DOMAIN,
@@ -41,7 +41,7 @@ async def test_numbers(
 
     entity_id = "number.test_charge_limit"
     with patch(
-        "homeassistant.components.tessie.number.set_charge_limit",
+        "inpui.components.tessie.number.set_charge_limit",
     ) as mock_set_charge_limit:
         await hass.services.async_call(
             NUMBER_DOMAIN,
@@ -54,7 +54,7 @@ async def test_numbers(
 
     entity_id = "number.test_speed_limit"
     with patch(
-        "homeassistant.components.tessie.number.set_speed_limit",
+        "inpui.components.tessie.number.set_speed_limit",
     ) as mock_set_speed_limit:
         await hass.services.async_call(
             NUMBER_DOMAIN,

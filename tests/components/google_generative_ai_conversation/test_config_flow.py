@@ -104,7 +104,7 @@ async def test_form(hass: HomeAssistant) -> None:
             "google.genai.models.AsyncModels.list",
         ),
         patch(
-            "homeassistant.components.google_generative_ai_conversation.async_setup_entry",
+            "inpui.components.google_generative_ai_conversation.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -689,11 +689,11 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
             "google.genai.models.AsyncModels.list",
         ),
         patch(
-            "homeassistant.components.google_generative_ai_conversation.async_setup_entry",
+            "inpui.components.google_generative_ai_conversation.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.google_generative_ai_conversation.async_unload_entry",
+            "inpui.components.google_generative_ai_conversation.async_unload_entry",
             return_value=True,
         ) as mock_unload_entry,
     ):

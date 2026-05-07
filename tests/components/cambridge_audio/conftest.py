@@ -27,7 +27,7 @@ from tests.common import MockConfigEntry, load_fixture, load_json_array_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.cambridge_audio.async_setup_entry",
+        "inpui.components.cambridge_audio.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -38,11 +38,11 @@ def mock_stream_magic_client() -> Generator[AsyncMock]:
     """Mock an Cambridge Audio client."""
     with (
         patch(
-            "homeassistant.components.cambridge_audio.StreamMagicClient",
+            "inpui.components.cambridge_audio.StreamMagicClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.cambridge_audio.config_flow.StreamMagicClient",
+            "inpui.components.cambridge_audio.config_flow.StreamMagicClient",
             new=mock_client,
         ),
     ):

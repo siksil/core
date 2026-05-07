@@ -48,7 +48,7 @@ async def scanner(
     setup_test_component_platform(hass, "light", mock_light_entities)
 
     with patch(
-        "homeassistant.components.device_tracker.legacy.load_yaml_config_file",
+        "inpui.components.device_tracker.legacy.load_yaml_config_file",
         return_value={
             "device_1": {
                 "mac": "DEV1",
@@ -268,7 +268,7 @@ async def test_initialize_start(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.device_sun_light_trigger.activate_automation"
+        "inpui.components.device_sun_light_trigger.activate_automation"
     ) as mock_activate:
         hass.bus.fire(EVENT_INPUI_START)
         await hass.async_block_till_done()

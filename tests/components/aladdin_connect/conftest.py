@@ -45,11 +45,11 @@ def mock_aladdin_connect_api() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.aladdin_connect.AladdinConnectClient",
+            "inpui.components.aladdin_connect.AladdinConnectClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.aladdin_connect.config_flow.AladdinConnectClient",
+            "inpui.components.aladdin_connect.config_flow.AladdinConnectClient",
             new=mock_client,
         ),
     ):
@@ -62,7 +62,7 @@ def mock_aladdin_connect_api() -> Generator[AsyncMock]:
 def mock_setup_entry() -> AsyncMock:
     """Fixture to mock setup entry."""
     with patch(
-        "homeassistant.components.aladdin_connect.async_setup_entry", return_value=True
+        "inpui.components.aladdin_connect.async_setup_entry", return_value=True
     ):
         yield
 

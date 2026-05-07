@@ -501,7 +501,7 @@ async def test_discovery_update_unchanged_select(
     """Test update of discovered select."""
     data1 = '{ "name": "Beer", "state_topic": "test-topic", "command_topic": "test-topic", "options": ["milk", "beer"]}'
     with patch(
-        "homeassistant.components.mqtt.select.MqttSelect.discovery_update"
+        "inpui.components.mqtt.select.MqttSelect.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, select.DOMAIN, data1, discovery_update

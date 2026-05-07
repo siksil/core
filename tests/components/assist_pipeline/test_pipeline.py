@@ -69,7 +69,7 @@ from tests.typing import ClientSessionGenerator, WebSocketGenerator
 @pytest.fixture(autouse=True)
 async def delay_save_fixture() -> AsyncGenerator[None]:
     """Load the homeassistant integration."""
-    with patch("homeassistant.helpers.collection.SAVE_DELAY", new=0):
+    with patch("inpui.helpers.collection.SAVE_DELAY", new=0):
         yield
 
 
@@ -161,7 +161,7 @@ async def test_load_pipelines(hass: HomeAssistant) -> None:
 def mock_chat_session_id() -> Generator[Mock]:
     """Mock the conversation ID of chat sessions."""
     with patch(
-        "homeassistant.helpers.chat_session.ulid_now", return_value="mock-ulid"
+        "inpui.helpers.chat_session.ulid_now", return_value="mock-ulid"
     ) as mock_ulid_now:
         yield mock_ulid_now
 
@@ -1094,7 +1094,7 @@ async def test_sentence_trigger_overrides_conversation_agent(
 
     # Ensure prepare succeeds
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
         return_value=conversation.AgentInfo(
             id="test-agent",
             name="Test Agent",
@@ -1104,7 +1104,7 @@ async def test_sentence_trigger_overrides_conversation_agent(
         await pipeline_input.validate()
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse"
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse"
     ) as mock_async_converse:
         await pipeline_input.execute()
 
@@ -1177,7 +1177,7 @@ async def test_prefer_local_intents(
 
     # Ensure prepare succeeds
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
         return_value=conversation.AgentInfo(
             id="test-agent",
             name="Test Agent",
@@ -1187,7 +1187,7 @@ async def test_prefer_local_intents(
         await pipeline_input.validate()
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse"
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse"
     ) as mock_async_converse:
         await pipeline_input.execute()
 
@@ -1246,7 +1246,7 @@ async def test_intent_continue_conversation(
 
     # Ensure prepare succeeds
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
         return_value=conversation.AgentInfo(
             id="test-agent",
             name="Test Agent",
@@ -1259,7 +1259,7 @@ async def test_intent_continue_conversation(
     response.async_set_speech("For how long?")
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse",
         return_value=conversation.ConversationResult(
             response=response,
             conversation_id=mock_chat_session.conversation_id,
@@ -1320,7 +1320,7 @@ async def test_intent_continue_conversation(
 
     # Ensure prepare succeeds
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
         return_value=conversation.AgentInfo(
             id="test-agent",
             name="Test Agent",
@@ -1336,7 +1336,7 @@ async def test_intent_continue_conversation(
     response.async_set_speech("Timer set for 20 minutes")
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse",
         return_value=conversation.ConversationResult(
             response=response,
             conversation_id=mock_chat_session.conversation_id,
@@ -1408,7 +1408,7 @@ async def test_stt_language_used_instead_of_conversation_language(
     await pipeline_input.validate()
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse",
         return_value=conversation.ConversationResult(
             intent.IntentResponse(pipeline.language)
         ),
@@ -1484,7 +1484,7 @@ async def test_tts_language_used_instead_of_conversation_language(
     await pipeline_input.validate()
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse",
         return_value=conversation.ConversationResult(
             intent.IntentResponse(pipeline.language)
         ),
@@ -1560,7 +1560,7 @@ async def test_pipeline_language_used_instead_of_conversation_language(
     await pipeline_input.validate()
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_converse",
         return_value=conversation.ConversationResult(
             intent.IntentResponse(pipeline.language)
         ),
@@ -1746,7 +1746,7 @@ async def test_chat_log_tts_streaming(
     mock_tts_entity.async_supports_streaming_input = Mock(return_value=True)
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
+        "inpui.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
         return_value=conversation.AgentInfo(
             id="test-agent",
             name="Test Agent",
@@ -1821,11 +1821,11 @@ async def test_chat_log_tts_streaming(
 
     with (
         patch(
-            "homeassistant.helpers.llm.AssistAPI._async_get_tools",
+            "inpui.helpers.llm.AssistAPI._async_get_tools",
             return_value=[mock_tool],
         ),
         patch(
-            "homeassistant.components.assist_pipeline.pipeline.conversation.async_converse",
+            "inpui.components.assist_pipeline.pipeline.conversation.async_converse",
             mock_converse,
         ),
     ):
@@ -1910,7 +1910,7 @@ async def test_acknowledge(
         await pipeline_input.execute()
 
     with patch(
-        "homeassistant.components.assist_pipeline.PipelineRun.text_to_speech"
+        "inpui.components.assist_pipeline.PipelineRun.text_to_speech"
     ) as text_to_speech:
 
         def _reset() -> None:
@@ -2089,7 +2089,7 @@ async def test_acknowledge_other_agents(
 
     with (
         patch(
-            "homeassistant.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
+            "inpui.components.assist_pipeline.pipeline.conversation.async_get_agent_info",
             return_value=conversation.AgentInfo(
                 id="test-agent",
                 name="Test Agent",
@@ -2097,16 +2097,16 @@ async def test_acknowledge_other_agents(
             ),
         ),
         patch(
-            "homeassistant.components.assist_pipeline.PipelineRun.prepare_text_to_speech"
+            "inpui.components.assist_pipeline.PipelineRun.prepare_text_to_speech"
         ),
         patch(
-            "homeassistant.components.assist_pipeline.PipelineRun.text_to_speech"
+            "inpui.components.assist_pipeline.PipelineRun.text_to_speech"
         ) as text_to_speech,
         patch(
-            "homeassistant.components.conversation.async_converse", return_value=None
+            "inpui.components.conversation.async_converse", return_value=None
         ) as async_converse,
         patch(
-            "homeassistant.components.assist_pipeline.PipelineRun._get_all_targets_in_satellite_area"
+            "inpui.components.assist_pipeline.PipelineRun._get_all_targets_in_satellite_area"
         ) as get_all_targets_in_satellite_area,
     ):
         pipeline_input = assist_pipeline.pipeline.PipelineInput(

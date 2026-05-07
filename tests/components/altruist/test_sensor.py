@@ -24,7 +24,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.altruist.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.altruist.PLATFORMS", [Platform.SENSOR]):
         mock_config_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()

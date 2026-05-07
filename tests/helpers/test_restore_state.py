@@ -61,10 +61,10 @@ async def test_caching_data(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.helpers.restore_state.Store.async_load",
+            "inpui.helpers.restore_state.Store.async_load",
             side_effect=HomeAssistantError,
         ),
-        patch("homeassistant.helpers.restore_state.Store.async_save"),
+        patch("inpui.helpers.restore_state.Store.async_save"),
     ):
         # Failure to load should not be treated as fatal
         await async_load(hass)
@@ -74,7 +74,7 @@ async def test_caching_data(hass: HomeAssistant) -> None:
 
     # Mock that only b1 is present this run
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         await async_load(hass)
         await hass.async_block_till_done()
@@ -103,7 +103,7 @@ async def test_periodic_write(hass: HomeAssistant) -> None:
 
     # Emulate a fresh load
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         hass.data.pop(DATA_RESTORE_STATE)
         await async_load(hass)
@@ -119,7 +119,7 @@ async def test_periodic_write(hass: HomeAssistant) -> None:
     assert mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=15))
         await hass.async_block_till_done()
@@ -127,7 +127,7 @@ async def test_periodic_write(hass: HomeAssistant) -> None:
     assert mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
@@ -135,7 +135,7 @@ async def test_periodic_write(hass: HomeAssistant) -> None:
     assert mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=30))
         await hass.async_block_till_done()
@@ -151,7 +151,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
 
     # Emulate a fresh load
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         hass.data.pop(DATA_RESTORE_STATE)
         await async_load(hass)
@@ -168,7 +168,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
     assert mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=10))
         await hass.async_block_till_done()
@@ -177,7 +177,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
     assert not mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         await RestoreStateData.async_save_persistent_states(hass)
         await hass.async_block_till_done()
@@ -185,7 +185,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
     assert mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=20))
         await hass.async_block_till_done()
@@ -193,7 +193,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
     assert mock_write_data.called
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
@@ -232,7 +232,7 @@ async def test_hass_starting(hass: HomeAssistant) -> None:
 
     # Mock that only b1 is present this run
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         state = await entity.async_get_last_state()
         await hass.async_block_till_done()
@@ -247,7 +247,7 @@ async def test_hass_starting(hass: HomeAssistant) -> None:
 
     # Finish hass startup
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
@@ -295,7 +295,7 @@ async def test_dump_data(hass: HomeAssistant) -> None:
         hass.states.async_set(state.entity_id, state.state, state.attributes)
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         await data.async_dump_states()
 
@@ -329,7 +329,7 @@ async def test_dump_data(hass: HomeAssistant) -> None:
         hass.states.async_set(state.entity_id, state.state, state.attributes)
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         await data.async_dump_states()
 
@@ -374,7 +374,7 @@ async def test_dump_error(hass: HomeAssistant, exception: type[Exception]) -> No
         hass.states.async_set(state.entity_id, state.state, state.attributes)
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save",
+        "inpui.helpers.restore_state.Store.async_save",
         side_effect=exception,
     ) as mock_write_data:
         await data.async_dump_states()
@@ -389,7 +389,7 @@ async def test_load_error(hass: HomeAssistant) -> None:
     entity.entity_id = "input_boolean.b1"
 
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         side_effect=HomeAssistantError,
     ):
         state = await entity.async_get_last_state()
@@ -579,7 +579,7 @@ async def test_dump_states_with_failing_extra_data(
     data = async_get(hass)
 
     with patch(
-        "homeassistant.helpers.restore_state.Store.async_save"
+        "inpui.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
         await data.async_dump_states()
 

@@ -110,7 +110,7 @@ async def test_registry_delayed(
     )
 
 
-@patch("homeassistant.components.onewire._PLATFORMS", [Platform.SENSOR])
+@patch("inpui.components.onewire._PLATFORMS", [Platform.SENSOR])
 async def test_registry_cleanup(
     hass: HomeAssistant,
     device_registry: dr.DeviceRegistry,

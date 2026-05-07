@@ -267,7 +267,7 @@ async def test_generate_data_with_attachment(
 
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",
@@ -324,7 +324,7 @@ async def test_generate_data_with_unsupported_file_format(
 
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",

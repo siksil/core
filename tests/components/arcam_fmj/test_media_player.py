@@ -46,7 +46,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 def platform_fixture():
     """Only test single platform."""
-    with patch("homeassistant.components.arcam_fmj.PLATFORMS", [Platform.MEDIA_PLAYER]):
+    with patch("inpui.components.arcam_fmj.PLATFORMS", [Platform.MEDIA_PLAYER]):
         yield
 
 

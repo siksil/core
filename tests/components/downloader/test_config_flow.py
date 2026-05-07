@@ -36,7 +36,7 @@ async def test_user_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.downloader.async_setup_entry", return_value=True
+            "inpui.components.downloader.async_setup_entry", return_value=True
         ),
         patch(
             "os.path.isdir",

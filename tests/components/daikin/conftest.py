@@ -103,7 +103,7 @@ def zone_device() -> Generator[ZoneDevice]:
     device.set_streamer = AsyncMock()
 
     with patch(
-        "homeassistant.components.daikin.DaikinFactory",
+        "inpui.components.daikin.DaikinFactory",
         new=AsyncMock(return_value=device),
     ):
         yield device

@@ -49,10 +49,10 @@ async def test_configuring_flux_led_causes_discovery(hass: HomeAssistant) -> Non
     """Test that specifying empty config does discovery."""
     with (
         patch(
-            "homeassistant.components.flux_led.discovery.AIOBulbScanner.async_scan"
+            "inpui.components.flux_led.discovery.AIOBulbScanner.async_scan"
         ) as scan,
         patch(
-            "homeassistant.components.flux_led.discovery.AIOBulbScanner.getBulbInfo"
+            "inpui.components.flux_led.discovery.AIOBulbScanner.getBulbInfo"
         ) as discover,
     ):
         discover.return_value = [FLUX_DISCOVERY]
@@ -73,10 +73,10 @@ async def test_configuring_flux_led_causes_discovery_multiple_addresses(
     """Test that specifying empty config does discovery."""
     with (
         patch(
-            "homeassistant.components.flux_led.discovery.AIOBulbScanner.async_scan"
+            "inpui.components.flux_led.discovery.AIOBulbScanner.async_scan"
         ) as scan,
         patch(
-            "homeassistant.components.flux_led.discovery.AIOBulbScanner.getBulbInfo"
+            "inpui.components.flux_led.discovery.AIOBulbScanner.getBulbInfo"
         ) as discover,
     ):
         discover.return_value = [FLUX_DISCOVERY]
@@ -208,11 +208,11 @@ async def test_config_entry_fills_unique_id_with_directed_discovery(
 
     with (
         patch(
-            "homeassistant.components.flux_led.discovery.AIOBulbScanner.async_scan",
+            "inpui.components.flux_led.discovery.AIOBulbScanner.async_scan",
             new=_discovery,
         ),
         patch(
-            "homeassistant.components.flux_led.discovery.AIOBulbScanner.getBulbInfo",
+            "inpui.components.flux_led.discovery.AIOBulbScanner.getBulbInfo",
             new=_mock_getBulbInfo,
         ),
         _patch_wifibulb(),

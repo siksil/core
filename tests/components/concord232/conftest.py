@@ -13,11 +13,11 @@ def mock_concord232_client() -> Generator[MagicMock]:
     """Mock the concord232 Client for easier testing."""
     with (
         patch(
-            "homeassistant.components.concord232.alarm_control_panel.concord232_client.Client",
+            "inpui.components.concord232.alarm_control_panel.concord232_client.Client",
             autospec=True,
         ) as mock_client_class,
         patch(
-            "homeassistant.components.concord232.binary_sensor.concord232_client.Client",
+            "inpui.components.concord232.binary_sensor.concord232_client.Client",
             new=mock_client_class,
         ),
     ):

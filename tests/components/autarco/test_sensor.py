@@ -25,7 +25,7 @@ async def test_all_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the Autarco sensors."""
-    with patch("homeassistant.components.autarco.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.autarco.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

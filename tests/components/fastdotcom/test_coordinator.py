@@ -31,7 +31,7 @@ async def test_fastdotcom_data_update_coordinator(
         "loaded_ping": 20.2,
     }
     with patch(
-        "homeassistant.components.fastdotcom.coordinator.fast_com",
+        "inpui.components.fastdotcom.coordinator.fast_com",
         return_value=mock_data,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -48,7 +48,7 @@ async def test_fastdotcom_data_update_coordinator(
         "loaded_ping": 20.0,
     }
     with patch(
-        "homeassistant.components.fastdotcom.coordinator.fast_com",
+        "inpui.components.fastdotcom.coordinator.fast_com",
         return_value=mock_data,
     ):
         freezer.tick(timedelta(hours=DEFAULT_INTERVAL))
@@ -59,7 +59,7 @@ async def test_fastdotcom_data_update_coordinator(
     assert state.state == "10.0"
 
     with patch(
-        "homeassistant.components.fastdotcom.coordinator.fast_com",
+        "inpui.components.fastdotcom.coordinator.fast_com",
         side_effect=Exception("Test error"),
     ):
         freezer.tick(timedelta(hours=DEFAULT_INTERVAL))

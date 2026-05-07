@@ -21,13 +21,13 @@ from tests.common import MockConfigEntry
 MOCK_CONF_URL = "http://huawei-lte.example.com"
 
 
-@patch("homeassistant.components.huawei_lte.Connection", MagicMock())
+@patch("inpui.components.huawei_lte.Connection", MagicMock())
 async def test_clear_traffic_statistics(hass: HomeAssistant) -> None:
     """Test clear traffic statistics button."""
     huawei_lte = MockConfigEntry(domain=DOMAIN, data={CONF_URL: MOCK_CONF_URL})
     huawei_lte.add_to_hass(hass)
     client = magic_client()
-    with patch("homeassistant.components.huawei_lte.Client", return_value=client):
+    with patch("inpui.components.huawei_lte.Client", return_value=client):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()
 
@@ -57,8 +57,8 @@ async def test_restart(hass: HomeAssistant) -> None:
     huawei_lte.add_to_hass(hass)
     client = magic_client()
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
-        patch("homeassistant.components.huawei_lte.Client", return_value=client),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Client", return_value=client),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)
     await hass.async_block_till_done()

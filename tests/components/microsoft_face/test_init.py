@@ -99,7 +99,7 @@ ENDPOINT_URL = f"https://westus.{mf.FACE_API_URL}"
 def mock_update():
     """Mock update store."""
     with patch(
-        "homeassistant.components.microsoft_face.MicrosoftFace.update_store",
+        "inpui.components.microsoft_face.MicrosoftFace.update_store",
         return_value=None,
     ) as mock_update_store:
         yield mock_update_store
@@ -303,7 +303,7 @@ async def test_service_face(
     )
 
     with patch(
-        "homeassistant.components.camera.async_get_image",
+        "inpui.components.camera.async_get_image",
         return_value=camera.Image("image/jpeg", b"Test"),
     ):
         face_person(hass, "test_group2", "David", "camera.demo_camera")

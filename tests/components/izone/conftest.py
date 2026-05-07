@@ -93,7 +93,7 @@ async def mock_discovery(
     """Create a mock discovery service with one controller and zones."""
     mock_controller.zones = mock_zones
     with patch(
-        "homeassistant.components.izone.discovery.pizone.discovery", autospec=True
+        "inpui.components.izone.discovery.pizone.discovery", autospec=True
     ) as mock_disco:
         mock_disco.return_value.start_discovery = AsyncMock()
         mock_disco.return_value.controllers = {

@@ -27,7 +27,7 @@ async def test_light_without_binary_sensor(
     entry = configure_integration(hass)
     test_gateway = HomeControlMockLight()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -95,7 +95,7 @@ async def test_light_with_binary_sensor(
         "devolo.BinarySwitch:Test": BinarySwitchPropertyMock()
     }
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -143,7 +143,7 @@ async def test_remove_from_hass(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockLight()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

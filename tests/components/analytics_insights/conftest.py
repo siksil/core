@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry, load_fixture, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.analytics_insights.async_setup_entry",
+        "inpui.components.analytics_insights.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -32,11 +32,11 @@ def mock_analytics_client() -> Generator[AsyncMock]:
     """Mock a Homeassistant Analytics client."""
     with (
         patch(
-            "homeassistant.components.analytics_insights.HomeassistantAnalyticsClient",
+            "inpui.components.analytics_insights.HomeassistantAnalyticsClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.analytics_insights.config_flow.HomeassistantAnalyticsClient",
+            "inpui.components.analytics_insights.config_flow.HomeassistantAnalyticsClient",
             new=mock_client,
         ),
     ):

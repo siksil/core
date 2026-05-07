@@ -128,7 +128,7 @@ async def test_migration_2_3(
     )
 
     with patch(
-        "homeassistant.components.airvisual.automation.automations_with_device",
+        "inpui.components.airvisual.automation.automations_with_device",
         return_value=["automation.test_automation"],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

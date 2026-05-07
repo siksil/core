@@ -31,9 +31,9 @@ from .common import (
 from tests.common import async_test_home_assistant
 from tests.typing import RecorderInstanceContextManager
 
-CREATE_ENGINE_TARGET = "homeassistant.components.recorder.core.create_engine"
+CREATE_ENGINE_TARGET = "inpui.components.recorder.core.create_engine"
 SCHEMA_MODULE_32 = "tests.components.recorder.db_schema_32"
-SCHEMA_MODULE_CURRENT = "homeassistant.components.recorder.db_schema"
+SCHEMA_MODULE_CURRENT = "inpui.components.recorder.db_schema"
 
 
 @pytest.fixture
@@ -385,7 +385,7 @@ async def test_migration_changes_prevent_trying_to_migrate_again(
     # Finally verify we did not call needs_migrate_query on StatesContextIDMigration
     with (
         patch(
-            "homeassistant.components.recorder.core.Recorder.queue_task",
+            "inpui.components.recorder.core.Recorder.queue_task",
             _queue_task,
         ),
         patch.object(

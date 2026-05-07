@@ -17,7 +17,7 @@ def configure_id() -> Generator[str]:
     """Fixture to return a configure_id."""
     mock_id = "1-1"
     with patch(
-        "homeassistant.components.configurator.Configurator._generate_unique_id"
+        "inpui.components.configurator.Configurator._generate_unique_id"
     ) as generate_id:
         generate_id.return_value = mock_id
         yield mock_id

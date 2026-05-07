@@ -43,7 +43,7 @@ def mock_resolve_media(tmp_path: Path) -> Generator[MagicMock]:
     mock_media = MagicMock()
     mock_media.path = image_path
     with patch(
-        "homeassistant.components.opendisplay.services.async_resolve_media",
+        "inpui.components.opendisplay.services.async_resolve_media",
         return_value=mock_media,
     ):
         yield mock_media
@@ -102,7 +102,7 @@ async def test_upload_image_remote_url(
     mock_media.url = "http://example.com/image.png"
 
     with patch(
-        "homeassistant.components.opendisplay.services.async_resolve_media",
+        "inpui.components.opendisplay.services.async_resolve_media",
         return_value=mock_media,
     ):
         await hass.services.async_call(
@@ -149,7 +149,7 @@ async def test_upload_image_device_not_in_range(
 
     with (
         patch(
-            "homeassistant.components.opendisplay.services.async_ble_device_from_address",
+            "inpui.components.opendisplay.services.async_ble_device_from_address",
             return_value=None,
         ),
         pytest.raises(HomeAssistantError),
@@ -214,7 +214,7 @@ async def test_upload_image_download_error(
 
     with (
         patch(
-            "homeassistant.components.opendisplay.services.async_resolve_media",
+            "inpui.components.opendisplay.services.async_resolve_media",
             return_value=mock_media,
         ),
         pytest.raises(HomeAssistantError),

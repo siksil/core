@@ -102,13 +102,13 @@ async def test_update_access_token(hass: HomeAssistant) -> None:
     base_time = datetime(2019, 10, 14, tzinfo=UTC)
     with (
         patch(
-            "homeassistant.components.google_assistant.http._get_homegraph_token"
+            "inpui.components.google_assistant.http._get_homegraph_token"
         ) as mock_get_token,
         patch(
-            "homeassistant.components.google_assistant.http._get_homegraph_jwt"
+            "inpui.components.google_assistant.http._get_homegraph_jwt"
         ) as mock_get_jwt,
         patch(
-            "homeassistant.core.dt_util.utcnow",
+            "inpui.core.dt_util.utcnow",
         ) as mock_utcnow,
     ):
         mock_utcnow.return_value = base_time
@@ -142,7 +142,7 @@ async def test_call_homegraph_api(
     await config.async_initialize()
 
     with patch(
-        "homeassistant.components.google_assistant.http._get_homegraph_token"
+        "inpui.components.google_assistant.http._get_homegraph_token"
     ) as mock_get_token:
         mock_get_token.return_value = MOCK_TOKEN
 
@@ -169,7 +169,7 @@ async def test_call_homegraph_api_retry(
     await config.async_initialize()
 
     with patch(
-        "homeassistant.components.google_assistant.http._get_homegraph_token"
+        "inpui.components.google_assistant.http._get_homegraph_token"
     ) as mock_get_token:
         mock_get_token.return_value = MOCK_TOKEN
 

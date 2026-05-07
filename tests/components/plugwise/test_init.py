@@ -28,7 +28,7 @@ from inpui.helpers import device_registry as dr, entity_registry as er
 from tests.common import MockConfigEntry, async_fire_time_changed
 
 HA_PLUGWISE_SMILE_ASYNC_UPDATE = (
-    "homeassistant.components.plugwise.coordinator.Smile.async_update"
+    "inpui.components.plugwise.coordinator.Smile.async_update"
 )
 HEATER_ID = "1cbf783bb11e4a7c8a6843dee3a86927"  # Opentherm device_id for migration
 PLUG_ID = "cd0ddb54ef694e11ac18ed1cbce5dbbd"  # VCR device_id for migration

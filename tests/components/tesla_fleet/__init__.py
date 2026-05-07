@@ -38,7 +38,7 @@ async def setup_platform(
     if platforms is None:
         await hass.config_entries.async_setup(config_entry.entry_id)
     else:
-        with patch("homeassistant.components.tesla_fleet.PLATFORMS", platforms):
+        with patch("inpui.components.tesla_fleet.PLATFORMS", platforms):
             await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 

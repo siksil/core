@@ -80,7 +80,7 @@ async def test_import_dataset(
 
     with (
         patch(
-            "homeassistant.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
+            "inpui.components.thread.dataset_store.BORDER_AGENT_DISCOVERY_TIMEOUT",
             0.1,
         ),
     ):
@@ -147,7 +147,7 @@ async def test_import_share_radio_channel_collision(
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.thread.dataset_store.DatasetStore.async_add"
+            "inpui.components.thread.dataset_store.DatasetStore.async_add"
         ) as mock_add,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -187,7 +187,7 @@ async def test_import_share_radio_no_channel_collision(
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.thread.dataset_store.DatasetStore.async_add"
+            "inpui.components.thread.dataset_store.DatasetStore.async_add"
         ) as mock_add,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -226,7 +226,7 @@ async def test_import_insecure_dataset(
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.thread.dataset_store.DatasetStore.async_add"
+            "inpui.components.thread.dataset_store.DatasetStore.async_add"
         ) as mock_add,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)

@@ -264,7 +264,7 @@ async def test_reload_sensors_that_reference_other_template_sensors(
 
     next_time = dt_util.utcnow() + timedelta(seconds=1.2)
     with patch(
-        "homeassistant.helpers.ratelimit.time.time", return_value=next_time.timestamp()
+        "inpui.helpers.ratelimit.time.time", return_value=next_time.timestamp()
     ):
         async_fire_time_changed(hass, next_time)
         await hass.async_block_till_done()
@@ -649,7 +649,7 @@ async def test_yaml_reload_when_labs_flag_changes(
         test_reload_event.clear()
 
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value={
                 DOMAIN: {
@@ -738,7 +738,7 @@ async def test_config_entry_reload_when_labs_flag_changes(
             },
         )
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value={},
         ):

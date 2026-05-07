@@ -897,7 +897,7 @@ async def test_reloading_groups(hass: HomeAssistant) -> None:
     assert hass.bus.async_listeners()["state_changed"] == 1
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={
             "group": {"hello": {"entities": "light.Bowl", "icon": "mdi:work"}}
         },

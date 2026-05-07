@@ -58,14 +58,14 @@ async def auto_setup_integration(
     """Auto setup integration."""
     with (
         patch(
-            "homeassistant.components.onkyo.media_player.QUERY_AV_INFO_DELAY",
+            "inpui.components.onkyo.media_player.QUERY_AV_INFO_DELAY",
             0,
         ),
         patch(
-            "homeassistant.components.onkyo.media_player.QUERY_STATE_DELAY",
+            "inpui.components.onkyo.media_player.QUERY_STATE_DELAY",
             0,
         ),
-        patch("homeassistant.components.onkyo.PLATFORMS", [Platform.MEDIA_PLAYER]),
+        patch("inpui.components.onkyo.PLATFORMS", [Platform.MEDIA_PLAYER]),
     ):
         await setup_integration(hass, mock_config_entry)
         writes.clear()

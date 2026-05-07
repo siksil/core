@@ -176,7 +176,7 @@ async def test_turn_on_off_toggle(
 invalid_configs = [
     {"test": {}},
     {"test hello world": {"sequence": [{"event": "bla"}]}},
-    {"test": {"sequence": {"event": "test_event", "action": "homeassistant.turn_on"}}},
+    {"test": {"sequence": {"event": "test_event", "action": "inpui.turn_on"}}},
 ]
 
 
@@ -191,7 +191,7 @@ invalid_configs = [
                 "test": {
                     "sequence": {
                         "event": "test_event",
-                        "action": "homeassistant.turn_on",
+                        "action": "inpui.turn_on",
                     }
                 }
             },
@@ -346,7 +346,7 @@ async def test_bad_config_validation(
 
     # Reloading the automation with fixed config should clear the issue
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             script.DOMAIN: {
@@ -410,7 +410,7 @@ async def test_reload_service(hass: HomeAssistant, running) -> None:
 
     object_id = "test" if running == "same" else "test2"
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={"script": {object_id: {"sequence": [{"delay": {"seconds": 5}}]}}},
     ):
         await hass.services.async_call(DOMAIN, SERVICE_RELOAD, blocking=True)
@@ -467,7 +467,7 @@ async def test_reload_unchanged_does_not_stop(
     assert len(calls) == 0
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=config,
     ):
@@ -522,7 +522,7 @@ async def test_reload_unchanged_script(
 ) -> None:
     """Test an unmodified script is not reloaded."""
     with patch(
-        "homeassistant.components.script.ScriptEntity", wraps=ScriptEntity
+        "inpui.components.script.ScriptEntity", wraps=ScriptEntity
     ) as script_entity_init:
         config = {script.DOMAIN: [script_config]}
         assert await async_setup_component(hass, script.DOMAIN, config)
@@ -540,7 +540,7 @@ async def test_reload_unchanged_script(
 
         # Reload the scripts without any change
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -580,7 +580,7 @@ async def test_service_descriptions(hass: HomeAssistant) -> None:
 
     # Test 2: has "fields" but no "description"
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={
             "script": {
                 "test": {
@@ -611,7 +611,7 @@ async def test_service_descriptions(hass: HomeAssistant) -> None:
 
     # Test 3: has "alias" that will be used as "name"
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={
             "script": {
                 "test_name": {
@@ -698,7 +698,7 @@ async def test_async_get_descriptions_script(hass: HomeAssistant) -> None:
     """Test async_set_service_schema for the script integration."""
     script_config = {
         DOMAIN: {
-            "test1": {"sequence": [{"action": "homeassistant.restart"}]},
+            "test1": {"sequence": [{"action": "inpui.restart"}]},
             "test2": {
                 "description": "test2",
                 "fields": {
@@ -707,7 +707,7 @@ async def test_async_get_descriptions_script(hass: HomeAssistant) -> None:
                         "example": "param_example",
                     }
                 },
-                "sequence": [{"action": "homeassistant.restart"}],
+                "sequence": [{"action": "inpui.restart"}],
             },
         }
     }
@@ -1431,7 +1431,7 @@ async def test_recursive_script_turn_on(
         stop_scripts_at_shutdown_called.set()
 
     with patch(
-        "homeassistant.helpers.script._async_stop_scripts_at_shutdown",
+        "inpui.helpers.script._async_stop_scripts_at_shutdown",
         wraps=stop_scripts_at_shutdown,
     ):
         assert await async_setup_component(
@@ -1717,7 +1717,7 @@ async def test_blueprint_script_fails_substitution(
 ) -> None:
     """Test blueprint script with bad inputs."""
     with patch(
-        "homeassistant.components.blueprint.models.BlueprintInputs.async_substitute",
+        "inpui.components.blueprint.models.BlueprintInputs.async_substitute",
         side_effect=yaml_util.UndefinedSubstitution("blah"),
     ):
         assert await async_setup_component(
@@ -1904,7 +1904,7 @@ async def test_reload_when_labs_flag_changes(
         (True, "test3", ("test", "test2")),
     ):
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             return_value={
                 "script": {active_object_id: {"sequence": [{"delay": {"seconds": 5}}]}}
             },

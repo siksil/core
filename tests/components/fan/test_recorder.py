@@ -24,7 +24,7 @@ from tests.components.recorder.common import async_wait_recording_done
 async def fan_only() -> None:
     """Enable only the fan platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.FAN],
     ):
         yield

@@ -39,7 +39,7 @@ from .api_responses import TEST_VIN_2_EV, VEHICLE_DATA, VEHICLE_STATUS_EV
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 
-MOCK_API = "homeassistant.components.subaru.SubaruAPI."
+MOCK_API = "inpui.components.subaru.SubaruAPI."
 MOCK_API_DEVICE_REGISTERED = f"{MOCK_API}device_registered"
 MOCK_API_2FA_CONTACTS = f"{MOCK_API}contact_methods"
 MOCK_API_2FA_REQUEST = f"{MOCK_API}request_auth_code"

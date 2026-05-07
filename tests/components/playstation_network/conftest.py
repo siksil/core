@@ -50,7 +50,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.playstation_network.async_setup_entry",
+        "inpui.components.playstation_network.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -61,7 +61,7 @@ def mock_user() -> Generator[MagicMock]:
     """Mock psnawp_api User object."""
 
     with patch(
-        "homeassistant.components.playstation_network.helpers.User",
+        "inpui.components.playstation_network.helpers.User",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value
@@ -94,7 +94,7 @@ def mock_psnawpapi(mock_user: MagicMock) -> Generator[MagicMock]:
     """Mock psnawp_api."""
 
     with patch(
-        "homeassistant.components.playstation_network.helpers.PSNAWP",
+        "inpui.components.playstation_network.helpers.PSNAWP",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value
@@ -198,7 +198,7 @@ def mock_psnawp_npsso(mock_user: MagicMock) -> Generator[MagicMock]:
     """Mock psnawp_api."""
 
     with patch(
-        "homeassistant.components.playstation_network.config_flow.parse_npsso_token",
+        "inpui.components.playstation_network.config_flow.parse_npsso_token",
         side_effect=lambda token: token,
     ) as npsso:
         yield npsso

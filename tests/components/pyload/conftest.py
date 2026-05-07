@@ -59,7 +59,7 @@ ADDON_SERVICE_INFO = HassioServiceInfo(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.pyload.async_setup_entry", return_value=True
+        "inpui.components.pyload.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -69,9 +69,9 @@ def mock_pyloadapi() -> Generator[MagicMock]:
     """Mock PyLoadAPI."""
     with (
         patch(
-            "homeassistant.components.pyload.PyLoadAPI", autospec=True
+            "inpui.components.pyload.PyLoadAPI", autospec=True
         ) as mock_client,
-        patch("homeassistant.components.pyload.config_flow.PyLoadAPI", new=mock_client),
+        patch("inpui.components.pyload.config_flow.PyLoadAPI", new=mock_client),
     ):
         client = mock_client.return_value
         client.username = "username"

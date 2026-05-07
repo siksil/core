@@ -26,7 +26,7 @@ MOCK_TEST_CONFIG = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.firefly_iii.async_setup_entry", return_value=True
+        "inpui.components.firefly_iii.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -36,10 +36,10 @@ def mock_firefly_client() -> Generator[AsyncMock]:
     """Mock Firefly client with dynamic exception injection support."""
     with (
         patch(
-            "homeassistant.components.firefly_iii.config_flow.Firefly"
+            "inpui.components.firefly_iii.config_flow.Firefly"
         ) as mock_client,
         patch(
-            "homeassistant.components.firefly_iii.coordinator.Firefly", new=mock_client
+            "inpui.components.firefly_iii.coordinator.Firefly", new=mock_client
         ),
     ):
         client = mock_client.return_value

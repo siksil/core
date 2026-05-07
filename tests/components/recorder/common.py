@@ -53,7 +53,7 @@ from inpui.util.json import json_loads, json_loads_object
 from . import db_schema_0
 
 DEFAULT_PURGE_TASKS = 3
-CREATE_ENGINE_TARGET = "homeassistant.components.recorder.core.create_engine"
+CREATE_ENGINE_TARGET = "inpui.components.recorder.core.create_engine"
 
 
 @dataclass

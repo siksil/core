@@ -16,7 +16,7 @@ async def setup_platform(
     """Set up the Sense platform."""
     config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.sense.PLATFORMS", [platform]):
+    with patch("inpui.components.sense.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
     await hass.async_block_till_done()
 

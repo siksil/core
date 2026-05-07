@@ -76,7 +76,7 @@ async def test_do_not_see_device_if_time_not_updated(hass: HomeAssistant) -> Non
     entity_id = f"{DEVICE_TRACKER_DOMAIN}.{slugify(name)}"
 
     with patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info"
+        "inpui.components.bluetooth.async_discovered_service_info"
     ) as mock_async_discovered_service_info:
         device = BluetoothServiceInfoBleak(
             name=name,
@@ -141,7 +141,7 @@ async def test_see_device_if_time_updated(hass: HomeAssistant) -> None:
     entity_id = f"{DEVICE_TRACKER_DOMAIN}.{slugify(name)}"
 
     with patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info"
+        "inpui.components.bluetooth.async_discovered_service_info"
     ) as mock_async_discovered_service_info:
         device = BluetoothServiceInfoBleak(
             name=name,
@@ -222,7 +222,7 @@ async def test_preserve_new_tracked_device_name(hass: HomeAssistant) -> None:
     entity_id = f"{DEVICE_TRACKER_DOMAIN}.{slugify(name)}"
 
     with patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info"
+        "inpui.components.bluetooth.async_discovered_service_info"
     ) as mock_async_discovered_service_info:
         device = BluetoothServiceInfoBleak(
             name=name,
@@ -291,7 +291,7 @@ async def test_tracking_battery_times_out(hass: HomeAssistant) -> None:
     entity_id = f"{DEVICE_TRACKER_DOMAIN}.{slugify(name)}"
 
     with patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info"
+        "inpui.components.bluetooth.async_discovered_service_info"
     ) as mock_async_discovered_service_info:
         device = BluetoothServiceInfoBleak(
             name=name,
@@ -332,7 +332,7 @@ async def test_tracking_battery_times_out(hass: HomeAssistant) -> None:
             await hass.async_block_till_done()
 
         with patch(
-            "homeassistant.components.bluetooth_le_tracker.device_tracker.BleakClient",
+            "inpui.components.bluetooth_le_tracker.device_tracker.BleakClient",
             MockBleakClientTimesOut,
         ):
             # Wait for the battery scan
@@ -359,7 +359,7 @@ async def test_tracking_battery_fails(hass: HomeAssistant) -> None:
     entity_id = f"{DEVICE_TRACKER_DOMAIN}.{slugify(name)}"
 
     with patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info"
+        "inpui.components.bluetooth.async_discovered_service_info"
     ) as mock_async_discovered_service_info:
         device = BluetoothServiceInfoBleak(
             name=name,
@@ -399,7 +399,7 @@ async def test_tracking_battery_fails(hass: HomeAssistant) -> None:
             await hass.async_block_till_done()
 
         with patch(
-            "homeassistant.components.bluetooth_le_tracker.device_tracker.BleakClient",
+            "inpui.components.bluetooth_le_tracker.device_tracker.BleakClient",
             MockBleakClientFailing,
         ):
             # Wait for the battery scan
@@ -426,7 +426,7 @@ async def test_tracking_battery_successful(hass: HomeAssistant) -> None:
     entity_id = f"{DEVICE_TRACKER_DOMAIN}.{slugify(name)}"
 
     with patch(
-        "homeassistant.components.bluetooth.async_discovered_service_info"
+        "inpui.components.bluetooth.async_discovered_service_info"
     ) as mock_async_discovered_service_info:
         device = BluetoothServiceInfoBleak(
             name=name,
@@ -467,7 +467,7 @@ async def test_tracking_battery_successful(hass: HomeAssistant) -> None:
             await hass.async_block_till_done()
 
         with patch(
-            "homeassistant.components.bluetooth_le_tracker.device_tracker.BleakClient",
+            "inpui.components.bluetooth_le_tracker.device_tracker.BleakClient",
             MockBleakClientBattery5,
         ):
             # Wait for the battery scan

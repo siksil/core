@@ -42,7 +42,7 @@ from tests.typing import WebSocketGenerator
 @pytest.fixture(name="connect_timeout")
 def connect_timeout_fixture() -> Generator[int]:
     """Mock the connect timeout."""
-    with patch("homeassistant.components.matter.CONNECT_TIMEOUT", new=0) as timeout:
+    with patch("inpui.components.matter.CONNECT_TIMEOUT", new=0) as timeout:
         yield timeout
 
 
@@ -50,7 +50,7 @@ def connect_timeout_fixture() -> Generator[int]:
 def listen_ready_timeout_fixture() -> Generator[int]:
     """Mock the listen ready timeout."""
     with patch(
-        "homeassistant.components.matter.LISTEN_READY_TIMEOUT", new=0
+        "inpui.components.matter.LISTEN_READY_TIMEOUT", new=0
     ) as timeout:
         yield timeout
 

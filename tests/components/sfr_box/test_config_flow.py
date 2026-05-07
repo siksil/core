@@ -29,7 +29,7 @@ async def test_config_flow_skip_auth(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -72,7 +72,7 @@ async def test_config_flow_skip_auth_failure(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         side_effect=SFRBoxError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -86,7 +86,7 @@ async def test_config_flow_skip_auth_failure(
     assert result["errors"] == {"base": "cannot_connect"}
 
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -129,7 +129,7 @@ async def test_config_flow_with_auth(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -153,7 +153,7 @@ async def test_config_flow_with_auth(
         {"next_step_id": "auth"},
     )
 
-    with patch("homeassistant.components.sfr_box.config_flow.SFRBox.authenticate"):
+    with patch("inpui.components.sfr_box.config_flow.SFRBox.authenticate"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={
@@ -185,7 +185,7 @@ async def test_config_flow_with_auth_failure(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -210,7 +210,7 @@ async def test_config_flow_with_auth_failure(
     )
 
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.authenticate",
+        "inpui.components.sfr_box.config_flow.SFRBox.authenticate",
         side_effect=SFRBoxAuthenticationError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -224,7 +224,7 @@ async def test_config_flow_with_auth_failure(
     assert result["type"] is FlowResultType.FORM
     assert result["errors"] == {"base": "invalid_auth"}
 
-    with patch("homeassistant.components.sfr_box.config_flow.SFRBox.authenticate"):
+    with patch("inpui.components.sfr_box.config_flow.SFRBox.authenticate"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={
@@ -264,7 +264,7 @@ async def test_config_flow_duplicate_host(
     # Ensure mac doesn't match existing mock entry
     system_info.mac_addr = "aa:bb:cc:dd:ee:ff"
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=system_info,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -298,7 +298,7 @@ async def test_config_flow_duplicate_mac(
         **(await async_load_json_object_fixture(hass, "system_getInfo.json", DOMAIN))
     )
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=system_info,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -326,7 +326,7 @@ async def test_reauth(hass: HomeAssistant, config_entry_with_auth: ConfigEntry) 
 
     # Failed credentials
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.authenticate",
+        "inpui.components.sfr_box.config_flow.SFRBox.authenticate",
         side_effect=SFRBoxAuthenticationError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -341,7 +341,7 @@ async def test_reauth(hass: HomeAssistant, config_entry_with_auth: ConfigEntry) 
     assert result.get("errors") == {"base": "invalid_auth"}
 
     # Valid credentials
-    with patch("homeassistant.components.sfr_box.config_flow.SFRBox.authenticate"):
+    with patch("inpui.components.sfr_box.config_flow.SFRBox.authenticate"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={
@@ -366,7 +366,7 @@ async def test_reconfigure_host(hass: HomeAssistant, config_entry: ConfigEntry) 
 
     assert config_entry.data[CONF_HOST] == "192.168.0.1"
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -409,7 +409,7 @@ async def test_reconfigure_add_auth(
 
     assert CONF_USERNAME not in config_entry.data
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -433,7 +433,7 @@ async def test_reconfigure_add_auth(
         {"next_step_id": "auth"},
     )
 
-    with patch("homeassistant.components.sfr_box.config_flow.SFRBox.authenticate"):
+    with patch("inpui.components.sfr_box.config_flow.SFRBox.authenticate"):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={
@@ -465,7 +465,7 @@ async def test_reconfigure_clear_auth(
 
     assert config_entry_with_auth.data[CONF_USERNAME] == "admin"
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(
@@ -509,7 +509,7 @@ async def test_reconfigure_mismatch(
 
     assert config_entry_with_auth.data[CONF_USERNAME] == "admin"
     with patch(
-        "homeassistant.components.sfr_box.config_flow.SFRBox.system_get_info",
+        "inpui.components.sfr_box.config_flow.SFRBox.system_get_info",
         return_value=SystemInfo(
             **(
                 await async_load_json_object_fixture(

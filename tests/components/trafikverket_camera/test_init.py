@@ -42,7 +42,7 @@ async def test_setup_entry(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ) as mock_tvt_camera:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -74,7 +74,7 @@ async def test_unload_entry(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -107,7 +107,7 @@ async def test_migrate_entry(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ) as mock_tvt_camera:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -157,7 +157,7 @@ async def test_migrate_entry_fails_with_error(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         side_effect=UnknownError,
     ) as mock_tvt_camera:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -221,7 +221,7 @@ async def test_migrate_entry_fails_no_id(
     )
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=_camera,
     ) as mock_tvt_camera:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -255,7 +255,7 @@ async def test_no_migration_needed(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ):
         assert await async_migrate_entry(hass, entry) is True

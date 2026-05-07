@@ -36,7 +36,7 @@ async def test_number(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test number platform entities against snapshot."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -58,7 +58,7 @@ async def test_no_number(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test number platform entities are not created."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, config_entry)
     assert not er.async_entries_for_config_entry(entity_registry, config_entry.entry_id)
 
@@ -80,7 +80,7 @@ async def test_number_operation_storage(
     test_value: float,
 ) -> None:
     """Test enphase_envoy number storage entities operation."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"{Platform.NUMBER}.{use_serial}_reserve_battery_level"
@@ -117,7 +117,7 @@ async def test_number_operation_storage_with_error(
     test_value: float,
 ) -> None:
     """Test enphase_envoy number storage entities operation."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"number.{use_serial}_{target}"
@@ -161,7 +161,7 @@ async def test_number_operation_relays(
     test_field: str,
 ) -> None:
     """Test enphase_envoy number relay entities operation."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, config_entry)
 
     assert (dry_contact := mock_envoy.data.dry_contact_settings[relay])
@@ -203,7 +203,7 @@ async def test_number_operation_relays_with_error(
     test_value: float,
 ) -> None:
     """Test enphase_envoy number relay entities operation with error returned."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, config_entry)
 
     assert (dry_contact := mock_envoy.data.dry_contact_settings[relay])

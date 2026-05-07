@@ -83,7 +83,7 @@ async def _mock_download_file_meta_defect(path: str, filename: str) -> MockStrea
 @pytest.fixture
 def mock_dsm_with_filestation():
     """Mock a successful service with filestation support."""
-    with patch("homeassistant.components.synology_dsm.common.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.common.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -136,7 +136,7 @@ def mock_dsm_with_filestation():
 def mock_dsm_without_filestation():
     """Mock a successful service with filestation support."""
 
-    with patch("homeassistant.components.synology_dsm.common.SynologyDSM") as dsm:
+    with patch("inpui.components.synology_dsm.common.SynologyDSM") as dsm:
         dsm.login = AsyncMock(return_value=True)
         dsm.update = AsyncMock(return_value=True)
 
@@ -163,10 +163,10 @@ async def setup_dsm_with_filestation(
     """Mock setup of synology dsm config entry."""
     with (
         patch(
-            "homeassistant.components.synology_dsm.common.SynologyDSM",
+            "inpui.components.synology_dsm.common.SynologyDSM",
             return_value=mock_dsm_with_filestation,
         ),
-        patch("homeassistant.components.synology_dsm.PLATFORMS", return_value=[]),
+        patch("inpui.components.synology_dsm.PLATFORMS", return_value=[]),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -217,7 +217,7 @@ async def test_agents_not_loaded(
     hass_ws_client: WebSocketGenerator,
 ) -> None:
     """Test backup agent with no loaded config entry."""
-    with patch("homeassistant.components.backup.is_hassio", return_value=False):
+    with patch("inpui.components.backup.is_hassio", return_value=False):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {BACKUP_DOMAIN: {}})
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
         await hass.async_block_till_done()
@@ -574,10 +574,10 @@ async def test_agents_upload(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -626,10 +626,10 @@ async def test_agents_upload_error(
     # fail to upload the tar file
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,
@@ -655,10 +655,10 @@ async def test_agents_upload_error(
     # fail to upload the meta json file
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
         patch("pathlib.Path.open") as mocked_open,

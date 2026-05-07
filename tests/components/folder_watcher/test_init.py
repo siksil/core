@@ -75,7 +75,7 @@ def test_event() -> None:
             pass
 
     with patch(
-        "homeassistant.components.folder_watcher.PatternMatchingEventHandler",
+        "inpui.components.folder_watcher.PatternMatchingEventHandler",
         MockPatternMatchingEventHandler,
     ):
         hass = Mock()
@@ -105,7 +105,7 @@ def test_move_event() -> None:
             pass
 
     with patch(
-        "homeassistant.components.folder_watcher.PatternMatchingEventHandler",
+        "inpui.components.folder_watcher.PatternMatchingEventHandler",
         MockPatternMatchingEventHandler,
     ):
         hass = Mock()

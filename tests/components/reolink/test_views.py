@@ -76,7 +76,7 @@ async def test_playback_proxy(
     mock_session = get_mock_session(content_type=content_type)
 
     with patch(
-        "homeassistant.components.reolink.views.async_get_clientsession",
+        "inpui.components.reolink.views.async_get_clientsession",
         return_value=mock_session,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -165,7 +165,7 @@ async def test_playback_proxy_timeout(
     mock_session = get_mock_session([b"test", TimeoutError()], 4)
 
     with patch(
-        "homeassistant.components.reolink.views.async_get_clientsession",
+        "inpui.components.reolink.views.async_get_clientsession",
         return_value=mock_session,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -200,7 +200,7 @@ async def test_playback_wrong_content(
     mock_session = get_mock_session(content_type=content_type)
 
     with patch(
-        "homeassistant.components.reolink.views.async_get_clientsession",
+        "inpui.components.reolink.views.async_get_clientsession",
         return_value=mock_session,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -233,7 +233,7 @@ async def test_playback_connect_error(
     mock_session.get = AsyncMock(side_effect=ClientConnectionError(TEST_ERROR))
 
     with patch(
-        "homeassistant.components.reolink.views.async_get_clientsession",
+        "inpui.components.reolink.views.async_get_clientsession",
         return_value=mock_session,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)

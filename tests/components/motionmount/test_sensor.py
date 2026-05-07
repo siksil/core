@@ -32,7 +32,7 @@ async def test_error_status_sensor_states(
 ) -> None:
     """Tests the state attributes."""
     with patch(
-        "homeassistant.components.motionmount.motionmount.MotionMount",
+        "inpui.components.motionmount.motionmount.MotionMount",
         autospec=True,
     ) as motionmount_mock:
         motionmount_mock.return_value.name = ZEROCONF_NAME

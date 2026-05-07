@@ -51,7 +51,7 @@ def mock_api_unknown_error():
 @pytest.fixture(name="deluge_setup", autouse=True)
 def deluge_setup_fixture():
     """Mock deluge entry setup."""
-    with patch("homeassistant.components.deluge.async_setup_entry", return_value=True):
+    with patch("inpui.components.deluge.async_setup_entry", return_value=True):
         yield
 
 

@@ -147,8 +147,8 @@ async def test_config_entry_running(
 
     with (
         patch("pyhap.accessory_driver.AccessoryDriver.async_start"),
-        patch("homeassistant.components.homekit.HomeKit.async_stop"),
-        patch("homeassistant.components.homekit.async_port_is_available"),
+        patch("inpui.components.homekit.HomeKit.async_stop"),
+        patch("inpui.components.homekit.async_port_is_available"),
     ):
         assert await hass.config_entries.async_unload(entry.entry_id)
         await hass.async_block_till_done()
@@ -309,8 +309,8 @@ async def test_config_entry_accessory(
     }
     with (
         patch("pyhap.accessory_driver.AccessoryDriver.async_start"),
-        patch("homeassistant.components.homekit.HomeKit.async_stop"),
-        patch("homeassistant.components.homekit.async_port_is_available"),
+        patch("inpui.components.homekit.HomeKit.async_stop"),
+        patch("inpui.components.homekit.async_port_is_available"),
     ):
         assert await hass.config_entries.async_unload(entry.entry_id)
         await hass.async_block_till_done()
@@ -650,8 +650,8 @@ async def test_config_entry_with_trigger_accessory(
 
     with (
         patch("pyhap.accessory_driver.AccessoryDriver.async_start"),
-        patch("homeassistant.components.homekit.HomeKit.async_stop"),
-        patch("homeassistant.components.homekit.async_port_is_available"),
+        patch("inpui.components.homekit.HomeKit.async_stop"),
+        patch("inpui.components.homekit.async_port_is_available"),
     ):
         assert await hass.config_entries.async_unload(entry.entry_id)
         await hass.async_block_till_done()

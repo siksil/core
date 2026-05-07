@@ -37,7 +37,7 @@ async def test_config_not_ready(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.nam.NettigoAirMonitor.initialize",
+        "inpui.components.nam.NettigoAirMonitor.initialize",
         side_effect=ApiError("API Error"),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -55,7 +55,7 @@ async def test_config_auth_failed(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.nam.NettigoAirMonitor.async_get_mac_address",
+        "inpui.components.nam.NettigoAirMonitor.async_get_mac_address",
         side_effect=AuthFailedError("Authorization has failed"),
     ):
         await hass.config_entries.async_setup(entry.entry_id)

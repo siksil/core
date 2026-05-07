@@ -40,7 +40,7 @@ from tests.common import (
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.vodafone_station.async_setup_entry",
+        "inpui.components.vodafone_station.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -51,19 +51,19 @@ def mock_vodafone_station_router() -> Generator[AsyncMock]:
     """Mock a Vodafone Station router."""
     with (
         patch(
-            "homeassistant.components.vodafone_station.coordinator.init_device_class",
+            "inpui.components.vodafone_station.coordinator.init_device_class",
             autospec=True,
         ) as mock_router,
         patch(
-            "homeassistant.components.vodafone_station.config_flow.init_device_class",
+            "inpui.components.vodafone_station.config_flow.init_device_class",
             new=mock_router,
         ),
         patch(
-            "homeassistant.components.vodafone_station.config_flow.get_device_type",
+            "inpui.components.vodafone_station.config_flow.get_device_type",
             new=AsyncMock(return_value=(TEST_TYPE, URL(TEST_URL))),
         ),
         patch(
-            "homeassistant.components.vodafone_station.get_device_type",
+            "inpui.components.vodafone_station.get_device_type",
             new=AsyncMock(return_value=(TEST_TYPE, URL(TEST_URL))),
         ),
     ):
@@ -130,7 +130,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_getrandbits():
     """Mock image access token which normally is randomized."""
     with patch(
-        "homeassistant.components.image.SystemRandom.getrandbits",
+        "inpui.components.image.SystemRandom.getrandbits",
         return_value=1,
     ):
         yield

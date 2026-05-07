@@ -34,7 +34,7 @@ async def test_config_entry_migrations(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         entry = MockConfigEntry(
@@ -65,7 +65,7 @@ async def test_async_setup_entry(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -173,11 +173,11 @@ async def test_config_not_ready(
     error_message = f"Error fetching UPS state: {nut_error_message}"
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_ups",
+            "inpui.components.nut.AIONUTClient.list_ups",
             return_value={"ups1"},
         ),
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_vars",
+            "inpui.components.nut.AIONUTClient.list_vars",
             side_effect=NUTError(nut_error_message),
         ),
     ):
@@ -203,11 +203,11 @@ async def test_auth_fails(
     error_message = f"Device authentication error: {nut_error_message}"
     with (
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_ups",
+            "inpui.components.nut.AIONUTClient.list_ups",
             return_value={"ups1"},
         ),
         patch(
-            "homeassistant.components.nut.AIONUTClient.list_vars",
+            "inpui.components.nut.AIONUTClient.list_vars",
             side_effect=NUTLoginError(nut_error_message),
         ),
     ):
@@ -283,7 +283,7 @@ async def test_update_options(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         mock_config_entry = MockConfigEntry(

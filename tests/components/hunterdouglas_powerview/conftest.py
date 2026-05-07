@@ -15,7 +15,7 @@ from tests.common import load_json_object_fixture, load_json_value_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.hunterdouglas_powerview.async_setup_entry",
+        "inpui.components.hunterdouglas_powerview.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -33,34 +33,34 @@ def mock_hunterdouglas_hub(
     """Return a mocked Powerview Hub with all data populated."""
     with (
         patch(
-            "homeassistant.components.hunterdouglas_powerview.util.Hub.request_raw_data",
+            "inpui.components.hunterdouglas_powerview.util.Hub.request_raw_data",
             return_value=load_json_object_fixture(device_json, DOMAIN),
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.util.Hub.request_home_data",
+            "inpui.components.hunterdouglas_powerview.util.Hub.request_home_data",
             return_value=load_json_object_fixture(home_json, DOMAIN),
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.util.Hub.request_raw_firmware",
+            "inpui.components.hunterdouglas_powerview.util.Hub.request_raw_firmware",
             return_value=load_json_object_fixture(firmware_json, DOMAIN),
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.Rooms.get_resources",
+            "inpui.components.hunterdouglas_powerview.Rooms.get_resources",
             return_value=load_json_value_fixture(rooms_json, DOMAIN),
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.Scenes.get_resources",
+            "inpui.components.hunterdouglas_powerview.Scenes.get_resources",
             return_value=load_json_value_fixture(scenes_json, DOMAIN),
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.Shades.get_resources",
+            "inpui.components.hunterdouglas_powerview.Shades.get_resources",
             return_value=load_json_value_fixture(shades_json, DOMAIN),
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.cover.BaseShade.refresh",
+            "inpui.components.hunterdouglas_powerview.cover.BaseShade.refresh",
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.cover.BaseShade.current_position",
+            "inpui.components.hunterdouglas_powerview.cover.BaseShade.current_position",
             new_callable=PropertyMock,
             return_value=ShadePosition(primary=0, secondary=0, tilt=0, velocity=0),
         ),

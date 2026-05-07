@@ -36,7 +36,7 @@ async def test_switch(
     """Test switch entity."""
     reolink_host.audio_record.return_value = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -109,7 +109,7 @@ async def test_host_switch(
     reolink_host.is_hub = False
     reolink_host.supported.return_value = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -174,7 +174,7 @@ async def test_chime_switch(
     """Test host switch entity."""
     reolink_chime.channel = channel
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -239,7 +239,7 @@ async def test_rule_switch(
     reolink_host.baichuan.rule_name.return_value = "Test"
     reolink_host.baichuan.rule_enabled.return_value = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SWITCH]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Prevent the actual integration from being set up."""
     with patch(
-        "homeassistant.components.ecobee.async_setup_entry", return_value=True
+        "inpui.components.ecobee.async_setup_entry", return_value=True
     ) as mock:
         yield mock
 
@@ -52,7 +52,7 @@ async def test_pin_request_succeeds(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": SOURCE_USER}
     )
 
-    with patch("homeassistant.components.ecobee.config_flow.Ecobee") as mock_ecobee:
+    with patch("inpui.components.ecobee.config_flow.Ecobee") as mock_ecobee:
         mock_ecobee = mock_ecobee.return_value
         mock_ecobee.request_pin.return_value = True
         mock_ecobee.pin = "test-pin"
@@ -75,7 +75,7 @@ async def test_pin_request_fails(hass: HomeAssistant) -> None:
         DOMAIN, context={"source": SOURCE_USER}
     )
 
-    with patch("homeassistant.components.ecobee.config_flow.Ecobee") as mock_ecobee:
+    with patch("inpui.components.ecobee.config_flow.Ecobee") as mock_ecobee:
         mock_ecobee = mock_ecobee.return_value
         mock_ecobee.request_pin.return_value = False
 
@@ -95,7 +95,7 @@ async def test_token_request_succeeds(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.ecobee.config_flow.Ecobee"
+        "inpui.components.ecobee.config_flow.Ecobee"
     ) as mock_flow_ecobee:
         flow_instance = mock_flow_ecobee.return_value
         flow_instance.request_pin.return_value = True
@@ -129,7 +129,7 @@ async def test_token_request_fails(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.ecobee.config_flow.Ecobee"
+        "inpui.components.ecobee.config_flow.Ecobee"
     ) as mock_flow_ecobee:
         flow_instance = mock_flow_ecobee.return_value
         flow_instance.request_pin.return_value = True
@@ -163,7 +163,7 @@ async def test_password_login_succeeds(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.ecobee.config_flow.Ecobee"
+        "inpui.components.ecobee.config_flow.Ecobee"
     ) as mock_flow_ecobee:
         flow_instance = mock_flow_ecobee.return_value
         flow_instance.refresh_tokens.return_value = True
@@ -224,7 +224,7 @@ async def test_password_login_error_recovers(
     )
 
     with patch(
-        "homeassistant.components.ecobee.config_flow.Ecobee"
+        "inpui.components.ecobee.config_flow.Ecobee"
     ) as mock_flow_ecobee:
         mock_flow_ecobee.return_value.refresh_tokens.return_value = False
 
@@ -237,7 +237,7 @@ async def test_password_login_error_recovers(
     assert result["errors"]["base"] == expected_error
 
     with patch(
-        "homeassistant.components.ecobee.config_flow.Ecobee"
+        "inpui.components.ecobee.config_flow.Ecobee"
     ) as mock_flow_ecobee:
         flow_instance = mock_flow_ecobee.return_value
         flow_instance.refresh_tokens.return_value = True

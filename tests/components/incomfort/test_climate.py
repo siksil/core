@@ -17,7 +17,7 @@ from .conftest import MOCK_HEATER_STATUS, MOCK_HEATER_STATUS_HEATING
 from tests.common import snapshot_platform
 
 
-@patch("homeassistant.components.incomfort.PLATFORMS", [Platform.CLIMATE])
+@patch("inpui.components.incomfort.PLATFORMS", [Platform.CLIMATE])
 @pytest.mark.parametrize(
     "mock_room_status",
     [

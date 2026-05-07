@@ -25,7 +25,7 @@ LOW_LATENCY_ENTITY_ID = "switch.jvc_projector_low_latency_mode"
 @pytest.fixture(autouse=True)
 def platform() -> Generator[AsyncMock]:
     """Fixture for platform."""
-    with patch("homeassistant.components.jvc_projector.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.jvc_projector.PLATFORMS", [Platform.SWITCH]):
         yield
 
 

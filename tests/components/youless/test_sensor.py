@@ -17,7 +17,7 @@ async def test_sensors(
     hass: HomeAssistant, entity_registry: er.EntityRegistry, snapshot: SnapshotAssertion
 ) -> None:
     """Test the sensor classes for youless."""
-    with patch("homeassistant.components.youless.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.youless.PLATFORMS", [Platform.SENSOR]):
         entry = await init_component(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

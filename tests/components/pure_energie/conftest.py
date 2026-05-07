@@ -29,7 +29,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.pure_energie.async_setup_entry", return_value=True
+        "inpui.components.pure_energie.async_setup_entry", return_value=True
     ):
         yield
 
@@ -38,7 +38,7 @@ def mock_setup_entry() -> Generator[None]:
 def mock_pure_energie_config_flow() -> Generator[MagicMock]:
     """Return a mocked Pure Energie client."""
     with patch(
-        "homeassistant.components.pure_energie.config_flow.GridNet", autospec=True
+        "inpui.components.pure_energie.config_flow.GridNet", autospec=True
     ) as pure_energie_mock:
         pure_energie = pure_energie_mock.return_value
         pure_energie.device.return_value = GridNetDevice.from_dict(
@@ -51,7 +51,7 @@ def mock_pure_energie_config_flow() -> Generator[MagicMock]:
 def mock_pure_energie():
     """Return a mocked Pure Energie client."""
     with patch(
-        "homeassistant.components.pure_energie.coordinator.GridNet", autospec=True
+        "inpui.components.pure_energie.coordinator.GridNet", autospec=True
     ) as pure_energie_mock:
         pure_energie = pure_energie_mock.return_value
         pure_energie.smartbridge = AsyncMock(

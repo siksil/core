@@ -226,7 +226,7 @@ async def test_sensor_migration(
 
     # Simulate migration to RestoreSensor
     with patch(
-        "homeassistant.helpers.restore_state.RestoreEntity.async_get_last_extra_data",
+        "inpui.helpers.restore_state.RestoreEntity.async_get_last_extra_data",
         return_value=None,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

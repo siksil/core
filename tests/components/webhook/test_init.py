@@ -248,7 +248,7 @@ async def test_webhook_local_only(hass: HomeAssistant, mock_client) -> None:
 
     # Request from remote IP
     with patch(
-        "homeassistant.components.webhook.ip_address",
+        "inpui.components.webhook.ip_address",
         return_value=ip_address("123.123.123.123"),
     ):
         resp = await mock_client.post(f"/api/webhook/{webhook_id}", json={"data": True})

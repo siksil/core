@@ -33,7 +33,7 @@ async def test_airzone_switch_off(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -55,7 +55,7 @@ async def test_airzone_switch_on(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(

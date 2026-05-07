@@ -109,7 +109,7 @@ async def test_migration_from(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.swiss_public_transport.OpendataTransport",
+        "inpui.components.swiss_public_transport.OpendataTransport",
         return_value=AsyncMock(),
     ) as mock:
         mock().connections = CONNECTIONS
@@ -155,7 +155,7 @@ async def test_migrate_error_from_future(hass: HomeAssistant) -> None:
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.swiss_public_transport.OpendataTransport",
+        "inpui.components.swiss_public_transport.OpendataTransport",
         return_value=AsyncMock(),
     ) as mock:
         mock().connections = CONNECTIONS

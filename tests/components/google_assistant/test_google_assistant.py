@@ -65,7 +65,7 @@ async def assistant_client(
 async def wanted_platforms_only() -> None:
     """Enable only the wanted demo platforms."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [
             Platform.ALARM_CONTROL_PANEL,
             Platform.CLIMATE,

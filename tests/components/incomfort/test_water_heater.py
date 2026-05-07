@@ -15,7 +15,7 @@ from .conftest import MOCK_HEATER_STATUS
 from tests.common import snapshot_platform
 
 
-@patch("homeassistant.components.incomfort.PLATFORMS", [Platform.WATER_HEATER])
+@patch("inpui.components.incomfort.PLATFORMS", [Platform.WATER_HEATER])
 async def test_setup_platform(
     hass: HomeAssistant,
     mock_incomfort: MagicMock,
@@ -47,7 +47,7 @@ async def test_setup_platform(
         "tapping_and_heater_temp_not_available_unknown",
     ],
 )
-@patch("homeassistant.components.incomfort.PLATFORMS", [Platform.WATER_HEATER])
+@patch("inpui.components.incomfort.PLATFORMS", [Platform.WATER_HEATER])
 async def test_current_temperature_cases(
     hass: HomeAssistant,
     mock_incomfort: MagicMock,

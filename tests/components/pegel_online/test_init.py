@@ -35,7 +35,7 @@ async def test_setup_error(
         unique_id=MOCK_CONFIG_ENTRY_DATA_DRESDEN[CONF_STATION],
     )
     entry.add_to_hass(hass)
-    with patch("homeassistant.components.pegel_online.PegelOnline") as pegelonline:
+    with patch("inpui.components.pegel_online.PegelOnline") as pegelonline:
         pegelonline.return_value = PegelOnlineMock(
             station_details=MOCK_STATION_DETAILS_DRESDEN,
             station_measurements=MOCK_STATION_MEASUREMENT_DRESDEN,
@@ -56,7 +56,7 @@ async def test_update_error(
         unique_id=MOCK_CONFIG_ENTRY_DATA_DRESDEN[CONF_STATION],
     )
     entry.add_to_hass(hass)
-    with patch("homeassistant.components.pegel_online.PegelOnline") as pegelonline:
+    with patch("inpui.components.pegel_online.PegelOnline") as pegelonline:
         pegelonline.return_value = PegelOnlineMock(
             station_details=MOCK_STATION_DETAILS_DRESDEN,
             station_measurements=MOCK_STATION_MEASUREMENT_DRESDEN,

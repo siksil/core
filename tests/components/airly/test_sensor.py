@@ -31,7 +31,7 @@ async def test_sensor(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test states of the sensor."""
-    with patch("homeassistant.components.airly.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.airly.PLATFORMS", [Platform.SENSOR]):
         entry = await init_integration(hass, aioclient_mock)
 
     entity_entries = er.async_entries_for_config_entry(entity_registry, entry.entry_id)

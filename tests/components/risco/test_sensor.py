@@ -110,11 +110,11 @@ CATEGORIES_TO_EVENTS = {
 def _no_zones_and_partitions():
     with (
         patch(
-            "homeassistant.components.risco.RiscoLocal.zones",
+            "inpui.components.risco.RiscoLocal.zones",
             new_callable=PropertyMock(return_value=[]),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.partitions",
+            "inpui.components.risco.RiscoLocal.partitions",
             new_callable=PropertyMock(return_value=[]),
         ),
     ):
@@ -168,7 +168,7 @@ async def _set_utc_time_zone(hass: HomeAssistant) -> None:
 def save_mock():
     """Create a mock for async_save."""
     with patch(
-        "homeassistant.components.risco.coordinator.Store.async_save",
+        "inpui.components.risco.coordinator.Store.async_save",
     ) as save_mock:
         yield save_mock
 
@@ -191,10 +191,10 @@ async def test_cloud_setup(
 
     with (
         patch(
-            "homeassistant.components.risco.RiscoCloud.get_events", return_value=[]
+            "inpui.components.risco.RiscoCloud.get_events", return_value=[]
         ) as events_mock,
         patch(
-            "homeassistant.components.risco.coordinator.Store.async_load",
+            "inpui.components.risco.coordinator.Store.async_load",
             return_value={LAST_EVENT_TIMESTAMP_KEY: TEST_EVENTS[0].time},
         ),
     ):

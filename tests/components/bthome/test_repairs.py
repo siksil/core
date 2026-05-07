@@ -48,7 +48,7 @@ async def _setup_entry(
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

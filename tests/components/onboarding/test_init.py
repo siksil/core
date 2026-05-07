@@ -20,7 +20,7 @@ async def test_not_setup_views_if_onboarded(
     """Test if onboarding is done, we don't setup views."""
     mock_storage(hass_storage, {"done": onboarding.STEPS})
 
-    with patch("homeassistant.components.onboarding.views.async_setup") as mock_setup:
+    with patch("inpui.components.onboarding.views.async_setup") as mock_setup:
         assert await async_setup_component(hass, "onboarding", {})
 
     assert len(mock_setup.mock_calls) == 0
@@ -31,7 +31,7 @@ async def test_not_setup_views_if_onboarded(
 async def test_setup_views_if_not_onboarded(hass: HomeAssistant) -> None:
     """Test if onboarding is not done, we setup views."""
     with patch(
-        "homeassistant.components.onboarding.views.async_setup",
+        "inpui.components.onboarding.views.async_setup",
     ) as mock_setup:
         assert await async_setup_component(hass, "onboarding", {})
 
@@ -81,7 +81,7 @@ async def test_having_owner_finishes_user_step(
     MockUser(is_owner=True).add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.onboarding.views.async_setup") as mock_setup,
+        patch("inpui.components.onboarding.views.async_setup") as mock_setup,
         patch.object(onboarding, "STEPS", [onboarding.STEP_USER]),
     ):
         assert await async_setup_component(hass, "onboarding", {})

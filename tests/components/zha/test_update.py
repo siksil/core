@@ -64,7 +64,7 @@ from tests.typing import WebSocketGenerator
 def update_platform_only():
     """Only set up the update and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.UPDATE,
             Platform.SENSOR,

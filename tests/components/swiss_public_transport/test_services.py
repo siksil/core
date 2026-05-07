@@ -65,7 +65,7 @@ async def test_service_call_fetch_connections_success(
     )
 
     with patch(
-        "homeassistant.components.swiss_public_transport.OpendataTransport",
+        "inpui.components.swiss_public_transport.OpendataTransport",
         return_value=AsyncMock(),
     ) as mock:
         mock().connections = json.loads(
@@ -133,7 +133,7 @@ async def test_service_call_fetch_connections_error(
     )
 
     with patch(
-        "homeassistant.components.swiss_public_transport.OpendataTransport",
+        "inpui.components.swiss_public_transport.OpendataTransport",
         return_value=AsyncMock(),
     ) as mock:
         mock().connections = json.loads(
@@ -175,7 +175,7 @@ async def test_service_call_load_unload(
     bad_entry_id = "bad_entry_id"
 
     with patch(
-        "homeassistant.components.swiss_public_transport.OpendataTransport",
+        "inpui.components.swiss_public_transport.OpendataTransport",
         return_value=AsyncMock(),
     ) as mock:
         mock().connections = json.loads(

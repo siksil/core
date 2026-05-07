@@ -43,11 +43,11 @@ def mock_egauge_client() -> Generator[MagicMock]:
     """Return a mocked eGauge client."""
     with (
         patch(
-            "homeassistant.components.egauge.coordinator.EgaugeJsonClient",
+            "inpui.components.egauge.coordinator.EgaugeJsonClient",
             autospec=True,
         ) as mock_class,
         patch(
-            "homeassistant.components.egauge.config_flow.EgaugeJsonClient",
+            "inpui.components.egauge.config_flow.EgaugeJsonClient",
             new=mock_class,
         ),
     ):

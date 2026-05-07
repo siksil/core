@@ -34,7 +34,7 @@ async def test_service_request_area_preset(hass: HomeAssistant) -> None:
     entry2.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+            "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
             return_value=True,
         ),
         patch(
@@ -107,7 +107,7 @@ async def test_service_request_channel_level(hass: HomeAssistant) -> None:
     entry2.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+            "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
             return_value=True,
         ),
         patch(
@@ -149,7 +149,7 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=dynalite.DOMAIN, data={CONF_HOST: host})
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.dynalite.bridge.DynaliteDevices.async_setup",
+        "inpui.components.dynalite.bridge.DynaliteDevices.async_setup",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

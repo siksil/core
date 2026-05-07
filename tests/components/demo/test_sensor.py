@@ -20,7 +20,7 @@ from tests.common import mock_restore_cache_with_extra_data
 async def sensor_only() -> None:
     """Enable only the sensor platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.SENSOR],
     ):
         yield

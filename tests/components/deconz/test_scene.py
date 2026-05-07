@@ -48,7 +48,7 @@ async def test_scenes(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of scene entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.SCENE]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.SCENE]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

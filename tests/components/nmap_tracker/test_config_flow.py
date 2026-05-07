@@ -40,7 +40,7 @@ async def test_form(hass: HomeAssistant, hosts: str) -> None:
     assert CONF_SCAN_INTERVAL not in schema_defaults
 
     with patch(
-        "homeassistant.components.nmap_tracker.async_setup_entry",
+        "inpui.components.nmap_tracker.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -78,7 +78,7 @@ async def test_form_range(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.nmap_tracker.async_setup_entry",
+        "inpui.components.nmap_tracker.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -262,7 +262,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.nmap_tracker.async_setup_entry",
+        "inpui.components.nmap_tracker.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.options.async_configure(

@@ -149,7 +149,7 @@ async def test_camera_stream(hass: HomeAssistant) -> None:
     await setup_test_config_entry(hass, hyperion_client=client)
 
     with patch(
-        "homeassistant.components.hyperion.camera.async_get_still_stream",
+        "inpui.components.hyperion.camera.async_get_still_stream",
     ) as fake:
         fake.side_effect = fake_get_still_stream
 

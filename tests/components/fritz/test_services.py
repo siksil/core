@@ -54,7 +54,7 @@ async def test_service_set_guest_wifi_password(
     )
     assert device
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password"
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password"
     ) as mock_async_trigger_set_guest_password:
         await hass.services.async_call(
             DOMAIN, SERVICE_SET_GUEST_WIFI_PW, {"device_id": device.id}
@@ -83,7 +83,7 @@ async def test_service_set_guest_wifi_password_unknown_parameter(
     assert device
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password",
         side_effect=FritzServiceError("boom"),
     ) as mock_async_trigger_set_guest_password:
         await hass.services.async_call(
@@ -114,7 +114,7 @@ async def test_service_set_guest_wifi_password_service_not_supported(
     assert device
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password",
         side_effect=FritzConnectionException("boom"),
     ) as mock_async_trigger_set_guest_password:
         await hass.services.async_call(
@@ -133,7 +133,7 @@ async def test_service_set_guest_wifi_password_unloaded(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password"
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_set_guest_password"
     ) as mock_async_trigger_set_guest_password:
         await hass.services.async_call(
             DOMAIN, SERVICE_SET_GUEST_WIFI_PW, {"device_id": "12345678"}
@@ -165,7 +165,7 @@ async def test_service_dial(
     )
     assert device
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial"
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial"
     ) as mock_async_trigger_dial:
         await hass.services.async_call(
             DOMAIN,
@@ -198,7 +198,7 @@ async def test_service_dial_unknown_parameter(
     assert device
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
         side_effect=FritzServiceError("boom"),
     ) as mock_async_trigger_dial:
         await hass.services.async_call(
@@ -231,7 +231,7 @@ async def test_service_dial_wrong_parameter(
     assert device
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
     ) as mock_async_trigger_dial:
         with pytest.raises(MultipleInvalid):
             await hass.services.async_call(
@@ -245,7 +245,7 @@ async def test_service_dial_wrong_parameter(
             )
         assert not mock_async_trigger_dial.called
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
     ) as mock_async_trigger_dial:
         with pytest.raises(MultipleInvalid):
             await hass.services.async_call(
@@ -281,7 +281,7 @@ async def test_service_dial_service_not_supported(
     assert device
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
         side_effect=FritzConnectionException("boom"),
     ) as mock_async_trigger_dial:
         await hass.services.async_call(
@@ -314,7 +314,7 @@ async def test_service_dial_failed(
     assert device
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial",
         side_effect=FritzActionFailedError("boom"),
     ) as mock_async_trigger_dial:
         await hass.services.async_call(
@@ -339,7 +339,7 @@ async def test_service_dial_unloaded(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.fritz.coordinator.AvmWrapper.async_trigger_dial"
+        "inpui.components.fritz.coordinator.AvmWrapper.async_trigger_dial"
     ) as mock_async_trigger_dial:
         await hass.services.async_call(
             DOMAIN,

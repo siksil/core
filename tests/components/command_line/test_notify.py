@@ -269,7 +269,7 @@ async def test_subprocess_exceptions(
     """Test that notify subprocess exceptions are handled correctly."""
 
     with patch(
-        "homeassistant.components.command_line.notify.subprocess.Popen"
+        "inpui.components.command_line.notify.subprocess.Popen"
     ) as check_output:
         check_output.return_value.__enter__ = check_output
         check_output.return_value.communicate.side_effect = [

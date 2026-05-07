@@ -27,7 +27,7 @@ async def test_switch(
 ) -> None:
     """Test switch platform."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.SWITCH],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -43,7 +43,7 @@ async def test_suspend_software(
 ) -> None:
     """Test switch platform."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.SWITCH],
     ):
         await setup_integration(hass, mock_config_entry)

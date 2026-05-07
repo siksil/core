@@ -17,7 +17,7 @@ API_INFO = {
 @pytest.fixture
 def mock_api():
     """Mock the API with defaults."""
-    with patch("homeassistant.components.zimi.async_connect_to_controller") as mock:
+    with patch("inpui.components.zimi.async_connect_to_controller") as mock:
         mock_api = mock.return_value
         mock_api.describe = MagicMock()
         mock_api.disconnect = MagicMock()

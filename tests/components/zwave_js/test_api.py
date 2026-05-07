@@ -1661,7 +1661,7 @@ async def test_parse_qr_code_string(
 
     # Test FailedZWaveCommand is caught
     with patch(
-        "homeassistant.components.zwave_js.api.async_parse_qr_code_string",
+        "inpui.components.zwave_js.api.async_parse_qr_code_string",
         side_effect=FailedZWaveCommand("failed_command", 1, "error message"),
     ):
         await ws_client.send_json(
@@ -1728,7 +1728,7 @@ async def test_try_parse_dsk_from_qr_code_string(
 
     # Test FailedZWaveCommand is caught
     with patch(
-        "homeassistant.components.zwave_js.api.async_try_parse_dsk_from_qr_code_string",
+        "inpui.components.zwave_js.api.async_try_parse_dsk_from_qr_code_string",
         side_effect=FailedZWaveCommand("failed_command", 1, "error message"),
     ):
         await ws_client.send_json(
@@ -3116,7 +3116,7 @@ async def test_set_config_parameter(
     client.async_send_command_no_wait.reset_mock()
 
     with patch(
-        "homeassistant.components.zwave_js.api.async_set_config_parameter",
+        "inpui.components.zwave_js.api.async_set_config_parameter",
     ) as set_param_mock:
         set_param_mock.side_effect = InvalidNewValue("test")
         await ws_client.send_json(
@@ -3192,7 +3192,7 @@ async def test_set_config_parameter(
 
     # Test FailedZWaveCommand is caught
     with patch(
-        "homeassistant.components.zwave_js.api.async_set_config_parameter",
+        "inpui.components.zwave_js.api.async_set_config_parameter",
         side_effect=FailedZWaveCommand("failed_command", 1, "error message"),
     ):
         await ws_client.send_json(
@@ -3497,13 +3497,13 @@ async def test_firmware_upload_view(
     device = get_device(hass, multisensor_6)
     with (
         patch(
-            "homeassistant.components.zwave_js.api.update_firmware",
+            "inpui.components.zwave_js.api.update_firmware",
         ) as mock_node_cmd,
         patch(
-            "homeassistant.components.zwave_js.api.driver_firmware_update_otw",
+            "inpui.components.zwave_js.api.driver_firmware_update_otw",
         ) as mock_controller_cmd,
         patch.dict(
-            "homeassistant.components.zwave_js.api.USER_AGENT",
+            "inpui.components.zwave_js.api.USER_AGENT",
             {"HomeAssistant": "0.0.0"},
         ),
     ):
@@ -3540,13 +3540,13 @@ async def test_firmware_upload_view_controller(
     device = get_device(hass, client.driver.controller.nodes[1])
     with (
         patch(
-            "homeassistant.components.zwave_js.api.update_firmware",
+            "inpui.components.zwave_js.api.update_firmware",
         ) as mock_node_cmd,
         patch(
-            "homeassistant.components.zwave_js.api.driver_firmware_update_otw",
+            "inpui.components.zwave_js.api.driver_firmware_update_otw",
         ) as mock_controller_cmd,
         patch.dict(
-            "homeassistant.components.zwave_js.api.USER_AGENT",
+            "inpui.components.zwave_js.api.USER_AGENT",
             {"HomeAssistant": "0.0.0"},
         ),
     ):
@@ -3577,7 +3577,7 @@ async def test_firmware_upload_view_failed_command(
     client = await hass_client()
     device = get_device(hass, multisensor_6)
     with patch(
-        "homeassistant.components.zwave_js.api.update_firmware",
+        "inpui.components.zwave_js.api.update_firmware",
         side_effect=FailedCommand("test", "test"),
     ):
         resp = await client.post(
@@ -5172,7 +5172,7 @@ async def test_hard_reset_controller(
     client.driver.async_hard_reset.side_effect = mock_driver_hard_reset_no_driver_ready
 
     with patch(
-        "homeassistant.components.zwave_js.helpers.DRIVER_READY_EVENT_TIMEOUT",
+        "inpui.components.zwave_js.helpers.DRIVER_READY_EVENT_TIMEOUT",
         new=0,
     ):
         await ws_client.send_json_auto_id(
@@ -5652,7 +5652,7 @@ async def test_restore_nvm(
     )
 
     with patch(
-        "homeassistant.components.zwave_js.helpers.DRIVER_READY_EVENT_TIMEOUT",
+        "inpui.components.zwave_js.helpers.DRIVER_READY_EVENT_TIMEOUT",
         new=0,
     ):
         # Send the subscription request

@@ -26,7 +26,7 @@ async def test_entities(
 ) -> None:
     """Test all binary sensor entities match the snapshot."""
     with patch(
-        "homeassistant.components.casper_glow.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.casper_glow.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -46,7 +46,7 @@ async def test_binary_sensor_state_update(
 ) -> None:
     """Test that the binary sensor reflects is_paused state changes."""
     with patch(
-        "homeassistant.components.casper_glow.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.casper_glow.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 
@@ -65,7 +65,7 @@ async def test_binary_sensor_ignores_none_paused_state(
 ) -> None:
     """Test that a callback with is_paused=None does not overwrite the state."""
     with patch(
-        "homeassistant.components.casper_glow.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.casper_glow.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

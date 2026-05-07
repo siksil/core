@@ -35,11 +35,11 @@ async def test_user_form(hass: HomeAssistant) -> None:
     harmonyapi = _get_mock_harmonyapi(connect=True)
     with (
         patch(
-            "homeassistant.components.harmony.util.HarmonyAPI",
+            "inpui.components.harmony.util.HarmonyAPI",
             return_value=harmonyapi,
         ),
         patch(
-            "homeassistant.components.harmony.async_setup_entry",
+            "inpui.components.harmony.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -59,7 +59,7 @@ async def test_form_ssdp(hass: HomeAssistant) -> None:
     """Test we get the form with ssdp source."""
 
     with patch(
-        "homeassistant.components.harmony.config_flow.HubConnector.get_remote_id",
+        "inpui.components.harmony.config_flow.HubConnector.get_remote_id",
         return_value=1234,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -90,11 +90,11 @@ async def test_form_ssdp(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.harmony.util.HarmonyAPI",
+            "inpui.components.harmony.util.HarmonyAPI",
             return_value=harmonyapi,
         ),
         patch(
-            "homeassistant.components.harmony.async_setup_entry",
+            "inpui.components.harmony.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -114,7 +114,7 @@ async def test_form_ssdp_fails_to_get_remote_id(hass: HomeAssistant) -> None:
     """Test we abort if we cannot get the remote id."""
 
     with patch(
-        "homeassistant.components.harmony.config_flow.HubConnector.get_remote_id",
+        "inpui.components.harmony.config_flow.HubConnector.get_remote_id",
         side_effect=aiohttp.ClientError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -153,7 +153,7 @@ async def test_form_ssdp_aborts_before_checking_remoteid_if_host_known(
     harmonyapi = _get_mock_harmonyapi(connect=True)
 
     with patch(
-        "homeassistant.components.harmony.util.HarmonyAPI",
+        "inpui.components.harmony.util.HarmonyAPI",
         return_value=harmonyapi,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -178,7 +178,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.harmony.util.HarmonyAPI",
+        "inpui.components.harmony.util.HarmonyAPI",
         side_effect=CannotConnect,
     ):
         result2 = await hass.config_entries.flow.async_configure(

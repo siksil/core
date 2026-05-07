@@ -21,11 +21,11 @@ async def test_flow_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.zerproc.config_flow.pyzerproc.discover",
+            "inpui.components.zerproc.config_flow.pyzerproc.discover",
             return_value=["Light1", "Light2"],
         ),
         patch(
-            "homeassistant.components.zerproc.async_setup_entry",
+            "inpui.components.zerproc.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -53,11 +53,11 @@ async def test_flow_no_devices_found(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.zerproc.config_flow.pyzerproc.discover",
+            "inpui.components.zerproc.config_flow.pyzerproc.discover",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.zerproc.async_setup_entry",
+            "inpui.components.zerproc.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -83,11 +83,11 @@ async def test_flow_exceptions_caught(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.zerproc.config_flow.pyzerproc.discover",
+            "inpui.components.zerproc.config_flow.pyzerproc.discover",
             side_effect=pyzerproc.ZerprocException("TEST"),
         ),
         patch(
-            "homeassistant.components.zerproc.async_setup_entry",
+            "inpui.components.zerproc.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

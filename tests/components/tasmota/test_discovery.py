@@ -44,7 +44,7 @@ async def test_future_discovery_message(
     config["so"]["another_future_option"] = "EVEN_BETTER"
 
     with patch(
-        "homeassistant.components.tasmota.discovery.tasmota_get_device_config",
+        "inpui.components.tasmota.discovery.tasmota_get_device_config",
         return_value={},
     ) as mock_tasmota_get_device_config:
         await setup_tasmota_helper(hass)
@@ -63,7 +63,7 @@ async def test_valid_discovery_message(
     config = copy.deepcopy(DEFAULT_CONFIG)
 
     with patch(
-        "homeassistant.components.tasmota.discovery.tasmota_get_device_config",
+        "inpui.components.tasmota.discovery.tasmota_get_device_config",
         return_value={},
     ) as mock_tasmota_get_device_config:
         await setup_tasmota_helper(hass)
@@ -78,7 +78,7 @@ async def test_valid_discovery_message(
 async def test_invalid_topic(hass: HomeAssistant, mqtt_mock: MqttMockHAClient) -> None:
     """Test receiving discovery message on wrong topic."""
     with patch(
-        "homeassistant.components.tasmota.discovery.tasmota_get_device_config"
+        "inpui.components.tasmota.discovery.tasmota_get_device_config"
     ) as mock_tasmota_get_device_config:
         await setup_tasmota_helper(hass)
 
@@ -92,7 +92,7 @@ async def test_invalid_message(
 ) -> None:
     """Test receiving an invalid message."""
     with patch(
-        "homeassistant.components.tasmota.discovery.tasmota_get_device_config"
+        "inpui.components.tasmota.discovery.tasmota_get_device_config"
     ) as mock_tasmota_get_device_config:
         await setup_tasmota_helper(hass)
 
@@ -109,7 +109,7 @@ async def test_invalid_mac(
     config = copy.deepcopy(DEFAULT_CONFIG)
 
     with patch(
-        "homeassistant.components.tasmota.discovery.tasmota_get_device_config"
+        "inpui.components.tasmota.discovery.tasmota_get_device_config"
     ) as mock_tasmota_get_device_config:
         await setup_tasmota_helper(hass)
 

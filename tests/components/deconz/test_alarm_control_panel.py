@@ -104,7 +104,7 @@ async def test_alarm_control_panel(
 ) -> None:
     """Test successful creation of alarm control panel entities."""
     with patch(
-        "homeassistant.components.deconz.PLATFORMS", [Platform.ALARM_CONTROL_PANEL]
+        "inpui.components.deconz.PLATFORMS", [Platform.ALARM_CONTROL_PANEL]
     ):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)

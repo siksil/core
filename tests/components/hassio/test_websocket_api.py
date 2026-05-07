@@ -354,7 +354,7 @@ async def test_update_addon(
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await client.send_json_auto_id(
             {"type": "hassio/update/addon", "addon": "test", "backup": False}
@@ -464,7 +464,7 @@ async def test_update_addon_with_backup(
 
     supervisor_client.mounts.info.return_value.default_backup_mount = default_mount
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await client.send_json_auto_id(
             {"type": "hassio/update/addon", "addon": "test", "backup": True}
@@ -609,15 +609,15 @@ async def test_update_addon_with_backup_removes_old_backups(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
         ) as mock_create_backup,
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_delete_backup",
+            "inpui.components.backup.manager.BackupManager.async_delete_backup",
             autospec=True,
             return_value={},
         ) as async_delete_backup,
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backups",
+            "inpui.components.backup.manager.BackupManager.async_get_backups",
             return_value=(backups, {}),
         ),
     ):
@@ -664,7 +664,7 @@ async def test_update_core(
 
     supervisor_client.homeassistant.update.return_value = None
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await client.send_json_auto_id({"type": "hassio/update/core", "backup": False})
         result = await client.receive_json()
@@ -766,7 +766,7 @@ async def test_update_core_with_backup(
     supervisor_client.homeassistant.update.return_value = None
     supervisor_client.mounts.info.return_value.default_backup_mount = default_mount
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await client.send_json_auto_id({"type": "hassio/update/core", "backup": True})
         result = await client.receive_json()
@@ -840,11 +840,11 @@ async def test_update_addon_with_backup_and_error(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
             side_effect=create_backup_error,
         ),
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_delete_filtered_backups",
+            "inpui.components.backup.manager.BackupManager.async_delete_filtered_backups",
             side_effect=delete_filtered_backups_error,
         ),
     ):
@@ -907,7 +907,7 @@ async def test_update_core_with_backup_and_error(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
             side_effect=BackupManagerError,
         ),
     ):

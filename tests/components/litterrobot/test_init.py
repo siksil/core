@@ -71,7 +71,7 @@ async def test_entry_not_setup(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.litterrobot.coordinator.Account.connect",
+        "inpui.components.litterrobot.coordinator.Account.connect",
         side_effect=side_effect,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -93,11 +93,11 @@ async def test_unique_id_migration(
 
     with (
         patch(
-            "homeassistant.components.litterrobot.Account",
+            "inpui.components.litterrobot.Account",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.coordinator.Account",
+            "inpui.components.litterrobot.coordinator.Account",
             return_value=mock_account,
         ),
     ):
@@ -151,11 +151,11 @@ async def test_unique_id_migration_conflict(
 
     with (
         patch(
-            "homeassistant.components.litterrobot.Account",
+            "inpui.components.litterrobot.Account",
             return_value=mock_account,
         ),
         patch(
-            "homeassistant.components.litterrobot.coordinator.Account",
+            "inpui.components.litterrobot.coordinator.Account",
             return_value=mock_account,
         ),
     ):
@@ -179,7 +179,7 @@ async def test_unique_id_migration_connection_failure(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.litterrobot.Account.connect",
+        "inpui.components.litterrobot.Account.connect",
         side_effect=LitterRobotException,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -285,7 +285,7 @@ async def test_dynamic_devices(
     mock_account.robots.pop(0)
 
     with patch(
-        "homeassistant.components.litterrobot.coordinator.Account",
+        "inpui.components.litterrobot.coordinator.Account",
         return_value=mock_account,
     ):
         await hass.config_entries.async_reload(entry.entry_id)

@@ -125,7 +125,7 @@ async def test_integrationt_requirement_not_found(hass: HomeAssistant) -> None:
     files = {YAML_CONFIG_FILE: BASE_CONFIG + "test_custom_component:"}
     with (
         patch(
-            "homeassistant.helpers.check_config.async_get_integration_with_requirements",
+            "inpui.helpers.check_config.async_get_integration_with_requirements",
             side_effect=RequirementsNotFound("test_custom_component", ["any"]),
         ),
         patch("os.path.isfile", return_value=True),
@@ -178,7 +178,7 @@ async def test_integration_import_error(hass: HomeAssistant) -> None:
     files = {YAML_CONFIG_FILE: BASE_CONFIG + "light:"}
     with (
         patch(
-            "homeassistant.loader.Integration.async_get_component",
+            "inpui.loader.Integration.async_get_component",
             side_effect=ImportError("blablabla"),
         ),
         patch("os.path.isfile", return_value=True),
@@ -348,11 +348,11 @@ async def test_config_platform_import_error(hass: HomeAssistant) -> None:
     files = {YAML_CONFIG_FILE: BASE_CONFIG + "light:\n  platform: beer"}
     with (
         patch(
-            "homeassistant.loader.Integration.async_get_platform",
+            "inpui.loader.Integration.async_get_platform",
             side_effect=ImportError("blablabla"),
         ),
         patch("os.path.isfile", return_value=True),
-        patch("homeassistant.loader.Integration.platforms_exists", return_value=True),
+        patch("inpui.loader.Integration.platforms_exists", return_value=True),
         patch_yaml_files(files),
     ):
         res = await async_check_ha_config_file(hass)
@@ -373,10 +373,10 @@ async def test_platform_import_error(hass: HomeAssistant) -> None:
     files = {YAML_CONFIG_FILE: BASE_CONFIG + "light:\n  platform: demo"}
     with (
         patch(
-            "homeassistant.loader.Integration.async_get_platform",
+            "inpui.loader.Integration.async_get_platform",
             side_effect=[None, ImportError("blablabla")],
         ),
-        patch("homeassistant.loader.Integration.platforms_exists", return_value=True),
+        patch("inpui.loader.Integration.platforms_exists", return_value=True),
         patch("os.path.isfile", return_value=True),
         patch_yaml_files(files),
     ):
@@ -406,7 +406,7 @@ async def test_package_invalid(hass: HomeAssistant) -> None:
                 "Setup of package 'p1' failed: integration 'group' cannot be merged"
                 ", expected a dict"
             ),
-            "homeassistant.packages.p1.group",
+            "inpui.packages.p1.group",
             {"group": ["a"]},
         )
         _assert_warnings_errors(res, [warning], [])
@@ -429,7 +429,7 @@ async def test_package_definition_invalid_slug_keys(hass: HomeAssistant) -> None
                 "Setup of package 'not a slug' failed: Invalid package definition 'not a slug': invalid slug not a "
                 "slug (try not_a_slug). Package will not be initialized"
             ),
-            "homeassistant.packages.not a slug",
+            "inpui.packages.not a slug",
             {"group": ["a"]},
         )
         _assert_warnings_errors(res, [warning], [])
@@ -452,7 +452,7 @@ async def test_package_definition_invalid_dict(hass: HomeAssistant) -> None:
                 "Setup of package 'not_a_dict' failed: Invalid package definition 'not_a_dict': expected a "
                 "dictionary. Package will not be initialized"
             ),
-            "homeassistant.packages.not_a_dict",
+            "inpui.packages.not_a_dict",
             [{"group": ["a"]}],
         )
         _assert_warnings_errors(res, [warning], [])

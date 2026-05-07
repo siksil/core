@@ -20,7 +20,7 @@ async def test_binary_sensors(
 ) -> None:
     """Test binary sensors."""
     with patch(
-        "homeassistant.components.elmax.ELMAX_PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.elmax.ELMAX_PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         entry = await init_integration(hass)
 

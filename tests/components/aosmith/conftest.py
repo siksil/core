@@ -141,7 +141,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.aosmith.async_setup_entry", return_value=True
+        "inpui.components.aosmith.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -219,7 +219,7 @@ async def init_integration(
     hass.config.units = US_CUSTOMARY_SYSTEM
 
     with patch(
-        "homeassistant.components.aosmith.AOSmithAPIClient", return_value=mock_client
+        "inpui.components.aosmith.AOSmithAPIClient", return_value=mock_client
     ):
         mock_config_entry.add_to_hass(hass)
 

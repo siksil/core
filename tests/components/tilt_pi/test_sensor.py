@@ -29,7 +29,7 @@ async def test_all_sensors(
 
         $ pytest tests/components/tilt_pi/test_sensor.py -v --snapshot-update
     """
-    with patch("homeassistant.components.tilt_pi.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.tilt_pi.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -42,7 +42,7 @@ async def test_availability(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test that entities become unavailable when the coordinator fails."""
-    with patch("homeassistant.components.tilt_pi.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.tilt_pi.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     # Simulate a coordinator update failure

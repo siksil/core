@@ -23,7 +23,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Stub out setup function."""
     with patch(
-        "homeassistant.components.sky_remote.async_setup_entry",
+        "inpui.components.sky_remote.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -34,10 +34,10 @@ def mock_remote_control(request: pytest.FixtureRequest) -> Generator[MagicMock]:
     """Mock skyboxremote library."""
     with (
         patch(
-            "homeassistant.components.sky_remote.RemoteControl"
+            "inpui.components.sky_remote.RemoteControl"
         ) as mock_remote_control,
         patch(
-            "homeassistant.components.sky_remote.config_flow.RemoteControl",
+            "inpui.components.sky_remote.config_flow.RemoteControl",
             mock_remote_control,
         ),
     ):

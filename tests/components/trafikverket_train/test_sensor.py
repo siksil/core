@@ -41,11 +41,11 @@ async def test_sensor_next(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             return_value=get_trains_next,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
             return_value=get_train_stop,
         ),
     ):
@@ -95,11 +95,11 @@ async def test_sensor_update_auth_failure(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             side_effect=InvalidAuthentication,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
             side_effect=InvalidAuthentication,
         ),
     ):
@@ -128,11 +128,11 @@ async def test_sensor_update_failure(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_next_train_stops",
             side_effect=NoTrainAnnouncementFound,
         ),
         patch(
-            "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
+            "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
             side_effect=NoTrainAnnouncementFound,
         ),
     ):
@@ -157,7 +157,7 @@ async def test_sensor_update_failure_no_state(
     assert state.state == "2023-05-01T11:00:00+00:00"
 
     with patch(
-        "homeassistant.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
+        "inpui.components.trafikverket_train.coordinator.TrafikverketTrain.async_get_train_stop",
         return_value=None,
     ):
         freezer.tick(timedelta(minutes=6))

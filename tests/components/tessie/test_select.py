@@ -35,7 +35,7 @@ async def test_select(
     # Test changing select
     entity_id = "select.test_seat_heater_left"
     with patch(
-        "homeassistant.components.tessie.select.set_seat_heat",
+        "inpui.components.tessie.select.set_seat_heat",
         return_value=TEST_RESPONSE,
     ) as mock_set:
         await hass.services.async_call(
@@ -87,7 +87,7 @@ async def test_select(
     # Test changing select
     entity_id = "select.test_seat_cooler_left"
     with patch(
-        "homeassistant.components.tessie.select.set_seat_cool",
+        "inpui.components.tessie.select.set_seat_cool",
         return_value=TEST_RESPONSE,
     ) as mock_set:
         await hass.services.async_call(
@@ -109,7 +109,7 @@ async def test_errors(hass: HomeAssistant) -> None:
     # Test changing vehicle select with unknown error
     with (
         patch(
-            "homeassistant.components.tessie.select.set_seat_heat",
+            "inpui.components.tessie.select.set_seat_heat",
             side_effect=ERROR_UNKNOWN,
         ) as mock_set,
         pytest.raises(HomeAssistantError) as error,

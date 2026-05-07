@@ -168,7 +168,7 @@ async def test_door_lock(
 
     # Test get usercode
     with patch(
-        "homeassistant.components.zwave_js.lock.get_usercode",
+        "inpui.components.zwave_js.lock.get_usercode",
         return_value={
             "code_slot": 1,
             "name": "test",
@@ -314,7 +314,7 @@ async def test_door_lock(
     # Test get usercode service error handling
     with (
         patch(
-            "homeassistant.components.zwave_js.lock.get_usercode",
+            "inpui.components.zwave_js.lock.get_usercode",
             side_effect=NotFoundError("usercode for code slot 1 not found"),
         ),
         pytest.raises(HomeAssistantError),
@@ -383,7 +383,7 @@ async def test_get_lock_usercode(
 ) -> None:
     """Test get lock usercode returns cached values."""
     with patch(
-        "homeassistant.components.zwave_js.lock.get_usercode",
+        "inpui.components.zwave_js.lock.get_usercode",
         return_value={
             "code_slot": 1,
             "name": "test",
@@ -472,7 +472,7 @@ async def test_get_lock_usercode_error(
     """Test get lock usercode error handling."""
     with (
         patch(
-            "homeassistant.components.zwave_js.lock.get_usercode",
+            "inpui.components.zwave_js.lock.get_usercode",
             side_effect=NotFoundError("usercode for code slot 1 not found"),
         ),
         pytest.raises(HomeAssistantError),
@@ -497,7 +497,7 @@ async def test_get_all_lock_usercodes(
 ) -> None:
     """Test get all lock usercodes when no code_slot is provided."""
     with patch(
-        "homeassistant.components.zwave_js.lock.get_usercodes",
+        "inpui.components.zwave_js.lock.get_usercodes",
         return_value=[
             {"code_slot": 1, "name": "one", "in_use": True, "usercode": "1234"},
             {"code_slot": 2, "name": "two", "in_use": False, "usercode": None},

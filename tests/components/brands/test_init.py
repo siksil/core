@@ -414,7 +414,7 @@ async def test_custom_integration_brand_served(
     (brand_dir / "icon.png").write_bytes(FAKE_PNG)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -440,7 +440,7 @@ async def test_custom_integration_no_brand_falls_through(
     )
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -468,7 +468,7 @@ async def test_custom_integration_brand_missing_file_falls_through(
     )
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -504,7 +504,7 @@ async def test_custom_integration_takes_priority_over_cache(
     (brand_dir / "icon.png").write_bytes(custom_png)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         resp = await client.get("/api/brands/integration/my_custom/icon.png")
@@ -531,7 +531,7 @@ async def test_custom_integration_logo_falls_back_to_icon(
     (brand_dir / "icon.png").write_bytes(FAKE_PNG)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -554,7 +554,7 @@ async def test_custom_integration_dark_icon_falls_back_to_icon(
     (brand_dir / "icon.png").write_bytes(FAKE_PNG)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -578,7 +578,7 @@ async def test_custom_integration_dark_logo_falls_back_through_chain(
     (brand_dir / "icon.png").write_bytes(FAKE_PNG)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -603,7 +603,7 @@ async def test_custom_integration_dark_logo_prefers_dark_icon(
     (brand_dir / "dark_icon.png").write_bytes(dark_icon_data)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -625,7 +625,7 @@ async def test_custom_integration_icon2x_falls_back_to_icon(
     (brand_dir / "icon.png").write_bytes(FAKE_PNG)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -650,7 +650,7 @@ async def test_custom_integration_logo2x_falls_back_to_logo_then_icon(
     (brand_dir / "logo.png").write_bytes(logo_data)
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()
@@ -677,7 +677,7 @@ async def test_custom_integration_no_fallback_match_falls_through_to_cdn(
     )
 
     with patch(
-        "homeassistant.components.brands.async_get_custom_components",
+        "inpui.components.brands.async_get_custom_components",
         return_value={"my_custom": custom},
     ):
         client = await hass_client()

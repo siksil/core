@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.otp.async_setup_entry", return_value=True
+        "inpui.components.otp.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -25,9 +25,9 @@ def mock_pyotp() -> Generator[MagicMock]:
     """Mock a pyotp."""
     with (
         patch(
-            "homeassistant.components.otp.config_flow.pyotp",
+            "inpui.components.otp.config_flow.pyotp",
         ) as mock_client,
-        patch("homeassistant.components.otp.sensor.pyotp", new=mock_client),
+        patch("inpui.components.otp.sensor.pyotp", new=mock_client),
     ):
         mock_totp = MagicMock()
         mock_totp.now.return_value = 123456

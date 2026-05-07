@@ -63,7 +63,7 @@ async def run_command(args: argparse.Namespace) -> None:
     await args.func(hass, provider, args)
 
     # Triggers save on used storage helpers with delay (core auth)
-    logging.getLogger("homeassistant.core").setLevel(logging.WARNING)
+    logging.getLogger("inpui.core").setLevel(logging.WARNING)
 
     await hass.async_stop()
 

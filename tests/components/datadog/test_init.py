@@ -32,7 +32,7 @@ async def test_invalid_config(hass: HomeAssistant) -> None:
 async def test_datadog_setup_full(hass: HomeAssistant) -> None:
     """Test setup with all data."""
     with (
-        patch("homeassistant.components.datadog.DogStatsd") as mock_dogstatsd,
+        patch("inpui.components.datadog.DogStatsd") as mock_dogstatsd,
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -58,7 +58,7 @@ async def test_datadog_setup_full(hass: HomeAssistant) -> None:
 async def test_datadog_setup_defaults(hass: HomeAssistant) -> None:
     """Test setup with defaults."""
     with (
-        patch("homeassistant.components.datadog.DogStatsd") as mock_dogstatsd,
+        patch("inpui.components.datadog.DogStatsd") as mock_dogstatsd,
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -77,9 +77,9 @@ async def test_datadog_setup_defaults(hass: HomeAssistant) -> None:
 async def test_logbook_entry(hass: HomeAssistant) -> None:
     """Test event listener."""
     with (
-        patch("homeassistant.components.datadog.DogStatsd") as mock_statsd_class,
+        patch("inpui.components.datadog.DogStatsd") as mock_statsd_class,
         patch(
-            "homeassistant.components.datadog.config_flow.DogStatsd", mock_statsd_class
+            "inpui.components.datadog.config_flow.DogStatsd", mock_statsd_class
         ),
     ):
         mock_statsd = mock_statsd_class.return_value
@@ -117,9 +117,9 @@ async def test_logbook_entry(hass: HomeAssistant) -> None:
 async def test_state_changed(hass: HomeAssistant) -> None:
     """Test event listener."""
     with (
-        patch("homeassistant.components.datadog.DogStatsd") as mock_statsd_class,
+        patch("inpui.components.datadog.DogStatsd") as mock_statsd_class,
         patch(
-            "homeassistant.components.datadog.config_flow.DogStatsd", mock_statsd_class
+            "inpui.components.datadog.config_flow.DogStatsd", mock_statsd_class
         ),
     ):
         mock_statsd = mock_statsd_class.return_value
@@ -177,8 +177,8 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
     client = mock.MagicMock()
 
     with (
-        patch("homeassistant.components.datadog.DogStatsd", return_value=client),
-        patch("homeassistant.components.datadog.initialize"),
+        patch("inpui.components.datadog.DogStatsd", return_value=client),
+        patch("inpui.components.datadog.initialize"),
     ):
         entry = MockConfigEntry(
             domain=DOMAIN,
@@ -204,7 +204,7 @@ async def test_state_changed_skips_unknown(hass: HomeAssistant) -> None:
     """Test state_changed_listener skips None and unknown states."""
     with (
         patch(
-            "homeassistant.components.datadog.config_flow.DogStatsd"
+            "inpui.components.datadog.config_flow.DogStatsd"
         ) as mock_dogstatsd,
     ):
         entry = MockConfigEntry(

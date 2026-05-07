@@ -27,7 +27,7 @@ from . import initialize_entry
 from tests.common import MockConfigEntry, snapshot_platform
 
 
-@patch("homeassistant.components.tuya.PLATFORMS", [Platform.LIGHT])
+@patch("inpui.components.tuya.PLATFORMS", [Platform.LIGHT])
 async def test_platform_setup_and_discovery(
     hass: HomeAssistant,
     mock_manager: Manager,

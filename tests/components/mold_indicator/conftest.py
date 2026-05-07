@@ -32,7 +32,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Automatically path mold indicator."""
     with patch(
-        "homeassistant.components.mold_indicator.async_setup_entry",
+        "inpui.components.mold_indicator.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

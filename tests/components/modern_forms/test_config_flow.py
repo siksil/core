@@ -38,7 +38,7 @@ async def test_full_user_flow_implementation(
     assert result.get("type") is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.modern_forms.async_setup_entry",
+        "inpui.components.modern_forms.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -101,7 +101,7 @@ async def test_full_zeroconf_flow_implementation(
 
 
 @patch(
-    "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update",
+    "inpui.components.modern_forms.coordinator.ModernFormsDevice.update",
     side_effect=ModernFormsConnectionError,
 )
 async def test_connection_error(
@@ -126,7 +126,7 @@ async def test_connection_error(
 
 
 @patch(
-    "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update",
+    "inpui.components.modern_forms.coordinator.ModernFormsDevice.update",
     side_effect=ModernFormsConnectionError,
 )
 async def test_zeroconf_connection_error(
@@ -154,7 +154,7 @@ async def test_zeroconf_connection_error(
 
 
 @patch(
-    "homeassistant.components.modern_forms.coordinator.ModernFormsDevice.update",
+    "inpui.components.modern_forms.coordinator.ModernFormsDevice.update",
     side_effect=ModernFormsConnectionError,
 )
 async def test_zeroconf_confirm_connection_error(

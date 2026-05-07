@@ -26,9 +26,9 @@ async def test_binary_sensors(
 ) -> None:
     """Test binary sensors."""
     with (
-        patch("homeassistant.components.rainmachine.Client", return_value=client),
+        patch("inpui.components.rainmachine.Client", return_value=client),
         patch(
-            "homeassistant.components.rainmachine.PLATFORMS", [Platform.BINARY_SENSOR]
+            "inpui.components.rainmachine.PLATFORMS", [Platform.BINARY_SENSOR]
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, config)

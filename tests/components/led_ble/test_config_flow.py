@@ -24,7 +24,7 @@ from tests.common import MockConfigEntry
 async def test_user_step_success(hass: HomeAssistant) -> None:
     """Test user step success path."""
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_LED_BLE_DISCOVERY_INFO, LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -36,10 +36,10 @@ async def test_user_step_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+            "inpui.components.led_ble.config_flow.LEDBLE.update",
         ),
         patch(
-            "homeassistant.components.led_ble.async_setup_entry",
+            "inpui.components.led_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -63,7 +63,7 @@ async def test_user_step_success(hass: HomeAssistant) -> None:
 async def test_user_step_no_devices_found(hass: HomeAssistant) -> None:
     """Test user step with no devices found."""
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -84,7 +84,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -97,7 +97,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
 async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
     """Test user step and we cannot connect."""
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -108,7 +108,7 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+        "inpui.components.led_ble.config_flow.LEDBLE.update",
         side_effect=BleakError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -125,10 +125,10 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+            "inpui.components.led_ble.config_flow.LEDBLE.update",
         ),
         patch(
-            "homeassistant.components.led_ble.async_setup_entry",
+            "inpui.components.led_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -152,7 +152,7 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
 async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
     """Test user step with an unknown exception."""
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_LED_BLE_DISCOVERY_INFO, LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -163,7 +163,7 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+        "inpui.components.led_ble.config_flow.LEDBLE.update",
         side_effect=RuntimeError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -180,10 +180,10 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+            "inpui.components.led_ble.config_flow.LEDBLE.update",
         ),
         patch(
-            "homeassistant.components.led_ble.async_setup_entry",
+            "inpui.components.led_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -207,7 +207,7 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
 async def test_user_step_not_supported(hass: HomeAssistant) -> None:
     """Test user step with a non supported device."""
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -218,7 +218,7 @@ async def test_user_step_not_supported(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+        "inpui.components.led_ble.config_flow.LEDBLE.update",
         side_effect=CharacteristicMissingError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -246,10 +246,10 @@ async def test_bluetooth_step_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+            "inpui.components.led_ble.config_flow.LEDBLE.update",
         ),
         patch(
-            "homeassistant.components.led_ble.async_setup_entry",
+            "inpui.components.led_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -292,7 +292,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.led_ble.config_flow.async_discovered_service_info",
+        "inpui.components.led_ble.config_flow.async_discovered_service_info",
         return_value=[LED_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -306,10 +306,10 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.led_ble.config_flow.LEDBLE.update",
+            "inpui.components.led_ble.config_flow.LEDBLE.update",
         ),
         patch(
-            "homeassistant.components.led_ble.async_setup_entry",
+            "inpui.components.led_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

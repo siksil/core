@@ -32,7 +32,7 @@ def mock_config_entry() -> MockConfigEntry:
 @pytest.fixture
 def mock_picnic_api():
     """Return a mocked PicnicAPI client."""
-    with patch("homeassistant.components.picnic.PicnicAPI") as mock:
+    with patch("inpui.components.picnic.PicnicAPI") as mock:
         client = mock.return_value
         client.session.auth_token = "3q29fpwhulzes"
         client.get_cart.return_value = json.loads(load_fixture("picnic/cart.json"))

@@ -156,7 +156,7 @@ async def mock_http_client_with_extra_js(
 def mock_onboarded() -> Generator[None]:
     """Mock that we're onboarded."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded", return_value=True
+        "inpui.components.onboarding.async_is_onboarded", return_value=True
     ):
         yield
 
@@ -471,7 +471,7 @@ async def test_themes_reload_themes(
     """Test frontend.reload_themes service."""
 
     with patch(
-        "homeassistant.components.frontend.async_hass_config_yaml",
+        "inpui.components.frontend.async_hass_config_yaml",
         return_value={DOMAIN: {CONF_THEMES: {"sad": {"primary-color": "blue"}}}},
     ):
         with pytest.raises(
@@ -562,14 +562,14 @@ async def test_themes_reload_invalid(
     """Test frontend.reload_themes service with an invalid theme."""
 
     with patch(
-        "homeassistant.components.frontend.async_hass_config_yaml",
+        "inpui.components.frontend.async_hass_config_yaml",
         return_value={DOMAIN: {CONF_THEMES: {"happy": {"primary-color": "pink"}}}},
     ):
         await hass.services.async_call(DOMAIN, "reload_themes", blocking=True)
 
     with (
         patch(
-            "homeassistant.components.frontend.async_hass_config_yaml",
+            "inpui.components.frontend.async_hass_config_yaml",
             return_value={DOMAIN: {CONF_THEMES: invalid_theme}},
         ),
         pytest.raises(HomeAssistantError, match=rf"Failed to reload themes.*{error}")
@@ -809,7 +809,7 @@ async def test_panel_sidebar_default_visible(
 async def test_get_translations(ws_client: MockHAClientWebSocket) -> None:
     """Test get_translations command."""
     with patch(
-        "homeassistant.components.frontend.async_get_translations",
+        "inpui.components.frontend.async_get_translations",
         side_effect=lambda hass, lang, category, integrations, config_flow: {
             "lang": lang
         },
@@ -835,7 +835,7 @@ async def test_get_translations_for_integrations(
 ) -> None:
     """Test get_translations for integrations command."""
     with patch(
-        "homeassistant.components.frontend.async_get_translations",
+        "inpui.components.frontend.async_get_translations",
         side_effect=lambda hass, lang, category, integration, config_flow: {
             "lang": lang,
             "integration": integration,
@@ -863,7 +863,7 @@ async def test_get_translations_for_single_integration(
 ) -> None:
     """Test get_translations for integration command."""
     with patch(
-        "homeassistant.components.frontend.async_get_translations",
+        "inpui.components.frontend.async_get_translations",
         side_effect=lambda hass, lang, category, integrations, config_flow: {
             "lang": lang,
             "integration": integrations,
@@ -1022,7 +1022,7 @@ async def test_static_path_cache(mock_http_client: TestClient) -> None:
 async def test_get_icons(ws_client: MockHAClientWebSocket) -> None:
     """Test get_icons command."""
     with patch(
-        "homeassistant.components.frontend.async_get_icons",
+        "inpui.components.frontend.async_get_icons",
         side_effect=lambda hass, category, integrations: {},
     ):
         await ws_client.send_json(
@@ -1043,7 +1043,7 @@ async def test_get_icons(ws_client: MockHAClientWebSocket) -> None:
 async def test_get_icons_for_integrations(ws_client: MockHAClientWebSocket) -> None:
     """Test get_icons for integrations command."""
     with patch(
-        "homeassistant.components.frontend.async_get_icons",
+        "inpui.components.frontend.async_get_icons",
         side_effect=lambda hass, category, integrations: {
             integration: {} for integration in integrations
         },
@@ -1069,7 +1069,7 @@ async def test_get_icons_for_single_integration(
 ) -> None:
     """Test get_icons for integration command."""
     with patch(
-        "homeassistant.components.frontend.async_get_icons",
+        "inpui.components.frontend.async_get_icons",
         side_effect=lambda hass, category, integrations: {
             integration: {} for integration in integrations
         },
@@ -1195,7 +1195,7 @@ async def test_setup_with_development_pr_unexpected_error(
     hass.config.config_dir = str(tmp_path)
 
     with patch(
-        "homeassistant.components.frontend.download_pr_artifact",
+        "inpui.components.frontend.download_pr_artifact",
         side_effect=RuntimeError("Unexpected error"),
     ):
         config = {

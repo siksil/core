@@ -62,11 +62,11 @@ def mock_aiorecollect_fixture(client):
     """Define a fixture to patch aiorecollect."""
     with (
         patch(
-            "homeassistant.components.recollect_waste.coordinator.Client",
+            "inpui.components.recollect_waste.coordinator.Client",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.recollect_waste.config_flow.Client",
+            "inpui.components.recollect_waste.config_flow.Client",
             return_value=client,
         ),
     ):

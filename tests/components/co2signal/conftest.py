@@ -21,11 +21,11 @@ def mock_electricity_maps() -> Generator[MagicMock]:
 
     with (
         patch(
-            "homeassistant.components.co2signal.ElectricityMaps",
+            "inpui.components.co2signal.ElectricityMaps",
             autospec=True,
         ) as electricity_maps,
         patch(
-            "homeassistant.components.co2signal.config_flow.ElectricityMaps",
+            "inpui.components.co2signal.config_flow.ElectricityMaps",
             new=electricity_maps,
         ),
     ):

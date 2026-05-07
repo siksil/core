@@ -22,7 +22,7 @@ async def test_update(
 ) -> None:
     """Test the Immich update platform."""
 
-    with patch("homeassistant.components.immich.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.immich.PLATFORMS", [Platform.UPDATE]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -39,7 +39,7 @@ async def test_update_min_version(
 
     mock_immich.server.async_get_about_info.return_value.version = "v1.132.3"
 
-    with patch("homeassistant.components.immich.PLATFORMS", [Platform.UPDATE]):
+    with patch("inpui.components.immich.PLATFORMS", [Platform.UPDATE]):
         await setup_integration(hass, mock_config_entry)
 
     assert not hass.states.async_all()

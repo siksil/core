@@ -558,7 +558,7 @@ async def test_invalid_attribute_template(
 def setup_mock() -> Generator[Mock]:
     """Do setup of sensor mock."""
     with patch(
-        "homeassistant.components.template.binary_sensor."
+        "inpui.components.template.binary_sensor."
         "StateBinarySensorEntity._update_state"
     ) as _update_state:
         yield _update_state

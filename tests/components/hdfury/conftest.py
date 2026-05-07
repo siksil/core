@@ -17,7 +17,7 @@ TEST_HOST = "192.168.1.123"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.hdfury.async_setup_entry",
+        "inpui.components.hdfury.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -40,11 +40,11 @@ def mock_hdfury_client() -> Generator[AsyncMock]:
     """Mock a HDFury client."""
     with (
         patch(
-            "homeassistant.components.hdfury.config_flow.HDFuryAPI",
+            "inpui.components.hdfury.config_flow.HDFuryAPI",
             autospec=True,
         ) as mock_cf_client,
         patch(
-            "homeassistant.components.hdfury.coordinator.HDFuryAPI",
+            "inpui.components.hdfury.coordinator.HDFuryAPI",
             autospec=True,
         ) as mock_coord_client,
     ):

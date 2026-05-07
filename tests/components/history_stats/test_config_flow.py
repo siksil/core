@@ -303,7 +303,7 @@ async def test_config_flow_preview_success(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(t3),
@@ -405,7 +405,7 @@ async def test_options_flow_preview(
 
     with (
         patch(
-            "homeassistant.components.recorder.history.state_changes_during_period",
+            "inpui.components.recorder.history.state_changes_during_period",
             _fake_states,
         ),
         freeze_time(t3),

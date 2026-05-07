@@ -260,7 +260,7 @@ async def test_dynamic_device_discovery(
         Platform.SWITCH,
         Platform.SELECT,
     ]
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", all_platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", all_platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -322,7 +322,7 @@ async def test_stale_device_removal(
         )
     )
 
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", all_platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", all_platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

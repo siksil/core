@@ -22,7 +22,7 @@ async def test_unload_integration(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_light]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.LIGHT]):
         await init_integration(hass, mock_config_entry)
         # Act
         await hass.config_entries.async_unload(mock_config_entry.entry_id)

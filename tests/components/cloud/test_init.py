@@ -186,7 +186,7 @@ async def test_on_connect(hass: HomeAssistant) -> None:
 
     assert len(hass.states.async_entity_ids("binary_sensor")) == 1
 
-    with patch("homeassistant.helpers.discovery.async_load_platform") as mock_load:
+    with patch("inpui.helpers.discovery.async_load_platform") as mock_load:
         await cl._on_start[-1]()
         await hass.async_block_till_done()
 
@@ -223,7 +223,7 @@ async def test_remote_ui_url(hass: HomeAssistant) -> None:
     with pytest.raises(CloudNotAvailable):
         async_remote_ui_url(hass)
 
-    with patch("homeassistant.components.cloud.async_is_logged_in", return_value=True):
+    with patch("inpui.components.cloud.async_is_logged_in", return_value=True):
         # Remote not enabled
         with pytest.raises(CloudNotAvailable):
             async_remote_ui_url(hass)
@@ -256,7 +256,7 @@ async def test_async_get_or_create_cloudhook(
     cloudhook_url = "https://cloudhook.nabu.casa/abcdefg"
 
     with patch(
-        "homeassistant.components.cloud.async_create_cloudhook",
+        "inpui.components.cloud.async_create_cloudhook",
         return_value=cloudhook_url,
     ) as async_create_cloudhook_mock:
         # create cloudhook as it does not exist

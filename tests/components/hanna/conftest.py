@@ -13,7 +13,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture
 def mock_setup_entry():
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.hanna.async_setup_entry", return_value=True):
+    with patch("inpui.components.hanna.async_setup_entry", return_value=True):
         yield
 
 
@@ -22,9 +22,9 @@ def mock_hanna_client():
     """Mock HannaCloudClient."""
     with (
         patch(
-            "homeassistant.components.hanna.config_flow.HannaCloudClient", autospec=True
+            "inpui.components.hanna.config_flow.HannaCloudClient", autospec=True
         ) as mock_client,
-        patch("homeassistant.components.hanna.HannaCloudClient", new=mock_client),
+        patch("inpui.components.hanna.HannaCloudClient", new=mock_client),
     ):
         client = mock_client.return_value
         yield client

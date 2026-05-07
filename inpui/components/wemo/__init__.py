@@ -158,7 +158,7 @@ async def async_wemo_dispatcher_connect(
     dispatch: DispatchCallback,
 ) -> None:
     """Connect a wemo platform with the WemoDispatcher."""
-    module = dispatch.__module__  # Example: "homeassistant.components.wemo.switch"
+    module = dispatch.__module__  # Example: "inpui.components.wemo.switch"
     platform = Platform(module.rsplit(".", 1)[1])
 
     dispatcher = hass.data[DATA_WEMO].config_entry_data.dispatcher

@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture
 def mock_ulid() -> Generator[Mock]:
     """Mock the ulid library."""
-    with patch("homeassistant.helpers.chat_session.ulid_now") as mock_ulid_now:
+    with patch("inpui.helpers.chat_session.ulid_now") as mock_ulid_now:
         mock_ulid_now.return_value = "mock-ulid"
         yield mock_ulid_now
 
@@ -53,8 +53,8 @@ def mock_conversation_input(hass: HomeAssistant) -> conversation.ConversationInp
 def mock_shopping_list_io():
     """Stub out the persistence."""
     with (
-        patch("homeassistant.components.shopping_list.ShoppingData.save"),
-        patch("homeassistant.components.shopping_list.ShoppingData.async_load"),
+        patch("inpui.components.shopping_list.ShoppingData.save"),
+        patch("inpui.components.shopping_list.ShoppingData.async_load"),
     ):
         yield
 

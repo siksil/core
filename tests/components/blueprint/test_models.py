@@ -234,13 +234,13 @@ async def test_domain_blueprints_get_blueprint_errors(
 
     with (
         pytest.raises(errors.FailedToLoad),
-        patch("homeassistant.util.yaml.load_yaml", side_effect=FileNotFoundError),
+        patch("inpui.util.yaml.load_yaml", side_effect=FileNotFoundError),
     ):
         await domain_bps.async_get_blueprint("non-existing-path")
 
     with (
         patch(
-            "homeassistant.util.yaml.load_yaml", return_value={"blueprint": "invalid"}
+            "inpui.util.yaml.load_yaml", return_value={"blueprint": "invalid"}
         ),
         pytest.raises(errors.FailedToLoad),
     ):

@@ -97,14 +97,14 @@ _EXPECTED_FILES_WITH_DATABASE = {
 @pytest.fixture(autouse=True)
 def mock_delay_save() -> Generator[None]:
     """Mock the delay save constant."""
-    with patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0):
+    with patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0):
         yield
 
 
 @pytest.fixture(name="generate_backup_id")
 def generate_backup_id_fixture() -> Generator[MagicMock]:
     """Mock generate backup id."""
-    with patch("homeassistant.components.backup.manager._generate_backup_id") as mock:
+    with patch("inpui.components.backup.manager._generate_backup_id") as mock:
         mock.return_value = "abc123"
         yield mock
 
@@ -138,7 +138,7 @@ async def test_create_backup_service(
     )()  # call it so that it can be awaited
 
     with patch(
-        "homeassistant.components.backup.manager.CoreBackupReaderWriter.async_create_backup",
+        "inpui.components.backup.manager.CoreBackupReaderWriter.async_create_backup",
         return_value=(new_backup, backup_task),
     ) as create_backup:
         await hass.services.async_call(
@@ -335,7 +335,7 @@ async def test_async_create_backup(
     )()  # call it so that it can be awaited
 
     with patch(
-        "homeassistant.components.backup.manager.CoreBackupReaderWriter.async_create_backup",
+        "inpui.components.backup.manager.CoreBackupReaderWriter.async_create_backup",
         return_value=(new_backup, backup_task),
     ) as create_backup:
         await manager.async_create_backup(**manager_kwargs)
@@ -681,7 +681,7 @@ async def test_initiate_backup(
     with tarfile.TarFile(
         hass.config.path(f"{backup_directory}/{expected_filename}"), mode="r"
     ) as outer_tar:
-        core_tar_io = outer_tar.extractfile("homeassistant.tar.gz")
+        core_tar_io = outer_tar.extractfile("inpui.tar.gz")
         assert core_tar_io is not None
         with SecureTarFile(
             fileobj=core_tar_io,
@@ -1705,7 +1705,7 @@ async def test_initiate_backup_file_error_create_backup(
 
     with (
         patch(
-            "homeassistant.components.backup.manager.atomic_contents_add",
+            "inpui.components.backup.manager.atomic_contents_add",
             side_effect=atomic_contents_add_exception,
         ) as atomic_contents_add_mock,
         patch("pathlib.Path.mkdir", side_effect=mkdir_exception) as mkdir_mock,
@@ -1983,11 +1983,11 @@ async def test_receive_backup(
     with (
         patch("pathlib.Path.open", open_mock),
         patch(
-            "homeassistant.components.backup.manager.make_backup_dir"
+            "inpui.components.backup.manager.make_backup_dir"
         ) as make_backup_dir_mock,
         patch("shutil.move") as move_mock,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP_ABC123,
         ),
         patch("pathlib.Path.unlink") as unlink_mock,
@@ -2053,10 +2053,10 @@ async def test_receive_backup_path_traversal(
 
     with (
         patch("pathlib.Path.open", track_open),
-        patch("homeassistant.components.backup.manager.make_backup_dir"),
+        patch("inpui.components.backup.manager.make_backup_dir"),
         patch("shutil.move"),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP_ABC123,
         ) as read_backup_mock,
         patch("pathlib.Path.unlink"),
@@ -2283,7 +2283,7 @@ async def test_receive_backup_agent_error(
         patch("pathlib.Path.open", open_mock),
         patch("shutil.move") as move_mock,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP_ABC123,
         ),
         patch("pathlib.Path.unlink") as unlink_mock,
@@ -2411,7 +2411,7 @@ async def test_receive_backup_non_agent_upload_error(
         patch("pathlib.Path.open", open_mock),
         patch("shutil.move") as move_mock,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP_ABC123,
         ),
         patch("pathlib.Path.unlink") as unlink_mock,
@@ -2609,7 +2609,7 @@ async def test_receive_backup_read_tar_error(
     with (
         patch("pathlib.Path.open", open_mock),
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             side_effect=exception,
         ) as read_backup,
     ):
@@ -2775,7 +2775,7 @@ async def test_receive_backup_file_read_error(
         patch("pathlib.Path.open", open_mock),
         patch("pathlib.Path.unlink", side_effect=unlink_exception) as unlink_mock,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP_ABC123,
         ),
     ):
@@ -2915,12 +2915,12 @@ async def test_restore_backup(
         patch("pathlib.Path.exists", return_value=True),
         patch("pathlib.Path.open"),
         patch("pathlib.Path.write_text") as mocked_write_text,
-        patch("homeassistant.core.ServiceRegistry.async_call") as mocked_service_call,
+        patch("inpui.core.ServiceRegistry.async_call") as mocked_service_call,
         patch(
-            "homeassistant.components.backup.manager.validate_password"
+            "inpui.components.backup.manager.validate_password"
         ) as validate_password_mock,
         patch(
-            "homeassistant.components.backup.backup.read_backup",
+            "inpui.components.backup.backup.read_backup",
             side_effect=mock_read_backup,
         ),
     ):
@@ -3014,12 +3014,12 @@ async def test_restore_backup_wrong_password(
         patch("pathlib.Path.exists", return_value=True),
         patch("pathlib.Path.open"),
         patch("pathlib.Path.write_text") as mocked_write_text,
-        patch("homeassistant.core.ServiceRegistry.async_call") as mocked_service_call,
+        patch("inpui.core.ServiceRegistry.async_call") as mocked_service_call,
         patch(
-            "homeassistant.components.backup.manager.validate_password"
+            "inpui.components.backup.manager.validate_password"
         ) as validate_password_mock,
         patch(
-            "homeassistant.components.backup.backup.read_backup",
+            "inpui.components.backup.backup.read_backup",
             side_effect=mock_read_backup,
         ),
     ):
@@ -3111,9 +3111,9 @@ async def test_restore_backup_wrong_parameters(
     with (
         patch("pathlib.Path.exists", return_value=True),
         patch("pathlib.Path.write_text") as mocked_write_text,
-        patch("homeassistant.core.ServiceRegistry.async_call") as mocked_service_call,
+        patch("inpui.core.ServiceRegistry.async_call") as mocked_service_call,
         patch(
-            "homeassistant.components.backup.backup.read_backup",
+            "inpui.components.backup.backup.read_backup",
             side_effect=mock_read_backup,
         ),
     ):
@@ -3228,7 +3228,7 @@ async def test_restore_backup_agent_error(
     with (
         patch("pathlib.Path.open"),
         patch("pathlib.Path.write_text") as mocked_write_text,
-        patch("homeassistant.core.ServiceRegistry.async_call") as mocked_service_call,
+        patch("inpui.core.ServiceRegistry.async_call") as mocked_service_call,
     ):
         await ws_client.send_json_auto_id(
             {
@@ -3365,9 +3365,9 @@ async def test_restore_backup_file_error(
         patch(
             "pathlib.Path.write_text", side_effect=write_text_exception
         ) as mocked_write_text,
-        patch("homeassistant.core.ServiceRegistry.async_call") as mocked_service_call,
+        patch("inpui.core.ServiceRegistry.async_call") as mocked_service_call,
         patch(
-            "homeassistant.components.backup.manager.validate_password"
+            "inpui.components.backup.manager.validate_password"
         ) as validate_password_mock,
     ):
         await ws_client.send_json_auto_id(

@@ -34,7 +34,7 @@ def user_identifier() -> str:
 @pytest.fixture
 def setup_userinfo(user_identifier: str) -> Generator[Mock]:
     """Set up userinfo."""
-    with patch("homeassistant.components.google_tasks.config_flow.build") as mock:
+    with patch("inpui.components.google_tasks.config_flow.build") as mock:
         mock.return_value.userinfo.return_value.get.return_value.execute.return_value = {
             "id": user_identifier,
             "name": "Test Name",
@@ -87,7 +87,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.google_tasks.async_setup_entry", return_value=True
+        "inpui.components.google_tasks.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
     assert result["type"] is FlowResultType.CREATE_ENTRY
@@ -142,7 +142,7 @@ async def test_api_not_enabled(
     )
 
     with patch(
-        "homeassistant.components.google_tasks.config_flow.build",
+        "inpui.components.google_tasks.config_flow.build",
         side_effect=HttpError(
             Response({"status": "403"}),
             bytes(
@@ -206,7 +206,7 @@ async def test_general_exception(
     )
 
     with patch(
-        "homeassistant.components.google_tasks.config_flow.build",
+        "inpui.components.google_tasks.config_flow.build",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -304,7 +304,7 @@ async def test_reauth(
     )
 
     with patch(
-        "homeassistant.components.google_tasks.async_setup_entry", return_value=True
+        "inpui.components.google_tasks.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 

@@ -251,7 +251,7 @@ async def test_setup_ssl_ciphers(
 ) -> None:
     """Test setup with minimum configuration."""
     with patch(
-        "homeassistant.components.rest.data.async_get_clientsession",
+        "inpui.components.rest.data.async_get_clientsession",
         return_value=aioclient_mock,
     ) as aiohttp_client:
         assert await async_setup_component(
@@ -1067,7 +1067,7 @@ async def test_query_param_dict_value(
     # This test checks that when template_complex processes a string that looks like
     # a dict/list, it converts it to an actual dict/list, which then needs to be
     # handled by our backward compatibility code
-    with caplog.at_level(logging.DEBUG, logger="homeassistant.components.rest.data"):
+    with caplog.at_level(logging.DEBUG, logger="inpui.components.rest.data"):
         assert await async_setup_component(
             hass,
             DOMAIN,

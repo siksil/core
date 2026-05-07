@@ -29,7 +29,7 @@ async def test_switch_entities(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test switch entities."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
@@ -51,7 +51,7 @@ async def test_switch_toggles(
     method: str,
 ) -> None:
     """Test switch toggles."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -110,7 +110,7 @@ async def test_switch_api_error(
     service: str,
 ) -> None:
     """Test API error handling when toggling switches."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value

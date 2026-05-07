@@ -116,7 +116,7 @@ async def test_user_flow_same_unique_ids(hass: HomeAssistant) -> None:
 async def test_user_flow_cannot_connect(hass: HomeAssistant) -> None:
     """Test user config flow when Tomorrow.io can't connect."""
     with patch(
-        "homeassistant.components.tomorrowio.config_flow.TomorrowioV4.realtime",
+        "inpui.components.tomorrowio.config_flow.TomorrowioV4.realtime",
         side_effect=CantConnectException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -132,7 +132,7 @@ async def test_user_flow_cannot_connect(hass: HomeAssistant) -> None:
 async def test_user_flow_invalid_api(hass: HomeAssistant) -> None:
     """Test user config flow when API key is invalid."""
     with patch(
-        "homeassistant.components.tomorrowio.config_flow.TomorrowioV4.realtime",
+        "inpui.components.tomorrowio.config_flow.TomorrowioV4.realtime",
         side_effect=InvalidAPIKeyException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -148,7 +148,7 @@ async def test_user_flow_invalid_api(hass: HomeAssistant) -> None:
 async def test_user_flow_rate_limited(hass: HomeAssistant) -> None:
     """Test user config flow when API key is rate limited."""
     with patch(
-        "homeassistant.components.tomorrowio.config_flow.TomorrowioV4.realtime",
+        "inpui.components.tomorrowio.config_flow.TomorrowioV4.realtime",
         side_effect=RateLimitedException,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -164,7 +164,7 @@ async def test_user_flow_rate_limited(hass: HomeAssistant) -> None:
 async def test_user_flow_unknown_exception(hass: HomeAssistant) -> None:
     """Test user config flow when unknown error occurs."""
     with patch(
-        "homeassistant.components.tomorrowio.config_flow.TomorrowioV4.realtime",
+        "inpui.components.tomorrowio.config_flow.TomorrowioV4.realtime",
         side_effect=UnknownException,
     ):
         result = await hass.config_entries.flow.async_init(

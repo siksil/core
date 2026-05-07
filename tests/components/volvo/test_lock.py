@@ -39,7 +39,7 @@ async def test_lock(
 ) -> None:
     """Test lock."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.LOCK]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.LOCK]):
         assert await setup_integration()
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -58,7 +58,7 @@ async def test_unlock_lock(
 ) -> None:
     """Test unlock/lock."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.LOCK]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.LOCK]):
         assert await setup_integration()
 
     await hass.services.async_call(
@@ -85,7 +85,7 @@ async def test_unlock_lock_error(
 ) -> None:
     """Test unlock/lock with error response."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.LOCK]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.LOCK]):
         assert await setup_integration()
 
     configure_mock(mock_api.async_execute_command, side_effect=VolvoApiException)
@@ -112,7 +112,7 @@ async def test_unlock_failure(
 ) -> None:
     """Test unlock/lock with error response."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.LOCK]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.LOCK]):
         assert await setup_integration()
 
     configure_mock(

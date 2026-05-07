@@ -252,18 +252,18 @@ async def test_satellite_pipeline(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             async_pipeline_from_audio_stream,
         ),
-        patch("homeassistant.components.wyoming.assist_satellite._PING_SEND_DELAY", 0),
+        patch("inpui.components.wyoming.assist_satellite._PING_SEND_DELAY", 0),
     ):
         entry = await setup_config_entry(hass)
         device: SatelliteDevice = hass.data[wyoming.DOMAIN][entry.entry_id].device
@@ -465,19 +465,19 @@ async def test_satellite_muted(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient([]),
         ),
         patch(
-            "homeassistant.components.wyoming.switch.WyomingSatelliteMuteSwitch.async_get_last_state",
+            "inpui.components.wyoming.switch.WyomingSatelliteMuteSwitch.async_get_last_state",
             return_value=State("switch.test_mute", STATE_ON),
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_muted",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_muted",
             on_muted,
         ),
     ):
@@ -503,18 +503,18 @@ async def test_satellite_restart(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite._connect_and_loop",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite._connect_and_loop",
             side_effect=RuntimeError(),
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
             on_restart,
         ),
-        patch("homeassistant.components.wyoming.assist_satellite._RESTART_SECONDS", 0),
+        patch("inpui.components.wyoming.assist_satellite._RESTART_SECONDS", 0),
     ):
         await setup_config_entry(hass)
         async with asyncio.timeout(1):
@@ -543,23 +543,23 @@ async def test_satellite_reconnect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient.connect",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient.connect",
             side_effect=ConnectionRefusedError(),
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_reconnect",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_reconnect",
             on_reconnect,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_stopped",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_stopped",
             on_stopped,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite._RECONNECT_SECONDS", 0
+            "inpui.components.wyoming.assist_satellite._RECONNECT_SECONDS", 0
         ),
     ):
         await setup_config_entry(hass)
@@ -578,18 +578,18 @@ async def test_satellite_disconnect_before_pipeline(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             MockAsyncTcpClient([]),  # no RunPipeline event
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         ) as mock_run_pipeline,
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
             on_restart,
         ),
     ):
@@ -623,22 +623,22 @@ async def test_satellite_disconnect_during_pipeline(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             MockAsyncTcpClient(events),
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         ) as mock_run_pipeline,
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
             on_restart,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_stopped",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_stopped",
             on_stopped,
         ),
     ):
@@ -695,23 +695,23 @@ async def test_satellite_disconnect_cancels_running_pipeline(
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             MockAsyncTcpClient(events),
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_long_running_pipeline,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_restart",
             on_restart,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.on_stopped",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.on_stopped",
             on_stopped,
         ),
     ):
@@ -748,15 +748,15 @@ async def test_on_pipeline_event_ignores_disconnected_client(
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
     ):
@@ -837,15 +837,15 @@ async def test_announce_raises_when_client_disconnected(
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
     ):
@@ -889,15 +889,15 @@ async def test_stream_tts_noop_when_client_disconnected(
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
     ):
@@ -933,15 +933,15 @@ async def test_handle_timer_noop_when_client_disconnected(
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
     ):
@@ -989,15 +989,15 @@ async def test_satellite_error_during_pipeline(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
     ):
@@ -1048,19 +1048,19 @@ async def test_tts_not_wav(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite._stream_tts",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite._stream_tts",
             _stream_tts,
         ),
     ):
@@ -1140,15 +1140,15 @@ async def test_pipeline_changed(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             async_pipeline_from_audio_stream,
         ),
     ):
@@ -1212,15 +1212,15 @@ async def test_audio_settings_changed(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             async_pipeline_from_audio_stream,
         ),
     ):
@@ -1284,15 +1284,15 @@ async def test_invalid_stages(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite._run_pipeline_once",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite._run_pipeline_once",
             _run_pipeline_once,
         ),
     ):
@@ -1346,15 +1346,15 @@ async def test_client_stops_pipeline(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             async_pipeline_from_audio_stream,
         ),
     ):
@@ -1400,15 +1400,15 @@ async def test_wake_word_phrase(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             wraps=_async_pipeline_from_audio_stream,
         ) as mock_run_pipeline,
     ):
@@ -1431,11 +1431,11 @@ async def test_timers(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient([]),
         ) as mock_client,
     ):
@@ -1619,15 +1619,15 @@ async def test_announce(
     with (
         tempfile.NamedTemporaryFile(mode="wb+", suffix=".wav") as temp_wav_file,
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(responses=[], block_until_inject=True),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_process_play_media_url",
+            "inpui.components.assist_satellite.entity.async_process_play_media_url",
             new=async_process_play_media_url,
         ),
     ):
@@ -1724,24 +1724,24 @@ async def test_tts_timeout(
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             async_pipeline_from_audio_stream,
         ),
-        patch("homeassistant.components.wyoming.assist_satellite._PING_SEND_DELAY", 0),
+        patch("inpui.components.wyoming.assist_satellite._PING_SEND_DELAY", 0),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.tts_response_finished",
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.tts_response_finished",
             tts_response_finished,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite._TTS_TIMEOUT_EXTRA",
+            "inpui.components.wyoming.assist_satellite._TTS_TIMEOUT_EXTRA",
             0,
         ),
     ):
@@ -1830,18 +1830,18 @@ async def test_satellite_tts_streaming(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.AsyncTcpClient",
+            "inpui.components.wyoming.assist_satellite.AsyncTcpClient",
             SatelliteAsyncTcpClient(events),
         ) as mock_client,
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             async_pipeline_from_audio_stream,
         ),
-        patch("homeassistant.components.wyoming.assist_satellite._PING_SEND_DELAY", 0),
+        patch("inpui.components.wyoming.assist_satellite._PING_SEND_DELAY", 0),
     ):
         entry = await setup_config_entry(hass)
         device: SatelliteDevice = hass.data[wyoming.DOMAIN][entry.entry_id].device
@@ -1957,7 +1957,7 @@ async def test_satellite_tts_streaming(hass: HomeAssistant) -> None:
         # Because we started streaming TTS after intent progress, we should not
         # stream it again on tts-end.
         with patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite._stream_tts"
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite._stream_tts"
         ) as mock_stream_tts:
             pipeline_event_callback(
                 assist_pipeline.PipelineEvent(

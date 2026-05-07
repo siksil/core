@@ -29,27 +29,27 @@ async def test_setup_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch._request",
+            "inpui.components.venstar.VenstarColorTouch._request",
             new=VenstarColorTouchMock._request,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_sensors",
+            "inpui.components.venstar.VenstarColorTouch.update_sensors",
             new=VenstarColorTouchMock.update_sensors,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_info",
+            "inpui.components.venstar.VenstarColorTouch.update_info",
             new=VenstarColorTouchMock.update_info,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_alerts",
+            "inpui.components.venstar.VenstarColorTouch.update_alerts",
             new=VenstarColorTouchMock.update_alerts,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.get_runtimes",
+            "inpui.components.venstar.VenstarColorTouch.get_runtimes",
             new=VenstarColorTouchMock.get_runtimes,
         ),
         patch(
-            "homeassistant.components.venstar.coordinator.VENSTAR_SLEEP",
+            "inpui.components.venstar.coordinator.VENSTAR_SLEEP",
             new=0,
         ),
     ):
@@ -76,23 +76,23 @@ async def test_setup_entry_exception(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch._request",
+            "inpui.components.venstar.VenstarColorTouch._request",
             new=VenstarColorTouchMock._request,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_sensors",
+            "inpui.components.venstar.VenstarColorTouch.update_sensors",
             new=VenstarColorTouchMock.update_sensors,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_info",
+            "inpui.components.venstar.VenstarColorTouch.update_info",
             new=VenstarColorTouchMock.broken_update_info,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_alerts",
+            "inpui.components.venstar.VenstarColorTouch.update_alerts",
             new=VenstarColorTouchMock.update_alerts,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.get_runtimes",
+            "inpui.components.venstar.VenstarColorTouch.get_runtimes",
             new=VenstarColorTouchMock.get_runtimes,
         ),
     ):
@@ -136,27 +136,27 @@ async def test_silent_failure_triggers_retry(
 
     with (
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch._request",
+            "inpui.components.venstar.VenstarColorTouch._request",
             new=VenstarColorTouchMock._request,
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_info",
+            "inpui.components.venstar.VenstarColorTouch.update_info",
             new=methods["update_info"],
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_sensors",
+            "inpui.components.venstar.VenstarColorTouch.update_sensors",
             new=methods["update_sensors"],
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_alerts",
+            "inpui.components.venstar.VenstarColorTouch.update_alerts",
             new=methods["update_alerts"],
         ),
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.get_runtimes",
+            "inpui.components.venstar.VenstarColorTouch.get_runtimes",
             new=methods["get_runtimes"],
         ),
         patch(
-            "homeassistant.components.venstar.coordinator.VENSTAR_SLEEP",
+            "inpui.components.venstar.coordinator.VENSTAR_SLEEP",
             new=0,
         ),
     ):

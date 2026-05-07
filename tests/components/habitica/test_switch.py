@@ -28,7 +28,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def switch_only() -> Generator[None]:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.SWITCH],
     ):
         yield

@@ -61,7 +61,7 @@ def mock_process_uploaded_file(
 
     with (
         patch(
-            "homeassistant.components.velbus.config_flow.process_uploaded_file",
+            "inpui.components.velbus.config_flow.process_uploaded_file",
             side_effect=_mock_process_uploaded_file,
         ) as mock_upload,
         patch(
@@ -79,7 +79,7 @@ def override_async_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with (
         patch(
-            "homeassistant.components.velbus.async_setup_entry", return_value=True
+            "inpui.components.velbus.async_setup_entry", return_value=True
         ) as mock,
     ):
         yield mock
@@ -275,7 +275,7 @@ async def test_vlp_step_no_modules(
 
     with (
         patch(
-            "homeassistant.components.velbus.async_setup_entry",
+            "inpui.components.velbus.async_setup_entry",
             return_value=True,
         ),
         patch(
@@ -326,7 +326,7 @@ async def test_vlp_step_success(
 
     with (
         patch(
-            "homeassistant.components.velbus.async_setup_entry",
+            "inpui.components.velbus.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(

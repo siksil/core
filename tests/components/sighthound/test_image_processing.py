@@ -71,7 +71,7 @@ def mock_detections():
 def mock_image():
     """Return a mock camera image."""
     with mock.patch(
-        "homeassistant.components.demo.camera.DemoCamera.camera_image",
+        "inpui.components.demo.camera.DemoCamera.camera_image",
         return_value=b"Test",
     ) as image:
         yield image
@@ -81,7 +81,7 @@ def mock_image():
 def mock_bad_image_data():
     """Mock bad image data."""
     with mock.patch(
-        "homeassistant.components.sighthound.image_processing.Image.open",
+        "inpui.components.sighthound.image_processing.Image.open",
         side_effect=UnidentifiedImageError,
     ) as bad_data:
         yield bad_data
@@ -90,7 +90,7 @@ def mock_bad_image_data():
 @pytest.fixture
 def mock_now():
     """Return a mock now datetime."""
-    with mock.patch("homeassistant.util.dt.now", return_value=MOCK_NOW) as now_dt:
+    with mock.patch("inpui.util.dt.now", return_value=MOCK_NOW) as now_dt:
         yield now_dt
 
 
@@ -167,7 +167,7 @@ async def test_save_image(hass: HomeAssistant, mock_image, mock_detections) -> N
     assert hass.states.get(VALID_ENTITY_ID)
 
     with mock.patch(
-        "homeassistant.components.sighthound.image_processing.Image.open"
+        "inpui.components.sighthound.image_processing.Image.open"
     ) as pil_img_open:
         pil_img = pil_img_open.return_value
         pil_img = pil_img.convert.return_value
@@ -195,7 +195,7 @@ async def test_save_timestamped_image(
     assert hass.states.get(VALID_ENTITY_ID)
 
     with mock.patch(
-        "homeassistant.components.sighthound.image_processing.Image.open"
+        "inpui.components.sighthound.image_processing.Image.open"
     ) as pil_img_open:
         pil_img = pil_img_open.return_value
         pil_img = pil_img.convert.return_value

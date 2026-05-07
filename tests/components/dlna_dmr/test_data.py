@@ -22,7 +22,7 @@ def aiohttp_notify_servers_mock() -> Generator[Mock]:
     This fixture provides a list of the constructed servers.
     """
     with patch(
-        "homeassistant.components.dlna_dmr.data.AiohttpNotifyServer"
+        "inpui.components.dlna_dmr.data.AiohttpNotifyServer"
     ) as mock_constructor:
         servers = []
 

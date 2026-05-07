@@ -20,7 +20,7 @@ def canary() -> Generator[MagicMock]:
     """Mock the CanaryApi for easier testing."""
     with (
         patch.object(Api, "login", return_value=True),
-        patch("homeassistant.components.canary.Api") as mock_canary,
+        patch("inpui.components.canary.Api") as mock_canary,
     ):
         instance = mock_canary.return_value = Api(
             "test-username",
@@ -45,7 +45,7 @@ def canary_config_flow() -> Generator[MagicMock]:
     """Mock the CanaryApi for easier config flow testing."""
     with (
         patch.object(Api, "login", return_value=True),
-        patch("homeassistant.components.canary.config_flow.Api") as mock_canary,
+        patch("inpui.components.canary.config_flow.Api") as mock_canary,
     ):
         instance = mock_canary.return_value = Api(
             "test-username",

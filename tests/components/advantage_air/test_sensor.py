@@ -123,7 +123,7 @@ async def test_sensor_platform_disabled_entity(
 
     mock_get.reset_mock()
 
-    with patch("homeassistant.config_entries.RELOAD_AFTER_UPDATE_DELAY", 1):
+    with patch("inpui.config_entries.RELOAD_AFTER_UPDATE_DELAY", 1):
         entity_registry.async_update_entity(entity_id=entity_id, disabled_by=None)
         await hass.async_block_till_done(wait_background_tasks=True)
 

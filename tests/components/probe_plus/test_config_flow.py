@@ -29,7 +29,7 @@ service_info = BluetoothServiceInfo(
 def mock_discovered_service_info() -> Generator[AsyncMock]:
     """Override getting Bluetooth service info."""
     with patch(
-        "homeassistant.components.probe_plus.config_flow.async_discovered_service_info",
+        "inpui.components.probe_plus.config_flow.async_discovered_service_info",
         return_value=[service_info],
     ) as mock_discovered_service_info:
         yield mock_discovered_service_info

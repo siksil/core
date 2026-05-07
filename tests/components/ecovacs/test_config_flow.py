@@ -267,7 +267,7 @@ async def test_user_flow_self_hosted_error(
 
     data = VALID_ENTRY_DATA_SELF_HOSTED | {CONF_VERIFY_MQTT_CERTIFICATE: False}
     with patch(
-        "homeassistant.components.ecovacs.config_flow.create_mqtt_config",
+        "inpui.components.ecovacs.config_flow.create_mqtt_config",
         wraps=create_mqtt_config,
     ) as mock_create_mqtt_config:
         result = await hass.config_entries.flow.async_configure(

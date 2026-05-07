@@ -228,15 +228,15 @@ def patch_platforms(platforms: list[Platform]):
     """Only allow given platforms to be loaded."""
     with (
         patch(
-            "homeassistant.components.shelly.PLATFORMS",
+            "inpui.components.shelly.PLATFORMS",
             list(set(PLATFORMS) & set(platforms)),
         ),
         patch(
-            "homeassistant.components.shelly.BLOCK_SLEEPING_PLATFORMS",
+            "inpui.components.shelly.BLOCK_SLEEPING_PLATFORMS",
             list(set(BLOCK_SLEEPING_PLATFORMS) & set(platforms)),
         ),
         patch(
-            "homeassistant.components.shelly.RPC_SLEEPING_PLATFORMS",
+            "inpui.components.shelly.RPC_SLEEPING_PLATFORMS",
             list(set(RPC_SLEEPING_PLATFORMS) & set(platforms)),
         ),
     ):

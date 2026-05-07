@@ -112,7 +112,7 @@ async def test_expired_token_refresh_client_error(
     """Test failure while refreshing token with a client error."""
 
     with patch(
-        "homeassistant.components.twitch.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.twitch.OAuth2Session.async_ensure_token_valid",
         side_effect=ClientError,
     ):
         config_entry.add_to_hass(hass)
@@ -133,7 +133,7 @@ async def test_oauth_implementation_not_available(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.twitch.async_get_config_entry_implementation",
+        "inpui.components.twitch.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

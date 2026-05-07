@@ -48,7 +48,7 @@ async def test_setup(
     device.color_mode = COLOR_TEMP_MODE
     device.color_temp = 2700
 
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )
@@ -69,7 +69,7 @@ async def test_setup_non_color(
     device.get_color_temps.return_value = []
     device.get_colors.return_value = {}
 
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )
@@ -91,7 +91,7 @@ async def test_setup_non_color_non_level(
     device.get_color_temps.return_value = []
     device.get_colors.return_value = {}
 
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )
@@ -116,7 +116,7 @@ async def test_setup_color(
     device.hue = 100
     device.saturation = 70 * 255.0 / 100.0
 
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.LIGHT]):
         entry = await setup_config_entry(
             hass, MOCK_CONFIG[DOMAIN][CONF_DEVICES][0], ENTITY_ID, device, fritz
         )

@@ -29,7 +29,7 @@ async def test_async_step_bluetooth_valid_device(hass: HomeAssistant) -> None:
     )
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "bluetooth_confirm"
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"], user_input={}
         )
@@ -43,10 +43,10 @@ async def test_async_step_bluetooth_during_onboarding(hass: HomeAssistant) -> No
     """Test discovery via bluetooth during onboarding."""
     with (
         patch(
-            "homeassistant.components.bthome.async_setup_entry", return_value=True
+            "inpui.components.bthome.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.onboarding.async_is_onboarded",
+            "inpui.components.onboarding.async_is_onboarded",
             return_value=False,
         ) as mock_onboarding,
     ):
@@ -76,7 +76,7 @@ async def test_async_step_bluetooth_valid_device_with_encryption(
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "get_encryption_key"
 
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"bindkey": "231d39c1d7cc1ab1aee224cd096db932"},
@@ -108,7 +108,7 @@ async def test_async_step_bluetooth_valid_device_encryption_wrong_key(
     assert result2["errors"]["bindkey"] == "decryption_failed"
 
     # Test can finish flow
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"bindkey": "231d39c1d7cc1ab1aee224cd096db932"},
@@ -141,7 +141,7 @@ async def test_async_step_bluetooth_valid_device_encryption_wrong_key_length(
     assert result2["errors"]["bindkey"] == "expected_32_characters"
 
     # Test can finish flow
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"bindkey": "231d39c1d7cc1ab1aee224cd096db932"},
@@ -179,7 +179,7 @@ async def test_async_step_user_no_devices_found_2(hass: HomeAssistant) -> None:
     This variant tests with a non-BTHome device known to us.
     """
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[NOT_BTHOME_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -193,7 +193,7 @@ async def test_async_step_user_no_devices_found_2(hass: HomeAssistant) -> None:
 async def test_async_step_user_with_found_devices(hass: HomeAssistant) -> None:
     """Test setup from service info cache with devices found."""
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[PRST_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -202,7 +202,7 @@ async def test_async_step_user_with_found_devices(hass: HomeAssistant) -> None:
         )
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "user"
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"address": "54:48:E6:8F:80:A5"},
@@ -223,7 +223,7 @@ async def test_async_step_user_replaces_ignored(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[PRST_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -232,7 +232,7 @@ async def test_async_step_user_replaces_ignored(hass: HomeAssistant) -> None:
         )
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "user"
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"address": "54:48:E6:8F:80:A5"},
@@ -248,7 +248,7 @@ async def test_async_step_user_with_found_devices_encryption(
 ) -> None:
     """Test setup from service info cache with devices found, with encryption."""
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[TEMP_HUMI_ENCRYPTED_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -265,7 +265,7 @@ async def test_async_step_user_with_found_devices_encryption(
     assert result1["type"] is FlowResultType.FORM
     assert result1["step_id"] == "get_encryption_key"
 
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"bindkey": "231d39c1d7cc1ab1aee224cd096db932"},
@@ -283,7 +283,7 @@ async def test_async_step_user_with_found_devices_encryption_wrong_key(
     """Test setup from service info cache with devices found, with encryption and wrong key."""
     # Get a list of devices
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[TEMP_HUMI_ENCRYPTED_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -311,7 +311,7 @@ async def test_async_step_user_with_found_devices_encryption_wrong_key(
     assert result2["errors"]["bindkey"] == "decryption_failed"
 
     # Check can still finish flow
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"bindkey": "231d39c1d7cc1ab1aee224cd096db932"},
@@ -329,7 +329,7 @@ async def test_async_step_user_with_found_devices_encryption_wrong_key_length(
     """Test setup from service info cache with devices found, with encryption and wrong key length."""
     # Get a list of devices
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[TEMP_HUMI_ENCRYPTED_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -358,7 +358,7 @@ async def test_async_step_user_with_found_devices_encryption_wrong_key_length(
     assert result2["errors"]["bindkey"] == "expected_32_characters"
 
     # Check can still finish flow
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"bindkey": "231d39c1d7cc1ab1aee224cd096db932"},
@@ -373,7 +373,7 @@ async def test_async_step_user_with_found_devices_encryption_wrong_key_length(
 async def test_async_step_user_device_added_between_steps(hass: HomeAssistant) -> None:
     """Test the device gets added via another flow between steps."""
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[TEMP_HUMI_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -389,7 +389,7 @@ async def test_async_step_user_device_added_between_steps(hass: HomeAssistant) -
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"address": "A4:C1:38:8D:18:B2"},
@@ -409,7 +409,7 @@ async def test_async_step_user_with_found_devices_already_setup(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[TEMP_HUMI_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -469,7 +469,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
     assert result["step_id"] == "bluetooth_confirm"
 
     with patch(
-        "homeassistant.components.bthome.config_flow.async_discovered_service_info",
+        "inpui.components.bthome.config_flow.async_discovered_service_info",
         return_value=[PRST_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -478,7 +478,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
         )
         assert result["type"] is FlowResultType.FORM
 
-    with patch("homeassistant.components.bthome.async_setup_entry", return_value=True):
+    with patch("inpui.components.bthome.async_setup_entry", return_value=True):
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input={"address": "54:48:E6:8F:80:A5"},
@@ -507,7 +507,7 @@ async def test_async_step_reauth(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -547,7 +547,7 @@ async def test_async_step_reauth_wrong_key(hass: HomeAssistant) -> None:
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.update_coordinator.async_register_callback",
+        "inpui.components.bluetooth.update_coordinator.async_register_callback",
         _async_register_callback,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

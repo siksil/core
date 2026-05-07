@@ -746,7 +746,7 @@ async def test_proactive_mode_filter_states(
 
     # unsupported entity should not report
     with patch.dict(
-        "homeassistant.components.alexa.state_report.ENTITY_ADAPTERS", {}, clear=True
+        "inpui.components.alexa.state_report.ENTITY_ADAPTERS", {}, clear=True
     ):
         hass.states.async_set(
             "binary_sensor.test_contact",
@@ -777,7 +777,7 @@ async def test_proactive_mode_filter_states(
     # If serializes to same properties, it should not report
     aioclient_mock.post(TEST_URL, text="", status=202)
     with patch(
-        "homeassistant.components.alexa.entities.AlexaEntity.serialize_properties",
+        "inpui.components.alexa.entities.AlexaEntity.serialize_properties",
         return_value=[{"same": "info"}],
     ):
         hass.states.async_set(

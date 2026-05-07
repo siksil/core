@@ -134,7 +134,7 @@ async def test_load_creates_repair_issue(
     mock_config_entry.add_to_hass(hass)
     await hass.async_block_till_done()
 
-    with patch("homeassistant.components.homewizard.has_v2_api", return_value=True):
+    with patch("inpui.components.homewizard.has_v2_api", return_value=True):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
 
     await hass.async_block_till_done()
@@ -160,7 +160,7 @@ async def test_load_creates_repair_issue_when_name_is_updated(
     mock_config_entry.add_to_hass(hass)
     await hass.async_block_till_done()
 
-    with patch("homeassistant.components.homewizard.has_v2_api", return_value=True):
+    with patch("inpui.components.homewizard.has_v2_api", return_value=True):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
 
     await hass.async_block_till_done()
@@ -185,7 +185,7 @@ async def test_load_creates_repair_issue_when_name_is_updated(
     )
 
     # Reload integration to trigger issue update
-    with patch("homeassistant.components.homewizard.has_v2_api", return_value=True):
+    with patch("inpui.components.homewizard.has_v2_api", return_value=True):
         await hass.config_entries.async_reload(mock_config_entry.entry_id)
     await hass.async_block_till_done()
 

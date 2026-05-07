@@ -104,7 +104,7 @@ async def test_reauth_password(hass: HomeAssistant) -> None:
     result = await entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.sleepiq.config_flow.AsyncSleepIQ.login",
+        "inpui.components.sleepiq.config_flow.AsyncSleepIQ.login",
         return_value=True,
     ):
         result2 = await hass.config_entries.flow.async_configure(

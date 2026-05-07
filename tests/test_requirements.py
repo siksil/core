@@ -34,10 +34,10 @@ async def test_requirement_installed_in_venv(hass: HomeAssistant) -> None:
     """Test requirement installed in virtual environment."""
     with (
         patch("os.path.dirname", return_value="ha_package_path"),
-        patch("homeassistant.util.package.is_virtual_env", return_value=True),
-        patch("homeassistant.util.package.is_docker_env", return_value=False),
+        patch("inpui.util.package.is_virtual_env", return_value=True),
+        patch("inpui.util.package.is_docker_env", return_value=False),
         patch(
-            "homeassistant.util.package.install_package", return_value=True
+            "inpui.util.package.install_package", return_value=True
         ) as mock_install,
         patch.dict(os.environ, env_without_wheel_links(), clear=True),
     ):
@@ -56,10 +56,10 @@ async def test_requirement_installed_in_deps(hass: HomeAssistant) -> None:
     """Test requirement installed in deps directory."""
     with (
         patch("os.path.dirname", return_value="ha_package_path"),
-        patch("homeassistant.util.package.is_virtual_env", return_value=False),
-        patch("homeassistant.util.package.is_docker_env", return_value=False),
+        patch("inpui.util.package.is_virtual_env", return_value=False),
+        patch("inpui.util.package.is_docker_env", return_value=False),
         patch(
-            "homeassistant.util.package.install_package", return_value=True
+            "inpui.util.package.install_package", return_value=True
         ) as mock_install,
         patch.dict(os.environ, env_without_wheel_links(), clear=True),
     ):
@@ -78,15 +78,15 @@ async def test_requirement_installed_in_deps(hass: HomeAssistant) -> None:
 async def test_install_existing_package(hass: HomeAssistant) -> None:
     """Test an install attempt on an existing package."""
     with patch(
-        "homeassistant.util.package.install_package", return_value=True
+        "inpui.util.package.install_package", return_value=True
     ) as mock_inst:
         await async_process_requirements(hass, "test_component", ["hello==1.0.0"])
 
     assert len(mock_inst.mock_calls) == 1
 
     with (
-        patch("homeassistant.util.package.is_installed", return_value=True),
-        patch("homeassistant.util.package.install_package") as mock_inst,
+        patch("inpui.util.package.is_installed", return_value=True),
+        patch("inpui.util.package.install_package") as mock_inst,
     ):
         await async_process_requirements(hass, "test_component", ["hello==1.0.0"])
 
@@ -97,7 +97,7 @@ async def test_install_missing_package(hass: HomeAssistant) -> None:
     """Test an install attempt on an existing package."""
     with (
         patch(
-            "homeassistant.util.package.install_package", return_value=False
+            "inpui.util.package.install_package", return_value=False
         ) as mock_inst,
         pytest.raises(RequirementsNotFound),
     ):
@@ -111,7 +111,7 @@ async def test_install_skipped_package(
 ) -> None:
     """Test an install attempt on a dependency that should be skipped."""
     with patch(
-        "homeassistant.util.package.install_package", return_value=True
+        "inpui.util.package.install_package", return_value=True
     ) as mock_inst:
         hass.config.skip_pip_packages = ["hello"]
         with caplog.at_level(logging.WARNING):
@@ -149,10 +149,10 @@ async def test_get_integration_with_requirements(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.util.package.is_installed", return_value=False
+            "inpui.util.package.is_installed", return_value=False
         ) as mock_is_installed,
         patch(
-            "homeassistant.util.package.install_package", return_value=True
+            "inpui.util.package.install_package", return_value=True
         ) as mock_inst,
     ):
         integration = await async_get_integration_with_requirements(
@@ -213,13 +213,13 @@ async def test_get_integration_with_requirements_cache(hass: HomeAssistant) -> N
 
     with (
         patch(
-            "homeassistant.util.package.is_installed", return_value=False
+            "inpui.util.package.is_installed", return_value=False
         ) as mock_is_installed,
         patch(
-            "homeassistant.util.package.install_package", return_value=True
+            "inpui.util.package.install_package", return_value=True
         ) as mock_inst,
         patch(
-            "homeassistant.requirements.async_get_integration",
+            "inpui.requirements.async_get_integration",
             wraps=async_get_integration,
         ) as mock_async_get_integration,
     ):
@@ -347,10 +347,10 @@ async def test_get_integration_with_requirements_pip_install_fails_two_passes(
     with (
         pytest.raises(RequirementsNotFound),
         patch(
-            "homeassistant.util.package.is_installed", return_value=False
+            "inpui.util.package.is_installed", return_value=False
         ) as mock_is_installed,
         patch(
-            "homeassistant.util.package.install_package",
+            "inpui.util.package.install_package",
             side_effect=_mock_install_package,
         ) as mock_inst,
     ):
@@ -380,10 +380,10 @@ async def test_get_integration_with_requirements_pip_install_fails_two_passes(
     with (
         pytest.raises(RequirementsNotFound),
         patch(
-            "homeassistant.util.package.is_installed", return_value=False
+            "inpui.util.package.is_installed", return_value=False
         ) as mock_is_installed,
         patch(
-            "homeassistant.util.package.install_package",
+            "inpui.util.package.install_package",
             side_effect=_mock_install_package,
         ) as mock_inst,
     ):
@@ -401,10 +401,10 @@ async def test_get_integration_with_requirements_pip_install_fails_two_passes(
     with (
         pytest.raises(RequirementsNotFound),
         patch(
-            "homeassistant.util.package.is_installed", return_value=False
+            "inpui.util.package.is_installed", return_value=False
         ) as mock_is_installed,
         patch(
-            "homeassistant.util.package.install_package",
+            "inpui.util.package.install_package",
             side_effect=_mock_install_package,
         ) as mock_inst,
     ):
@@ -433,10 +433,10 @@ async def test_get_integration_with_requirements_pip_install_fails_two_passes(
 
     with (
         patch(
-            "homeassistant.util.package.is_installed", return_value=False
+            "inpui.util.package.is_installed", return_value=False
         ) as mock_is_installed,
         patch(
-            "homeassistant.util.package.install_package", return_value=True
+            "inpui.util.package.install_package", return_value=True
         ) as mock_inst,
     ):
         integration = await async_get_integration_with_requirements(
@@ -531,9 +531,9 @@ async def test_install_with_wheels_index(hass: HomeAssistant) -> None:
     mock_integration(hass, MockModule("comp", requirements=["hello==1.0.0"]))
 
     with (
-        patch("homeassistant.util.package.is_installed", return_value=False),
-        patch("homeassistant.util.package.is_docker_env", return_value=True),
-        patch("homeassistant.util.package.install_package") as mock_inst,
+        patch("inpui.util.package.is_installed", return_value=False),
+        patch("inpui.util.package.is_docker_env", return_value=True),
+        patch("inpui.util.package.install_package") as mock_inst,
         patch.dict(os.environ, {"WHEELS_LINKS": "https://wheels.hass.io/test"}),
         patch(
             "os.path.dirname",
@@ -556,9 +556,9 @@ async def test_install_on_docker(hass: HomeAssistant) -> None:
     mock_integration(hass, MockModule("comp", requirements=["hello==1.0.0"]))
 
     with (
-        patch("homeassistant.util.package.is_installed", return_value=False),
-        patch("homeassistant.util.package.is_docker_env", return_value=True),
-        patch("homeassistant.util.package.install_package") as mock_inst,
+        patch("inpui.util.package.is_installed", return_value=False),
+        patch("inpui.util.package.is_docker_env", return_value=True),
+        patch("inpui.util.package.install_package") as mock_inst,
         patch("os.path.dirname") as mock_dir,
         patch.dict(os.environ, env_without_wheel_links(), clear=True),
     ):
@@ -582,7 +582,7 @@ async def test_discovery_requirements_mqtt(hass: HomeAssistant) -> None:
         hass, MockModule("mqtt_comp", partial_manifest={"mqtt": ["foo/discovery"]})
     )
     with patch(
-        "homeassistant.requirements.RequirementsManager.async_process_requirements",
+        "inpui.requirements.RequirementsManager.async_process_requirements",
     ) as mock_process:
         await async_get_integration_with_requirements(hass, "mqtt_comp")
 
@@ -600,7 +600,7 @@ async def test_discovery_requirements_ssdp(hass: HomeAssistant) -> None:
         hass, MockModule("ssdp_comp", partial_manifest={"ssdp": [{"st": "roku:ecp"}]})
     )
     with patch(
-        "homeassistant.requirements.RequirementsManager.async_process_requirements",
+        "inpui.requirements.RequirementsManager.async_process_requirements",
     ) as mock_process:
         await async_get_integration_with_requirements(hass, "ssdp_comp")
 
@@ -629,7 +629,7 @@ async def test_discovery_requirements_zeroconf(
     )
 
     with patch(
-        "homeassistant.requirements.RequirementsManager.async_process_requirements",
+        "inpui.requirements.RequirementsManager.async_process_requirements",
     ) as mock_process:
         await async_get_integration_with_requirements(hass, "comp")
 
@@ -652,7 +652,7 @@ async def test_discovery_requirements_dhcp(hass: HomeAssistant) -> None:
         ),
     )
     with patch(
-        "homeassistant.requirements.RequirementsManager.async_process_requirements",
+        "inpui.requirements.RequirementsManager.async_process_requirements",
     ) as mock_process:
         await async_get_integration_with_requirements(hass, "comp")
 
@@ -712,7 +712,7 @@ async def test_install_deprecated_package(
         patch.dict(
             DEPRECATED_PACKAGES, {"hello": ("is deprecated for testing", "2020.12")}
         ),
-        patch("homeassistant.util.package.install_package", return_value=True),
+        patch("inpui.util.package.install_package", return_value=True),
     ):
         await async_process_requirements(
             hass,

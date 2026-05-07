@@ -77,7 +77,7 @@ async def test_options(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.transmission.async_setup_entry",
+        "inpui.components.transmission.async_setup_entry",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -178,7 +178,7 @@ async def test_reauth_success(
     }
 
     with patch(
-        "homeassistant.components.transmission.async_setup_entry",
+        "inpui.components.transmission.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(

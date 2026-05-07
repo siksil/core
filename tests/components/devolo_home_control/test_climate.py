@@ -26,7 +26,7 @@ async def test_climate(
     test_gateway = HomeControlMockClimate()
     test_gateway.devices["Test"].value = 20
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -71,7 +71,7 @@ async def test_remove_from_hass(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockClimate()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

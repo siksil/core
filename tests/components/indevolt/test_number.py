@@ -41,7 +41,7 @@ async def test_number(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test number entity registration and values."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -87,7 +87,7 @@ async def test_number_set_values(
     test_value: int,
 ) -> None:
     """Test setting number values for all configurable parameters."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, mock_config_entry)
 
     # Reset mock call count for this iteration
@@ -119,7 +119,7 @@ async def test_number_set_value_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test error handling when setting number values."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, mock_config_entry)
 
     # Mock set_data to raise an error
@@ -151,7 +151,7 @@ async def test_number_availability(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test number entity availability / non-availability."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.NUMBER]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.NUMBER]):
         await setup_integration(hass, mock_config_entry)
 
     assert (state := hass.states.get("number.cms_sf2000_discharge_limit"))

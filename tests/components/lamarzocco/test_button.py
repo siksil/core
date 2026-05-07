@@ -34,7 +34,7 @@ async def test_start_backflush(
     assert entry == snapshot
 
     with patch(
-        "homeassistant.components.lamarzocco.button.asyncio.sleep",
+        "inpui.components.lamarzocco.button.asyncio.sleep",
         new_callable=AsyncMock,
     ):
         await hass.services.async_call(

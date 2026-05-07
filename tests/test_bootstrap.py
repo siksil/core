@@ -54,7 +54,7 @@ def cleanup_log_files() -> None:
 @pytest.fixture(autouse=True)
 def disable_installed_check() -> Generator[None]:
     """Disable package installed check."""
-    with patch("homeassistant.util.package.is_installed", return_value=True):
+    with patch("inpui.util.package.is_installed", return_value=True):
         yield
 
 
@@ -77,13 +77,13 @@ def disable_block_async_io(disable_block_async_io):
 def mock_http_start_stop() -> Generator[None]:
     """Mock HTTP start and stop."""
     with (
-        patch("homeassistant.components.http.start_http_server_and_save_config"),
-        patch("homeassistant.components.http.HomeAssistantHTTP.stop"),
+        patch("inpui.components.http.start_http_server_and_save_config"),
+        patch("inpui.components.http.HomeAssistantHTTP.stop"),
     ):
         yield
 
 
-@patch("homeassistant.bootstrap.async_enable_logging", AsyncMock())
+@patch("inpui.bootstrap.async_enable_logging", AsyncMock())
 async def test_home_assistant_core_config_validation(hass: HomeAssistant) -> None:
     """Test if we pass in wrong information for HA conf."""
     # Extensive HA conf validation testing is done
@@ -106,10 +106,10 @@ async def test_async_enable_logging(
     with (
         patch("logging.getLogger"),
         patch(
-            "homeassistant.bootstrap.async_activate_log_queue_handler"
+            "inpui.bootstrap.async_activate_log_queue_handler"
         ) as mock_async_activate_log_queue_handler,
         patch(
-            "homeassistant.bootstrap.logging.handlers.RotatingFileHandler.doRollover",
+            "inpui.bootstrap.logging.handlers.RotatingFileHandler.doRollover",
             side_effect=OSError,
         ),
     ):
@@ -152,7 +152,7 @@ async def test_async_enable_logging_supervisor(
     with (
         patch.dict(os.environ, {"SUPERVISOR": "1", **extra_env}),
         patch(
-            "homeassistant.bootstrap.async_activate_log_queue_handler"
+            "inpui.bootstrap.async_activate_log_queue_handler"
         ) as mock_async_activate_log_queue_handler,
         patch("logging.getLogger"),
     ):
@@ -264,7 +264,7 @@ async def test_core_failure_loads_recovery_mode(
 ) -> None:
     """Test failing core setup aborts further setup."""
     with patch(
-        "homeassistant.components.homeassistant.async_setup",
+        "inpui.components.homeassistant.async_setup",
         return_value=False,
     ):
         await bootstrap.async_from_config_dict({"group": {}}, hass)
@@ -338,7 +338,7 @@ async def test_setup_after_deps_all_present(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.logger.async_setup", gen_domain_setup("logger")
+        "inpui.components.logger.async_setup", gen_domain_setup("logger")
     ):
         await bootstrap._async_set_up_integrations(
             hass, {"root": {}, "first_dep": {}, "second_dep": {}, "logger": {}}
@@ -689,7 +689,7 @@ async def test_setup_after_deps_not_present(hass: HomeAssistant) -> None:
 def mock_is_virtual_env() -> Generator[Mock]:
     """Mock is_virtual_env."""
     with patch(
-        "homeassistant.bootstrap.is_virtual_env", return_value=False
+        "inpui.bootstrap.is_virtual_env", return_value=False
     ) as is_virtual_env:
         yield is_virtual_env
 
@@ -697,7 +697,7 @@ def mock_is_virtual_env() -> Generator[Mock]:
 @pytest.fixture
 def mock_enable_logging() -> Generator[AsyncMock]:
     """Mock enable logging."""
-    with patch("homeassistant.bootstrap.async_enable_logging") as enable_logging:
+    with patch("inpui.bootstrap.async_enable_logging") as enable_logging:
         yield enable_logging
 
 
@@ -705,7 +705,7 @@ def mock_enable_logging() -> Generator[AsyncMock]:
 def mock_mount_local_lib_path() -> Generator[AsyncMock]:
     """Mock enable logging."""
     with patch(
-        "homeassistant.bootstrap.async_mount_local_lib_path"
+        "inpui.bootstrap.async_mount_local_lib_path"
     ) as mount_local_lib_path:
         yield mount_local_lib_path
 
@@ -714,7 +714,7 @@ def mock_mount_local_lib_path() -> Generator[AsyncMock]:
 def mock_process_ha_config_upgrade() -> Generator[Mock]:
     """Mock enable logging."""
     with patch(
-        "homeassistant.config.process_ha_config_upgrade"
+        "inpui.config.process_ha_config_upgrade"
     ) as process_ha_config_upgrade:
         yield process_ha_config_upgrade
 
@@ -723,7 +723,7 @@ def mock_process_ha_config_upgrade() -> Generator[Mock]:
 def mock_ensure_config_exists() -> Generator[AsyncMock]:
     """Mock enable logging."""
     with patch(
-        "homeassistant.config.async_ensure_config_exists", return_value=True
+        "inpui.config.async_ensure_config_exists", return_value=True
     ) as ensure_config_exists:
         yield ensure_config_exists
 
@@ -805,7 +805,7 @@ async def test_setup_hass_takes_longer_than_log_slow_startup(
         patch.object(bootstrap, "LOG_SLOW_STARTUP_INTERVAL", 0.005),
         patch.object(bootstrap, "SLOW_STARTUP_CHECK_INTERVAL", 0.005),
         patch(
-            "homeassistant.components.frontend.async_setup",
+            "inpui.components.frontend.async_setup",
             side_effect=_async_setup_that_blocks_startup,
         ),
     ):
@@ -833,7 +833,7 @@ async def test_setup_hass_invalid_yaml(
 ) -> None:
     """Test it works."""
     with patch(
-        "homeassistant.config.async_hass_config_yaml", side_effect=HomeAssistantError
+        "inpui.config.async_hass_config_yaml", side_effect=HomeAssistantError
     ):
         hass = await bootstrap.async_setup_hass(
             runner.RuntimeConfig(
@@ -887,11 +887,11 @@ async def test_setup_hass_recovery_mode(
     """Test it works."""
     with (
         patch(
-            "homeassistant.core.HomeAssistant", wraps=core.HomeAssistant
+            "inpui.core.HomeAssistant", wraps=core.HomeAssistant
         ) as mock_hass,
-        patch("homeassistant.components.browser.setup") as browser_setup,
+        patch("inpui.components.browser.setup") as browser_setup,
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_domains",
+            "inpui.config_entries.ConfigEntries.async_domains",
             return_value=["browser"],
         ),
     ):
@@ -928,7 +928,7 @@ async def test_setup_hass_recovery_mode_with_failing_integration(
 ) -> None:
     """Test recovery mode still starts if cloud or backup fails to set up."""
     with patch(
-        f"homeassistant.components.{domain}.async_setup",
+        f"inpui.components.{domain}.async_setup",
         side_effect=Exception(f"{domain} setup failed"),
     ):
         hass = await bootstrap.async_setup_hass(
@@ -958,9 +958,9 @@ async def test_setup_hass_safe_mode(
 ) -> None:
     """Test it works."""
     with (
-        patch("homeassistant.components.browser.setup"),
+        patch("inpui.components.browser.setup"),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_domains",
+            "inpui.config_entries.ConfigEntries.async_domains",
             return_value=["browser"],
         ),
     ):
@@ -993,9 +993,9 @@ async def test_setup_hass_recovery_mode_and_safe_mode(
 ) -> None:
     """Test it works."""
     with (
-        patch("homeassistant.components.browser.setup"),
+        patch("inpui.components.browser.setup"),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_domains",
+            "inpui.config_entries.ConfigEntries.async_domains",
             return_value=["browser"],
         ),
     ):
@@ -1067,7 +1067,7 @@ async def test_setup_hass_invalid_core_config(
     mock_process_ha_config_upgrade: Mock,
 ) -> None:
     """Test it works."""
-    with patch("homeassistant.bootstrap.async_notify_setup_error") as mock_notify:
+    with patch("inpui.bootstrap.async_notify_setup_error") as mock_notify:
         hass = await bootstrap.async_setup_hass(
             runner.RuntimeConfig(
                 config_dir=get_test_config_dir(),
@@ -1131,7 +1131,7 @@ async def test_setup_recovery_mode_if_no_frontend(
 
 
 @pytest.mark.parametrize("load_registries", [False])
-@patch("homeassistant.bootstrap.DEFAULT_INTEGRATIONS", set())
+@patch("inpui.bootstrap.DEFAULT_INTEGRATIONS", set())
 async def test_empty_integrations_list_is_only_sent_at_the_end_of_bootstrap(
     hass: HomeAssistant,
 ) -> None:
@@ -1489,11 +1489,11 @@ async def test_bootstrap_dependencies(
 
     with (
         patch(
-            "homeassistant.setup.loader.async_get_integrations",
+            "inpui.setup.loader.async_get_integrations",
             side_effect=mock_async_get_integrations,
         ),
         patch(
-            "homeassistant.config.async_process_component_config",
+            "inpui.config.async_process_component_config",
             return_value=config_util.IntegrationConfigInfo({}, []),
         ),
     ):
@@ -1581,7 +1581,7 @@ async def test_bootstrap_does_not_preimport_stage_1_integrations() -> None:
     # Ensure no stage1 integrations have been imported
     # as a side effect of importing the pre-imports
     for integration in bootstrap.STAGE_1_INTEGRATIONS:
-        assert f"homeassistant.components.{integration}" not in decoded_stdout
+        assert f"inpui.components.{integration}" not in decoded_stdout
 
 
 @pytest.mark.parametrize("load_registries", [False])
@@ -1674,7 +1674,7 @@ async def test_setup_does_base_platforms_first(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.logger.async_setup", gen_domain_setup("logger")
+        "inpui.components.logger.async_setup", gen_domain_setup("logger")
     ):
         await bootstrap._async_set_up_integrations(
             hass,

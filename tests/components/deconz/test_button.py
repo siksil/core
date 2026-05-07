@@ -86,7 +86,7 @@ async def test_button(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of button entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.BUTTON]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

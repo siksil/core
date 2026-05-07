@@ -24,6 +24,6 @@ async def setup_integration(
         await hass.async_block_till_done()
         return
 
-    with patch("homeassistant.components.nrgkick.PLATFORMS", list(platforms)):
+    with patch("inpui.components.nrgkick.PLATFORMS", list(platforms)):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()

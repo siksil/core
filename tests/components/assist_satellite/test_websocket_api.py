@@ -267,7 +267,7 @@ async def test_intercept_wake_word_unsubscribe(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         ) as mock_pipeline_from_audio_stream,
     ):
         # Start a pipeline with a wake word

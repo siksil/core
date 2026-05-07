@@ -21,7 +21,7 @@ async def test_sensor(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test states of the sensor."""
-    with patch("homeassistant.components.tractive.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.tractive.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mock_config_entry)
 
         mock_tractive_client.send_hardware_event(mock_config_entry)

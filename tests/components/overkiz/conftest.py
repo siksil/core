@@ -31,7 +31,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.overkiz.async_setup_entry", return_value=True
+        "inpui.components.overkiz.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

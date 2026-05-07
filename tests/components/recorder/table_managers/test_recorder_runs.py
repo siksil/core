@@ -53,7 +53,7 @@ async def test_run_history_while_recorder_is_not_yet_started(
     # Prevent the run history from starting to ensure
     # we can test run_history.current.start returns the expected value
     with patch(
-        "homeassistant.components.recorder.table_managers.recorder_runs.RecorderRunsManager.start",
+        "inpui.components.recorder.table_managers.recorder_runs.RecorderRunsManager.start",
     ):
         instance = await async_setup_recorder_instance(hass)
     run_history = instance.recorder_runs_manager

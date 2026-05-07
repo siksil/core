@@ -81,9 +81,9 @@ async def test_configuring_tplink_causes_discovery(
 ) -> None:
     """Test that specifying empty config does discovery."""
     with (
-        patch("homeassistant.components.tplink.Discover.discover") as discover,
-        patch("homeassistant.components.tplink.Discover.discover_single"),
-        patch("homeassistant.components.tplink.Device.connect"),
+        patch("inpui.components.tplink.Discover.discover") as discover,
+        patch("inpui.components.tplink.Discover.discover_single"),
+        patch("inpui.components.tplink.Device.connect"),
     ):
         discover.return_value = {MagicMock(): MagicMock()}
         await async_setup_component(hass, tplink.DOMAIN, {tplink.DOMAIN: {}})
@@ -237,7 +237,7 @@ async def test_config_entry_with_stored_credentials(
     mock_config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.tplink.async_create_clientsession",
+            "inpui.components.tplink.async_create_clientsession",
             return_value="Foo",
         ),
         override_side_effect(mock_discovery["discover"], lambda *_, **__: {}),
@@ -546,7 +546,7 @@ async def test_unlink_devices(
     assert device_entries[0].identifiers == set(test_identifiers)
 
     with (
-        patch("homeassistant.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 3),
+        patch("inpui.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 3),
         _patch_discovery(),
         _patch_single_discovery(),
         _patch_connect(),
@@ -598,9 +598,9 @@ async def test_move_credentials_hash(
         return _mocked_device(device_config=config, credentials_hash="theNewHash")
 
     with (
-        patch("homeassistant.components.tplink.Device.connect", new=_connect),
-        patch("homeassistant.components.tplink.PLATFORMS", []),
-        patch("homeassistant.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 4),
+        patch("inpui.components.tplink.Device.connect", new=_connect),
+        patch("inpui.components.tplink.PLATFORMS", []),
+        patch("inpui.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 4),
         _patch_discovery(),
         _patch_single_discovery(),
     ):
@@ -642,11 +642,11 @@ async def test_move_credentials_hash_auth_error(
 
     with (
         patch(
-            "homeassistant.components.tplink.Device.connect",
+            "inpui.components.tplink.Device.connect",
             side_effect=AuthenticationError,
         ),
-        patch("homeassistant.components.tplink.PLATFORMS", []),
-        patch("homeassistant.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 4),
+        patch("inpui.components.tplink.PLATFORMS", []),
+        patch("inpui.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 4),
         _patch_discovery(),
         _patch_single_discovery(),
     ):
@@ -687,10 +687,10 @@ async def test_move_credentials_hash_other_error(
 
     with (
         patch(
-            "homeassistant.components.tplink.Device.connect", side_effect=KasaException
+            "inpui.components.tplink.Device.connect", side_effect=KasaException
         ),
-        patch("homeassistant.components.tplink.PLATFORMS", []),
-        patch("homeassistant.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 4),
+        patch("inpui.components.tplink.PLATFORMS", []),
+        patch("inpui.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 4),
         _patch_discovery(),
         _patch_single_discovery(),
     ):
@@ -726,8 +726,8 @@ async def test_credentials_hash(
         return _mocked_device(device_config=config, credentials_hash="theHash")
 
     with (
-        patch("homeassistant.components.tplink.PLATFORMS", []),
-        patch("homeassistant.components.tplink.Device.connect", new=_connect),
+        patch("inpui.components.tplink.PLATFORMS", []),
+        patch("inpui.components.tplink.Device.connect", new=_connect),
         _patch_discovery(),
         _patch_single_discovery(),
     ):
@@ -757,13 +757,13 @@ async def test_credentials_hash_auth_error(
     )
 
     with (
-        patch("homeassistant.components.tplink.PLATFORMS", []),
+        patch("inpui.components.tplink.PLATFORMS", []),
         patch(
-            "homeassistant.components.tplink.async_create_clientsession",
+            "inpui.components.tplink.async_create_clientsession",
             return_value="Foo",
         ),
         patch(
-            "homeassistant.components.tplink.Device.connect",
+            "inpui.components.tplink.Device.connect",
             side_effect=AuthenticationError,
         ) as connect_mock,
         _patch_discovery(),
@@ -841,13 +841,13 @@ async def test_migrate_remove_device_config(
         return _mocked_device(device_config=config, credentials_hash=credentials_hash)
 
     with (
-        patch("homeassistant.components.tplink.Device.connect", new=_connect),
-        patch("homeassistant.components.tplink.PLATFORMS", []),
+        patch("inpui.components.tplink.Device.connect", new=_connect),
+        patch("inpui.components.tplink.PLATFORMS", []),
         patch(
-            "homeassistant.components.tplink.async_create_clientsession",
+            "inpui.components.tplink.async_create_clientsession",
             return_value="Foo",
         ),
-        patch("homeassistant.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 5),
+        patch("inpui.components.tplink.CONF_CONFIG_ENTRY_MINOR_VERSION", 5),
     ):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()

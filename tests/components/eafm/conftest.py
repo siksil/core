@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture
 def mock_get_stations() -> Generator[AsyncMock]:
     """Mock aioeafm.get_stations."""
-    with patch("homeassistant.components.eafm.config_flow.get_stations") as patched:
+    with patch("inpui.components.eafm.config_flow.get_stations") as patched:
         patched.return_value = [
             {"label": "My station", "stationReference": "L12345", "RLOIid": "R12345"}
         ]
@@ -25,7 +25,7 @@ def mock_get_stations() -> Generator[AsyncMock]:
 @pytest.fixture
 def mock_get_station(initial_value: dict[str, Any]) -> Generator[AsyncMock]:
     """Mock aioeafm.get_station."""
-    with patch("homeassistant.components.eafm.coordinator.get_station") as patched:
+    with patch("inpui.components.eafm.coordinator.get_station") as patched:
         patched.return_value = initial_value
         yield patched
 

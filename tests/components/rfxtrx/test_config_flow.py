@@ -60,7 +60,7 @@ async def test_setup_network(transport_mock, hass: HomeAssistant) -> None:
     assert result["step_id"] == "setup_network"
     assert result["errors"] == {}
 
-    with patch("homeassistant.components.rfxtrx.async_setup_entry", return_value=True):
+    with patch("inpui.components.rfxtrx.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], {"host": "10.10.0.1", "port": 1234}
         )
@@ -98,7 +98,7 @@ async def test_setup_serial(com_mock, transport_mock, hass: HomeAssistant) -> No
     assert result["step_id"] == "setup_serial"
     assert result["errors"] == {}
 
-    with patch("homeassistant.components.rfxtrx.async_setup_entry", return_value=True):
+    with patch("inpui.components.rfxtrx.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], {"device": port.device}
         )
@@ -144,7 +144,7 @@ async def test_setup_serial_manual(
     assert result["step_id"] == "setup_serial_manual_path"
     assert result["errors"] == {}
 
-    with patch("homeassistant.components.rfxtrx.async_setup_entry", return_value=True):
+    with patch("inpui.components.rfxtrx.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], {"device": "/dev/ttyUSB0"}
         )
@@ -276,7 +276,7 @@ async def test_options_global(hass: HomeAssistant) -> None:
         },
         unique_id=DOMAIN,
     )
-    with patch("homeassistant.components.rfxtrx.async_setup_entry", return_value=True):
+    with patch("inpui.components.rfxtrx.async_setup_entry", return_value=True):
         result = await start_options_flow(hass, entry)
 
     assert result["type"] is FlowResultType.FORM
@@ -311,7 +311,7 @@ async def test_no_protocols(hass: HomeAssistant) -> None:
         },
         unique_id=DOMAIN,
     )
-    with patch("homeassistant.components.rfxtrx.async_setup_entry", return_value=True):
+    with patch("inpui.components.rfxtrx.async_setup_entry", return_value=True):
         result = await start_options_flow(hass, entry)
 
     assert result["type"] is FlowResultType.FORM

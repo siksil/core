@@ -38,11 +38,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+            "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
             return_value=_mock_emonitor(),
         ),
         patch(
-            "homeassistant.components.emonitor.async_setup_entry",
+            "inpui.components.emonitor.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -69,7 +69,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+        "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -90,7 +90,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+        "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
         side_effect=aiohttp.ClientError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -108,7 +108,7 @@ async def test_dhcp_can_confirm(hass: HomeAssistant) -> None:
     """Test DHCP discovery flow can confirm right away."""
 
     with patch(
-        "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+        "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
         return_value=_mock_emonitor(),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -126,7 +126,7 @@ async def test_dhcp_can_confirm(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.emonitor.async_setup_entry",
+        "inpui.components.emonitor.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -147,7 +147,7 @@ async def test_dhcp_fails_to_connect(hass: HomeAssistant) -> None:
     """Test DHCP discovery flow that fails to connect."""
 
     with patch(
-        "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+        "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
         side_effect=aiohttp.ClientError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -172,7 +172,7 @@ async def test_dhcp_already_exists(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+        "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
         return_value=_mock_emonitor(),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -204,11 +204,11 @@ async def test_user_unique_id_already_exists(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.emonitor.config_flow.Emonitor.async_get_status",
+            "inpui.components.emonitor.config_flow.Emonitor.async_get_status",
             return_value=_mock_emonitor(),
         ),
         patch(
-            "homeassistant.components.emonitor.async_setup_entry",
+            "inpui.components.emonitor.async_setup_entry",
             return_value=True,
         ),
     ):

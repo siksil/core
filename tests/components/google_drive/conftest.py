@@ -43,7 +43,7 @@ async def setup_credentials(hass: HomeAssistant) -> None:
 def mock_api() -> Generator[MagicMock]:
     """Return a mocked GoogleDriveApi."""
     with patch(
-        "homeassistant.components.google_drive.api.GoogleDriveApi"
+        "inpui.components.google_drive.api.GoogleDriveApi"
     ) as mock_api_cl:
         mock_api = mock_api_cl.return_value
 
@@ -87,7 +87,7 @@ def mock_api() -> Generator[MagicMock]:
 def mock_instance_id() -> Generator[AsyncMock]:
     """Mock instance_id."""
     with patch(
-        "homeassistant.components.google_drive.config_flow.instance_id.async_get",
+        "inpui.components.google_drive.config_flow.instance_id.async_get",
         return_value=HA_UUID,
     ):
         yield

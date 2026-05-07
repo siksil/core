@@ -107,7 +107,7 @@ async def test_device_tracker_random_address(hass: HomeAssistant) -> None:
     with (
         patch_all_discovered_devices([]),
         patch(
-            "homeassistant.components.ibeacon.coordinator.MONOTONIC_TIME",
+            "inpui.components.ibeacon.coordinator.MONOTONIC_TIME",
             return_value=start_time + UNAVAILABLE_TIMEOUT + 1,
         ),
     ):
@@ -175,7 +175,7 @@ async def test_device_tracker_random_address_infrequent_changes(
     with (
         patch_all_discovered_devices([]),
         patch(
-            "homeassistant.components.ibeacon.coordinator.MONOTONIC_TIME",
+            "inpui.components.ibeacon.coordinator.MONOTONIC_TIME",
             return_value=start_time + UNAVAILABLE_TIMEOUT + 1,
         ),
     ):
@@ -205,7 +205,7 @@ async def test_device_tracker_random_address_infrequent_changes(
     with (
         patch_all_discovered_devices([device]),
         patch(
-            "homeassistant.components.ibeacon.coordinator.MONOTONIC_TIME",
+            "inpui.components.ibeacon.coordinator.MONOTONIC_TIME",
             return_value=start_time + UPDATE_INTERVAL.total_seconds() + 1,
         ),
     ):
@@ -247,7 +247,7 @@ async def test_device_tracker_random_address_infrequent_changes(
     with (
         patch_all_discovered_devices([device]),
         patch(
-            "homeassistant.components.ibeacon.coordinator.MONOTONIC_TIME",
+            "inpui.components.ibeacon.coordinator.MONOTONIC_TIME",
             return_value=start_time + UNAVAILABLE_TIMEOUT + 1,
         ),
     ):

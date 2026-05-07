@@ -56,7 +56,7 @@ async def setup_platform(
 
     with (
         patch(
-            "homeassistant.components.aussie_broadband.PLATFORMS",
+            "inpui.components.aussie_broadband.PLATFORMS",
             [] if platforms is UNDEFINED else platforms,
         ),
         patch("aussiebb.asyncio.AussieBB.__init__", return_value=None),

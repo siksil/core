@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def sensor_only() -> Generator[None]:
     """Enable only the sensor platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.SENSOR],
     ):
         yield

@@ -228,7 +228,7 @@ async def test_async_detect_interfaces_setting_exception(
 ) -> None:
     """Test without default interface config and the route throws an exception."""
     with patch(
-        "homeassistant.components.network.util.socket.socket",
+        "inpui.components.network.util.socket.socket",
         return_value=_mock_socket_exception(AttributeError),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
@@ -359,7 +359,7 @@ async def test_interfaces_configured_from_storage_websocket_update(
         "data": {ATTR_CONFIGURED_ADAPTERS: ["eth0", "eth1", "vtun0"]},
     }
     with patch(
-        "homeassistant.components.network.util.socket.socket",
+        "inpui.components.network.util.socket.socket",
         return_value=MagicMock(getsockname=Mock(return_value=[NO_LOOPBACK_IPADDR])),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
@@ -580,7 +580,7 @@ async def test_async_get_source_ip_no_enabled_addresses(
     }
 
     with patch(
-        "homeassistant.components.network.util.ifaddr.get_adapters",
+        "inpui.components.network.util.ifaddr.get_adapters",
         return_value=[],
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
@@ -607,7 +607,7 @@ async def test_async_get_source_ip_cannot_be_determined_and_no_enabled_addresses
     }
 
     with patch(
-        "homeassistant.components.network.util.ifaddr.get_adapters",
+        "inpui.components.network.util.ifaddr.get_adapters",
         return_value=[],
     ):
         assert not await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
@@ -628,11 +628,11 @@ async def test_async_get_source_ip_no_ip_loopback(
 
     with (
         patch(
-            "homeassistant.components.network.util.ifaddr.get_adapters",
+            "inpui.components.network.util.ifaddr.get_adapters",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.network.util.socket.socket",
+            "inpui.components.network.util.socket.socket",
             return_value=_mock_cond_socket(LOOPBACK_IPADDR),
         ),
     ):
@@ -707,11 +707,11 @@ async def test_async_get_announce_addresses(hass: HomeAssistant) -> None:
     first_ip = "172.16.1.5"
     with (
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value=first_ip,
         ),
         patch(
-            "homeassistant.components.network.async_get_adapters",
+            "inpui.components.network.async_get_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
         ),
     ):
@@ -727,11 +727,11 @@ async def test_async_get_announce_addresses(hass: HomeAssistant) -> None:
     first_ip = "192.168.1.5"
     with (
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value=first_ip,
         ),
         patch(
-            "homeassistant.components.network.async_get_adapters",
+            "inpui.components.network.async_get_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
         ),
     ):
@@ -750,11 +750,11 @@ async def test_async_get_announce_addresses_no_source_ip(hass: HomeAssistant) ->
     """Test addresses for mDNS/etc announcement without source ip."""
     with (
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.network.async_get_adapters",
+            "inpui.components.network.async_get_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
         ),
     ):
@@ -778,9 +778,9 @@ async def test_websocket_network_url(
 
     with (
         patch(
-            "homeassistant.helpers.network._get_internal_url", return_value="internal"
+            "inpui.helpers.network._get_internal_url", return_value="internal"
         ),
-        patch("homeassistant.helpers.network._get_cloud_url", return_value="cloud"),
+        patch("inpui.helpers.network._get_cloud_url", return_value="cloud"),
     ):
         await client.send_json({"id": 1, "type": "network/url"})
         msg = await client.receive_json()
@@ -794,7 +794,7 @@ async def test_websocket_network_url(
     # Test with no cloud URL
     with (
         patch(
-            "homeassistant.helpers.network._get_internal_url", return_value="internal"
+            "inpui.helpers.network._get_internal_url", return_value="internal"
         ),
     ):
         await client.send_json({"id": 2, "type": "network/url"})
@@ -813,7 +813,7 @@ async def test_repair_docker_host_network_not_docker(
     hass: HomeAssistant, issue_registry: ir.IssueRegistry
 ) -> None:
     """Test repair is not created when not in Docker."""
-    with patch("homeassistant.util.package.is_docker_env", return_value=False):
+    with patch("inpui.util.package.is_docker_env", return_value=False):
         assert await async_setup_component(hass, "network", {})
 
     assert not issue_registry.async_get_issue(DOMAIN, "docker_host_network")
@@ -826,8 +826,8 @@ async def test_repair_docker_host_network_with_host_networking(
 ) -> None:
     """Test repair is not created when in Docker with host networking."""
     with (
-        patch("homeassistant.util.package.is_docker_env", return_value=True),
-        patch("homeassistant.components.network.Path.exists", return_value=True),
+        patch("inpui.util.package.is_docker_env", return_value=True),
+        patch("inpui.components.network.Path.exists", return_value=True),
     ):
         assert await async_setup_component(hass, "network", {})
 
@@ -843,8 +843,8 @@ async def test_repair_docker_host_network_without_host_networking(
 ) -> None:
     """Test repair is created when in Docker without host networking."""
     with (
-        patch("homeassistant.util.package.is_docker_env", return_value=True),
-        patch("homeassistant.components.network.Path.exists", return_value=False),
+        patch("inpui.util.package.is_docker_env", return_value=True),
+        patch("inpui.components.network.Path.exists", return_value=False),
     ):
         assert await async_setup_component(hass, "network", {})
 

@@ -32,11 +32,11 @@ async def test_form(hass: HomeAssistant, get_camera: CameraInfoModel) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
             return_value=[get_camera],
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -73,7 +73,7 @@ async def test_form_multiple_cameras(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+        "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         return_value=get_cameras,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -87,11 +87,11 @@ async def test_form_multiple_cameras(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
             return_value=[get_camera2],
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -126,11 +126,11 @@ async def test_form_no_location_data(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
             return_value=[get_camera_no_location],
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -185,7 +185,7 @@ async def test_flow_fails(
     assert result4["step_id"] == config_entries.SOURCE_USER
 
     with patch(
-        "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+        "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         side_effect=side_effect,
     ):
         result4 = await hass.config_entries.flow.async_configure(
@@ -219,10 +219,10 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -279,7 +279,7 @@ async def test_reauth_flow_error(
     result = await entry.start_reauth_flow(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+        "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         side_effect=side_effect,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -294,10 +294,10 @@ async def test_reauth_flow_error(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -338,7 +338,7 @@ async def test_reconfigure_flow(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+        "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         return_value=get_cameras,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -352,11 +352,11 @@ async def test_reconfigure_flow(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
             return_value=[get_camera2],
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -419,7 +419,7 @@ async def test_reconfigure_flow_error(
     result = await entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+        "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
         side_effect=side_effect,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -437,11 +437,11 @@ async def test_reconfigure_flow_error(
 
     with (
         patch(
-            "homeassistant.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
+            "inpui.components.trafikverket_camera.config_flow.TrafikverketCamera.async_get_cameras",
             return_value=[get_camera],
         ),
         patch(
-            "homeassistant.components.trafikverket_camera.async_setup_entry",
+            "inpui.components.trafikverket_camera.async_setup_entry",
             return_value=True,
         ),
     ):

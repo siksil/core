@@ -144,7 +144,7 @@ DATA_CUSTOM_COMPONENTS: HassKey[
 ] = HassKey("custom_components")
 DATA_PRELOAD_PLATFORMS: HassKey[list[str]] = HassKey("preload_platforms")
 PACKAGE_CUSTOM_COMPONENTS = "custom_components"
-PACKAGE_BUILTIN = "homeassistant.components"
+PACKAGE_BUILTIN = "inpui.components"
 CUSTOM_WARNING = (
     "We found a custom integration %s which has not "
     "been tested by Home Assistant. This component might "
@@ -1740,7 +1740,7 @@ def async_get_issue_tracker(
         # If we only have a module, we can try to get the integration domain from it
         if module.startswith("custom_components."):
             integration_domain = module.split(".")[1]
-        elif module.startswith("homeassistant.components."):
+        elif module.startswith("inpui.components."):
             integration_domain = module.split(".")[2]
 
     if not integration:

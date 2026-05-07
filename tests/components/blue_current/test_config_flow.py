@@ -38,15 +38,15 @@ async def test_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.validate_api_token",
+            "inpui.components.blue_current.config_flow.Client.validate_api_token",
             return_value="1234",
         ),
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.get_email",
+            "inpui.components.blue_current.config_flow.Client.get_email",
             return_value="test@email.com",
         ),
         patch(
-            "homeassistant.components.blue_current.async_setup_entry",
+            "inpui.components.blue_current.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -76,7 +76,7 @@ async def test_user(hass: HomeAssistant) -> None:
 async def test_flow_fails(hass: HomeAssistant, error: Exception, message: str) -> None:
     """Test bluecurrent api errors during configuration flow."""
     with patch(
-        "homeassistant.components.blue_current.config_flow.Client.validate_api_token",
+        "inpui.components.blue_current.config_flow.Client.validate_api_token",
         side_effect=error,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -89,15 +89,15 @@ async def test_flow_fails(hass: HomeAssistant, error: Exception, message: str) -
 
     with (
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.validate_api_token",
+            "inpui.components.blue_current.config_flow.Client.validate_api_token",
             return_value="1234",
         ),
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.get_email",
+            "inpui.components.blue_current.config_flow.Client.get_email",
             return_value="test@email.com",
         ),
         patch(
-            "homeassistant.components.blue_current.async_setup_entry",
+            "inpui.components.blue_current.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -136,18 +136,18 @@ async def test_reauth(
 
     with (
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.validate_api_token",
+            "inpui.components.blue_current.config_flow.Client.validate_api_token",
             return_value=customer_id,
         ),
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.get_email",
+            "inpui.components.blue_current.config_flow.Client.get_email",
             return_value="test@email.com",
         ),
         patch(
-            "homeassistant.components.blue_current.config_flow.Client.wait_for_charge_points",
+            "inpui.components.blue_current.config_flow.Client.wait_for_charge_points",
         ),
         patch(
-            "homeassistant.components.blue_current.Client.connect",
+            "inpui.components.blue_current.Client.connect",
             lambda self, on_data, on_open: hass.loop.create_future(),
         ),
     ):

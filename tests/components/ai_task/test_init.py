@@ -87,7 +87,7 @@ async def test_generate_data_service(
     preferences.async_set_preferences(**set_preferences)
 
     with patch(
-        "homeassistant.components.media_source.async_resolve_media",
+        "inpui.components.media_source.async_resolve_media",
         return_value=media_source.PlayMedia(
             url="http://example.com/media.mp4",
             mime_type="video/mp4",

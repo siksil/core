@@ -21,7 +21,7 @@ def mock_history(hass: HomeAssistant) -> None:
 @pytest.fixture(autouse=True)
 def mock_device_tracker_update_config() -> Generator[None]:
     """Prevent device tracker from creating known devices file."""
-    with patch("homeassistant.components.device_tracker.legacy.update_config"):
+    with patch("inpui.components.device_tracker.legacy.update_config"):
         yield
 
 

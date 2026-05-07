@@ -547,7 +547,7 @@ async def test_config_reload(
     assert state_2.attributes.get(ATTR_DURATION) == "0:00:10"
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             DOMAIN: {
@@ -874,7 +874,7 @@ async def test_setup_no_config(hass: HomeAssistant, hass_admin_user: MockUser) -
     assert await async_setup_component(hass, DOMAIN, {})
 
     with patch(
-        "homeassistant.config.load_yaml_config_file", autospec=True, return_value={}
+        "inpui.config.load_yaml_config_file", autospec=True, return_value={}
     ):
         await hass.services.async_call(
             DOMAIN,
@@ -960,7 +960,7 @@ async def test_restore_active_resume(hass: HomeAssistant) -> None:
 
     # In patch make sure we ignore microseconds
     with patch(
-        "homeassistant.components.timer.dt_util.utcnow",
+        "inpui.components.timer.dt_util.utcnow",
         return_value=simulated_utc_now.replace(microsecond=999),
     ):
         await entity.async_added_to_hass()
@@ -1007,7 +1007,7 @@ async def test_restore_active_finished_outside_grace(hass: HomeAssistant) -> Non
     entity.entity_id = "timer.test"
 
     with patch(
-        "homeassistant.components.timer.dt_util.utcnow", return_value=simulated_utc_now
+        "inpui.components.timer.dt_util.utcnow", return_value=simulated_utc_now
     ):
         await entity.async_added_to_hass()
         await hass.async_block_till_done()

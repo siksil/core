@@ -41,11 +41,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+            "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
             return_value=RetrieveDNS(),
         ),
         patch(
-            "homeassistant.components.dnsip.async_setup_entry",
+            "inpui.components.dnsip.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -86,11 +86,11 @@ async def test_form_adv(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+            "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
             return_value=RetrieveDNS(),
         ),
         patch(
-            "homeassistant.components.dnsip.async_setup_entry",
+            "inpui.components.dnsip.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -130,7 +130,7 @@ async def test_form_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         side_effect=DNSError("Did not find"),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -173,11 +173,11 @@ async def test_flow_already_exist(hass: HomeAssistant) -> None:
     dns_mock = RetrieveDNS()
     with (
         patch(
-            "homeassistant.components.dnsip.async_setup_entry",
+            "inpui.components.dnsip.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+            "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
             return_value=dns_mock,
         ),
     ):
@@ -214,7 +214,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -226,7 +226,7 @@ async def test_options_flow(hass: HomeAssistant) -> None:
     assert result["step_id"] == "init"
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         result = await hass.config_entries.options.async_configure(
@@ -272,7 +272,7 @@ async def test_options_flow_empty_return(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -284,7 +284,7 @@ async def test_options_flow_empty_return(hass: HomeAssistant) -> None:
     assert result["step_id"] == "init"
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         result = await hass.config_entries.options.async_configure(
@@ -351,7 +351,7 @@ async def test_options_error(hass: HomeAssistant, p_input: dict[str, str]) -> No
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.async_setup_entry",
+        "inpui.components.dnsip.async_setup_entry",
         return_value=True,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -360,7 +360,7 @@ async def test_options_error(hass: HomeAssistant, p_input: dict[str, str]) -> No
     result = await hass.config_entries.options.async_init(entry.entry_id)
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         side_effect=DNSError("Did not find"),
     ):
         result2 = await hass.config_entries.options.async_configure(
@@ -403,7 +403,7 @@ async def test_cannot_configure_options_for_myip(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.dnsip.config_flow.aiodns.DNSResolver",
+        "inpui.components.dnsip.config_flow.aiodns.DNSResolver",
         return_value=RetrieveDNS(),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

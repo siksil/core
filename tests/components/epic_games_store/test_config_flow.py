@@ -43,7 +43,7 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
+        "inpui.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
         return_value=DATA_FREE_GAMES,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -74,7 +74,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
+        "inpui.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
         side_effect=HTTPException,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -96,7 +96,7 @@ async def test_form_cannot_connect_wrong_param(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
+        "inpui.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
         return_value=DATA_ERROR_WRONG_COUNTRY,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -118,7 +118,7 @@ async def test_form_service_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
+        "inpui.components.epic_games_store.config_flow.EpicGamesStoreAPI.get_free_games",
         return_value=DATA_ERROR_ATTRIBUTE_NOT_FOUND,
     ):
         result2 = await hass.config_entries.flow.async_configure(

@@ -20,7 +20,7 @@ async def _fill_out_form_and_assert_entry_created(
 ) -> None:
     """Util function to fill out a form and assert that a config entry is created."""
     with patch(
-        "homeassistant.components.switchbot_cloud.config_flow.SwitchBotAPI.list_devices",
+        "inpui.components.switchbot_cloud.config_flow.SwitchBotAPI.list_devices",
         return_value=[],
     ):
         result_configure = await hass.config_entries.flow.async_configure(
@@ -71,7 +71,7 @@ async def test_form_fails(
     )
 
     with patch(
-        "homeassistant.components.switchbot_cloud.config_flow.SwitchBotAPI.list_devices",
+        "inpui.components.switchbot_cloud.config_flow.SwitchBotAPI.list_devices",
         side_effect=error,
     ):
         result_configure = await hass.config_entries.flow.async_configure(

@@ -39,7 +39,7 @@ async def test_create_entry(
 
     # Test errors that can arise:
     with patch(
-        "homeassistant.components.ridwell.config_flow.async_get_client",
+        "inpui.components.ridwell.config_flow.async_get_client",
         get_client_response,
     ):
         result = await hass.config_entries.flow.async_configure(

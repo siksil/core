@@ -40,7 +40,7 @@ async def test_form(hass: HomeAssistant, test_cucode_in_coordinator_data) -> Non
             return_value=coordinator_data,
         ),
         patch(
-            "homeassistant.components.switchbee.async_setup_entry",
+            "inpui.components.switchbee.async_setup_entry",
             return_value=True,
         ),
         patch(
@@ -161,7 +161,7 @@ async def test_form_entry_exists(hass: HomeAssistant) -> None:
     with (
         patch("switchbee.api.polling.CentralUnitPolling._login", return_value=None),
         patch(
-            "homeassistant.components.switchbee.async_setup_entry",
+            "inpui.components.switchbee.async_setup_entry",
             return_value=True,
         ),
         patch(

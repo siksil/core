@@ -191,7 +191,7 @@ async def test_calendar_yaml_error(
     mock_calendars_list({"items": [test_api_calendar]})
     mock_events_list({})
 
-    with patch("homeassistant.components.google.open", side_effect=FileNotFoundError()):
+    with patch("inpui.components.google.open", side_effect=FileNotFoundError()):
         assert await component_setup()
 
     assert not hass.states.get(TEST_YAML_ENTITY)

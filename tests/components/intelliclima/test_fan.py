@@ -37,7 +37,7 @@ async def setup_intelliclima_fan_only(
     mock_cloud_interface: AsyncMock,
 ) -> AsyncGenerator[None]:
     """Set up IntelliClima integration with only the fan platform."""
-    with patch("homeassistant.components.intelliclima.PLATFORMS", [Platform.FAN]):
+    with patch("inpui.components.intelliclima.PLATFORMS", [Platform.FAN]):
         await setup_integration(hass, mock_config_entry)
         # Let tests run against this initialized state
         yield

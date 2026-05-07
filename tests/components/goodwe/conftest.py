@@ -31,9 +31,9 @@ def fixture_mock_inverter() -> Generator[MagicMock]:
 
     with (
         patch(
-            "homeassistant.components.goodwe.config_flow.connect",
+            "inpui.components.goodwe.config_flow.connect",
             return_value=mock_inverter,
         ),
-        patch("homeassistant.components.goodwe.connect", return_value=mock_inverter),
+        patch("inpui.components.goodwe.connect", return_value=mock_inverter),
     ):
         yield mock_inverter

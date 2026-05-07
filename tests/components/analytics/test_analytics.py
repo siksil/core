@@ -64,7 +64,7 @@ MOCK_VERSION_NIGHTLY = "1970.1.0.dev19700101"
 def uuid_mock() -> Generator[None]:
     """Mock the UUID."""
     with patch(
-        "homeassistant.components.analytics.analytics.gen_uuid", return_value=MOCK_UUID
+        "inpui.components.analytics.analytics.gen_uuid", return_value=MOCK_UUID
     ):
         yield
 
@@ -74,11 +74,11 @@ def ha_version_mock() -> Generator[None]:
     """Mock the core version."""
     with (
         patch(
-            "homeassistant.components.analytics.analytics.HA_VERSION",
+            "inpui.components.analytics.analytics.HA_VERSION",
             MOCK_VERSION,
         ),
         patch(
-            "homeassistant.components.analytics.analytics.RELEASE_CHANNEL",
+            "inpui.components.analytics.analytics.RELEASE_CHANNEL",
             ReleaseChannel.STABLE,
         ),
     ):
@@ -90,11 +90,11 @@ def ha_dev_version_mock() -> Generator[None]:
     """Mock the core version as a dev version."""
     with (
         patch(
-            "homeassistant.components.analytics.analytics.HA_VERSION",
+            "inpui.components.analytics.analytics.HA_VERSION",
             MOCK_VERSION_DEV,
         ),
         patch(
-            "homeassistant.components.analytics.analytics.RELEASE_CHANNEL",
+            "inpui.components.analytics.analytics.RELEASE_CHANNEL",
             ReleaseChannel.DEV,
         ),
     ):
@@ -105,7 +105,7 @@ def ha_dev_version_mock() -> Generator[None]:
 def installation_type_mock() -> Generator[None]:
     """Mock the async_get_system_info."""
     with patch(
-        "homeassistant.components.analytics.analytics.async_get_system_info",
+        "inpui.components.analytics.analytics.async_get_system_info",
         return_value={"installation_type": "Home Assistant Tests"},
     ):
         yield
@@ -115,7 +115,7 @@ def installation_type_mock() -> Generator[None]:
 def labs_snapshots_enabled() -> Generator[None]:
     """Mock the labs feature to enable snapshots."""
     with patch(
-        "homeassistant.components.analytics.analytics.async_is_preview_feature_enabled",
+        "inpui.components.analytics.analytics.async_is_preview_feature_enabled",
         return_value=True,
     ):
         yield
@@ -135,7 +135,7 @@ async def test_no_send(
     """Test send when no preferences are defined."""
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.components.analytics.analytics.is_hassio",
+        "inpui.components.analytics.analytics.is_hassio",
         side_effect=Mock(return_value=False),
     ):
         assert not analytics.preferences[ATTR_BASE]
@@ -151,11 +151,11 @@ async def test_load_with_supervisor_diagnostics(hass: HomeAssistant) -> None:
     assert not analytics.preferences[ATTR_DIAGNOSTICS]
     with (
         patch(
-            "homeassistant.components.hassio.get_supervisor_info",
+            "inpui.components.hassio.get_supervisor_info",
             side_effect=Mock(return_value={"diagnostics": True}),
         ),
         patch(
-            "homeassistant.components.analytics.analytics.is_hassio",
+            "inpui.components.analytics.analytics.is_hassio",
             side_effect=Mock(return_value=True),
         ),
     ):
@@ -172,11 +172,11 @@ async def test_load_with_supervisor_without_diagnostics(hass: HomeAssistant) -> 
 
     with (
         patch(
-            "homeassistant.components.hassio.get_supervisor_info",
+            "inpui.components.hassio.get_supervisor_info",
             side_effect=Mock(return_value={"diagnostics": False}),
         ),
         patch(
-            "homeassistant.components.analytics.analytics.is_hassio",
+            "inpui.components.analytics.analytics.is_hassio",
             side_effect=Mock(return_value=True),
         ),
     ):
@@ -259,29 +259,29 @@ async def test_send_base_with_supervisor(
 
     with (
         patch(
-            "homeassistant.components.hassio.get_supervisor_info",
+            "inpui.components.hassio.get_supervisor_info",
             side_effect=Mock(
                 return_value={"supported": True, "healthy": True, "arch": "amd64"}
             ),
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             side_effect=Mock(return_value={"board": "blue", "version": "123"}),
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.hassio.get_host_info",
+            "inpui.components.hassio.get_host_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.analytics.analytics.is_hassio",
+            "inpui.components.analytics.analytics.is_hassio",
             side_effect=Mock(return_value=True),
         ) as is_hassio_mock,
         patch(
-            "homeassistant.helpers.system_info.is_hassio",
+            "inpui.helpers.system_info.is_hassio",
             new=is_hassio_mock,
         ),
     ):
@@ -314,7 +314,7 @@ async def test_send_usage(
     hass.config.components.add("default_config")
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={"default_config": {}},
     ):
         await analytics.send_analytics()
@@ -353,7 +353,7 @@ async def test_send_usage_with_supervisor(
     )
     with (
         patch(
-            "homeassistant.components.hassio.get_supervisor_info",
+            "inpui.components.hassio.get_supervisor_info",
             side_effect=Mock(
                 return_value={
                     "healthy": True,
@@ -363,27 +363,27 @@ async def test_send_usage_with_supervisor(
             ),
         ),
         patch(
-            "homeassistant.components.hassio.get_addons_info",
+            "inpui.components.hassio.get_addons_info",
             side_effect=Mock(return_value={"test_addon": {}}),
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.hassio.get_host_info",
+            "inpui.components.hassio.get_host_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.analytics.analytics.is_hassio",
+            "inpui.components.analytics.analytics.is_hassio",
             side_effect=Mock(return_value=True),
         ) as is_hassio_mock,
         patch(
-            "homeassistant.helpers.system_info.is_hassio",
+            "inpui.helpers.system_info.is_hassio",
             new=is_hassio_mock,
         ),
     ):
@@ -412,7 +412,7 @@ async def test_send_statistics(
     hass.config.components.add("default_config")
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={"default_config": {}},
     ):
         await analytics.send_analytics()
@@ -438,7 +438,7 @@ async def test_send_statistics_one_integration_fails(
     hass.config.components = ["default_config"]
 
     with patch(
-        "homeassistant.components.analytics.analytics.async_get_integrations",
+        "inpui.components.analytics.analytics.async_get_integrations",
         return_value={"any": IntegrationNotFound("any")},
     ):
         await analytics.send_analytics()
@@ -466,7 +466,7 @@ async def test_send_statistics_disabled_integration(
     hass.config.components = ["default_config"]
 
     with patch(
-        "homeassistant.components.analytics.analytics.async_get_integrations",
+        "inpui.components.analytics.analytics.async_get_integrations",
         return_value={
             "disabled_integration_manifest": mock_integration(
                 hass,
@@ -511,7 +511,7 @@ async def test_send_statistics_ignored_integration(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.analytics.analytics.async_get_integrations",
+        "inpui.components.analytics.analytics.async_get_integrations",
         return_value={
             "ignored_integration": mock_integration(
                 hass,
@@ -548,7 +548,7 @@ async def test_send_statistics_async_get_integration_unknown_exception(
     with (
         pytest.raises(ValueError),
         patch(
-            "homeassistant.components.analytics.analytics.async_get_integrations",
+            "inpui.components.analytics.analytics.async_get_integrations",
             return_value={"any": ValueError()},
         ),
     ):
@@ -575,7 +575,7 @@ async def test_send_statistics_with_supervisor(
     )
     with (
         patch(
-            "homeassistant.components.hassio.get_supervisor_info",
+            "inpui.components.hassio.get_supervisor_info",
             side_effect=Mock(
                 return_value={
                     "healthy": True,
@@ -585,27 +585,27 @@ async def test_send_statistics_with_supervisor(
             ),
         ),
         patch(
-            "homeassistant.components.hassio.get_addons_info",
+            "inpui.components.hassio.get_addons_info",
             side_effect=Mock(return_value={"test_addon": {}}),
         ),
         patch(
-            "homeassistant.components.hassio.get_os_info",
+            "inpui.components.hassio.get_os_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.hassio.get_info",
+            "inpui.components.hassio.get_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.hassio.get_host_info",
+            "inpui.components.hassio.get_host_info",
             side_effect=Mock(return_value={}),
         ),
         patch(
-            "homeassistant.components.analytics.analytics.is_hassio",
+            "inpui.components.analytics.analytics.is_hassio",
             side_effect=Mock(return_value=True),
         ) as is_hassio_mock,
         patch(
-            "homeassistant.helpers.system_info.is_hassio",
+            "inpui.helpers.system_info.is_hassio",
             new=is_hassio_mock,
         ),
     ):
@@ -653,7 +653,7 @@ async def test_custom_integrations(
     await analytics.save_preferences({ATTR_BASE: True, ATTR_USAGE: True})
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={"test_package": {}},
     ):
         await analytics.send_analytics()
@@ -712,7 +712,7 @@ async def test_nightly_endpoint(
     await analytics.save_preferences({ATTR_BASE: True})
 
     with patch(
-        "homeassistant.components.analytics.analytics.HA_VERSION", MOCK_VERSION_NIGHTLY
+        "inpui.components.analytics.analytics.HA_VERSION", MOCK_VERSION_NIGHTLY
     ):
         await analytics.send_analytics()
 
@@ -738,11 +738,11 @@ async def test_send_with_no_energy(
 
     with (
         patch(
-            "homeassistant.components.analytics.analytics.energy_is_configured",
+            "inpui.components.analytics.analytics.energy_is_configured",
             AsyncMock(),
         ) as energy_is_configured,
         patch(
-            "homeassistant.components.analytics.analytics.get_recorder_instance",
+            "inpui.components.analytics.analytics.get_recorder_instance",
             Mock(),
         ) as get_recorder_instance,
     ):
@@ -775,7 +775,7 @@ async def test_send_with_no_energy_config(
     assert await async_setup_component(hass, "energy", {})
 
     with patch(
-        "homeassistant.components.analytics.analytics.energy_is_configured", AsyncMock()
+        "inpui.components.analytics.analytics.energy_is_configured", AsyncMock()
     ) as energy_is_configured:
         energy_is_configured.return_value = False
         await analytics.send_analytics()
@@ -808,7 +808,7 @@ async def test_send_with_energy_config(
     assert await async_setup_component(hass, "energy", {})
 
     with patch(
-        "homeassistant.components.analytics.analytics.energy_is_configured", AsyncMock()
+        "inpui.components.analytics.analytics.energy_is_configured", AsyncMock()
     ) as energy_is_configured:
         energy_is_configured.return_value = True
         await analytics.send_analytics()
@@ -867,7 +867,7 @@ async def test_send_with_recorder(
     await analytics.save_preferences({ATTR_BASE: True, ATTR_USAGE: True})
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         return_value={"recorder": {}},
     ):
         await analytics.send_analytics()
@@ -894,7 +894,7 @@ async def test_send_with_problems_loading_yaml(
 
     await analytics.save_preferences({ATTR_BASE: True, ATTR_USAGE: True})
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         side_effect=HomeAssistantError("Error loading YAML file"),
     ):
         await analytics.send_analytics()
@@ -948,7 +948,7 @@ async def test_not_check_config_entries_if_yaml(
 
     with (
         patch(
-            "homeassistant.components.analytics.analytics.async_get_integrations",
+            "inpui.components.analytics.analytics.async_get_integrations",
             return_value={
                 "default_config": mock_integration(
                     hass,
@@ -961,7 +961,7 @@ async def test_not_check_config_entries_if_yaml(
             },
         ),
         patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             return_value={"default_config": {}},
         ),
     ):
@@ -995,7 +995,7 @@ async def test_submitting_legacy_integrations(
 
     with (
         patch(
-            "homeassistant.components.analytics.analytics.async_get_integrations",
+            "inpui.components.analytics.analytics.async_get_integrations",
             return_value={
                 "default_config": mock_integration(
                     hass,
@@ -1008,7 +1008,7 @@ async def test_submitting_legacy_integrations(
             },
         ),
         patch(
-            "homeassistant.config.async_hass_config_yaml",
+            "inpui.config.async_hass_config_yaml",
             return_value={"binary_sensor": [{"platform": "legacy_binary_sensor"}]},
         ),
     ):
@@ -1544,7 +1544,7 @@ async def test_send_snapshot_with_existing_identifier(
 
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: True, ATTR_SNAPSHOTS: True},
@@ -1583,7 +1583,7 @@ async def test_send_snapshot_invalid_identifier(
 
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: True, ATTR_SNAPSHOTS: True},
@@ -1653,7 +1653,7 @@ async def test_send_snapshot_error(
 
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: True, ATTR_SNAPSHOTS: True},
@@ -1712,7 +1712,7 @@ async def test_async_schedule_disabled(
     """Test scheduling when disabled."""
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: False, ATTR_SNAPSHOTS: False},
@@ -1740,7 +1740,7 @@ async def test_async_schedule_already_scheduled(
 
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: True, ATTR_SNAPSHOTS: True},
@@ -1773,7 +1773,7 @@ async def test_async_schedule_cancel_when_disabled(
     """Test that scheduled tasks are cancelled when disabled."""
     analytics = Analytics(hass)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: True, ATTR_SNAPSHOTS: True},
@@ -1785,7 +1785,7 @@ async def test_async_schedule_cancel_when_disabled(
     await analytics.async_schedule()
 
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": onboarded,
             "preferences": {ATTR_BASE: False, ATTR_SNAPSHOTS: False},
@@ -1815,7 +1815,7 @@ async def test_async_schedule_snapshots_url(
 
     analytics = Analytics(hass, url)
     with patch(
-        "homeassistant.helpers.storage.Store.async_load",
+        "inpui.helpers.storage.Store.async_load",
         return_value={
             "onboarded": True,
             "preferences": {ATTR_BASE: False, ATTR_SNAPSHOTS: True},

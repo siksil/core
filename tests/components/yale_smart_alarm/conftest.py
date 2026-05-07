@@ -38,7 +38,7 @@ async def load_config_entry(
     load_platforms: list[Platform],
 ) -> tuple[MockConfigEntry, Mock]:
     """Set up the Yale Smart Living integration in Home Assistant."""
-    with patch("homeassistant.components.yale_smart_alarm.PLATFORMS", load_platforms):
+    with patch("inpui.components.yale_smart_alarm.PLATFORMS", load_platforms):
         config_entry = MockConfigEntry(
             title=ENTRY_CONFIG["username"],
             domain=DOMAIN,
@@ -53,7 +53,7 @@ async def load_config_entry(
 
         config_entry.add_to_hass(hass)
         with patch(
-            "homeassistant.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
+            "inpui.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
             return_value=get_client,
         ):
             await hass.config_entries.async_setup(config_entry.entry_id)
@@ -72,7 +72,7 @@ async def mock_client(
     data = {"data": cycle["device_status"]}
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
         autospec=True,
     ) as mock_client_class:
         client = mock_client_class.return_value

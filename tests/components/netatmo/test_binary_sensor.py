@@ -56,18 +56,18 @@ async def test_doortag_setup(
 
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.data_handler.PLATFORMS",
+            "inpui.components.netatmo.data_handler.PLATFORMS",
             ["camera", "binary_sensor"],
         ),
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
             return_value=AsyncMock(),
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url",
+            "inpui.components.netatmo.webhook_generate_url",
         ) as mock_webhook,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = fake_post
@@ -168,18 +168,18 @@ async def test_doortag_opening_status_change(
 
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.data_handler.PLATFORMS",
+            "inpui.components.netatmo.data_handler.PLATFORMS",
             ["camera", "binary_sensor"],
         ),
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
             return_value=AsyncMock(),
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url",
+            "inpui.components.netatmo.webhook_generate_url",
         ) as mock_webhook,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = fake_tag_post
@@ -295,18 +295,18 @@ async def test_doortag_opening_category(
 
     with (
         patch(
-            "homeassistant.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
+            "inpui.components.netatmo.api.AsyncConfigEntryNetatmoAuth"
         ) as mock_auth,
         patch(
-            "homeassistant.components.netatmo.data_handler.PLATFORMS",
+            "inpui.components.netatmo.data_handler.PLATFORMS",
             ["camera", "binary_sensor"],
         ),
         patch(
-            "homeassistant.components.netatmo.async_get_config_entry_implementation",
+            "inpui.components.netatmo.async_get_config_entry_implementation",
             return_value=AsyncMock(),
         ),
         patch(
-            "homeassistant.components.netatmo.webhook_generate_url",
+            "inpui.components.netatmo.webhook_generate_url",
         ) as mock_webhook,
     ):
         mock_auth.return_value.async_post_api_request.side_effect = fake_tag_post

@@ -451,7 +451,7 @@ async def test_websocket_webrtc_offer_invalid_stream_type(
 async def mock_hls_stream_source_fixture() -> AsyncGenerator[AsyncMock]:
     """Fixture to create an HLS stream source."""
     with patch(
-        "homeassistant.components.camera.Camera.stream_source",
+        "inpui.components.camera.Camera.stream_source",
         return_value=HLS_STREAM_SOURCE,
     ) as mock_hls_stream_source:
         yield mock_hls_stream_source
@@ -534,7 +534,7 @@ async def test_ws_webrtc_candidate_invalid_candidate_message(
 ) -> None:
     """Test ws WebRTC candidate command for a camera with a different stream_type."""
     client = await hass_ws_client(hass)
-    with patch("homeassistant.components.camera.Camera.async_on_webrtc_candidate"):
+    with patch("inpui.components.camera.Camera.async_on_webrtc_candidate"):
         await client.send_json_auto_id(
             {
                 "type": "camera/webrtc/candidate",

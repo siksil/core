@@ -14,7 +14,7 @@ from .conftest import CONF_DATA, patch_async_setup_entry
 
 from tests.common import MockConfigEntry
 
-MOCK = "homeassistant.components.dremel_3d_printer.config_flow.Dremel3DPrinter"
+MOCK = "inpui.components.dremel_3d_printer.config_flow.Dremel3DPrinter"
 
 
 async def test_full_user_flow_implementation(hass: HomeAssistant, connection) -> None:

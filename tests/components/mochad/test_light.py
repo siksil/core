@@ -13,7 +13,7 @@ from inpui.setup import async_setup_component
 @pytest.fixture(autouse=True)
 def pymochad_mock():
     """Mock pymochad."""
-    with mock.patch("homeassistant.components.mochad.light.device") as device:
+    with mock.patch("inpui.components.mochad.light.device") as device:
         yield device
 
 

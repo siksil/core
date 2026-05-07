@@ -12,7 +12,7 @@ from inpui.helpers import entity_registry as er
 from tests.common import MockConfigEntry, snapshot_platform
 
 
-@patch("homeassistant.components.sabnzbd.PLATFORMS", [Platform.SENSOR])
+@patch("inpui.components.sabnzbd.PLATFORMS", [Platform.SENSOR])
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")
 async def test_sensor(
     hass: HomeAssistant,

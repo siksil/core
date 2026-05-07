@@ -123,7 +123,7 @@ async def test_partner_login_auth_error(
     )
 
     with patch(
-        "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+        "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
     ) as mock_api_class:
         mock_api = AsyncMock()
         mock_api.private_key = mock_private_key
@@ -188,7 +188,7 @@ async def test_partner_login_partial_failure(
     )
 
     with patch(
-        "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi",
+        "inpui.components.tesla_fleet.config_flow.TeslaFleetApi",
         side_effect=[mock_api_na, mock_api_eu],
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -255,10 +255,10 @@ async def test_full_flow_with_domain_registration(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
         ) as mock_api_class,
         patch(
-            "homeassistant.components.tesla_fleet.async_setup_entry", return_value=True
+            "inpui.components.tesla_fleet.async_setup_entry", return_value=True
         ),
     ):
         mock_api = AsyncMock()
@@ -329,7 +329,7 @@ async def test_domain_input_invalid_domain(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
         ) as mock_api_class,
     ):
         mock_api = AsyncMock()
@@ -410,7 +410,7 @@ async def test_domain_registration_errors(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
         ) as mock_api_class,
     ):
         mock_api = AsyncMock()
@@ -469,7 +469,7 @@ async def test_domain_registration_precondition_failed(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
         ) as mock_api_class,
     ):
         mock_api = AsyncMock()
@@ -528,7 +528,7 @@ async def test_domain_registration_public_key_not_found(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
         ) as mock_api_class,
     ):
         mock_api = AsyncMock()
@@ -587,7 +587,7 @@ async def test_domain_registration_public_key_mismatch(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi"
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi"
         ) as mock_api_class,
     ):
         mock_api = AsyncMock()
@@ -668,11 +668,11 @@ async def test_domain_registration_partial_failure(
 
     with (
         patch(
-            "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi",
+            "inpui.components.tesla_fleet.config_flow.TeslaFleetApi",
             side_effect=[mock_api_na, mock_api_eu],
         ),
         patch(
-            "homeassistant.components.tesla_fleet.async_setup_entry", return_value=True
+            "inpui.components.tesla_fleet.async_setup_entry", return_value=True
         ),
     ):
         # Complete OAuth
@@ -747,7 +747,7 @@ async def test_domain_registration_all_regions_fail(
     mock_api_eu.partner.register.side_effect = TeslaFleetError("EU registration failed")
 
     with patch(
-        "homeassistant.components.tesla_fleet.config_flow.TeslaFleetApi",
+        "inpui.components.tesla_fleet.config_flow.TeslaFleetApi",
         side_effect=[mock_api_na, mock_api_eu],
     ):
         # Complete OAuth
@@ -755,7 +755,7 @@ async def test_domain_registration_all_regions_fail(
 
         # Enter domain - both regions fail
         with patch(
-            "homeassistant.helpers.translation.async_get_translations", return_value={}
+            "inpui.helpers.translation.async_get_translations", return_value={}
         ):
             result = await hass.config_entries.flow.async_configure(
                 result["flow_id"], {CONF_DOMAIN: "example.com"}
@@ -858,7 +858,7 @@ async def test_reauthentication(
     )
 
     with patch(
-        "homeassistant.components.tesla_fleet.async_setup_entry", return_value=True
+        "inpui.components.tesla_fleet.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -904,7 +904,7 @@ async def test_reauth_account_mismatch(
     )
 
     with patch(
-        "homeassistant.components.tesla_fleet.async_setup_entry", return_value=True
+        "inpui.components.tesla_fleet.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 

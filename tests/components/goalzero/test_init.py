@@ -57,7 +57,7 @@ async def test_async_setup_entry_not_ready(hass: HomeAssistant) -> None:
     """Test that it throws ConfigEntryNotReady when exception occurs during setup."""
     entry = create_entry(hass)
     with patch(
-        "homeassistant.components.goalzero.Yeti.init_connect",
+        "inpui.components.goalzero.Yeti.init_connect",
         side_effect=exceptions.ConnectError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -72,7 +72,7 @@ async def test_update_failed(
     await async_init_integration(hass, aioclient_mock)
     assert hass.states.get(f"switch.{DEFAULT_NAME}_ac_port_status").state == STATE_ON
     with patch(
-        "homeassistant.components.goalzero.Yeti.get_state",
+        "inpui.components.goalzero.Yeti.get_state",
         side_effect=exceptions.ConnectError,
     ) as updater:
         next_update = dt_util.utcnow() + timedelta(seconds=30)

@@ -617,7 +617,7 @@ def mock_client_fixture(
 ):
     """Mock a client."""
     with patch(
-        "homeassistant.components.zwave_js.ZwaveClient", autospec=True
+        "inpui.components.zwave_js.ZwaveClient", autospec=True
     ) as client_class:
         client = client_class.return_value
 
@@ -681,12 +681,12 @@ def mock_get_server_version(
     )
     with (
         patch(
-            "homeassistant.components.zwave_js.helpers.get_server_version",
+            "inpui.components.zwave_js.helpers.get_server_version",
             side_effect=server_version_side_effect,
             return_value=version_info,
         ) as mock_version,
         patch(
-            "homeassistant.components.zwave_js.helpers.SERVER_VERSION_TIMEOUT",
+            "inpui.components.zwave_js.helpers.SERVER_VERSION_TIMEOUT",
             new=server_version_timeout,
         ),
     ):
@@ -980,7 +980,7 @@ async def integration_fixture(
         unique_id=str(client.driver.controller.home_id),
     )
     entry.add_to_hass(hass)
-    with patch("homeassistant.components.zwave_js.PLATFORMS", platforms):
+    with patch("inpui.components.zwave_js.PLATFORMS", platforms):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 

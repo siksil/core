@@ -30,7 +30,7 @@ async def test_buttons(
         ("button.test_play_fart", "boombox"),
     ):
         with patch(
-            f"homeassistant.components.tessie.button.{func}",
+            f"inpui.components.tessie.button.{func}",
         ) as mock_press:
             await hass.services.async_call(
                 BUTTON_DOMAIN,

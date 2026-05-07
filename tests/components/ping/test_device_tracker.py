@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed
 def entity_registry_enabled_by_default() -> Generator[None]:
     """Test fixture that ensures ping device_tracker entities are enabled in the registry."""
     with patch(
-        "homeassistant.components.ping.device_tracker.PingDeviceTracker.entity_registry_enabled_default",
+        "inpui.components.ping.device_tracker.PingDeviceTracker.entity_registry_enabled_default",
         return_value=True,
     ):
         yield
@@ -61,7 +61,7 @@ async def test_setup_and_update(
     assert state.state == "home"
 
     with patch(
-        "homeassistant.components.ping.helpers.async_ping",
+        "inpui.components.ping.helpers.async_ping",
         return_value=Host(address="10.10.10.10", packets_sent=10, rtts=[]),
     ):
         # we need to travel two times into the future to run the update twice
@@ -94,7 +94,7 @@ async def test_reload_not_triggering_home(
     assert hass.states.get("device_tracker.10_10_10_10").state == "home"
 
     with patch(
-        "homeassistant.components.ping.helpers.async_ping",
+        "inpui.components.ping.helpers.async_ping",
         return_value=Host("10.10.10.10", 5, []),
     ):
         # device should be "not_home" after consider_home interval

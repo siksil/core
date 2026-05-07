@@ -36,15 +36,15 @@ def xiaomi_aqara_fixture():
 
     with (
         patch(
-            "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
+            "inpui.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
             return_value=mock_gateway_discovery,
         ),
         patch(
-            "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGateway",
+            "inpui.components.xiaomi_aqara.config_flow.XiaomiGateway",
             return_value=mock_gateway_discovery.gateways[TEST_HOST],
         ),
         patch(
-            "homeassistant.components.xiaomi_aqara.async_setup_entry", return_value=True
+            "inpui.components.xiaomi_aqara.async_setup_entry", return_value=True
         ),
     ):
         yield
@@ -134,7 +134,7 @@ async def test_config_flow_user_multiple_success(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([TEST_HOST, TEST_HOST_2])
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
         return_value=mock_gateway_discovery,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -223,7 +223,7 @@ async def test_config_flow_user_host_mac_success(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([])
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
         return_value=mock_gateway_discovery,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -270,7 +270,7 @@ async def test_config_flow_user_discovery_error(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([])
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
         return_value=mock_gateway_discovery,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -296,7 +296,7 @@ async def test_config_flow_user_invalid_interface(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([], invalid_interface=True)
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
         return_value=mock_gateway_discovery,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -322,7 +322,7 @@ async def test_config_flow_user_invalid_host(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([TEST_HOST], invalid_host=True)
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGateway",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGateway",
         return_value=mock_gateway_discovery.gateways[TEST_HOST],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -352,7 +352,7 @@ async def test_config_flow_user_invalid_mac(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([TEST_HOST], invalid_mac=True)
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGateway",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGateway",
         return_value=mock_gateway_discovery.gateways[TEST_HOST],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -382,7 +382,7 @@ async def test_config_flow_user_invalid_key(hass: HomeAssistant) -> None:
     mock_gateway_discovery = get_mock_discovery([TEST_HOST], invalid_key=True)
 
     with patch(
-        "homeassistant.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
+        "inpui.components.xiaomi_aqara.config_flow.XiaomiGatewayDiscovery",
         return_value=mock_gateway_discovery,
     ):
         result = await hass.config_entries.flow.async_configure(

@@ -19,11 +19,11 @@ def mock_huum_client() -> Generator[AsyncMock]:
     """Mock the Huum API client."""
     with (
         patch(
-            "homeassistant.components.huum.coordinator.Huum",
+            "inpui.components.huum.coordinator.Huum",
             autospec=True,
         ) as mock_cls,
         patch(
-            "homeassistant.components.huum.config_flow.Huum",
+            "inpui.components.huum.config_flow.Huum",
             new=mock_cls,
         ),
     ):
@@ -55,7 +55,7 @@ def mock_huum_client() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.huum.async_setup_entry", return_value=True
+        "inpui.components.huum.async_setup_entry", return_value=True
     ) as setup_entry_mock:
         yield setup_entry_mock
 
@@ -95,7 +95,7 @@ async def init_integration(
     """Set up the Huum integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.huum.PLATFORMS", platforms):
+    with patch("inpui.components.huum.PLATFORMS", platforms):
         assert await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

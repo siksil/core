@@ -93,11 +93,11 @@ async def test_update_modem_config_plm(
     )
     with (
         patch(
-            "homeassistant.components.insteon.api.config.async_connect",
+            "inpui.components.insteon.api.config.async_connect",
             new=mock_successful_connection,
         ),
-        patch("homeassistant.components.insteon.api.config.devices", mock_devices),
-        patch("homeassistant.components.insteon.api.config.async_close"),
+        patch("inpui.components.insteon.api.config.devices", mock_devices),
+        patch("inpui.components.insteon.api.config.async_close"),
     ):
         await ws_client.send_json(
             {
@@ -125,11 +125,11 @@ async def test_update_modem_config_hub_v2(
     )
     with (
         patch(
-            "homeassistant.components.insteon.api.config.async_connect",
+            "inpui.components.insteon.api.config.async_connect",
             new=mock_successful_connection,
         ),
-        patch("homeassistant.components.insteon.api.config.devices", mock_devices),
-        patch("homeassistant.components.insteon.api.config.async_close"),
+        patch("inpui.components.insteon.api.config.devices", mock_devices),
+        patch("inpui.components.insteon.api.config.async_close"),
     ):
         await ws_client.send_json(
             {
@@ -156,11 +156,11 @@ async def test_update_modem_config_hub_v1(
     )
     with (
         patch(
-            "homeassistant.components.insteon.api.config.async_connect",
+            "inpui.components.insteon.api.config.async_connect",
             new=mock_successful_connection,
         ),
-        patch("homeassistant.components.insteon.api.config.devices", mock_devices),
-        patch("homeassistant.components.insteon.api.config.async_close"),
+        patch("inpui.components.insteon.api.config.devices", mock_devices),
+        patch("inpui.components.insteon.api.config.async_close"),
     ):
         await ws_client.send_json(
             {
@@ -186,11 +186,11 @@ async def test_update_modem_config_bad(
     )
     with (
         patch(
-            "homeassistant.components.insteon.api.config.async_connect",
+            "inpui.components.insteon.api.config.async_connect",
             new=mock_failed_connection,
         ),
-        patch("homeassistant.components.insteon.api.config.devices", mock_devices),
-        patch("homeassistant.components.insteon.api.config.async_close"),
+        patch("inpui.components.insteon.api.config.devices", mock_devices),
+        patch("inpui.components.insteon.api.config.async_close"),
     ):
         await ws_client.send_json(
             {
@@ -215,11 +215,11 @@ async def test_update_modem_config_bad_reconnect(
     )
     with (
         patch(
-            "homeassistant.components.insteon.api.config.async_connect",
+            "inpui.components.insteon.api.config.async_connect",
             new=mock_failed_connection,
         ),
-        patch("homeassistant.components.insteon.api.config.devices", mock_devices),
-        patch("homeassistant.components.insteon.api.config.async_close"),
+        patch("inpui.components.insteon.api.config.devices", mock_devices),
+        patch("inpui.components.insteon.api.config.async_close"),
     ):
         mock_devices.modem.protocol = MockProtocol()
         await ws_client.send_json(

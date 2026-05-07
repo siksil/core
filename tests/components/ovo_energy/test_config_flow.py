@@ -43,11 +43,11 @@ async def test_authorization_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.bootstrap_accounts",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.bootstrap_accounts",
         ),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -70,7 +70,7 @@ async def test_connection_error(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+        "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
         side_effect=aiohttp.ClientError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -94,18 +94,18 @@ async def test_full_flow_implementation(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.bootstrap_accounts",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.bootstrap_accounts",
         ),
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.username",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.username",
             "some_name",
         ),
         patch(
-            "homeassistant.components.ovo_energy.async_setup_entry",
+            "inpui.components.ovo_energy.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -131,7 +131,7 @@ async def test_reauth_authorization_error(hass: HomeAssistant) -> None:
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "reauth_confirm"
     with patch(
-        "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+        "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
         return_value=False,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -158,7 +158,7 @@ async def test_reauth_connection_error(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+        "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
         side_effect=aiohttp.ClientError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -185,7 +185,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+        "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
         return_value=False,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -198,11 +198,11 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.authenticate",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.authenticate",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.ovo_energy.config_flow.OVOEnergy.username",
+            "inpui.components.ovo_energy.config_flow.OVOEnergy.username",
             return_value=FIXTURE_USER_INPUT[CONF_USERNAME],
         ),
     ):

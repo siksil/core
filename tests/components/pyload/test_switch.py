@@ -41,7 +41,7 @@ API_CALL = {
 def switch_only() -> Generator[None]:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.pyload.PLATFORMS",
+        "inpui.components.pyload.PLATFORMS",
         [Platform.SWITCH],
     ):
         yield

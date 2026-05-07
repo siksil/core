@@ -37,7 +37,7 @@ async def test_async_setup_raises_entry_not_ready(hass: HomeAssistant) -> None:
     with (
         _patch_version(),
         patch(
-            "homeassistant.components.nzbget.coordinator.NZBGetAPI.status",
+            "inpui.components.nzbget.coordinator.NZBGetAPI.status",
             side_effect=NZBGetAPIException(),
         ),
     ):

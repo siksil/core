@@ -19,7 +19,7 @@ async def test_switches(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test switches."""
-    with patch("homeassistant.components.elmax.ELMAX_PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.elmax.ELMAX_PLATFORMS", [Platform.SWITCH]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

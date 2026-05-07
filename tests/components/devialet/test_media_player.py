@@ -138,7 +138,7 @@ async def test_media_player_playing(
     assert state.attributes[ATTR_SOUND_MODE] is not None
 
     with patch(
-        "homeassistant.components.devialet.DevialetApi.playing_state",
+        "inpui.components.devialet.DevialetApi.playing_state",
         new_callable=PropertyMock,
     ) as mock:
         mock.return_value = MediaPlayerState.PAUSED
@@ -151,7 +151,7 @@ async def test_media_player_playing(
         )
 
     with patch(
-        "homeassistant.components.devialet.DevialetApi.playing_state",
+        "inpui.components.devialet.DevialetApi.playing_state",
         new_callable=PropertyMock,
     ) as mock:
         mock.return_value = MediaPlayerState.ON

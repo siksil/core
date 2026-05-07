@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 async def button_only() -> AsyncGenerator[None]:
     """Enable only the button platform."""
     with patch(
-        "homeassistant.components.iron_os.PLATFORMS",
+        "inpui.components.iron_os.PLATFORMS",
         [Platform.BUTTON],
     ):
         yield

@@ -23,7 +23,7 @@ from tests.common import MockConfigEntry
 
 def _patch_setup():
     return patch(
-        "homeassistant.components.nfandroidtv.async_setup_entry",
+        "inpui.components.nfandroidtv.async_setup_entry",
         return_value=True,
     )
 

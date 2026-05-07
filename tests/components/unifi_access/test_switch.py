@@ -61,7 +61,7 @@ async def test_switch_entities(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test switch entities are created with expected state."""
-    with patch("homeassistant.components.unifi_access.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.unifi_access.PLATFORMS", [Platform.SWITCH]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

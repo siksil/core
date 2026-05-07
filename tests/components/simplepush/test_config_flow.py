@@ -23,7 +23,7 @@ MOCK_CONFIG = {
 def simplepush_setup_fixture():
     """Patch simplepush setup entry."""
     with patch(
-        "homeassistant.components.simplepush.async_setup_entry", return_value=True
+        "inpui.components.simplepush.async_setup_entry", return_value=True
     ):
         yield
 
@@ -31,7 +31,7 @@ def simplepush_setup_fixture():
 @pytest.fixture(autouse=True)
 def mock_api_request():
     """Patch simplepush api request."""
-    with patch("homeassistant.components.simplepush.config_flow.send"):
+    with patch("inpui.components.simplepush.config_flow.send"):
         yield
 
 
@@ -116,7 +116,7 @@ async def test_flow_user_name_already_configured(hass: HomeAssistant) -> None:
 async def test_error_on_connection_failure(hass: HomeAssistant) -> None:
     """Test when connection to api fails."""
     with patch(
-        "homeassistant.components.simplepush.config_flow.send",
+        "inpui.components.simplepush.config_flow.send",
         side_effect=UnknownError,
     ):
         result = await hass.config_entries.flow.async_init(

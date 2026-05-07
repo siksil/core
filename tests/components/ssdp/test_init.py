@@ -37,7 +37,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"st": "mock-st"}]},
 )
 async def test_ssdp_flow_dispatched_on_st(
@@ -84,7 +84,7 @@ async def test_ssdp_flow_dispatched_on_st(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"manufacturerURL": "mock-url"}]},
 )
 async def test_ssdp_flow_dispatched_on_manufacturer_url(
@@ -132,7 +132,7 @@ async def test_ssdp_flow_dispatched_on_manufacturer_url(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"manufacturer": "Paulus"}]},
 )
 async def test_scan_match_upnp_devicedesc_manufacturer(
@@ -177,7 +177,7 @@ async def test_scan_match_upnp_devicedesc_manufacturer(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"deviceType": "Paulus"}]},
 )
 async def test_scan_match_upnp_devicedesc_devicetype(
@@ -223,7 +223,7 @@ async def test_scan_match_upnp_devicedesc_devicetype(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={
         "mock-domain": [
             {
@@ -266,7 +266,7 @@ async def test_scan_not_all_present(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={
         "mock-domain": [
             {
@@ -312,7 +312,7 @@ async def test_scan_not_all_match(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"deviceType": "Paulus"}]},
 )
 async def test_flow_start_only_alive(
@@ -408,7 +408,7 @@ async def test_flow_start_only_alive(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={},
 )
 async def test_discovery_from_advertisement_sets_ssdp_st(
@@ -461,7 +461,7 @@ async def test_discovery_from_advertisement_sets_ssdp_st(
 
 
 @patch(
-    "homeassistant.components.ssdp.common.async_build_source_set",
+    "inpui.components.ssdp.common.async_build_source_set",
     return_value={IPv4Address("192.168.1.1")},
 )
 async def test_start_stop_scanner(mock_source_set, hass: HomeAssistant) -> None:
@@ -486,7 +486,7 @@ async def test_start_stop_scanner(mock_source_set, hass: HomeAssistant) -> None:
 
 
 @pytest.mark.no_fail_on_log_exception
-@patch("homeassistant.components.ssdp.async_get_ssdp", return_value={})
+@patch("inpui.components.ssdp.async_get_ssdp", return_value={})
 async def test_scan_with_registered_callback(
     mock_get_ssdp,
     hass: HomeAssistant,
@@ -581,7 +581,7 @@ async def test_scan_with_registered_callback(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"st": "mock-st"}]},
 )
 async def test_getting_existing_headers(
@@ -709,7 +709,7 @@ _ADAPTERS_WITH_MANUAL_CONFIG = [
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={
         "mock-domain": [
             {
@@ -719,7 +719,7 @@ _ADAPTERS_WITH_MANUAL_CONFIG = [
     },
 )
 @patch(
-    "homeassistant.components.ssdp.common.network.async_get_adapters",
+    "inpui.components.ssdp.common.network.async_get_adapters",
     return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
 )
 async def test_async_detect_interfaces_setting_empty_route(
@@ -734,7 +734,7 @@ async def test_async_detect_interfaces_setting_empty_route(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={
         "mock-domain": [
             {
@@ -744,7 +744,7 @@ async def test_async_detect_interfaces_setting_empty_route(
     },
 )
 @patch(
-    "homeassistant.components.ssdp.common.network.async_get_adapters",
+    "inpui.components.ssdp.common.network.async_get_adapters",
     return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
 )
 async def test_bind_failure_skips_adapter(
@@ -783,7 +783,7 @@ async def test_bind_failure_skips_adapter(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={
         "mock-domain": [
             {
@@ -793,7 +793,7 @@ async def test_bind_failure_skips_adapter(
     },
 )
 @patch(
-    "homeassistant.components.ssdp.common.network.async_get_adapters",
+    "inpui.components.ssdp.common.network.async_get_adapters",
     return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
 )
 async def test_ipv4_does_additional_search_for_sonos(
@@ -818,7 +818,7 @@ async def test_ipv4_does_additional_search_for_sonos(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"deviceType": "Paulus"}]},
 )
 async def test_flow_dismiss_on_byebye(
@@ -907,7 +907,7 @@ async def test_flow_dismiss_on_byebye(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"st": "mock-st"}]},
 )
 @pytest.mark.parametrize(
@@ -1016,7 +1016,7 @@ async def test_ssdp_rediscover(
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"st": "mock-st"}]},
 )
 @pytest.mark.parametrize(

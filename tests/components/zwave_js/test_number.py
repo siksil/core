@@ -76,7 +76,7 @@ def mock_client_fixture():
     """Mock no target_value."""
 
     with patch(
-        "homeassistant.components.zwave_js.number.ZwaveNumberEntity.get_zwave_value",
+        "inpui.components.zwave_js.number.ZwaveNumberEntity.get_zwave_value",
         return_value=None,
     ):
         yield

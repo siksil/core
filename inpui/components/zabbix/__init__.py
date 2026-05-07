@@ -122,13 +122,13 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
             discovery = [{"{#KEY}": key} for key in keys]
             metric = ItemValue(
                 publish_states_host,
-                f"homeassistant.{item_type}s_discovery",
+                f"inpui.{item_type}s_discovery",
                 json.dumps(discovery),
             )
             metrics.append(metric)
         for key, value in key_values.items():
             metric = ItemValue(
-                publish_states_host, f"homeassistant.{item_type}[{key}]", value
+                publish_states_host, f"inpui.{item_type}[{key}]", value
             )
             metrics.append(metric)
 

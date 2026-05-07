@@ -10,7 +10,7 @@ import pytest
 def mock_simple_manager_fail():
     """Mock datapoint Manager with default values for testing in config_flow."""
     with patch(
-        "homeassistant.components.metoffice.config_flow.Manager"
+        "inpui.components.metoffice.config_flow.Manager"
     ) as mock_manager:
         instance = mock_manager.return_value
         instance.get_forecast = APIException()

@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.meteo_lt.PLATFORMS", [Platform.WEATHER]):
+    with patch("inpui.components.meteo_lt.PLATFORMS", [Platform.WEATHER]):
         yield
 
 

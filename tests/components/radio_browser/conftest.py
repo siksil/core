@@ -28,7 +28,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.radio_browser.async_setup_entry", return_value=True
+        "inpui.components.radio_browser.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -41,7 +41,7 @@ async def init_integration(
     """Set up the Radio Browser integration for testing."""
     mock_config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.radio_browser.RadioBrowser",
+        "inpui.components.radio_browser.RadioBrowser",
         autospec=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

@@ -20,7 +20,7 @@ async def test_switches(
 ) -> None:
     """Test switches."""
     with patch(
-        "homeassistant.components.omnilogic.PLATFORMS",
+        "inpui.components.omnilogic.PLATFORMS",
         [Platform.SWITCH],
     ):
         entry = await init_integration(hass)

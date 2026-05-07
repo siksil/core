@@ -20,11 +20,11 @@ async def test_qnap_buttons(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.get_users_verification",
+            "inpui.components.qnap_qsw.QnapQswApi.get_users_verification",
             return_value=USERS_VERIFICATION_MOCK,
         ) as mock_users_verification,
         patch(
-            "homeassistant.components.qnap_qsw.QnapQswApi.post_system_command",
+            "inpui.components.qnap_qsw.QnapQswApi.post_system_command",
             return_value=SYSTEM_COMMAND_MOCK,
         ) as mock_post_system_command,
     ):

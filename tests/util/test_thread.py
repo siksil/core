@@ -72,7 +72,7 @@ async def test_deadlock_safe_shutdown_no_threads() -> None:
         daemon_thread_mock,
     ]
 
-    with patch("homeassistant.util.threading.enumerate", return_value=mock_threads):
+    with patch("inpui.util.threading.enumerate", return_value=mock_threads):
         thread.deadlock_safe_shutdown()
 
     assert not dead_thread_mock.join.called
@@ -101,7 +101,7 @@ async def test_deadlock_safe_shutdown() -> None:
         exception_thread_mock,
     ]
 
-    with patch("homeassistant.util.threading.enumerate", return_value=mock_threads):
+    with patch("inpui.util.threading.enumerate", return_value=mock_threads):
         thread.deadlock_safe_shutdown()
 
     expected_timeout = thread.THREADING_SHUTDOWN_TIMEOUT / 2

@@ -15,7 +15,7 @@ async def setup_integration(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.nice_go.PLATFORMS",
+        "inpui.components.nice_go.PLATFORMS",
         platforms,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

@@ -80,7 +80,7 @@ LIGHT_COLOR = {
 def light_platform_only():
     """Only set up the light and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.BINARY_SENSOR,
             Platform.DEVICE_TRACKER,
@@ -581,7 +581,7 @@ async def test_light_exception_on_creation(
 
     gateway.get_or_create_device(zigpy_device)
     with patch(
-        "homeassistant.components.zha.light.Light.__init__", side_effect=Exception
+        "inpui.components.zha.light.Light.__init__", side_effect=Exception
     ):
         await gateway.async_device_initialized(zigpy_device)
         await hass.async_block_till_done(wait_background_tasks=True)

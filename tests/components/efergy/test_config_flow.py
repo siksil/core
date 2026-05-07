@@ -14,7 +14,7 @@ from . import CONF_DATA, HID, _patch_efergy, _patch_efergy_status, create_entry
 
 
 def _patch_setup():
-    return patch("homeassistant.components.efergy.async_setup_entry")
+    return patch("inpui.components.efergy.async_setup_entry")
 
 
 async def test_flow_user(hass: HomeAssistant) -> None:

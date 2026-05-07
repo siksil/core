@@ -64,9 +64,9 @@ GATEWAY_INDIVIDUAL_ADDRESS = IndividualAddress("1.0.0")
 def fixture_knx_setup():
     """Mock KNX entry setup."""
     with (
-        patch("homeassistant.components.knx.async_setup", return_value=True),
+        patch("inpui.components.knx.async_setup", return_value=True),
         patch(
-            "homeassistant.components.knx.async_setup_entry", return_value=True
+            "inpui.components.knx.async_setup_entry", return_value=True
         ) as mock_async_setup_entry,
     ):
         yield mock_async_setup_entry
@@ -77,10 +77,10 @@ def patch_file_upload(return_value=FIXTURE_KEYRING, side_effect=None):
     """Patch file upload. Yields the Keyring instance (return_value)."""
     with (
         patch(
-            "homeassistant.components.knx.storage.keyring.process_uploaded_file"
+            "inpui.components.knx.storage.keyring.process_uploaded_file"
         ) as file_upload_mock,
         patch(
-            "homeassistant.components.knx.storage.keyring.sync_load_keyring",
+            "inpui.components.knx.storage.keyring.sync_load_keyring",
             return_value=return_value,
             side_effect=side_effect,
         ),
@@ -161,7 +161,7 @@ async def test_user_single_instance(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 async def test_routing_setup(
@@ -210,7 +210,7 @@ async def test_routing_setup(
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 async def test_routing_setup_advanced(
@@ -284,7 +284,7 @@ async def test_routing_setup_advanced(
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 async def test_routing_secure_manual_setup(
@@ -373,7 +373,7 @@ async def test_routing_secure_manual_setup(
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 async def test_routing_secure_keyfile(
@@ -514,7 +514,7 @@ async def test_routing_secure_keyfile(
     ],
 )
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 async def test_tunneling_setup_manual(
@@ -543,7 +543,7 @@ async def test_tunneling_setup_manual(
     assert result["errors"] == {"base": "no_tunnel_discovered"}
 
     with patch(
-        "homeassistant.components.knx.config_flow.request_description",
+        "inpui.components.knx.config_flow.request_description",
         return_value=_gateway_descriptor(
             user_input[CONF_HOST],
             user_input[CONF_PORT],
@@ -563,7 +563,7 @@ async def test_tunneling_setup_manual(
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 async def test_tunneling_setup_manual_request_description_error(
@@ -586,7 +586,7 @@ async def test_tunneling_setup_manual_request_description_error(
 
     # TCP configured but not supported by gateway
     with patch(
-        "homeassistant.components.knx.config_flow.request_description",
+        "inpui.components.knx.config_flow.request_description",
         return_value=_gateway_descriptor(
             "192.168.0.1",
             3671,
@@ -608,7 +608,7 @@ async def test_tunneling_setup_manual_request_description_error(
         }
     # TCP configured but Secure required by gateway
     with patch(
-        "homeassistant.components.knx.config_flow.request_description",
+        "inpui.components.knx.config_flow.request_description",
         return_value=_gateway_descriptor(
             "192.168.0.1",
             3671,
@@ -631,7 +631,7 @@ async def test_tunneling_setup_manual_request_description_error(
         }
     # Secure configured but not enabled on gateway
     with patch(
-        "homeassistant.components.knx.config_flow.request_description",
+        "inpui.components.knx.config_flow.request_description",
         return_value=_gateway_descriptor(
             "192.168.0.1",
             3671,
@@ -654,7 +654,7 @@ async def test_tunneling_setup_manual_request_description_error(
         }
     # No connection to gateway
     with patch(
-        "homeassistant.components.knx.config_flow.request_description",
+        "inpui.components.knx.config_flow.request_description",
         side_effect=CommunicationError(""),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -669,7 +669,7 @@ async def test_tunneling_setup_manual_request_description_error(
         assert result["errors"] == {"base": "cannot_connect"}
     # OK configuration
     with patch(
-        "homeassistant.components.knx.config_flow.request_description",
+        "inpui.components.knx.config_flow.request_description",
         return_value=_gateway_descriptor(
             "192.168.0.1",
             3671,
@@ -700,11 +700,11 @@ async def test_tunneling_setup_manual_request_description_error(
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.GatewayScanner",
+    "inpui.components.knx.config_flow.GatewayScanner",
     return_value=GatewayScannerMock(),
 )
 @patch(
-    "homeassistant.components.knx.config_flow.request_description",
+    "inpui.components.knx.config_flow.request_description",
     return_value=_gateway_descriptor("192.168.0.2", 3675),
 )
 async def test_tunneling_setup_for_local_ip(
@@ -802,7 +802,7 @@ async def test_tunneling_setup_for_multiple_found_gateways(
     gateway_udp = _gateway_descriptor("192.168.0.1", 3675)
     gateway_tcp = _gateway_descriptor("192.168.1.100", 3675, True)
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock(
             [gateway_udp, gateway_tcp]
@@ -850,7 +850,7 @@ async def test_tunneling_setup_tcp_endpoint_select_skip(
     gateway_udp = _gateway_descriptor("192.168.0.1", 3675)
     gateway_tcp_no_slots = _gateway_descriptor("192.168.1.100", 3675, True, slots=False)
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock(
             [gateway_udp, gateway_tcp_no_slots]
@@ -897,7 +897,7 @@ async def test_tunneling_setup_tcp_endpoint_select(
     """Test tunneling TCP endpoint selection."""
     gateway_tcp = _gateway_descriptor("192.168.1.100", 3675, True)
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway_tcp])
         result = await hass.config_entries.flow.async_init(
@@ -962,7 +962,7 @@ async def test_manual_tunnel_step_with_found_gateway(
 ) -> None:
     """Test manual tunnel if gateway was found and tunneling is selected."""
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway])
         result = await hass.config_entries.flow.async_init(
@@ -997,7 +997,7 @@ async def test_form_with_automatic_connection_handling(
 ) -> None:
     """Test we get the form."""
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock(
             [_gateway_descriptor("192.168.0.1", 3675)]
@@ -1043,7 +1043,7 @@ async def _get_menu_step_secure_tunnel(
         requires_secure=True,
     )
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway])
         result = await hass.config_entries.flow.async_init(
@@ -1072,7 +1072,7 @@ async def _get_menu_step_secure_tunnel(
 
 
 @patch(
-    "homeassistant.components.knx.config_flow.request_description",
+    "inpui.components.knx.config_flow.request_description",
     return_value=_gateway_descriptor(
         "192.168.0.1",
         3675,
@@ -1092,7 +1092,7 @@ async def test_get_secure_menu_step_manual_tunnelling(
         requires_secure=True,
     )
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway])
         result = await hass.config_entries.flow.async_init(
@@ -1284,7 +1284,7 @@ async def test_reconfigure_flow_connection_type(
     menu_step = await knx.mock_config_entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway])
         result = await hass.config_entries.flow.async_configure(
@@ -1362,7 +1362,7 @@ async def test_reconfigure_flow_secure_manual_to_keyfile(
     knx_setup.reset_mock()
     menu_step = await mock_config_entry.start_reconfigure_flow(hass)
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway])
         result = await hass.config_entries.flow.async_configure(
@@ -1452,7 +1452,7 @@ async def test_reconfigure_flow_routing(hass: HomeAssistant, knx_setup) -> None:
     menu_step = await mock_config_entry.start_reconfigure_flow(hass)
 
     with patch(
-        "homeassistant.components.knx.config_flow.GatewayScanner"
+        "inpui.components.knx.config_flow.GatewayScanner"
     ) as gateway_scanner_mock:
         gateway_scanner_mock.return_value = GatewayScannerMock([gateway])
         result = await hass.config_entries.flow.async_configure(

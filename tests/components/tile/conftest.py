@@ -73,9 +73,9 @@ def mock_pytile(tile: AsyncMock) -> Generator[None]:
     client.async_get_tiles = AsyncMock(return_value={"19264d2dffdbca32": tile})
     with (
         patch(
-            "homeassistant.components.tile.config_flow.async_login", return_value=client
+            "inpui.components.tile.config_flow.async_login", return_value=client
         ),
-        patch("homeassistant.components.tile.async_login", return_value=client),
+        patch("inpui.components.tile.async_login", return_value=client),
     ):
         yield
 
@@ -84,6 +84,6 @@ def mock_pytile(tile: AsyncMock) -> Generator[None]:
 def mock_setup_entry():
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.tile.async_setup_entry", return_value=True
+        "inpui.components.tile.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

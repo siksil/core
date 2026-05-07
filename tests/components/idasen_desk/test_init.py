@@ -45,7 +45,7 @@ async def test_setup_connect_exception(
 async def test_no_ble_device(hass: HomeAssistant, mock_desk_api: MagicMock) -> None:
     """Test setup with no BLEDevice from address."""
     with mock.patch(
-        "homeassistant.components.idasen_desk.bluetooth.async_ble_device_from_address",
+        "inpui.components.idasen_desk.bluetooth.async_ble_device_from_address",
         return_value=None,
     ):
         entry = await init_integration(hass)
@@ -58,7 +58,7 @@ async def test_reconnect_on_bluetooth_callback(
 ) -> None:
     """Test that a reconnect is made after the bluetooth callback is triggered."""
     with mock.patch(
-        "homeassistant.components.idasen_desk.bluetooth.async_register_callback"
+        "inpui.components.idasen_desk.bluetooth.async_register_callback"
     ) as mock_register_callback:
         await init_integration(hass)
         assert len(hass.config_entries.async_entries(DOMAIN)) == 1

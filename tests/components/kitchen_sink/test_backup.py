@@ -27,7 +27,7 @@ async def backup_only() -> AsyncGenerator[None]:
     The backup platform is not an entity platform.
     """
     with patch(
-        "homeassistant.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
+        "inpui.components.kitchen_sink.COMPONENTS_WITH_DEMO_PLATFORM",
         [],
     ):
         yield
@@ -36,7 +36,7 @@ async def backup_only() -> AsyncGenerator[None]:
 @pytest.fixture(autouse=True)
 async def setup_integration(hass: HomeAssistant) -> AsyncGenerator[None]:
     """Set up Kitchen Sink integration."""
-    with patch("homeassistant.components.backup.is_hassio", return_value=False):
+    with patch("inpui.components.backup.is_hassio", return_value=False):
         assert await async_setup_component(hass, BACKUP_DOMAIN, {BACKUP_DOMAIN: {}})
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
         await hass.async_block_till_done()
@@ -162,10 +162,10 @@ async def test_agents_upload(
     with (
         patch("pathlib.Path.open"),
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backup",
+            "inpui.components.backup.manager.BackupManager.async_get_backup",
         ) as fetch_backup,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=test_backup,
         ),
     ):

@@ -28,7 +28,7 @@ async def test_sensors(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test the sensor entities."""
-    with patch("homeassistant.components.transmission.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.transmission.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -40,7 +40,7 @@ async def test_stats_sensors(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test session and cumulative stats sensors."""
-    with patch("homeassistant.components.transmission.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.transmission.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     # Session download: 10 GiB = 10.0 GiB

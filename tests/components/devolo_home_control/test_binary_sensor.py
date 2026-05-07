@@ -30,7 +30,7 @@ async def test_binary_sensor(
     test_gateway = HomeControlMockBinarySensor()
     test_gateway.devices["Test"].status = 0
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -74,7 +74,7 @@ async def test_remote_control(
     test_gateway = HomeControlMockRemoteControl()
     test_gateway.devices["Test"].status = 0
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -110,7 +110,7 @@ async def test_disabled(hass: HomeAssistant) -> None:
     """Test setup of a disabled device."""
     entry = configure_integration(hass)
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[HomeControlMockDisabledBinarySensor(), HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -124,7 +124,7 @@ async def test_remove_from_hass(hass: HomeAssistant) -> None:
     entry = configure_integration(hass)
     test_gateway = HomeControlMockBinarySensor()
     with patch(
-        "homeassistant.components.devolo_home_control.HomeControl",
+        "inpui.components.devolo_home_control.HomeControl",
         side_effect=[test_gateway, HomeControlMock()],
     ):
         await hass.config_entries.async_setup(entry.entry_id)

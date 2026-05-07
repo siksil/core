@@ -175,7 +175,7 @@ async def test_coordinator_update_authentication_error(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test enphase_envoy coordinator update authentication error handling."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, config_entry)
 
     # force HA to detect changed data by changing raw
@@ -416,7 +416,7 @@ def mock_envoy_setup(mock_envoy: AsyncMock):
 
 
 @patch(
-    "homeassistant.components.enphase_envoy.coordinator.SCAN_INTERVAL",
+    "inpui.components.enphase_envoy.coordinator.SCAN_INTERVAL",
     timedelta(days=1),
 )
 @respx.mock
@@ -446,7 +446,7 @@ async def test_coordinator_firmware_refresh(
     caplog.set_level(logging.WARNING)
 
     with patch(
-        "homeassistant.components.enphase_envoy.Envoy.setup",
+        "inpui.components.enphase_envoy.Envoy.setup",
         MagicMock(return_value=mock_envoy_setup(mock_envoy)),
     ):
         freezer.tick(FIRMWARE_REFRESH_INTERVAL)
@@ -473,7 +473,7 @@ async def test_coordinator_firmware_refresh_with_envoy_error(
     await setup_integration(hass, config_entry)
 
     caplog.set_level(logging.DEBUG)
-    logging.getLogger("homeassistant.components.enphase_envoy.coordinator").setLevel(
+    logging.getLogger("inpui.components.enphase_envoy.coordinator").setLevel(
         logging.DEBUG
     )
 
@@ -497,7 +497,7 @@ async def test_coordinator_interface_information(
     await setup_integration(hass, config_entry)
 
     caplog.set_level(logging.DEBUG)
-    logging.getLogger("homeassistant.components.enphase_envoy.coordinator").setLevel(
+    logging.getLogger("inpui.components.enphase_envoy.coordinator").setLevel(
         logging.DEBUG
     )
 
@@ -545,7 +545,7 @@ async def test_coordinator_interface_information_no_device(
     await setup_integration(hass, config_entry)
 
     caplog.set_level(logging.DEBUG)
-    logging.getLogger("homeassistant.components.enphase_envoy.coordinator").setLevel(
+    logging.getLogger("inpui.components.enphase_envoy.coordinator").setLevel(
         logging.DEBUG
     )
 
@@ -585,7 +585,7 @@ async def test_coordinator_interface_information_mac_also_in_other_device(
     await setup_integration(hass, config_entry)
 
     caplog.set_level(logging.DEBUG)
-    logging.getLogger("homeassistant.components.enphase_envoy.coordinator").setLevel(
+    logging.getLogger("inpui.components.enphase_envoy.coordinator").setLevel(
         logging.DEBUG
     )
 

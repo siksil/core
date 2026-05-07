@@ -48,7 +48,7 @@ async def test_user_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -59,7 +59,7 @@ async def test_user_flow(hass: HomeAssistant) -> None:
             new=mock_data_listener,
         ),
         patch(
-            "homeassistant.components.system_bridge.async_setup_entry",
+            "inpui.components.system_bridge.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -108,7 +108,7 @@ async def test_form_connection_closed_cannot_connect(hass: HomeAssistant) -> Non
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -140,7 +140,7 @@ async def test_form_timeout_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -172,7 +172,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -204,7 +204,7 @@ async def test_form_uuid_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -236,7 +236,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -271,7 +271,7 @@ async def test_reauth_authorization_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -354,7 +354,7 @@ async def test_reauth_connection_closed_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -389,7 +389,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -400,7 +400,7 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
             new=mock_data_listener,
         ),
         patch(
-            "homeassistant.components.system_bridge.async_setup_entry",
+            "inpui.components.system_bridge.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -427,7 +427,7 @@ async def test_zeroconf_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.system_bridge.config_flow.WebSocketClient.connect"
+            "inpui.components.system_bridge.config_flow.WebSocketClient.connect"
         ),
         patch(
             "systembridgeconnector.websocket_client.WebSocketClient.get_data",
@@ -438,7 +438,7 @@ async def test_zeroconf_flow(hass: HomeAssistant) -> None:
             new=mock_data_listener,
         ),
         patch(
-            "homeassistant.components.system_bridge.async_setup_entry",
+            "inpui.components.system_bridge.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

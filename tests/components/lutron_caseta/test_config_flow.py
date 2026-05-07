@@ -59,10 +59,10 @@ async def test_bridge_import_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.lutron_caseta.async_setup_entry",
+            "inpui.components.lutron_caseta.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
-        patch("homeassistant.components.lutron_caseta.async_setup", return_value=True),
+        patch("inpui.components.lutron_caseta.async_setup", return_value=True),
         patch.object(
             Smartbridge,
             "create_tls",
@@ -164,7 +164,7 @@ async def test_duplicate_bridge_import(hass: HomeAssistant) -> None:
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.lutron_caseta.async_setup_entry",
+        "inpui.components.lutron_caseta.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         # Mock entry added, try initializing flow with duplicate host
@@ -225,14 +225,14 @@ async def test_form_user(hass: HomeAssistant, tmp_path: Path) -> None:
 
     with (
         patch(
-            "homeassistant.components.lutron_caseta.config_flow.async_pair",
+            "inpui.components.lutron_caseta.config_flow.async_pair",
             return_value=MOCK_ASYNC_PAIR_SUCCESS,
         ),
         patch(
-            "homeassistant.components.lutron_caseta.async_setup", return_value=True
+            "inpui.components.lutron_caseta.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.lutron_caseta.async_setup_entry",
+            "inpui.components.lutron_caseta.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -279,14 +279,14 @@ async def test_form_user_pairing_fails(hass: HomeAssistant, tmp_path: Path) -> N
 
     with (
         patch(
-            "homeassistant.components.lutron_caseta.config_flow.async_pair",
+            "inpui.components.lutron_caseta.config_flow.async_pair",
             side_effect=TimeoutError,
         ),
         patch(
-            "homeassistant.components.lutron_caseta.async_setup", return_value=True
+            "inpui.components.lutron_caseta.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.lutron_caseta.async_setup_entry",
+            "inpui.components.lutron_caseta.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -329,14 +329,14 @@ async def test_form_user_reuses_existing_assets_when_pairing_again(
 
     with (
         patch(
-            "homeassistant.components.lutron_caseta.config_flow.async_pair",
+            "inpui.components.lutron_caseta.config_flow.async_pair",
             return_value=MOCK_ASYNC_PAIR_SUCCESS,
         ),
         patch(
-            "homeassistant.components.lutron_caseta.async_setup", return_value=True
+            "inpui.components.lutron_caseta.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.lutron_caseta.async_setup_entry",
+            "inpui.components.lutron_caseta.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -358,7 +358,7 @@ async def test_form_user_reuses_existing_assets_when_pairing_again(
     assert len(mock_setup_entry.mock_calls) == 1
 
     with patch(
-        "homeassistant.components.lutron_caseta.async_unload_entry", return_value=True
+        "inpui.components.lutron_caseta.async_unload_entry", return_value=True
     ) as mock_unload:
         await hass.config_entries.async_remove(result3["result"].entry_id)
         await hass.async_block_till_done()
@@ -386,9 +386,9 @@ async def test_form_user_reuses_existing_assets_when_pairing_again(
     assert result2["step_id"] == "link"
 
     with (
-        patch("homeassistant.components.lutron_caseta.async_setup", return_value=True),
+        patch("inpui.components.lutron_caseta.async_setup", return_value=True),
         patch(
-            "homeassistant.components.lutron_caseta.async_setup_entry",
+            "inpui.components.lutron_caseta.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -519,14 +519,14 @@ async def test_zeroconf(hass: HomeAssistant, source, tmp_path: Path) -> None:
 
     with (
         patch(
-            "homeassistant.components.lutron_caseta.config_flow.async_pair",
+            "inpui.components.lutron_caseta.config_flow.async_pair",
             return_value=MOCK_ASYNC_PAIR_SUCCESS,
         ),
         patch(
-            "homeassistant.components.lutron_caseta.async_setup", return_value=True
+            "inpui.components.lutron_caseta.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.lutron_caseta.async_setup_entry",
+            "inpui.components.lutron_caseta.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

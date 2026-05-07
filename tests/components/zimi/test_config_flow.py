@@ -38,7 +38,7 @@ SELECTED_HOST_AND_PORT = "selected_host_and_port"
 def discovery_mock():
     """Mock the ControlPointDiscoveryService."""
     with patch(
-        "homeassistant.components.zimi.config_flow.ControlPointDiscoveryService",
+        "inpui.components.zimi.config_flow.ControlPointDiscoveryService",
         autospec=True,
     ) as mock:
         mock.return_value = mock
@@ -49,7 +49,7 @@ def discovery_mock():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.zimi.async_setup_entry", return_value=True
+        "inpui.components.zimi.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

@@ -39,7 +39,7 @@ YAML_CONFIG = {
 
 def _patch_async_setup_entry(return_value=True):
     return patch(
-        "homeassistant.components.canary.async_setup_entry",
+        "inpui.components.canary.async_setup_entry",
         return_value=return_value,
     )
 

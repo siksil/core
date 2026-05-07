@@ -76,10 +76,10 @@ async def test_setups(hass: HomeAssistant, protocol, connection, title) -> None:
     assert result["step_id"] == "protocol"
 
     with (
-        patch("homeassistant.components.alarmdecoder.config_flow.AdExt.open"),
-        patch("homeassistant.components.alarmdecoder.config_flow.AdExt.close"),
+        patch("inpui.components.alarmdecoder.config_flow.AdExt.open"),
+        patch("inpui.components.alarmdecoder.config_flow.AdExt.close"),
         patch(
-            "homeassistant.components.alarmdecoder.async_setup_entry",
+            "inpui.components.alarmdecoder.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -122,10 +122,10 @@ async def test_setup_connection_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.alarmdecoder.config_flow.AdExt.open",
+            "inpui.components.alarmdecoder.config_flow.AdExt.open",
             side_effect=NoDeviceError,
         ),
-        patch("homeassistant.components.alarmdecoder.config_flow.AdExt.close"),
+        patch("inpui.components.alarmdecoder.config_flow.AdExt.close"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], connection_settings
@@ -135,10 +135,10 @@ async def test_setup_connection_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.alarmdecoder.config_flow.AdExt.open",
+            "inpui.components.alarmdecoder.config_flow.AdExt.open",
             side_effect=Exception,
         ),
-        patch("homeassistant.components.alarmdecoder.config_flow.AdExt.close"),
+        patch("inpui.components.alarmdecoder.config_flow.AdExt.close"),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"], connection_settings
@@ -174,7 +174,7 @@ async def test_options_arm_flow(hass: HomeAssistant) -> None:
     assert result["step_id"] == "arm_settings"
 
     with patch(
-        "homeassistant.components.alarmdecoder.async_setup_entry", return_value=True
+        "inpui.components.alarmdecoder.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
@@ -220,7 +220,7 @@ async def test_options_zone_flow(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.alarmdecoder.async_setup_entry", return_value=True
+        "inpui.components.alarmdecoder.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
@@ -253,7 +253,7 @@ async def test_options_zone_flow(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.alarmdecoder.async_setup_entry", return_value=True
+        "inpui.components.alarmdecoder.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
@@ -375,7 +375,7 @@ async def test_options_zone_flow_validation(hass: HomeAssistant) -> None:
 
     # All valid settings
     with patch(
-        "homeassistant.components.alarmdecoder.async_setup_entry", return_value=True
+        "inpui.components.alarmdecoder.async_setup_entry", return_value=True
     ):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],

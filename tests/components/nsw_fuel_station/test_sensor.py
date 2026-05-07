@@ -74,7 +74,7 @@ MOCK_FUEL_PRICES_RESPONSE = MockGetFuelPricesResponse(
 
 
 @patch(
-    "homeassistant.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
+    "inpui.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
     return_value=MOCK_FUEL_PRICES_RESPONSE,
 )
 async def test_setup(get_fuel_prices, hass: HomeAssistant) -> None:
@@ -96,7 +96,7 @@ def raise_fuel_check_error():
 
 
 @patch(
-    "homeassistant.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
+    "inpui.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
     side_effect=raise_fuel_check_error,
 )
 async def test_setup_error(get_fuel_prices, hass: HomeAssistant) -> None:
@@ -113,7 +113,7 @@ async def test_setup_error(get_fuel_prices, hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
+    "inpui.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
     return_value=MOCK_FUEL_PRICES_RESPONSE,
 )
 async def test_setup_error_no_station(get_fuel_prices, hass: HomeAssistant) -> None:
@@ -144,7 +144,7 @@ async def test_setup_error_no_station(get_fuel_prices, hass: HomeAssistant) -> N
 
 
 @patch(
-    "homeassistant.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
+    "inpui.components.nsw_fuel_station.FuelCheckClient.get_fuel_prices",
     return_value=MOCK_FUEL_PRICES_RESPONSE,
 )
 async def test_sensor_values(get_fuel_prices, hass: HomeAssistant) -> None:

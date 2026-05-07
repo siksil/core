@@ -43,7 +43,7 @@ TEST_DATA = {
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.vivotek.async_setup_entry", return_value=True):
+    with patch("inpui.components.vivotek.async_setup_entry", return_value=True):
         yield
 
 
@@ -75,7 +75,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_vivotek_camera() -> Generator[AsyncMock]:
     """Mock existing config entry."""
     with patch(
-        "homeassistant.components.vivotek.VivotekCamera", autospec=True
+        "inpui.components.vivotek.VivotekCamera", autospec=True
     ) as vivotek_camera:
         instance = vivotek_camera.return_value
         instance.get_mac.return_value = "11:22:33:44:55:66"

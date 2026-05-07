@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[None]:
     """Prevent the integration from actually setting up after config flow."""
     with patch(
-        "homeassistant.components.opendisplay.async_setup_entry",
+        "inpui.components.opendisplay.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -112,7 +112,7 @@ async def test_bluetooth_confirm_ble_device_not_found(
 ) -> None:
     """Test confirm step aborts when BLE device is not found."""
     with patch(
-        "homeassistant.components.opendisplay.config_flow.async_ble_device_from_address",
+        "inpui.components.opendisplay.config_flow.async_ble_device_from_address",
         return_value=None,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -128,7 +128,7 @@ async def test_bluetooth_confirm_ble_device_not_found(
 async def test_user_step_with_devices(hass: HomeAssistant) -> None:
     """Test user step with discovered devices."""
     with patch(
-        "homeassistant.components.opendisplay.config_flow.async_discovered_service_info",
+        "inpui.components.opendisplay.config_flow.async_discovered_service_info",
         return_value=[VALID_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -153,7 +153,7 @@ async def test_user_step_with_devices(hass: HomeAssistant) -> None:
 async def test_user_step_no_devices(hass: HomeAssistant) -> None:
     """Test user step when no devices are discovered."""
     with patch(
-        "homeassistant.components.opendisplay.config_flow.async_discovered_service_info",
+        "inpui.components.opendisplay.config_flow.async_discovered_service_info",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -168,7 +168,7 @@ async def test_user_step_no_devices(hass: HomeAssistant) -> None:
 async def test_user_step_filters_unsupported(hass: HomeAssistant) -> None:
     """Test user step filters out unsupported devices."""
     with patch(
-        "homeassistant.components.opendisplay.config_flow.async_discovered_service_info",
+        "inpui.components.opendisplay.config_flow.async_discovered_service_info",
         return_value=[NOT_OPENDISPLAY_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -197,7 +197,7 @@ async def test_user_step_connection_error(
 ) -> None:
     """Test user step handles connection and unexpected errors."""
     with patch(
-        "homeassistant.components.opendisplay.config_flow.async_discovered_service_info",
+        "inpui.components.opendisplay.config_flow.async_discovered_service_info",
         return_value=[VALID_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -231,7 +231,7 @@ async def test_user_step_already_configured(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.opendisplay.config_flow.async_discovered_service_info",
+        "inpui.components.opendisplay.config_flow.async_discovered_service_info",
         return_value=[VALID_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(

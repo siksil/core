@@ -850,7 +850,7 @@ async def test_discovery_update_unchanged_siren(
         '  "command_topic": "test_topic" }'
     )
     with patch(
-        "homeassistant.components.mqtt.siren.MqttSiren.discovery_update"
+        "inpui.components.mqtt.siren.MqttSiren.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass,

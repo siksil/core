@@ -69,7 +69,7 @@ async def test_initial_startup_fails(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=error,
         ),
     ):

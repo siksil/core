@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, async_capture_events
 def notify_only() -> Generator[None]:
     """Enable only the notify platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.NOTIFY],
     ):
         yield

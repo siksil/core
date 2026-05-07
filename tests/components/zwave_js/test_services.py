@@ -499,7 +499,7 @@ async def test_set_config_parameter(
 
     # Test accepted return
     with patch(
-        "homeassistant.components.zwave_js.services.Endpoint.async_set_raw_config_parameter_value",
+        "inpui.components.zwave_js.services.Endpoint.async_set_raw_config_parameter_value",
         return_value=cmd_result,
     ) as mock_set_raw_config_parameter_value:
         await hass.services.async_call(
@@ -530,7 +530,7 @@ async def test_set_config_parameter(
     # Test queued return
     cmd_result.status = "queued"
     with patch(
-        "homeassistant.components.zwave_js.services.Endpoint.async_set_raw_config_parameter_value",
+        "inpui.components.zwave_js.services.Endpoint.async_set_raw_config_parameter_value",
         return_value=cmd_result,
     ) as mock_set_raw_config_parameter_value:
         await hass.services.async_call(
@@ -1529,7 +1529,7 @@ async def test_multicast_set_value(
     with (
         pytest.raises(vol.MultipleInvalid),
         patch(
-            "homeassistant.components.zwave_js.helpers.async_get_node_from_device_id",
+            "inpui.components.zwave_js.helpers.async_get_node_from_device_id",
             side_effect=(climate_danfoss_lc_13, diff_network_node),
         ),
     ):

@@ -108,7 +108,7 @@ async def test_async_handle_source_entity_changes_source_entity_removed(
     # Remove the source sensor's config entry from the device, this removes the
     # source sensor
     with patch(
-        "homeassistant.components.derivative.async_unload_entry",
+        "inpui.components.derivative.async_unload_entry",
         wraps=derivative.async_unload_entry,
     ) as mock_unload_entry:
         device_registry.async_update_device(
@@ -163,7 +163,7 @@ async def test_async_handle_source_entity_changes_source_entity_removed_shared_d
     # Remove the source sensor's config entry from the device, this removes the
     # source sensor
     with patch(
-        "homeassistant.components.derivative.async_unload_entry",
+        "inpui.components.derivative.async_unload_entry",
         wraps=derivative.async_unload_entry,
     ) as mock_unload_entry:
         device_registry.async_update_device(
@@ -210,7 +210,7 @@ async def test_async_handle_source_entity_changes_source_entity_removed_from_dev
 
     # Remove the source sensor from the device
     with patch(
-        "homeassistant.components.derivative.async_unload_entry",
+        "inpui.components.derivative.async_unload_entry",
         wraps=derivative.async_unload_entry,
     ) as mock_unload_entry:
         entity_registry.async_update_entity(
@@ -264,7 +264,7 @@ async def test_async_handle_source_entity_changes_source_entity_moved_other_devi
 
     # Move the source sensor to another device
     with patch(
-        "homeassistant.components.derivative.async_unload_entry",
+        "inpui.components.derivative.async_unload_entry",
         wraps=derivative.async_unload_entry,
     ) as mock_unload_entry:
         entity_registry.async_update_entity(
@@ -312,7 +312,7 @@ async def test_async_handle_source_entity_new_entity_id(
 
     # Change the source entity's entity ID
     with patch(
-        "homeassistant.components.derivative.async_unload_entry",
+        "inpui.components.derivative.async_unload_entry",
         wraps=derivative.async_unload_entry,
     ) as mock_unload_entry:
         entity_registry.async_update_entity(

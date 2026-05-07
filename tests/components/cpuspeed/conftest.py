@@ -32,7 +32,7 @@ def mock_cpuinfo_config_flow() -> Generator[MagicMock]:
     to return True.
     """
     with patch(
-        "homeassistant.components.cpuspeed.config_flow.cpuinfo.get_cpu_info",
+        "inpui.components.cpuspeed.config_flow.cpuinfo.get_cpu_info",
         return_value=True,
     ) as cpuinfo_mock:
         yield cpuinfo_mock
@@ -42,7 +42,7 @@ def mock_cpuinfo_config_flow() -> Generator[MagicMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.cpuspeed.async_setup_entry", return_value=True
+        "inpui.components.cpuspeed.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -58,7 +58,7 @@ def mock_cpuinfo() -> Generator[MagicMock]:
     }
 
     with patch(
-        "homeassistant.components.cpuspeed.cpuinfo.get_cpu_info",
+        "inpui.components.cpuspeed.cpuinfo.get_cpu_info",
         return_value=info,
     ) as cpuinfo_mock:
         yield cpuinfo_mock

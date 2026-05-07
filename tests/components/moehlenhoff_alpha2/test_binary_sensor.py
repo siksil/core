@@ -20,7 +20,7 @@ async def test_binary_sensors(
 ) -> None:
     """Test binary sensors."""
     with patch(
-        "homeassistant.components.moehlenhoff_alpha2.PLATFORMS",
+        "inpui.components.moehlenhoff_alpha2.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         entry = await init_integration(hass)

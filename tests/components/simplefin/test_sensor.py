@@ -25,7 +25,7 @@ async def test_all_entities(
     mock_simplefin_client: AsyncMock,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.simplefin.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.simplefin.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

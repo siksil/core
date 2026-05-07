@@ -27,9 +27,9 @@ async def test_entry_diagnostics(
     )
     huawei_lte.add_to_hass(hass)
     with (
-        patch("homeassistant.components.huawei_lte.Connection", MagicMock()),
+        patch("inpui.components.huawei_lte.Connection", MagicMock()),
         patch(
-            "homeassistant.components.huawei_lte.Client", return_value=magic_client()
+            "inpui.components.huawei_lte.Client", return_value=magic_client()
         ),
     ):
         await hass.config_entries.async_setup(huawei_lte.entry_id)

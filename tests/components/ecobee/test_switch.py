@@ -86,7 +86,7 @@ async def test_turn_on_20min_ventilator(hass: HomeAssistant) -> None:
     """Test the switch 20 min timer (On)."""
 
     with patch(
-        "homeassistant.components.ecobee.Ecobee.set_ventilator_timer"
+        "inpui.components.ecobee.Ecobee.set_ventilator_timer"
     ) as mock_set_20min_ventilator:
         await setup_platform(hass, SWITCH_DOMAIN)
 
@@ -104,7 +104,7 @@ async def test_turn_off_20min_ventilator(hass: HomeAssistant) -> None:
     """Test the switch 20 min timer (off)."""
 
     with patch(
-        "homeassistant.components.ecobee.Ecobee.set_ventilator_timer"
+        "inpui.components.ecobee.Ecobee.set_ventilator_timer"
     ) as mock_set_20min_ventilator:
         await setup_platform(hass, SWITCH_DOMAIN)
 

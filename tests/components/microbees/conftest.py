@@ -87,11 +87,11 @@ def mock_microbees():
 
     with (
         patch(
-            "homeassistant.components.microbees.config_flow.MicroBees",
+            "inpui.components.microbees.config_flow.MicroBees",
             return_value=mock,
         ) as mock,
         patch(
-            "homeassistant.components.microbees.MicroBees",
+            "inpui.components.microbees.MicroBees",
             return_value=mock,
         ),
     ):

@@ -88,7 +88,7 @@ async def test_form(hass: HomeAssistant) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.rabbitair.async_setup_entry",
+        "inpui.components.rabbitair.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -155,7 +155,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.rabbitair.config_flow.validate_input",
+        "inpui.components.rabbitair.config_flow.validate_input",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -181,7 +181,7 @@ async def test_zeroconf_discovery(hass: HomeAssistant) -> None:
     assert not result["errors"]
 
     with patch(
-        "homeassistant.components.rabbitair.async_setup_entry",
+        "inpui.components.rabbitair.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(

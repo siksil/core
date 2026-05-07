@@ -30,7 +30,7 @@ TITLE = "Test"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.twitch.async_setup_entry", return_value=True
+        "inpui.components.twitch.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -98,11 +98,11 @@ def twitch_mock(hass: HomeAssistant) -> Generator[AsyncMock]:
     """Return as fixture to inject other mocks."""
     with (
         patch(
-            "homeassistant.components.twitch.Twitch",
+            "inpui.components.twitch.Twitch",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.twitch.config_flow.Twitch",
+            "inpui.components.twitch.config_flow.Twitch",
             new=mock_client,
         ),
     ):

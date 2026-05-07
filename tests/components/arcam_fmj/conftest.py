@@ -119,13 +119,13 @@ async def player_setup_fixture(
     await async_setup_component(hass, "homeassistant", {})
 
     with (
-        patch("homeassistant.components.arcam_fmj.Client", return_value=client),
+        patch("inpui.components.arcam_fmj.Client", return_value=client),
         patch(
-            "homeassistant.components.arcam_fmj.coordinator.State",
+            "inpui.components.arcam_fmj.coordinator.State",
             side_effect=state_mock,
         ),
         patch(
-            "homeassistant.components.arcam_fmj._run_client",
+            "inpui.components.arcam_fmj._run_client",
             side_effect=_mock_run_client,
         ),
     ):

@@ -176,7 +176,7 @@ async def test_form_exception(
     )
 
     with patch(
-        "homeassistant.components.nasweb.config_flow.validate_input",
+        "inpui.components.nasweb.config_flow.validate_input",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

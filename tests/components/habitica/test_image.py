@@ -26,7 +26,7 @@ from tests.typing import ClientSessionGenerator
 def image_only() -> Generator[None]:
     """Enable only the image platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.IMAGE],
     ):
         yield
@@ -46,7 +46,7 @@ async def test_image_platform(
     """Test image platform."""
     freezer.move_to("2024-09-20T22:00:00.000")
     with patch(
-        "homeassistant.components.habitica.coordinator.BytesIO",
+        "inpui.components.habitica.coordinator.BytesIO",
     ) as avatar:
         avatar.side_effect = [
             BytesIO(b"\x89PNGTestImage1"),

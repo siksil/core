@@ -92,7 +92,7 @@ async def test_async_create_flow_checks_existing_flows_after_startup(
     """Test existing flows prevent an identical ones from being after startup."""
     hass.bus.async_fire(EVENT_INPUI_STARTED)
     with patch(
-        "homeassistant.config_entries.ConfigEntriesFlowManager.async_has_matching_discovery_flow",
+        "inpui.config_entries.ConfigEntriesFlowManager.async_has_matching_discovery_flow",
         return_value=True,
     ):
         discovery_flow.async_create_flow(

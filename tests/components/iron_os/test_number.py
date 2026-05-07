@@ -32,7 +32,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 async def number_only() -> AsyncGenerator[None]:
     """Enable only the number platform."""
     with patch(
-        "homeassistant.components.iron_os.PLATFORMS",
+        "inpui.components.iron_os.PLATFORMS",
         [Platform.NUMBER],
     ):
         yield

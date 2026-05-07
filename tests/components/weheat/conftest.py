@@ -44,7 +44,7 @@ async def setup_credentials(hass: HomeAssistant) -> None:
 def mock_setup_entry():
     """Mock a successful setup."""
     with patch(
-        "homeassistant.components.weheat.async_setup_entry", return_value=True
+        "inpui.components.weheat.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -81,7 +81,7 @@ def mock_user_id() -> Generator[AsyncMock]:
     """Mock the user API call."""
     with (
         patch(
-            "homeassistant.components.weheat.config_flow.async_get_user_id_from_token",
+            "inpui.components.weheat.config_flow.async_get_user_id_from_token",
             return_value=USER_UUID_1,
         ) as user_mock,
     ):
@@ -93,7 +93,7 @@ def mock_weheat_discover(mock_heat_pump_info) -> Generator[AsyncMock]:
     """Mock an Weheat discovery."""
     with (
         patch(
-            "homeassistant.components.weheat.HeatPumpDiscovery.async_discover_active",
+            "inpui.components.weheat.HeatPumpDiscovery.async_discover_active",
             autospec=True,
         ) as mock_discover,
     ):
@@ -148,7 +148,7 @@ def mock_weheat_heat_pump(mock_weheat_heat_pump_instance) -> Generator[AsyncMock
     """Mock the coordinator HeatPump data."""
     with (
         patch(
-            "homeassistant.components.weheat.coordinator.HeatPump",
+            "inpui.components.weheat.coordinator.HeatPump",
         ) as mock_heat_pump,
     ):
         mock_heat_pump.return_value = mock_weheat_heat_pump_instance

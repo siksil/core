@@ -29,7 +29,7 @@ async def test_setup(
 ) -> None:
     """Test if is initialized correctly."""
     template = FritzEntityBaseMock()
-    with patch("homeassistant.components.fritzbox.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.fritzbox.PLATFORMS", [Platform.BUTTON]):
         entry = await setup_config_entry(
             hass,
             MOCK_CONFIG[DOMAIN][CONF_DEVICES][0],

@@ -28,7 +28,7 @@ async def test_bad_credentials(hass: HomeAssistant) -> None:
             "pyeconet.EcoNetApiInterface.login",
             side_effect=InvalidCredentialsError(),
         ),
-        patch("homeassistant.components.econet.async_setup_entry", return_value=True),
+        patch("inpui.components.econet.async_setup_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -59,7 +59,7 @@ async def test_generic_error_from_library(hass: HomeAssistant) -> None:
             "pyeconet.EcoNetApiInterface.login",
             side_effect=PyeconetError(),
         ),
-        patch("homeassistant.components.econet.async_setup_entry", return_value=True),
+        patch("inpui.components.econet.async_setup_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -90,7 +90,7 @@ async def test_auth_worked(hass: HomeAssistant) -> None:
             "pyeconet.EcoNetApiInterface.login",
             return_value=EcoNetApiInterface,
         ),
-        patch("homeassistant.components.econet.async_setup_entry", return_value=True),
+        patch("inpui.components.econet.async_setup_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -128,7 +128,7 @@ async def test_already_configured(hass: HomeAssistant) -> None:
             "pyeconet.EcoNetApiInterface.login",
             return_value=EcoNetApiInterface,
         ),
-        patch("homeassistant.components.econet.async_setup_entry", return_value=True),
+        patch("inpui.components.econet.async_setup_entry", return_value=True),
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

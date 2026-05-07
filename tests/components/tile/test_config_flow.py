@@ -64,7 +64,7 @@ async def test_create_entry(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.tile.config_flow.async_login", side_effect=exception
+        "inpui.components.tile.config_flow.async_login", side_effect=exception
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -151,7 +151,7 @@ async def test_step_reauth_errors(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.tile.config_flow.async_login", side_effect=exception
+        "inpui.components.tile.config_flow.async_login", side_effect=exception
     ):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

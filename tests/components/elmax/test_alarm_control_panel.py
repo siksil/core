@@ -24,7 +24,7 @@ async def test_alarm_control_panels(
 ) -> None:
     """Test alarm control panels."""
     with patch(
-        "homeassistant.components.elmax.ELMAX_PLATFORMS", [Platform.ALARM_CONTROL_PANEL]
+        "inpui.components.elmax.ELMAX_PLATFORMS", [Platform.ALARM_CONTROL_PANEL]
     ):
         entry = await init_integration(hass)
 

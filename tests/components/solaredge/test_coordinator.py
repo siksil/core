@@ -39,7 +39,7 @@ def enable_all_entities(entity_registry_enabled_by_default: None) -> None:
     """Make sure all entities are enabled."""
 
 
-@patch("homeassistant.components.solaredge.SolarEdge")
+@patch("inpui.components.solaredge.SolarEdge")
 async def test_solaredgeoverviewdataservice_energy_values_validity(
     mock_solaredge,
     recorder_mock: Recorder,
@@ -161,7 +161,7 @@ async def _trigger_and_wait_for_refresh(
 def mock_solar_edge_web() -> AsyncMock:
     """Mock SolarEdgeWeb."""
     with patch(
-        "homeassistant.components.solaredge.coordinator.SolarEdgeWeb", autospec=True
+        "inpui.components.solaredge.coordinator.SolarEdgeWeb", autospec=True
     ) as mock_api:
         api = mock_api.return_value
         api.async_get_equipment.return_value = {

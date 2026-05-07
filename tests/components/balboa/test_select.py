@@ -47,7 +47,7 @@ async def test_selects(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test spa climate."""
-    with patch("homeassistant.components.balboa.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.balboa.PLATFORMS", [Platform.SELECT]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

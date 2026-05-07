@@ -1223,7 +1223,7 @@ async def test_async_play_media_url_m3u(
     with (
         pytest.raises(HomeAssistantError) as exc_info,
         patch(
-            "homeassistant.components.bang_olufsen.media_player.async_process_play_media_url",
+            "inpui.components.bang_olufsen.media_player.async_process_play_media_url",
             return_value="https://test.com/test.m3u",
         ),
     ):

@@ -82,7 +82,7 @@ async def test_device_support_mqtt_without_required_event_keys(
     caplog: pytest.LogCaptureFixture,
 ) -> None:
     """Ignore non-event MQTT payloads without raising callback exceptions."""
-    caplog.set_level(logging.ERROR, logger="homeassistant.components.mqtt.client")
+    caplog.set_level(logging.ERROR, logger="inpui.components.mqtt.client")
 
     mqtt_call = call(f"axis/{MAC}/#", mock.ANY, 0, "utf-8", ANY)
     assert mqtt_call in mqtt_mock.async_subscribe.call_args_list
@@ -230,7 +230,7 @@ async def test_get_axis_api_errors(
     """Failed setup schedules a retry of setup."""
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.axis.hub.api.axis.interfaces.vapix.Vapix.initialize",
+        "inpui.components.axis.hub.api.axis.interfaces.vapix.Vapix.initialize",
         side_effect=side_effect,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

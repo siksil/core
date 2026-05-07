@@ -44,11 +44,11 @@ async def test_form_source_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -74,7 +74,7 @@ async def test_form_cannot_connect(hass: HomeAssistant, exc: Exception) -> None:
     mock_powerwall = await _mock_powerwall_side_effect(site_info=exc)
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -97,7 +97,7 @@ async def test_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -118,7 +118,7 @@ async def test_form_unknown_exception(hass: HomeAssistant) -> None:
     mock_powerwall = await _mock_powerwall_side_effect(site_info=ValueError)
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -140,7 +140,7 @@ async def test_form_wrong_version(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -182,7 +182,7 @@ async def test_already_configured_with_ignored(hass: HomeAssistant) -> None:
     mock_powerwall = await _mock_powerwall_site_name(hass, "Some site")
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -199,11 +199,11 @@ async def test_already_configured_with_ignored(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -224,7 +224,7 @@ async def test_dhcp_discovery_manual_configure(hass: HomeAssistant) -> None:
     mock_powerwall = await _mock_powerwall_site_name(hass, "Some site")
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall.login",
+        "inpui.components.powerwall.config_flow.Powerwall.login",
         side_effect=AccessDeniedError("xyz"),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -241,11 +241,11 @@ async def test_dhcp_discovery_manual_configure(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -266,7 +266,7 @@ async def test_dhcp_discovery_auto_configure(hass: HomeAssistant) -> None:
     mock_powerwall = await _mock_powerwall_site_name(hass, "Some site")
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -283,11 +283,11 @@ async def test_dhcp_discovery_auto_configure(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -310,7 +310,7 @@ async def test_dhcp_discovery_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.powerwall.config_flow.Powerwall",
+        "inpui.components.powerwall.config_flow.Powerwall",
         return_value=mock_powerwall,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -349,11 +349,11 @@ async def test_form_reauth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -383,11 +383,11 @@ async def test_dhcp_discovery_update_ip_address(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -420,11 +420,11 @@ async def test_dhcp_discovery_does_not_update_ip_when_auth_fails(
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -457,11 +457,11 @@ async def test_dhcp_discovery_does_not_update_ip_when_auth_successful(
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -492,11 +492,11 @@ async def test_dhcp_discovery_updates_unique_id(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -531,11 +531,11 @@ async def test_dhcp_discovery_updates_unique_id_when_entry_is_failed(
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.async_setup_entry",
+            "inpui.components.powerwall.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -569,11 +569,11 @@ async def test_discovered_wifi_does_not_update_ip_if_is_still_online(
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -609,11 +609,11 @@ async def test_discovered_wifi_does_not_update_ip_online_but_access_denied(
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall_no_access,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

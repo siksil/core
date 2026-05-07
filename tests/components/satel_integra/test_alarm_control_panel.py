@@ -38,7 +38,7 @@ from tests.common import (
 async def alarm_control_panel_only() -> AsyncGenerator[None]:
     """Enable only the alarm panel platform."""
     with patch(
-        "homeassistant.components.satel_integra.PLATFORMS",
+        "inpui.components.satel_integra.PLATFORMS",
         [Platform.ALARM_CONTROL_PANEL],
     ):
         yield

@@ -71,7 +71,7 @@ async def test_config_flow(
     assert result["step_id"] == entity_type
 
     with patch(
-        "homeassistant.components.random.async_setup_entry", wraps=async_setup_entry
+        "inpui.components.random.async_setup_entry", wraps=async_setup_entry
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

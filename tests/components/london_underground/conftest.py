@@ -18,7 +18,7 @@ from tests.conftest import AiohttpClientMocker
 def mock_setup_entry():
     """Prevent setup of integration during tests."""
     with patch(
-        "homeassistant.components.london_underground.async_setup_entry",
+        "inpui.components.london_underground.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup
@@ -47,11 +47,11 @@ async def mock_london_underground_client(
     """Mock a London Underground client."""
     with (
         patch(
-            "homeassistant.components.london_underground.TubeData",
+            "inpui.components.london_underground.TubeData",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.london_underground.config_flow.TubeData",
+            "inpui.components.london_underground.config_flow.TubeData",
             new=mock_client,
         ),
     ):

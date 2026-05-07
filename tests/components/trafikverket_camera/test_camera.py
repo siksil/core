@@ -34,7 +34,7 @@ async def test_camera(
     assert state1.attributes["type"] == "Road"
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ):
         aioclient_mock.get(
@@ -62,7 +62,7 @@ async def test_camera(
     )
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ):
         freezer.tick(timedelta(minutes=6))

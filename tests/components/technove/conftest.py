@@ -27,7 +27,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.technove.async_setup_entry", return_value=True
+        "inpui.components.technove.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -36,7 +36,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_onboarding() -> Generator[MagicMock]:
     """Mock that Home Assistant is currently onboarding."""
     with patch(
-        "homeassistant.components.onboarding.async_is_onboarded",
+        "inpui.components.onboarding.async_is_onboarded",
         return_value=False,
     ) as mock_onboarding:
         yield mock_onboarding
@@ -53,10 +53,10 @@ def mock_technove(device_fixture: TechnoVEStation) -> Generator[MagicMock]:
     """Return a mocked TechnoVE client."""
     with (
         patch(
-            "homeassistant.components.technove.coordinator.TechnoVE", autospec=True
+            "inpui.components.technove.coordinator.TechnoVE", autospec=True
         ) as technove_mock,
         patch(
-            "homeassistant.components.technove.config_flow.TechnoVE", new=technove_mock
+            "inpui.components.technove.config_flow.TechnoVE", new=technove_mock
         ),
     ):
         technove = technove_mock.return_value

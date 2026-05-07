@@ -54,7 +54,7 @@ async def create_picnic_config_entry(hass: HomeAssistant, unique_id):
 def picnic_api_client():
     """Return the default picnic api client."""
     with patch(
-        "homeassistant.components.picnic.create_picnic_client"
+        "inpui.components.picnic.create_picnic_client"
     ) as create_picnic_client_mock:
         picnic_client_mock = create_picnic_api_client(UNIQUE_ID)
         create_picnic_client_mock.return_value = picnic_client_mock
@@ -176,7 +176,7 @@ async def test_add_product_multiple_config_entries(
 ) -> None:
     """Test adding a product for a specific Picnic service while multiple are configured."""
     with patch(
-        "homeassistant.components.picnic.create_picnic_client"
+        "inpui.components.picnic.create_picnic_client"
     ) as create_picnic_client_mock:
         picnic_api_client_2 = create_picnic_api_client("3fj9-9gju-236")
         create_picnic_client_mock.return_value = picnic_api_client_2

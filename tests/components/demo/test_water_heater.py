@@ -21,7 +21,7 @@ ENTITY_WATER_HEATER_CELSIUS = "water_heater.demo_water_heater_celsius"
 async def water_heater_only() -> None:
     """Enable only the datetime platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.WATER_HEATER],
     ):
         yield

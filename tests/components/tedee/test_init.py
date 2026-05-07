@@ -238,7 +238,7 @@ async def test_migration(
     )
 
     with patch(
-        "homeassistant.components.tedee.webhook_generate_id",
+        "inpui.components.tedee.webhook_generate_id",
         return_value=WEBHOOK_ID,
     ):
         await setup_integration(hass, mock_config_entry)

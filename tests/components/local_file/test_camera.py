@@ -30,7 +30,7 @@ async def test_loading_file(
     client = await hass_client()
 
     m_open = mock_open(read_data=b"hello")
-    with patch("homeassistant.components.local_file.camera.open", m_open, create=True):
+    with patch("inpui.components.local_file.camera.open", m_open, create=True):
         resp = await client.get("/api/camera_proxy/camera.local_file")
 
     assert resp.status == HTTPStatus.OK
@@ -49,7 +49,7 @@ async def test_file_not_readable_after_setup(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.local_file.camera.open", side_effect=FileNotFoundError
+        "inpui.components.local_file.camera.open", side_effect=FileNotFoundError
     ):
         resp = await client.get("/api/camera_proxy/camera.local_file")
 
@@ -121,7 +121,7 @@ async def test_camera_content_type(
 
     image = "hello"
     m_open = mock_open(read_data=image.encode())
-    with patch("homeassistant.components.local_file.camera.open", m_open, create=True):
+    with patch("inpui.components.local_file.camera.open", m_open, create=True):
         resp_1 = await client.get(url)
 
     assert resp_1.status == HTTPStatus.OK
@@ -159,7 +159,7 @@ async def test_update_file_path(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):
@@ -177,7 +177,7 @@ async def test_update_file_path(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):

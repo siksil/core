@@ -152,7 +152,7 @@ async def auth_mfa_module_from_config(
 
 async def _load_mfa_module(hass: HomeAssistant, module_name: str) -> types.ModuleType:
     """Load an mfa auth module."""
-    module_path = f"homeassistant.auth.mfa_modules.{module_name}"
+    module_path = f"inpui.auth.mfa_modules.{module_name}"
 
     try:
         module = await async_import_module(hass, module_path)

@@ -27,7 +27,7 @@ async def init_integration(
 
     with (
         patch(
-            "homeassistant.components.nextcloud.NextcloudMonitor",
+            "inpui.components.nextcloud.NextcloudMonitor",
         ) as mock_nextcloud_monitor,
     ):
         mock_nextcloud_monitor.update = Mock(return_value=True)

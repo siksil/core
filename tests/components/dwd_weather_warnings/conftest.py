@@ -26,7 +26,7 @@ MOCK_CONDITIONS = [CURRENT_WARNING_SENSOR, ADVANCE_WARNING_SENSOR]
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.dwd_weather_warnings.async_setup_entry",
+        "inpui.components.dwd_weather_warnings.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -63,11 +63,11 @@ def mock_dwdwfsapi() -> Generator[MagicMock]:
     """Return a mocked dwdwfsapi API client."""
     with (
         patch(
-            "homeassistant.components.dwd_weather_warnings.coordinator.DwdWeatherWarningsAPI",
+            "inpui.components.dwd_weather_warnings.coordinator.DwdWeatherWarningsAPI",
             autospec=True,
         ) as mock_api,
         patch(
-            "homeassistant.components.dwd_weather_warnings.config_flow.DwdWeatherWarningsAPI",
+            "inpui.components.dwd_weather_warnings.config_flow.DwdWeatherWarningsAPI",
             new=mock_api,
         ),
     ):

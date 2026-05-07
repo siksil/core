@@ -26,7 +26,7 @@ TEST_USER_UUID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.notion.async_setup_entry", return_value=True
+        "inpui.components.notion.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -122,15 +122,15 @@ async def mock_aionotion_fixture(client):
     """Define a fixture to patch aionotion."""
     with (
         patch(
-            "homeassistant.components.notion.async_get_client_with_credentials",
+            "inpui.components.notion.async_get_client_with_credentials",
             AsyncMock(return_value=client),
         ),
         patch(
-            "homeassistant.components.notion.async_get_client_with_refresh_token",
+            "inpui.components.notion.async_get_client_with_refresh_token",
             AsyncMock(return_value=client),
         ),
         patch(
-            "homeassistant.components.notion.config_flow.async_get_client_with_credentials",
+            "inpui.components.notion.config_flow.async_get_client_with_credentials",
             AsyncMock(return_value=client),
         ),
     ):

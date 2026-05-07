@@ -24,7 +24,7 @@ async def test_sensor(
 ) -> None:
     """Test sensor platform."""
     with patch(
-        "homeassistant.components.anglian_water._PLATFORMS",
+        "inpui.components.anglian_water._PLATFORMS",
         [Platform.SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)

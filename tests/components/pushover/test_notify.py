@@ -23,7 +23,7 @@ def mock_pushover():
 def mock_send_message():
     """Patch PushoverAPI.send_message for TTL test."""
     with patch(
-        "homeassistant.components.pushover.notify.PushoverAPI.send_message"
+        "inpui.components.pushover.notify.PushoverAPI.send_message"
     ) as mock:
         yield mock
 

@@ -71,7 +71,7 @@ async def test_auth_events(
 async def test_auth_via_msg_incorrect_pass(no_auth_websocket_client) -> None:
     """Test authenticating."""
     with patch(
-        "homeassistant.components.websocket_api.auth.process_wrong_login",
+        "inpui.components.websocket_api.auth.process_wrong_login",
     ) as mock_process_wrong_login:
         await no_auth_websocket_client.send_json(
             {"type": TYPE_AUTH, "api_password": "wrong"}
@@ -170,7 +170,7 @@ async def test_auth_local_only_user_rejected_remote(
     client = await hass_client_no_auth()
 
     with patch(
-        "homeassistant.components.websocket_api.auth.process_wrong_login",
+        "inpui.components.websocket_api.auth.process_wrong_login",
     ) as mock_process_wrong_login:
         async with client.ws_connect(URL) as ws:
             auth_msg = await ws.receive_json()
@@ -355,7 +355,7 @@ async def test_auth_error_disconnects(
     ws_response = web.WebSocketResponse()
 
     with patch(
-        "homeassistant.components.websocket_api.http.web.WebSocketResponse",
+        "inpui.components.websocket_api.http.web.WebSocketResponse",
         return_value=ws_response,
     ):
         async with client.ws_connect(URL) as ws:
@@ -407,7 +407,7 @@ async def test_error_right_after_auth_disconnects(
     ws_response = web.WebSocketResponse()
 
     with patch(
-        "homeassistant.components.websocket_api.http.web.WebSocketResponse",
+        "inpui.components.websocket_api.http.web.WebSocketResponse",
         return_value=ws_response,
     ):
         async with client.ws_connect(URL) as ws:
@@ -447,15 +447,15 @@ async def test_unix_socket_auth_bypass(
 
     with (
         patch(
-            "homeassistant.components.http.ban.is_supervisor_unix_socket_request",
+            "inpui.components.http.ban.is_supervisor_unix_socket_request",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.http.auth.is_supervisor_unix_socket_request",
+            "inpui.components.http.auth.is_supervisor_unix_socket_request",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.websocket_api.http.is_supervisor_unix_socket_request",
+            "inpui.components.websocket_api.http.is_supervisor_unix_socket_request",
             return_value=True,
         ),
     ):

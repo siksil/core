@@ -20,7 +20,7 @@ ENTITY_ID = "sensor.test_door_battery"
 
 async def _setup(hass: HomeAssistant, entry: MockConfigEntry) -> None:
     """Set up integration with only the sensor platform."""
-    with patch("homeassistant.components.aladdin_connect.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.aladdin_connect.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, entry)
 
 

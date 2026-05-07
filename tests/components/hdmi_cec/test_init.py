@@ -44,7 +44,7 @@ from tests.common import (
 def mock_tcp_adapter_fixture() -> Generator[MagicMock]:
     """Mock TcpAdapter."""
     with patch(
-        "homeassistant.components.hdmi_cec.TcpAdapter", autospec=True
+        "inpui.components.hdmi_cec.TcpAdapter", autospec=True
     ) as mock_tcp_adapter:
         yield mock_tcp_adapter
 

@@ -55,7 +55,7 @@ async def test_unload_entry(recorder_mock: Recorder, hass: HomeAssistant) -> Non
 async def test_setup_config(recorder_mock: Recorder, hass: HomeAssistant) -> None:
     """Test setup from yaml config."""
     with patch(
-        "homeassistant.components.sql.config_flow.sqlalchemy.create_engine",
+        "inpui.components.sql.config_flow.sqlalchemy.create_engine",
     ):
         assert await async_setup_component(hass, DOMAIN, YAML_CONFIG_NO_DB)
         await hass.async_block_till_done()
@@ -66,7 +66,7 @@ async def test_setup_invalid_config(
 ) -> None:
     """Test setup from yaml with invalid config."""
     with patch(
-        "homeassistant.components.sql.config_flow.sqlalchemy.create_engine",
+        "inpui.components.sql.config_flow.sqlalchemy.create_engine",
     ):
         assert not await async_setup_component(hass, DOMAIN, YAML_CONFIG_INVALID)
         await hass.async_block_till_done()

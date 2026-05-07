@@ -13,7 +13,7 @@ async def test_enable_proactive_mode_in_parallel(hass: HomeAssistant) -> None:
     config = get_default_config(hass)
 
     with patch(
-        "homeassistant.components.alexa.config.async_enable_proactive_mode"
+        "inpui.components.alexa.config.async_enable_proactive_mode"
     ) as mock_enable_proactive_mode:
         await asyncio.gather(
             config.async_enable_proactive_mode(), config.async_enable_proactive_mode()

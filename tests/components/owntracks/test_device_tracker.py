@@ -1359,7 +1359,7 @@ async def test_single_waypoint_import(hass: HomeAssistant) -> None:
 async def test_not_implemented_message(hass: HomeAssistant) -> None:
     """Handle not implemented message type."""
     patch_handler = patch(
-        "homeassistant.components.owntracks.messages.async_handle_not_impl_msg",
+        "inpui.components.owntracks.messages.async_handle_not_impl_msg",
         return_value=False,
     )
     patch_handler.start()
@@ -1371,7 +1371,7 @@ async def test_not_implemented_message(hass: HomeAssistant) -> None:
 async def test_unsupported_message(hass: HomeAssistant) -> None:
     """Handle not implemented message type."""
     patch_handler = patch(
-        "homeassistant.components.owntracks.messages.async_handle_unsupported_msg",
+        "inpui.components.owntracks.messages.async_handle_unsupported_msg",
         return_value=False,
     )
     patch_handler.start()
@@ -1438,13 +1438,13 @@ def mock_cipher():
 def config_context(setup_comp: None) -> Generator[None]:
     """Set up the mocked context."""
     patch_load = patch(
-        "homeassistant.components.device_tracker.async_load_config",
+        "inpui.components.device_tracker.async_load_config",
         return_value=[],
     )
     patch_load.start()
 
     patch_save = patch(
-        "homeassistant.components.device_tracker.DeviceTracker.async_update_config"
+        "inpui.components.device_tracker.DeviceTracker.async_update_config"
     )
     patch_save.start()
 
@@ -1458,7 +1458,7 @@ def config_context(setup_comp: None) -> Generator[None]:
 def mock_not_supports_encryption():
     """Mock non successful nacl import."""
     with patch(
-        "homeassistant.components.owntracks.messages.supports_encryption",
+        "inpui.components.owntracks.messages.supports_encryption",
         return_value=False,
     ):
         yield
@@ -1468,12 +1468,12 @@ def mock_not_supports_encryption():
 def mock_get_cipher_error():
     """Mock non successful cipher."""
     with patch(
-        "homeassistant.components.owntracks.messages.get_cipher", side_effect=OSError()
+        "inpui.components.owntracks.messages.get_cipher", side_effect=OSError()
     ):
         yield
 
 
-@patch("homeassistant.components.owntracks.messages.get_cipher", mock_cipher)
+@patch("inpui.components.owntracks.messages.get_cipher", mock_cipher)
 async def test_encrypted_payload(hass: HomeAssistant, setup_comp) -> None:
     """Test encrypted payload."""
     await setup_owntracks(hass, {CONF_SECRET: TEST_SECRET_KEY})
@@ -1481,7 +1481,7 @@ async def test_encrypted_payload(hass: HomeAssistant, setup_comp) -> None:
     assert_location_latitude(hass, LOCATION_MESSAGE["lat"])
 
 
-@patch("homeassistant.components.owntracks.messages.get_cipher", mock_cipher)
+@patch("inpui.components.owntracks.messages.get_cipher", mock_cipher)
 async def test_encrypted_payload_topic_key(hass: HomeAssistant, setup_comp) -> None:
     """Test encrypted payload with a topic key."""
     await setup_owntracks(hass, {CONF_SECRET: {LOCATION_TOPIC: TEST_SECRET_KEY}})
@@ -1507,7 +1507,7 @@ async def test_encrypted_payload_get_cipher_error(
     assert hass.states.get(DEVICE_TRACKER_STATE) is None
 
 
-@patch("homeassistant.components.owntracks.messages.get_cipher", mock_cipher)
+@patch("inpui.components.owntracks.messages.get_cipher", mock_cipher)
 async def test_encrypted_payload_no_key(hass: HomeAssistant, setup_comp) -> None:
     """Test encrypted payload with no key, ."""
     assert hass.states.get(DEVICE_TRACKER_STATE) is None
@@ -1516,7 +1516,7 @@ async def test_encrypted_payload_no_key(hass: HomeAssistant, setup_comp) -> None
     assert hass.states.get(DEVICE_TRACKER_STATE) is None
 
 
-@patch("homeassistant.components.owntracks.messages.get_cipher", mock_cipher)
+@patch("inpui.components.owntracks.messages.get_cipher", mock_cipher)
 async def test_encrypted_payload_wrong_key(hass: HomeAssistant, setup_comp) -> None:
     """Test encrypted payload with wrong key."""
     await setup_owntracks(hass, {CONF_SECRET: "wrong key"})
@@ -1524,7 +1524,7 @@ async def test_encrypted_payload_wrong_key(hass: HomeAssistant, setup_comp) -> N
     assert hass.states.get(DEVICE_TRACKER_STATE) is None
 
 
-@patch("homeassistant.components.owntracks.messages.get_cipher", mock_cipher)
+@patch("inpui.components.owntracks.messages.get_cipher", mock_cipher)
 async def test_encrypted_payload_wrong_topic_key(
     hass: HomeAssistant, setup_comp
 ) -> None:
@@ -1534,7 +1534,7 @@ async def test_encrypted_payload_wrong_topic_key(
     assert hass.states.get(DEVICE_TRACKER_STATE) is None
 
 
-@patch("homeassistant.components.owntracks.messages.get_cipher", mock_cipher)
+@patch("inpui.components.owntracks.messages.get_cipher", mock_cipher)
 async def test_encrypted_payload_no_topic_key(hass: HomeAssistant, setup_comp) -> None:
     """Test encrypted payload with no topic key."""
     await setup_owntracks(

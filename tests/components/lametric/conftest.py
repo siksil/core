@@ -50,7 +50,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.lametric.async_setup_entry", return_value=True
+        "inpui.components.lametric.async_setup_entry", return_value=True
     ):
         yield
 
@@ -59,7 +59,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_lametric_cloud() -> Generator[MagicMock]:
     """Return a mocked LaMetric Cloud client."""
     with patch(
-        "homeassistant.components.lametric.config_flow.LaMetricCloud", autospec=True
+        "inpui.components.lametric.config_flow.LaMetricCloud", autospec=True
     ) as lametric_mock:
         lametric = lametric_mock.return_value
         lametric.devices.return_value = [
@@ -80,11 +80,11 @@ def mock_lametric(device_fixture: str) -> Generator[MagicMock]:
     """Return a mocked LaMetric TIME client."""
     with (
         patch(
-            "homeassistant.components.lametric.coordinator.LaMetricDevice",
+            "inpui.components.lametric.coordinator.LaMetricDevice",
             autospec=True,
         ) as lametric_mock,
         patch(
-            "homeassistant.components.lametric.config_flow.LaMetricDevice",
+            "inpui.components.lametric.config_flow.LaMetricDevice",
             new=lametric_mock,
         ),
     ):
@@ -109,7 +109,7 @@ async def init_integration(
 
     context = nullcontext()
     if platform := getattr(request, "param", None):
-        context = patch("homeassistant.components.lametric.PLATFORMS", [platform])
+        context = patch("inpui.components.lametric.PLATFORMS", [platform])
 
     with context:
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

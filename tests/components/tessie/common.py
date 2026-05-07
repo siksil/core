@@ -77,7 +77,7 @@ async def setup_platform(
     mock_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.tessie.PLATFORMS",
+        "inpui.components.tessie.PLATFORMS",
         PLATFORMS if platforms is UNDEFINED else platforms,
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)

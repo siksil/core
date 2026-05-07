@@ -423,7 +423,7 @@ async def test_call_service_blocking(
         supports_response=SupportsResponse.OPTIONAL,
     )
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call", autospec=True
+        "inpui.core.ServiceRegistry.async_call", autospec=True
     ) as mock_call:
         mock_call.return_value = {"foo": "bar"}
         await websocket_client.send_json_auto_id(
@@ -452,7 +452,7 @@ async def test_call_service_blocking(
     )
 
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call", autospec=True
+        "inpui.core.ServiceRegistry.async_call", autospec=True
     ) as mock_call:
         mock_call.return_value = None
         await websocket_client.send_json_auto_id(
@@ -480,7 +480,7 @@ async def test_call_service_blocking(
 
     async_mock_service(hass, "homeassistant", "test_service")
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call", autospec=True
+        "inpui.core.ServiceRegistry.async_call", autospec=True
     ) as mock_call:
         mock_call.return_value = None
         await websocket_client.send_json_auto_id(
@@ -507,7 +507,7 @@ async def test_call_service_blocking(
 
     async_mock_service(hass, "homeassistant", "restart")
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call", autospec=True
+        "inpui.core.ServiceRegistry.async_call", autospec=True
     ) as mock_call:
         mock_call.return_value = None
         await websocket_client.send_json_auto_id(
@@ -949,7 +949,7 @@ async def test_get_services(
 
     with (
         patch(
-            "homeassistant.helpers.service._load_services_file",
+            "inpui.helpers.service._load_services_file",
             side_effect=_load_services_file,
         ),
     ):
@@ -2988,7 +2988,7 @@ async def test_integration_setup_info(
 ) -> None:
     """Test subscribe/unsubscribe bootstrap_integrations."""
     with patch(
-        "homeassistant.components.websocket_api.commands.async_get_setup_timings",
+        "inpui.components.websocket_api.commands.async_get_setup_timings",
         return_value={
             "august": 12.5,
             "isy994": 12.8,
@@ -4228,7 +4228,7 @@ async def test_get_services_for_target_caching(
         assert msg["success"]
 
     with patch(
-        "homeassistant.components.websocket_api.automation._async_get_automation_components_for_target",
+        "inpui.components.websocket_api.automation._async_get_automation_components_for_target",
         return_value=set(),
     ) as mock_get_components:
         # First call: should create and cache flat descriptions

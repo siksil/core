@@ -74,7 +74,7 @@ async def test_sensors_restore(
 
     mock_vehicle_data.side_effect = VehicleOffline
 
-    with patch("homeassistant.components.tesla_fleet.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.tesla_fleet.PLATFORMS", [Platform.SENSOR]):
         assert await hass.config_entries.async_reload(normal_config_entry.entry_id)
 
     assert hass.states.get(entity_id).state == restored
@@ -173,7 +173,7 @@ async def test_charge_energy_restore_last_reset(
 
     # Reload the entry
     mock_vehicle_data.return_value = VEHICLE_DATA
-    with patch("homeassistant.components.tesla_fleet.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.tesla_fleet.PLATFORMS", [Platform.SENSOR]):
         assert await hass.config_entries.async_reload(normal_config_entry.entry_id)
 
     # last_reset should be restored

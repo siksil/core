@@ -148,8 +148,8 @@ async def init_integration(
     )
 
     with (
-        patch("homeassistant.components.blue_current.PLATFORMS", platforms),
-        patch("homeassistant.components.blue_current.Client", return_value=client_mock),
+        patch("inpui.components.blue_current.PLATFORMS", platforms),
+        patch("inpui.components.blue_current.Client", return_value=client_mock),
     ):
         config_entry.add_to_hass(hass)
 

@@ -27,7 +27,7 @@ async def test_sensor(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the EnergyZero - Energy sensors."""
-    with patch("homeassistant.components.energyzero.PLATFORMS", ["sensor"]):
+    with patch("inpui.components.energyzero.PLATFORMS", ["sensor"]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

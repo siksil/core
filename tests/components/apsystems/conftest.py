@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.apsystems.async_setup_entry",
+        "inpui.components.apsystems.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -27,11 +27,11 @@ def mock_apsystems() -> Generator[MagicMock]:
     """Mock APSystems lib."""
     with (
         patch(
-            "homeassistant.components.apsystems.APsystemsEZ1M",
+            "inpui.components.apsystems.APsystemsEZ1M",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.apsystems.config_flow.APsystemsEZ1M",
+            "inpui.components.apsystems.config_flow.APsystemsEZ1M",
             new=mock_client,
         ),
     ):

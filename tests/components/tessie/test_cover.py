@@ -46,7 +46,7 @@ async def test_covers(
         # Test open windows
         if openfunc:
             with patch(
-                f"homeassistant.components.tessie.cover.{openfunc}",
+                f"inpui.components.tessie.cover.{openfunc}",
                 return_value=TEST_RESPONSE,
             ) as mock_open:
                 await hass.services.async_call(
@@ -61,7 +61,7 @@ async def test_covers(
         # Test close windows
         if closefunc:
             with patch(
-                f"homeassistant.components.tessie.cover.{closefunc}",
+                f"inpui.components.tessie.cover.{closefunc}",
                 return_value=TEST_RESPONSE,
             ) as mock_close:
                 await hass.services.async_call(
@@ -83,7 +83,7 @@ async def test_errors(hass: HomeAssistant) -> None:
     # Test setting cover open with unknown error
     with (
         patch(
-            "homeassistant.components.tessie.cover.open_unlock_charge_port",
+            "inpui.components.tessie.cover.open_unlock_charge_port",
             side_effect=ERROR_UNKNOWN,
         ) as mock_set,
         pytest.raises(HomeAssistantError) as error,
@@ -102,7 +102,7 @@ async def test_errors(hass: HomeAssistant) -> None:
     # Test setting cover open with unknown error
     with (
         patch(
-            "homeassistant.components.tessie.cover.open_unlock_charge_port",
+            "inpui.components.tessie.cover.open_unlock_charge_port",
             return_value=TEST_RESPONSE_ERROR,
         ) as mock_set,
         pytest.raises(HomeAssistantError) as error,

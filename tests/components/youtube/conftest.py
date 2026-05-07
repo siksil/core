@@ -31,7 +31,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtube.readonly",
 ]
 TITLE = "Google for Developers"
-TOKEN = "homeassistant.components.youtube.api.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid"
+TOKEN = "inpui.components.youtube.api.config_entry_oauth2_flow.OAuth2Session.async_ensure_token_valid"
 
 
 @pytest.fixture(name="scopes")
@@ -109,7 +109,7 @@ async def mock_setup_integration(
 
     async def func() -> MockYouTube:
         mock = MockYouTube(hass)
-        with patch("homeassistant.components.youtube.api.YouTube", return_value=mock):
+        with patch("inpui.components.youtube.api.YouTube", return_value=mock):
             assert await async_setup_component(hass, DOMAIN, {})
             await hass.async_block_till_done()
         return mock

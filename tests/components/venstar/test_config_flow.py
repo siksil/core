@@ -42,11 +42,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.venstar.config_flow.VenstarColorTouch.update_info",
+            "inpui.components.venstar.config_flow.VenstarColorTouch.update_info",
             new=VenstarColorTouchMock.update_info,
         ),
         patch(
-            "homeassistant.components.venstar.async_setup_entry",
+            "inpui.components.venstar.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -68,7 +68,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.venstar.config_flow.VenstarColorTouch.update_info",
+        "inpui.components.venstar.config_flow.VenstarColorTouch.update_info",
         return_value=False,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -87,7 +87,7 @@ async def test_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.venstar.config_flow.VenstarColorTouch.update_info",
+        "inpui.components.venstar.config_flow.VenstarColorTouch.update_info",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -112,11 +112,11 @@ async def test_already_configured(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.venstar.VenstarColorTouch.update_info",
+            "inpui.components.venstar.VenstarColorTouch.update_info",
             new=VenstarColorTouchMock.update_info,
         ),
         patch(
-            "homeassistant.components.venstar.async_setup_entry",
+            "inpui.components.venstar.async_setup_entry",
             return_value=True,
         ),
     ):

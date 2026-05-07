@@ -28,7 +28,7 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
+        "inpui.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
         return_value=[Mock()],
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -97,7 +97,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
+        "inpui.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
         side_effect=ClientResponseError(None, None, status=HTTPStatus.BAD_REQUEST),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -120,7 +120,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
+        "inpui.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
         side_effect=ClientConnectorError(None, Mock()),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -143,7 +143,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
+        "inpui.components.kmtronic.config_flow.KMTronicHubAPI.async_get_status",
         side_effect=Exception(),
     ):
         result2 = await hass.config_entries.flow.async_configure(

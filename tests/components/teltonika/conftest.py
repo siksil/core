@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.teltonika.async_setup_entry",
+        "inpui.components.teltonika.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup
@@ -30,11 +30,11 @@ def mock_teltasync() -> Generator[MagicMock]:
     """Mock Teltasync client for both config flow and init."""
     with (
         patch(
-            "homeassistant.components.teltonika.config_flow.Teltasync",
+            "inpui.components.teltonika.config_flow.Teltasync",
             autospec=True,
         ) as mock_teltasync_class,
         patch(
-            "homeassistant.components.teltonika.Teltasync",
+            "inpui.components.teltonika.Teltasync",
             new=mock_teltasync_class,
         ),
     ):
@@ -77,7 +77,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_modems() -> Generator[AsyncMock]:
     """Mock Modems class."""
     with patch(
-        "homeassistant.components.teltonika.coordinator.Modems",
+        "inpui.components.teltonika.coordinator.Modems",
         autospec=True,
     ) as mock_modems_class:
         mock_modems_instance = mock_modems_class.return_value

@@ -17,7 +17,7 @@ def mock_device() -> Generator[AsyncMock]:
     """Mock a functioning RAVEn device."""
     mock_device = create_mock_device()
     with patch(
-        "homeassistant.components.rainforest_raven.coordinator.RAVEnSerialDevice",
+        "inpui.components.rainforest_raven.coordinator.RAVEnSerialDevice",
         return_value=mock_device,
     ):
         yield mock_device

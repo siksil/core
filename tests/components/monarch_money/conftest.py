@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, load_fixture, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.monarch_money.async_setup_entry", return_value=True
+        "inpui.components.monarch_money.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -58,11 +58,11 @@ def mock_config_api() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.monarch_money.config_flow.TypedMonarchMoney",
+            "inpui.components.monarch_money.config_flow.TypedMonarchMoney",
             autospec=True,
         ) as mock_class,
         patch(
-            "homeassistant.components.monarch_money.TypedMonarchMoney", new=mock_class
+            "inpui.components.monarch_money.TypedMonarchMoney", new=mock_class
         ),
     ):
         instance = mock_class.return_value

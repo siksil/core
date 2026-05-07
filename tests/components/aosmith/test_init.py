@@ -34,7 +34,7 @@ async def test_config_entry_not_ready_get_devices_error(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+        "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
         side_effect=AOSmithUnknownException("Unknown error"),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -62,11 +62,11 @@ async def test_config_entry_not_ready_get_energy_use_data_error(
 
     with (
         patch(
-            "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
+            "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_devices",
             return_value=get_devices_fixture,
         ),
         patch(
-            "homeassistant.components.aosmith.config_flow.AOSmithAPIClient.get_energy_use_data",
+            "inpui.components.aosmith.config_flow.AOSmithAPIClient.get_energy_use_data",
             side_effect=AOSmithUnknownException("Unknown error"),
         ),
     ):

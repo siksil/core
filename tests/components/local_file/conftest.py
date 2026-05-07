@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Automatically patch setup."""
     with patch(
-        "homeassistant.components.local_file.async_setup_entry",
+        "inpui.components.local_file.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -53,7 +53,7 @@ async def load_integration(
         patch("os.path.isfile", Mock(return_value=True)),
         patch("os.access", Mock(return_value=True)),
         patch(
-            "homeassistant.components.local_file.camera.mimetypes.guess_type",
+            "inpui.components.local_file.camera.mimetypes.guess_type",
             Mock(return_value=(None, None)),
         ),
     ):

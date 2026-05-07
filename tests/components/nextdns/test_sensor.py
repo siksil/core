@@ -26,7 +26,7 @@ async def test_sensor(
     mock_nextdns_client: AsyncMock,
 ) -> None:
     """Test states of sensors."""
-    with patch("homeassistant.components.nextdns.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.nextdns.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -41,7 +41,7 @@ async def test_availability(
     mock_nextdns_client: AsyncMock,
 ) -> None:
     """Ensure that we mark the entities unavailable correctly when service causes an error."""
-    with patch("homeassistant.components.nextdns.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.nextdns.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mock_config_entry)
 
     entity_entries = er.async_entries_for_config_entry(

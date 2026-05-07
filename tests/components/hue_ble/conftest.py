@@ -17,7 +17,7 @@ from tests.components.bluetooth import generate_ble_device
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.hue_ble.async_setup_entry", return_value=True
+        "inpui.components.hue_ble.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -26,7 +26,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_scanner_count() -> Generator[AsyncMock]:
     """Override async_scanner_count."""
     with patch(
-        "homeassistant.components.hue_ble.async_scanner_count", return_value=1
+        "inpui.components.hue_ble.async_scanner_count", return_value=1
     ) as mock:
         yield mock
 
@@ -35,7 +35,7 @@ def mock_scanner_count() -> Generator[AsyncMock]:
 def mock_ble_device() -> Generator[AsyncMock]:
     """Override async_scanner_count."""
     with patch(
-        "homeassistant.components.hue_ble.async_ble_device_from_address",
+        "inpui.components.hue_ble.async_ble_device_from_address",
         return_value=generate_ble_device(TEST_DEVICE_NAME, TEST_DEVICE_MAC),
     ) as mock:
         yield mock
@@ -61,7 +61,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_light() -> Generator[AsyncMock]:
     """Mock a Hue BLE light."""
     with patch(
-        "homeassistant.components.hue_ble.HueBleLight", autospec=True
+        "inpui.components.hue_ble.HueBleLight", autospec=True
     ) as mock_client:
         client = mock_client.return_value
         client.address = TEST_DEVICE_MAC

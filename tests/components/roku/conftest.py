@@ -34,7 +34,7 @@ def mock_config_entry() -> MockConfigEntry:
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.roku.async_setup_entry", return_value=True):
+    with patch("inpui.components.roku.async_setup_entry", return_value=True):
         yield
 
 
@@ -56,7 +56,7 @@ def mock_roku_config_flow(mock_device: RokuDevice) -> Generator[MagicMock]:
     """Return a mocked Roku client."""
 
     with patch(
-        "homeassistant.components.roku.config_flow.Roku", autospec=True
+        "inpui.components.roku.config_flow.Roku", autospec=True
     ) as roku_mock:
         client = roku_mock.return_value
         client.app_icon_url.side_effect = app_icon_url
@@ -69,7 +69,7 @@ def mock_roku(mock_device: RokuDevice) -> Generator[MagicMock]:
     """Return a mocked Roku client."""
 
     with patch(
-        "homeassistant.components.roku.coordinator.Roku", autospec=True
+        "inpui.components.roku.coordinator.Roku", autospec=True
     ) as roku_mock:
         client = roku_mock.return_value
         client.app_icon_url.side_effect = app_icon_url

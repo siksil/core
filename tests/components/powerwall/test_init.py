@@ -52,11 +52,11 @@ async def test_update_data_reauthenticate_on_access_denied(hass: HomeAssistant) 
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -102,11 +102,11 @@ async def test_init_uses_cookie_if_present(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -130,11 +130,11 @@ async def test_init_uses_password_if_no_cookies(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -160,13 +160,13 @@ async def test_init_saves_the_cookie(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
-        patch("homeassistant.components.powerwall.CookieJar", return_value=mock_jar),
+        patch("inpui.components.powerwall.CookieJar", return_value=mock_jar),
     ):
         auth_cookie = Morsel()
         auth_cookie.set(AUTH_COOKIE_KEY, "somecookie", "somecookie")
@@ -193,11 +193,11 @@ async def test_retry_ignores_cookie(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -233,11 +233,11 @@ async def test_reauth_ignores_and_clears_cookie(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -288,11 +288,11 @@ async def test_init_retries_with_password(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.powerwall.config_flow.Powerwall",
+            "inpui.components.powerwall.config_flow.Powerwall",
             return_value=mock_powerwall,
         ),
         patch(
-            "homeassistant.components.powerwall.Powerwall", return_value=mock_powerwall
+            "inpui.components.powerwall.Powerwall", return_value=mock_powerwall
         ),
     ):
         mock_powerwall.get_gateway_din.side_effect = [

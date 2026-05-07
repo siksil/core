@@ -15,7 +15,7 @@ from tests.common import MockConfigEntry
 @pytest.fixture(autouse=True)
 def disable_platform_only():
     """Disable platforms to speed up tests."""
-    with patch("homeassistant.components.bosch_alarm.PLATFORMS", []):
+    with patch("inpui.components.bosch_alarm.PLATFORMS", []):
         yield
 
 

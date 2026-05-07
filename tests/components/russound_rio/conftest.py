@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry():
     """Prevent setup."""
     with patch(
-        "homeassistant.components.russound_rio.async_setup_entry", return_value=True
+        "inpui.components.russound_rio.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -39,10 +39,10 @@ def mock_russound_client() -> Generator[AsyncMock]:
     """Mock the Russound RIO client."""
     with (
         patch(
-            "homeassistant.components.russound_rio.RussoundClient", autospec=True
+            "inpui.components.russound_rio.RussoundClient", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.russound_rio.config_flow.RussoundClient",
+            "inpui.components.russound_rio.config_flow.RussoundClient",
             new=mock_client,
         ),
     ):

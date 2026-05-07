@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.acaia.async_setup_entry", return_value=True
+        "inpui.components.acaia.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -29,7 +29,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_verify() -> Generator[AsyncMock]:
     """Override is_new_scale check."""
     with patch(
-        "homeassistant.components.acaia.config_flow.is_new_scale", return_value=True
+        "inpui.components.acaia.config_flow.is_new_scale", return_value=True
     ) as mock_verify:
         yield mock_verify
 
@@ -63,7 +63,7 @@ def mock_scale() -> Generator[MagicMock]:
     """Return a mocked acaia scale client."""
     with (
         patch(
-            "homeassistant.components.acaia.coordinator.AcaiaScale",
+            "inpui.components.acaia.coordinator.AcaiaScale",
             autospec=True,
         ) as scale_mock,
     ):

@@ -43,11 +43,11 @@ def mock_autoskope_client(mock_vehicles: list[Vehicle]) -> Generator[AsyncMock]:
     """Mock the Autoskope API client."""
     with (
         patch(
-            "homeassistant.components.autoskope.AutoskopeApi",
+            "inpui.components.autoskope.AutoskopeApi",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.autoskope.config_flow.AutoskopeApi",
+            "inpui.components.autoskope.config_flow.AutoskopeApi",
             new=mock_client,
         ),
     ):
@@ -63,7 +63,7 @@ def mock_autoskope_client(mock_vehicles: list[Vehicle]) -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.autoskope.async_setup_entry",
+        "inpui.components.autoskope.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

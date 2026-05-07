@@ -50,7 +50,7 @@ from . import (
 from tests.common import MockConfigEntry, async_fire_time_changed
 
 
-@patch("homeassistant.components.gogogate2.common.GogoGate2Api")
+@patch("inpui.components.gogogate2.common.GogoGate2Api")
 async def test_open_close_update(gogogate2api_mock, hass: HomeAssistant) -> None:
     """Test open and close and data update."""
 
@@ -250,7 +250,7 @@ async def test_open_close_update(gogogate2api_mock, hass: HomeAssistant) -> None
     assert not hass.states.async_entity_ids(DOMAIN)
 
 
-@patch("homeassistant.components.gogogate2.common.ISmartGateApi")
+@patch("inpui.components.gogogate2.common.ISmartGateApi")
 async def test_availability(ismartgateapi_mock, hass: HomeAssistant) -> None:
     """Test availability."""
     closed_door_response = _mocked_ismartgate_closed_door_response()
@@ -314,7 +314,7 @@ async def test_availability(ismartgateapi_mock, hass: HomeAssistant) -> None:
     )
 
 
-@patch("homeassistant.components.gogogate2.common.ISmartGateApi")
+@patch("inpui.components.gogogate2.common.ISmartGateApi")
 async def test_device_info_ismartgate(
     ismartgateapi_mock, hass: HomeAssistant, device_registry: dr.DeviceRegistry
 ) -> None:
@@ -351,7 +351,7 @@ async def test_device_info_ismartgate(
     assert device.configuration_url == "https://abc321.blah.blah"
 
 
-@patch("homeassistant.components.gogogate2.common.GogoGate2Api")
+@patch("inpui.components.gogogate2.common.GogoGate2Api")
 async def test_device_info_gogogate2(
     gogogate2api_mock, hass: HomeAssistant, device_registry: dr.DeviceRegistry
 ) -> None:

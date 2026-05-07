@@ -57,7 +57,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             wraps=get_client.async_get_delivery_period,
         ) as mock_data,
     ):
@@ -73,7 +73,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=NordPoolError("error"),
         ) as mock_data,
     ):
@@ -86,7 +86,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=NordPoolAuthenticationError("Authentication error"),
         ) as mock_data,
     ):
@@ -101,7 +101,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=NordPoolEmptyResponseError("Empty response"),
         ) as mock_data,
     ):
@@ -117,7 +117,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=aiohttp.ClientError("error"),
         ) as mock_data,
     ):
@@ -132,7 +132,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=TimeoutError("error"),
         ) as mock_data,
     ):
@@ -147,7 +147,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=NordPoolResponseError("Response error"),
         ) as mock_data,
     ):
@@ -187,7 +187,7 @@ async def test_coordinator(
     # Test manually updating the data
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_periods",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_periods",
             wraps=get_client.async_get_delivery_periods,
         ) as mock_data,
     ):
@@ -212,7 +212,7 @@ async def test_coordinator(
 
     with (
         patch(
-            "homeassistant.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
+            "inpui.components.nordpool.coordinator.NordPoolClient.async_get_delivery_period",
             side_effect=NordPoolError("error"),
         ) as mock_data,
     ):

@@ -68,10 +68,10 @@ async def test_restore_dashboard_storage_end_to_end(
     }
     with (
         patch(
-            "homeassistant.components.esphome.dashboard.is_hassio", return_value=False
+            "inpui.components.esphome.dashboard.is_hassio", return_value=False
         ),
         patch(
-            "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI"
+            "inpui.components.esphome.coordinator.ESPHomeDashboardAPI"
         ) as mock_dashboard_api,
     ):
         await async_setup_component(hass, DOMAIN, {})
@@ -94,13 +94,13 @@ async def test_restore_dashboard_storage_skipped_if_addon_uninstalled(
     }
     with (
         patch(
-            "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI"
+            "inpui.components.esphome.coordinator.ESPHomeDashboardAPI"
         ) as mock_dashboard_api,
         patch(
-            "homeassistant.components.esphome.dashboard.is_hassio", return_value=True
+            "inpui.components.esphome.dashboard.is_hassio", return_value=True
         ),
         patch(
-            "homeassistant.components.hassio.get_addons_info",
+            "inpui.components.hassio.get_addons_info",
             return_value={},
         ),
     ):
@@ -116,7 +116,7 @@ async def test_setup_dashboard_fails(
 ) -> None:
     """Test that nothing is stored on failed dashboard setup when there was no dashboard before."""
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices",
         side_effect=TimeoutError,
     ) as mock_get_devices:
         await async_setup_component(hass, DOMAIN, {})
@@ -137,7 +137,7 @@ async def test_setup_dashboard_fails_when_already_setup(
 ) -> None:
     """Test failed dashboard setup still reloads entries if one existed before."""
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices"
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices"
     ) as mock_get_devices:
         await dashboard.async_set_dashboard_info(
             hass, "test-slug", "working-host", 6052
@@ -152,11 +152,11 @@ async def test_setup_dashboard_fails_when_already_setup(
 
     with (
         patch(
-            "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices",
+            "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_devices",
             side_effect=TimeoutError,
         ) as mock_get_devices,
         patch(
-            "homeassistant.components.esphome.async_setup_entry", return_value=True
+            "inpui.components.esphome.async_setup_entry", return_value=True
         ) as mock_setup,
     ):
         await dashboard.async_set_dashboard_info(hass, "test-slug", "test-host", 6052)
@@ -178,14 +178,14 @@ async def test_new_info_reload_config_entries(
     """Test config entries are reloaded when new info is set."""
     assert init_integration.state is ConfigEntryState.LOADED
 
-    with patch("homeassistant.components.esphome.async_setup_entry") as mock_setup:
+    with patch("inpui.components.esphome.async_setup_entry") as mock_setup:
         await dashboard.async_set_dashboard_info(hass, "test-slug", "test-host", 6052)
 
     assert len(mock_setup.mock_calls) == 1
     assert mock_setup.mock_calls[0][1][1] == init_integration
 
     # Test it's a no-op when the same info is set
-    with patch("homeassistant.components.esphome.async_setup_entry") as mock_setup:
+    with patch("inpui.components.esphome.async_setup_entry") as mock_setup:
         await dashboard.async_set_dashboard_info(hass, "test-slug", "test-host", 6052)
 
     assert len(mock_setup.mock_calls) == 0
@@ -204,7 +204,7 @@ async def test_new_dashboard_fix_reauth(
     )
 
     with patch(
-        "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+        "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
         return_value=VALID_NOISE_PSK,
     ) as mock_get_encryption_key:
         result = await mock_config_entry.start_reauth_flow(hass)
@@ -223,11 +223,11 @@ async def test_new_dashboard_fix_reauth(
 
     with (
         patch(
-            "homeassistant.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
+            "inpui.components.esphome.coordinator.ESPHomeDashboardAPI.get_encryption_key",
             return_value=VALID_NOISE_PSK,
         ) as mock_get_encryption_key,
         patch(
-            "homeassistant.components.esphome.async_setup_entry", return_value=True
+            "inpui.components.esphome.async_setup_entry", return_value=True
         ) as mock_setup,
     ):
         await dashboard.async_set_dashboard_info(hass, "test-slug", "test-host", 6052)

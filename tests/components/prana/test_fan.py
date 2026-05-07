@@ -67,7 +67,7 @@ async def test_fans(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the Prana fans snapshot."""
-    with patch("homeassistant.components.prana.PLATFORMS", [Platform.FAN]):
+    with patch("inpui.components.prana.PLATFORMS", [Platform.FAN]):
         await async_init_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

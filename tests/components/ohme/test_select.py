@@ -22,7 +22,7 @@ async def test_selects(
     mock_client: MagicMock,
 ) -> None:
     """Test the Ohme selects."""
-    with patch("homeassistant.components.ohme.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.ohme.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

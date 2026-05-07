@@ -571,7 +571,7 @@ async def test_if_fails_setup_if_to_boolean_value(hass: HomeAssistant) -> None:
                         "entity_id": "test.entity",
                         "to": True,
                     },
-                    "action": {"service": "homeassistant.turn_on"},
+                    "action": {"service": "inpui.turn_on"},
                 }
             },
         )
@@ -591,7 +591,7 @@ async def test_if_fails_setup_if_from_boolean_value(hass: HomeAssistant) -> None
                         "entity_id": "test.entity",
                         "from": True,
                     },
-                    "action": {"service": "homeassistant.turn_on"},
+                    "action": {"service": "inpui.turn_on"},
                 }
             },
         )
@@ -612,7 +612,7 @@ async def test_if_fails_setup_bad_for(hass: HomeAssistant) -> None:
                         "to": "world",
                         "for": {"invalid": 5},
                     },
-                    "action": {"service": "homeassistant.turn_on"},
+                    "action": {"service": "inpui.turn_on"},
                 }
             },
         )
@@ -946,7 +946,7 @@ async def test_if_fires_on_for_condition(
     """Test for firing if condition is on."""
     point1 = dt_util.utcnow()
     point2 = point1 + timedelta(seconds=10)
-    with patch("homeassistant.core.dt_util.utcnow") as mock_utcnow:
+    with patch("inpui.core.dt_util.utcnow") as mock_utcnow:
         mock_utcnow.return_value = point1
         hass.states.async_set("test.entity", "on")
         assert await async_setup_component(
@@ -986,7 +986,7 @@ async def test_if_fires_on_for_condition_attribute_change(
     point1 = dt_util.utcnow()
     point2 = point1 + timedelta(seconds=4)
     point3 = point1 + timedelta(seconds=8)
-    with patch("homeassistant.core.dt_util.utcnow") as mock_utcnow:
+    with patch("inpui.core.dt_util.utcnow") as mock_utcnow:
         mock_utcnow.return_value = point1
         hass.states.async_set("test.entity", "on")
         assert await async_setup_component(

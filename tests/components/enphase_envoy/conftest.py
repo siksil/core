@@ -39,7 +39,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.enphase_envoy.async_setup_entry",
+        "inpui.components.enphase_envoy.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -82,11 +82,11 @@ async def mock_envoy(
     )
     with (
         patch(
-            "homeassistant.components.enphase_envoy.config_flow.Envoy",
+            "inpui.components.enphase_envoy.config_flow.Envoy",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.enphase_envoy.Envoy",
+            "inpui.components.enphase_envoy.Envoy",
             new=mock_client,
         ),
         patch(

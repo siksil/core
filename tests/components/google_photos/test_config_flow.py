@@ -31,7 +31,7 @@ CLIENT_SECRET = "5678"
 def mock_setup_entry() -> Generator[Mock]:
     """Fixture to mock out integration setup."""
     with patch(
-        "homeassistant.components.google_photos.async_setup_entry", return_value=True
+        "inpui.components.google_photos.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -40,7 +40,7 @@ def mock_setup_entry() -> Generator[Mock]:
 def mock_patch_api(mock_api: Mock) -> Generator[None]:
     """Fixture to patch the config flow api."""
     with patch(
-        "homeassistant.components.google_photos.config_flow.GooglePhotosLibraryApi",
+        "inpui.components.google_photos.config_flow.GooglePhotosLibraryApi",
         return_value=mock_api,
     ):
         yield

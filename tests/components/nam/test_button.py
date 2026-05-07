@@ -43,9 +43,9 @@ async def test_button_press(hass: HomeAssistant) -> None:
     now = dt_util.utcnow()
     with (
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor.async_restart"
+            "inpui.components.nam.NettigoAirMonitor.async_restart"
         ) as mock_restart,
-        patch("homeassistant.core.dt_util.utcnow", return_value=now),
+        patch("inpui.core.dt_util.utcnow", return_value=now),
     ):
         await hass.services.async_call(
             BUTTON_DOMAIN,
@@ -69,7 +69,7 @@ async def test_button_press_exc(hass: HomeAssistant, exc: Exception) -> None:
 
     with (
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor.async_restart",
+            "inpui.components.nam.NettigoAirMonitor.async_restart",
             side_effect=exc,
         ),
         pytest.raises(
@@ -90,7 +90,7 @@ async def test_button_press_auth_error(hass: HomeAssistant) -> None:
     entry = await init_integration(hass)
 
     with patch(
-        "homeassistant.components.nam.NettigoAirMonitor.async_restart",
+        "inpui.components.nam.NettigoAirMonitor.async_restart",
         side_effect=AuthFailedError("auth error"),
     ):
         await hass.services.async_call(

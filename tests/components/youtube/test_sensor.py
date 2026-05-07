@@ -41,7 +41,7 @@ async def test_sensor_without_uploaded_video(
     await setup_integration()
 
     with patch(
-        "homeassistant.components.youtube.api.AsyncConfigEntryAuth.get_resource",
+        "inpui.components.youtube.api.AsyncConfigEntryAuth.get_resource",
         return_value=MockYouTube(
             hass, playlist_items_fixture="get_no_playlist_items.json"
         ),
@@ -72,7 +72,7 @@ async def test_sensor_updating(
     assert state.attributes["video_id"] == "wysukDrMdqU"
 
     with patch(
-        "homeassistant.components.youtube.api.AsyncConfigEntryAuth.get_resource",
+        "inpui.components.youtube.api.AsyncConfigEntryAuth.get_resource",
         return_value=MockYouTube(
             hass, playlist_items_fixture="get_playlist_items_2.json"
         ),

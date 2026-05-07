@@ -20,7 +20,7 @@ def mock_pyaxenco_client() -> Generator[AsyncMock]:
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.myneomitis.config_flow.PyAxencoAPI",
+            "inpui.components.myneomitis.config_flow.PyAxencoAPI",
             new=mock_client,
         ),
     ):
@@ -57,7 +57,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Prevent running the real integration setup during tests."""
     with patch(
-        "homeassistant.components.myneomitis.async_setup_entry",
+        "inpui.components.myneomitis.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

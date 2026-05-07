@@ -29,7 +29,7 @@ def mock_entry():
 def mock_unload_entry() -> Generator[AsyncMock]:
     """Override async_unload_entry."""
     with patch(
-        "homeassistant.components.gardena_bluetooth.async_unload_entry",
+        "inpui.components.gardena_bluetooth.async_unload_entry",
         return_value=True,
     ) as mock_unload_entry:
         yield mock_unload_entry
@@ -39,7 +39,7 @@ def mock_unload_entry() -> Generator[AsyncMock]:
 def mock_setup_entry(mock_unload_entry) -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.gardena_bluetooth.async_setup_entry",
+        "inpui.components.gardena_bluetooth.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -122,10 +122,10 @@ def mock_client(
 
     with (
         patch(
-            "homeassistant.components.gardena_bluetooth.config_flow.Client",
+            "inpui.components.gardena_bluetooth.config_flow.Client",
             new=client_class,
         ),
-        patch("homeassistant.components.gardena_bluetooth.Client", new=client_class),
+        patch("inpui.components.gardena_bluetooth.Client", new=client_class),
     ):
         yield client
 

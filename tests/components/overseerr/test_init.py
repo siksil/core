@@ -195,15 +195,15 @@ async def test_cloudhook_setup(
     ]
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch.object(cloud, "async_active_subscription", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ) as fake_create_cloudhook,
         patch(
-            "homeassistant.components.cloud.async_delete_cloudhook"
+            "inpui.components.cloud.async_delete_cloudhook"
         ) as fake_delete_cloudhook,
     ):
         await setup_integration(hass, mock_config_entry)
@@ -248,11 +248,11 @@ async def test_cloudhook_consistent(
     ]
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch.object(cloud, "async_active_subscription", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ) as fake_create_cloudhook,
     ):
@@ -338,11 +338,11 @@ async def test_cloudhook_not_connecting(
     )
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch.object(cloud, "async_active_subscription", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ) as fake_create_cloudhook,
     ):
@@ -379,18 +379,18 @@ async def test_removing_entry_with_cloud_unavailable(
     await hass.async_block_till_done()
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch.object(cloud, "async_active_subscription", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_create_cloudhook",
+            "inpui.components.cloud.async_create_cloudhook",
             return_value="https://hooks.nabu.casa/ABCD",
         ),
         patch(
-            "homeassistant.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
+            "inpui.helpers.config_entry_oauth2_flow.async_get_config_entry_implementation",
         ),
         patch(
-            "homeassistant.components.cloud.async_delete_cloudhook",
+            "inpui.components.cloud.async_delete_cloudhook",
             side_effect=CloudNotAvailable(),
         ),
     ):

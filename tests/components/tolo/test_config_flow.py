@@ -22,7 +22,7 @@ MOCK_DHCP_DATA = DhcpServiceInfo(
 @pytest.fixture(name="toloclient")
 def toloclient_fixture() -> Mock:
     """Patch libraries."""
-    with patch("homeassistant.components.tolo.config_flow.ToloClient") as toloclient:
+    with patch("inpui.components.tolo.config_flow.ToloClient") as toloclient:
         yield toloclient
 
 
@@ -33,7 +33,7 @@ def coordinator_toloclient() -> Mock:
     Throw exception to abort entry setup and prevent socket IO. Only testing config flow.
     """
     with patch(
-        "homeassistant.components.tolo.coordinator.ToloClient", side_effect=Exception
+        "inpui.components.tolo.coordinator.ToloClient", side_effect=Exception
     ) as toloclient:
         yield toloclient
 

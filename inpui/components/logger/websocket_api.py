@@ -51,7 +51,7 @@ def handle_integration_log_info(
             {
                 "domain": integration,
                 "level": get_logger(
-                    f"homeassistant.components.{integration}"
+                    f"inpui.components.{integration}"
                 ).getEffectiveLevel(),
             }
             for integration in integrations

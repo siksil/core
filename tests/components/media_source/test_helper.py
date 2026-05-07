@@ -44,7 +44,7 @@ async def test_async_browse_media(hass: HomeAssistant) -> None:
         return item
 
     with patch(
-        "homeassistant.components.media_source.models.MediaSourceItem.async_browse",
+        "inpui.components.media_source.models.MediaSourceItem.async_browse",
         not_shown_browse,
     ):
         media = await media_source.async_browse_media(

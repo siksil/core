@@ -69,7 +69,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.fitbit.async_setup_entry", return_value=True
+        "inpui.components.fitbit.async_setup_entry", return_value=True
     ) as mock_setup:
         await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -309,7 +309,7 @@ async def test_reauth_flow(
     )
 
     with patch(
-        "homeassistant.components.fitbit.async_setup_entry", return_value=True
+        "inpui.components.fitbit.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -377,7 +377,7 @@ async def test_reauth_wrong_user_id(
     )
 
     with patch(
-        "homeassistant.components.fitbit.async_setup_entry", return_value=True
+        "inpui.components.fitbit.async_setup_entry", return_value=True
     ) as mock_setup:
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
 
@@ -433,7 +433,7 @@ async def test_partial_profile_data(
     )
 
     with patch(
-        "homeassistant.components.fitbit.async_setup_entry", return_value=True
+        "inpui.components.fitbit.async_setup_entry", return_value=True
     ) as mock_setup:
         await hass.config_entries.flow.async_configure(result["flow_id"])
 

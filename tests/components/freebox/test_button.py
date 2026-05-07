@@ -21,7 +21,7 @@ async def test_reboot(hass: HomeAssistant, router: Mock) -> None:
     assert router().open.call_count == 1
 
     with patch(
-        "homeassistant.components.freebox.router.FreeboxRouter.reboot"
+        "inpui.components.freebox.router.FreeboxRouter.reboot"
     ) as mock_service:
         mock_service.assert_not_called()
         await hass.services.async_call(
@@ -46,7 +46,7 @@ async def test_mark_calls_as_read(hass: HomeAssistant, router: Mock) -> None:
     assert router().open.call_count == 1
 
     with patch(
-        "homeassistant.components.freebox.router.FreeboxRouter.call"
+        "inpui.components.freebox.router.FreeboxRouter.call"
     ) as mock_service:
         mock_service.mark_calls_log_as_read = AsyncMock()
         mock_service.mark_calls_log_as_read.assert_not_called()

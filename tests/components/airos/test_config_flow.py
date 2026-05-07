@@ -167,7 +167,7 @@ async def test_form_exception_handling(
 ) -> None:
     """Test we handle exceptions."""
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=exception,
     ):
         flow_start = await hass.config_entries.flow.async_init(
@@ -194,7 +194,7 @@ async def test_form_exception_handling(
     )
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         return_value=valid_data,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -222,7 +222,7 @@ async def test_reauth_flow_scenario(
     await hass.config_entries.async_setup(mock_config_entry.entry_id)
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=AirOSConnectionAuthenticationError,
     ):
         flow = await hass.config_entries.flow.async_init(
@@ -244,11 +244,11 @@ async def test_reauth_flow_scenario(
     mock_firmware = AsyncMock(return_value=valid_data)
     with (
         patch(
-            "homeassistant.components.airos.config_flow.async_get_firmware_data",
+            "inpui.components.airos.config_flow.async_get_firmware_data",
             new=mock_firmware,
         ),
         patch(
-            "homeassistant.components.airos.async_get_firmware_data",
+            "inpui.components.airos.async_get_firmware_data",
             new=mock_firmware,
         ),
     ):
@@ -294,7 +294,7 @@ async def test_reauth_flow_scenarios(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=AirOSConnectionAuthenticationError,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -309,7 +309,7 @@ async def test_reauth_flow_scenarios(
     assert flow["step_id"] == REAUTH_STEP
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=reauth_exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -329,7 +329,7 @@ async def test_reauth_flow_scenarios(
     )
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         new=AsyncMock(return_value=valid_data),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -355,7 +355,7 @@ async def test_reauth_unique_id_mismatch(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=AirOSConnectionAuthenticationError,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -374,7 +374,7 @@ async def test_reauth_unique_id_mismatch(
     )
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         new=AsyncMock(return_value=valid_data),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -475,7 +475,7 @@ async def test_reconfigure_flow_failure(
     }
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=reconfigure_exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -532,7 +532,7 @@ async def test_reconfigure_unique_id_mismatch(
     }
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         new=AsyncMock(return_value=mismatched_data),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -605,7 +605,7 @@ async def test_discover_flow_one_device_found(
     )
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         new=AsyncMock(return_value=valid_data),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -681,7 +681,7 @@ async def test_discover_flow_multiple_devices_found(
     )
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         new=AsyncMock(return_value=valid_data),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -779,7 +779,7 @@ async def test_configure_device_flow_exceptions(
     )
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=AirOSConnectionAuthenticationError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -795,7 +795,7 @@ async def test_configure_device_flow_exceptions(
     assert result["errors"] == {"base": "invalid_auth"}
 
     with patch(
-        "homeassistant.components.airos.config_flow.async_get_firmware_data",
+        "inpui.components.airos.config_flow.async_get_firmware_data",
         side_effect=AirOSDeviceConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(

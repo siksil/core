@@ -24,7 +24,7 @@ async def test_ha_mqtt_publish(
     with (
         patch(f"{HA_INELS_PATH}.InelsDiscovery") as mock_discovery_class,
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_forward_entry_setups",
+            "inpui.config_entries.ConfigEntries.async_forward_entry_setups",
             return_value=None,
         ),
     ):
@@ -50,7 +50,7 @@ async def test_ha_mqtt_subscribe(
     with (
         patch(f"{HA_INELS_PATH}.InelsDiscovery") as mock_discovery_class,
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_forward_entry_setups",
+            "inpui.config_entries.ConfigEntries.async_forward_entry_setups",
             return_value=None,
         ),
     ):
@@ -75,7 +75,7 @@ async def test_ha_mqtt_not_available(
 
     with (
         patch(
-            "homeassistant.components.mqtt.async_wait_for_mqtt_client",
+            "inpui.components.mqtt.async_wait_for_mqtt_client",
             return_value=False,
         ),
         pytest.raises(ConfigEntryNotReady, match="MQTT integration not available"),
@@ -91,7 +91,7 @@ async def test_unload_entry(hass: HomeAssistant, mock_mqtt) -> None:
     config_entry.runtime_data = inels.InelsData(mqtt=mock_mqtt, devices=[])
 
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload_platforms",
+        "inpui.config_entries.ConfigEntries.async_unload_platforms",
         return_value=True,
     ) as mock_unload_platforms:
         result = await inels.async_unload_entry(hass, config_entry)

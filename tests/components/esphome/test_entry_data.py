@@ -98,7 +98,7 @@ async def test_discover_zwave() -> None:
     device_info.name = "mock-device-infoname"
 
     with patch(
-        "homeassistant.helpers.discovery_flow.async_create_flow"
+        "inpui.helpers.discovery_flow.async_create_flow"
     ) as mock_create_flow:
         entry_data.async_on_connect(
             hass,
@@ -145,7 +145,7 @@ async def test_discover_zwave_without_home_id() -> None:
     device_info.name = "mock-device-infoname"
 
     with patch(
-        "homeassistant.helpers.discovery_flow.async_create_flow"
+        "inpui.helpers.discovery_flow.async_create_flow"
     ) as mock_create_flow:
         entry_data.async_on_connect(
             hass,

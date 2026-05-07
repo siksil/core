@@ -22,7 +22,7 @@ from tests.typing import ClientSessionGenerator
 async def switch_only() -> None:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.SWITCH],
     ):
         yield

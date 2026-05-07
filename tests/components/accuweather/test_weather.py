@@ -35,7 +35,7 @@ async def test_weather(
     mock_accuweather_client: AsyncMock,
 ) -> None:
     """Test states of the weather without forecast."""
-    with patch("homeassistant.components.accuweather.PLATFORMS", [Platform.WEATHER]):
+    with patch("inpui.components.accuweather.PLATFORMS", [Platform.WEATHER]):
         entry = await init_integration(hass)
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)
 

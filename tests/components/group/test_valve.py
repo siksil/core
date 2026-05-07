@@ -75,7 +75,7 @@ CONFIG_ATTRIBUTES = {
 @pytest.fixture(scope="module", autouse=True)
 def patch_demo_open_close_delay():
     """Patch demo valve open/close delay."""
-    with patch("homeassistant.components.demo.valve.OPEN_CLOSE_DELAY", 0):
+    with patch("inpui.components.demo.valve.OPEN_CLOSE_DELAY", 0):
         yield
 
 

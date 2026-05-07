@@ -32,7 +32,7 @@ DOMAIN = "growatt_server"
 async def switch_only() -> AsyncGenerator[None]:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.growatt_server.PLATFORMS",
+        "inpui.components.growatt_server.PLATFORMS",
         [Platform.SWITCH],
     ):
         yield

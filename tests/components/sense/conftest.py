@@ -32,7 +32,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.sense.async_setup_entry", return_value=True
+        "inpui.components.sense.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -50,7 +50,7 @@ def config_entry() -> MockConfigEntry:
 @pytest.fixture
 def mock_sense() -> Generator[MagicMock]:
     """Mock an ASyncSenseable object with a split foundation."""
-    with patch("homeassistant.components.sense.ASyncSenseable", autospec=True) as mock:
+    with patch("inpui.components.sense.ASyncSenseable", autospec=True) as mock:
         gateway = mock.return_value
         gateway.sense_monitor_id = MONITOR_ID
         gateway.get_monitor_data.return_value = None

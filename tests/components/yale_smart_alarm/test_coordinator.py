@@ -55,7 +55,7 @@ async def test_coordinator_setup_errors(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
+        "inpui.components.yale_smart_alarm.coordinator.YaleSmartAlarmClient",
         autospec=True,
     ) as mock_client_class:
         mock_client_class.side_effect = p_error

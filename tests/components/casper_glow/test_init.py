@@ -82,7 +82,7 @@ _adv_counter = count(1)
 def mock_monotonic() -> Generator[None]:
     """Patch monotonic_time_coarse to 0 so _last_poll is always falsy."""
     with patch(
-        "homeassistant.components.casper_glow.coordinator.monotonic_time_coarse",
+        "inpui.components.casper_glow.coordinator.monotonic_time_coarse",
         return_value=0.0,
     ):
         yield

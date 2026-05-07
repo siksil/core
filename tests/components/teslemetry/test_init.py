@@ -355,7 +355,7 @@ async def test_migrate_from_version_1_success(hass: HomeAssistant) -> None:
 
     # Mock the migrate token endpoint response
     with patch(
-        "homeassistant.components.teslemetry.Teslemetry.migrate_to_oauth",
+        "inpui.components.teslemetry.Teslemetry.migrate_to_oauth",
         new_callable=AsyncMock,
     ) as mock_migrate:
         mock_migrate.return_value = {
@@ -396,7 +396,7 @@ async def test_migrate_from_version_1_token_endpoint_error(hass: HomeAssistant) 
 
     # Mock the migrate token endpoint to raise an HTTP error
     with patch(
-        "homeassistant.components.teslemetry.Teslemetry.migrate_to_oauth",
+        "inpui.components.teslemetry.Teslemetry.migrate_to_oauth",
         new_callable=AsyncMock,
     ) as mock_migrate:
         mock_migrate.side_effect = ClientResponseError(
@@ -437,7 +437,7 @@ async def test_migrate_version_2_no_migration_needed(hass: HomeAssistant) -> Non
 
     # Should not call the migrate endpoint since already version 2
     with patch(
-        "homeassistant.components.teslemetry.Teslemetry.migrate_to_oauth",
+        "inpui.components.teslemetry.Teslemetry.migrate_to_oauth",
         new_callable=AsyncMock,
     ) as mock_migrate:
         mock_entry.add_to_hass(hass)
@@ -500,7 +500,7 @@ async def test_oauth_implementation_not_available(hass: HomeAssistant) -> None:
 
     # Mock the implementation lookup to raise ValueError
     with patch(
-        "homeassistant.components.teslemetry.async_get_config_entry_implementation",
+        "inpui.components.teslemetry.async_get_config_entry_implementation",
         side_effect=ValueError("Implementation not available"),
     ):
         await hass.config_entries.async_setup(mock_entry.entry_id)

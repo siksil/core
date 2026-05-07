@@ -34,7 +34,7 @@ async def setup_entry(
 ) -> None:
     """Make sure the device is available."""
 
-    with patch("homeassistant.components.togrill._PLATFORMS", platforms):
+    with patch("inpui.components.togrill._PLATFORMS", platforms):
         mock_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_entry.entry_id)
         await hass.async_block_till_done()

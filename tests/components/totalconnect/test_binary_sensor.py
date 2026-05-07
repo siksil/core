@@ -22,7 +22,7 @@ async def test_entity_registry(
 ) -> None:
     """Test the alarm control panel attributes are correct."""
     with patch(
-        "homeassistant.components.totalconnect.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.totalconnect.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         await setup_integration(hass, mock_config_entry)
 

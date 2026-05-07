@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airvisual_pro.async_setup_entry", return_value=True
+        "inpui.components.airvisual_pro.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -85,11 +85,11 @@ async def setup_airvisual_pro_fixture(
     """Define a fixture to set up AirVisual Pro."""
     with (
         patch(
-            "homeassistant.components.airvisual_pro.config_flow.NodeSamba",
+            "inpui.components.airvisual_pro.config_flow.NodeSamba",
             return_value=pro,
         ),
-        patch("homeassistant.components.airvisual_pro.NodeSamba", return_value=pro),
-        patch("homeassistant.components.airvisual_pro.PLATFORMS", []),
+        patch("inpui.components.airvisual_pro.NodeSamba", return_value=pro),
+        patch("inpui.components.airvisual_pro.PLATFORMS", []),
     ):
         assert await async_setup_component(hass, DOMAIN, config)
         await hass.async_block_till_done()

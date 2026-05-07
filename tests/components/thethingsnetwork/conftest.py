@@ -82,11 +82,11 @@ def mock_ttnclient():
 
     with (
         patch(
-            "homeassistant.components.thethingsnetwork.coordinator.TTNClient",
+            "inpui.components.thethingsnetwork.coordinator.TTNClient",
             autospec=True,
         ) as ttn_client,
         patch(
-            "homeassistant.components.thethingsnetwork.config_flow.TTNClient",
+            "inpui.components.thethingsnetwork.config_flow.TTNClient",
             new=ttn_client,
         ),
     ):

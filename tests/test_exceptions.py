@@ -110,7 +110,7 @@ async def test_home_assistant_error(
     """Test edge cases with HomeAssistantError."""
 
     with patch(
-        "homeassistant.helpers.translation.async_get_cached_translations",
+        "inpui.helpers.translation.async_get_cached_translations",
         return_value={"component.test.exceptions.bla.message": "{bla} from cache"},
     ):
         with pytest.raises(HomeAssistantError) as exc:
@@ -177,7 +177,7 @@ async def test_home_assistant_error_subclass(hass: HomeAssistant) -> None:
         generate_message: bool = True
 
     with patch(
-        "homeassistant.helpers.translation.async_get_cached_translations",
+        "inpui.helpers.translation.async_get_cached_translations",
         return_value={"component.test.exceptions.bla.message": "{bla} from cache"},
     ):
         # A subclass without a constructor generates a message by default

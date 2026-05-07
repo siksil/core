@@ -203,9 +203,9 @@ async def test_restore_state(
 
     # reload entry
     with (
-        patch("homeassistant.components.snooz.SnoozDevice", return_value=device),
+        patch("inpui.components.snooz.SnoozDevice", return_value=device),
         patch(
-            "homeassistant.components.snooz.async_ble_device_from_address",
+            "inpui.components.snooz.async_ble_device_from_address",
             return_value=generate_ble_device(device.address, device.name),
         ),
     ):
@@ -235,9 +235,9 @@ async def test_restore_unknown_state(
 
     # reload entry
     with (
-        patch("homeassistant.components.snooz.SnoozDevice", return_value=device),
+        patch("inpui.components.snooz.SnoozDevice", return_value=device),
         patch(
-            "homeassistant.components.snooz.async_ble_device_from_address",
+            "inpui.components.snooz.async_ble_device_from_address",
             return_value=generate_ble_device(device.address, device.name),
         ),
     ):

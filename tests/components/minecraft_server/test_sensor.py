@@ -108,11 +108,11 @@ async def test_sensor(
 
     with (
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
+            f"inpui.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
             return_value=server(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.async_status",
+            f"inpui.components.minecraft_server.api.{server.__name__}.async_status",
             return_value=status_response,
         ),
     ):
@@ -169,11 +169,11 @@ async def test_sensor_disabled_by_default(
 
     with (
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
+            f"inpui.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
             return_value=server(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.async_status",
+            f"inpui.components.minecraft_server.api.{server.__name__}.async_status",
             return_value=status_response,
         ),
     ):
@@ -233,11 +233,11 @@ async def test_sensor_update(
 
     with (
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
+            f"inpui.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
             return_value=server(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.async_status",
+            f"inpui.components.minecraft_server.api.{server.__name__}.async_status",
             return_value=status_response,
         ),
     ):
@@ -299,11 +299,11 @@ async def test_sensor_update_failure(
 
     with (
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
+            f"inpui.components.minecraft_server.api.{server.__name__}.{lookup_function_name}",
             return_value=server(host=TEST_HOST, port=TEST_PORT),
         ),
         patch(
-            f"homeassistant.components.minecraft_server.api.{server.__name__}.async_status",
+            f"inpui.components.minecraft_server.api.{server.__name__}.async_status",
             return_value=status_response,
         ),
     ):
@@ -311,7 +311,7 @@ async def test_sensor_update_failure(
         await hass.async_block_till_done()
 
     with patch(
-        f"homeassistant.components.minecraft_server.api.{server.__name__}.async_status",
+        f"inpui.components.minecraft_server.api.{server.__name__}.async_status",
         side_effect=OSError,
     ):
         freezer.tick(timedelta(minutes=1))

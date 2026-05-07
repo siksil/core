@@ -129,7 +129,7 @@ async def test_setup_success(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ws66i.get_ws66i",
+        "inpui.components.ws66i.get_ws66i",
         new=lambda *a: MockWs66i(),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -146,7 +146,7 @@ async def _setup_ws66i(hass: HomeAssistant, ws66i) -> MockConfigEntry:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ws66i.get_ws66i",
+        "inpui.components.ws66i.get_ws66i",
         new=lambda *a: ws66i,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -162,7 +162,7 @@ async def _setup_ws66i_with_options(hass: HomeAssistant, ws66i) -> MockConfigEnt
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ws66i.get_ws66i",
+        "inpui.components.ws66i.get_ws66i",
         new=lambda *a: ws66i,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

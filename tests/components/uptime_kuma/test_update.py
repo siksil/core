@@ -20,7 +20,7 @@ from tests.typing import WebSocketGenerator
 async def update_only() -> AsyncGenerator[None]:
     """Enable only the update platform."""
     with patch(
-        "homeassistant.components.uptime_kuma._PLATFORMS",
+        "inpui.components.uptime_kuma._PLATFORMS",
         [Platform.UPDATE],
     ):
         yield

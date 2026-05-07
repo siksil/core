@@ -11,7 +11,7 @@ from tests.common import MockConfigEntry
 
 
 @patch(
-    "homeassistant.components.roku.coordinator.Roku._request",
+    "inpui.components.roku.coordinator.Roku._request",
     side_effect=RokuConnectionError,
 )
 async def test_config_entry_not_ready(

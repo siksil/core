@@ -21,7 +21,7 @@ pytestmark = pytest.mark.usefixtures(
 @pytest.fixture(autouse=True)
 def override_platforms() -> Generator[None]:
     """Override PLATFORMS."""
-    with patch("homeassistant.components.sfr_box.PLATFORMS", []):
+    with patch("inpui.components.sfr_box.PLATFORMS", []):
         yield
 
 
@@ -44,7 +44,7 @@ async def test_entry_diagnostics(
     await hass.async_block_till_done()
 
     with patch(
-        f"homeassistant.components.sfr_box.coordinator.SFRBox.{patch_to_none}",
+        f"inpui.components.sfr_box.coordinator.SFRBox.{patch_to_none}",
         return_value=None,
     ):
         assert (

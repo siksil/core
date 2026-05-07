@@ -99,7 +99,7 @@ async def test_update_failed(
     assert hass.states.get(entity).state == "263.10"
 
     with patch(
-        "homeassistant.components.radarr.RadarrClient._async_request",
+        "inpui.components.radarr.RadarrClient._async_request",
         side_effect=ArrConnectionException,
     ) as updater:
         next_update = dt_util.utcnow() + timedelta(minutes=1)

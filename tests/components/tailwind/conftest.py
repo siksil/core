@@ -39,7 +39,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.tailwind.async_setup_entry", return_value=True
+        "inpui.components.tailwind.async_setup_entry", return_value=True
     ):
         yield
 
@@ -49,10 +49,10 @@ def mock_tailwind(device_fixture: str) -> Generator[MagicMock]:
     """Return a mocked Tailwind client."""
     with (
         patch(
-            "homeassistant.components.tailwind.coordinator.Tailwind", autospec=True
+            "inpui.components.tailwind.coordinator.Tailwind", autospec=True
         ) as tailwind_mock,
         patch(
-            "homeassistant.components.tailwind.config_flow.Tailwind",
+            "inpui.components.tailwind.config_flow.Tailwind",
             new=tailwind_mock,
         ),
     ):

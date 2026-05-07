@@ -538,7 +538,7 @@ async def test_setup_timeout_during_authentication(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(
             side_effect=TimeoutError("Connection timeout")
@@ -573,7 +573,7 @@ async def test_periodic_sync_error_and_recovery(hass: HomeAssistant) -> None:
             raise OSError("Connection lost")
         # Second and subsequent calls succeed
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -615,7 +615,7 @@ async def test_periodic_sync_runtime_error(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -654,7 +654,7 @@ async def test_config_entry_update_listener(
     )
     hass.states.async_set(entity_entry.entity_id, "100")
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -713,7 +713,7 @@ async def test_initial_state_non_numeric(
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -765,7 +765,7 @@ async def test_state_change_during_entry_unload(
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -821,7 +821,7 @@ async def test_late_appearing_entity_missing_data(
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -877,7 +877,7 @@ async def test_state_change_for_untracked_entity(
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -933,7 +933,7 @@ async def test_unload_entry_with_subentries(
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -973,7 +973,7 @@ async def test_unload_entry_client_close_error(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1012,7 +1012,7 @@ async def test_unload_entry_unexpected_exception(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1054,7 +1054,7 @@ async def test_config_entry_update_listener_called(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1101,7 +1101,7 @@ async def test_initial_state_conversion_error_valueerror(
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1131,7 +1131,7 @@ async def test_state_change_untracked_entity_explicit(hass: HomeAssistant) -> No
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1186,7 +1186,7 @@ async def test_subentry_missing_keys_continue(hass: HomeAssistant) -> None:
     sub_entry_empty.parent_entry_id = entry.entry_id
     sub_entry_empty.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1211,7 +1211,7 @@ async def test_entry_unloading_flag_state_change(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"
@@ -1256,7 +1256,7 @@ async def test_unload_subentries_explicit(hass: HomeAssistant) -> None:
     sub_entry.parent_entry_id = entry.entry_id
     sub_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.energyid.WebhookClient") as mock_client_class:
+    with patch("inpui.components.energyid.WebhookClient") as mock_client_class:
         mock_client = MagicMock()
         mock_client.authenticate = AsyncMock(return_value=True)
         mock_client.recordNumber = "site_123"

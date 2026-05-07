@@ -24,7 +24,7 @@ async def test_weather(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.weatherflow_cloud.PLATFORMS", [Platform.WEATHER]
+        "inpui.components.weatherflow_cloud.PLATFORMS", [Platform.WEATHER]
     ):
         await setup_integration(hass, mock_config_entry)
 

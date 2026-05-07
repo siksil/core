@@ -19,7 +19,7 @@ from inpui.setup import async_setup_component
 @pytest.fixture
 def mock_debugpy():
     """Mock debugpy lib."""
-    with patch("homeassistant.components.debugpy.debugpy") as mocked_debugpy:
+    with patch("inpui.components.debugpy.debugpy") as mocked_debugpy:
         yield mocked_debugpy
 
 

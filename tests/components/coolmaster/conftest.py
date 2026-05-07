@@ -215,7 +215,7 @@ async def load_int(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.coolmaster.CoolMasterNet",
+        "inpui.components.coolmaster.CoolMasterNet",
         new=CoolMasterNetMock,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -239,7 +239,7 @@ async def config_entry_with_errors(hass: HomeAssistant) -> MockConfigEntry:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.coolmaster.CoolMasterNet",
+        "inpui.components.coolmaster.CoolMasterNet",
         new=CoolMasterNetErrorMock,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -263,7 +263,7 @@ async def config_entry_with_empty_status(hass: HomeAssistant) -> MockConfigEntry
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.coolmaster.CoolMasterNet",
+        "inpui.components.coolmaster.CoolMasterNet",
         new=CoolMasterNetEmptyStatusMock,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

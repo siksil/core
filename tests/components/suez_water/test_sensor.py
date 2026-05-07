@@ -27,7 +27,7 @@ async def test_sensors_valid_state(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test that suez_water sensor is loaded and in a valid state."""
-    with patch("homeassistant.components.suez_water.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.suez_water.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     assert mock_config_entry.state is ConfigEntryState.LOADED

@@ -84,10 +84,10 @@ async def test_migrate_1_2(
 
     with (
         patch(
-            "homeassistant.components.rainmachine.async_setup_entry", return_value=True
+            "inpui.components.rainmachine.async_setup_entry", return_value=True
         ),
         patch(
-            "homeassistant.components.rainmachine.config_flow.Client",
+            "inpui.components.rainmachine.config_flow.Client",
             return_value=client,
         ),
     ):
@@ -103,7 +103,7 @@ async def test_migrate_1_2(
 async def test_options_flow(hass: HomeAssistant, config, config_entry) -> None:
     """Test config flow options."""
     with patch(
-        "homeassistant.components.rainmachine.async_setup_entry", return_value=True
+        "inpui.components.rainmachine.async_setup_entry", return_value=True
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
@@ -163,7 +163,7 @@ async def test_step_homekit_zeroconf_ip_already_exists(
 ) -> None:
     """Test homekit and zeroconf with an ip that already exists."""
     with patch(
-        "homeassistant.components.rainmachine.config_flow.Client", return_value=client
+        "inpui.components.rainmachine.config_flow.Client", return_value=client
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -191,7 +191,7 @@ async def test_step_homekit_zeroconf_ip_change(
 ) -> None:
     """Test zeroconf with an ip change."""
     with patch(
-        "homeassistant.components.rainmachine.config_flow.Client", return_value=client
+        "inpui.components.rainmachine.config_flow.Client", return_value=client
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -220,7 +220,7 @@ async def test_step_homekit_zeroconf_new_controller_when_some_exist(
 ) -> None:
     """Test homekit and zeroconf for a new controller when one already exists."""
     with patch(
-        "homeassistant.components.rainmachine.config_flow.Client", return_value=client
+        "inpui.components.rainmachine.config_flow.Client", return_value=client
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -241,10 +241,10 @@ async def test_step_homekit_zeroconf_new_controller_when_some_exist(
 
     with (
         patch(
-            "homeassistant.components.rainmachine.async_setup_entry", return_value=True
+            "inpui.components.rainmachine.async_setup_entry", return_value=True
         ),
         patch(
-            "homeassistant.components.rainmachine.config_flow.Client",
+            "inpui.components.rainmachine.config_flow.Client",
             return_value=client,
         ),
     ):
@@ -274,7 +274,7 @@ async def test_discovery_by_homekit_and_zeroconf_same_time(
 ) -> None:
     """Test the same controller gets discovered by two different methods."""
     with patch(
-        "homeassistant.components.rainmachine.config_flow.Client", return_value=client
+        "inpui.components.rainmachine.config_flow.Client", return_value=client
     ):
         result = await hass.config_entries.flow.async_init(
             DOMAIN,
@@ -294,7 +294,7 @@ async def test_discovery_by_homekit_and_zeroconf_same_time(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.rainmachine.config_flow.Client", return_value=client
+        "inpui.components.rainmachine.config_flow.Client", return_value=client
     ):
         result2 = await hass.config_entries.flow.async_init(
             DOMAIN,

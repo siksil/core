@@ -22,7 +22,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 def no_setup():
     """Disable setting up the whole integration in config_flow tests."""
     with patch(
-        "homeassistant.components.fronius.async_setup_entry",
+        "inpui.components.fronius.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -258,7 +258,7 @@ async def test_config_flow_already_configured(
 async def test_dhcp(hass: HomeAssistant, aioclient_mock: AiohttpClientMocker) -> None:
     """Test starting a flow from discovery."""
     with (
-        patch("homeassistant.components.fronius.config_flow.DHCP_REQUEST_DELAY", 0),
+        patch("inpui.components.fronius.config_flow.DHCP_REQUEST_DELAY", 0),
         patch(
             "pyfronius.Fronius.current_logger_info",
             return_value=LOGGER_INFO_RETURN_VALUE,
@@ -308,7 +308,7 @@ async def test_dhcp_invalid(
 ) -> None:
     """Test starting a flow from discovery."""
     with (
-        patch("homeassistant.components.fronius.config_flow.DHCP_REQUEST_DELAY", 0),
+        patch("inpui.components.fronius.config_flow.DHCP_REQUEST_DELAY", 0),
         patch(
             "pyfronius.Fronius.current_logger_info",
             side_effect=FroniusError,

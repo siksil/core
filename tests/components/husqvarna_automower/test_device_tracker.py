@@ -22,7 +22,7 @@ async def test_device_tracker_snapshot(
 ) -> None:
     """Snapshot test of the device tracker."""
     with patch(
-        "homeassistant.components.husqvarna_automower.PLATFORMS",
+        "inpui.components.husqvarna_automower.PLATFORMS",
         [Platform.DEVICE_TRACKER],
     ):
         await setup_integration(hass, mock_config_entry)

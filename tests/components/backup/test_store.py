@@ -18,7 +18,7 @@ from tests.typing import WebSocketGenerator
 @pytest.fixture(autouse=True)
 def mock_delay_save() -> Generator[None]:
     """Mock the delay save constant."""
-    with patch("homeassistant.components.backup.store.STORE_DELAY_SAVE", 0):
+    with patch("inpui.components.backup.store.STORE_DELAY_SAVE", 0):
         yield
 
 

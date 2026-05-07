@@ -68,7 +68,7 @@ def invalidate_config_entry_fixture(validate_config_entry):
 def bypass_platform_setup_fixture():
     """Bypass platform setup."""
     with patch(
-        "homeassistant.components.waze_travel_time.sensor.async_setup_entry",
+        "inpui.components.waze_travel_time.sensor.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -78,7 +78,7 @@ def bypass_platform_setup_fixture():
 def bypass_setup_fixture():
     """Bypass entry setup."""
     with patch(
-        "homeassistant.components.waze_travel_time.async_setup_entry",
+        "inpui.components.waze_travel_time.async_setup_entry",
         return_value=True,
     ):
         yield

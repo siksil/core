@@ -25,7 +25,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.weheat.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.weheat.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await hass.async_block_till_done()
@@ -47,7 +47,7 @@ async def test_create_entities(
     mock_heat_pump_info.has_dhw = has_dhw
     mock_weheat_discover.return_value = [mock_heat_pump_info]
 
-    with patch("homeassistant.components.weheat.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.weheat.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await hass.async_block_till_done()

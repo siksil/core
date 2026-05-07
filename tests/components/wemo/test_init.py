@@ -219,10 +219,10 @@ async def test_discovery(
     with (
         patch("pywemo.discover_devices", return_value=pywemo_devices) as mock_discovery,
         patch(
-            "homeassistant.components.wemo.WemoDiscovery.discover_statics"
+            "inpui.components.wemo.WemoDiscovery.discover_statics"
         ) as mock_discover_statics,
         patch(
-            "homeassistant.components.wemo.binary_sensor.async_wemo_dispatcher_connect",
+            "inpui.components.wemo.binary_sensor.async_wemo_dispatcher_connect",
             side_effect=async_connect,
         ),
     ):

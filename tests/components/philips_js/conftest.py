@@ -20,10 +20,10 @@ def mock_setup_entry() -> Generator[AsyncMock]:
     """Disable component setup."""
     with (
         patch(
-            "homeassistant.components.philips_js.async_setup_entry", return_value=True
+            "inpui.components.philips_js.async_setup_entry", return_value=True
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.philips_js.async_unload_entry", return_value=True
+            "inpui.components.philips_js.async_unload_entry", return_value=True
         ),
     ):
         yield mock_setup_entry
@@ -52,9 +52,9 @@ def mock_tv():
 
     with (
         patch(
-            "homeassistant.components.philips_js.config_flow.PhilipsTV", return_value=tv
+            "inpui.components.philips_js.config_flow.PhilipsTV", return_value=tv
         ),
-        patch("homeassistant.components.philips_js.PhilipsTV", return_value=tv),
+        patch("inpui.components.philips_js.PhilipsTV", return_value=tv),
     ):
         yield tv
 

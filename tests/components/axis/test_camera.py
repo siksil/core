@@ -22,7 +22,7 @@ from tests.common import snapshot_platform
 def mock_getrandbits():
     """Mock camera access token which normally is randomized."""
     with patch(
-        "homeassistant.components.camera.SystemRandom.getrandbits",
+        "inpui.components.camera.SystemRandom.getrandbits",
         return_value=1,
     ):
         yield
@@ -54,7 +54,7 @@ async def test_camera(
     stream_profile: str,
 ) -> None:
     """Test that Axis camera platform is loaded properly."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.CAMERA]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

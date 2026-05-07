@@ -872,7 +872,7 @@ async def test_discovery_update_unchanged_lock(
         '  "command_topic": "command_topic" }'
     )
     with patch(
-        "homeassistant.components.mqtt.lock.MqttLock.discovery_update"
+        "inpui.components.mqtt.lock.MqttLock.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, lock.DOMAIN, data1, discovery_update

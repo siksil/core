@@ -53,7 +53,7 @@ async def test_switchbot_switch_with_restore_state(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.switchbot.switch.switchbot.Switchbot.switch_mode",
+        "inpui.components.switchbot.switch.switchbot.Switchbot.switch_mode",
         return_value=False,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -96,7 +96,7 @@ async def test_exception_handling_switch(
     entity_id = "switch.test_name"
 
     patch_target = (
-        f"homeassistant.components.switchbot.switch.switchbot.Switchbot.{mock_method}"
+        f"inpui.components.switchbot.switch.switchbot.Switchbot.{mock_method}"
     )
 
     with patch(patch_target, new=AsyncMock(side_effect=exception)):
@@ -143,7 +143,7 @@ async def test_relay_switch_control(
 
     mocked_instance = AsyncMock(return_value=True)
     with patch.multiple(
-        "homeassistant.components.switchbot.switch.switchbot.SwitchbotRelaySwitch",
+        "inpui.components.switchbot.switch.switchbot.SwitchbotRelaySwitch",
         update=AsyncMock(return_value=None),
         **{mock_method: mocked_instance},
     ):
@@ -180,7 +180,7 @@ async def test_relay_switch_2pm_control(
 
     mocked_instance = AsyncMock(return_value=True)
     with patch.multiple(
-        "homeassistant.components.switchbot.switch.switchbot.SwitchbotRelaySwitch2PM",
+        "inpui.components.switchbot.switch.switchbot.SwitchbotRelaySwitch2PM",
         update=AsyncMock(return_value=None),
         **{mock_method: mocked_instance},
     ):
@@ -280,7 +280,7 @@ async def test_relay_switch_control_with_exception(
     entry.add_to_hass(hass)
 
     with patch.multiple(
-        f"homeassistant.components.switchbot.switch.switchbot.{mock_class}",
+        f"inpui.components.switchbot.switch.switchbot.{mock_class}",
         update=AsyncMock(return_value=None),
         **{mock_method: AsyncMock(side_effect=exception)},
     ):

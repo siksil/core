@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 def binary_sensor_only() -> Generator[None]:
     """Limit platform setup to binary_sensor only."""
     with patch(
-        "homeassistant.components.arcam_fmj.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.arcam_fmj.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         yield
 

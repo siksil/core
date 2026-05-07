@@ -24,7 +24,7 @@ async def test_sensor(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test states of the sensor."""
-    with patch("homeassistant.components.v2c.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.v2c.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 

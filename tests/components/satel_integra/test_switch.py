@@ -40,7 +40,7 @@ from tests.common import (
 async def switches_only() -> AsyncGenerator[None]:
     """Enable only the switch platform."""
     with patch(
-        "homeassistant.components.satel_integra.PLATFORMS",
+        "inpui.components.satel_integra.PLATFORMS",
         [Platform.SWITCH],
     ):
         yield

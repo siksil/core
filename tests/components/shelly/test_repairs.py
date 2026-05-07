@@ -232,7 +232,7 @@ async def test_deprecated_firmware_issue(
     assert await async_setup_component(hass, "repairs", {})
     await hass.async_block_till_done()
     with patch(
-        "homeassistant.components.shelly.repairs.DEPRECATED_FIRMWARES",
+        "inpui.components.shelly.repairs.DEPRECATED_FIRMWARES",
         {
             MODEL_WALL_DISPLAY: DeprecatedFirmwareInfo(
                 {"min_firmware": "2.3.0", "ha_version": "2025.10.0"}
@@ -610,7 +610,7 @@ async def test_coiot_configured_no_issue_created(
     issue_id = COIOT_UNCONFIGURED_ISSUE_ID.format(unique=MOCK_MAC)
     assert await async_setup_component(hass, "repairs", {})
     with patch(
-        "homeassistant.components.shelly.utils.get_url",
+        "inpui.components.shelly.utils.get_url",
         return_value=raw_url,
     ):
         await hass.async_block_till_done()
@@ -653,7 +653,7 @@ async def test_coiot_push_issue_when_missing_hass_url(
     await init_integration(hass, 1)
 
     with patch(
-        "homeassistant.components.shelly.utils.get_url",
+        "inpui.components.shelly.utils.get_url",
         side_effect=NoURLAvailableError(),
     ):
         await mock_block_device_push_update_failure(hass, mock_block_device)
@@ -693,7 +693,7 @@ async def test_coiot_fix_flow_no_hass_url(
     assert result["type"] == "menu"
 
     with patch(
-        "homeassistant.components.shelly.utils.get_url",
+        "inpui.components.shelly.utils.get_url",
         side_effect=NoURLAvailableError(),
     ):
         result = await process_repair_fix_flow(

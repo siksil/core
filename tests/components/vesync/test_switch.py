@@ -194,7 +194,7 @@ async def test_switch_operations(
             return_value=True,
         ) as method_mock,
         patch(
-            "homeassistant.components.vesync.switch.VeSyncSwitchEntity.async_write_ha_state"
+            "inpui.components.vesync.switch.VeSyncSwitchEntity.async_write_ha_state"
         ) as update_mock,
     ):
         await hass.services.async_call(

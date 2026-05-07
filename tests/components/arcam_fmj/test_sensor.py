@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 def sensor_only() -> Generator[None]:
     """Limit platform setup to sensor only."""
-    with patch("homeassistant.components.arcam_fmj.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.arcam_fmj.PLATFORMS", [Platform.SENSOR]):
         yield
 
 

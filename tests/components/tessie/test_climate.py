@@ -44,7 +44,7 @@ async def test_climate(
 
     # Test setting climate on
     with patch(
-        "homeassistant.components.tessie.climate.start_climate_preconditioning",
+        "inpui.components.tessie.climate.start_climate_preconditioning",
         return_value=TEST_RESPONSE,
     ) as mock_set:
         await hass.services.async_call(
@@ -60,11 +60,11 @@ async def test_climate(
     # Test setting climate temp
     with (
         patch(
-            "homeassistant.components.tessie.climate.set_temperature",
+            "inpui.components.tessie.climate.set_temperature",
             return_value=TEST_RESPONSE,
         ) as mock_set,
         patch(
-            "homeassistant.components.tessie.climate.start_climate_preconditioning",
+            "inpui.components.tessie.climate.start_climate_preconditioning",
             return_value=TEST_RESPONSE,
         ) as mock_set2,
     ):
@@ -85,7 +85,7 @@ async def test_climate(
 
     # Test setting climate preset
     with patch(
-        "homeassistant.components.tessie.climate.set_climate_keeper_mode",
+        "inpui.components.tessie.climate.set_climate_keeper_mode",
         return_value=TEST_RESPONSE,
     ) as mock_set:
         await hass.services.async_call(
@@ -100,7 +100,7 @@ async def test_climate(
 
     # Test setting climate off
     with patch(
-        "homeassistant.components.tessie.climate.stop_climate",
+        "inpui.components.tessie.climate.stop_climate",
         return_value=TEST_RESPONSE,
     ) as mock_set:
         await hass.services.async_call(
@@ -123,7 +123,7 @@ async def test_errors(hass: HomeAssistant) -> None:
     # Test setting climate on with unknown error
     with (
         patch(
-            "homeassistant.components.tessie.climate.stop_climate",
+            "inpui.components.tessie.climate.stop_climate",
             side_effect=ERROR_UNKNOWN,
         ) as mock_set,
         pytest.raises(HomeAssistantError) as error,
@@ -142,7 +142,7 @@ async def test_errors(hass: HomeAssistant) -> None:
     # Test setting climate on with connection error
     with (
         patch(
-            "homeassistant.components.tessie.climate.stop_climate",
+            "inpui.components.tessie.climate.stop_climate",
             side_effect=ERROR_CONNECTION,
         ) as mock_set,
         pytest.raises(HomeAssistantError) as error,
@@ -161,7 +161,7 @@ async def test_errors(hass: HomeAssistant) -> None:
     # Test setting climate with child presence detection error
     with (
         patch(
-            "homeassistant.components.tessie.climate.start_climate_preconditioning",
+            "inpui.components.tessie.climate.start_climate_preconditioning",
             return_value={"result": False, "reason": "cpd_enabled"},
         ) as mock_set,
         pytest.raises(HomeAssistantError) as error,

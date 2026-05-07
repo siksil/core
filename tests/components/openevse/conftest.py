@@ -16,11 +16,11 @@ def mock_charger() -> Generator[MagicMock]:
     """Create a mock OpenEVSE charger."""
     with (
         patch(
-            "homeassistant.components.openevse.OpenEVSE",
+            "inpui.components.openevse.OpenEVSE",
             autospec=True,
         ) as mock,
         patch(
-            "homeassistant.components.openevse.config_flow.OpenEVSE",
+            "inpui.components.openevse.config_flow.OpenEVSE",
             new=mock,
         ),
     ):
@@ -97,7 +97,7 @@ def mock_charger() -> Generator[MagicMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.openevse.async_setup_entry", return_value=True
+        "inpui.components.openevse.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

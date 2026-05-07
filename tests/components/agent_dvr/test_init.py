@@ -21,7 +21,7 @@ async def _create_mocked_agent(available: bool = True):
 
 def _patch_init_agent(mocked_agent):
     return patch(
-        "homeassistant.components.agent_dvr.Agent",
+        "inpui.components.agent_dvr.Agent",
         return_value=mocked_agent,
     )
 
@@ -45,7 +45,7 @@ async def test_async_setup_entry_not_ready(hass: HomeAssistant) -> None:
     """Test that it throws ConfigEntryNotReady when exception occurs during setup."""
     entry = create_entry(hass)
     with patch(
-        "homeassistant.components.agent_dvr.Agent.update",
+        "inpui.components.agent_dvr.Agent.update",
         side_effect=AgentError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

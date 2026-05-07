@@ -29,7 +29,7 @@ WEBHOOK_URL = f"{BASE_URL}/api/webhook/webhook_id"
 def mock_webhook_id():
     """Mock webhook_id."""
     with patch(
-        "homeassistant.components.webhook.async_generate_id", return_value=WEBHOOK_ID
+        "inpui.components.webhook.async_generate_id", return_value=WEBHOOK_ID
     ):
         yield
 
@@ -45,7 +45,7 @@ def mock_secret():
 def mock_not_supports_encryption():
     """Mock non successful nacl import."""
     with patch(
-        "homeassistant.components.owntracks.config_flow.supports_encryption",
+        "inpui.components.owntracks.config_flow.supports_encryption",
         return_value=False,
     ):
         yield
@@ -128,7 +128,7 @@ async def test_unload(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_forward_entry_setups"
+        "inpui.config_entries.ConfigEntries.async_forward_entry_setups"
     ) as mock_forward:
         result = await hass.config_entries.flow.async_init(
             DOMAIN, context={"source": config_entries.SOURCE_USER}, data={}
@@ -141,7 +141,7 @@ async def test_unload(hass: HomeAssistant) -> None:
     assert entry.data["webhook_id"] in hass.data["webhook"]
 
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_unload_platforms",
+        "inpui.config_entries.ConfigEntries.async_unload_platforms",
         return_value=True,
     ) as mock_unload:
         assert await hass.config_entries.async_unload(entry.entry_id)
@@ -157,11 +157,11 @@ async def test_with_cloud_sub(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch(
             "hass_nabucasa.cloudhooks.Cloudhooks.async_create",
             return_value={"cloudhook_url": "https://hooks.nabu.casa/ABCD"},
@@ -186,11 +186,11 @@ async def test_with_cloud_sub_not_connected(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=False),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=False),
         patch(
             "hass_nabucasa.cloudhooks.Cloudhooks.async_create",
             return_value={"cloudhook_url": "https://hooks.nabu.casa/ABCD"},

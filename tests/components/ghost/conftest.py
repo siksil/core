@@ -76,10 +76,10 @@ def mock_ghost_api() -> Generator[AsyncMock]:
     """Mock the GhostAdminAPI."""
     with (
         patch(
-            "homeassistant.components.ghost.GhostAdminAPI", autospec=True
+            "inpui.components.ghost.GhostAdminAPI", autospec=True
         ) as mock_api_class,
         patch(
-            "homeassistant.components.ghost.config_flow.GhostAdminAPI",
+            "inpui.components.ghost.config_flow.GhostAdminAPI",
             new=mock_api_class,
         ),
     ):
@@ -103,7 +103,7 @@ def mock_ghost_api() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.ghost.async_setup_entry",
+        "inpui.components.ghost.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

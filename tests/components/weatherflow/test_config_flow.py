@@ -71,7 +71,7 @@ async def test_devices_with_various_mocks_errors(
     """Test the various on error states - then finally complete the test."""
 
     with patch(
-        "homeassistant.components.weatherflow.config_flow.WeatherFlowListener.on",
+        "inpui.components.weatherflow.config_flow.WeatherFlowListener.on",
         side_effect=exception,
     ):
         result = await hass.config_entries.flow.async_init(

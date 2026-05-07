@@ -29,7 +29,7 @@ async def test_hub_setup(
 ) -> None:
     """Successful setup."""
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_forward_entry_setups",
+        "inpui.config_entries.ConfigEntries.async_forward_entry_setups",
         return_value=True,
     ) as forward_entry_setup:
         config_entry = await config_entry_factory()
@@ -73,7 +73,7 @@ async def test_reset_fails(
     assert config_entry_setup.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_forward_entry_unload",
+        "inpui.config_entries.ConfigEntries.async_forward_entry_unload",
         return_value=False,
     ):
         assert not await hass.config_entries.async_unload(config_entry_setup.entry_id)
@@ -151,7 +151,7 @@ async def test_reconnect_mechanism_exceptions(
     with (
         patch("aiounifi.Controller.login", side_effect=exception),
         patch(
-            "homeassistant.components.unifi.hub.hub.UnifiWebsocket.reconnect"
+            "inpui.components.unifi.hub.hub.UnifiWebsocket.reconnect"
         ) as mock_reconnect,
     ):
         await mock_websocket_state.disconnect()

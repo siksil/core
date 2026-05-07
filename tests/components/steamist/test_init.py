@@ -36,7 +36,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed
 def mock_single_broadcast_address():
     """Mock network's async_async_get_ipv4_broadcast_addresses."""
     with patch(
-        "homeassistant.components.network.async_get_ipv4_broadcast_addresses",
+        "inpui.components.network.async_get_ipv4_broadcast_addresses",
         return_value={"10.255.255.255"},
     ):
         yield
@@ -62,7 +62,7 @@ async def test_config_entry_retry_later(hass: HomeAssistant) -> None:
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.steamist.Steamist.async_get_status",
+        "inpui.components.steamist.Steamist.async_get_status",
         side_effect=TimeoutError,
     ):
         await async_setup_component(hass, steamist.DOMAIN, {steamist.DOMAIN: {}})
@@ -98,7 +98,7 @@ async def test_config_entry_fills_unique_id_with_directed_discovery(
     with (
         _patch_status(MOCK_ASYNC_GET_STATUS_ACTIVE),
         patch(
-            "homeassistant.components.steamist.discovery.AIODiscovery30303",
+            "inpui.components.steamist.discovery.AIODiscovery30303",
             return_value=mock_aio_discovery,
         ),
     ):
@@ -131,7 +131,7 @@ async def test_discovery_happens_at_interval(
     mock_aio_discovery.async_scan = AsyncMock()
     with (
         patch(
-            "homeassistant.components.steamist.discovery.AIODiscovery30303",
+            "inpui.components.steamist.discovery.AIODiscovery30303",
             return_value=mock_aio_discovery,
         ),
         _patch_status(MOCK_ASYNC_GET_STATUS_ACTIVE),

@@ -63,7 +63,7 @@ async def test_google_entity_sync_serialize_with_local_sdk(hass: HomeAssistant) 
 
     for device_type in NOT_EXPOSE_LOCAL:
         with patch(
-            "homeassistant.components.google_assistant.helpers.get_google_type",
+            "inpui.components.google_assistant.helpers.get_google_type",
             return_value=device_type,
         ):
             serialized = entity.sync_serialize(None, "mock-uuid")
@@ -108,7 +108,7 @@ async def test_google_entity_sync_serialize_with_matter(
     hass.config.components.add("matter")
 
     with patch(
-        "homeassistant.components.matter.get_matter_device_info",
+        "inpui.components.matter.get_matter_device_info",
         return_value=MatterDeviceInfo(
             unique_id="mock-unique-id",
             vendor_id="mock-vendor-id",
@@ -176,7 +176,7 @@ async def test_config_local_sdk(
 
     assert config.is_local_connected is True
     with patch(
-        "homeassistant.components.google_assistant.helpers.utcnow",
+        "inpui.components.google_assistant.helpers.utcnow",
         return_value=dt_util.utcnow() + timedelta(seconds=90),
     ):
         assert config.is_local_connected is False
@@ -472,7 +472,7 @@ def test_async_get_entities_cached(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.google_assistant.helpers.GoogleEntity.traits",
+        "inpui.components.google_assistant.helpers.GoogleEntity.traits",
         return_value=RuntimeError("Should not be called"),
     ):
         google_entities = helpers.async_get_entities(hass, config)

@@ -71,7 +71,7 @@ async def test_switches_with_port_cgi(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that switches are loaded properly using port.cgi."""
-    with patch("homeassistant.components.axis.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.axis.PLATFORMS", [Platform.SWITCH]):
         config_entry = await config_entry_factory()
 
     mock_rtsp_event(
@@ -123,7 +123,7 @@ async def test_switches_with_port_management(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that switches are loaded properly using port management."""
-    with patch("homeassistant.components.axis.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.axis.PLATFORMS", [Platform.SWITCH]):
         config_entry = await config_entry_factory()
 
     mock_rtsp_event(

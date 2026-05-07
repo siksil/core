@@ -49,7 +49,7 @@ async def test_moon_day(
     mock_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.moon.sensor.moon.phase", return_value=moon_value
+        "inpui.components.moon.sensor.moon.phase", return_value=moon_value
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()

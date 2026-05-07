@@ -58,7 +58,7 @@ async def test_info_endpoint_return_info(
     assert await async_setup_component(hass, "homeassistant", {})
 
     with patch(
-        "homeassistant.components.homeassistant.system_health.system_health_info",
+        "inpui.components.homeassistant.system_health.system_health_info",
         return_value={"hello": True},
     ):
         assert await async_setup_component(hass, "system_health", {})

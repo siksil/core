@@ -77,7 +77,7 @@ async def test_form_homekit_and_dhcp_cannot_connect(
     ignored_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.hunterdouglas_powerview.util.Hub.query_firmware",
+        "inpui.components.hunterdouglas_powerview.util.Hub.query_firmware",
         side_effect=TimeoutError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -207,7 +207,7 @@ async def test_form_cannot_connect(
 
     # Simulate a timeout error
     with patch(
-        "homeassistant.components.hunterdouglas_powerview.util.Hub.query_firmware",
+        "inpui.components.hunterdouglas_powerview.util.Hub.query_firmware",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -246,11 +246,11 @@ async def test_form_no_data(
 
     with (
         patch(
-            "homeassistant.components.hunterdouglas_powerview.util.Hub.request_raw_data",
+            "inpui.components.hunterdouglas_powerview.util.Hub.request_raw_data",
             return_value={},
         ),
         patch(
-            "homeassistant.components.hunterdouglas_powerview.util.Hub.request_home_data",
+            "inpui.components.hunterdouglas_powerview.util.Hub.request_home_data",
             return_value={},
         ),
     ):
@@ -290,7 +290,7 @@ async def test_form_unknown_exception(
 
     # Simulate a transient error
     with patch(
-        "homeassistant.components.hunterdouglas_powerview.util.Hub.query_firmware",
+        "inpui.components.hunterdouglas_powerview.util.Hub.query_firmware",
         side_effect=SyntaxError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -329,7 +329,7 @@ async def test_form_unsupported_device(
 
     # Simulate a gen 3 secondary hub
     with patch(
-        "homeassistant.components.hunterdouglas_powerview.util.Hub.request_raw_data",
+        "inpui.components.hunterdouglas_powerview.util.Hub.request_raw_data",
         return_value=await async_load_json_object_fixture(
             hass, "gen3/gateway/secondary.json", DOMAIN
         ),

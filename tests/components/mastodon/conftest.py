@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.mastodon.async_setup_entry",
+        "inpui.components.mastodon.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -27,7 +27,7 @@ def mock_mastodon_client() -> Generator[AsyncMock]:
     """Mock a Mastodon client."""
     with (
         patch(
-            "homeassistant.components.mastodon.utils.Mastodon",
+            "inpui.components.mastodon.utils.Mastodon",
             autospec=True,
         ) as mock_client,
     ):

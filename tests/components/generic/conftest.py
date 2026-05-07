@@ -88,7 +88,7 @@ def mock_create_stream(hass: HomeAssistant) -> Generator[MagicMock]:
     mock_stream.stop = AsyncMock()
     mock_stream.endpoint_url.return_value = "http://127.0.0.1/nothing"
     with patch(
-        "homeassistant.components.generic.config_flow.create_stream",
+        "inpui.components.generic.config_flow.create_stream",
         return_value=mock_stream,
     ) as mock_create_stream:
         yield mock_create_stream
@@ -98,7 +98,7 @@ def mock_create_stream(hass: HomeAssistant) -> Generator[MagicMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setup entry."""
     with patch(
-        "homeassistant.components.generic.async_setup_entry",
+        "inpui.components.generic.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

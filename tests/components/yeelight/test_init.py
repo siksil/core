@@ -167,7 +167,7 @@ async def test_setup_discovery_with_manually_configured_network_adapter(
         _patch_discovery(),
         patch(f"{MODULE}.AsyncBulb", return_value=mocked_bulb),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_adapters",
+            "inpui.components.zeroconf.network.async_get_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG,
         ),
     ):
@@ -225,7 +225,7 @@ async def test_setup_discovery_with_manually_configured_network_adapter_one_fail
         _patch_discovery(),
         patch(f"{MODULE}.AsyncBulb", return_value=mocked_bulb),
         patch(
-            "homeassistant.components.zeroconf.network.async_get_adapters",
+            "inpui.components.zeroconf.network.async_get_adapters",
             return_value=_ADAPTERS_WITH_MANUAL_CONFIG_ONE_FAILING,
         ),
     ):

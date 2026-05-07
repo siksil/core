@@ -42,7 +42,7 @@ async def test_setup_missing_config(hass: HomeAssistant) -> None:
 async def emoncms_client() -> AsyncGenerator[AsyncMock]:
     """Mock pyemoncms client with successful responses."""
     with patch(
-        "homeassistant.components.emoncms_history.EmoncmsClient", autospec=True
+        "inpui.components.emoncms_history.EmoncmsClient", autospec=True
     ) as mock_client:
         client = mock_client.return_value
         client.async_input_post.return_value = '{"success": true}'

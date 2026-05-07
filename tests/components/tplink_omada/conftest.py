@@ -53,7 +53,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.tplink_omada.async_setup_entry", return_value=True
+        "inpui.components.tplink_omada.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -176,11 +176,11 @@ def mock_omada_client(mock_omada_site_client: AsyncMock) -> Generator[MagicMock]
     """Mock Omada client."""
     with (
         patch(
-            "homeassistant.components.tplink_omada.create_omada_client",
+            "inpui.components.tplink_omada.create_omada_client",
             autospec=True,
         ) as client_mock,
         patch(
-            "homeassistant.components.tplink_omada.config_flow.create_omada_client",
+            "inpui.components.tplink_omada.config_flow.create_omada_client",
             new=client_mock,
         ),
     ):
@@ -199,7 +199,7 @@ def mock_omada_clients_only_client(
 ) -> Generator[MagicMock]:
     """Mock Omada client."""
     with patch(
-        "homeassistant.components.tplink_omada.create_omada_client",
+        "inpui.components.tplink_omada.create_omada_client",
         autospec=True,
     ) as client_mock:
         client = client_mock.return_value

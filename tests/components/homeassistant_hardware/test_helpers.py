@@ -309,7 +309,7 @@ async def test_firmware_callback_no_usb_device(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.helpers.usb_device_from_path",
+            "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
             return_value=None,
         ),
         caplog.at_level(logging.DEBUG),
@@ -350,7 +350,7 @@ async def test_firmware_callback_no_hardware_domain(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_hardware.helpers.usb_device_from_path",
+            "inpui.components.homeassistant_hardware.helpers.usb_device_from_path",
             return_value=usb_device,
         ),
         caplog.at_level(logging.DEBUG),

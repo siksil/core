@@ -33,7 +33,7 @@ def patch_setup_entry(domain: str, *, enabled: bool = True):
     if not enabled:
         return nullcontext()
 
-    return patch(f"homeassistant.components.bond.{domain}.async_setup_entry")
+    return patch(f"inpui.components.bond.{domain}.async_setup_entry")
 
 
 async def setup_bond_entity(
@@ -83,7 +83,7 @@ async def setup_platform(
     mock_entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.bond.PLATFORMS", [platform]),
+        patch("inpui.components.bond.PLATFORMS", [platform]),
         patch_bond_version(return_value=bond_version),
         patch_bond_bridge(return_value=bridge),
         patch_bond_token(return_value=token),
@@ -115,7 +115,7 @@ def patch_bond_version(
         }
 
     return patch(
-        "homeassistant.components.bond.Bond.version",
+        "inpui.components.bond.Bond.version",
         return_value=return_value,
         side_effect=side_effect,
     )
@@ -136,7 +136,7 @@ def patch_bond_bridge(
         }
 
     return patch(
-        "homeassistant.components.bond.Bond.bridge",
+        "inpui.components.bond.Bond.bridge",
         return_value=return_value,
         side_effect=side_effect,
     )
@@ -153,7 +153,7 @@ def patch_bond_token(
         return_value = {"locked": 1}
 
     return patch(
-        "homeassistant.components.bond.Bond.token",
+        "inpui.components.bond.Bond.token",
         return_value=return_value,
         side_effect=side_effect,
     )
@@ -168,7 +168,7 @@ def patch_bond_device_ids(enabled: bool = True, return_value=None, side_effect=N
         return_value = []
 
     return patch(
-        "homeassistant.components.bond.Bond.devices",
+        "inpui.components.bond.Bond.devices",
         return_value=return_value,
         side_effect=side_effect,
     )
@@ -177,7 +177,7 @@ def patch_bond_device_ids(enabled: bool = True, return_value=None, side_effect=N
 def patch_bond_device(return_value=None):
     """Patch Bond API device endpoint."""
     return patch(
-        "homeassistant.components.bond.Bond.device",
+        "inpui.components.bond.Bond.device",
         return_value=return_value,
     )
 
@@ -185,20 +185,20 @@ def patch_bond_device(return_value=None):
 def patch_start_bpup():
     """Patch start_bpup."""
     return patch(
-        "homeassistant.components.bond.start_bpup",
+        "inpui.components.bond.start_bpup",
         return_value=MagicMock(),
     )
 
 
 def patch_bond_action():
     """Patch Bond API action endpoint."""
-    return patch("homeassistant.components.bond.Bond.action")
+    return patch("inpui.components.bond.Bond.action")
 
 
 def patch_bond_action_returns_clientresponseerror():
     """Patch Bond API action endpoint to throw ClientResponseError."""
     return patch(
-        "homeassistant.components.bond.Bond.action",
+        "inpui.components.bond.Bond.action",
         side_effect=ClientResponseError(
             request_info=None, history=None, status=405, message="Method Not Allowed"
         ),
@@ -211,7 +211,7 @@ def patch_bond_device_properties(return_value=None):
         return_value = {}
 
     return patch(
-        "homeassistant.components.bond.Bond.device_properties",
+        "inpui.components.bond.Bond.device_properties",
         return_value=return_value,
     )
 
@@ -222,7 +222,7 @@ def patch_bond_device_state(return_value=None, side_effect=None):
         return_value = {}
 
     return patch(
-        "homeassistant.components.bond.Bond.device_state",
+        "inpui.components.bond.Bond.device_state",
         return_value=return_value,
         side_effect=side_effect,
     )

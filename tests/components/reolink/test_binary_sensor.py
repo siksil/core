@@ -26,7 +26,7 @@ async def test_motion_sensor(
     """Test binary sensor entity with motion sensor."""
     reolink_host.model = TEST_DUO_MODEL
     reolink_host.motion_detected.return_value = True
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -60,7 +60,7 @@ async def test_smart_ai_sensor(
     """Test smart ai binary sensor entity."""
     reolink_host.model = TEST_HOST_MODEL
     reolink_host.baichuan.smart_ai_state.return_value = True
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -85,7 +85,7 @@ async def test_index_sensor(
     """Test index binary sensor entity."""
     reolink_host.baichuan.io_inputs.return_value = [0]
     reolink_host.baichuan.io_input_state.return_value = True
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -125,7 +125,7 @@ async def test_tcp_callback(
     reolink_host.baichuan.register_callback = callback_mock.register_callback
     reolink_host.motion_detected.return_value = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

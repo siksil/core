@@ -9,8 +9,8 @@ import pytest
 def fritz_fixture() -> Mock:
     """Patch libraries."""
     with (
-        patch("homeassistant.components.fritzbox.coordinator.Fritzhome") as fritz,
-        patch("homeassistant.components.fritzbox.config_flow.Fritzhome"),
+        patch("inpui.components.fritzbox.coordinator.Fritzhome") as fritz,
+        patch("inpui.components.fritzbox.config_flow.Fritzhome"),
     ):
         fritz.return_value.base_url = "http://1.2.3.4"
         yield fritz

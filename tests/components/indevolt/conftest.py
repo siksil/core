@@ -75,11 +75,11 @@ def mock_indevolt(generation: int) -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.indevolt.coordinator.IndevoltAPI",
+            "inpui.components.indevolt.coordinator.IndevoltAPI",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.indevolt.config_flow.IndevoltAPI",
+            "inpui.components.indevolt.config_flow.IndevoltAPI",
             new=mock_client,
         ),
     ):
@@ -103,7 +103,7 @@ def mock_indevolt(generation: int) -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock the async_setup_entry function."""
     with patch(
-        "homeassistant.components.indevolt.async_setup_entry",
+        "inpui.components.indevolt.async_setup_entry",
         return_value=True,
     ) as mock_setup:
         yield mock_setup

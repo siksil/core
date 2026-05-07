@@ -18,7 +18,7 @@ async def setup_platform(hass: HomeAssistant, platform: Platform) -> None:
         MockConfigEntry(
             domain=DOMAIN, data={"username": "foo", "token": {}}
         ).add_to_hass(hass)
-    with patch("homeassistant.components.ring.PLATFORMS", [platform]):
+    with patch("inpui.components.ring.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
     await hass.async_block_till_done(wait_background_tasks=True)
 

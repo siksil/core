@@ -31,7 +31,7 @@ async def test_setup_success_no_region(hass: HomeAssistant) -> None:
     )
     mock_config.add_to_hass(hass)
 
-    with patch("homeassistant.components.sharkiq.async_setup_entry", return_value=True):
+    with patch("inpui.components.sharkiq.async_setup_entry", return_value=True):
         result = await async_setup_component(hass=hass, domain=DOMAIN, config={})
 
     assert result is True
@@ -50,7 +50,7 @@ async def test_form(hass: HomeAssistant) -> None:
         patch("sharkiq.AylaApi.async_sign_in", return_value=True),
         patch("sharkiq.AylaApi.async_set_cookie"),
         patch(
-            "homeassistant.components.sharkiq.async_setup_entry",
+            "inpui.components.sharkiq.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

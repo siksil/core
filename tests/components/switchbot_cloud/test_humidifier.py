@@ -42,7 +42,7 @@ async def test_humidifier(
     mock_get_status.return_value = json_data[index]
 
     with patch(
-        "homeassistant.components.switchbot_cloud.PLATFORMS", [Platform.HUMIDIFIER]
+        "inpui.components.switchbot_cloud.PLATFORMS", [Platform.HUMIDIFIER]
     ):
         entry = await configure_integration(hass)
 

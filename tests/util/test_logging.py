@@ -160,9 +160,9 @@ async def test_catch_log_exception_catches_and_logs() -> None:
     assert saved_args == [("failure sync passed",)]
 
 
-@patch("homeassistant.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 5)
+@patch("inpui.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 5)
 @patch(
-    "homeassistant.util.logging.HomeAssistantQueueListener.EXCLUDED_LOG_COUNT_MODULES",
+    "inpui.util.logging.HomeAssistantQueueListener.EXCLUDED_LOG_COUNT_MODULES",
     ["excluded"],
 )
 @pytest.mark.parametrize(
@@ -222,7 +222,7 @@ async def test_noisy_loggers(
     logging.root.handlers[0].close()
 
 
-@patch("homeassistant.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 1)
+@patch("inpui.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 1)
 async def test_noisy_loggers_ignores_self(
     hass: HomeAssistant, caplog: pytest.LogCaptureFixture
 ) -> None:
@@ -244,7 +244,7 @@ async def test_noisy_loggers_ignores_self(
     logging.root.handlers[0].close()
 
 
-@patch("homeassistant.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 5)
+@patch("inpui.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 5)
 async def test_noisy_loggers_ignores_lower_than_info(
     hass: HomeAssistant, caplog: pytest.LogCaptureFixture
 ) -> None:
@@ -273,7 +273,7 @@ async def test_noisy_loggers_ignores_lower_than_info(
     logging.root.handlers[0].close()
 
 
-@patch("homeassistant.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 3)
+@patch("inpui.util.logging.HomeAssistantQueueListener.MAX_LOGS_COUNT", 3)
 async def test_noisy_loggers_counters_reset(
     hass: HomeAssistant,
     caplog: pytest.LogCaptureFixture,

@@ -138,7 +138,7 @@ async def test_invalid_mean_types(
         # Check that the invalid mean type was skipped
         assert manager.get_many(session) == valid_metadata
         assert (
-            "homeassistant.components.recorder.table_managers.statistics_meta",
+            "inpui.components.recorder.table_managers.statistics_meta",
             logging.WARNING,
             "Invalid mean type found for statistic_id: sensor.invalid, mean_type: 12345. Skipping",
         ) in caplog.record_tuples

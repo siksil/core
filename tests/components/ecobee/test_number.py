@@ -51,7 +51,7 @@ async def test_set_min_time_home(hass: HomeAssistant) -> None:
     """Test the number can set min time home."""
     target_value = 40
     with patch(
-        "homeassistant.components.ecobee.Ecobee.set_ventilator_min_on_time_home"
+        "inpui.components.ecobee.Ecobee.set_ventilator_min_on_time_home"
     ) as mock_set_min_home_time:
         await setup_platform(hass, NUMBER_DOMAIN)
 
@@ -69,7 +69,7 @@ async def test_set_min_time_away(hass: HomeAssistant) -> None:
     """Test the number can set min time away."""
     target_value = 0
     with patch(
-        "homeassistant.components.ecobee.Ecobee.set_ventilator_min_on_time_away"
+        "inpui.components.ecobee.Ecobee.set_ventilator_min_on_time_away"
     ) as mock_set_min_away_time:
         await setup_platform(hass, NUMBER_DOMAIN)
 
@@ -108,7 +108,7 @@ async def test_set_compressor_protection_min_temp(hass: HomeAssistant) -> None:
     """
     target_value = 0
     with patch(
-        "homeassistant.components.ecobee.Ecobee.set_aux_cutover_threshold"
+        "inpui.components.ecobee.Ecobee.set_aux_cutover_threshold"
     ) as mock_set_compressor_min_temp:
         await setup_platform(hass, NUMBER_DOMAIN)
 

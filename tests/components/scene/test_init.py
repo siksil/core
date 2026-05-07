@@ -138,7 +138,7 @@ async def test_activate_scene(hass: HomeAssistant, entities: list[MockLight]) ->
     assert hass.states.get("scene.test").state == STATE_UNKNOWN
 
     now = dt_util.utcnow()
-    with patch("homeassistant.core.dt_util.utcnow", return_value=now):
+    with patch("inpui.core.dt_util.utcnow", return_value=now):
         await activate(hass, "scene.test")
 
     assert hass.states.get("scene.test").state == now.isoformat()
@@ -152,7 +152,7 @@ async def test_activate_scene(hass: HomeAssistant, entities: list[MockLight]) ->
     calls = async_mock_service(hass, "light", "turn_on")
 
     now = dt_util.utcnow()
-    with patch("homeassistant.core.dt_util.utcnow", return_value=now):
+    with patch("inpui.core.dt_util.utcnow", return_value=now):
         await hass.services.async_call(
             scene.DOMAIN, "turn_on", {"transition": 42, "entity_id": "scene.test"}
         )

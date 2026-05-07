@@ -28,7 +28,7 @@ def mock_default_discovery() -> Generator[None]:
     """Mock the discovery functions with default info."""
     with (
         patch.multiple(
-            "homeassistant.components.onkyo.receiver",
+            "inpui.components.onkyo.receiver",
             DEVICE_INTERVIEW_TIMEOUT=1,
             DEVICE_DISCOVERY_TIMEOUT=1,
         ),
@@ -41,7 +41,7 @@ def mock_default_discovery() -> Generator[None]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock integration setup."""
     with patch(
-        "homeassistant.components.onkyo.async_setup_entry",
+        "inpui.components.onkyo.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -51,7 +51,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_connect() -> Generator[AsyncMock]:
     """Mock an Onkyo connect."""
     with patch(
-        "homeassistant.components.onkyo.receiver.connect",
+        "inpui.components.onkyo.receiver.connect",
     ) as connect:
         yield connect.return_value.__aenter__
 

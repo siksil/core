@@ -40,7 +40,7 @@ async def test_select(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test select platform entities against snapshot."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -62,7 +62,7 @@ async def test_no_select(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test select platform entities against snapshot."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
     assert not er.async_entries_for_config_entry(entity_registry, config_entry.entry_id)
 
@@ -94,7 +94,7 @@ async def test_select_relay_actions(
     action: str,
 ) -> None:
     """Test select platform entities dry contact relay actions."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SELECT}."
@@ -132,7 +132,7 @@ async def test_select_relay_modes(
     relay: str,
 ) -> None:
     """Test select platform dry contact relay mode changes."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SELECT}."
@@ -173,7 +173,7 @@ async def test_update_dry_contact_actions_with_error(
     action: str,
 ) -> None:
     """Test select platform update dry contact action with error return."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
 
     entity_base = f"{Platform.SELECT}."
@@ -216,7 +216,7 @@ async def test_select_storage_modes(
     mode: str,
 ) -> None:
     """Test select platform entities storage mode changes."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"{Platform.SELECT}.{use_serial}_storage_mode"
@@ -256,7 +256,7 @@ async def test_set_storage_modes_with_error(
     mode: str,
 ) -> None:
     """Test select platform set storage mode with error return."""
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"{Platform.SELECT}.{use_serial}_storage_mode"
@@ -293,7 +293,7 @@ async def test_select_storage_modes_if_none(
 ) -> None:
     """Test select platform entity storage mode when tariff storage_mode is none."""
     mock_envoy.data.tariff.storage_settings.mode = None
-    with patch("homeassistant.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.enphase_envoy.PLATFORMS", [Platform.SELECT]):
         await setup_integration(hass, config_entry)
 
     test_entity = f"{Platform.SELECT}.{use_serial}_storage_mode"

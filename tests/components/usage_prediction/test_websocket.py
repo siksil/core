@@ -23,7 +23,7 @@ NOW = datetime(2026, 8, 26, 15, 0, 0, tzinfo=dt_util.UTC)
 def mock_predict_common_control() -> Generator[Mock]:
     """Return a mock result for common control."""
     with patch(
-        "homeassistant.components.usage_prediction.common_control.async_predict_common_control",
+        "inpui.components.usage_prediction.common_control.async_predict_common_control",
         return_value=EntityUsagePredictions(
             morning=["light.kitchen"],
             afternoon=["climate.thermostat"],

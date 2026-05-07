@@ -31,7 +31,7 @@ BACK_GARDEN = "valve.back_garden"
 def valve_only() -> Generator[None]:
     """Enable only the valve platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.VALVE],
     ):
         yield

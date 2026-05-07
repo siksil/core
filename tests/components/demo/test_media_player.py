@@ -64,7 +64,7 @@ TEST_ENTITY_ID = "media_player.walkman"
 def autouse_disable_platforms(disable_platforms):
     """Auto use the disable_platforms fixture."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.MEDIA_PLAYER],
     ):
         yield
@@ -74,7 +74,7 @@ def autouse_disable_platforms(disable_platforms):
 def media_player_media_seek_fixture():
     """Mock demo YouTube player media seek."""
     with patch(
-        "homeassistant.components.demo.media_player.DemoYoutubePlayer.media_seek",
+        "inpui.components.demo.media_player.DemoYoutubePlayer.media_seek",
         autospec=True,
     ) as seek:
         yield seek

@@ -37,7 +37,7 @@ async def test_remove_config_entry(
 ) -> None:
     """Test removing a config entry."""
 
-    with patch("homeassistant.components.local_calendar.Path.unlink") as unlink_mock:
+    with patch("inpui.components.local_calendar.Path.unlink") as unlink_mock:
         assert await hass.config_entries.async_remove(config_entry.entry_id)
         await hass.async_block_till_done()
         unlink_mock.assert_called_once()

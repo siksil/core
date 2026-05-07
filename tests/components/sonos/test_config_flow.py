@@ -46,11 +46,11 @@ async def test_user_form(
     assert result["errors"] is None
     with (
         patch(
-            "homeassistant.components.sonos.async_setup",
+            "inpui.components.sonos.async_setup",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.sonos.async_setup_entry",
+            "inpui.components.sonos.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -71,7 +71,7 @@ async def test_user_form_already_created(hass: HomeAssistant) -> None:
     """Ensure we abort a flow if the entry is already created from config."""
     config = {DOMAIN: {MP_DOMAIN: {CONF_HOSTS: "192.168.4.2"}}}
     with patch(
-        "homeassistant.components.sonos.async_setup_entry",
+        "inpui.components.sonos.async_setup_entry",
         return_value=True,
     ):
         await async_setup_component(hass, DOMAIN, config)
@@ -100,11 +100,11 @@ async def test_zeroconf_form(
 
     with (
         patch(
-            "homeassistant.components.sonos.async_setup",
+            "inpui.components.sonos.async_setup",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.sonos.async_setup_entry",
+            "inpui.components.sonos.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -161,11 +161,11 @@ async def test_ssdp_discovery(hass: HomeAssistant, soco) -> None:
 
     with (
         patch(
-            "homeassistant.components.sonos.async_setup",
+            "inpui.components.sonos.async_setup",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.sonos.async_setup_entry",
+            "inpui.components.sonos.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -214,11 +214,11 @@ async def test_zeroconf_sonos_v1(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.sonos.async_setup",
+            "inpui.components.sonos.async_setup",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.sonos.async_setup_entry",
+            "inpui.components.sonos.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

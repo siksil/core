@@ -101,7 +101,7 @@ async def setup_entry(
     if platforms is None:
         platforms = []
 
-    with patch("homeassistant.components.gardena_bluetooth.PLATFORMS", platforms):
+    with patch("inpui.components.gardena_bluetooth.PLATFORMS", platforms):
         if mock_entry is None:
             mock_entry = get_config_entry(service_info)
 

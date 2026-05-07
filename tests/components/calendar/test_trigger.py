@@ -386,7 +386,7 @@ def calls_data(hass: HomeAssistant) -> Callable[[], list[dict[str, Any]]]:
 def mock_update_interval() -> Generator[None]:
     """Fixture to override the update interval for refreshing events."""
     with patch(
-        "homeassistant.components.calendar.trigger.UPDATE_INTERVAL",
+        "inpui.components.calendar.trigger.UPDATE_INTERVAL",
         new=TEST_UPDATE_INTERVAL,
     ):
         yield

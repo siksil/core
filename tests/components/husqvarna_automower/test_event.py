@@ -175,7 +175,7 @@ async def test_event_snapshot(
 ) -> None:
     """Test that a new message arriving over the websocket updates the sensor."""
     with patch(
-        "homeassistant.components.husqvarna_automower.PLATFORMS",
+        "inpui.components.husqvarna_automower.PLATFORMS",
         [Platform.EVENT],
     ):
         callbacks: list[Callable[[SingleMessageData], None]] = []

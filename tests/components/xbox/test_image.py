@@ -30,7 +30,7 @@ from tests.typing import ClientSessionGenerator
 def image_only() -> Generator[None]:
     """Enable only the image platform."""
     with patch(
-        "homeassistant.components.xbox.PLATFORMS",
+        "inpui.components.xbox.PLATFORMS",
         [Platform.IMAGE],
     ):
         yield
@@ -40,7 +40,7 @@ def image_only() -> Generator[None]:
 def mock_getrandbits():
     """Mock image access token which normally is randomized."""
     with patch(
-        "homeassistant.components.image.SystemRandom.getrandbits",
+        "inpui.components.image.SystemRandom.getrandbits",
         return_value=1312,
     ):
         yield

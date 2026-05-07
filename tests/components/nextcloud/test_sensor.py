@@ -22,7 +22,7 @@ async def test_async_setup_entry(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test a successful setup entry."""
-    with patch("homeassistant.components.nextcloud.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.nextcloud.PLATFORMS", [Platform.SENSOR]):
         entry = await init_integration(hass, VALID_CONFIG, NC_DATA)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

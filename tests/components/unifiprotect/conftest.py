@@ -160,7 +160,7 @@ def mock_entry(
     with (
         _patch_discovery(no_device=True),
         patch(
-            "homeassistant.components.unifiprotect.utils.ProtectApiClient"
+            "inpui.components.unifiprotect.utils.ProtectApiClient"
         ) as mock_api,
     ):
         ufp_config_entry.add_to_hass(hass)
@@ -477,11 +477,11 @@ def mock_setup_fixture() -> Generator[AsyncMock]:
     """Mock async_setup and async_setup_entry to prevent reload issues in tests."""
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ) as mock,
     ):
@@ -492,7 +492,7 @@ def mock_setup_fixture() -> Generator[AsyncMock]:
 def mock_api_bootstrap_fixture(bootstrap: Bootstrap):
     """Mock the ProtectApiClient.get_bootstrap method."""
     with patch(
-        "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+        "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
         return_value=bootstrap,
     ) as mock:
         yield mock
@@ -502,7 +502,7 @@ def mock_api_bootstrap_fixture(bootstrap: Bootstrap):
 def mock_api_meta_info_fixture():
     """Mock the ProtectApiClient.get_meta_info method."""
     with patch(
-        "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+        "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
         return_value=None,
     ) as mock:
         yield mock

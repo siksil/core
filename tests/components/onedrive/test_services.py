@@ -51,11 +51,11 @@ def mock_upload_file(
     """Fixture that mocks out the file calls using the FakeFile fixture."""
     with (
         patch(
-            "homeassistant.components.onedrive.services.Path.read_bytes",
+            "inpui.components.onedrive.services.Path.read_bytes",
             return_value=upload_file.content,
         ),
         patch(
-            "homeassistant.components.onedrive.services.Path.exists",
+            "inpui.components.onedrive.services.Path.exists",
             return_value=upload_file.exists,
         ),
         patch.object(

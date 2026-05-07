@@ -70,7 +70,7 @@ async def test_duplicate_error(hass: HomeAssistant) -> None:
 async def test_create_entry(hass: HomeAssistant) -> None:
     """Test that the user step works."""
     with (
-        patch("homeassistant.components.dunehd.async_setup_entry"),
+        patch("inpui.components.dunehd.async_setup_entry"),
         patch("pdunehd.DuneHDPlayer.update_state", return_value=DUNEHD_STATE),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -85,7 +85,7 @@ async def test_create_entry(hass: HomeAssistant) -> None:
 async def test_create_entry_with_ipv6_address(hass: HomeAssistant) -> None:
     """Test that the user step works with device IPv6 address.."""
     with (
-        patch("homeassistant.components.dunehd.async_setup_entry"),
+        patch("inpui.components.dunehd.async_setup_entry"),
         patch("pdunehd.DuneHDPlayer.update_state", return_value=DUNEHD_STATE),
     ):
         result = await hass.config_entries.flow.async_init(

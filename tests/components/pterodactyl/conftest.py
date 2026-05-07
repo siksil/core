@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.pterodactyl.async_setup_entry", return_value=True
+        "inpui.components.pterodactyl.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -43,7 +43,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_pterodactyl() -> Generator[AsyncMock]:
     """Mock the Pterodactyl API."""
     with patch(
-        "homeassistant.components.pterodactyl.api.PterodactylClient", autospec=True
+        "inpui.components.pterodactyl.api.PterodactylClient", autospec=True
     ) as mock:
         server_list_data = load_json_object_fixture("server_list_data.json", DOMAIN)
         server_1_data = load_json_object_fixture("server_1_data.json", DOMAIN)

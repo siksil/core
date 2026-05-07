@@ -336,7 +336,7 @@ def test_aprs_listener_rx_msg_object(mock_ais: MagicMock) -> None:
 async def test_setup_scanner(hass: HomeAssistant) -> None:
     """Test setup_scanner."""
     with patch(
-        "homeassistant.components.aprs.device_tracker.AprsListenerThread"
+        "inpui.components.aprs.device_tracker.AprsListenerThread"
     ) as listener:
         config = {
             "username": TEST_CALLSIGN,

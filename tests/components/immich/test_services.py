@@ -147,7 +147,7 @@ async def test_upload_file_only_local_media_supported(
     await setup_integration(hass, mock_config_entry)
     with (
         patch(
-            "homeassistant.components.immich.services.async_resolve_media",
+            "inpui.components.immich.services.async_resolve_media",
             return_value=PlayMedia(
                 url="media-source://media_source/camera/some_entity_id",
                 mime_type="image/jpeg",

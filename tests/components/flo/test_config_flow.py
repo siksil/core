@@ -29,7 +29,7 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.flo.async_setup_entry", return_value=True
+        "inpui.components.flo.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"], {"username": TEST_USER_ID, "password": TEST_PASSWORD}

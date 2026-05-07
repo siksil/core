@@ -44,7 +44,7 @@ HUB_DATA = {
 def mock_vegehub() -> Generator[Any]:
     """Mock the VegeHub library."""
     with patch(
-        "homeassistant.components.vegehub.config_flow.VegeHub", autospec=True
+        "inpui.components.vegehub.config_flow.VegeHub", autospec=True
     ) as mock_vegehub_class:
         mock_instance = mock_vegehub_class.return_value
         # Simulate successful API calls

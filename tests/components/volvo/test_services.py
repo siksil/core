@@ -43,7 +43,7 @@ async def test_get_image_url_all(
     assert await setup_integration()
 
     with patch(
-        "homeassistant.components.volvo.services._async_image_exists",
+        "inpui.components.volvo.services._async_image_exists",
         new=AsyncMock(return_value=True),
     ):
         images = await hass.services.async_call(
@@ -88,7 +88,7 @@ async def test_get_image_url_selected(
     assert await setup_integration()
 
     with patch(
-        "homeassistant.components.volvo.services._async_image_exists",
+        "inpui.components.volvo.services._async_image_exists",
         new=AsyncMock(return_value=True),
     ):
         images = await hass.services.async_call(

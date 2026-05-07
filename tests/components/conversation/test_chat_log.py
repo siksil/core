@@ -297,7 +297,7 @@ async def test_template_variables(
     with (
         chat_session.async_get_chat_session(hass) as session,
         async_get_chat_log(hass, session, mock_conversation_input) as chat_log,
-        patch("homeassistant.auth.AuthManager.async_get_user", return_value=mock_user),
+        patch("inpui.auth.AuthManager.async_get_user", return_value=mock_user),
     ):
         await chat_log.async_provide_llm_data(
             mock_conversation_input.as_llm_context("test"),
@@ -431,7 +431,7 @@ async def test_tool_call(
     mock_tool.async_call.return_value = "Test response"
 
     with patch(
-        "homeassistant.helpers.llm.AssistAPI._async_get_tools", return_value=[]
+        "inpui.helpers.llm.AssistAPI._async_get_tools", return_value=[]
     ) as mock_get_tools:
         mock_get_tools.return_value = [mock_tool]
 
@@ -510,7 +510,7 @@ async def test_tool_call_exception(
 
     with (
         patch(
-            "homeassistant.helpers.llm.AssistAPI._async_get_tools", return_value=[]
+            "inpui.helpers.llm.AssistAPI._async_get_tools", return_value=[]
         ) as mock_get_tools,
         chat_session.async_get_chat_session(hass) as session,
         async_get_chat_log(hass, session, mock_conversation_input) as chat_log,
@@ -708,7 +708,7 @@ async def test_add_delta_content_stream(
 
     with (
         patch(
-            "homeassistant.helpers.llm.AssistAPI._async_get_tools", return_value=[]
+            "inpui.helpers.llm.AssistAPI._async_get_tools", return_value=[]
         ) as mock_get_tools,
         chat_session.async_get_chat_session(hass) as session,
         async_get_chat_log(

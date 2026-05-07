@@ -55,7 +55,7 @@ from tests.typing import MagicMock, WebSocketGenerator
 def media_player_only() -> Generator[None]:
     """Enable only the media_player platform."""
     with patch(
-        "homeassistant.components.xbox.PLATFORMS",
+        "inpui.components.xbox.PLATFORMS",
         [Platform.MEDIA_PLAYER],
     ):
         yield

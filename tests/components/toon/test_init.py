@@ -33,7 +33,7 @@ async def test_oauth_implementation_not_available(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.toon.async_get_config_entry_implementation",
+        "inpui.components.toon.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -44,7 +44,7 @@ async def test_oauth_implementation_not_available(
 
 async def test_migrate_entry_minor_version_2_2(hass: HomeAssistant) -> None:
     """Test migrating a 2.1 config entry to 2.2."""
-    with patch("homeassistant.components.toon.async_setup_entry", return_value=True):
+    with patch("inpui.components.toon.async_setup_entry", return_value=True):
         entry = MockConfigEntry(
             domain=DOMAIN,
             data={

@@ -49,7 +49,7 @@ def create_amber_config_entry(
 def mock_amber_client() -> Generator[AsyncMock]:
     """Mock the Amber API client."""
     with patch(
-        "homeassistant.components.amberelectric.amberelectric.AmberApi",
+        "inpui.components.amberelectric.amberelectric.AmberApi",
         autospec=True,
     ) as mock_client:
         yield mock_client
@@ -59,7 +59,7 @@ def mock_amber_client() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.amberelectric.async_setup_entry", return_value=True
+        "inpui.components.amberelectric.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 

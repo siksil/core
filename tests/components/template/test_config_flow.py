@@ -319,7 +319,7 @@ async def test_config_flow(
     availability = {"advanced_options": {"availability": "{{ True }}"}}
 
     with patch(
-        "homeassistant.components.template.async_setup_entry", wraps=async_setup_entry
+        "inpui.components.template.async_setup_entry", wraps=async_setup_entry
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -518,7 +518,7 @@ async def test_config_flow_device(
     assert result["step_id"] == template_type
 
     with patch(
-        "homeassistant.components.template.async_setup_entry", wraps=async_setup_entry
+        "inpui.components.template.async_setup_entry", wraps=async_setup_entry
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],

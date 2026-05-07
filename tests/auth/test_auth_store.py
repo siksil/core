@@ -199,10 +199,10 @@ async def test_loading_only_once(hass: HomeAssistant) -> None:
     """Test only one storage load is allowed."""
     store = auth_store.AuthStore(hass)
     with (
-        patch("homeassistant.helpers.entity_registry.async_get") as mock_ent_registry,
-        patch("homeassistant.helpers.device_registry.async_get") as mock_dev_registry,
+        patch("inpui.helpers.entity_registry.async_get") as mock_ent_registry,
+        patch("inpui.helpers.device_registry.async_get") as mock_dev_registry,
         patch(
-            "homeassistant.helpers.storage.Store.async_load", return_value=None
+            "inpui.helpers.storage.Store.async_load", return_value=None
         ) as mock_load,
     ):
         await store.async_load()

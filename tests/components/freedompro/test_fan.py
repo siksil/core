@@ -52,7 +52,7 @@ async def test_fan_get_state(
     states_response[0]["state"]["on"] = True
     states_response[0]["state"]["rotationSpeed"] = 50
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))
@@ -83,7 +83,7 @@ async def test_fan_set_off(
     states_response[0]["state"]["on"] = True
     states_response[0]["state"]["rotationSpeed"] = 50
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         await async_update_entity(hass, entity_id)
@@ -100,7 +100,7 @@ async def test_fan_set_off(
     assert entry
     assert entry.unique_id == uid
 
-    with patch("homeassistant.components.freedompro.fan.put_state") as mock_put_state:
+    with patch("inpui.components.freedompro.fan.put_state") as mock_put_state:
         await hass.services.async_call(
             FAN_DOMAIN,
             SERVICE_TURN_OFF,
@@ -112,7 +112,7 @@ async def test_fan_set_off(
     states_response[0]["state"]["on"] = False
     states_response[0]["state"]["rotationSpeed"] = 0
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         await async_update_entity(hass, entity_id)
@@ -143,7 +143,7 @@ async def test_fan_set_on(
     assert entry
     assert entry.unique_id == uid
 
-    with patch("homeassistant.components.freedompro.fan.put_state") as mock_put_state:
+    with patch("inpui.components.freedompro.fan.put_state") as mock_put_state:
         await hass.services.async_call(
             FAN_DOMAIN,
             SERVICE_TURN_ON,
@@ -156,7 +156,7 @@ async def test_fan_set_on(
     states_response[0]["state"]["on"] = True
     states_response[0]["state"]["rotationSpeed"] = 50
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))
@@ -185,7 +185,7 @@ async def test_fan_set_percent(
     assert entry
     assert entry.unique_id == uid
 
-    with patch("homeassistant.components.freedompro.fan.put_state") as mock_put_state:
+    with patch("inpui.components.freedompro.fan.put_state") as mock_put_state:
         await hass.services.async_call(
             FAN_DOMAIN,
             SERVICE_SET_PERCENTAGE,
@@ -198,7 +198,7 @@ async def test_fan_set_percent(
     states_response[0]["state"]["on"] = True
     states_response[0]["state"]["rotationSpeed"] = 40
     with patch(
-        "homeassistant.components.freedompro.coordinator.get_states",
+        "inpui.components.freedompro.coordinator.get_states",
         return_value=states_response,
     ):
         async_fire_time_changed(hass, utcnow() + timedelta(hours=2))

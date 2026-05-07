@@ -167,10 +167,10 @@ def mock_mozart_client() -> Generator[AsyncMock]:
     """Mock MozartClient."""
     with (
         patch(
-            "homeassistant.components.bang_olufsen.MozartClient", autospec=True
+            "inpui.components.bang_olufsen.MozartClient", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.bang_olufsen.config_flow.MozartClient",
+            "inpui.components.bang_olufsen.config_flow.MozartClient",
             new=mock_client,
         ),
     ):
@@ -457,6 +457,6 @@ def mock_mozart_client() -> Generator[AsyncMock]:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock successful setup entry."""
     with patch(
-        "homeassistant.components.bang_olufsen.async_setup_entry", return_value=True
+        "inpui.components.bang_olufsen.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry

@@ -47,7 +47,7 @@ async def test_lights(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test spa light."""
-    with patch("homeassistant.components.balboa.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.balboa.PLATFORMS", [Platform.LIGHT]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

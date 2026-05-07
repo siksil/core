@@ -628,7 +628,7 @@ async def test_stream_tts_without_previous_info(
     tts_entity = hass.data[tts.DOMAIN].get_entity("tts.elevenlabs_text_to_speech")
     patch_stream(tts_entity)
     monkeypatch.setattr(
-        "homeassistant.components.elevenlabs.tts.MODELS_PREVIOUS_INFO_NOT_SUPPORTED",
+        "inpui.components.elevenlabs.tts.MODELS_PREVIOUS_INFO_NOT_SUPPORTED",
         ("model1",),
         raising=False,
     )

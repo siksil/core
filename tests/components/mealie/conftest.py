@@ -30,7 +30,7 @@ SHOPPING_ITEM_NOTE = "Shopping Item 1"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.mealie.async_setup_entry",
+        "inpui.components.mealie.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -41,11 +41,11 @@ def mock_mealie_client() -> Generator[AsyncMock]:
     """Mock a Mealie client."""
     with (
         patch(
-            "homeassistant.components.mealie.MealieClient",
+            "inpui.components.mealie.MealieClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.mealie.config_flow.MealieClient",
+            "inpui.components.mealie.config_flow.MealieClient",
             new=mock_client,
         ),
     ):

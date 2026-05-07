@@ -310,31 +310,31 @@ async def async_test_home_assistant(
         with (
             patch.object(StoreWithoutWriteLoad, "async_load", return_value=None),
             patch(
-                "homeassistant.helpers.area_registry.AreaRegistryStore",
+                "inpui.helpers.area_registry.AreaRegistryStore",
                 StoreWithoutWriteLoad,
             ),
             patch(
-                "homeassistant.helpers.device_registry.DeviceRegistryStore",
+                "inpui.helpers.device_registry.DeviceRegistryStore",
                 StoreWithoutWriteLoad,
             ),
             patch(
-                "homeassistant.helpers.entity_registry.EntityRegistryStore",
+                "inpui.helpers.entity_registry.EntityRegistryStore",
                 StoreWithoutWriteLoad,
             ),
             patch(
-                "homeassistant.helpers.storage.Store",  # Floor & label registry are different
+                "inpui.helpers.storage.Store",  # Floor & label registry are different
                 StoreWithoutWriteLoad,
             ),
             patch(
-                "homeassistant.helpers.issue_registry.IssueRegistryStore",
+                "inpui.helpers.issue_registry.IssueRegistryStore",
                 StoreWithoutWriteLoad,
             ),
             patch(
-                "homeassistant.helpers.restore_state.RestoreStateData.async_setup_dump",
+                "inpui.helpers.restore_state.RestoreStateData.async_setup_dump",
                 return_value=None,
             ),
             patch(
-                "homeassistant.helpers.restore_state.start.async_at_start",
+                "inpui.helpers.restore_state.start.async_at_start",
             ),
         ):
             await ar.async_load(hass)
@@ -545,11 +545,11 @@ def _async_fire_time_changed(
         if fire_all or mock_seconds_into_future >= future_seconds:
             with (
                 patch(
-                    "homeassistant.helpers.event.time_tracker_utcnow",
+                    "inpui.helpers.event.time_tracker_utcnow",
                     return_value=utc_datetime,
                 ),
                 patch(
-                    "homeassistant.helpers.event.time_tracker_timestamp",
+                    "inpui.helpers.event.time_tracker_timestamp",
                     return_value=timestamp,
                 ),
             ):
@@ -895,7 +895,7 @@ class MockModule:
         | None = None,
     ) -> None:
         """Initialize the mock module."""
-        self.__name__ = f"homeassistant.components.{domain}"
+        self.__name__ = f"inpui.components.{domain}"
         self.__file__ = f"homeassistant/components/{domain}"
         self.DOMAIN = domain
         self.DEPENDENCIES = dependencies or []
@@ -950,7 +950,7 @@ class MockModule:
 class MockPlatform:
     """Provide a fake platform."""
 
-    __name__ = "homeassistant.components.light.bla"
+    __name__ = "inpui.components.light.bla"
     __file__ = "homeassistant/components/blah/light"
 
     def __init__(
@@ -1013,7 +1013,7 @@ class MockEntityPlatform(entity_platform.EntityPlatform):
     ) -> None:
         """Initialize a mock entity platform."""
         if logger is None:
-            logger = logging.getLogger("homeassistant.helpers.entity_platform")
+            logger = logging.getLogger("inpui.helpers.entity_platform")
 
         # Otherwise the constructor will blow up.
         if isinstance(platform, Mock) and isinstance(platform.PARALLEL_UPDATES, Mock):
@@ -1313,7 +1313,7 @@ def assert_setup_component(count, domain=None):
         return integration_config_info
 
     assert isinstance(config, dict)
-    with patch("homeassistant.config.async_process_component_config", mock_psc):
+    with patch("inpui.config.async_process_component_config", mock_psc):
         yield config
 
     if domain is None:
@@ -1563,17 +1563,17 @@ def mock_storage(data: dict[str, Any] | None = None) -> Generator[dict[str, Any]
 
     with (
         patch(
-            "homeassistant.helpers.storage.Store._async_load",
+            "inpui.helpers.storage.Store._async_load",
             side_effect=mock_async_load,
             autospec=True,
         ),
         patch(
-            "homeassistant.helpers.storage.Store._async_write_data",
+            "inpui.helpers.storage.Store._async_write_data",
             side_effect=mock_write_data,
             autospec=True,
         ),
         patch(
-            "homeassistant.helpers.storage.Store.async_remove",
+            "inpui.helpers.storage.Store.async_remove",
             side_effect=mock_remove,
             autospec=True,
         ),

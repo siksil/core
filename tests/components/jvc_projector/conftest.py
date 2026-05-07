@@ -83,7 +83,7 @@ def fixture_mock_device(
     request: pytest.FixtureRequest,
 ) -> Generator[MagicMock]:
     """Return a mocked JVC Projector device."""
-    target = "homeassistant.components.jvc_projector.JvcProjector"
+    target = "inpui.components.jvc_projector.JvcProjector"
     fixture = FIXTURES["on"].copy()
 
     if hasattr(request, "param"):
@@ -140,8 +140,8 @@ async def fixture_mock_integration(
 ) -> MockConfigEntry:
     """Return a mock ConfigEntry setup for the integration."""
     with (
-        patch("homeassistant.components.jvc_projector.coordinator.TIMEOUT_RETRIES", 2),
-        patch("homeassistant.components.jvc_projector.coordinator.TIMEOUT_SLEEP", 0.1),
+        patch("inpui.components.jvc_projector.coordinator.TIMEOUT_RETRIES", 2),
+        patch("inpui.components.jvc_projector.coordinator.TIMEOUT_SLEEP", 0.1),
     ):
         mock_config_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

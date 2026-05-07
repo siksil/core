@@ -41,7 +41,7 @@ async def test_repair_acquires_token(
     )
     await hass.async_block_till_done()
 
-    with patch("homeassistant.components.homewizard.has_v2_api", return_value=True):
+    with patch("inpui.components.homewizard.has_v2_api", return_value=True):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

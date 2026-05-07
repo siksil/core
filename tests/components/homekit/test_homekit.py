@@ -180,7 +180,7 @@ async def test_setup_min(hass: HomeAssistant) -> None:
     with (
         patch(f"{PATH_HOMEKIT}.HomeKit") as mock_homekit,
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):
@@ -225,7 +225,7 @@ async def test_removing_entry(port_mock, hass: HomeAssistant) -> None:
     with (
         patch(f"{PATH_HOMEKIT}.HomeKit") as mock_homekit,
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):
@@ -1716,7 +1716,7 @@ async def test_yaml_updates_update_config_entry_for_name(hass: HomeAssistant) ->
     with (
         patch(f"{PATH_HOMEKIT}.HomeKit") as mock_homekit,
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):
@@ -1764,7 +1764,7 @@ async def test_yaml_can_link_with_default_name(hass: HomeAssistant) -> None:
     with (
         patch(f"{PATH_HOMEKIT}.HomeKit") as mock_homekit,
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):
@@ -1810,7 +1810,7 @@ async def test_yaml_can_link_with_port(hass: HomeAssistant) -> None:
     with (
         patch(f"{PATH_HOMEKIT}.HomeKit") as mock_homekit,
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):
@@ -1917,7 +1917,7 @@ async def test_homekit_ignored_missing_devices(
     # Delete the device to make sure we fallback
     # to using the platform
     with patch(
-        "homeassistant.helpers.entity_registry.async_entries_for_device",
+        "inpui.helpers.entity_registry.async_entries_for_device",
         return_value=[],
     ):
         device_registry.async_remove_device(device_entry.id)
@@ -2298,7 +2298,7 @@ async def test_reload(hass: HomeAssistant) -> None:
     with (
         patch(f"{PATH_HOMEKIT}.HomeKit") as mock_homekit,
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):
@@ -2336,7 +2336,7 @@ async def test_reload(hass: HomeAssistant) -> None:
             "pyhap.accessory_driver.AccessoryDriver.async_start",
         ),
         patch(
-            "homeassistant.components.network.async_get_source_ip",
+            "inpui.components.network.async_get_source_ip",
             return_value="1.2.3.4",
         ),
     ):

@@ -202,7 +202,7 @@ async def test_shutdown_system(hass: HomeAssistant) -> None:
 
     # Test shutting down the system
     with patch(
-        "homeassistant.components.octoprint.coordinator.OctoprintClient.shutdown"
+        "inpui.components.octoprint.coordinator.OctoprintClient.shutdown"
     ) as shutdown_command:
         await hass.services.async_call(
             BUTTON_DOMAIN,
@@ -226,7 +226,7 @@ async def test_reboot_system(hass: HomeAssistant) -> None:
 
     # Test rebooting the system
     with patch(
-        "homeassistant.components.octoprint.coordinator.OctoprintClient.reboot_system"
+        "inpui.components.octoprint.coordinator.OctoprintClient.reboot_system"
     ) as reboot_command:
         await hass.services.async_call(
             BUTTON_DOMAIN,
@@ -252,7 +252,7 @@ async def test_restart_octoprint(hass: HomeAssistant) -> None:
 
     # Test restarting octoprint
     with patch(
-        "homeassistant.components.octoprint.coordinator.OctoprintClient.restart"
+        "inpui.components.octoprint.coordinator.OctoprintClient.restart"
     ) as restart_command:
         await hass.services.async_call(
             BUTTON_DOMAIN,

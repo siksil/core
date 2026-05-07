@@ -394,11 +394,11 @@ async def test_bluetooth_is_set_from_discovery(
     mock_cloud_client.get_thing_settings.return_value.ble_auth_token = "token"
     with (
         patch(
-            "homeassistant.components.lamarzocco.async_discovered_service_info",
+            "inpui.components.lamarzocco.async_discovered_service_info",
             return_value=[service_info],
         ) as discovery,
         patch(
-            "homeassistant.components.lamarzocco.LaMarzoccoMachine"
+            "inpui.components.lamarzocco.LaMarzoccoMachine"
         ) as mock_machine_class,
     ):
         mock_machine_class.return_value = mock_lamarzocco

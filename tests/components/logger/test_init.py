@@ -24,7 +24,7 @@ GROUP_NS = f"{COMPONENTS_NS}.group"
 CONFIGED_NS = "otherlibx"
 UNCONFIG_NS = "unconfigurednamespace"
 INTEGRATION = "test_component"
-INTEGRATION_NS = f"homeassistant.components.{INTEGRATION}"
+INTEGRATION_NS = f"inpui.components.{INTEGRATION}"
 
 
 async def test_log_filtering(

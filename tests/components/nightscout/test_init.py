@@ -37,7 +37,7 @@ async def test_async_setup_raises_entry_not_ready(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.nightscout.NightscoutAPI.get_server_status",
+        "inpui.components.nightscout.NightscoutAPI.get_server_status",
         side_effect=ClientError(),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

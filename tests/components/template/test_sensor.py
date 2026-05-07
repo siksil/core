@@ -467,11 +467,11 @@ async def test_creating_sensor_loads_group(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.group.async_setup",
+            "inpui.components.group.async_setup",
             new=async_setup_group,
         ),
         patch(
-            "homeassistant.components.template.sensor.async_setup_platform",
+            "inpui.components.template.sensor.async_setup_platform",
             new=async_setup_template,
         ),
     ):
@@ -1393,7 +1393,7 @@ async def test_trigger_entity_device_class_parsing_works(hass: HomeAssistant) ->
     # State of timestamp sensors are always in UTC
     now = dt_util.utcnow()
 
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -1436,7 +1436,7 @@ async def test_trigger_entity_device_class_errors_works(hass: HomeAssistant) -> 
 
     now = dt_util.now()
 
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -1456,7 +1456,7 @@ async def test_entity_last_reset_total_increasing(
     # State of timestamp sensors are always in UTC
     now = dt_util.utcnow()
 
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         assert await async_setup_component(
             hass,
             "template",
@@ -1589,7 +1589,7 @@ async def test_entity_device_class_errors_works(hass: HomeAssistant) -> None:
 
     now = dt_util.now()
 
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 

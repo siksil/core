@@ -24,7 +24,7 @@ async def test_sensors(
 ) -> None:
     """Test the La Marzocco sensors."""
 
-    with patch("homeassistant.components.lamarzocco.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.lamarzocco.PLATFORMS", [Platform.SENSOR]):
         await async_init_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
@@ -67,7 +67,7 @@ async def test_sensors_unavailable_if_machine_off(
     mock_lamarzocco.dashboard.config[
         WidgetType.CM_MACHINE_STATUS
     ].status = MachineState.OFF
-    with patch("homeassistant.components.lamarzocco.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.lamarzocco.PLATFORMS", [Platform.SENSOR]):
         await async_init_integration(hass, mock_config_entry)
 
     for sensor, available in SWITCHES_UNAVAILABLE:

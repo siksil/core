@@ -88,7 +88,7 @@ def mock_config_entry(hass: HomeAssistant, expires_at: float) -> MockConfigEntry
 @pytest.fixture
 def mock_senz_client(account_fixture, device_fixture) -> Generator[MagicMock]:
     """Mock thermostat data."""
-    with patch("homeassistant.components.senz.SENZAPI", autospec=True) as mock_senz:
+    with patch("inpui.components.senz.SENZAPI", autospec=True) as mock_senz:
         client = mock_senz.return_value
 
         client.get_account.return_value = Account(account_fixture)

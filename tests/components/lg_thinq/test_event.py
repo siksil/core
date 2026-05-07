@@ -25,7 +25,7 @@ async def test_event_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.lg_thinq.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.lg_thinq.PLATFORMS", [Platform.EVENT]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

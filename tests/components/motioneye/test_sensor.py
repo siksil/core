@@ -123,7 +123,7 @@ async def test_sensor_actions_can_be_enabled(
     assert not entity_state
 
     with patch(
-        "homeassistant.components.motioneye.MotionEyeClient",
+        "inpui.components.motioneye.MotionEyeClient",
         return_value=client,
     ):
         updated_entry = entity_registry.async_update_entity(

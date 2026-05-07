@@ -87,11 +87,11 @@ def mock_onedrive_client_init() -> Generator[MagicMock]:
     """Return a mocked OneDrive client."""
     with (
         patch(
-            "homeassistant.components.onedrive_for_business.config_flow.OneDriveClient",
+            "inpui.components.onedrive_for_business.config_flow.OneDriveClient",
             autospec=True,
         ) as onedrive_client,
         patch(
-            "homeassistant.components.onedrive_for_business.OneDriveClient",
+            "inpui.components.onedrive_for_business.OneDriveClient",
             new=onedrive_client,
         ),
     ):
@@ -205,7 +205,7 @@ def mock_onedrive_client(
 def mock_large_file_upload_client(mock_backup_file: File) -> Generator[AsyncMock]:
     """Return a mocked LargeFileUploadClient upload."""
     with patch(
-        "homeassistant.components.onedrive_for_business.backup.LargeFileUploadClient.upload"
+        "inpui.components.onedrive_for_business.backup.LargeFileUploadClient.upload"
     ) as mock_upload:
         mock_upload.return_value = mock_backup_file
         yield mock_upload
@@ -215,7 +215,7 @@ def mock_large_file_upload_client(mock_backup_file: File) -> Generator[AsyncMock
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.onedrive_for_business.async_setup_entry",
+        "inpui.components.onedrive_for_business.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

@@ -20,10 +20,10 @@ def mock_travel_time() -> Generator[AsyncMock]:
     """WsdotTravelTimes.get_travel_time is mocked to return a TravelTime data based on test fixture payload."""
     with (
         patch(
-            "homeassistant.components.wsdot.wsdot_api.WsdotTravelTimes", autospec=True
+            "inpui.components.wsdot.wsdot_api.WsdotTravelTimes", autospec=True
         ) as mock,
         patch(
-            "homeassistant.components.wsdot.config_flow.wsdot_api.WsdotTravelTimes",
+            "inpui.components.wsdot.config_flow.wsdot_api.WsdotTravelTimes",
             new=mock,
         ),
     ):
@@ -108,6 +108,6 @@ async def init_integration(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock config entry setup."""
     with patch(
-        "homeassistant.components.wsdot.async_setup_entry", return_value=True
+        "inpui.components.wsdot.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup

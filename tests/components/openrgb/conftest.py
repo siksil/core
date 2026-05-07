@@ -49,7 +49,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.openrgb.async_setup_entry", return_value=True
+        "inpui.components.openrgb.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -83,16 +83,16 @@ def mock_openrgb_client(mock_openrgb_device: MagicMock) -> Generator[MagicMock]:
     """Return a mocked OpenRGB client."""
     with (
         patch(
-            "homeassistant.components.openrgb.coordinator.OpenRGBClient",
+            "inpui.components.openrgb.coordinator.OpenRGBClient",
             autospec=True,
         ) as client_mock,
         patch(
-            "homeassistant.components.openrgb.config_flow.OpenRGBClient",
+            "inpui.components.openrgb.config_flow.OpenRGBClient",
             new=client_mock,
         ),
         # Patch Debouncer to remove delays in tests
         patch(
-            "homeassistant.components.openrgb.coordinator.Debouncer",
+            "inpui.components.openrgb.coordinator.Debouncer",
             return_value=None,
         ),
     ):

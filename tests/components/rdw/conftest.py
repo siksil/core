@@ -28,7 +28,7 @@ def mock_config_entry() -> MockConfigEntry:
 @pytest.fixture
 def mock_setup_entry() -> Generator[None]:
     """Mock setting up a config entry."""
-    with patch("homeassistant.components.rdw.async_setup_entry", return_value=True):
+    with patch("inpui.components.rdw.async_setup_entry", return_value=True):
         yield
 
 
@@ -36,7 +36,7 @@ def mock_setup_entry() -> Generator[None]:
 def mock_rdw_config_flow() -> Generator[MagicMock]:
     """Return a mocked RDW client."""
     with patch(
-        "homeassistant.components.rdw.config_flow.RDW", autospec=True
+        "inpui.components.rdw.config_flow.RDW", autospec=True
     ) as rdw_mock:
         rdw = rdw_mock.return_value
         rdw.vehicle.return_value = Vehicle.from_json(load_fixture("rdw/11ZKZ3.json"))
@@ -52,7 +52,7 @@ def mock_rdw(request: pytest.FixtureRequest) -> Generator[MagicMock]:
 
     vehicle = Vehicle.from_json(load_fixture(fixture))
     with patch(
-        "homeassistant.components.rdw.coordinator.RDW", autospec=True
+        "inpui.components.rdw.coordinator.RDW", autospec=True
     ) as rdw_mock:
         rdw = rdw_mock.return_value
         rdw.vehicle.return_value = vehicle

@@ -207,7 +207,7 @@ async def test_full_user_flow_advanced_options(
     assert result["data"][CONF_VERIFY_SSL]
 
 
-@patch("homeassistant.components.sonarr.PLATFORMS", [])
+@patch("inpui.components.sonarr.PLATFORMS", [])
 async def test_options_flow(
     hass: HomeAssistant,
     mock_setup_entry: None,

@@ -75,8 +75,8 @@ def new_heos_mock_fixture(controller: MockHeos) -> Iterator[Mock]:
     """Patch the Heos class to return the mock instance."""
     new_mock = Mock(return_value=controller)
     with (
-        patch("homeassistant.components.heos.coordinator.Heos", new=new_mock),
-        patch("homeassistant.components.heos.config_flow.Heos", new=new_mock),
+        patch("inpui.components.heos.coordinator.Heos", new=new_mock),
+        patch("inpui.components.heos.config_flow.Heos", new=new_mock),
     ):
         yield new_mock
 

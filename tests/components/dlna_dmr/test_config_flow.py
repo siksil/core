@@ -100,7 +100,7 @@ MOCK_DISCOVERY = SsdpServiceInfo(
 def mock_get_mac_address() -> Generator[Mock]:
     """Mock the get_mac_address function to prevent network access and assist tests."""
     with patch(
-        "homeassistant.components.dlna_dmr.config_flow.get_mac_address", autospec=True
+        "inpui.components.dlna_dmr.config_flow.get_mac_address", autospec=True
     ) as gma_mock:
         gma_mock.return_value = MOCK_MAC_ADDRESS
         yield gma_mock
@@ -110,7 +110,7 @@ def mock_get_mac_address() -> Generator[Mock]:
 def mock_setup_entry() -> Generator[Mock]:
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.dlna_dmr.async_setup_entry", return_value=True
+        "inpui.components.dlna_dmr.async_setup_entry", return_value=True
     ) as setup_entry_mock:
         yield setup_entry_mock
 
@@ -297,7 +297,7 @@ async def test_user_flow_wrong_st(hass: HomeAssistant, domain_data_mock: Mock) -
 
 async def test_ssdp_flow_success(hass: HomeAssistant) -> None:
     """Test that SSDP discovery with an available device works."""
-    logging.getLogger("homeassistant.components.dlna_dmr.config_flow").setLevel(
+    logging.getLogger("inpui.components.dlna_dmr.config_flow").setLevel(
         logging.DEBUG
     )
     result = await hass.config_entries.flow.async_init(

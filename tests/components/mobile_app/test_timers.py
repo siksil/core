@@ -41,7 +41,7 @@ async def test_timer_events(
     )
 
     with patch(
-        "homeassistant.components.mobile_app.notify.MobileAppNotificationService.async_send_message"
+        "inpui.components.mobile_app.notify.MobileAppNotificationService.async_send_message"
     ) as mock_send_message:
         await intent_helper.async_handle(
             hass,

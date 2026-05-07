@@ -29,7 +29,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Automatically patch history stats setup."""
     with patch(
-        "homeassistant.components.history_stats.async_setup_entry",
+        "inpui.components.history_stats.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -84,7 +84,7 @@ async def load_integration(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.recorder.history.state_changes_during_period",
+        "inpui.components.recorder.history.state_changes_during_period",
         _fake_states,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

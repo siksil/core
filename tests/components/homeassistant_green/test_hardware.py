@@ -29,7 +29,7 @@ async def test_hardware_info(
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.homeassistant_green.get_os_info",
+        "inpui.components.homeassistant_green.get_os_info",
         return_value={"board": "green"},
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -38,7 +38,7 @@ async def test_hardware_info(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_green.hardware.get_os_info",
+        "inpui.components.homeassistant_green.hardware.get_os_info",
         return_value={"board": "green"},
     ):
         await client.send_json({"id": 1, "type": "hardware/info"})
@@ -81,7 +81,7 @@ async def test_hardware_info_fail(
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.homeassistant_green.get_os_info",
+        "inpui.components.homeassistant_green.get_os_info",
         return_value={"board": "green"},
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -90,7 +90,7 @@ async def test_hardware_info_fail(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_green.hardware.get_os_info",
+        "inpui.components.homeassistant_green.hardware.get_os_info",
         return_value=os_info,
     ):
         await client.send_json({"id": 1, "type": "hardware/info"})

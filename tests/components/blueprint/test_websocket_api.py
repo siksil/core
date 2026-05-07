@@ -646,7 +646,7 @@ async def test_substituting_blueprint_inputs_incomplete_input_2(
     """Test substituting blueprint inputs."""
     client = await hass_ws_client(hass)
     with patch(
-        "homeassistant.components.blueprint.models.BlueprintInputs.async_substitute",
+        "inpui.components.blueprint.models.BlueprintInputs.async_substitute",
         side_effect=UndefinedSubstitution("blah"),
     ):
         await client.send_json_auto_id(

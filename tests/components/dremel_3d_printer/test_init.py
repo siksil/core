@@ -16,7 +16,7 @@ from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 
-MOCKED_MODEL = "homeassistant.components.dremel_3d_printer.Dremel3DPrinter.get_model"
+MOCKED_MODEL = "inpui.components.dremel_3d_printer.Dremel3DPrinter.get_model"
 
 
 @pytest.mark.parametrize("model", ["3D45", "3D20"])
@@ -44,7 +44,7 @@ async def test_async_setup_entry_not_ready(
 ) -> None:
     """Test that it throws ConfigEntryNotReady when exception occurs during setup."""
     with patch(
-        "homeassistant.components.dremel_3d_printer.Dremel3DPrinter",
+        "inpui.components.dremel_3d_printer.Dremel3DPrinter",
         side_effect=ConnectTimeout,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -63,7 +63,7 @@ async def test_update_failed(
     assert config_entry.state is ConfigEntryState.LOADED
 
     with patch(
-        "homeassistant.components.dremel_3d_printer.Dremel3DPrinter.refresh",
+        "inpui.components.dremel_3d_printer.Dremel3DPrinter.refresh",
         side_effect=RuntimeError,
     ) as updater:
         next_update = dt_util.utcnow() + timedelta(seconds=10)

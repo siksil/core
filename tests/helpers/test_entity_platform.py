@@ -1985,7 +1985,7 @@ async def test_invalid_entity_id_report_usage(
     with (
         caplog.at_level(logging.WARNING),
         patch(
-            "homeassistant.helpers.frame.async_get_issue_integration",
+            "inpui.helpers.frame.async_get_issue_integration",
             return_value=mock_integration,
         ),
     ):
@@ -2271,7 +2271,7 @@ async def test_translated_entity_name_influences_entity_id(
     )
 
     with patch(
-        "homeassistant.helpers.entity_platform.translation.async_get_translations",
+        "inpui.helpers.entity_platform.translation.async_get_translations",
         side_effect=async_get_translations,
     ):
         assert await entity_platform.async_setup_entry(config_entry)
@@ -2352,7 +2352,7 @@ async def test_translated_device_class_name_influences_entity_id(
     )
 
     with patch(
-        "homeassistant.helpers.entity_platform.translation.async_get_translations",
+        "inpui.helpers.entity_platform.translation.async_get_translations",
         side_effect=async_get_translations,
     ):
         assert await entity_platform.async_setup_entry(config_entry)

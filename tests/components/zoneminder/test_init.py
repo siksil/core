@@ -157,7 +157,7 @@ async def test_async_setup_services_invoked(
 ) -> None:
     """Test async_setup_services is called during setup."""
     with patch(
-        "homeassistant.components.zoneminder.async_setup_services"
+        "inpui.components.zoneminder.async_setup_services"
     ) as mock_services:
         assert await async_setup_component(hass, DOMAIN, single_server_config)
         await hass.async_block_till_done()
@@ -171,7 +171,7 @@ async def test_binary_sensor_platform_load_triggered(
     single_server_config: dict,
 ) -> None:
     """Test binary sensor platform load is triggered during setup."""
-    with patch("homeassistant.components.zoneminder.async_load_platform") as mock_load:
+    with patch("inpui.components.zoneminder.async_load_platform") as mock_load:
         assert await async_setup_component(hass, DOMAIN, single_server_config)
         await hass.async_block_till_done()
 

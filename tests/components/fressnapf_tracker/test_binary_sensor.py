@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 async def platforms() -> AsyncGenerator[None]:
     """Return the platforms to be loaded for this test."""
     with patch(
-        "homeassistant.components.fressnapf_tracker.PLATFORMS", [Platform.BINARY_SENSOR]
+        "inpui.components.fressnapf_tracker.PLATFORMS", [Platform.BINARY_SENSOR]
     ):
         yield
 

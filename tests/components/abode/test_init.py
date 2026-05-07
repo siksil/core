@@ -63,7 +63,7 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
 async def test_invalid_credentials(hass: HomeAssistant) -> None:
     """Test Abode credentials changing."""
     with patch(
-        "homeassistant.components.abode.Abode",
+        "inpui.components.abode.Abode",
         side_effect=AbodeAuthenticationException(
             (HTTPStatus.BAD_REQUEST, "auth error")
         ),
@@ -84,7 +84,7 @@ async def test_invalid_credentials(hass: HomeAssistant) -> None:
 async def test_raise_config_entry_not_ready_when_offline(hass: HomeAssistant) -> None:
     """Config entry state is SETUP_RETRY when abode is offline."""
     with patch(
-        "homeassistant.components.abode.Abode",
+        "inpui.components.abode.Abode",
         side_effect=AbodeException("any"),
     ):
         config_entry = await setup_platform(hass, ALARM_DOMAIN)

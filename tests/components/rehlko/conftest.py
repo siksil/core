@@ -22,7 +22,7 @@ TEST_REFRESH_TOKEN = "my_refresh_token"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.rehlko.async_setup_entry",
+        "inpui.components.rehlko.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -74,8 +74,8 @@ async def mock_rehlko(
 ):
     """Mock Rehlko instance."""
     with (
-        patch("homeassistant.components.rehlko.AioKem", autospec=True) as mock_kem,
-        patch("homeassistant.components.rehlko.config_flow.AioKem", new=mock_kem),
+        patch("inpui.components.rehlko.AioKem", autospec=True) as mock_kem,
+        patch("inpui.components.rehlko.config_flow.AioKem", new=mock_kem),
     ):
         client = mock_kem.return_value
         client.get_homes = AsyncMock(return_value=homes)

@@ -12,10 +12,10 @@ async def test_config_flow(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.hassio.async_setup", return_value=True
+            "inpui.components.hassio.async_setup", return_value=True
         ) as mock_setup,
         patch(
-            "homeassistant.components.hassio.async_setup_entry",
+            "inpui.components.hassio.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

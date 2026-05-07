@@ -24,7 +24,7 @@ async def setup_platform(hass: HomeAssistant, platform: str) -> MockConfigEntry:
     mock_entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.abode.PLATFORMS", [platform]),
+        patch("inpui.components.abode.PLATFORMS", [platform]),
         patch("jaraco.abode.event_controller.sio"),
     ):
         assert await async_setup_component(hass, DOMAIN, {})

@@ -12,7 +12,7 @@ from inpui.core import HomeAssistant
 @pytest.fixture(autouse=True)
 def squeezebox_button_platform():
     """Only set up the media_player platform for squeezebox tests."""
-    with patch("homeassistant.components.squeezebox.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.squeezebox.PLATFORMS", [Platform.BUTTON]):
         yield
 
 

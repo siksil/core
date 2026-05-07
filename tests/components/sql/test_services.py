@@ -94,7 +94,7 @@ async def test_query_service_rollback_on_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.sql.services.generate_lambda_stmt",
+            "inpui.components.sql.services.generate_lambda_stmt",
             return_value=generate_lambda_stmt("Faulty syntax create operational issue"),
         ),
         pytest.raises(
@@ -219,7 +219,7 @@ async def test_query_service_invalid_db_url(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.sql.util._validate_and_get_session_maker_for_db_url",
+            "inpui.components.sql.util._validate_and_get_session_maker_for_db_url",
             return_value=None,
         ),
         pytest.raises(

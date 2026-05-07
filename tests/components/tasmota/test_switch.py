@@ -265,7 +265,7 @@ async def test_discovery_update_unchanged_switch(
     config = copy.deepcopy(DEFAULT_CONFIG)
     config["rl"][0] = 1
     with patch(
-        "homeassistant.components.tasmota.switch.TasmotaSwitch.discovery_update"
+        "inpui.components.tasmota.switch.TasmotaSwitch.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock, caplog, Platform.SWITCH, config, discovery_update

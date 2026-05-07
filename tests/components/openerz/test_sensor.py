@@ -19,7 +19,7 @@ MOCK_CONFIG = {
 async def test_sensor_state(hass: HomeAssistant) -> None:
     """Test whether default waste type set properly."""
     with patch(
-        "homeassistant.components.openerz.sensor.OpenERZConnector"
+        "inpui.components.openerz.sensor.OpenERZConnector"
     ) as patched_connector:
         pickup_instance = MagicMock()
         pickup_instance.find_next_pickup.return_value = "2020-12-12"

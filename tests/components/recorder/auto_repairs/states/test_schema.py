@@ -33,11 +33,11 @@ async def test_validate_db_schema_fix_float_issue(
     """
     with (
         patch(
-            "homeassistant.components.recorder.auto_repairs.schema._validate_db_schema_precision",
+            "inpui.components.recorder.auto_repairs.schema._validate_db_schema_precision",
             return_value={"states.double precision"},
         ),
         patch(
-            "homeassistant.components.recorder.migration._modify_columns"
+            "inpui.components.recorder.migration._modify_columns"
         ) as modify_columns_mock,
     ):
         async with async_test_recorder(hass):
@@ -71,7 +71,7 @@ async def test_validate_db_schema_fix_utf8_issue_states(
     """
     with (
         patch(
-            "homeassistant.components.recorder.auto_repairs.schema._validate_table_schema_supports_utf8",
+            "inpui.components.recorder.auto_repairs.schema._validate_table_schema_supports_utf8",
             return_value={"states.4-byte UTF-8"},
         ),
     ):
@@ -104,7 +104,7 @@ async def test_validate_db_schema_fix_utf8_issue_state_attributes(
     """
     with (
         patch(
-            "homeassistant.components.recorder.auto_repairs.schema._validate_table_schema_supports_utf8",
+            "inpui.components.recorder.auto_repairs.schema._validate_table_schema_supports_utf8",
             return_value={"state_attributes.4-byte UTF-8"},
         ),
     ):
@@ -137,7 +137,7 @@ async def test_validate_db_schema_fix_collation_issue(
     """
     with (
         patch(
-            "homeassistant.components.recorder.auto_repairs.schema._validate_table_schema_has_correct_collation",
+            "inpui.components.recorder.auto_repairs.schema._validate_table_schema_has_correct_collation",
             return_value={"states.utf8mb4_bin"},
         ),
     ):

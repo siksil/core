@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.hypontech.async_setup_entry", return_value=True
+        "inpui.components.hypontech.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -77,10 +77,10 @@ def mock_hyponcloud(
     """Mock HyponCloud."""
     with (
         patch(
-            "homeassistant.components.hypontech.HyponCloud", autospec=True
+            "inpui.components.hypontech.HyponCloud", autospec=True
         ) as mock_hyponcloud,
         patch(
-            "homeassistant.components.hypontech.config_flow.HyponCloud",
+            "inpui.components.hypontech.config_flow.HyponCloud",
             new=mock_hyponcloud,
         ),
     ):

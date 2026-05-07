@@ -52,7 +52,7 @@ async def test_unload_on_stop(
     """Test async_unload is called on stop."""
     await setup_test_component(hass, get_next_aid(), create_motion_sensor_service)
     with patch(
-        "homeassistant.components.homekit_controller.HKDevice.async_unload"
+        "inpui.components.homekit_controller.HKDevice.async_unload"
     ) as async_unlock_mock:
         hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()

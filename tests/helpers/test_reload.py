@@ -256,7 +256,7 @@ async def test_async_integration_failing_on_reload(hass: HomeAssistant) -> None:
     with (
         patch.object(config, "YAML_CONFIG_FILE", yaml_path),
         patch(
-            "homeassistant.config.async_process_component_config",
+            "inpui.config.async_process_component_config",
             side_effect=HomeAssistantError(),
         ),
         pytest.raises(HomeAssistantError),

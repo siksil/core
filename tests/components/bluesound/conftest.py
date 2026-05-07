@@ -130,7 +130,7 @@ class PlayerMocks:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.bluesound.async_setup_entry", return_value=True
+        "inpui.components.bluesound.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -208,10 +208,10 @@ async def player_mocks() -> AsyncGenerator[PlayerMocks]:
 
     with (
         patch(
-            "homeassistant.components.bluesound.Player", autospec=True
+            "inpui.components.bluesound.Player", autospec=True
         ) as mock_player,
         patch(
-            "homeassistant.components.bluesound.config_flow.Player",
+            "inpui.components.bluesound.config_flow.Player",
             new=mock_player,
         ),
     ):

@@ -48,7 +48,7 @@ async def cloud_fixture() -> AsyncGenerator[MagicMock]:
     See the real hass_nabucasa.Cloud class for how to configure the mock.
     """
     with patch(
-        "homeassistant.components.cloud.Cloud", autospec=True
+        "inpui.components.cloud.Cloud", autospec=True
     ) as mock_cloud_class:
         mock_cloud = mock_cloud_class.return_value
 

@@ -35,7 +35,7 @@ REQUIREMENTS = ("colorlog==6.10.1",)
 _LOGGER = logging.getLogger(__name__)
 MOCKS: dict[str, tuple[str, Callable]] = {
     "load": ("annotatedyaml.loader.load_yaml", yaml_loader.load_yaml),
-    "load*": ("homeassistant.config.load_yaml_dict", yaml_loader.load_yaml_dict),
+    "load*": ("inpui.config.load_yaml_dict", yaml_loader.load_yaml_dict),
     "secrets": ("annotatedyaml.loader.secret_yaml", yaml_loader.secret_yaml),
 }
 
@@ -217,7 +217,7 @@ def run(script_args: list) -> int:
 
 def check(config_dir, secrets=False):
     """Perform a check by mocking hass load functions."""
-    logging.getLogger("homeassistant.loader").setLevel(logging.CRITICAL)
+    logging.getLogger("inpui.loader").setLevel(logging.CRITICAL)
     res: dict[str, Any] = {
         "yaml_files": OrderedDict(),  # yaml_files loaded
         "secrets": OrderedDict(),  # secret cache and secrets loaded

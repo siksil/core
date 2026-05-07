@@ -39,12 +39,12 @@ async def test_load_unload_entry(
 ) -> None:
     """Test load and unload entry."""
     with (
-        patch("homeassistant.components.blue_current.Client.validate_api_token"),
-        patch("homeassistant.components.blue_current.Client.wait_for_charge_points"),
-        patch("homeassistant.components.blue_current.Client.get_charge_cards"),
-        patch("homeassistant.components.blue_current.Client.disconnect"),
+        patch("inpui.components.blue_current.Client.validate_api_token"),
+        patch("inpui.components.blue_current.Client.wait_for_charge_points"),
+        patch("inpui.components.blue_current.Client.get_charge_cards"),
+        patch("inpui.components.blue_current.Client.disconnect"),
         patch(
-            "homeassistant.components.blue_current.Client.connect",
+            "inpui.components.blue_current.Client.connect",
             lambda self, on_data, on_open: hass.loop.create_future(),
         ),
     ):
@@ -76,7 +76,7 @@ async def test_config_exceptions(
 
     with (
         patch(
-            "homeassistant.components.blue_current.Client.validate_api_token",
+            "inpui.components.blue_current.Client.validate_api_token",
             side_effect=api_error,
         ),
         pytest.raises(config_error),
@@ -89,7 +89,7 @@ async def test_connect_websocket_error(
 ) -> None:
     """Test reconnect when connect throws a WebsocketError."""
 
-    with patch("homeassistant.components.blue_current.DELAY", 0):
+    with patch("inpui.components.blue_current.DELAY", 0):
         mock_client, started_loop, future_container = await init_integration(
             hass, config_entry
         )

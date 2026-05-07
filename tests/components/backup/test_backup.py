@@ -31,7 +31,7 @@ real_read_backup = backup.read_backup
 @pytest.fixture(name="read_backup")
 def read_backup_fixture() -> Generator[MagicMock]:
     """Mock read backup."""
-    with patch("homeassistant.components.backup.backup.read_backup") as read_backup:
+    with patch("inpui.components.backup.backup.read_backup") as read_backup:
         yield read_backup
 
 
@@ -88,7 +88,7 @@ async def test_upload(
         patch("pathlib.Path.open", open_mock),
         patch("shutil.move") as move_mock,
         patch(
-            "homeassistant.components.backup.manager.read_backup",
+            "inpui.components.backup.manager.read_backup",
             return_value=TEST_BACKUP_ABC123,
         ),
     ):

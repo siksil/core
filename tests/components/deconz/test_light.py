@@ -290,7 +290,7 @@ async def test_lights(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that different light entities are created with expected values."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.LIGHT]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -747,7 +747,7 @@ async def test_groups(
         },
     }
 
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.LIGHT]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

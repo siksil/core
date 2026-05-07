@@ -61,7 +61,7 @@ async def test_setup_error(
     entry = create_mock_entry(VALID_CONFIG_DEFAULT)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get"
+        "inpui.components.feedreader.coordinator.feedparser.http.get"
     ) as feedreader:
         feedreader.side_effect = urllib.error.URLError("Test")
         feedreader.return_value = feed_one_event
@@ -80,7 +80,7 @@ async def test_storage_data_writing(
     storage_data: dict[str, str] = {URL: "2018-04-30T05:10:00+00:00"}
 
     with (
-        patch("homeassistant.components.feedreader.coordinator.DELAY_SAVE", new=0),
+        patch("inpui.components.feedreader.coordinator.DELAY_SAVE", new=0),
     ):
         assert await async_setup_config_entry(
             hass, VALID_CONFIG_DEFAULT, return_value=feed_one_event
@@ -135,7 +135,7 @@ async def test_feed_identical_timestamps(
     """Test feed with 2 entries with identical timestamps."""
     with (
         patch(
-            "homeassistant.components.feedreader.coordinator.StoredData.get_timestamp",
+            "inpui.components.feedreader.coordinator.StoredData.get_timestamp",
             return_value=gmtime(
                 datetime.fromisoformat("1970-01-01T00:00:00.0+0000").timestamp()
             ),
@@ -212,7 +212,7 @@ async def test_feed_updates(
     entry = create_mock_entry(VALID_CONFIG_DEFAULT)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get",
+        "inpui.components.feedreader.coordinator.feedparser.http.get",
         side_effect=side_effect,
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
@@ -331,7 +331,7 @@ async def test_feed_errors(
     entry = create_mock_entry(VALID_CONFIG_DEFAULT)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get"
+        "inpui.components.feedreader.coordinator.feedparser.http.get"
     ) as feedreader:
         # success setup
         feedreader.return_value = feed_one_event
@@ -359,7 +359,7 @@ async def test_feed_errors(
         # no feed returned
         freezer.tick(timedelta(hours=1, seconds=1))
         with patch(
-            "homeassistant.components.feedreader.coordinator.feedparser.parse",
+            "inpui.components.feedreader.coordinator.feedparser.parse",
             return_value=None,
         ):
             async_fire_time_changed(hass)
@@ -386,7 +386,7 @@ async def test_feed_atom_htmlentities(
     entry = create_mock_entry(VALID_CONFIG_DEFAULT)
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.feedreader.coordinator.feedparser.http.get",
+        "inpui.components.feedreader.coordinator.feedparser.http.get",
         side_effect=[feed_atom_htmlentities],
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)

@@ -28,9 +28,9 @@ GOOD_CONFIG = {
 async def test_setup_adds_proper_devices(hass: HomeAssistant) -> None:
     """Test if setup adds devices."""
     with (
-        mock.patch("homeassistant.components.mfi.switch.MFiClient") as mock_client,
+        mock.patch("inpui.components.mfi.switch.MFiClient") as mock_client,
         mock.patch(
-            "homeassistant.components.mfi.switch.MfiSwitch", side_effect=mfi.MfiSwitch
+            "inpui.components.mfi.switch.MfiSwitch", side_effect=mfi.MfiSwitch
         ) as mock_switch,
     ):
         ports = {

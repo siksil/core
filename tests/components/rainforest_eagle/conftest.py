@@ -70,7 +70,7 @@ async def setup_rainforest_100(hass: HomeAssistant) -> AsyncGenerator[MagicMock]
         },
     ).add_to_hass(hass)
     with patch(
-        "homeassistant.components.rainforest_eagle.coordinator.Eagle100Reader",
+        "inpui.components.rainforest_eagle.coordinator.Eagle100Reader",
         return_value=Mock(
             get_instantaneous_demand=Mock(
                 return_value={"InstantaneousDemand": {"Demand": "1.152000"}}

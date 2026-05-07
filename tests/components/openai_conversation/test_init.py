@@ -658,7 +658,7 @@ async def test_migration_from_v1(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -798,7 +798,7 @@ async def test_migration_from_v1_with_multiple_keys(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -902,7 +902,7 @@ async def test_migration_from_v1_with_same_keys(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1115,7 +1115,7 @@ async def test_migration_from_v1_disabled(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1290,7 +1290,7 @@ async def test_migration_from_v2_1(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1438,7 +1438,7 @@ async def test_migration_from_v2_2(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1636,7 +1636,7 @@ async def test_migrate_entry_from_v2_3(
 
     # Run setup to trigger migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1705,7 +1705,7 @@ async def test_migration_from_v2_4(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
@@ -1808,7 +1808,7 @@ async def test_migration_from_v2_5(
 
     # Run migration
     with patch(
-        "homeassistant.components.openai_conversation.async_setup_entry",
+        "inpui.components.openai_conversation.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

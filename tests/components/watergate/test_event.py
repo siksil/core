@@ -29,7 +29,7 @@ async def test_event(
 ) -> None:
     """Test states of the sensor."""
     freezer.move_to("2021-01-09 12:00:00+00:00")
-    with patch("homeassistant.components.watergate.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.watergate.PLATFORMS", [Platform.EVENT]):
         await init_integration(hass, mock_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_entry.entry_id)

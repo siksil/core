@@ -243,7 +243,7 @@ async def test_reauth_flow_wrong_account(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.mastodon.config_flow.construct_mastodon_username",
+        "inpui.components.mastodon.config_flow.construct_mastodon_username",
         return_value="BAD_USERNAME",
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -342,7 +342,7 @@ async def test_reconfigure_flow_wrong_account(
     assert result["step_id"] == "reconfigure"
 
     with patch(
-        "homeassistant.components.mastodon.config_flow.construct_mastodon_username",
+        "inpui.components.mastodon.config_flow.construct_mastodon_username",
         return_value="WRONG_USERNAME",
     ):
         result = await hass.config_entries.flow.async_configure(

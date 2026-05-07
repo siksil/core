@@ -42,7 +42,7 @@ async def test_create_entry(
 
     # Test errors that can arise when getting a Notion API client:
     with patch(
-        "homeassistant.components.notion.config_flow.async_get_client_with_credentials",
+        "inpui.components.notion.config_flow.async_get_client_with_credentials",
         get_client_with_exception,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -103,7 +103,7 @@ async def test_reauth(
 
     # Test errors that can arise when getting a Notion API client:
     with patch(
-        "homeassistant.components.notion.config_flow.async_get_client_with_credentials",
+        "inpui.components.notion.config_flow.async_get_client_with_credentials",
         get_client_with_exception,
     ):
         result = await hass.config_entries.flow.async_configure(

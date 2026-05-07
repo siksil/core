@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.arve.async_setup_entry", return_value=True
+        "inpui.components.arve.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -40,9 +40,9 @@ def mock_arve():
 
     with (
         patch(
-            "homeassistant.components.arve.coordinator.Arve", autospec=True
+            "inpui.components.arve.coordinator.Arve", autospec=True
         ) as arve_mock,
-        patch("homeassistant.components.arve.config_flow.Arve", new=arve_mock),
+        patch("inpui.components.arve.config_flow.Arve", new=arve_mock),
     ):
         arve = arve_mock.return_value
         arve.customer_id = 12345

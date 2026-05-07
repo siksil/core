@@ -114,7 +114,7 @@ async def test_setup_susbcriber_failure(
 ) -> None:
     """Test configuration error."""
     with patch(
-        "homeassistant.components.nest.api.GoogleNestSubscriber.start_async",
+        "inpui.components.nest.api.GoogleNestSubscriber.start_async",
         side_effect=SubscriberException(),
     ):
         await setup_base_platform()

@@ -40,10 +40,10 @@ async def test_yellow_update_entity(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.homeassistant_yellow.is_hassio", return_value=True
+            "inpui.components.homeassistant_yellow.is_hassio", return_value=True
         ),
         patch(
-            "homeassistant.components.homeassistant_yellow.get_os_info",
+            "inpui.components.homeassistant_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
     ):
@@ -126,10 +126,10 @@ async def test_yellow_update_entity_state(
 
     with (
         patch(
-            "homeassistant.components.homeassistant_yellow.is_hassio", return_value=True
+            "inpui.components.homeassistant_yellow.is_hassio", return_value=True
         ),
         patch(
-            "homeassistant.components.homeassistant_yellow.get_os_info",
+            "inpui.components.homeassistant_yellow.get_os_info",
             return_value={"board": "yellow"},
         ),
     ):

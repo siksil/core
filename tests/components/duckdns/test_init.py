@@ -90,7 +90,7 @@ async def test_setup_backoff(
     """Test update fails with backoffs and recovers."""
 
     with patch(
-        "homeassistant.components.duckdns.coordinator.update_duckdns",
+        "inpui.components.duckdns.coordinator.update_duckdns",
         side_effect=[side_effect] * len(BACKOFF_INTERVALS),
     ) as client_mock:
         config_entry.add_to_hass(hass)
@@ -229,7 +229,7 @@ async def test_service_request_exception(
 
     with (
         patch(
-            "homeassistant.components.duckdns.services.update_duckdns",
+            "inpui.components.duckdns.services.update_duckdns",
             side_effect=[side_effect],
         ),
         pytest.raises(HomeAssistantError) as e,

@@ -17,7 +17,7 @@ def mock_is_entity_recorded():
     mocks = {}
 
     with patch(
-        "homeassistant.components.recorder.is_entity_recorded",
+        "inpui.components.recorder.is_entity_recorded",
         side_effect=lambda hass, entity_id: mocks.get(entity_id, True),
     ):
         yield mocks
@@ -39,7 +39,7 @@ def mock_get_metadata():
         return result
 
     with patch(
-        "homeassistant.components.recorder.statistics.get_metadata",
+        "inpui.components.recorder.statistics.get_metadata",
         wraps=_get_metadata,
     ):
         yield mocks

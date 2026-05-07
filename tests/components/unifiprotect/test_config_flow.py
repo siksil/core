@@ -129,19 +129,19 @@ async def test_user_flow(hass: HomeAssistant, bootstrap: Bootstrap, nvr: NVR) ->
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ) as mock_setup,
     ):
@@ -183,11 +183,11 @@ async def test_form_version_too_old(
     bootstrap.nvr = old_nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -208,11 +208,11 @@ async def test_form_version_too_old(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -240,11 +240,11 @@ async def test_form_invalid_auth_password(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             side_effect=NotAuthorized,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -265,11 +265,11 @@ async def test_form_invalid_auth_password(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -297,11 +297,11 @@ async def test_form_invalid_auth_api_key(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             side_effect=NotAuthorized,
         ),
     ):
@@ -322,11 +322,11 @@ async def test_form_invalid_auth_api_key(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -361,11 +361,11 @@ async def test_form_cloud_user(
     bootstrap.users[bootstrap.auth_user_id] = user
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -388,11 +388,11 @@ async def test_form_cloud_user(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -420,11 +420,11 @@ async def test_form_cannot_connect(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             side_effect=NvrError,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             side_effect=NvrError,
         ),
     ):
@@ -445,11 +445,11 @@ async def test_form_cannot_connect(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -492,11 +492,11 @@ async def test_form_reauth_auth(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             side_effect=NotAuthorized,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -516,19 +516,19 @@ async def test_form_reauth_auth(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
     ):
@@ -564,9 +564,9 @@ async def test_form_options(
 
     with (
         _patch_discovery(),
-        patch("homeassistant.components.unifiprotect.async_start_discovery"),
+        patch("inpui.components.unifiprotect.async_start_discovery"),
         patch(
-            "homeassistant.components.unifiprotect.utils.ProtectApiClient"
+            "inpui.components.unifiprotect.utils.ProtectApiClient"
         ) as mock_api,
     ):
         mock_api.return_value = ufp_client
@@ -650,19 +650,19 @@ async def test_discovered_by_unifi_discovery_direct_connect(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ) as mock_setup,
     ):
@@ -749,7 +749,7 @@ async def test_discovered_by_unifi_discovery_direct_connect_updated_but_not_usin
     with (
         _patch_discovery(),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.async_console_is_alive",
+            "inpui.components.unifiprotect.config_flow.async_console_is_alive",
             return_value=False,
         ),
     ):
@@ -787,7 +787,7 @@ async def test_discovered_by_unifi_discovery_does_not_update_ip_when_console_is_
     with (
         _patch_discovery(),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.async_console_is_alive",
+            "inpui.components.unifiprotect.config_flow.async_console_is_alive",
             return_value=True,
         ),
     ):
@@ -860,19 +860,19 @@ async def test_discovered_by_unifi_discovery(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             side_effect=[NotAuthorized, bootstrap],
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ) as mock_setup,
     ):
@@ -930,19 +930,19 @@ async def test_discovered_by_unifi_discovery_partial(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ) as mock_setup,
     ):
@@ -1126,19 +1126,19 @@ async def test_discovered_by_unifi_discovery_direct_connect_on_different_interfa
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ) as mock_setup,
     ):
@@ -1272,19 +1272,19 @@ async def test_discovery_with_both_ignored_and_normal_entry(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_bootstrap",
             return_value=bootstrap,
         ),
         patch(
-            "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+            "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
     ):
@@ -1329,11 +1329,11 @@ async def test_discovery_confirm_fallback_to_ip(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
     ):
@@ -1398,11 +1398,11 @@ async def test_discovery_confirm_with_api_key_error(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
     ):
@@ -1923,11 +1923,11 @@ async def test_reauth_empty_credentials_keeps_existing(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -2015,11 +2015,11 @@ async def test_reauth_credential_update(
     bootstrap.nvr = nvr
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -2059,7 +2059,7 @@ async def test_reconfigure_clears_session_failure_continues(
 
     # Simulate session clear failure - should still continue
     with patch(
-        "homeassistant.components.unifiprotect.config_flow.async_create_api_client"
+        "inpui.components.unifiprotect.config_flow.async_create_api_client"
     ) as mock_create_client:
         mock_protect = AsyncMock()
         mock_protect.clear_session = AsyncMock(side_effect=Exception("Session error"))
@@ -2101,7 +2101,7 @@ async def test_form_api_key_client_error(
     bootstrap.nvr = nvr
 
     with patch(
-        "homeassistant.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
+        "inpui.components.unifiprotect.config_flow.ProtectApiClient.get_meta_info",
         side_effect=ClientError("Connection failed"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -2137,11 +2137,11 @@ async def test_port_int_conversion(
 
     with (
         patch(
-            "homeassistant.components.unifiprotect.async_setup_entry",
+            "inpui.components.unifiprotect.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.unifiprotect.async_setup",
+            "inpui.components.unifiprotect.async_setup",
             return_value=True,
         ),
     ):

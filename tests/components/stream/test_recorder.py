@@ -59,7 +59,7 @@ async def test_record_stream(hass: HomeAssistant, filename, h264_video) -> None:
             await Stream.remove_provider(self, provider)
             worker_finished.set()
 
-    with patch("homeassistant.components.stream.Stream", wraps=MockStream):
+    with patch("inpui.components.stream.Stream", wraps=MockStream):
         stream = create_stream(hass, h264_video, {}, dynamic_stream_settings())
 
     with patch.object(hass.config, "is_allowed_path", return_value=True):
@@ -152,8 +152,8 @@ async def test_recorder_discontinuity(
 
     with (
         patch.object(hass.config, "is_allowed_path", return_value=True),
-        patch("homeassistant.components.stream.Stream", wraps=MockStream),
-        patch("homeassistant.components.stream.recorder.RecorderOutput.recv"),
+        patch("inpui.components.stream.Stream", wraps=MockStream),
+        patch("inpui.components.stream.recorder.RecorderOutput.recv"),
     ):
         stream = create_stream(hass, "blank", {}, dynamic_stream_settings())
         make_recording = hass.async_create_task(stream.async_record(filename))
@@ -226,7 +226,7 @@ async def test_record_stream_audio(
             await Stream.remove_provider(self, provider)
             worker_finished.set()
 
-    with patch("homeassistant.components.stream.Stream", wraps=MockStream):
+    with patch("inpui.components.stream.Stream", wraps=MockStream):
         stream = create_stream(hass, source, {}, dynamic_stream_settings())
 
     with patch.object(hass.config, "is_allowed_path", return_value=True):
@@ -285,7 +285,7 @@ async def test_record_stream_rotate(hass: HomeAssistant, filename, h264_video) -
             await Stream.remove_provider(self, provider)
             worker_finished.set()
 
-    with patch("homeassistant.components.stream.Stream", wraps=MockStream):
+    with patch("inpui.components.stream.Stream", wraps=MockStream):
         stream = create_stream(hass, h264_video, {}, dynamic_stream_settings())
         stream.dynamic_stream_settings.orientation = Orientation.ROTATE_RIGHT
 

@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.guardian.async_setup_entry", return_value=True
+        "inpui.components.guardian.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -149,7 +149,7 @@ async def setup_guardian_fixture(
             "aioguardian.client.Client.disconnect",
         ),
         patch(
-            "homeassistant.components.guardian.PLATFORMS",
+            "inpui.components.guardian.PLATFORMS",
             [],
         ),
     ):

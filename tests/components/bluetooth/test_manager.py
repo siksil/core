@@ -962,7 +962,7 @@ async def test_goes_unavailable_dismisses_discovery_and_makes_discoverable(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         assert await async_setup_component(hass, bluetooth.DOMAIN, {})
         await hass.async_block_till_done()
@@ -1141,7 +1141,7 @@ async def test_debug_logging(
     """Test debug logging."""
     assert await async_setup_component(hass, "logger", {"logger": {}})
     async with async_call_logger_set_level(
-        "homeassistant.components.bluetooth", "DEBUG", hass=hass, caplog=caplog
+        "inpui.components.bluetooth", "DEBUG", hass=hass, caplog=caplog
     ):
         address = "44:44:33:11:23:41"
         start_time_monotonic = 50.0
@@ -1163,7 +1163,7 @@ async def test_debug_logging(
         caplog.clear()
 
     async with async_call_logger_set_level(
-        "homeassistant.components.bluetooth", "WARNING", hass=hass, caplog=caplog
+        "inpui.components.bluetooth", "WARNING", hass=hass, caplog=caplog
     ):
         switchbot_device_good_signal_hci0 = generate_ble_device(
             address, "wohand_good_signal_hci0"
@@ -1377,7 +1377,7 @@ async def test_bluetooth_rediscover(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         assert await async_setup_component(hass, bluetooth.DOMAIN, {})
         await hass.async_block_till_done()
@@ -1553,7 +1553,7 @@ async def test_bluetooth_rediscover_no_match(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         assert await async_setup_component(hass, bluetooth.DOMAIN, {})
         await hass.async_block_till_done()
@@ -1775,7 +1775,7 @@ async def test_repair_issue_created_for_degraded_scanner_in_docker(
         patch("habluetooth.manager.IS_LINUX", True),
         patch.object(type(manager), "is_operating_degraded", return_value=True),
         patch(
-            "homeassistant.components.bluetooth.manager.is_docker_env",
+            "inpui.components.bluetooth.manager.is_docker_env",
             return_value=True,
         ),
         patch.object(manager._bluetooth_adapters, "adapters", mock_adapters),
@@ -1828,7 +1828,7 @@ async def test_repair_issue_deleted_when_scanner_not_degraded(
         patch("habluetooth.manager.IS_LINUX", True),
         patch.object(type(manager), "is_operating_degraded", return_value=True),
         patch(
-            "homeassistant.components.bluetooth.manager.is_docker_env",
+            "inpui.components.bluetooth.manager.is_docker_env",
             return_value=True,
         ),
         patch.object(manager._bluetooth_adapters, "adapters", mock_adapters),
@@ -1839,7 +1839,7 @@ async def test_repair_issue_deleted_when_scanner_not_degraded(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.manager.is_docker_env",
+            "inpui.components.bluetooth.manager.is_docker_env",
             return_value=True,
         ),
         patch.object(type(manager), "is_operating_degraded", return_value=False),
@@ -1868,7 +1868,7 @@ async def test_no_repair_issue_when_not_docker(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.manager.is_docker_env",
+            "inpui.components.bluetooth.manager.is_docker_env",
             return_value=False,
         ),
         patch.object(type(manager), "is_operating_degraded", return_value=True),
@@ -1895,7 +1895,7 @@ async def test_no_repair_issue_for_remote_scanner(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.manager.is_docker_env",
+            "inpui.components.bluetooth.manager.is_docker_env",
             return_value=True,
         ),
         patch.object(type(manager), "is_operating_degraded", return_value=True),

@@ -25,7 +25,7 @@ async def test_entity_setup(
     mock_fibaro_client.read_rooms.return_value = [mock_room]
     mock_fibaro_client.read_devices.return_value = [mock_button_device]
 
-    with patch("homeassistant.components.fibaro.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.fibaro.PLATFORMS", [Platform.EVENT]):
         # Act
         await init_integration(hass, mock_config_entry)
         # Assert

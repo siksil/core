@@ -1558,7 +1558,7 @@ async def test_get_property_blowup(
         },
     )
     with patch(
-        "homeassistant.components.alexa.capabilities.float",
+        "inpui.components.alexa.capabilities.float",
         side_effect=Exception("Boom Fail"),
     ):
         properties = await reported_properties(hass, "climate.downstairs")

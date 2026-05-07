@@ -45,7 +45,7 @@ async def test_setup_fails_on_missing_usb_port(hass: HomeAssistant) -> None:
 
     # Set up the config entry
     with patch(
-        "homeassistant.components.homeassistant_connect_zbt2.os.path.exists"
+        "inpui.components.homeassistant_connect_zbt2.os.path.exists"
     ) as mock_exists:
         mock_exists.return_value = False
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -91,7 +91,7 @@ async def test_usb_device_reactivity(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.homeassistant_connect_zbt2.os.path.exists"
+        "inpui.components.homeassistant_connect_zbt2.os.path.exists"
     ) as mock_exists:
         mock_exists.return_value = False
         await hass.config_entries.async_setup(config_entry.entry_id)

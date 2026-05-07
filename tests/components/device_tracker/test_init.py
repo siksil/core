@@ -131,7 +131,7 @@ async def test_reading_yaml_config(hass: HomeAssistant, yaml_devices: str) -> No
         return loaded_config
 
     with patch(
-        "homeassistant.components.device_tracker.legacy.async_load_config",
+        "inpui.components.device_tracker.legacy.async_load_config",
         capture_load_config,
     ):
         assert await async_setup_component(hass, device_tracker.DOMAIN, TEST_PLATFORM)
@@ -146,7 +146,7 @@ async def test_reading_yaml_config(hass: HomeAssistant, yaml_devices: str) -> No
     assert f"test.{device_tracker.DOMAIN}" in hass.config.components
 
 
-@patch("homeassistant.components.device_tracker.const.LOGGER.warning")
+@patch("inpui.components.device_tracker.const.LOGGER.warning")
 async def test_duplicate_mac_dev_id(mock_warning, hass: HomeAssistant) -> None:
     """Test adding duplicate MACs or device IDs to DeviceTracker."""
     devices = [
@@ -230,8 +230,8 @@ async def test_gravatar_and_picture(hass: HomeAssistant) -> None:
     assert device.config_picture == gravatar_url
 
 
-@patch("homeassistant.components.device_tracker.legacy.DeviceTracker.see")
-@patch("homeassistant.components.demo.device_tracker.setup_scanner", autospec=True)
+@patch("inpui.components.device_tracker.legacy.DeviceTracker.see")
+@patch("inpui.components.demo.device_tracker.setup_scanner", autospec=True)
 async def test_discover_platform(
     mock_demo_setup_scanner, mock_see, hass: HomeAssistant
 ) -> None:
@@ -240,7 +240,7 @@ async def test_discover_platform(
     await async_setup_component(hass, device_tracker.DOMAIN, {})
     # async_block_till_done is intentionally missing here so we
     # can verify async_load_platform still works without it
-    with patch("homeassistant.components.device_tracker.legacy.update_config"):
+    with patch("inpui.components.device_tracker.legacy.update_config"):
         await discovery.async_load_platform(
             hass, device_tracker.DOMAIN, "demo", {"test_key": "test_val"}, {"bla": {}}
         )
@@ -263,7 +263,7 @@ async def test_discover_platform_missing_platform(
     await async_setup_component(hass, device_tracker.DOMAIN, {})
     # async_block_till_done is intentionally missing here so we
     # can verify async_load_platform still works without it
-    with patch("homeassistant.components.device_tracker.legacy.update_config"):
+    with patch("inpui.components.device_tracker.legacy.update_config"):
         await discovery.async_load_platform(
             hass,
             device_tracker.DOMAIN,
@@ -295,7 +295,7 @@ async def test_update_stale(
 
     with (
         patch(
-            "homeassistant.components.device_tracker.legacy.dt_util.utcnow",
+            "inpui.components.device_tracker.legacy.dt_util.utcnow",
             return_value=register_time,
         ),
         assert_setup_component(1, device_tracker.DOMAIN),
@@ -317,7 +317,7 @@ async def test_update_stale(
     mock_legacy_device_scanner.leave_home("DEV1")
 
     with patch(
-        "homeassistant.components.device_tracker.legacy.dt_util.utcnow",
+        "inpui.components.device_tracker.legacy.dt_util.utcnow",
         return_value=scan_time,
     ):
         async_fire_time_changed(hass, scan_time)
@@ -361,7 +361,7 @@ async def test_entity_attributes(
     assert picture == attrs.get(ATTR_ENTITY_PICTURE)
 
 
-@patch("homeassistant.components.device_tracker.legacy.DeviceTracker.async_see")
+@patch("inpui.components.device_tracker.legacy.DeviceTracker.async_see")
 async def test_see_service(mock_see, hass: HomeAssistant) -> None:
     """Test the see service with a unicode dev_id and NO MAC."""
     with assert_setup_component(1, device_tracker.DOMAIN):
@@ -550,7 +550,7 @@ async def test_see_passive_zone_state(
 
     with (
         patch(
-            "homeassistant.components.device_tracker.legacy.dt_util.utcnow",
+            "inpui.components.device_tracker.legacy.dt_util.utcnow",
             return_value=register_time,
         ),
         assert_setup_component(1, device_tracker.DOMAIN),
@@ -581,7 +581,7 @@ async def test_see_passive_zone_state(
     mock_legacy_device_scanner.leave_home("dev1")
 
     with patch(
-        "homeassistant.components.device_tracker.legacy.dt_util.utcnow",
+        "inpui.components.device_tracker.legacy.dt_util.utcnow",
         return_value=scan_time,
     ):
         async_fire_time_changed(hass, scan_time)
@@ -599,7 +599,7 @@ async def test_see_passive_zone_state(
     assert attrs.get("source_type") == SourceType.ROUTER
 
 
-@patch("homeassistant.components.device_tracker.const.LOGGER.warning")
+@patch("inpui.components.device_tracker.const.LOGGER.warning")
 async def test_see_failures(
     mock_warning, hass: HomeAssistant, mock_device_tracker_conf: list[legacy.Device]
 ) -> None:

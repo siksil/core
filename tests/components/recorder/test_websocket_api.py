@@ -1795,7 +1795,7 @@ async def test_statistic_during_period_calendar(
 
     # Try requesting data for the current hour
     with patch(
-        "homeassistant.components.recorder.websocket_api.statistic_during_period",
+        "inpui.components.recorder.websocket_api.statistic_during_period",
         return_value={},
     ) as statistic_during_period:
         await client.send_json_auto_id(
@@ -3362,7 +3362,7 @@ async def test_recorder_info_bad_recorder_config(
 
     client = await hass_ws_client()
 
-    with patch("homeassistant.components.recorder.migration._migrate_schema"):
+    with patch("inpui.components.recorder.migration._migrate_schema"):
         recorder_helper.async_initialize_recorder(hass)
         assert not await async_setup_component(
             hass, recorder.DOMAIN, {recorder.DOMAIN: config}
@@ -3416,7 +3416,7 @@ async def test_recorder_info_migration_queue_exhausted(
 
     with (
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=create_engine_test,
         ),
         patch.object(recorder.core, "MAX_QUEUE_BACKLOG_MIN_VALUE", 1),

@@ -83,7 +83,7 @@ MOCK_LOCATION = location_util.LocationInfo(
 def location_info_fixture():
     """Mock location info."""
     with patch(
-        "homeassistant.components.ps4."
+        "inpui.components.ps4."
         "config_flow.location_util.async_detect_location_info",
         return_value=MOCK_LOCATION,
     ):
@@ -94,7 +94,7 @@ def location_info_fixture():
 def ps4_setup_fixture():
     """Patch ps4 setup entry."""
     with patch(
-        "homeassistant.components.ps4.async_setup_entry",
+        "inpui.components.ps4.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -360,7 +360,7 @@ async def test_0_pin(hass: HomeAssistant) -> None:
             "pyps4_2ndscreen.Helper.has_devices", return_value=[{"host-ip": MOCK_HOST}]
         ),
         patch(
-            "homeassistant.components.ps4."
+            "inpui.components.ps4."
             "config_flow.location_util.async_detect_location_info",
             return_value=MOCK_LOCATION,
         ),

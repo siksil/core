@@ -41,7 +41,7 @@ async def test_unique_id_migration(
 
     with (
         patch(
-            "homeassistant.components.wolflink.fetch_parameters",
+            "inpui.components.wolflink.fetch_parameters",
             side_effect=RequestError("Unable to fetch parameters"),
         ),
     ):

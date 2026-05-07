@@ -126,7 +126,7 @@ async def test_authentication_error(
             side_effect=UptimeRobotAuthenticationException,
         ),
         patch(
-            "homeassistant.config_entries.ConfigEntry.async_start_reauth"
+            "inpui.config_entries.ConfigEntry.async_start_reauth"
         ) as config_entry_reauth,
     ):
         await hass.services.async_call(

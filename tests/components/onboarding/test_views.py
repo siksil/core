@@ -87,15 +87,15 @@ async def mock_supervisor_fixture(
 def mock_default_integrations():
     """Mock the default integrations set up during onboarding."""
     with (
-        patch("homeassistant.components.rpi_power.config_flow.new_under_voltage"),
-        patch("homeassistant.components.rpi_power.binary_sensor.new_under_voltage"),
-        patch("homeassistant.components.met.async_setup_entry", return_value=True),
+        patch("inpui.components.rpi_power.config_flow.new_under_voltage"),
+        patch("inpui.components.rpi_power.binary_sensor.new_under_voltage"),
+        patch("inpui.components.met.async_setup_entry", return_value=True),
         patch(
-            "homeassistant.components.radio_browser.async_setup_entry",
+            "inpui.components.radio_browser.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.shopping_list.async_setup_entry",
+            "inpui.components.shopping_list.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -368,7 +368,7 @@ async def test_onboarding_integration_invalid_redirect_uri(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.auth.indieauth.fetch_redirect_uris", return_value=[]
+        "inpui.components.auth.indieauth.fetch_redirect_uris", return_value=[]
     ):
         resp = await client.post(
             "/api/onboarding/integration",
@@ -577,7 +577,7 @@ async def test_onboarding_installation_type(
     client = await hass_client()
 
     with patch(
-        "homeassistant.components.onboarding.views.async_get_system_info",
+        "inpui.components.onboarding.views.async_get_system_info",
         return_value={"installation_type": "Home Assistant Core"},
     ):
         resp = await client.get("/api/onboarding/installation_type")

@@ -85,7 +85,7 @@ async def test_toggle(hass: HomeAssistant) -> None:
     assert len(calls) == 1
 
 
-@patch("homeassistant.config.os.path.isfile", Mock(return_value=True))
+@patch("inpui.config.os.path.isfile", Mock(return_value=True))
 async def test_reload_core_conf(hass: HomeAssistant) -> None:
     """Test reload core conf service."""
     await async_setup_component(hass, ha.DOMAIN, {})
@@ -129,9 +129,9 @@ async def test_reload_core_conf(hass: HomeAssistant) -> None:
     assert state.attributes.get("hello") == "world"
 
 
-@patch("homeassistant.config.os.path.isfile", Mock(return_value=True))
-@patch("homeassistant.components.homeassistant._LOGGER.error")
-@patch("homeassistant.core_config.async_process_ha_core_config")
+@patch("inpui.config.os.path.isfile", Mock(return_value=True))
+@patch("inpui.components.homeassistant._LOGGER.error")
+@patch("inpui.core_config.async_process_ha_core_config")
 async def test_reload_core_with_wrong_conf(
     mock_process, mock_error, hass: HomeAssistant
 ) -> None:
@@ -147,9 +147,9 @@ async def test_reload_core_with_wrong_conf(
     assert mock_process.called is False
 
 
-@patch("homeassistant.core.HomeAssistant.async_stop", return_value=None)
+@patch("inpui.core.HomeAssistant.async_stop", return_value=None)
 @patch(
-    "homeassistant.config.async_check_ha_config_file",
+    "inpui.config.async_check_ha_config_file",
     side_effect=HomeAssistantError("Test error"),
 )
 async def test_restart_homeassistant_wrong_conf(
@@ -165,8 +165,8 @@ async def test_restart_homeassistant_wrong_conf(
     assert not mock_restart.called
 
 
-@patch("homeassistant.core.HomeAssistant.async_stop", return_value=None)
-@patch("homeassistant.config.async_check_ha_config_file", return_value=None)
+@patch("inpui.core.HomeAssistant.async_stop", return_value=None)
+@patch("inpui.config.async_check_ha_config_file", return_value=None)
 async def test_check_config(mock_check, mock_stop, hass: HomeAssistant) -> None:
     """Test stop service."""
     await async_setup_component(hass, ha.DOMAIN, {})
@@ -196,7 +196,7 @@ async def test_turn_on_skips_domains_without_service(
     service = hass.services.async_services_for_domain("homeassistant")["turn_on"]
 
     with patch(
-        "homeassistant.core.ServiceRegistry.async_call",
+        "inpui.core.ServiceRegistry.async_call",
         return_value=None,
     ) as mock_call:
         await service.job.target(service_call)
@@ -222,7 +222,7 @@ async def test_entity_update(hass: HomeAssistant) -> None:
     await async_setup_component(hass, "homeassistant", {})
 
     with patch(
-        "homeassistant.components.homeassistant.async_update_entity",
+        "inpui.components.homeassistant.async_update_entity",
         return_value=None,
     ) as mock_update:
         await hass.services.async_call(
@@ -336,7 +336,7 @@ async def test_not_allowing_recursion(
         await hass.services.async_call(
             ha.DOMAIN,
             service,
-            {"entity_id": "homeassistant.light"},
+            {"entity_id": "inpui.light"},
             blocking=True,
         )
         assert (
@@ -361,7 +361,7 @@ async def test_reload_config_entry_by_entity_id(
         "binary_sensor", "powerwall", "battery_status", config_entry=entry2
     )
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_reload",
+        "inpui.config_entries.ConfigEntries.async_reload",
         return_value=None,
     ) as mock_reload:
         await hass.services.async_call(
@@ -391,7 +391,7 @@ async def test_reload_config_entry_by_entry_id(hass: HomeAssistant) -> None:
     await async_setup_component(hass, "homeassistant", {})
 
     with patch(
-        "homeassistant.config_entries.ConfigEntries.async_reload",
+        "inpui.config_entries.ConfigEntries.async_reload",
         return_value=None,
     ) as mock_reload:
         await hass.services.async_call(
@@ -417,7 +417,7 @@ async def test_raises_when_db_upgrade_in_progress(
     with (
         pytest.raises(HomeAssistantError),
         patch(
-            "homeassistant.helpers.recorder.async_migration_in_progress",
+            "inpui.helpers.recorder.async_migration_in_progress",
             return_value=True,
         ) as mock_async_migration_in_progress,
     ):
@@ -434,10 +434,10 @@ async def test_raises_when_db_upgrade_in_progress(
 
     with (
         patch(
-            "homeassistant.helpers.recorder.async_migration_in_progress",
+            "inpui.helpers.recorder.async_migration_in_progress",
             return_value=False,
         ) as mock_async_migration_in_progress,
-        patch("homeassistant.config.async_check_ha_config_file", return_value=None),
+        patch("inpui.config.async_check_ha_config_file", return_value=None),
     ):
         await hass.services.async_call(
             "homeassistant",
@@ -459,11 +459,11 @@ async def test_raises_when_config_is_invalid(
     with (
         pytest.raises(HomeAssistantError),
         patch(
-            "homeassistant.helpers.recorder.async_migration_in_progress",
+            "inpui.helpers.recorder.async_migration_in_progress",
             return_value=False,
         ),
         patch(
-            "homeassistant.config.async_check_ha_config_file", return_value=["Error 1"]
+            "inpui.config.async_check_ha_config_file", return_value=["Error 1"]
         ) as mock_async_check_ha_config_file,
     ):
         await hass.services.async_call(
@@ -480,11 +480,11 @@ async def test_raises_when_config_is_invalid(
 
     with (
         patch(
-            "homeassistant.helpers.recorder.async_migration_in_progress",
+            "inpui.helpers.recorder.async_migration_in_progress",
             return_value=False,
         ),
         patch(
-            "homeassistant.config.async_check_ha_config_file", return_value=None
+            "inpui.config.async_check_ha_config_file", return_value=None
         ) as mock_async_check_ha_config_file,
     ):
         await hass.services.async_call(
@@ -507,11 +507,11 @@ async def test_restart_homeassistant(
     await async_setup_component(hass, "homeassistant", {})
     with (
         patch(
-            "homeassistant.config.async_check_ha_config_file", return_value=None
+            "inpui.config.async_check_ha_config_file", return_value=None
         ) as mock_check,
-        patch("homeassistant.config.async_enable_safe_mode") as mock_safe_mode,
+        patch("inpui.config.async_enable_safe_mode") as mock_safe_mode,
         patch(
-            "homeassistant.core.HomeAssistant.async_stop", return_value=None
+            "inpui.core.HomeAssistant.async_stop", return_value=None
         ) as mock_restart,
     ):
         await hass.services.async_call(
@@ -531,10 +531,10 @@ async def test_stop_homeassistant(hass: HomeAssistant) -> None:
     await async_setup_component(hass, "homeassistant", {})
     with (
         patch(
-            "homeassistant.config.async_check_ha_config_file", return_value=None
+            "inpui.config.async_check_ha_config_file", return_value=None
         ) as mock_check,
         patch(
-            "homeassistant.core.HomeAssistant.async_stop", return_value=None
+            "inpui.core.HomeAssistant.async_stop", return_value=None
         ) as mock_restart,
     ):
         await hass.services.async_call(
@@ -551,7 +551,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
     """Test we can call save_persistent_states."""
     await async_setup_component(hass, "homeassistant", {})
     with patch(
-        "homeassistant.helpers.restore_state.RestoreStateData.async_save_persistent_states",
+        "inpui.helpers.restore_state.RestoreStateData.async_save_persistent_states",
         return_value=None,
     ) as mock_save:
         await hass.services.async_call(
@@ -566,7 +566,7 @@ async def test_reload_custom_templates(hass: HomeAssistant) -> None:
     """Test we can call reload_custom_templates."""
     await async_setup_component(hass, "homeassistant", {})
     with patch(
-        "homeassistant.components.homeassistant.async_load_custom_templates",
+        "inpui.components.homeassistant.async_load_custom_templates",
         return_value=None,
     ) as mock_load_custom_templates:
         await hass.services.async_call(
@@ -591,7 +591,7 @@ async def test_reload_all(
     jinja = async_mock_service(hass, "homeassistant", "reload_custom_templates")
 
     with patch(
-        "homeassistant.config.async_check_ha_config_file",
+        "inpui.config.async_check_ha_config_file",
         return_value=None,
     ) as mock_async_check_ha_config_file:
         await hass.services.async_call(
@@ -617,7 +617,7 @@ async def test_reload_all(
             ),
         ),
         patch(
-            "homeassistant.config.async_check_ha_config_file",
+            "inpui.config.async_check_ha_config_file",
             return_value="Oh no, drama!",
         ) as mock_async_check_ha_config_file,
     ):
@@ -657,14 +657,14 @@ async def test_deprecated_installation_issue_32bit_core(
     """Test deprecated installation issue."""
     with (
         patch(
-            "homeassistant.components.homeassistant.async_get_system_info",
+            "inpui.components.homeassistant.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "arch": arch,
             },
         ),
         patch(
-            "homeassistant.components.homeassistant._is_32_bit",
+            "inpui.components.homeassistant._is_32_bit",
             return_value=True,
         ),
     ):
@@ -697,14 +697,14 @@ async def test_deprecated_installation_issue_64bit_core(
     """Test deprecated installation issue."""
     with (
         patch(
-            "homeassistant.components.homeassistant.async_get_system_info",
+            "inpui.components.homeassistant.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Core",
                 "arch": arch,
             },
         ),
         patch(
-            "homeassistant.components.homeassistant._is_32_bit",
+            "inpui.components.homeassistant._is_32_bit",
             return_value=False,
         ),
     ):
@@ -738,7 +738,7 @@ async def test_deprecated_installation_issue_32bit(
     """Test deprecated installation issue."""
     with (
         patch(
-            "homeassistant.components.homeassistant.async_get_system_info",
+            "inpui.components.homeassistant.async_get_system_info",
             return_value={
                 "installation_type": "Home Assistant Container",
                 "container_arch": arch,
@@ -746,7 +746,7 @@ async def test_deprecated_installation_issue_32bit(
             },
         ),
         patch(
-            "homeassistant.components.homeassistant._is_32_bit",
+            "inpui.components.homeassistant._is_32_bit",
             return_value=True,
         ),
     ):

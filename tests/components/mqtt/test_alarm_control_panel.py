@@ -1046,7 +1046,7 @@ async def test_discovery_update_unchanged_alarm(
 
     data1 = json.dumps(config1)
     with patch(
-        "homeassistant.components.mqtt.alarm_control_panel.MqttAlarm.discovery_update"
+        "inpui.components.mqtt.alarm_control_panel.MqttAlarm.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass,
@@ -1355,7 +1355,7 @@ async def test_reload_after_invalid_config(
 ) -> None:
     """Test reloading yaml config fails."""
     with patch(
-        "homeassistant.components.mqtt.ir.async_delete_issue"
+        "inpui.components.mqtt.ir.async_delete_issue"
     ) as mock_async_remove_issue:
         assert await mqtt_mock_entry()
         assert hass.states.get("alarm_control_panel.test") is None
@@ -1379,7 +1379,7 @@ async def test_reload_after_invalid_config(
             ]
         }
         with patch(
-            "homeassistant.config.load_yaml_config_file", return_value=valid_config
+            "inpui.config.load_yaml_config_file", return_value=valid_config
         ):
             await hass.services.async_call(
                 "mqtt",
@@ -1407,7 +1407,7 @@ async def test_reload_after_invalid_config(
         }
         with (
             patch(
-                "homeassistant.config.load_yaml_config_file",
+                "inpui.config.load_yaml_config_file",
                 return_value=invalid_config,
             ),
             pytest.raises(HomeAssistantError),

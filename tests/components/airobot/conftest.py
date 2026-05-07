@@ -28,7 +28,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airobot.async_setup_entry", return_value=True
+        "inpui.components.airobot.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -83,10 +83,10 @@ def mock_airobot_client(
     """Mock AirobotClient for both coordinator and config flow."""
     with (
         patch(
-            "homeassistant.components.airobot.coordinator.AirobotClient", autospec=True
+            "inpui.components.airobot.coordinator.AirobotClient", autospec=True
         ) as mock_client,
         patch(
-            "homeassistant.components.airobot.config_flow.AirobotClient",
+            "inpui.components.airobot.config_flow.AirobotClient",
             new=mock_client,
         ),
     ):
@@ -127,7 +127,7 @@ async def init_integration(
     """Set up the Airobot integration for testing."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.airobot.PLATFORMS", platforms):
+    with patch("inpui.components.airobot.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

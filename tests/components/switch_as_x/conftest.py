@@ -21,6 +21,6 @@ async def setup_homeassistant(hass: HomeAssistant):
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.switch_as_x.async_setup_entry", return_value=True
+        "inpui.components.switch_as_x.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup

@@ -41,7 +41,7 @@ async def test_streaming_audio(
         yield "chunk2"
 
     with patch(
-        "homeassistant.components.wyoming.stt.AsyncTcpClient",
+        "inpui.components.wyoming.stt.AsyncTcpClient",
         MockAsyncTcpClient([Transcript(text="Hello world").event()]),
     ) as mock_client:
         result = await entity.async_process_audio_stream(metadata, audio_stream())
@@ -62,7 +62,7 @@ async def test_streaming_audio_connection_lost(
         yield "chunk1"
 
     with patch(
-        "homeassistant.components.wyoming.stt.AsyncTcpClient",
+        "inpui.components.wyoming.stt.AsyncTcpClient",
         MockAsyncTcpClient([None]),
     ):
         result = await entity.async_process_audio_stream(metadata, audio_stream())
@@ -85,7 +85,7 @@ async def test_streaming_audio_oserror(
 
     with (
         patch(
-            "homeassistant.components.wyoming.stt.AsyncTcpClient",
+            "inpui.components.wyoming.stt.AsyncTcpClient",
             mock_client,
         ),
         patch.object(mock_client, "read_event", side_effect=OSError("Boom!")),

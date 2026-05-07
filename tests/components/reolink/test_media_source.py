@@ -142,7 +142,7 @@ async def test_browsing(
     reolink_host.model = "Reolink TrackMix PoE"
     reolink_host.is_nvr = False
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(entry_id) is True
     await hass.async_block_till_done()
 
@@ -283,7 +283,7 @@ async def test_browsing_h265_encoding(
     entry_id = config_entry.entry_id
     reolink_host.is_nvr = True
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(entry_id) is True
     await hass.async_block_till_done()
 
@@ -341,7 +341,7 @@ async def test_browsing_rec_playback_unsupported(
 
     reolink_host.supported = test_supported
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -360,7 +360,7 @@ async def test_browsing_errors(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test browsing a Reolink camera errors."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
@@ -377,7 +377,7 @@ async def test_browsing_not_loaded(
     config_entry: MockConfigEntry,
 ) -> None:
     """Test browsing a Reolink camera integration which is not loaded."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.CAMERA]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 

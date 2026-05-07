@@ -12,7 +12,7 @@ async def test_config_required_fields(hass: HomeAssistant) -> None:
     with (
         patch.object(emulated_roku, "configured_servers", return_value=[]),
         patch(
-            "homeassistant.components.emulated_roku.binding.EmulatedRokuServer",
+            "inpui.components.emulated_roku.binding.EmulatedRokuServer",
             return_value=Mock(start=AsyncMock(), close=AsyncMock()),
         ),
     ):
@@ -39,7 +39,7 @@ async def test_config_already_registered_not_configured(hass: HomeAssistant) -> 
     """Test that an already registered name causes the entry to be ignored."""
     with (
         patch(
-            "homeassistant.components.emulated_roku.binding.EmulatedRokuServer",
+            "inpui.components.emulated_roku.binding.EmulatedRokuServer",
             return_value=Mock(start=AsyncMock(), close=AsyncMock()),
         ) as instantiate,
         patch.object(
@@ -80,7 +80,7 @@ async def test_setup_entry_successful(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.emulated_roku.binding.EmulatedRokuServer",
+        "inpui.components.emulated_roku.binding.EmulatedRokuServer",
         return_value=Mock(start=AsyncMock(), close=AsyncMock()),
     ) as instantiate:
         assert await emulated_roku.async_setup_entry(hass, entry) is True
@@ -98,7 +98,7 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.emulated_roku.binding.EmulatedRokuServer",
+        "inpui.components.emulated_roku.binding.EmulatedRokuServer",
         return_value=Mock(start=AsyncMock(), close=AsyncMock()),
     ):
         assert await emulated_roku.async_setup_entry(hass, entry) is True

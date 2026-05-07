@@ -48,7 +48,7 @@ async def test_sensor(
     await hass.config.async_set_time_zone("UTC")
     freezer.move_to("2024-04-20 12:00:00+00:00")
 
-    with patch("homeassistant.components.nam.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.nam.PLATFORMS", [Platform.SENSOR]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)
@@ -88,9 +88,9 @@ async def test_incompleta_data_after_device_restart(hass: HomeAssistant) -> None
     future = utcnow() + timedelta(minutes=6)
     update_response = Mock(json=AsyncMock(return_value=INCOMPLETE_NAM_DATA))
     with (
-        patch("homeassistant.components.nam.NettigoAirMonitor.initialize"),
+        patch("inpui.components.nam.NettigoAirMonitor.initialize"),
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor._async_http_request",
+            "inpui.components.nam.NettigoAirMonitor._async_http_request",
             return_value=update_response,
         ),
     ):
@@ -117,9 +117,9 @@ async def test_availability(
     assert state.state == "7.56"
 
     with (
-        patch("homeassistant.components.nam.NettigoAirMonitor.initialize"),
+        patch("inpui.components.nam.NettigoAirMonitor.initialize"),
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor._async_http_request",
+            "inpui.components.nam.NettigoAirMonitor._async_http_request",
             side_effect=exc,
         ),
     ):
@@ -133,9 +133,9 @@ async def test_availability(
 
     update_response = Mock(json=AsyncMock(return_value=nam_data))
     with (
-        patch("homeassistant.components.nam.NettigoAirMonitor.initialize"),
+        patch("inpui.components.nam.NettigoAirMonitor.initialize"),
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor._async_http_request",
+            "inpui.components.nam.NettigoAirMonitor._async_http_request",
             return_value=update_response,
         ),
     ):
@@ -159,9 +159,9 @@ async def test_manual_update_entity(hass: HomeAssistant) -> None:
 
     update_response = Mock(json=AsyncMock(return_value=nam_data))
     with (
-        patch("homeassistant.components.nam.NettigoAirMonitor.initialize"),
+        patch("inpui.components.nam.NettigoAirMonitor.initialize"),
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor._async_http_request",
+            "inpui.components.nam.NettigoAirMonitor._async_http_request",
             return_value=update_response,
         ) as mock_get_data,
     ):

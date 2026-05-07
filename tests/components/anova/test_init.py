@@ -80,7 +80,7 @@ async def test_migration_removing_devices_in_config_entry(
     )
     entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.anova.AnovaApi.authenticate"):
+    with patch("inpui.components.anova.AnovaApi.authenticate"):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
 

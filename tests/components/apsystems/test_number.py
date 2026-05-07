@@ -60,7 +60,7 @@ async def test_number(
 
 
 @pytest.mark.usefixtures("mock_apsystems")
-@patch("homeassistant.components.apsystems.PLATFORMS", [Platform.NUMBER])
+@patch("inpui.components.apsystems.PLATFORMS", [Platform.NUMBER])
 async def test_all_entities(
     hass: HomeAssistant,
     snapshot: SnapshotAssertion,

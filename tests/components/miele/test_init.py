@@ -245,7 +245,7 @@ async def test_oauth_implementation_not_available(
     assert await async_setup_component(hass, "cloud", {})
 
     with patch(
-        "homeassistant.components.miele.async_get_config_entry_implementation",
+        "inpui.components.miele.async_get_config_entry_implementation",
         side_effect=config_entry_oauth2_flow.ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

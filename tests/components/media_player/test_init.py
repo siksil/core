@@ -104,7 +104,7 @@ async def test_get_image_http(
     client = await hass_client_no_auth()
 
     with patch(
-        "homeassistant.components.media_player.MediaPlayerEntity.async_get_media_image",
+        "inpui.components.media_player.MediaPlayerEntity.async_get_media_image",
         return_value=(b"image", "image/jpeg"),
     ):
         resp = await client.get(state.attributes["entity_picture"])
@@ -118,7 +118,7 @@ async def test_get_image_http_remote(
 ) -> None:
     """Test get image url via http command."""
     with patch(
-        "homeassistant.components.media_player.MediaPlayerEntity."
+        "inpui.components.media_player.MediaPlayerEntity."
         "media_image_remotely_accessible",
         return_value=True,
     ):
@@ -133,7 +133,7 @@ async def test_get_image_http_remote(
         client = await hass_client_no_auth()
 
         with patch(
-            "homeassistant.components.media_player.MediaPlayerEntity."
+            "inpui.components.media_player.MediaPlayerEntity."
             "async_get_media_image",
             return_value=(b"image", "image/jpeg"),
         ):
@@ -152,7 +152,7 @@ async def test_get_image_http_log_credentials_redacted(
     """Test credentials are redacted when logging url when fetching image."""
     url = "http://vi:pass@example.com/default.jpg"
     with patch(
-        "homeassistant.components.demo.media_player.DemoYoutubePlayer.media_image_url",
+        "inpui.components.demo.media_player.DemoYoutubePlayer.media_image_url",
         url,
     ):
         await async_setup_component(
@@ -197,7 +197,7 @@ async def test_get_async_get_browse_image(
     client = await hass_client_no_auth()
 
     with patch(
-        "homeassistant.components.media_player.MediaPlayerEntity."
+        "inpui.components.media_player.MediaPlayerEntity."
         "async_get_browse_image",
         return_value=(b"image", "image/jpeg"),
     ):
@@ -220,7 +220,7 @@ async def test_media_browse(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.demo.media_player.DemoBrowsePlayer.async_browse_media",
+        "inpui.components.demo.media_player.DemoBrowsePlayer.async_browse_media",
         return_value=BrowseMedia(
             media_class=MediaClass.DIRECTORY,
             media_content_id="mock-id",
@@ -261,7 +261,7 @@ async def test_media_browse(
     assert mock_browse_media.mock_calls[0][1] == ("album", "abcd")
 
     with patch(
-        "homeassistant.components.demo.media_player.DemoBrowsePlayer.async_browse_media",
+        "inpui.components.demo.media_player.DemoBrowsePlayer.async_browse_media",
         return_value={"bla": "yo"},
     ):
         await client.send_json(
@@ -288,7 +288,7 @@ async def test_media_browse_service(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.demo.media_player.DemoBrowsePlayer.async_browse_media",
+        "inpui.components.demo.media_player.DemoBrowsePlayer.async_browse_media",
         return_value=BrowseMedia(
             media_class=MediaClass.DIRECTORY,
             media_content_id="mock-id",
@@ -361,7 +361,7 @@ async def test_media_search(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.demo.media_player.DemoSearchPlayer.async_search_media",
+        "inpui.components.demo.media_player.DemoSearchPlayer.async_search_media",
         return_value=SearchMedia(
             result=[
                 BrowseMedia(
@@ -434,7 +434,7 @@ async def test_media_search_service(hass: HomeAssistant) -> None:
     ]
 
     with patch(
-        "homeassistant.components.demo.media_player.DemoSearchPlayer.async_search_media",
+        "inpui.components.demo.media_player.DemoSearchPlayer.async_search_media",
         return_value=SearchMedia(result=expected),
     ) as mock_search_media:
         result = await hass.services.async_call(
@@ -502,7 +502,7 @@ async def test_enqueue_rewrite(hass: HomeAssistant, input, expected) -> None:
 
     # Fake group support for DemoYoutubePlayer
     with patch(
-        "homeassistant.components.demo.media_player.DemoYoutubePlayer.play_media",
+        "inpui.components.demo.media_player.DemoYoutubePlayer.play_media",
     ) as mock_play_media:
         await hass.services.async_call(
             "media_player",
@@ -576,7 +576,7 @@ async def test_get_async_get_browse_image_quoting(
     client = await hass_client_no_auth()
 
     with patch(
-        "homeassistant.components.media_player.MediaPlayerEntity."
+        "inpui.components.media_player.MediaPlayerEntity."
         "async_get_browse_image",
     ) as mock_browse_image:
         url = player.get_browse_image_url("album", media_content_id)
@@ -593,7 +593,7 @@ async def test_play_media_via_selector(hass: HomeAssistant) -> None:
 
     # Fake group support for DemoYoutubePlayer
     with patch(
-        "homeassistant.components.demo.media_player.DemoYoutubePlayer.play_media",
+        "inpui.components.demo.media_player.DemoYoutubePlayer.play_media",
     ) as mock_play_media:
         await hass.services.async_call(
             "media_player",

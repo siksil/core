@@ -29,7 +29,7 @@ async def test_retry_with_no_error(
 ) -> None:
     """Test without errors."""
 
-    caplog.set_level(logging.DEBUG, logger="homeassistant.components.coolmaster")
+    caplog.set_level(logging.DEBUG, logger="inpui.components.coolmaster")
 
     with patch(
         "tests.components.coolmaster.conftest.CoolMasterNetErrorMock.status",
@@ -45,7 +45,7 @@ async def test_retry_with_no_error(
         assert errors == 0
 
 
-@patch("homeassistant.components.coolmaster.coordinator.BACKOFF_BASE_DELAY", new=0)
+@patch("inpui.components.coolmaster.coordinator.BACKOFF_BASE_DELAY", new=0)
 async def test_retry_with_less_than_max_errors(
     hass: HomeAssistant,
     config_entry_with_errors: ConfigEntry,
@@ -53,7 +53,7 @@ async def test_retry_with_less_than_max_errors(
 ) -> None:
     """Test MAX_RETRIES-1 errors."""
 
-    caplog.set_level(logging.DEBUG, logger="homeassistant.components.coolmaster")
+    caplog.set_level(logging.DEBUG, logger="inpui.components.coolmaster")
 
     with patch(
         "tests.components.coolmaster.conftest.CoolMasterNetErrorMock.status",
@@ -69,7 +69,7 @@ async def test_retry_with_less_than_max_errors(
         assert debugs == MAX_RETRIES - 1
 
 
-@patch("homeassistant.components.coolmaster.coordinator.BACKOFF_BASE_DELAY", new=0)
+@patch("inpui.components.coolmaster.coordinator.BACKOFF_BASE_DELAY", new=0)
 async def test_retry_with_more_than_max_errors(
     hass: HomeAssistant,
     config_entry_with_errors: ConfigEntry,
@@ -77,7 +77,7 @@ async def test_retry_with_more_than_max_errors(
 ) -> None:
     """Test MAX_RETRIES+1 errors."""
 
-    caplog.set_level(logging.DEBUG, logger="homeassistant.components.coolmaster")
+    caplog.set_level(logging.DEBUG, logger="inpui.components.coolmaster")
 
     with patch(
         "tests.components.coolmaster.conftest.CoolMasterNetErrorMock.status",
@@ -95,7 +95,7 @@ async def test_retry_with_more_than_max_errors(
         assert debugs == MAX_RETRIES - 1
 
 
-@patch("homeassistant.components.coolmaster.coordinator.BACKOFF_BASE_DELAY", new=0)
+@patch("inpui.components.coolmaster.coordinator.BACKOFF_BASE_DELAY", new=0)
 async def test_retry_with_empty_status(
     hass: HomeAssistant,
     config_entry_with_empty_status: ConfigEntry,
@@ -103,7 +103,7 @@ async def test_retry_with_empty_status(
 ) -> None:
     """Test empty status response."""
 
-    caplog.set_level(logging.DEBUG, logger="homeassistant.components.coolmaster")
+    caplog.set_level(logging.DEBUG, logger="inpui.components.coolmaster")
 
     with patch(
         "tests.components.coolmaster.conftest.CoolMasterNetEmptyStatusMock.status",

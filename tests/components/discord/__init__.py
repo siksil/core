@@ -38,14 +38,14 @@ def mocked_discord_info():
     mocked_discord.id = "1234567890"
     mocked_discord.name = NAME
     return patch(
-        "homeassistant.components.discord.config_flow.nextcord.Client.application_info",
+        "inpui.components.discord.config_flow.nextcord.Client.application_info",
         return_value=mocked_discord,
     )
 
 
 def patch_discord_login():
     """Patch discord info."""
-    return patch("homeassistant.components.discord.config_flow.nextcord.Client.login")
+    return patch("inpui.components.discord.config_flow.nextcord.Client.login")
 
 
 def mock_exception():

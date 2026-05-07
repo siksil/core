@@ -216,7 +216,7 @@ async def test_entry_setup_fails(
 ) -> None:
     """Test the incomfort coordinator entry setup fails."""
     with patch(
-        "homeassistant.components.incomfort.async_connect_gateway",
+        "inpui.components.incomfort.async_connect_gateway",
         AsyncMock(side_effect=exc),
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

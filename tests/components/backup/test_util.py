@@ -153,7 +153,7 @@ def test_read_backup(backup_json_content: bytes, expected_backup: AgentBackup) -
     mock_path = Mock()
     mock_path.stat.return_value.st_size = 1234
 
-    with patch("homeassistant.components.backup.util.tarfile.open") as mock_open_tar:
+    with patch("inpui.components.backup.util.tarfile.open") as mock_open_tar:
         mock_open_tar.return_value.__enter__.return_value.extractfile.return_value.read.return_value = backup_json_content
         backup = read_backup(mock_path)
         assert backup == expected_backup
@@ -252,7 +252,7 @@ def test_validate_password_with_error(
     with (
         patch("securetar.tarfile.open"),
         patch(
-            "homeassistant.components.backup.util.SecureTarFile",
+            "inpui.components.backup.util.SecureTarFile",
         ) as mock_secure_tar,
     ):
         mock_secure_tar.return_value.__enter__.side_effect = secure_tar_side_effect
@@ -715,7 +715,7 @@ async def test_encrypted_backup_streamer_error(hass: HomeAssistant) -> None:
     encryptor = EncryptedBackupStreamer(hass, backup, open_backup, "hunter2")
 
     with patch(
-        "homeassistant.components.backup.util.tarfile.open",
+        "inpui.components.backup.util.tarfile.open",
         side_effect=tarfile.TarError,
     ):
         encrypted_stream = await encryptor.open_stream()

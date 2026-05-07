@@ -43,7 +43,7 @@ from tests.common import (
 async def notify_only() -> AsyncGenerator[None]:
     """Enable only the notify platform."""
     with patch(
-        "homeassistant.components.habitica.PLATFORMS",
+        "inpui.components.habitica.PLATFORMS",
         [Platform.NOTIFY],
     ):
         yield

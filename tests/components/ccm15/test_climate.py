@@ -56,7 +56,7 @@ async def test_climate_state(
     assert hass.states.get("climate.midea_1") == snapshot
 
     with patch(
-        "homeassistant.components.ccm15.coordinator.CCM15Device.async_set_state"
+        "inpui.components.ccm15.coordinator.CCM15Device.async_set_state"
     ) as mock_set_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,
@@ -68,7 +68,7 @@ async def test_climate_state(
         mock_set_state.assert_called_once()
 
     with patch(
-        "homeassistant.components.ccm15.coordinator.CCM15Device.async_set_state"
+        "inpui.components.ccm15.coordinator.CCM15Device.async_set_state"
     ) as mock_set_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,
@@ -80,7 +80,7 @@ async def test_climate_state(
         mock_set_state.assert_called_once()
 
     with patch(
-        "homeassistant.components.ccm15.coordinator.CCM15Device.async_set_state"
+        "inpui.components.ccm15.coordinator.CCM15Device.async_set_state"
     ) as mock_set_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,
@@ -92,7 +92,7 @@ async def test_climate_state(
         mock_set_state.assert_called_once()
 
     with patch(
-        "homeassistant.components.ccm15.coordinator.CCM15Device.async_set_state"
+        "inpui.components.ccm15.coordinator.CCM15Device.async_set_state"
     ) as mock_set_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,
@@ -104,7 +104,7 @@ async def test_climate_state(
         mock_set_state.assert_called_once()
 
     with patch(
-        "homeassistant.components.ccm15.coordinator.CCM15Device.async_set_state"
+        "inpui.components.ccm15.coordinator.CCM15Device.async_set_state"
     ) as mock_set_state:
         await hass.services.async_call(
             CLIMATE_DOMAIN,

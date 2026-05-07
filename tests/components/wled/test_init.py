@@ -48,7 +48,7 @@ async def test_load_unload_config_entry(
 
 
 @patch(
-    "homeassistant.components.wled.coordinator.WLED.request",
+    "inpui.components.wled.coordinator.WLED.request",
     side_effect=WLEDConnectionError,
 )
 async def test_config_entry_not_ready(

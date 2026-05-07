@@ -28,7 +28,7 @@ async def test_sensor(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test sensor registration for sensors."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -42,7 +42,7 @@ async def test_sensor_availability(
     freezer: FrozenDateTimeFactory,
 ) -> None:
     """Test sensor availability / non-availability."""
-    with patch("homeassistant.components.indevolt.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.indevolt.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, mock_config_entry)
 
     assert (state := hass.states.get("sensor.cms_sf2000_battery_soc"))

@@ -604,7 +604,7 @@ async def test_yaml_import_triggers_flow(
 ) -> None:
     """Test that YAML configuration triggers import flow."""
     with patch(
-        "homeassistant.components.ness_alarm.config_flow.Client",
+        "inpui.components.ness_alarm.config_flow.Client",
         return_value=AsyncMock(),
     ):
         config = {

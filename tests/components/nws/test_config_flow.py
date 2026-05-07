@@ -22,7 +22,7 @@ async def test_form(hass: HomeAssistant, mock_simple_nws_config) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.nws.async_setup_entry",
+        "inpui.components.nws.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -86,7 +86,7 @@ async def test_form_already_configured(
     )
 
     with patch(
-        "homeassistant.components.nws.async_setup_entry",
+        "inpui.components.nws.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -103,7 +103,7 @@ async def test_form_already_configured(
     )
 
     with patch(
-        "homeassistant.components.nws.async_setup_entry",
+        "inpui.components.nws.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(

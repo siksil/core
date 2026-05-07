@@ -28,7 +28,7 @@ async def test_sensor(
 ) -> None:
     """Test states of the sensor."""
     freezer.move_to("2021-01-09 12:00:00+00:00")
-    with patch("homeassistant.components.watergate.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.watergate.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mock_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_entry.entry_id)
@@ -41,7 +41,7 @@ async def test_diagnostics_are_disabled_by_default(
     mock_watergate_client: Generator[AsyncMock],
 ) -> None:
     """Test if all diagnostic entities are disabled by default."""
-    with patch("homeassistant.components.watergate.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.watergate.PLATFORMS", [Platform.SENSOR]):
         await init_integration(hass, mock_entry)
 
     entries = [

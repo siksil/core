@@ -24,7 +24,7 @@ async def test_binary_sensor_snapshot(
 ) -> None:
     """Snapshot test states of the binary sensors."""
     with patch(
-        "homeassistant.components.husqvarna_automower.PLATFORMS",
+        "inpui.components.husqvarna_automower.PLATFORMS",
         [Platform.BINARY_SENSOR],
     ):
         await setup_integration(hass, mock_config_entry)

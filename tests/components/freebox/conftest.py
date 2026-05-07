@@ -32,8 +32,8 @@ from tests.common import MockConfigEntry
 def mock_path():
     """Mock path lib."""
     with (
-        patch("homeassistant.components.freebox.router.Path"),
-        patch("homeassistant.components.freebox.router.os.makedirs"),
+        patch("inpui.components.freebox.router.Path"),
+        patch("inpui.components.freebox.router.os.makedirs"),
     ):
         yield
 
@@ -65,7 +65,7 @@ def mock_device_registry_devices(
 @pytest.fixture(name="router")
 def mock_router(mock_device_registry_devices):
     """Mock a successful connection."""
-    with patch("homeassistant.components.freebox.router.Freepybox") as service_mock:
+    with patch("inpui.components.freebox.router.Freepybox") as service_mock:
         instance = service_mock.return_value
         instance.open = AsyncMock()
         instance.system.get_config = AsyncMock(return_value=DATA_SYSTEM_GET_CONFIG)

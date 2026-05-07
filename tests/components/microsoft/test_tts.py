@@ -36,7 +36,7 @@ async def setup_internal_url(hass: HomeAssistant):
 def mock_tts():
     """Mock tts."""
     with patch(
-        "homeassistant.components.microsoft.tts.pycsspeechtts.TTSTranslator"
+        "inpui.components.microsoft.tts.pycsspeechtts.TTSTranslator"
     ) as mock_tts:
         mock_tts.return_value.speak.return_value = b""
         yield mock_tts

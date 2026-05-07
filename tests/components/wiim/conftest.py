@@ -28,7 +28,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.wiim.async_setup_entry", return_value=True
+        "inpui.components.wiim.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -48,7 +48,7 @@ def mock_config_entry() -> MockConfigEntry:
 def mock_wiim_device() -> Generator[AsyncMock]:
     """Patch async_create_wiim_device and return the mocked WiimDevice instance."""
     with patch(
-        "homeassistant.components.wiim.async_create_wiim_device",
+        "inpui.components.wiim.async_create_wiim_device",
         autospec=True,
     ) as mock_create:
         mock = mock_create.return_value
@@ -149,7 +149,7 @@ def mock_wiim_controller(mock_wiim_device: AsyncMock) -> Generator[MagicMock]:
     )
     mock.get_device.side_effect = lambda _udn: mock_wiim_device
     with patch(
-        "homeassistant.components.wiim.WiimController",
+        "inpui.components.wiim.WiimController",
         return_value=mock,
     ):
         yield mock
@@ -159,7 +159,7 @@ def mock_wiim_controller(mock_wiim_device: AsyncMock) -> Generator[MagicMock]:
 def mock_probe_player() -> Generator[AsyncMock]:
     """Mock a WiimProbePlayer instance."""
     with patch(
-        "homeassistant.components.wiim.config_flow.async_probe_wiim_device"
+        "inpui.components.wiim.config_flow.async_probe_wiim_device"
     ) as mock_probe:
         mock_probe.return_value = WiimProbeResult(
             host="192.168.1.100",

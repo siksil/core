@@ -32,7 +32,7 @@ async def test_canceling_debouncer_on_shutdown(
     mqtt_client_mock = setup_with_birth_msg_client_mock
     # Mock we are past initial setup
     await mock_debouncer.wait()
-    with patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 2):
+    with patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 2):
         mock_debouncer.clear()
         await mqtt.async_subscribe(hass, "test/state1", record_calls)
         async_fire_time_changed(hass, utcnow() + timedelta(seconds=0.1))
@@ -295,7 +295,7 @@ async def test_waiting_for_client_entry_fails(
     hass.async_create_task(_async_just_in_time_subscribe())
     assert entry.state is ConfigEntryState.NOT_LOADED
     with patch(
-        "homeassistant.components.mqtt.async_setup_entry",
+        "inpui.components.mqtt.async_setup_entry",
         side_effect=Exception,
     ):
         await hass.config_entries.async_setup(entry.entry_id)
@@ -331,7 +331,7 @@ async def test_waiting_for_client_setup_fails(
     assert entry.state is ConfigEntryState.SETUP_ERROR  # type:ignore[comparison-overlap]
 
 
-@patch("homeassistant.components.mqtt.util.AVAILABILITY_TIMEOUT", 0.01)
+@patch("inpui.components.mqtt.util.AVAILABILITY_TIMEOUT", 0.01)
 async def test_waiting_for_client_timeout(
     hass: HomeAssistant,
 ) -> None:

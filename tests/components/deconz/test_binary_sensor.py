@@ -335,7 +335,7 @@ async def test_binary_sensors(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test successful creation of binary sensor entities."""
-    with patch("homeassistant.components.deconz.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.deconz.PLATFORMS", [Platform.BINARY_SENSOR]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 

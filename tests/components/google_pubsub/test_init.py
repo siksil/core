@@ -14,7 +14,7 @@ from inpui.components.google_pubsub import DateTimeJSONEncoder as victim
 from inpui.core import HomeAssistant
 from inpui.setup import async_setup_component
 
-GOOGLE_PUBSUB_PATH = "homeassistant.components.google_pubsub"
+GOOGLE_PUBSUB_PATH = "inpui.components.google_pubsub"
 
 
 @dataclass

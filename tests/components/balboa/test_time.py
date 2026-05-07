@@ -31,7 +31,7 @@ async def test_times(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test spa times."""
-    with patch("homeassistant.components.balboa.PLATFORMS", [Platform.TIME]):
+    with patch("inpui.components.balboa.PLATFORMS", [Platform.TIME]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

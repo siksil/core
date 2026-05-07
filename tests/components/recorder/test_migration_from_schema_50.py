@@ -28,7 +28,7 @@ from .conftest import instrument_migration
 from tests.common import async_test_home_assistant
 from tests.typing import RecorderInstanceContextManager
 
-CREATE_ENGINE_TARGET = "homeassistant.components.recorder.core.create_engine"
+CREATE_ENGINE_TARGET = "inpui.components.recorder.core.create_engine"
 SCHEMA_MODULE_50 = "tests.components.recorder.db_schema_50"
 
 

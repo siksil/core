@@ -53,7 +53,7 @@ def mock_session_response(*args, **kwargs):
 def mock_exception_logger():
     """Mock pyunifi."""
     with mock.patch(
-        "homeassistant.components.tomato.device_tracker._LOGGER.exception"
+        "inpui.components.tomato.device_tracker._LOGGER.exception"
     ) as mock_exception_logger:
         yield mock_exception_logger
 

@@ -29,7 +29,7 @@ MOCK_COMPR_FABRIC_ID = 1234
 async def matter_client_fixture() -> AsyncGenerator[MagicMock]:
     """Fixture for a Matter client."""
     with patch(
-        "homeassistant.components.matter.MatterClient", autospec=True
+        "inpui.components.matter.MatterClient", autospec=True
     ) as client_class:
         client = client_class.return_value
 

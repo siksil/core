@@ -56,7 +56,7 @@ def make_mock_module(zones: list) -> MagicMock:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.touchline_sl.async_setup_entry", return_value=True
+        "inpui.components.touchline_sl.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -66,11 +66,11 @@ def mock_touchlinesl_client() -> Generator[AsyncMock]:
     """Mock a pytouchlinesl client."""
     with (
         patch(
-            "homeassistant.components.touchline_sl.TouchlineSL",
+            "inpui.components.touchline_sl.TouchlineSL",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.touchline_sl.config_flow.TouchlineSL",
+            "inpui.components.touchline_sl.config_flow.TouchlineSL",
             new=mock_client,
         ),
     ):

@@ -42,7 +42,7 @@ async def test_get_id_migrate(
 ) -> None:
     """Migrate existing file."""
     with (
-        patch("homeassistant.util.json.load_json", return_value={"uuid": "1234"}),
+        patch("inpui.util.json.load_json", return_value={"uuid": "1234"}),
         patch("os.path.isfile", return_value=True),
         patch("os.remove") as mock_remove,
     ):
@@ -63,7 +63,7 @@ async def test_get_id_migrate_fail(
     """Migrate existing file with error."""
     with (
         patch(
-            "homeassistant.util.json.load_json",
+            "inpui.util.json.load_json",
             side_effect=JSONDecodeError("test_error", "test", 1),
         ),
         patch("os.path.isfile", return_value=True),

@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.alexa_devices.async_setup_entry",
+        "inpui.components.alexa_devices.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -33,11 +33,11 @@ def mock_amazon_devices_client() -> Generator[AsyncMock]:
     """Mock an Alexa Devices client."""
     with (
         patch(
-            "homeassistant.components.alexa_devices.coordinator.AmazonEchoApi",
+            "inpui.components.alexa_devices.coordinator.AmazonEchoApi",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.alexa_devices.config_flow.AmazonEchoApi",
+            "inpui.components.alexa_devices.config_flow.AmazonEchoApi",
             new=mock_client,
         ),
     ):

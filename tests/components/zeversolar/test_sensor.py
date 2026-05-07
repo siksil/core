@@ -19,7 +19,7 @@ async def test_sensors(
     """Test sensors."""
 
     with patch(
-        "homeassistant.components.zeversolar.PLATFORMS",
+        "inpui.components.zeversolar.PLATFORMS",
         [Platform.SENSOR],
     ):
         entry = await init_integration(hass)

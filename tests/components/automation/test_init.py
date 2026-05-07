@@ -150,7 +150,7 @@ async def test_service_specify_data(
 
     time = dt_util.utcnow()
 
-    with patch("homeassistant.helpers.script.utcnow", return_value=time):
+    with patch("inpui.helpers.script.utcnow", return_value=time):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -591,7 +591,7 @@ async def test_reload_config_service(
     test_reload_event = async_capture_events(hass, EVENT_AUTOMATION_RELOADED)
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             automation.DOMAIN: {
@@ -666,7 +666,7 @@ async def test_reload_config_when_invalid_config(
     assert calls[0].data.get("event") == "test_event"
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={automation.DOMAIN: "not valid"},
     ):
@@ -707,7 +707,7 @@ async def test_reload_config_handles_load_fails(
 
     with (
         patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             side_effect=HomeAssistantError("bla"),
         ),
         pytest.raises(
@@ -724,10 +724,10 @@ async def test_reload_config_handles_load_fails(
 
     with (
         patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
         ),
         patch(
-            "homeassistant.config.async_process_component_and_handle_errors",
+            "inpui.config.async_process_component_and_handle_errors",
             side_effect=ConfigValidationError(
                 "config_schema_unknown_err",
                 [Exception("bla")],
@@ -805,7 +805,7 @@ async def test_automation_stops(
     elif service == "reload":
         config[automation.DOMAIN]["alias"] = "goodbye"
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -815,7 +815,7 @@ async def test_automation_stops(
     else:  # service == "reload_single"
         config[automation.DOMAIN]["alias"] = "goodbye"
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -867,7 +867,7 @@ async def test_reload_unchanged_does_not_stop(
     assert len(calls) == 0
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=config,
     ):
@@ -913,7 +913,7 @@ async def test_reload_single_unchanged_does_not_stop(
     assert len(calls) == 0
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=config,
     ):
@@ -950,7 +950,7 @@ async def test_reload_single_add_automation(
     assert len(calls) == 0
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=config2,
     ):
@@ -1009,7 +1009,7 @@ async def test_reload_single_parallel_calls(
     # This tests the logic in the `ReloadServiceHelper` which avoids redundant
     # reloads of the same target automation.
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=config2,
     ):
@@ -1101,7 +1101,7 @@ async def test_reload_single_remove_automation(
     assert len(calls) == 1
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value=config2,
     ):
@@ -1122,7 +1122,7 @@ async def test_reload_moved_automation_without_alias(
 ) -> None:
     """Test that changing the order of automations without alias triggers reload."""
     with patch(
-        "homeassistant.components.automation.AutomationEntity", wraps=AutomationEntity
+        "inpui.components.automation.AutomationEntity", wraps=AutomationEntity
     ) as automation_entity_init:
         config = {
             automation.DOMAIN: [
@@ -1152,7 +1152,7 @@ async def test_reload_moved_automation_without_alias(
         # Reverse the order of the automations
         config[automation.DOMAIN].reverse()
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -1177,7 +1177,7 @@ async def test_reload_identical_automations_without_id(
 ) -> None:
     """Test reloading of identical automations without id."""
     with patch(
-        "homeassistant.components.automation.AutomationEntity", wraps=AutomationEntity
+        "inpui.components.automation.AutomationEntity", wraps=AutomationEntity
     ) as automation_entity_init:
         config = {
             automation.DOMAIN: [
@@ -1212,7 +1212,7 @@ async def test_reload_identical_automations_without_id(
 
         # Reload the automations without any change
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -1235,7 +1235,7 @@ async def test_reload_identical_automations_without_id(
         del config[automation.DOMAIN][-1]
         del config[automation.DOMAIN][-1]
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -1256,7 +1256,7 @@ async def test_reload_identical_automations_without_id(
         config[automation.DOMAIN].append(config[automation.DOMAIN][-1])
         config[automation.DOMAIN].append(config[automation.DOMAIN][-1])
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -1352,7 +1352,7 @@ async def test_reload_unchanged_automation(
 ) -> None:
     """Test an unmodified automation is not reloaded."""
     with patch(
-        "homeassistant.components.automation.AutomationEntity", wraps=AutomationEntity
+        "inpui.components.automation.AutomationEntity", wraps=AutomationEntity
     ) as automation_entity_init:
         config = {automation.DOMAIN: [automation_config]}
         assert await async_setup_component(hass, automation.DOMAIN, config)
@@ -1365,7 +1365,7 @@ async def test_reload_unchanged_automation(
 
         # Reload the automations without any change
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value=config,
         ):
@@ -1387,7 +1387,7 @@ async def test_reload_automation_when_blueprint_changes(
 ) -> None:
     """Test an automation is updated at reload if the blueprint has changed."""
     with patch(
-        "homeassistant.components.automation.AutomationEntity", wraps=AutomationEntity
+        "inpui.components.automation.AutomationEntity", wraps=AutomationEntity
     ) as automation_entity_init:
         config = {
             automation.DOMAIN: [
@@ -1422,12 +1422,12 @@ async def test_reload_automation_when_blueprint_changes(
 
         with (
             patch(
-                "homeassistant.config.load_yaml_config_file",
+                "inpui.config.load_yaml_config_file",
                 autospec=True,
                 return_value=config,
             ),
             patch(
-                "homeassistant.components.blueprint.models.yaml_util.load_yaml_dict",
+                "inpui.components.blueprint.models.yaml_util.load_yaml_dict",
                 autospec=True,
                 return_value=blueprint_config,
             ),
@@ -1786,7 +1786,7 @@ async def test_automation_bad_config_validation(
 
     # Reloading the automation with fixed config should clear the issue
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             automation.DOMAIN: {
@@ -3131,7 +3131,7 @@ async def test_blueprint_automation_fails_substitution(
 ) -> None:
     """Test blueprint automation with bad inputs."""
     with patch(
-        "homeassistant.components.blueprint.models.BlueprintInputs.async_substitute",
+        "inpui.components.blueprint.models.BlueprintInputs.async_substitute",
         side_effect=yaml_util.UndefinedSubstitution("blah"),
     ):
         assert await async_setup_component(
@@ -3343,7 +3343,7 @@ async def test_recursive_automation_starting_script(
         stop_scripts_at_shutdown_called.set()
 
     with patch(
-        "homeassistant.helpers.script._async_stop_scripts_at_shutdown",
+        "inpui.helpers.script._async_stop_scripts_at_shutdown",
         wraps=mock_stop_scripts_at_shutdown,
     ):
         assert await async_setup_component(
@@ -3448,7 +3448,7 @@ async def test_recursive_automation(
         stop_scripts_at_shutdown_called.set()
 
     with patch(
-        "homeassistant.helpers.script._async_stop_scripts_at_shutdown",
+        "inpui.helpers.script._async_stop_scripts_at_shutdown",
         wraps=stop_scripts_at_shutdown,
     ):
         assert await async_setup_component(
@@ -3510,7 +3510,7 @@ async def test_recursive_automation_restart_mode(
         stop_scripts_at_shutdown_called.set()
 
     with patch(
-        "homeassistant.helpers.script._async_stop_scripts_at_shutdown",
+        "inpui.helpers.script._async_stop_scripts_at_shutdown",
         wraps=stop_scripts_at_shutdown,
     ):
         assert await async_setup_component(
@@ -3980,7 +3980,7 @@ async def test_reload_when_labs_flag_changes(
         calls.clear()
 
         with patch(
-            "homeassistant.config.load_yaml_config_file",
+            "inpui.config.load_yaml_config_file",
             autospec=True,
             return_value={
                 automation.DOMAIN: {

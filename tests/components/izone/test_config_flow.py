@@ -35,10 +35,10 @@ async def test_not_found(hass: HomeAssistant, mock_disco: Mock) -> None:
 
     with (
         patch(
-            "homeassistant.components.izone.config_flow.async_start_discovery_service"
+            "inpui.components.izone.config_flow.async_start_discovery_service"
         ) as start_disco,
         patch(
-            "homeassistant.components.izone.config_flow.async_stop_discovery_service",
+            "inpui.components.izone.config_flow.async_stop_discovery_service",
             return_value=None,
         ) as stop_disco,
     ):
@@ -64,14 +64,14 @@ async def test_found(hass: HomeAssistant, mock_disco: Mock) -> None:
 
     with (
         patch(
-            "homeassistant.components.izone.climate.async_setup_entry",
+            "inpui.components.izone.climate.async_setup_entry",
             return_value=True,
         ) as mock_setup,
         patch(
-            "homeassistant.components.izone.config_flow.async_start_discovery_service"
+            "inpui.components.izone.config_flow.async_start_discovery_service"
         ) as start_disco,
         patch(
-            "homeassistant.components.izone.async_start_discovery_service",
+            "inpui.components.izone.async_start_discovery_service",
             return_value=None,
         ),
     ):

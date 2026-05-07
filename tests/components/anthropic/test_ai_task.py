@@ -418,7 +418,7 @@ async def test_generate_data_with_attachments(
     # Test with attachments
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",
@@ -500,7 +500,7 @@ async def test_generate_data_invalid_attachments(
     # Test path that doesn't exist
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.jpg",
@@ -527,7 +527,7 @@ async def test_generate_data_invalid_attachments(
     # Test unsupported file type
     with (
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             side_effect=[
                 media_source.PlayMedia(
                     url="http://example.com/doorbell_snapshot.txt",
@@ -538,7 +538,7 @@ async def test_generate_data_invalid_attachments(
         ),
         patch("pathlib.Path.exists", return_value=True),
         patch(
-            "homeassistant.components.anthropic.entity.guess_file_type",
+            "inpui.components.anthropic.entity.guess_file_type",
             return_value=("text/plain", None),
         ),
         pytest.raises(

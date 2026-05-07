@@ -86,7 +86,7 @@ async def test_detect_location_info_whoami(
         location_util.WHOAMI_URL, text=await async_load_fixture(hass, "whoami.json")
     )
 
-    with patch("homeassistant.util.location.HA_VERSION", "1.0"):
+    with patch("inpui.util.location.HA_VERSION", "1.0"):
         info = await location_util.async_detect_location_info(session, _test_real=True)
 
     assert str(aioclient_mock.mock_calls[-1][1]) == location_util.WHOAMI_URL
@@ -113,7 +113,7 @@ async def test_dev_url(
     aioclient_mock.get(
         location_util.WHOAMI_URL_DEV, text=await async_load_fixture(hass, "whoami.json")
     )
-    with patch("homeassistant.util.location.HA_VERSION", "1.0.dev0"):
+    with patch("inpui.util.location.HA_VERSION", "1.0.dev0"):
         info = await location_util.async_detect_location_info(session, _test_real=True)
 
     assert str(aioclient_mock.mock_calls[-1][1]) == location_util.WHOAMI_URL_DEV

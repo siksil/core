@@ -29,7 +29,7 @@ async def test_setup_entry(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
+        "inpui.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
         return_value=get_ferries,
     ) as mock_tvt_ferry:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -53,7 +53,7 @@ async def test_unload_entry(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
+        "inpui.components.trafikverket_ferry.coordinator.TrafikverketFerry.async_get_next_ferry_stops",
         return_value=get_ferries,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

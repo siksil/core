@@ -25,7 +25,7 @@ HOST = "127.0.0.1"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.daikin.async_setup_entry", return_value=True
+        "inpui.components.daikin.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -39,7 +39,7 @@ def mock_daikin():
         return Appliance
 
     with patch(
-        "homeassistant.components.daikin.config_flow.DaikinFactory"
+        "inpui.components.daikin.config_flow.DaikinFactory"
     ) as Appliance:
         type(Appliance).mac = PropertyMock(return_value="AABBCCDDEEFF")
         Appliance.side_effect = mock_daikin_factory
@@ -49,7 +49,7 @@ def mock_daikin():
 @pytest.fixture
 def mock_daikin_discovery():
     """Mock pydaikin Discovery."""
-    with patch("homeassistant.components.daikin.config_flow.Discovery") as Discovery:
+    with patch("inpui.components.daikin.config_flow.Discovery") as Discovery:
         Discovery().poll.return_value = {
             "127.0.01": {"mac": "AABBCCDDEEFF", "id": "test"}
         }.values()

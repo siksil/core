@@ -278,7 +278,7 @@ async def test_complete_item_intent_ha_errors(
     # Mock the get_entity method to return None
     with (
         patch(
-            "homeassistant.helpers.entity_component.EntityComponent.get_entity",
+            "inpui.helpers.entity_component.EntityComponent.get_entity",
             return_value=None,
         ),
         pytest.raises(intent.IntentHandleError),

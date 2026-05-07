@@ -17,9 +17,9 @@ from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from tests.common import MockConfigEntry
 
-GATEWAY_CLASS = "homeassistant.components.enocean.config_flow.Gateway"
-GLOB_METHOD = "homeassistant.components.enocean.config_flow.glob.glob"
-SETUP_ENTRY_METHOD = "homeassistant.components.enocean.async_setup_entry"
+GATEWAY_CLASS = "inpui.components.enocean.config_flow.Gateway"
+GLOB_METHOD = "inpui.components.enocean.config_flow.glob.glob"
+SETUP_ENTRY_METHOD = "inpui.components.enocean.async_setup_entry"
 
 
 async def test_user_flow_cannot_create_multiple_instances(hass: HomeAssistant) -> None:
@@ -220,7 +220,7 @@ async def test_usb_discovery(
         ),
         patch(SETUP_ENTRY_METHOD, AsyncMock(return_value=True)),
         patch(
-            "homeassistant.components.usb.get_serial_by_id",
+            "inpui.components.usb.get_serial_by_id",
             side_effect=lambda x: x,
         ),
     ):

@@ -30,23 +30,23 @@ async def test_unique_id_migrate(
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             side_effect=HotWaterNotAvailable,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             side_effect=SystemOutOfRange,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             side_effect=InvalidMethod,
         ),
     ):
@@ -61,23 +61,23 @@ async def test_unique_id_migrate(
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             side_effect=HotWaterNotAvailable,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             side_effect=SystemOutOfRange,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             return_value=HVAC_WEBSERVER_MOCK,
         ),
     ):
@@ -104,11 +104,11 @@ async def test_unload_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.validate",
+            "inpui.components.airzone.AirzoneLocalApi.validate",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.update",
+            "inpui.components.airzone.AirzoneLocalApi.update",
             return_value=None,
         ),
     ):
@@ -133,23 +133,23 @@ async def test_migrate_entry_v2(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_dhw",
+            "inpui.components.airzone.AirzoneLocalApi.get_dhw",
             side_effect=HotWaterNotAvailable,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac",
             return_value=HVAC_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_hvac_systems",
+            "inpui.components.airzone.AirzoneLocalApi.get_hvac_systems",
             side_effect=SystemOutOfRange,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_version",
+            "inpui.components.airzone.AirzoneLocalApi.get_version",
             return_value=HVAC_VERSION_MOCK,
         ),
         patch(
-            "homeassistant.components.airzone.AirzoneLocalApi.get_webserver",
+            "inpui.components.airzone.AirzoneLocalApi.get_webserver",
             side_effect=InvalidMethod,
         ),
     ):

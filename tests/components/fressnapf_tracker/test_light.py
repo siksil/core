@@ -42,7 +42,7 @@ TRACKER_NO_LED = Tracker(
 async def platforms() -> AsyncGenerator[None]:
     """Return the platforms to be loaded for this test."""
     with patch(
-        "homeassistant.components.fressnapf_tracker.PLATFORMS", [Platform.LIGHT]
+        "inpui.components.fressnapf_tracker.PLATFORMS", [Platform.LIGHT]
     ):
         yield
 

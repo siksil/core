@@ -20,11 +20,11 @@ def mock_tankerkoenig() -> Generator[AsyncMock]:
     """Mock the aiotankerkoenig client."""
     with (
         patch(
-            "homeassistant.components.tankerkoenig.coordinator.Tankerkoenig",
+            "inpui.components.tankerkoenig.coordinator.Tankerkoenig",
             autospec=True,
         ) as mock_tankerkoenig,
         patch(
-            "homeassistant.components.tankerkoenig.config_flow.Tankerkoenig",
+            "inpui.components.tankerkoenig.config_flow.Tankerkoenig",
             new=mock_tankerkoenig,
         ),
     ):

@@ -55,7 +55,7 @@ async def test_configuring_lifx_causes_discovery(hass: HomeAssistant) -> None:
         _patch_config_flow_try_connect(),
         patch.object(discovery, "DEFAULT_TIMEOUT", 0),
         patch(
-            "homeassistant.components.lifx.discovery.LifxDiscovery", MockLifxDiscovery
+            "inpui.components.lifx.discovery.LifxDiscovery", MockLifxDiscovery
         ),
     ):
         await async_setup_component(hass, lifx.DOMAIN, {lifx.DOMAIN: {}})
@@ -153,7 +153,7 @@ async def test_dns_error_at_startup(hass: HomeAssistant) -> None:
     with (
         _patch_discovery(device=bulb),
         patch(
-            "homeassistant.components.lifx.LIFXConnection",
+            "inpui.components.lifx.LIFXConnection",
             MockLifxConnectonDnsError,
         ),
     ):

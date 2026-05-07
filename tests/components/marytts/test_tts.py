@@ -60,7 +60,7 @@ async def test_service_say(
         await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.marytts.tts.MaryTTS.speak",
+        "inpui.components.marytts.tts.MaryTTS.speak",
         return_value=get_empty_wav(),
     ) as mock_speak:
         await hass.services.async_call(
@@ -99,7 +99,7 @@ async def test_service_say_with_effect(
         await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.marytts.tts.MaryTTS.speak",
+        "inpui.components.marytts.tts.MaryTTS.speak",
         return_value=get_empty_wav(),
     ) as mock_speak:
         await hass.services.async_call(
@@ -138,7 +138,7 @@ async def test_service_say_http_error(
         await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.marytts.tts.MaryTTS.speak",
+        "inpui.components.marytts.tts.MaryTTS.speak",
         side_effect=Exception(),
     ) as mock_speak:
         await hass.services.async_call(

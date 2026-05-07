@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry, get_schema_suggested_value
 def override_async_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.opower.async_setup_entry", return_value=True
+        "inpui.components.opower.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -29,7 +29,7 @@ def override_async_setup_entry() -> Generator[AsyncMock]:
 def mock_unload_entry() -> Generator[AsyncMock]:
     """Mock unloading a config entry."""
     with patch(
-        "homeassistant.components.opower.async_unload_entry",
+        "inpui.components.opower.async_unload_entry",
         return_value=True,
     ) as mock_unload_entry:
         yield mock_unload_entry
@@ -55,7 +55,7 @@ async def test_form(
 
     # Enter credentials
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result3 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -97,7 +97,7 @@ async def test_form_with_totp(
 
     # Enter credentials
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result3 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -139,7 +139,7 @@ async def test_form_with_invalid_totp(
 
     # Enter invalid credentials
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=InvalidAuth,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -157,7 +157,7 @@ async def test_form_with_invalid_totp(
 
     # Enter valid credentials
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result4 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -203,7 +203,7 @@ async def test_form_with_mfa_challenge(
         "login_data_mock_key": "login_data_mock_value"
     }
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=MfaChallenge(message="", handler=mock_mfa_handler),
     ) as mock_login:
         result_challenge = await hass.config_entries.flow.async_configure(
@@ -305,7 +305,7 @@ async def test_form_with_mfa_challenge_but_no_mfa_options(
         "login_data_mock_key": "login_data_mock_value"
     }
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=MfaChallenge(message="", handler=mock_mfa_handler),
     ) as mock_login:
         result_challenge = await hass.config_entries.flow.async_configure(
@@ -365,7 +365,7 @@ async def test_form_exceptions(
     )
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=api_exception,
     ) as mock_login:
         result2 = await hass.config_entries.flow.async_configure(
@@ -400,7 +400,7 @@ async def test_form_already_configured(
     )
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -431,7 +431,7 @@ async def test_form_not_already_configured(
     )
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -476,7 +476,7 @@ async def test_form_valid_reauth(
     assert result["context"]["title_placeholders"] == {"name": mock_config_entry.title}
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=InvalidAuth,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -486,7 +486,7 @@ async def test_form_valid_reauth(
         }
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -534,7 +534,7 @@ async def test_form_valid_reauth_with_totp(
     result = flows[0]
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=InvalidAuth,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -545,7 +545,7 @@ async def test_form_valid_reauth_with_totp(
         }
 
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
     ) as mock_login:
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
@@ -592,7 +592,7 @@ async def test_reauth_with_mfa_challenge(
 
     # 2. Test failure before MFA challenge (InvalidAuth)
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=InvalidAuth,
     ) as mock_login_fail_auth:
         result_invalid_auth = await hass.config_entries.flow.async_configure(
@@ -609,7 +609,7 @@ async def test_reauth_with_mfa_challenge(
 
     # 3. Test failure before MFA challenge (CannotConnect)
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=CannotConnect,
     ) as mock_login_fail_connect:
         result_cannot_connect = await hass.config_entries.flow.async_configure(
@@ -634,7 +634,7 @@ async def test_reauth_with_mfa_challenge(
         "login_data_mock_key": "login_data_mock_value"
     }
     with patch(
-        "homeassistant.components.opower.config_flow.Opower.async_login",
+        "inpui.components.opower.config_flow.Opower.async_login",
         side_effect=MfaChallenge(message="", handler=mock_mfa_handler),
     ) as mock_login_mfa:
         result_mfa_challenge = await hass.config_entries.flow.async_configure(

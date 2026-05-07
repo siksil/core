@@ -1096,7 +1096,7 @@ async def test_state_translated(
         return {}
 
     with patch(
-        "homeassistant.helpers.translation.async_get_cached_translations",
+        "inpui.helpers.translation.async_get_cached_translations",
         side_effect=mock_get_cached_translations,
     ):
         result = render(hass, '{{ state_translated("light.hue_5678") }}')
@@ -1229,7 +1229,7 @@ async def test_state_attr_translated_translation_lookups(
     )
 
     with patch(
-        "homeassistant.helpers.translation.async_get_cached_translations",
+        "inpui.helpers.translation.async_get_cached_translations",
         return_value=translations,
     ):
         result = render(
@@ -1260,7 +1260,7 @@ def test_has_value(hass: HomeAssistant) -> None:
 
 
 @patch(
-    "homeassistant.helpers.template.TemplateEnvironment.is_safe_callable",
+    "inpui.helpers.template.TemplateEnvironment.is_safe_callable",
     return_value=True,
 )
 def test_timedelta(mock_is_safe, hass: HomeAssistant) -> None:

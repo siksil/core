@@ -124,7 +124,7 @@ async def async_setup_cast(
         config = {}
     data = {"ignore_cec": [], "known_hosts": [], "uuid": [], **config}
     with patch(
-        "homeassistant.helpers.entity_platform.EntityPlatform._async_schedule_add_entities_for_entry"
+        "inpui.helpers.entity_platform.EntityPlatform._async_schedule_add_entities_for_entry"
     ) as add_entities:
         entry = MockConfigEntry(data=data, domain="cast")
         entry.add_to_hass(hass)
@@ -152,7 +152,7 @@ async def async_setup_cast_internal_discovery(
     browser = MagicMock(devices={}, zc={})
 
     with patch(
-        "homeassistant.components.cast.discovery.pychromecast.discovery.CastBrowser",
+        "inpui.components.cast.discovery.pychromecast.discovery.CastBrowser",
         return_value=browser,
     ) as cast_browser:
         add_entities = await async_setup_cast(hass, config)
@@ -212,15 +212,15 @@ async def async_setup_media_player_cast(hass: HomeAssistant, info: ChromecastInf
 
     with (
         patch(
-            "homeassistant.components.cast.discovery.pychromecast.get_chromecast_from_cast_info",
+            "inpui.components.cast.discovery.pychromecast.get_chromecast_from_cast_info",
             return_value=chromecast,
         ) as get_chromecast,
         patch(
-            "homeassistant.components.cast.discovery.pychromecast.discovery.CastBrowser",
+            "inpui.components.cast.discovery.pychromecast.discovery.CastBrowser",
             return_value=browser,
         ) as cast_browser,
         patch(
-            "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+            "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
             return_value=zconf,
         ),
     ):
@@ -324,7 +324,7 @@ async def test_internal_discovery_callback_fill_out_group_fail(
     get_multizone_status_mock.return_value = None
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf,
     ):
         signal = MagicMock()
@@ -365,7 +365,7 @@ async def test_internal_discovery_callback_fill_out_group(
     get_multizone_status_mock.return_value = None
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf,
     ):
         signal = MagicMock()
@@ -434,7 +434,7 @@ async def test_internal_discovery_callback_fill_out_cast_type_manufacturer(
     get_cast_type_mock.return_value = full_info.cast_info
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf,
     ):
         signal = MagicMock()
@@ -517,7 +517,7 @@ async def test_manual_cast_chromecasts_uuid(hass: HomeAssistant) -> None:
         hass, config={"uuid": str(FakeUUID)}
     )
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_2,
     ):
         discover_cast(
@@ -529,7 +529,7 @@ async def test_manual_cast_chromecasts_uuid(hass: HomeAssistant) -> None:
     assert add_dev1.call_count == 0
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_1,
     ):
         discover_cast(
@@ -551,7 +551,7 @@ async def test_auto_cast_chromecasts(hass: HomeAssistant) -> None:
     # Manual configuration of media player with host "configured_host"
     discover_cast, _, add_dev1 = await async_setup_cast_internal_discovery(hass)
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_1,
     ):
         discover_cast(
@@ -563,7 +563,7 @@ async def test_auto_cast_chromecasts(hass: HomeAssistant) -> None:
     assert add_dev1.call_count == 1
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_2,
     ):
         discover_cast(
@@ -609,7 +609,7 @@ async def test_discover_dynamic_group(
     # Discover cast service
     with (
         patch(
-            "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+            "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
             return_value=zconf_1,
         ),
         patch.object(
@@ -638,7 +638,7 @@ async def test_discover_dynamic_group(
     # Discover other dynamic group cast service
     with (
         patch(
-            "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+            "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
             return_value=zconf_2,
         ),
         patch.object(
@@ -667,7 +667,7 @@ async def test_discover_dynamic_group(
     # Get update for cast service
     with (
         patch(
-            "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+            "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
             return_value=zconf_1,
         ),
         patch.object(
@@ -694,7 +694,7 @@ async def test_discover_dynamic_group(
     assert "Disconnecting from chromecast" not in caplog.text
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_1,
     ):
         remove_cast(
@@ -718,7 +718,7 @@ async def test_update_cast_chromecasts(hass: HomeAssistant) -> None:
     discover_cast, _, add_dev1 = await async_setup_cast_internal_discovery(hass)
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_1,
     ):
         discover_cast(
@@ -730,7 +730,7 @@ async def test_update_cast_chromecasts(hass: HomeAssistant) -> None:
     assert add_dev1.call_count == 1
 
     with patch(
-        "homeassistant.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
+        "inpui.components.cast.discovery.ChromeCastZeroconf.get_zeroconf",
         return_value=zconf_2,
     ):
         discover_cast(

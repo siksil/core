@@ -41,7 +41,7 @@ def _get_ws_handlers(
 @pytest.fixture(autouse=True)
 def only_event_platform() -> Generator[None]:
     """Limit setup to the event platform for event tests."""
-    with patch("homeassistant.components.unifi_access.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.unifi_access.PLATFORMS", [Platform.EVENT]):
         yield
 
 

@@ -20,7 +20,7 @@ async def test_init_success(hass: HomeAssistant) -> None:
     mock_nuheat = _get_mock_nuheat()
 
     with patch(
-        "homeassistant.components.nuheat.nuheat.NuHeat",
+        "inpui.components.nuheat.nuheat.NuHeat",
         return_value=mock_nuheat,
     ):
         config_entry = MockConfigEntry(domain=DOMAIN, data=MOCK_CONFIG_ENTRY)

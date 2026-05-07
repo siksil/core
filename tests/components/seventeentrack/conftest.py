@@ -77,7 +77,7 @@ VALID_PLATFORM_CONFIG_FULL = {
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.seventeentrack.async_setup_entry", return_value=True
+        "inpui.components.seventeentrack.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -113,11 +113,11 @@ def mock_seventeentrack():
     mock_seventeentrack_api = AsyncMock()
     with (
         patch(
-            "homeassistant.components.seventeentrack.SeventeenTrackClient",
+            "inpui.components.seventeentrack.SeventeenTrackClient",
             return_value=mock_seventeentrack_api,
         ),
         patch(
-            "homeassistant.components.seventeentrack.config_flow.SeventeenTrackClient",
+            "inpui.components.seventeentrack.config_flow.SeventeenTrackClient",
             return_value=mock_seventeentrack_api,
         ) as mock_seventeentrack_api,
     ):

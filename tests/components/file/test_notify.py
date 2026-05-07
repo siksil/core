@@ -57,8 +57,8 @@ async def test_notify_file(
 
     m_open = mock_open()
     with (
-        patch("homeassistant.components.file.notify.open", m_open, create=True),
-        patch("homeassistant.components.file.notify.os.stat") as mock_st,
+        patch("inpui.components.file.notify.open", m_open, create=True),
+        patch("inpui.components.file.notify.os.stat") as mock_st,
     ):
         mock_st.return_value.st_size = 0
         title = (
@@ -176,8 +176,8 @@ async def test_notify_file_write_access_failed(
 
     m_open = mock_open()
     with (
-        patch("homeassistant.components.file.notify.open", m_open, create=True),
-        patch("homeassistant.components.file.notify.os.stat") as mock_st,
+        patch("inpui.components.file.notify.open", m_open, create=True),
+        patch("inpui.components.file.notify.os.stat") as mock_st,
     ):
         mock_st.side_effect = OSError("Access Failed")
         with pytest.raises(ServiceValidationError) as exc:

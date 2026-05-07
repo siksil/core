@@ -66,11 +66,11 @@ def openwebif_device_mock() -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.enigma2.coordinator.OpenWebIfDevice",
+            "inpui.components.enigma2.coordinator.OpenWebIfDevice",
             spec=OpenWebIfDevice,
         ) as openwebif_device_mock,
         patch(
-            "homeassistant.components.enigma2.config_flow.OpenWebIfDevice",
+            "inpui.components.enigma2.config_flow.OpenWebIfDevice",
             new=openwebif_device_mock,
         ),
     ):

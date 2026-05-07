@@ -29,8 +29,8 @@ async def test_subscribe_discovery(
         saved_callback = callback
 
     with (
-        patch("homeassistant.components.dhcp.aiodhcpwatcher.async_start", mock_start),
-        patch("homeassistant.components.dhcp.DiscoverHosts"),
+        patch("inpui.components.dhcp.aiodhcpwatcher.async_start", mock_start),
+        patch("inpui.components.dhcp.DiscoverHosts"),
     ):
         await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()

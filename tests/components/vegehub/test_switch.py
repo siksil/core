@@ -41,7 +41,7 @@ async def test_switch_entities(
 ) -> None:
     """Test all entities."""
 
-    with patch("homeassistant.components.vegehub.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.vegehub.PLATFORMS", [Platform.SWITCH]):
         await init_integration(hass, mocked_config_entry)
 
     assert TEST_WEBHOOK_ID in hass.data["webhook"], "Webhook was not registered"
@@ -71,7 +71,7 @@ async def test_switch_turn_on_off(
     mocked_config_entry: MockConfigEntry,
 ) -> None:
     """Test switch turn_on and turn_off methods."""
-    with patch("homeassistant.components.vegehub.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.vegehub.PLATFORMS", [Platform.SWITCH]):
         await init_integration(hass, mocked_config_entry)
 
     # Send webhook data to initialize switches
@@ -86,7 +86,7 @@ async def test_switch_turn_on_off(
 
     # Test turn_on method
     with patch(
-        "homeassistant.components.vegehub.VegeHub.set_actuator"
+        "inpui.components.vegehub.VegeHub.set_actuator"
     ) as mock_set_actuator:
         await hass.services.async_call(
             "switch", "turn_on", {"entity_id": switch_entity_ids[0]}, blocking=True
@@ -97,7 +97,7 @@ async def test_switch_turn_on_off(
 
     # Test turn_off method
     with patch(
-        "homeassistant.components.vegehub.VegeHub.set_actuator"
+        "inpui.components.vegehub.VegeHub.set_actuator"
     ) as mock_set_actuator:
         await hass.services.async_call(
             "switch", "turn_off", {"entity_id": switch_entity_ids[0]}, blocking=True

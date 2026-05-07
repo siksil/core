@@ -942,7 +942,7 @@ async def help_test_default_availability_payload(
     config = copy.deepcopy(config)
     config[mqtt.DOMAIN][domain]["availability_topic"] = "availability-topic"
 
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     state = hass.states.get(f"{domain}.test")
@@ -991,7 +991,7 @@ async def help_test_default_availability_list_payload(
         {"topic": "availability-topic1"},
         {"topic": "availability-topic2"},
     ]
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     state = hass.states.get(f"{domain}.test")
@@ -1051,7 +1051,7 @@ async def help_test_default_availability_list_payload_all(
         {"topic": "availability-topic1"},
         {"topic": "availability-topic2"},
     ]
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     state = hass.states.get(f"{domain}.test")
@@ -1112,7 +1112,7 @@ async def help_test_default_availability_list_payload_any(
         {"topic": "availability-topic1"},
         {"topic": "availability-topic2"},
     ]
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     state = hass.states.get(f"{domain}.test")
@@ -1169,7 +1169,7 @@ async def help_test_default_availability_list_single(
     config[mqtt.DOMAIN][domain]["availability_topic"] = "availability-topic"
 
     with (
-        patch("homeassistant.config.load_yaml_config_file", return_value=config),
+        patch("inpui.config.load_yaml_config_file", return_value=config),
         suppress(vol.MultipleInvalid),
     ):
         await mqtt_mock_entry()
@@ -1198,7 +1198,7 @@ async def help_test_custom_availability_payload(
     config[mqtt.DOMAIN][domain]["availability_topic"] = "availability-topic"
     config[mqtt.DOMAIN][domain]["payload_available"] = "good"
     config[mqtt.DOMAIN][domain]["payload_not_available"] = "nogood"
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     state = hass.states.get(f"{domain}.test")
@@ -1319,7 +1319,7 @@ async def help_test_setting_attribute_via_mqtt_json_message(
     # Add JSON attributes settings to config
     config = copy.deepcopy(config)
     config[mqtt.DOMAIN][domain]["json_attributes_topic"] = "attr-topic"
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     async_fire_mqtt_message(hass, "attr-topic", '{ "val": "100" }')
@@ -1377,7 +1377,7 @@ async def help_test_setting_attribute_with_template(
     config[mqtt.DOMAIN][domain]["json_attributes_template"] = (
         "{{ value_json['Timer1'] | tojson }}"
     )
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     async_fire_mqtt_message(
@@ -1404,7 +1404,7 @@ async def help_test_update_with_json_attrs_not_dict(
     # Add JSON attributes settings to config
     config = copy.deepcopy(config)
     config[mqtt.DOMAIN][domain]["json_attributes_topic"] = "attr-topic"
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     async_fire_mqtt_message(hass, "attr-topic", '[ "list", "of", "things"]')
@@ -1428,7 +1428,7 @@ async def help_test_update_with_json_attrs_bad_json(
     # Add JSON attributes settings to config
     config = copy.deepcopy(config)
     config[mqtt.DOMAIN][domain]["json_attributes_topic"] = "attr-topic"
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         await mqtt_mock_entry()
 
     async_fire_mqtt_message(hass, "attr-topic", "This is not JSON")
@@ -1962,7 +1962,7 @@ async def help_test_entity_id_update_subscriptions(
     assert len(topics) > 0
     entity_registry = er.async_get(hass)
 
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config):
+    with patch("inpui.config.load_yaml_config_file", return_value=config):
         mqtt_mock = await mqtt_mock_entry()
     assert mqtt_mock is not None
 
@@ -2679,7 +2679,7 @@ async def help_test_reloadable(
     )
     entry.add_to_hass(hass)
     mqtt_client_mock.connect.return_value = 0
-    with patch("homeassistant.config.load_yaml_config_file", return_value=old_config):
+    with patch("inpui.config.load_yaml_config_file", return_value=old_config):
         await hass.config_entries.async_setup(entry.entry_id)
 
     assert hass.states.get(f"{domain}.test_old_1")
@@ -2698,7 +2698,7 @@ async def help_test_reloadable(
     new_config = {
         mqtt.DOMAIN: {domain: [new_config_1, new_config_2, new_config_extra]},
     }
-    with patch("homeassistant.config.load_yaml_config_file", return_value=new_config):
+    with patch("inpui.config.load_yaml_config_file", return_value=new_config):
         # Reload the mqtt entry with the new config
         await hass.services.async_call(
             "mqtt",
@@ -2739,7 +2739,7 @@ async def help_test_unload_config_entry_with_platform(
     config_setup[mqtt.DOMAIN][domain]["name"] = "config_setup"
     config_name = config_setup
 
-    with patch("homeassistant.config.load_yaml_config_file", return_value=config_name):
+    with patch("inpui.config.load_yaml_config_file", return_value=config_name):
         await mqtt_mock_entry()
 
     # prepare setup through discovery
@@ -2789,7 +2789,7 @@ async def help_test_skipped_async_ha_write_state(
 ) -> None:
     """Test entity.async_ha_write_state is only called on changes."""
     with patch(
-        "homeassistant.components.mqtt.entity.MqttEntity.async_write_ha_state"
+        "inpui.components.mqtt.entity.MqttEntity.async_write_ha_state"
     ) as mock_async_ha_write_state:
         assert len(mock_async_ha_write_state.mock_calls) == 0
         async_fire_mqtt_message(hass, topic, payload1)

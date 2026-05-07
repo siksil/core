@@ -134,7 +134,7 @@ ZCL_ATTR_PLUG = {
 def climate_platform_only():
     """Only set up the climate and required base platforms to speed up tests."""
     with patch(
-        "homeassistant.components.zha.PLATFORMS",
+        "inpui.components.zha.PLATFORMS",
         (
             Platform.BUTTON,
             Platform.CLIMATE,

@@ -29,7 +29,7 @@ async def test_select(
 ) -> None:
     """Test select platform."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.SELECT],
     ):
         await setup_integration(hass, mock_config_entry)
@@ -45,7 +45,7 @@ async def test_select_option(
 ) -> None:
     """Test select option service."""
     with patch(
-        "homeassistant.components.nintendo_parental_controls._PLATFORMS",
+        "inpui.components.nintendo_parental_controls._PLATFORMS",
         [Platform.SELECT],
     ):
         await setup_integration(hass, mock_config_entry)

@@ -442,7 +442,7 @@ async def test_entity_and_device_data(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Validate entity and device data."""
-    with patch("homeassistant.components.unifi.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.unifi.PLATFORMS", [Platform.SENSOR]):
         config_entry = await config_entry_factory()
     await snapshot_platform(hass, entity_registry, snapshot, config_entry.entry_id)
 
@@ -1363,7 +1363,7 @@ async def _test_uptime_entity(
 
     payload["uptime"] = event_uptime
     now = datetime(2021, 1, 1, 1, 4, 0, tzinfo=dt_util.UTC)
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         mock_websocket_message(message=message_key, data=payload)
         await hass.async_block_till_done()
 
@@ -1374,7 +1374,7 @@ async def _test_uptime_entity(
 
     payload["uptime"] = small_variation_uptime
     now = datetime(2021, 1, 1, 1, 8, 15, tzinfo=dt_util.UTC)
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         mock_websocket_message(message=message_key, data=payload)
 
     assert hass.states.get(entity_id).state == "2021-01-01T01:00:00+00:00"
@@ -1384,7 +1384,7 @@ async def _test_uptime_entity(
 
     payload["uptime"] = new_uptime
     now = datetime(2021, 2, 1, 1, 1, 0, tzinfo=dt_util.UTC)
-    with patch("homeassistant.util.dt.now", return_value=now):
+    with patch("inpui.util.dt.now", return_value=now):
         mock_websocket_message(message=message_key, data=payload)
         await hass.async_block_till_done()
 

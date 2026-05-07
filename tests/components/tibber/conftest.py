@@ -237,5 +237,5 @@ def platforms() -> list[Platform]:
 @pytest.fixture(autouse=True)
 async def mock_patch_platforms(platforms: list[Platform]) -> AsyncGenerator[None]:
     """Fixture to set up platforms for tests."""
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", platforms):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", platforms):
         yield

@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.weatherflow_cloud.async_setup_entry",
+        "inpui.components.weatherflow_cloud.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -123,11 +123,11 @@ def mock_rest_api():
     # Apply patches
     with (
         patch(
-            "homeassistant.components.weatherflow_cloud.WeatherFlowRestAPI",
+            "inpui.components.weatherflow_cloud.WeatherFlowRestAPI",
             return_value=mock_api,
         ) as _,
         patch(
-            "homeassistant.components.weatherflow_cloud.coordinator.WeatherFlowRestAPI",
+            "inpui.components.weatherflow_cloud.coordinator.WeatherFlowRestAPI",
             return_value=mock_api,
         ) as _,
     ):
@@ -155,11 +155,11 @@ async def mock_websocket_api():
 
     with (
         patch(
-            "homeassistant.components.weatherflow_cloud.coordinator.WeatherFlowWebsocketAPI",
+            "inpui.components.weatherflow_cloud.coordinator.WeatherFlowWebsocketAPI",
             return_value=mock_ws_instance,
         ),
         patch(
-            "homeassistant.components.weatherflow_cloud.WeatherFlowWebsocketAPI",
+            "inpui.components.weatherflow_cloud.WeatherFlowWebsocketAPI",
             return_value=mock_ws_instance,
         ),
         patch(

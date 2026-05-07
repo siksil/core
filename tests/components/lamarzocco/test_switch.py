@@ -30,7 +30,7 @@ async def test_switches(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the La Marzocco switches."""
-    with patch("homeassistant.components.lamarzocco.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.lamarzocco.PLATFORMS", [Platform.SWITCH]):
         await async_init_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
@@ -209,7 +209,7 @@ async def test_switches_unavailable_if_machine_off(
     mock_lamarzocco.dashboard.config[
         WidgetType.CM_MACHINE_STATUS
     ].status = MachineState.OFF
-    with patch("homeassistant.components.lamarzocco.PLATFORMS", [Platform.SWITCH]):
+    with patch("inpui.components.lamarzocco.PLATFORMS", [Platform.SWITCH]):
         await async_init_integration(hass, mock_config_entry)
 
     switches = er.async_entries_for_config_entry(

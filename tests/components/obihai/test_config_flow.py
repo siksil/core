@@ -13,7 +13,7 @@ from inpui.data_entry_flow import FlowResultType
 
 from . import DHCP_SERVICE_INFO, USER_INPUT, MockPyObihai, get_schema_suggestion
 
-VALIDATE_AUTH_PATCH = "homeassistant.components.obihai.config_flow.validate_auth"
+VALIDATE_AUTH_PATCH = "inpui.components.obihai.config_flow.validate_auth"
 
 pytestmark = pytest.mark.usefixtures("mock_setup_entry")
 

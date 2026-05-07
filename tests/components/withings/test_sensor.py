@@ -36,7 +36,7 @@ async def test_all_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test all entities."""
-    with patch("homeassistant.components.withings.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.withings.PLATFORMS", [Platform.SENSOR]):
         await setup_integration(hass, polling_config_entry)
 
     await snapshot_platform(

@@ -21,7 +21,7 @@ async def test_locks(
     mock_nuki_requests: requests_mock.Mocker,
 ) -> None:
     """Test locks."""
-    with patch("homeassistant.components.nuki.PLATFORMS", [Platform.LOCK]):
+    with patch("inpui.components.nuki.PLATFORMS", [Platform.LOCK]):
         entry = await init_integration(hass, mock_nuki_requests)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

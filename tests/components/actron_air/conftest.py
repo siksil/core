@@ -20,11 +20,11 @@ def mock_actron_api() -> Generator[AsyncMock]:
     """Mock the Actron Air API class."""
     with (
         patch(
-            "homeassistant.components.actron_air.ActronAirAPI",
+            "inpui.components.actron_air.ActronAirAPI",
             autospec=True,
         ) as mock_api,
         patch(
-            "homeassistant.components.actron_air.config_flow.ActronAirAPI",
+            "inpui.components.actron_air.config_flow.ActronAirAPI",
             new=mock_api,
         ),
     ):
@@ -141,7 +141,7 @@ def mock_zone() -> MagicMock:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.actron_air.async_setup_entry", return_value=True
+        "inpui.components.actron_air.async_setup_entry", return_value=True
     ) as mock_setup:
         yield mock_setup
 
@@ -158,5 +158,5 @@ async def init_integration_with_zone(
     status.remote_zone_info = [mock_zone]
     status.zones = {1: mock_zone}
 
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)

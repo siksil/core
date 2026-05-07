@@ -25,7 +25,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 def setup_platforms() -> Generator[None]:
     """Set up the platforms for the tests."""
-    with patch("homeassistant.components.tado.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.tado.PLATFORMS", [Platform.CLIMATE]):
         yield
 
 
@@ -48,7 +48,7 @@ async def test_heater_set_temperature(
 
     with (
         patch(
-            "homeassistant.components.tado.PyTado.interface.api.Tado.set_zone_overlay"
+            "inpui.components.tado.PyTado.interface.api.Tado.set_zone_overlay"
         ) as mock_set_state,
     ):
         await hass.services.async_call(
@@ -83,10 +83,10 @@ async def test_aircon_set_hvac_mode(
 
     with (
         patch(
-            "homeassistant.components.tado.PyTado.interface.api.Tado.set_zone_overlay"
+            "inpui.components.tado.PyTado.interface.api.Tado.set_zone_overlay"
         ) as mock_set_state,
         patch(
-            "homeassistant.components.tado.PyTado.interface.api.Tado.get_zone_state",
+            "inpui.components.tado.PyTado.interface.api.Tado.get_zone_state",
             return_value=TadoZone(
                 zone_id=1,
                 current_temp=18.7,

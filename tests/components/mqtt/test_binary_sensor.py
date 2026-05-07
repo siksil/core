@@ -253,7 +253,7 @@ async def test_expiration_on_discovery_and_discovery_update_of_binary_sensor(
     assert state.state == STATE_ON
 
     # Resend config message to update discovery
-    with patch(("homeassistant.helpers.event.dt_util.utcnow"), return_value=now):
+    with patch(("inpui.helpers.event.dt_util.utcnow"), return_value=now):
         async_fire_time_changed(hass, now)
         async_fire_mqtt_message(
             hass, "homeassistant/binary_sensor/bla/config", config_msg
@@ -943,7 +943,7 @@ async def test_discovery_update_unchanged_binary_sensor(
 
     data1 = json.dumps(config1)
     with patch(
-        "homeassistant.components.mqtt.binary_sensor.MqttBinarySensor.discovery_update"
+        "inpui.components.mqtt.binary_sensor.MqttBinarySensor.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, binary_sensor.DOMAIN, data1, discovery_update

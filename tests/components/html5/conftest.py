@@ -44,7 +44,7 @@ def mock_load_config() -> Generator[MagicMock]:
     """Mock load config."""
 
     with patch(
-        "homeassistant.components.html5.notify._load_config", return_value={}
+        "inpui.components.html5.notify._load_config", return_value={}
     ) as mock_load_config:
         yield mock_load_config
 
@@ -54,7 +54,7 @@ def mock_wp() -> Generator[AsyncMock]:
     """Mock WebPusher."""
 
     with patch(
-        "homeassistant.components.html5.notify.WebPusher", autospec=True
+        "inpui.components.html5.notify.WebPusher", autospec=True
     ) as mock_client:
         client = mock_client.return_value
         client.cls = mock_client
@@ -67,7 +67,7 @@ def mock_webpush_async() -> Generator[AsyncMock]:
     """Mock webpush_async."""
 
     with patch(
-        "homeassistant.components.html5.notify.webpush_async", autospec=True
+        "inpui.components.html5.notify.webpush_async", autospec=True
     ) as mock_client:
         mock_client.return_value = AsyncMock(spec=ClientResponse, status=201)
         yield mock_client
@@ -78,7 +78,7 @@ def mock_jwt() -> Generator[MagicMock]:
     """Mock JWT."""
 
     with (
-        patch("homeassistant.components.html5.notify.jwt") as mock_client,
+        patch("inpui.components.html5.notify.jwt") as mock_client,
     ):
         mock_client.encode.return_value = "JWT"
         mock_client.decode.return_value = {"target": "device"}
@@ -90,7 +90,7 @@ def mock_uuid() -> Generator[MagicMock]:
     """Mock UUID."""
 
     with (
-        patch("homeassistant.components.html5.notify.uuid") as mock_client,
+        patch("inpui.components.html5.notify.uuid") as mock_client,
     ):
         mock_client.uuid4.return_value = "12345678-1234-5678-1234-567812345678"
         yield mock_client
@@ -102,7 +102,7 @@ def mock_vapid() -> Generator[MagicMock]:
 
     with (
         patch(
-            "homeassistant.components.html5.notify.Vapid", autospec=True
+            "inpui.components.html5.notify.Vapid", autospec=True
         ) as mock_client,
     ):
         mock_client.from_string.return_value.sign.return_value = {

@@ -12,7 +12,7 @@ from tests.typing import WebSocketGenerator
 
 
 @patch(
-    "homeassistant.components.ssdp.async_get_ssdp",
+    "inpui.components.ssdp.async_get_ssdp",
     return_value={"mock-domain": [{"deviceType": "Paulus"}]},
 )
 async def test_subscribe_discovery(

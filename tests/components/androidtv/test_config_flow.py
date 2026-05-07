@@ -66,7 +66,7 @@ CONFIG_ADB_SERVER = {
 }
 
 CONNECT_METHOD = (
-    "homeassistant.components.androidtv.config_flow.async_connect_androidtv"
+    "inpui.components.androidtv.config_flow.async_connect_androidtv"
 )
 
 

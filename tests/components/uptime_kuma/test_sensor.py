@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_plat
 def sensor_only() -> Generator[None]:
     """Enable only the sensor platform."""
     with patch(
-        "homeassistant.components.uptime_kuma._PLATFORMS",
+        "inpui.components.uptime_kuma._PLATFORMS",
         [Platform.SENSOR],
     ):
         yield

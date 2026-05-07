@@ -29,7 +29,7 @@ from tests.common import MockConfigEntry, load_json_array_fixture
 @pytest.fixture(autouse=True)
 def no_request_delay() -> Generator[None]:
     """Make the request refresh delay 0 for instant tests."""
-    with patch("homeassistant.components.hue.const.REQUEST_REFRESH_DELAY", 0):
+    with patch("inpui.components.hue.const.REQUEST_REFRESH_DELAY", 0):
         yield
 
 
@@ -251,7 +251,7 @@ async def setup_bridge(
         hue.migration, "is_v2_bridge", return_value=mock_bridge.api_version == 2
     ):
         config_entry.add_to_hass(hass)
-        with patch("homeassistant.components.hue.HueBridge", return_value=mock_bridge):
+        with patch("inpui.components.hue.HueBridge", return_value=mock_bridge):
             await hass.config_entries.async_setup(config_entry.entry_id)
 
     assert config_entry.state is ConfigEntryState.LOADED

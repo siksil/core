@@ -29,7 +29,7 @@ EXPIRES_IN = 3600
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.google_air_quality.async_setup_entry",
+        "inpui.components.google_air_quality.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -72,11 +72,11 @@ def mock_client_api() -> Generator[Mock]:
     responses = load_json_object_fixture("air_quality_data.json", DOMAIN)
     with (
         patch(
-            "homeassistant.components.google_air_quality.GoogleAirQualityApi",
+            "inpui.components.google_air_quality.GoogleAirQualityApi",
             autospec=True,
         ) as mock_api,
         patch(
-            "homeassistant.components.google_air_quality.config_flow.GoogleAirQualityApi",
+            "inpui.components.google_air_quality.config_flow.GoogleAirQualityApi",
             new=mock_api,
         ),
     ):
@@ -97,7 +97,7 @@ async def mock_setup_integration(
     """Fixture to set up the integration."""
     mock_config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.google_air_quality.GoogleAirQualityApi",
+        "inpui.components.google_air_quality.GoogleAirQualityApi",
         return_value=mock_api,
     ):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)

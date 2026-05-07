@@ -26,7 +26,7 @@ async def test_climate_thermostat_run(hass: HomeAssistant) -> None:
     mock_nuheat = _get_mock_nuheat(get_thermostat=mock_thermostat)
 
     with patch(
-        "homeassistant.components.nuheat.nuheat.NuHeat",
+        "inpui.components.nuheat.nuheat.NuHeat",
         return_value=mock_nuheat,
     ):
         config_entry = MockConfigEntry(domain=DOMAIN, data=MOCK_CONFIG_ENTRY)
@@ -61,7 +61,7 @@ async def test_climate_thermostat_schedule_hold_unavailable(
     mock_nuheat = _get_mock_nuheat(get_thermostat=mock_thermostat)
 
     with patch(
-        "homeassistant.components.nuheat.nuheat.NuHeat",
+        "inpui.components.nuheat.nuheat.NuHeat",
         return_value=mock_nuheat,
     ):
         config_entry = MockConfigEntry(domain=DOMAIN, data=MOCK_CONFIG_ENTRY)
@@ -91,7 +91,7 @@ async def test_climate_thermostat_schedule_hold_available(hass: HomeAssistant) -
     mock_nuheat = _get_mock_nuheat(get_thermostat=mock_thermostat)
 
     with patch(
-        "homeassistant.components.nuheat.nuheat.NuHeat",
+        "inpui.components.nuheat.nuheat.NuHeat",
         return_value=mock_nuheat,
     ):
         config_entry = MockConfigEntry(domain=DOMAIN, data=MOCK_CONFIG_ENTRY)
@@ -125,7 +125,7 @@ async def test_climate_thermostat_schedule_temporary_hold(hass: HomeAssistant) -
     mock_nuheat = _get_mock_nuheat(get_thermostat=mock_thermostat)
 
     with patch(
-        "homeassistant.components.nuheat.nuheat.NuHeat",
+        "inpui.components.nuheat.nuheat.NuHeat",
         return_value=mock_nuheat,
     ):
         config_entry = MockConfigEntry(domain=DOMAIN, data=MOCK_CONFIG_ENTRY)

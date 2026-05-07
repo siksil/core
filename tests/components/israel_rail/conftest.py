@@ -24,7 +24,7 @@ SOURCE_DEST = "באר יעקב אשקלון"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.israel_rail.async_setup_entry", return_value=True
+        "inpui.components.israel_rail.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -44,11 +44,11 @@ def mock_israelrail() -> AsyncMock:
     """Build a fixture for the Israel rail API."""
     with (
         patch(
-            "homeassistant.components.israel_rail.TrainSchedule",
+            "inpui.components.israel_rail.TrainSchedule",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.israel_rail.config_flow.TrainSchedule",
+            "inpui.components.israel_rail.config_flow.TrainSchedule",
             new=mock_client,
         ),
     ):

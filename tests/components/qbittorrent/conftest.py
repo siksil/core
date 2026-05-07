@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_json_object_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock qbittorrent entry setup."""
     with patch(
-        "homeassistant.components.qbittorrent.async_setup_entry", return_value=True
+        "inpui.components.qbittorrent.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -35,7 +35,7 @@ def mock_api() -> Generator[requests_mock.Mocker]:
 def mock_qbittorrent() -> Generator[AsyncMock]:
     """Mock qbittorrent client."""
     with patch(
-        "homeassistant.components.qbittorrent.helpers.Client", autospec=True
+        "inpui.components.qbittorrent.helpers.Client", autospec=True
     ) as mock_client:
         client = mock_client.return_value
         client.sync_maindata.return_value = load_json_object_fixture(

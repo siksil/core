@@ -134,7 +134,7 @@ async def test_lights(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test that lights are loaded properly."""
-    with patch("homeassistant.components.axis.PLATFORMS", [Platform.LIGHT]):
+    with patch("inpui.components.axis.PLATFORMS", [Platform.LIGHT]):
         config_entry = await config_entry_factory()
 
     mock_rtsp_event(

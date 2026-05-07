@@ -37,7 +37,7 @@ async def setup_homeassistant(hass: HomeAssistant):
 def store_mock():
     """Mock update store."""
     with patch(
-        "homeassistant.components.microsoft_face.MicrosoftFace.update_store",
+        "inpui.components.microsoft_face.MicrosoftFace.update_store",
         return_value=None,
     ) as mock_update_store:
         yield mock_update_store
@@ -47,7 +47,7 @@ def store_mock():
 def poll_mock():
     """Disable polling."""
     with patch(
-        "homeassistant.components.microsoft_face_detect.image_processing."
+        "inpui.components.microsoft_face_detect.image_processing."
         "MicrosoftFaceDetectEntity.should_poll",
         new_callable=PropertyMock(return_value=False),
     ):

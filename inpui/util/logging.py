@@ -30,10 +30,10 @@ class HomeAssistantQueueListener(logging.handlers.QueueListener):
     MAX_LOGS_COUNT = 200
 
     EXCLUDED_LOG_COUNT_MODULES = [
-        "homeassistant.components.automation",
-        "homeassistant.components.script",
-        "homeassistant.setup",
-        "homeassistant.util.logging",
+        "inpui.components.automation",
+        "inpui.components.script",
+        "inpui.setup",
+        "inpui.util.logging",
     ]
 
     _last_reset: float

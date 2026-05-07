@@ -19,7 +19,7 @@ async def test_covers(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test covers."""
-    with patch("homeassistant.components.elmax.ELMAX_PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.elmax.ELMAX_PLATFORMS", [Platform.COVER]):
         entry = await init_integration(hass)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

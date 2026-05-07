@@ -33,7 +33,7 @@ async def test_floodlight_mode_select(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test select entity with floodlight_mode."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SELECT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -83,7 +83,7 @@ async def test_play_quick_reply_message(
 ) -> None:
     """Test select play_quick_reply_message entity."""
     reolink_host.quick_reply_dict.return_value = {0: "off", 1: "test message"}
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SELECT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -107,7 +107,7 @@ async def test_host_scene_select(
     reolink_host: MagicMock,
 ) -> None:
     """Test host select entity with scene mode."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SELECT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -162,7 +162,7 @@ async def test_chime_select(
     """Test chime select entity."""
     reolink_chime.channel = channel
 
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.SELECT]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.SELECT]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 

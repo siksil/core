@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry
 
 
 @patch(
-    "homeassistant.config_entries.ConfigEntries.async_unload_platforms",
+    "inpui.config_entries.ConfigEntries.async_unload_platforms",
     return_value=True,
 )
 async def test_setup_unload_api_key(
@@ -47,7 +47,7 @@ async def test_setup_unload_api_key(
 
 
 @patch(
-    "homeassistant.config_entries.ConfigEntries.async_unload_platforms",
+    "inpui.config_entries.ConfigEntries.async_unload_platforms",
     return_value=True,
 )
 async def test_setup_unload_web_login(
@@ -83,7 +83,7 @@ async def test_setup_unload_web_login(
 
 
 @patch(
-    "homeassistant.config_entries.ConfigEntries.async_unload_platforms",
+    "inpui.config_entries.ConfigEntries.async_unload_platforms",
     return_value=True,
 )
 async def test_setup_unload_both(

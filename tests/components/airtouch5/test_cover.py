@@ -39,7 +39,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
 
-    with patch("homeassistant.components.airtouch5.PLATFORMS", [Platform.COVER]):
+    with patch("inpui.components.airtouch5.PLATFORMS", [Platform.COVER]):
         await setup_integration(hass, mock_config_entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)

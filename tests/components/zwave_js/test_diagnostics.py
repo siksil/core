@@ -41,7 +41,7 @@ async def test_config_entry_diagnostics(
 ) -> None:
     """Test the config entry level diagnostics data dump."""
     with patch(
-        "homeassistant.components.zwave_js.diagnostics.dump_msgs",
+        "inpui.components.zwave_js.diagnostics.dump_msgs",
         return_value=config_entry_diagnostics,
     ):
         diagnostics = await get_diagnostics_for_config_entry(

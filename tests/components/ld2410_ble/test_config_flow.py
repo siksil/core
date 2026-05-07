@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 async def test_user_step_success(hass: HomeAssistant) -> None:
     """Test user step success path."""
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.async_discovered_service_info",
+        "inpui.components.ld2410_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_LD2410_BLE_DISCOVERY_INFO, LD2410_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -31,10 +31,10 @@ async def test_user_step_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+            "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         ),
         patch(
-            "homeassistant.components.ld2410_ble.async_setup_entry",
+            "inpui.components.ld2410_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -66,7 +66,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.async_discovered_service_info",
+        "inpui.components.ld2410_ble.config_flow.async_discovered_service_info",
         return_value=[LD2410_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -79,7 +79,7 @@ async def test_user_step_no_new_devices_found(hass: HomeAssistant) -> None:
 async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
     """Test user step and we cannot connect."""
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.async_discovered_service_info",
+        "inpui.components.ld2410_ble.config_flow.async_discovered_service_info",
         return_value=[LD2410_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -90,7 +90,7 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+        "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         side_effect=BleakError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -107,10 +107,10 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+            "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         ),
         patch(
-            "homeassistant.components.ld2410_ble.async_setup_entry",
+            "inpui.components.ld2410_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -134,7 +134,7 @@ async def test_user_step_cannot_connect(hass: HomeAssistant) -> None:
 async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
     """Test user step with an unknown exception."""
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.async_discovered_service_info",
+        "inpui.components.ld2410_ble.config_flow.async_discovered_service_info",
         return_value=[NOT_LD2410_BLE_DISCOVERY_INFO, LD2410_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -145,7 +145,7 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+        "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         side_effect=RuntimeError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -162,10 +162,10 @@ async def test_user_step_unknown_exception(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+            "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         ),
         patch(
-            "homeassistant.components.ld2410_ble.async_setup_entry",
+            "inpui.components.ld2410_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -199,10 +199,10 @@ async def test_bluetooth_step_success(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+            "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         ),
         patch(
-            "homeassistant.components.ld2410_ble.async_setup_entry",
+            "inpui.components.ld2410_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -234,7 +234,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.ld2410_ble.config_flow.async_discovered_service_info",
+        "inpui.components.ld2410_ble.config_flow.async_discovered_service_info",
         return_value=[LD2410_BLE_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -248,10 +248,10 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.ld2410_ble.config_flow.LD2410BLE.initialise",
+            "inpui.components.ld2410_ble.config_flow.LD2410BLE.initialise",
         ),
         patch(
-            "homeassistant.components.ld2410_ble.async_setup_entry",
+            "inpui.components.ld2410_ble.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

@@ -46,19 +46,19 @@ async def init_integration(hass: HomeAssistant, ec_data) -> MockConfigEntry:
 
     with (
         patch(
-            "homeassistant.components.environment_canada.ECWeather",
+            "inpui.components.environment_canada.ECWeather",
             return_value=weather_mock,
         ),
         patch(
-            "homeassistant.components.environment_canada.ECAirQuality",
+            "inpui.components.environment_canada.ECAirQuality",
             return_value=mock_ec(),
         ),
         patch(
-            "homeassistant.components.environment_canada.ECRadar",
+            "inpui.components.environment_canada.ECRadar",
             return_value=radar_mock,
         ),
         patch(
-            "homeassistant.components.environment_canada.config_flow.ECWeather",
+            "inpui.components.environment_canada.config_flow.ECWeather",
             return_value=weather_mock,
         ),
     ):

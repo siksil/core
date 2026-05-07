@@ -43,7 +43,7 @@ from tests.typing import WebSocketGenerator
 def mock_chat_session_id() -> Generator[Mock]:
     """Mock the conversation ID of chat sessions."""
     with patch(
-        "homeassistant.helpers.chat_session.ulid_now", return_value="mock-ulid"
+        "inpui.helpers.chat_session.ulid_now", return_value="mock-ulid"
     ) as mock_ulid_now:
         yield mock_ulid_now
 
@@ -140,7 +140,7 @@ async def test_audio_pipeline(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await client.send_json_auto_id(
             {
@@ -234,7 +234,7 @@ async def test_audio_pipeline_with_wake_word_timeout(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await client.send_json_auto_id(
             {
@@ -292,7 +292,7 @@ async def test_audio_pipeline_with_wake_word_no_timeout(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await client.send_json_auto_id(
             {
@@ -398,7 +398,7 @@ async def test_audio_pipeline_no_wake_word_engine(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.wake_word.async_default_entity", return_value=None
+        "inpui.components.wake_word.async_default_entity", return_value=None
     ):
         await client.send_json_auto_id(
             {
@@ -429,11 +429,11 @@ async def test_audio_pipeline_no_wake_word_entity(
 
     with (
         patch(
-            "homeassistant.components.wake_word.async_default_entity",
+            "inpui.components.wake_word.async_default_entity",
             return_value="wake_word.bad-entity-id",
         ),
         patch(
-            "homeassistant.components.wake_word.async_get_wake_word_detection_entity",
+            "inpui.components.wake_word.async_get_wake_word_detection_entity",
             return_value=None,
         ),
     ):
@@ -469,7 +469,7 @@ async def test_intent_timeout(
         await asyncio.sleep(3600)
 
     with patch(
-        "homeassistant.components.conversation.async_converse",
+        "inpui.components.conversation.async_converse",
         new=sleepy_converse,
     ):
         await client.send_json_auto_id(
@@ -541,7 +541,7 @@ async def test_text_pipeline_timeout(
         await asyncio.sleep(3600)
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.PipelineInput.execute",
+        "inpui.components.assist_pipeline.pipeline.PipelineInput.execute",
         new=sleepy_run,
     ):
         await client.send_json_auto_id(
@@ -591,7 +591,7 @@ async def test_intent_failed(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.conversation.async_converse",
+        "inpui.components.conversation.async_converse",
         side_effect=RuntimeError,
     ):
         await client.send_json_auto_id(
@@ -662,7 +662,7 @@ async def test_audio_pipeline_timeout(
         await asyncio.sleep(3600)
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.PipelineInput.execute",
+        "inpui.components.assist_pipeline.pipeline.PipelineInput.execute",
         new=sleepy_run,
     ):
         await client.send_json_auto_id(
@@ -711,7 +711,7 @@ async def test_stt_provider_missing(
 ) -> None:
     """Test events from a pipeline run with a non-existent STT provider."""
     with patch(
-        "homeassistant.components.stt.async_get_speech_to_text_entity",
+        "inpui.components.stt.async_get_speech_to_text_entity",
         return_value=None,
     ):
         client = await hass_ws_client(hass)
@@ -874,7 +874,7 @@ async def test_tts_provider_bad_options(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.tts.SpeechManager.process_options",
+        "inpui.components.tts.SpeechManager.process_options",
         side_effect=HomeAssistantError("Language not supported"),
     ):
         await client.send_json_auto_id(
@@ -1501,7 +1501,7 @@ async def test_audio_pipeline_debug(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await client.send_json_auto_id(
             {
@@ -1720,15 +1720,15 @@ async def test_list_pipeline_languages_with_aliases(
 
     with (
         patch(
-            "homeassistant.components.conversation.async_get_conversation_languages",
+            "inpui.components.conversation.async_get_conversation_languages",
             return_value={"he", "nb"},
         ),
         patch(
-            "homeassistant.components.stt.async_get_speech_to_text_languages",
+            "inpui.components.stt.async_get_speech_to_text_languages",
             return_value={"he", "no"},
         ),
         patch(
-            "homeassistant.components.tts.async_get_text_to_speech_languages",
+            "inpui.components.tts.async_get_text_to_speech_languages",
             return_value={"iw", "nb"},
         ),
     ):
@@ -1751,7 +1751,7 @@ async def test_audio_pipeline_with_enhancements(
     client = await hass_ws_client(hass)
 
     with patch(
-        "homeassistant.components.tts.secrets.token_urlsafe", return_value="test_token"
+        "inpui.components.tts.secrets.token_urlsafe", return_value="test_token"
     ):
         await client.send_json_auto_id(
             {
@@ -2398,7 +2398,7 @@ async def test_device_capture_queue_full(
             super().put_nowait(item)
 
     with patch(
-        "homeassistant.components.assist_pipeline.websocket_api.DeviceAudioQueue"
+        "inpui.components.assist_pipeline.websocket_api.DeviceAudioQueue"
     ) as mock:
         mock.return_value = DeviceAudioQueue(queue=FakeQueue())
 
@@ -2705,7 +2705,7 @@ async def test_intent_progress_event(
 
             return await orig_converse(**kwargs)
 
-    with patch("homeassistant.components.conversation.async_converse", mock_converse):
+    with patch("inpui.components.conversation.async_converse", mock_converse):
         await client.send_json_auto_id(
             {
                 "type": "assist_pipeline/run",

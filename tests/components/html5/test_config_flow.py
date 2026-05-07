@@ -21,7 +21,7 @@ async def test_step_user_success(hass: HomeAssistant) -> None:
     """Test a successful user config flow."""
 
     with patch(
-        "homeassistant.components.html5.async_setup_entry",
+        "inpui.components.html5.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -47,7 +47,7 @@ async def test_step_user_success_generate(hass: HomeAssistant) -> None:
     """Test a successful user config flow, generating a key pair."""
 
     with patch(
-        "homeassistant.components.html5.async_setup_entry",
+        "inpui.components.html5.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         conf = {ATTR_VAPID_EMAIL: MOCK_CONF[ATTR_VAPID_EMAIL]}
@@ -67,7 +67,7 @@ async def test_step_user_new_form(hass: HomeAssistant) -> None:
     """Test new user input."""
 
     with patch(
-        "homeassistant.components.html5.async_setup_entry",
+        "inpui.components.html5.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_init(
@@ -98,7 +98,7 @@ async def test_step_user_form_invalid_key(
     """Test invalid user input."""
 
     with patch(
-        "homeassistant.components.html5.async_setup_entry",
+        "inpui.components.html5.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         bad_conf = MOCK_CONF.copy()

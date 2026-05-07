@@ -26,7 +26,7 @@ async def test_diagnostics(
     }
 
     with patch(
-        "homeassistant.components.cpuspeed.diagnostics.cpuinfo.get_cpu_info",
+        "inpui.components.cpuspeed.diagnostics.cpuinfo.get_cpu_info",
         return_value=info,
     ):
         assert (

@@ -16,14 +16,14 @@ from . import MOCK_HOST, MOCK_PASSWORD, MOCK_PORT
 
 from tests.common import MockConfigEntry
 
-TARGET = "homeassistant.components.jvc_projector.config_flow.JvcProjector"
+TARGET = "inpui.components.jvc_projector.config_flow.JvcProjector"
 
 
 @pytest.fixture(autouse=True)
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.jvc_projector.async_setup_entry",
+        "inpui.components.jvc_projector.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry

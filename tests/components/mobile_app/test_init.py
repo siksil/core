@@ -106,17 +106,17 @@ async def _test_create_cloud_hook(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=async_active_subscription_return_value,
         ),
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_get_or_create_cloudhook",
+            "inpui.components.cloud.async_get_or_create_cloudhook",
             side_effect=mock_get_or_create_cloudhook,
         ) as mock_async_get_or_create_cloudhook,
         patch(
-            "homeassistant.components.cloud.async_listen_cloudhook_change",
+            "inpui.components.cloud.async_listen_cloudhook_change",
             side_effect=mock_listen_cloudhook_change,
         ),
     ):
@@ -172,7 +172,7 @@ async def test_remove_cloudhook(
         webhook_id = config_entry.data[CONF_WEBHOOK_ID]
         assert config_entry.data[CONF_CLOUDHOOK_URL] == cloud_hook
         with patch(
-            "homeassistant.components.cloud.async_delete_cloudhook",
+            "inpui.components.cloud.async_delete_cloudhook",
             side_effect=exception,
         ) as delete_cloudhook:
             await hass.config_entries.async_remove(config_entry.entry_id)
@@ -262,7 +262,7 @@ async def test_delete_cloud_hook(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_is_logged_in",
+            "inpui.components.cloud.async_is_logged_in",
             return_value=cloud_logged_in,
         ),
     ):
@@ -294,13 +294,13 @@ async def test_setup_entry_local_only_user_no_cloudhook(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
-        patch("homeassistant.components.cloud.async_is_connected", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_connected", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_get_or_create_cloudhook",
+            "inpui.components.cloud.async_get_or_create_cloudhook",
         ) as mock_create_cloudhook,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -335,9 +335,9 @@ async def test_setup_entry_local_only_user_cleans_existing_cloudhook(
     config_entry.add_to_hass(hass)
 
     with (
-        patch("homeassistant.components.cloud.async_is_logged_in", return_value=True),
+        patch("inpui.components.cloud.async_is_logged_in", return_value=True),
         patch(
-            "homeassistant.components.cloud.async_delete_cloudhook",
+            "inpui.components.cloud.async_delete_cloudhook",
         ) as delete_cloudhook,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
@@ -405,15 +405,15 @@ async def test_cloudhook_cleanup_on_disconnect_and_logout(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_is_logged_in",
+            "inpui.components.cloud.async_is_logged_in",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_is_connected",
+            "inpui.components.cloud.async_is_connected",
             return_value=True,
         ),
     ):
@@ -425,7 +425,7 @@ async def test_cloudhook_cleanup_on_disconnect_and_logout(
 
     # Simulate cloud disconnect and logout
     with patch(
-        "homeassistant.components.cloud.async_is_logged_in",
+        "inpui.components.cloud.async_is_logged_in",
         return_value=False,
     ):
         async_mock_cloud_connection_status(hass, False)
@@ -456,15 +456,15 @@ async def test_cloudhook_persists_on_disconnect_when_logged_in(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_is_logged_in",
+            "inpui.components.cloud.async_is_logged_in",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_is_connected",
+            "inpui.components.cloud.async_is_connected",
             return_value=True,
         ),
     ):
@@ -514,19 +514,19 @@ async def test_cloudhook_change_listener_deletion(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_is_logged_in",
+            "inpui.components.cloud.async_is_logged_in",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_is_connected",
+            "inpui.components.cloud.async_is_connected",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_listen_cloudhook_change",
+            "inpui.components.cloud.async_listen_cloudhook_change",
             side_effect=mock_listen_cloudhook_change,
         ),
     ):
@@ -577,19 +577,19 @@ async def test_cloudhook_change_listener_update(
 
     with (
         patch(
-            "homeassistant.components.cloud.async_is_logged_in",
+            "inpui.components.cloud.async_is_logged_in",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_active_subscription",
+            "inpui.components.cloud.async_active_subscription",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_is_connected",
+            "inpui.components.cloud.async_is_connected",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.cloud.async_listen_cloudhook_change",
+            "inpui.components.cloud.async_listen_cloudhook_change",
             side_effect=mock_listen_cloudhook_change,
         ),
     ):

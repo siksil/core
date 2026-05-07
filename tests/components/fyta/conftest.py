@@ -61,12 +61,12 @@ def mock_fyta_connector():
     )
     with (
         patch(
-            "homeassistant.components.fyta.FytaConnector",
+            "inpui.components.fyta.FytaConnector",
             autospec=True,
             return_value=mock_fyta_connector,
         ),
         patch(
-            "homeassistant.components.fyta.config_flow.FytaConnector",
+            "inpui.components.fyta.config_flow.FytaConnector",
             autospec=True,
             return_value=mock_fyta_connector,
         ),
@@ -78,7 +78,7 @@ def mock_fyta_connector():
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.fyta.async_setup_entry", return_value=True
+        "inpui.components.fyta.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -87,7 +87,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_getrandbits():
     """Mock image access token which normally is randomized."""
     with patch(
-        "homeassistant.components.image.SystemRandom.getrandbits",
+        "inpui.components.image.SystemRandom.getrandbits",
         return_value=1,
     ):
         yield

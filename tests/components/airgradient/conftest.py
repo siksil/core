@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.airgradient.async_setup_entry",
+        "inpui.components.airgradient.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -27,11 +27,11 @@ def mock_airgradient_client() -> Generator[AsyncMock]:
     """Mock an AirGradient client."""
     with (
         patch(
-            "homeassistant.components.airgradient.AirGradientClient",
+            "inpui.components.airgradient.AirGradientClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.airgradient.config_flow.AirGradientClient",
+            "inpui.components.airgradient.config_flow.AirGradientClient",
             new=mock_client,
         ),
     ):

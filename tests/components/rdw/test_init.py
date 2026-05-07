@@ -29,7 +29,7 @@ async def test_load_unload_config_entry(
 
 
 @patch(
-    "homeassistant.components.rdw.coordinator.RDW.vehicle",
+    "inpui.components.rdw.coordinator.RDW.vehicle",
     side_effect=RuntimeError,
 )
 async def test_config_entry_not_ready(

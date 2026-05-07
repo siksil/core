@@ -33,7 +33,7 @@ async def test_buttons(
     await hass.config_entries.async_setup(config_entry.entry_id)
     assert await async_setup_component(hass, DOMAIN, {})
     with patch(
-        f"homeassistant.components.dremel_3d_printer.Dremel3DPrinter.{function}_print"
+        f"inpui.components.dremel_3d_printer.Dremel3DPrinter.{function}_print"
     ) as mock:
         await hass.services.async_call(
             BUTTON_DOMAIN,
@@ -45,7 +45,7 @@ async def test_buttons(
 
     with (
         patch(
-            f"homeassistant.components.dremel_3d_printer.Dremel3DPrinter.{function}_print",
+            f"inpui.components.dremel_3d_printer.Dremel3DPrinter.{function}_print",
             side_effect=RuntimeError,
         ) as mock,
         pytest.raises(HomeAssistantError),

@@ -18,7 +18,7 @@ async def test_reauth_start(
 ) -> None:
     """Test that reauth is started when we have login errors."""
     with patch(
-        "homeassistant.components.totalconnect.TotalConnectClient",
+        "inpui.components.totalconnect.TotalConnectClient",
     ) as mock_client:
         mock_client.side_effect = AuthenticationError()
         await setup_integration(hass, mock_config_entry)

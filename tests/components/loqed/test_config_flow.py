@@ -61,11 +61,11 @@ async def test_create_entry_zeroconf(hass: HomeAssistant) -> None:
             return_value=mock_lock,
         ),
         patch(
-            "homeassistant.components.loqed.async_setup_entry",
+            "inpui.components.loqed.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.webhook.async_generate_id",
+            "inpui.components.webhook.async_generate_id",
             return_value=webhook_id,
         ),
     ):
@@ -124,11 +124,11 @@ async def test_create_entry_user(
             return_value=mock_lock,
         ),
         patch(
-            "homeassistant.components.loqed.async_setup_entry",
+            "inpui.components.loqed.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.webhook.async_generate_id",
+            "inpui.components.webhook.async_generate_id",
             return_value=webhook_id,
         ),
         patch(

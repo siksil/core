@@ -67,7 +67,7 @@ async def test_bluetooth_confirm_error(
 ) -> None:
     """Test bluetooth confirm step error handling."""
     with patch(
-        "homeassistant.components.casper_glow.config_flow.CasperGlow.handshake",
+        "inpui.components.casper_glow.config_flow.CasperGlow.handshake",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -85,7 +85,7 @@ async def test_user_step_success(
 ) -> None:
     """Test user step success path."""
     with patch(
-        "homeassistant.components.casper_glow.config_flow.async_discovered_service_info",
+        "inpui.components.casper_glow.config_flow.async_discovered_service_info",
         return_value=[NOT_CASPER_GLOW_DISCOVERY_INFO, CASPER_GLOW_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -119,7 +119,7 @@ async def test_user_step_success(
 async def test_user_step_no_devices(hass: HomeAssistant) -> None:
     """Test user step with no devices found."""
     with patch(
-        "homeassistant.components.casper_glow.config_flow.async_discovered_service_info",
+        "inpui.components.casper_glow.config_flow.async_discovered_service_info",
         return_value=[NOT_CASPER_GLOW_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -140,7 +140,7 @@ async def test_user_step_error(
 ) -> None:
     """Test user step error handling."""
     with patch(
-        "homeassistant.components.casper_glow.config_flow.async_discovered_service_info",
+        "inpui.components.casper_glow.config_flow.async_discovered_service_info",
         return_value=[CASPER_GLOW_DISCOVERY_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -151,7 +151,7 @@ async def test_user_step_error(
     assert result["errors"] == {}
 
     with patch(
-        "homeassistant.components.casper_glow.config_flow.CasperGlow.handshake",
+        "inpui.components.casper_glow.config_flow.CasperGlow.handshake",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -196,7 +196,7 @@ async def test_user_step_skips_unrecognized_device(hass: HomeAssistant) -> None:
         tx_power=-127,
     )
     with patch(
-        "homeassistant.components.casper_glow.config_flow.async_discovered_service_info",
+        "inpui.components.casper_glow.config_flow.async_discovered_service_info",
         return_value=[unrecognized_discovery],
     ):
         result = await hass.config_entries.flow.async_init(

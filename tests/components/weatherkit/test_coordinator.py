@@ -31,7 +31,7 @@ async def test_update_uses_stale_data_before_threshold(
     # Expect stale data to be used before one hour
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_weather_data",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_weather_data",
         side_effect=WeatherKitApiClientError,
     ):
         freezer.tick(timedelta(minutes=59))
@@ -54,7 +54,7 @@ async def test_update_becomes_unavailable_after_threshold(
     # Expect state to be unavailable after one hour
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_weather_data",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_weather_data",
         side_effect=WeatherKitApiClientError,
     ):
         freezer.tick(timedelta(hours=1, minutes=5))
@@ -77,7 +77,7 @@ async def test_update_recovers_after_failure(
     # Trigger a failure after threshold
 
     with patch(
-        "homeassistant.components.weatherkit.WeatherKitApiClient.get_weather_data",
+        "inpui.components.weatherkit.WeatherKitApiClient.get_weather_data",
         side_effect=WeatherKitApiClientError,
     ):
         freezer.tick(timedelta(hours=1, minutes=5))

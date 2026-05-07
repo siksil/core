@@ -79,7 +79,7 @@ async def test_setup_and_stop(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init"),
@@ -207,10 +207,10 @@ async def test_setup_and_stop_no_bluetooth(
             side_effect=BleakError,
         ) as mock_ha_bleak_scanner,
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
-        patch("homeassistant.components.bluetooth.discovery_flow.async_create_flow"),
+        patch("inpui.components.bluetooth.discovery_flow.async_create_flow"),
     ):
         await async_setup_with_one_adapter(hass)
         hass.bus.async_fire(EVENT_INPUI_STARTED)
@@ -234,7 +234,7 @@ async def test_setup_and_stop_broken_bluetooth(
             side_effect=BleakError,
         ),
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
     ):
@@ -265,7 +265,7 @@ async def test_setup_and_stop_broken_bluetooth_hanging(
             side_effect=_mock_hang,
         ),
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
     ):
@@ -290,7 +290,7 @@ async def test_setup_and_retry_adapter_not_yet_available(
             side_effect=BleakError,
         ),
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
     ):
@@ -330,7 +330,7 @@ async def test_no_race_during_manual_reload_in_retry_state(
             side_effect=BleakError,
         ),
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
     ):
@@ -371,7 +371,7 @@ async def test_calling_async_discovered_devices_no_bluetooth(
             side_effect=FileNotFoundError,
         ),
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
     ):
@@ -396,7 +396,7 @@ async def test_discovery_match_by_service_uuid(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -498,7 +498,7 @@ async def test_discovery_match_by_service_uuid_connectable(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -550,7 +550,7 @@ async def test_discovery_match_by_service_uuid_not_connectable(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -600,7 +600,7 @@ async def test_discovery_match_by_name_connectable_false(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -672,7 +672,7 @@ async def test_discovery_match_by_local_name(
     """Test bluetooth discovery match by local_name."""
     mock_bt = [{"domain": "switchbot", "local_name": "wohand"}]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -717,7 +717,7 @@ async def test_discovery_match_by_service_uuid_when_name_changes_from_mac(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -778,7 +778,7 @@ async def test_discovery_match_by_manufacturer_id_and_manufacturer_data_start(
         }
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -862,7 +862,7 @@ async def test_discovery_match_by_service_data_uuid_then_others(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1013,7 +1013,7 @@ async def test_discovery_match_by_service_data_uuid_when_format_changes(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1093,7 +1093,7 @@ async def test_discovery_match_by_service_data_uuid_bthome(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1140,7 +1140,7 @@ async def test_discovery_match_first_by_service_uuid_and_then_manufacturer_id(
         },
     ]
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1199,7 +1199,7 @@ async def test_rediscovery(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -1247,7 +1247,7 @@ async def test_clear_address_from_match_history(
     ]
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
@@ -1301,7 +1301,7 @@ async def test_async_discovered_device_api(
     set_manager(None)
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch(
@@ -1416,7 +1416,7 @@ async def test_register_callbacks(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init"),
@@ -1501,7 +1501,7 @@ async def test_register_callbacks_raises_exception(
 
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch.object(hass.config_entries.flow, "async_init"),
@@ -1563,7 +1563,7 @@ async def test_register_callback_by_address(
             raise ValueError
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1660,7 +1660,7 @@ async def test_register_callback_by_address_connectable_only(
         non_connectable_callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1733,7 +1733,7 @@ async def test_register_callback_by_manufacturer_id(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1789,7 +1789,7 @@ async def test_register_callback_by_connectable(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1845,7 +1845,7 @@ async def test_not_filtering_wanted_apple_devices(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1906,7 +1906,7 @@ async def test_filtering_noisy_apple_devices(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -1957,7 +1957,7 @@ async def test_register_callback_by_address_connectable_manufacturer_id(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2012,7 +2012,7 @@ async def test_register_callback_by_manufacturer_id_and_address(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2078,7 +2078,7 @@ async def test_register_callback_by_service_uuid_and_address(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2152,7 +2152,7 @@ async def test_register_callback_by_service_data_uuid_and_address(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2226,7 +2226,7 @@ async def test_register_callback_by_local_name(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2288,7 +2288,7 @@ async def test_register_callback_by_local_name_overly_broad(
         """Fake subscriber for the BleakScanner."""
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2316,7 +2316,7 @@ async def test_register_callback_by_service_data_uuid(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2372,7 +2372,7 @@ async def test_register_callback_survives_reload(
         callbacks.append((service_info, change))
 
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=mock_bt
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=mock_bt
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2537,7 +2537,7 @@ async def test_wrapped_instance_with_filter(
 ) -> None:
     """Test consumers can use the wrapped instance with a filter as if it was normal BleakScanner."""
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2610,7 +2610,7 @@ async def test_wrapped_instance_with_service_uuids(
 ) -> None:
     """Test consumers can use the wrapped instance with a service_uuids list as if it was normal BleakScanner."""
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2670,7 +2670,7 @@ async def test_wrapped_instance_with_service_uuids_with_coro_callback(
     Verify that coro callbacks are supported.
     """
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2728,7 +2728,7 @@ async def test_wrapped_instance_with_broken_callbacks(
     """Test broken callbacks do not cause the scanner to fail."""
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+            "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
         ),
         patch.object(hass.config_entries.flow, "async_init"),
     ):
@@ -2775,7 +2775,7 @@ async def test_wrapped_instance_changes_uuids(
 ) -> None:
     """Test consumers can use the wrapped instance can change the uuids later."""
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2831,7 +2831,7 @@ async def test_wrapped_instance_changes_filters(
 ) -> None:
     """Test consumers can use the wrapped instance can change the filter later."""
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2890,7 +2890,7 @@ async def test_wrapped_instance_unsupported_filter(
 ) -> None:
     """Test we want when their filter is ineffective."""
     with patch(
-        "homeassistant.components.bluetooth.async_get_bluetooth", return_value=[]
+        "inpui.components.bluetooth.async_get_bluetooth", return_value=[]
     ):
         await async_setup_with_default_adapter(hass)
 
@@ -2917,7 +2917,7 @@ async def test_async_ble_device_from_address(
     mock_bt = []
     with (
         patch(
-            "homeassistant.components.bluetooth.async_get_bluetooth",
+            "inpui.components.bluetooth.async_get_bluetooth",
             return_value=mock_bt,
         ),
         patch(
@@ -3213,7 +3213,7 @@ async def test_discover_new_usb_adapters(
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.usb.async_register_scan_request_callback",
+        "inpui.components.bluetooth.usb.async_register_scan_request_callback",
         _async_register_scan_request_callback,
     ):
         assert await async_setup_component(hass, bluetooth.DOMAIN, {})
@@ -3274,7 +3274,7 @@ async def test_discover_new_usb_adapters_with_firmware_fallback_delay(
         return lambda: None
 
     with patch(
-        "homeassistant.components.bluetooth.usb.async_register_scan_request_callback",
+        "inpui.components.bluetooth.usb.async_register_scan_request_callback",
         _async_register_scan_request_callback,
     ):
         assert await async_setup_component(hass, bluetooth.DOMAIN, {})

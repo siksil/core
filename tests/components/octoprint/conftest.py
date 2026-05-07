@@ -59,7 +59,7 @@ async def init_integration(
     if webcam is not None:
         webcam_info = WebcamSettings(**webcam)
     with (
-        patch("homeassistant.components.octoprint.PLATFORMS", [platform]),
+        patch("inpui.components.octoprint.PLATFORMS", [platform]),
         patch("pyoctoprintapi.OctoprintClient.get_server_info", return_value={}),
         patch(
             "pyoctoprintapi.OctoprintClient.get_printer_info",

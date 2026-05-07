@@ -28,7 +28,7 @@ from . import (
 
 from tests.common import MockConfigEntry
 
-MODULE = "homeassistant.components.steamist"
+MODULE = "inpui.components.steamist"
 
 
 DHCP_DISCOVERY = DhcpServiceInfo(
@@ -49,10 +49,10 @@ async def test_form(hass: HomeAssistant) -> None:
     with (
         _patch_discovery(no_device=True),
         patch(
-            "homeassistant.components.steamist.config_flow.Steamist.async_get_status"
+            "inpui.components.steamist.config_flow.Steamist.async_get_status"
         ),
         patch(
-            "homeassistant.components.steamist.async_setup_entry",
+            "inpui.components.steamist.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -83,10 +83,10 @@ async def test_form_with_discovery(hass: HomeAssistant) -> None:
     with (
         _patch_discovery(),
         patch(
-            "homeassistant.components.steamist.config_flow.Steamist.async_get_status"
+            "inpui.components.steamist.config_flow.Steamist.async_get_status"
         ),
         patch(
-            "homeassistant.components.steamist.async_setup_entry",
+            "inpui.components.steamist.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -112,7 +112,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.steamist.config_flow.Steamist.async_get_status",
+        "inpui.components.steamist.config_flow.Steamist.async_get_status",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -133,7 +133,7 @@ async def test_form_unknown_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.steamist.config_flow.Steamist.async_get_status",
+        "inpui.components.steamist.config_flow.Steamist.async_get_status",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(

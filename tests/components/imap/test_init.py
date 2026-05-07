@@ -101,7 +101,7 @@ async def test_entry_startup_fails(
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.imap.connect_to_server",
+        "inpui.components.imap.connect_to_server",
         side_effect=effect,
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id) is False
@@ -352,7 +352,7 @@ async def test_initial_invalid_folder_error(
     assert (state is not None) == success
 
 
-@patch("homeassistant.components.imap.coordinator.MAX_ERRORS", 1)
+@patch("inpui.components.imap.coordinator.MAX_ERRORS", 1)
 @pytest.mark.parametrize("imap_has_capability", [True, False], ids=["push", "poll"])
 async def test_late_authentication_retry(
     hass: HomeAssistant,
@@ -393,7 +393,7 @@ async def test_late_authentication_retry(
     assert state.state == STATE_UNAVAILABLE
 
 
-@patch("homeassistant.components.imap.coordinator.MAX_ERRORS", 0)
+@patch("inpui.components.imap.coordinator.MAX_ERRORS", 0)
 @pytest.mark.parametrize("imap_has_capability", [True, False], ids=["push", "poll"])
 async def test_late_authentication_error(
     hass: HomeAssistant,
@@ -691,7 +691,7 @@ async def test_reset_last_message(
     "imap_fetch", [(TEST_FETCH_RESPONSE_TEXT_PLAIN)], ids=["plain"]
 )
 @pytest.mark.parametrize("imap_has_capability", [True, False], ids=["push", "poll"])
-@patch("homeassistant.components.imap.coordinator.MAX_EVENT_DATA_BYTES", 500)
+@patch("inpui.components.imap.coordinator.MAX_EVENT_DATA_BYTES", 500)
 async def test_event_skipped_message_too_large(
     hass: HomeAssistant, mock_imap_protocol: MagicMock, caplog: pytest.LogCaptureFixture
 ) -> None:
@@ -1032,7 +1032,7 @@ async def test_services(
     }
     for translation_key, attrs in exceptions.items():
         with patch(
-            "homeassistant.components.imap.connect_to_server", side_effect=attrs["exc"]
+            "inpui.components.imap.connect_to_server", side_effect=attrs["exc"]
         ):
             data = {"entry": config_entry.entry_id, "uid": "1"}
             with pytest.raises(ServiceValidationError) as exc:

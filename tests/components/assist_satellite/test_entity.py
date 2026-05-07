@@ -40,7 +40,7 @@ from tests.components.tts.common import MockResultStream
 @pytest.fixture
 def mock_chat_session_conversation_id() -> Generator[Mock]:
     """Mock the ulid library."""
-    with patch("homeassistant.helpers.chat_session.ulid_now") as mock_ulid_now:
+    with patch("inpui.helpers.chat_session.ulid_now") as mock_ulid_now:
         mock_ulid_now.return_value = "mock-conversation-id"
         yield mock_ulid_now
 
@@ -72,7 +72,7 @@ async def test_entity_state(
     entity.async_set_context(context)
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream"
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream"
     ) as mock_start_pipeline:
         await entity.async_accept_pipeline_from_satellite(audio_stream)
 
@@ -163,7 +163,7 @@ async def test_new_pipeline_cancels_pipeline(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
     ):
@@ -199,7 +199,7 @@ async def test_pipeline_validation_error_ends_pipeline(
     )
 
     with patch(
-        "homeassistant.components.assist_pipeline.pipeline.PipelineRun.prepare_speech_to_text"
+        "inpui.components.assist_pipeline.pipeline.PipelineRun.prepare_speech_to_text"
     ):
         await entity.async_accept_pipeline_from_satellite(
             object(),  # type: ignore[arg-type]
@@ -340,19 +340,19 @@ async def test_announce(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             new=tts_generate_media_source_id,
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             return_value=PlayMedia(
                 url="https://www.home-assistant.io/resolved.mp3",
                 mime_type="audio/mp3",
@@ -427,7 +427,7 @@ async def test_announce_cancels_pipeline(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch.object(entity, "async_announce") as mock_async_announce,
@@ -474,7 +474,7 @@ async def test_context_refresh(
     entity._context = None
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream"
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream"
     ):
         await entity.async_accept_pipeline_from_satellite(audio_stream)
 
@@ -513,11 +513,11 @@ async def test_pipeline_entity(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
         patch(
-            "homeassistant.components.assist_satellite.entity.async_get_pipelines",
+            "inpui.components.assist_satellite.entity.async_get_pipelines",
             return_value=[pipeline],
         ),
     ):
@@ -545,7 +545,7 @@ async def test_pipeline_entity_preferred(
 
     with (
         patch(
-            "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+            "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
             new=async_pipeline_from_audio_stream,
         ),
     ):
@@ -576,7 +576,7 @@ async def test_vad_sensitivity_entity(
         done.set()
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream",
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream",
         new=async_pipeline_from_audio_stream,
     ):
         async with asyncio.timeout(1):
@@ -755,19 +755,19 @@ async def test_start_conversation(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://generated",
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             return_value=PlayMedia(
                 url="https://www.home-assistant.io/resolved.mp3",
                 mime_type="audio/mp3",
@@ -923,10 +923,10 @@ async def test_ask_question(
         audio_stream = object()
         with (
             patch(
-                "homeassistant.components.assist_pipeline.pipeline.PipelineRun.prepare_speech_to_text"
+                "inpui.components.assist_pipeline.pipeline.PipelineRun.prepare_speech_to_text"
             ),
             patch(
-                "homeassistant.components.assist_pipeline.pipeline.PipelineRun.speech_to_text",
+                "inpui.components.assist_pipeline.pipeline.PipelineRun.speech_to_text",
                 speech_to_text,
             ),
         ):
@@ -936,19 +936,19 @@ async def test_ask_question(
 
     with (
         patch(
-            "homeassistant.components.tts.generate_media_source_id",
+            "inpui.components.tts.generate_media_source_id",
             return_value="media-source://generated",
         ),
         patch(
-            "homeassistant.components.tts.async_resolve_engine",
+            "inpui.components.tts.async_resolve_engine",
             return_value="tts.cloud",
         ),
         patch(
-            "homeassistant.components.tts.async_create_stream",
+            "inpui.components.tts.async_create_stream",
             return_value=MockResultStream(hass, "wav", b""),
         ),
         patch(
-            "homeassistant.components.media_source.async_resolve_media",
+            "inpui.components.media_source.async_resolve_media",
             return_value=PlayMedia(
                 url="https://www.home-assistant.io/resolved.mp3",
                 mime_type="audio/mp3",
@@ -980,7 +980,7 @@ async def test_wake_word_start_keeps_responding(
     audio_stream = object()
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream"
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream"
     ) as mock_start_pipeline:
         await entity.async_accept_pipeline_from_satellite(
             audio_stream, start_stage=PipelineStage.TTS
@@ -998,7 +998,7 @@ async def test_wake_word_start_keeps_responding(
     audio_stream = object()
 
     with patch(
-        "homeassistant.components.assist_satellite.entity.async_pipeline_from_audio_stream"
+        "inpui.components.assist_satellite.entity.async_pipeline_from_audio_stream"
     ) as mock_start_pipeline:
         await entity.async_accept_pipeline_from_satellite(
             audio_stream, start_stage=PipelineStage.WAKE_WORD

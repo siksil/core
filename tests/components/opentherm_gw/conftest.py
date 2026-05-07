@@ -20,7 +20,7 @@ MOCK_GATEWAY_ID = "mock_gateway"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.opentherm_gw.async_setup_entry",
+        "inpui.components.opentherm_gw.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -31,7 +31,7 @@ def mock_pyotgw() -> Generator[MagicMock]:
     """Mock a pyotgw.OpenThermGateway object."""
     with (
         patch(
-            "homeassistant.components.opentherm_gw.OpenThermGateway",
+            "inpui.components.opentherm_gw.OpenThermGateway",
             return_value=MagicMock(
                 connect=AsyncMock(return_value=MINIMAL_STATUS),
                 set_control_setpoint=AsyncMock(),
@@ -40,7 +40,7 @@ def mock_pyotgw() -> Generator[MagicMock]:
             ),
         ) as mock_gateway,
         patch(
-            "homeassistant.components.opentherm_gw.config_flow.pyotgw.OpenThermGateway",
+            "inpui.components.opentherm_gw.config_flow.pyotgw.OpenThermGateway",
             new=mock_gateway,
         ),
     ):

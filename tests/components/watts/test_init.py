@@ -217,7 +217,7 @@ async def test_dynamic_device_creation(
         "deviceId": "thermostat_789",
         "deviceName": "Kitchen Thermostat",
         "deviceType": "thermostat",
-        "interface": "homeassistant.components.THERMOSTAT",
+        "interface": "inpui.components.THERMOSTAT",
         "roomName": "Kitchen",
         "isOnline": True,
         "currentTemperature": 21.0,

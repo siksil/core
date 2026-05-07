@@ -58,10 +58,10 @@ async def mock_osoenergy_client(mock_water_heater) -> Generator[AsyncMock]:
 
     with (
         patch(
-            "homeassistant.components.osoenergy.OSOEnergy", MagicMock()
+            "inpui.components.osoenergy.OSOEnergy", MagicMock()
         ) as mock_client,
         patch(
-            "homeassistant.components.osoenergy.config_flow.OSOEnergy", new=mock_client
+            "inpui.components.osoenergy.config_flow.OSOEnergy", new=mock_client
         ),
     ):
         mock_session = MagicMock()

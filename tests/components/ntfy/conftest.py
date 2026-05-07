@@ -20,7 +20,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.ntfy.async_setup_entry", return_value=True
+        "inpui.components.ntfy.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -30,8 +30,8 @@ def mock_aiontfy() -> Generator[AsyncMock]:
     """Mock aiontfy."""
 
     with (
-        patch("homeassistant.components.ntfy.Ntfy", autospec=True) as mock_client,
-        patch("homeassistant.components.ntfy.config_flow.Ntfy", new=mock_client),
+        patch("inpui.components.ntfy.Ntfy", autospec=True) as mock_client,
+        patch("inpui.components.ntfy.config_flow.Ntfy", new=mock_client),
     ):
         client = mock_client.return_value
 
@@ -99,7 +99,7 @@ def mock_update_checker() -> Generator[AsyncMock]:
     """Mock aiontfy update checker."""
 
     with patch(
-        "homeassistant.components.ntfy.UpdateChecker", autospec=True
+        "inpui.components.ntfy.UpdateChecker", autospec=True
     ) as mock_client:
         client = mock_client.return_value
 
@@ -117,7 +117,7 @@ def mock_random() -> Generator[MagicMock]:
     """Mock random."""
 
     with patch(
-        "homeassistant.components.ntfy.config_flow.random.choices",
+        "inpui.components.ntfy.config_flow.random.choices",
         return_value=["randomtopic"],
     ) as mock_client:
         yield mock_client

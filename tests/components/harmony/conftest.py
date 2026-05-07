@@ -168,7 +168,7 @@ def mock_hc(harmony_client: FakeHarmonyClient) -> Generator[None]:
         return harmony_client
 
     with patch(
-        "homeassistant.components.harmony.data.HarmonyClient",
+        "inpui.components.harmony.data.HarmonyClient",
         side_effect=_on_create_instance,
     ):
         yield
@@ -178,7 +178,7 @@ def mock_hc(harmony_client: FakeHarmonyClient) -> Generator[None]:
 def mock_write_config():
     """Patches write_config_file to remove side effects."""
     with patch(
-        "homeassistant.components.harmony.remote.HarmonyRemote.write_config_file",
+        "inpui.components.harmony.remote.HarmonyRemote.write_config_file",
     ) as mock:
         yield mock
 

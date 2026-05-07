@@ -15,7 +15,7 @@ from . import load_int
 from tests.common import async_fire_time_changed
 
 
-@patch("homeassistant.components.time_date.sensor.async_track_point_in_utc_time")
+@patch("inpui.components.time_date.sensor.async_track_point_in_utc_time")
 @pytest.mark.parametrize(
     ("display_option", "start_time", "tracked_time"),
     [
@@ -182,7 +182,7 @@ async def test_states_non_default_timezone(
 
 
 @patch(
-    "homeassistant.components.time_date.sensor.async_track_point_in_utc_time",
+    "inpui.components.time_date.sensor.async_track_point_in_utc_time",
     side_effect=event.async_track_point_in_utc_time,
 )
 @pytest.mark.parametrize(

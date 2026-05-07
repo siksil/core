@@ -42,7 +42,7 @@ async def test_api_can_trigger_reauth(
 
 async def test_migrate_entry_minor_version_1_2(hass: HomeAssistant) -> None:
     """Test migrating a 1.1 config entry to 1.2."""
-    with patch("homeassistant.components.monzo.async_setup_entry", return_value=True):
+    with patch("inpui.components.monzo.async_setup_entry", return_value=True):
         entry = MockConfigEntry(
             domain=DOMAIN,
             data={
@@ -74,7 +74,7 @@ async def test_oauth_implementation_not_available(
     polling_config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.monzo.async_get_config_entry_implementation",
+        "inpui.components.monzo.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(polling_config_entry.entry_id)

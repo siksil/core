@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, load_fixture
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.trmnl.async_setup_entry", return_value=True
+        "inpui.components.trmnl.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -37,11 +37,11 @@ def mock_trmnl_client() -> Generator[AsyncMock]:
     """Mock TRMNL client."""
     with (
         patch(
-            "homeassistant.components.trmnl.coordinator.TRMNLClient",
+            "inpui.components.trmnl.coordinator.TRMNLClient",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.trmnl.config_flow.TRMNLClient",
+            "inpui.components.trmnl.config_flow.TRMNLClient",
             new=mock_client,
         ),
     ):

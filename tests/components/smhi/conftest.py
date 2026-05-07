@@ -27,7 +27,7 @@ from tests.test_util.aiohttp import AiohttpClientMocker
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.smhi.async_setup_entry", return_value=True
+        "inpui.components.smhi.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -59,7 +59,7 @@ async def load_int(
 
     config_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.smhi.PLATFORMS", load_platforms):
+    with patch("inpui.components.smhi.PLATFORMS", load_platforms):
         await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -75,11 +75,11 @@ async def get_client(
 
     with (
         patch(
-            "homeassistant.components.smhi.coordinator.SMHIPointForecast",
+            "inpui.components.smhi.coordinator.SMHIPointForecast",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.smhi.config_flow.SMHIPointForecast",
+            "inpui.components.smhi.config_flow.SMHIPointForecast",
             return_value=mock_client.return_value,
         ),
     ):
@@ -98,7 +98,7 @@ async def get_fire_client(
     """Mock SMHIFirePointForecast client."""
 
     with patch(
-        "homeassistant.components.smhi.coordinator.SMHIFirePointForecast",
+        "inpui.components.smhi.coordinator.SMHIFirePointForecast",
         autospec=True,
     ) as mock_client:
         client = mock_client.return_value

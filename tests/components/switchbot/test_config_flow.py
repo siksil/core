@@ -52,7 +52,7 @@ def mock_scanners_all_passive() -> Generator[None]:
     mock_scanner = Mock()
     mock_scanner.current_mode = BluetoothScanningMode.PASSIVE
     with patch(
-        "homeassistant.components.bluetooth.async_current_scanners",
+        "inpui.components.bluetooth.async_current_scanners",
         return_value=[mock_scanner],
     ):
         yield
@@ -305,7 +305,7 @@ async def test_user_setup_wohand(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOHAND_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -355,7 +355,7 @@ async def test_user_setup_wohand_already_configured(hass: HomeAssistant) -> None
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOHAND_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -381,7 +381,7 @@ async def test_user_setup_wohand_replaces_ignored(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOHAND_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -419,7 +419,7 @@ async def test_user_setup_wocurtain(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOCURTAIN_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -458,7 +458,7 @@ async def test_user_setup_wocurtain_or_bot(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[
             NOT_SWITCHBOT_INFO,
             WOCURTAIN_SERVICE_INFO,
@@ -502,7 +502,7 @@ async def test_user_setup_wocurtain_or_bot_with_password(hass: HomeAssistant) ->
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[
             WOCURTAIN_SERVICE_INFO,
             WOHAND_ENCRYPTED_SERVICE_INFO,
@@ -554,7 +554,7 @@ async def test_user_setup_single_bot_with_password(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOHAND_ENCRYPTED_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -594,7 +594,7 @@ async def test_user_setup_woencrypted_key(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOLOCK_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -668,7 +668,7 @@ async def test_user_setup_woencrypted_auth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOLOCK_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -751,7 +751,7 @@ async def test_user_setup_woencrypted_auth_switchbot_api_down(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOLOCK_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -799,7 +799,7 @@ async def test_user_setup_woencrypted_auth_unknown_error(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOLOCK_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -878,7 +878,7 @@ async def test_user_setup_wolock_or_bot(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[
             WOLOCK_SERVICE_INFO,
             WOHAND_SERVICE_ALT_ADDRESS_INFO,
@@ -946,7 +946,7 @@ async def test_user_setup_wosensor(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOSENSORTH_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -993,11 +993,11 @@ async def test_user_cloud_login(hass: HomeAssistant) -> None:
     # Test successful cloud login
     with (
         patch(
-            "homeassistant.components.switchbot.config_flow.fetch_cloud_devices",
+            "inpui.components.switchbot.config_flow.fetch_cloud_devices",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+            "inpui.components.switchbot.config_flow.async_discovered_service_info",
             return_value=[WOHAND_SERVICE_INFO],
         ),
     ):
@@ -1046,7 +1046,7 @@ async def test_user_cloud_login_auth_failed(hass: HomeAssistant) -> None:
 
     # Test authentication failure
     with patch(
-        "homeassistant.components.switchbot.config_flow.fetch_cloud_devices",
+        "inpui.components.switchbot.config_flow.fetch_cloud_devices",
         side_effect=SwitchbotAuthenticationError("Invalid credentials"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1081,7 +1081,7 @@ async def test_user_cloud_login_api_error(hass: HomeAssistant) -> None:
 
     # Test API connection error
     with patch(
-        "homeassistant.components.switchbot.config_flow.fetch_cloud_devices",
+        "inpui.components.switchbot.config_flow.fetch_cloud_devices",
         side_effect=SwitchbotAccountConnectionError("API is down"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1113,7 +1113,7 @@ async def test_user_cloud_login_unknown_error(hass: HomeAssistant) -> None:
     assert result["step_id"] == "cloud_login"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.fetch_cloud_devices",
+        "inpui.components.switchbot.config_flow.fetch_cloud_devices",
         side_effect=Exception("Unexpected network failure"),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1130,11 +1130,11 @@ async def test_user_cloud_login_unknown_error(hass: HomeAssistant) -> None:
     # Recover: re-submit with valid credentials and successful cloud login
     with (
         patch(
-            "homeassistant.components.switchbot.config_flow.fetch_cloud_devices",
+            "inpui.components.switchbot.config_flow.fetch_cloud_devices",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+            "inpui.components.switchbot.config_flow.async_discovered_service_info",
             return_value=[WOHAND_SERVICE_INFO],
         ),
     ):
@@ -1181,11 +1181,11 @@ async def test_user_cloud_login_then_encrypted_device(hass: HomeAssistant) -> No
 
     with (
         patch(
-            "homeassistant.components.switchbot.config_flow.fetch_cloud_devices",
+            "inpui.components.switchbot.config_flow.fetch_cloud_devices",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+            "inpui.components.switchbot.config_flow.async_discovered_service_info",
             return_value=[WOLOCK_SERVICE_INFO],
         ),
     ):
@@ -1259,7 +1259,7 @@ async def test_user_no_devices(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1291,7 +1291,7 @@ async def test_async_step_user_takes_precedence_over_discovery(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WOCURTAIN_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1494,7 +1494,7 @@ async def test_user_setup_worelay_switch_1pm_key(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WORELAY_SWITCH_1PM_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1550,7 +1550,7 @@ async def test_user_setup_worelay_switch_1pm_auth(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WORELAY_SWITCH_1PM_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1632,7 +1632,7 @@ async def test_user_setup_worelay_switch_1pm_auth_switchbot_api_down(
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+        "inpui.components.switchbot.config_flow.async_discovered_service_info",
         return_value=[WORELAY_SWITCH_1PM_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -1676,11 +1676,11 @@ async def test_user_show_menu_when_passive_scanner_present(hass: HomeAssistant) 
 
     with (
         patch(
-            "homeassistant.components.bluetooth.async_current_scanners",
+            "inpui.components.bluetooth.async_current_scanners",
             return_value=[mock_scanner_active, mock_scanner_passive],
         ),
         patch(
-            "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+            "inpui.components.switchbot.config_flow.async_discovered_service_info",
             return_value=[WOHAND_SERVICE_INFO],
         ),
         patch_async_setup_entry() as mock_setup_entry,
@@ -1720,11 +1720,11 @@ async def test_user_show_menu_when_no_scanners(hass: HomeAssistant) -> None:
     """Test that menu is shown when no scanners are available."""
     with (
         patch(
-            "homeassistant.components.bluetooth.async_current_scanners",
+            "inpui.components.bluetooth.async_current_scanners",
             return_value=[],
         ),
         patch(
-            "homeassistant.components.switchbot.config_flow.async_discovered_service_info",
+            "inpui.components.switchbot.config_flow.async_discovered_service_info",
             return_value=[WOHAND_SERVICE_INFO],
         ),
         patch_async_setup_entry() as mock_setup_entry,

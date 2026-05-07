@@ -31,7 +31,7 @@ def mock_dummy_tcp_server():
 
     server = Dummy()
     with patch(
-        "homeassistant.components.wiffi.config_flow.WiffiTcpServer", return_value=server
+        "inpui.components.wiffi.config_flow.WiffiTcpServer", return_value=server
     ):
         yield server
 
@@ -49,7 +49,7 @@ def mock_addr_in_use_server():
 
     server = Dummy()
     with patch(
-        "homeassistant.components.wiffi.config_flow.WiffiTcpServer", return_value=server
+        "inpui.components.wiffi.config_flow.WiffiTcpServer", return_value=server
     ):
         yield server
 
@@ -67,7 +67,7 @@ def mock_start_server_failed():
 
     server = Dummy()
     with patch(
-        "homeassistant.components.wiffi.config_flow.WiffiTcpServer", return_value=server
+        "inpui.components.wiffi.config_flow.WiffiTcpServer", return_value=server
     ):
         yield server
 

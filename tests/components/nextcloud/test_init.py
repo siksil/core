@@ -54,7 +54,7 @@ async def test_unique_id_migration(
 
     with (
         patch(
-            "homeassistant.components.nextcloud.NextcloudMonitor"
+            "inpui.components.nextcloud.NextcloudMonitor"
         ) as mock_nextcloud_monitor,
     ):
         mock_nextcloud_monitor.update = Mock(return_value=True)
@@ -87,7 +87,7 @@ async def test_setup_entry_errors(
 
     with (
         patch(
-            "homeassistant.components.nextcloud.NextcloudMonitor", side_effect=exception
+            "inpui.components.nextcloud.NextcloudMonitor", side_effect=exception
         ),
     ):
         await hass.config_entries.async_setup(entry.entry_id)

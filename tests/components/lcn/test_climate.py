@@ -45,7 +45,7 @@ async def test_setup_lcn_climate(
     snapshot: SnapshotAssertion,
 ) -> None:
     """Test the setup of climate."""
-    with patch("homeassistant.components.lcn.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.lcn.PLATFORMS", [Platform.CLIMATE]):
         await init_integration(hass, entry)
 
     await snapshot_platform(hass, entity_registry, snapshot, entry.entry_id)

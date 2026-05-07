@@ -25,7 +25,7 @@ TEST_MODEL = "HC3"
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.fibaro.async_setup_entry", return_value=True
+        "inpui.components.fibaro.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -420,7 +420,7 @@ def mock_fibaro_client() -> Generator[Mock]:
     info_mock.mac_address = "00:22:4d:b7:13:24"
 
     with patch(
-        "homeassistant.components.fibaro.FibaroClient", autospec=True
+        "inpui.components.fibaro.FibaroClient", autospec=True
     ) as fibaro_client_mock:
         client = fibaro_client_mock.return_value
         client.connect_with_credentials.return_value = info_mock

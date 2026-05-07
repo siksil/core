@@ -53,11 +53,11 @@ async def test_remove_stale_devices(
     )
     with (
         patch(
-            "homeassistant.components.zwave_me.ZWaveMe.get_connection",
+            "inpui.components.zwave_me.ZWaveMe.get_connection",
             mock_connection,
         ),
         patch(
-            "homeassistant.components.zwave_me.async_setup_platforms",
+            "inpui.components.zwave_me.async_setup_platforms",
         ),
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

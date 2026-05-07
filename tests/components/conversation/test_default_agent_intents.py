@@ -439,7 +439,7 @@ async def test_todo_add_item_fr(
     with (
         patch.object(hass.config, "language", "fr"),
         patch(
-            "homeassistant.components.todo.intent.ListAddItemIntentHandler.async_handle",
+            "inpui.components.todo.intent.ListAddItemIntentHandler.async_handle",
             return_value=intent.IntentResponse(hass.config.language),
         ) as mock_handle,
     ):

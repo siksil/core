@@ -47,7 +47,7 @@ async def test_coordinator(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ) as mock_data:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -108,7 +108,7 @@ async def test_coordinator_failed_update(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         side_effect=sideeffect,
     ) as mock_data:
         await hass.config_entries.async_setup(entry.entry_id)
@@ -142,7 +142,7 @@ async def test_coordinator_failed_get_image(
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
+        "inpui.components.trafikverket_camera.coordinator.TrafikverketCamera.async_get_camera",
         return_value=get_camera,
     ) as mock_data:
         await hass.config_entries.async_setup(entry.entry_id)

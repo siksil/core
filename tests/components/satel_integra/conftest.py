@@ -26,7 +26,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override integration setup."""
     with patch(
-        "homeassistant.components.satel_integra.async_setup_entry",
+        "inpui.components.satel_integra.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -36,7 +36,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def patch_debounce() -> Generator[None]:
     """Override coordinator debounce time."""
     with patch(
-        "homeassistant.components.satel_integra.coordinator.PARTITION_UPDATE_DEBOUNCE_DELAY",
+        "inpui.components.satel_integra.coordinator.PARTITION_UPDATE_DEBOUNCE_DELAY",
         0,
     ):
         yield
@@ -47,11 +47,11 @@ def mock_satel() -> Generator[AsyncMock]:
     """Override the satel test."""
     with (
         patch(
-            "homeassistant.components.satel_integra.client.AsyncSatel",
+            "inpui.components.satel_integra.client.AsyncSatel",
             autospec=True,
         ) as mock_client,
         patch(
-            "homeassistant.components.satel_integra.config_flow.AsyncSatel",
+            "inpui.components.satel_integra.config_flow.AsyncSatel",
             new=mock_client,
         ),
     ):
@@ -113,5 +113,5 @@ def mock_config_entry_with_subentries(
 @pytest.fixture
 def mock_reload_after_entry_update() -> Generator[MagicMock]:
     """Mock out the reload after updating the entry."""
-    with patch("homeassistant.components.satel_integra.update_listener") as mock_reload:
+    with patch("inpui.components.satel_integra.update_listener") as mock_reload:
         yield mock_reload

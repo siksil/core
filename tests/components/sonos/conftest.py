@@ -341,7 +341,7 @@ def patch_gethostbyname(host: str) -> str:
 @pytest.fixture(name="soco_sharelink")
 def soco_sharelink():
     """Fixture to mock soco.plugins.sharelink.ShareLinkPlugin."""
-    with patch("homeassistant.components.sonos.speaker.ShareLinkPlugin") as mock_share:
+    with patch("inpui.components.sonos.speaker.ShareLinkPlugin") as mock_share:
         mock_instance = MagicMock()
         mock_instance.is_share_link.return_value = True
         mock_instance.add_share_link_to_queue.return_value = 10
@@ -353,7 +353,7 @@ def soco_sharelink():
 def sonos_websocket():
     """Fixture to mock SonosWebSocket."""
     with patch(
-        "homeassistant.components.sonos.speaker.SonosWebsocket"
+        "inpui.components.sonos.speaker.SonosWebsocket"
     ) as mock_sonos_ws:
         mock_instance = AsyncMock()
         mock_instance.play_clip = AsyncMock()
@@ -384,9 +384,9 @@ def soco_factory(
         sonos_queue=sonos_queue,
     )
     with (
-        patch("homeassistant.components.sonos.SoCo", new=factory.get_mock),
+        patch("inpui.components.sonos.SoCo", new=factory.get_mock),
         patch("socket.gethostbyname", side_effect=patch_gethostbyname),
-        patch("homeassistant.components.sonos.ZGS_SUBSCRIPTION_TIMEOUT", 0),
+        patch("inpui.components.sonos.ZGS_SUBSCRIPTION_TIMEOUT", 0),
     ):
         yield factory
 
@@ -401,14 +401,14 @@ def soco_fixture(soco_factory):
 def silent_ssdp_scanner() -> Generator[None]:
     """Start SSDP component and get Scanner, prevent actual SSDP traffic."""
     with (
-        patch("homeassistant.components.ssdp.Scanner._async_start_ssdp_listeners"),
-        patch("homeassistant.components.ssdp.Scanner._async_stop_ssdp_listeners"),
-        patch("homeassistant.components.ssdp.Scanner.async_scan"),
+        patch("inpui.components.ssdp.Scanner._async_start_ssdp_listeners"),
+        patch("inpui.components.ssdp.Scanner._async_stop_ssdp_listeners"),
+        patch("inpui.components.ssdp.Scanner.async_scan"),
         patch(
-            "homeassistant.components.ssdp.Server._async_start_upnp_servers",
+            "inpui.components.ssdp.Server._async_start_upnp_servers",
         ),
         patch(
-            "homeassistant.components.ssdp.Server._async_stop_upnp_servers",
+            "inpui.components.ssdp.Server._async_stop_upnp_servers",
         ),
     ):
         yield
@@ -439,7 +439,7 @@ def discover_fixture(soco):
         return MagicMock()
 
     with patch(
-        "homeassistant.components.ssdp.async_register_callback", side_effect=do_callback
+        "inpui.components.ssdp.async_register_callback", side_effect=do_callback
     ) as mock:
         yield mock
 

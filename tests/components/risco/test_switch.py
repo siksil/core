@@ -76,7 +76,7 @@ async def test_cloud_bypass(
     hass: HomeAssistant, two_zone_cloud, setup_risco_cloud
 ) -> None:
     """Test bypassing a zone."""
-    with patch("homeassistant.components.risco.RiscoCloud.bypass_zone") as mock:
+    with patch("inpui.components.risco.RiscoCloud.bypass_zone") as mock:
         data = {"entity_id": FIRST_ENTITY_ID}
 
         await hass.services.async_call(
@@ -90,7 +90,7 @@ async def test_cloud_unbypass(
     hass: HomeAssistant, two_zone_cloud, setup_risco_cloud
 ) -> None:
     """Test unbypassing a zone."""
-    with patch("homeassistant.components.risco.RiscoCloud.bypass_zone") as mock:
+    with patch("inpui.components.risco.RiscoCloud.bypass_zone") as mock:
         data = {"entity_id": FIRST_ENTITY_ID}
 
         await hass.services.async_call(
@@ -149,7 +149,7 @@ async def _check_local_state(
 @pytest.fixture
 def mock_zone_handler():
     """Create a mock for add_zone_handler."""
-    with patch("homeassistant.components.risco.RiscoLocal.add_zone_handler") as mock:
+    with patch("inpui.components.risco.RiscoLocal.add_zone_handler") as mock:
         yield mock
 
 

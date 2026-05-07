@@ -216,7 +216,7 @@ async def test_update_automation_config_with_blueprint_substitution_error(
     hass_config_store["automations.yaml"] = orig_data
 
     with patch(
-        "homeassistant.components.blueprint.models.BlueprintInputs.async_substitute",
+        "inpui.components.blueprint.models.BlueprintInputs.async_substitute",
         side_effect=yaml_util.UndefinedSubstitution("blah"),
     ):
         resp = await client.post(

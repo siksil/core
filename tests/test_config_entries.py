@@ -241,7 +241,7 @@ async def test_call_setup_entry(hass: HomeAssistant) -> None:
     )
     mock_platform(hass, "comp.config_flow", None)
 
-    with patch("homeassistant.config_entries.support_entry_unload", return_value=True):
+    with patch("inpui.config_entries.support_entry_unload", return_value=True):
         result = await async_setup_component(hass, "comp", {})
         await hass.async_block_till_done()
     assert result
@@ -270,7 +270,7 @@ async def test_call_setup_entry_without_reload_support(hass: HomeAssistant) -> N
     )
     mock_platform(hass, "comp.config_flow", None)
 
-    with patch("homeassistant.config_entries.support_entry_unload", return_value=False):
+    with patch("inpui.config_entries.support_entry_unload", return_value=False):
         result = await async_setup_component(hass, "comp", {})
         await hass.async_block_till_done()
     assert result
@@ -305,7 +305,7 @@ async def test_call_async_migrate_entry(
     )
     mock_platform(hass, "comp.config_flow", None)
 
-    with patch("homeassistant.config_entries.support_entry_unload", return_value=True):
+    with patch("inpui.config_entries.support_entry_unload", return_value=True):
         result = await async_setup_component(hass, "comp", {})
         await hass.async_block_till_done()
     assert result
@@ -1126,7 +1126,7 @@ async def test_saving_and_loading(
                 title="Test 2 Title", data={"username": "bla"}
             )
 
-    with patch("homeassistant.config_entries.HANDLERS.get", return_value=Test2Flow):
+    with patch("inpui.config_entries.HANDLERS.get", return_value=Test2Flow):
         await hass.config_entries.flow.async_init(
             "test",
             context={
@@ -1461,7 +1461,7 @@ async def test_loading_default_config(hass: HomeAssistant) -> None:
     """Test loading the default config."""
     manager = config_entries.ConfigEntries(hass, {})
 
-    with patch("homeassistant.util.json.open", side_effect=FileNotFoundError):
+    with patch("inpui.util.json.open", side_effect=FileNotFoundError):
         await manager.async_initialize()
 
     assert len(manager.async_entries()) == 0
@@ -1679,7 +1679,7 @@ async def test_setup_raise_not_ready(
     mock_integration(hass, MockModule("test", async_setup_entry=mock_setup_entry))
     mock_platform(hass, "test.config_flow", None)
 
-    with patch("homeassistant.config_entries.async_call_later") as mock_call:
+    with patch("inpui.config_entries.async_call_later") as mock_call:
         await manager.async_setup(entry.entry_id)
 
     assert len(mock_call.mock_calls) == 1
@@ -1721,7 +1721,7 @@ async def test_setup_raise_not_ready_from_exception(
     mock_integration(hass, MockModule("test", async_setup_entry=mock_setup_entry))
     mock_platform(hass, "test.config_flow", None)
 
-    with patch("homeassistant.config_entries.async_call_later") as mock_call:
+    with patch("inpui.config_entries.async_call_later") as mock_call:
         await manager.async_setup(entry.entry_id)
 
     assert len(mock_call.mock_calls) == 1
@@ -1742,7 +1742,7 @@ async def test_setup_retrying_during_unload(
     mock_integration(hass, MockModule("test", async_setup_entry=mock_setup_entry))
     mock_platform(hass, "test.config_flow", None)
 
-    with patch("homeassistant.config_entries.async_call_later") as mock_call:
+    with patch("inpui.config_entries.async_call_later") as mock_call:
         await manager.async_setup(entry.entry_id)
 
     assert entry.state is config_entries.ConfigEntryState.SETUP_RETRY
@@ -3146,7 +3146,7 @@ async def test_init_custom_integration(hass: HomeAssistant) -> None:
     with (
         pytest.raises(data_entry_flow.UnknownHandler),
         patch(
-            "homeassistant.loader.async_get_integration",
+            "inpui.loader.async_get_integration",
             return_value=integration,
         ),
     ):
@@ -3171,7 +3171,7 @@ async def test_init_custom_integration_with_missing_handler(
     with (
         pytest.raises(data_entry_flow.UnknownHandler),
         patch(
-            "homeassistant.loader.async_get_integration",
+            "inpui.loader.async_get_integration",
             return_value=integration,
         ),
     ):
@@ -3375,7 +3375,7 @@ async def test_entry_id_existing_entry(
         pytest.raises(HomeAssistantError),
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ulid_util.ulid_now",
+            "inpui.config_entries.ulid_util.ulid_now",
             return_value=collide_entry_id,
         ),
     ):
@@ -3420,7 +3420,7 @@ async def test_unique_id_update_existing_entry_without_reload(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -3473,7 +3473,7 @@ async def test_unique_id_update_existing_entry_with_reload(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -3494,7 +3494,7 @@ async def test_unique_id_update_existing_entry_with_reload(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -3550,7 +3550,7 @@ async def test_unique_id_from_discovery_in_setup_retry(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -3566,7 +3566,7 @@ async def test_unique_id_from_discovery_in_setup_retry(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         discovery_result = await manager.flow.async_init(
@@ -3618,7 +3618,7 @@ async def test_unique_id_not_update_existing_entry(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -3869,7 +3869,7 @@ async def test_manual_add_overrides_ignored_entry(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -4075,7 +4075,7 @@ async def test_update_discovery_keys(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -4158,7 +4158,7 @@ async def test_update_discovery_keys_2(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -5385,7 +5385,7 @@ async def test_setup_retrying_during_shutdown(
     mock_integration(hass, MockModule("test", async_setup_entry=mock_setup_entry))
     mock_platform(hass, "test.config_flow", None)
 
-    with patch("homeassistant.helpers.event.async_call_later") as mock_call:
+    with patch("inpui.helpers.event.async_call_later") as mock_call:
         await manager.async_setup(entry.entry_id)
 
     assert entry.state is config_entries.ConfigEntryState.SETUP_RETRY
@@ -5418,7 +5418,7 @@ async def test_scheduling_reload_cancels_setup_retry(
     cancel_mock = Mock()
 
     with patch(
-        "homeassistant.config_entries.async_call_later", return_value=cancel_mock
+        "inpui.config_entries.async_call_later", return_value=cancel_mock
     ):
         await manager.async_setup(entry.entry_id)
 
@@ -5870,7 +5870,7 @@ async def test_unique_id_update_while_setup_in_progress(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.config_entries.ConfigEntries.async_reload"
+            "inpui.config_entries.ConfigEntries.async_reload"
         ) as async_reload,
     ):
         result = await manager.flow.async_init(
@@ -6233,7 +6233,7 @@ async def test_async_wait_component_startup(hass: HomeAssistant) -> None:
 
 @pytest.mark.parametrize(
     "integration_frame_path",
-    ["homeassistant/components/my_integration", "homeassistant.core"],
+    ["homeassistant/components/my_integration", "inpui.core"],
 )
 @pytest.mark.usefixtures("hass", "mock_integration_frame")
 async def test_options_flow_with_config_entry_core() -> None:
@@ -7435,7 +7435,7 @@ async def test_starting_config_flow_on_single_config_entry(
     mock_platform(hass, "comp.config_flow", None)
 
     with patch(
-        "homeassistant.loader.async_get_integration",
+        "inpui.loader.async_get_integration",
         return_value=integration,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -7516,7 +7516,7 @@ async def test_starting_config_flow_on_single_config_entry_2(
     mock_platform(hass, "comp.config_flow", None)
 
     with patch(
-        "homeassistant.loader.async_get_integration",
+        "inpui.loader.async_get_integration",
         return_value=integration,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -7561,7 +7561,7 @@ async def test_avoid_adding_second_config_entry_on_single_config_entry(
 
     with (
         patch(
-            "homeassistant.loader.async_get_integration",
+            "inpui.loader.async_get_integration",
             return_value=integration,
         ),
         mock_config_flow("comp", TestFlow),
@@ -7646,7 +7646,7 @@ async def test_in_progress_get_canceled_when_entry_is_created(
     with (
         mock_config_flow("comp", TestFlow),
         patch(
-            "homeassistant.loader.async_get_integration",
+            "inpui.loader.async_get_integration",
             return_value=integration,
         ),
     ):
@@ -9893,7 +9893,7 @@ async def test_orphaned_ignored_entries(
         raise loader.IntegrationNotFound(domain)
 
     with patch(
-        "homeassistant.loader.async_get_integration", new=AsyncMock(side_effect=_raise)
+        "inpui.loader.async_get_integration", new=AsyncMock(side_effect=_raise)
     ):
         await hass.config_entries._async_scan_orphan_ignored_entries(None)
 
@@ -9992,7 +9992,7 @@ async def test_orphaned_ignored_entries_safe_recovery_mode(
         raise loader.IntegrationNotFound(domain)
 
     with patch(
-        "homeassistant.loader.async_get_integration", new=AsyncMock(side_effect=_raise)
+        "inpui.loader.async_get_integration", new=AsyncMock(side_effect=_raise)
     ):
         await hass.config_entries.async_initialize()
         hass.bus.async_fire(EVENT_INPUI_STARTED)

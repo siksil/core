@@ -40,7 +40,7 @@ async def test_setup_and_unload(
     # test the `homeassistant.components.sftp_storage.client.get_client_keys()` function
     with (
         patch(
-            "homeassistant.components.sftp_storage.client.SSHClientConnectionOptions"
+            "inpui.components.sftp_storage.client.SSHClientConnectionOptions"
         ),
         patch("pathlib.Path.exists", return_value=True),
     ):
@@ -82,7 +82,7 @@ async def test_setup_unexpected_error(
 ) -> None:
     """Test setup error."""
     with patch(
-        "homeassistant.components.sftp_storage.client.connect",
+        "inpui.components.sftp_storage.client.connect",
         side_effect=OSError("Error message"),
     ):
         await setup_integration()

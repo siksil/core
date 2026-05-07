@@ -55,17 +55,17 @@ def mock_config_store(data: dict[str, Any] | None = None) -> Generator[dict[str,
 
     with (
         patch(
-            "homeassistant.components.config.view._read",
+            "inpui.components.config.view._read",
             side_effect=mock_read,
             autospec=True,
         ),
         patch(
-            "homeassistant.components.config.view._write",
+            "inpui.components.config.view._write",
             side_effect=mock_write,
             autospec=True,
         ),
         patch(
-            "homeassistant.config.async_hass_config_yaml",
+            "inpui.config.async_hass_config_yaml",
             side_effect=mock_async_hass_config_yaml,
             autospec=True,
         ),

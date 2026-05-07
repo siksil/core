@@ -52,7 +52,7 @@ def nest_test_config() -> NestTestConfig:
 def mock_rand_topic_name_fixture() -> None:
     """Set the topic name random string to a constant."""
     with patch(
-        "homeassistant.components.nest.config_flow.get_random_string",
+        "inpui.components.nest.config_flow.get_random_string",
         return_value=RAND_SUFFIX,
     ):
         yield
@@ -217,7 +217,7 @@ class OAuthFixture:
     ) -> FlowResult:
         """Finish the OAuth flow exchanging auth token for refresh token."""
         with patch(
-            "homeassistant.components.nest.async_setup_entry", return_value=True
+            "inpui.components.nest.async_setup_entry", return_value=True
         ) as mock_setup:
             new_result = await self.async_configure(result, user_input)
             assert len(mock_setup.mock_calls) == 1

@@ -29,11 +29,11 @@ async def test_form_user(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+            "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
             return_value={"any": "data"},
         ),
         patch(
-            "homeassistant.components.somfy_mylink.async_setup_entry",
+            "inpui.components.somfy_mylink.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -73,11 +73,11 @@ async def test_form_user_already_configured(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+            "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
             return_value={"any": "data"},
         ),
         patch(
-            "homeassistant.components.somfy_mylink.async_setup_entry",
+            "inpui.components.somfy_mylink.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -102,7 +102,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+        "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
         return_value={
             "jsonrpc": "2.0",
             "error": {"code": -32652, "message": "Invalid auth"},
@@ -129,7 +129,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+        "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -152,7 +152,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+        "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
         side_effect=ValueError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -178,7 +178,7 @@ async def test_options_not_loaded(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.somfy_mylink.SomfyMyLinkSynergy.status_info",
+        "inpui.components.somfy_mylink.SomfyMyLinkSynergy.status_info",
         return_value={"result": []},
     ):
         result = await hass.config_entries.options.async_init(config_entry.entry_id)
@@ -197,7 +197,7 @@ async def test_options_with_targets(hass: HomeAssistant, reversed) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.somfy_mylink.SomfyMyLinkSynergy.status_info",
+        "inpui.components.somfy_mylink.SomfyMyLinkSynergy.status_info",
         return_value={
             "result": [
                 {
@@ -252,11 +252,11 @@ async def test_form_user_already_configured_from_dhcp(hass: HomeAssistant) -> No
 
     with (
         patch(
-            "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+            "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
             return_value={"any": "data"},
         ),
         patch(
-            "homeassistant.components.somfy_mylink.async_setup_entry",
+            "inpui.components.somfy_mylink.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -313,11 +313,11 @@ async def test_dhcp_discovery(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
+            "inpui.components.somfy_mylink.config_flow.SomfyMyLinkSynergy.status_info",
             return_value={"any": "data"},
         ),
         patch(
-            "homeassistant.components.somfy_mylink.async_setup_entry",
+            "inpui.components.somfy_mylink.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

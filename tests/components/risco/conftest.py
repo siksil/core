@@ -61,7 +61,7 @@ def two_zone_cloud():
             new_callable=PropertyMock(return_value=zone_mocks),
         ),
         patch(
-            "homeassistant.components.risco.RiscoCloud.get_state",
+            "inpui.components.risco.RiscoCloud.get_state",
             return_value=alarm_mock,
         ),
     ):
@@ -104,15 +104,15 @@ def two_zone_local():
             system, "name", new_callable=PropertyMock(return_value=TEST_SITE_NAME)
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.partitions",
+            "inpui.components.risco.RiscoLocal.partitions",
             new_callable=PropertyMock(return_value={}),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.zones",
+            "inpui.components.risco.RiscoLocal.zones",
             new_callable=PropertyMock(return_value=zone_mocks),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.system",
+            "inpui.components.risco.RiscoLocal.system",
             new_callable=PropertyMock(return_value=system),
         ),
     ):
@@ -148,7 +148,7 @@ def cloud_config_entry(hass: HomeAssistant, options: dict[str, Any]) -> MockConf
 def login_with_error(exception):
     """Fixture to simulate error on login."""
     with patch(
-        "homeassistant.components.risco.RiscoCloud.login",
+        "inpui.components.risco.RiscoCloud.login",
         side_effect=exception,
     ):
         yield
@@ -161,22 +161,22 @@ async def setup_risco_cloud(
     """Set up a Risco integration for testing."""
     with (
         patch(
-            "homeassistant.components.risco.RiscoCloud.login",
+            "inpui.components.risco.RiscoCloud.login",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.RiscoCloud.site_uuid",
+            "inpui.components.risco.RiscoCloud.site_uuid",
             new_callable=PropertyMock(return_value=TEST_SITE_UUID),
         ),
         patch(
-            "homeassistant.components.risco.RiscoCloud.site_name",
+            "inpui.components.risco.RiscoCloud.site_name",
             new_callable=PropertyMock(return_value=TEST_SITE_NAME),
         ),
         patch(
-            "homeassistant.components.risco.RiscoCloud.close",
+            "inpui.components.risco.RiscoCloud.close",
         ),
         patch(
-            "homeassistant.components.risco.RiscoCloud.get_events",
+            "inpui.components.risco.RiscoCloud.get_events",
             return_value=events,
         ),
     ):
@@ -200,7 +200,7 @@ def local_config_entry(hass: HomeAssistant, options: dict[str, Any]) -> MockConf
 def connect_with_error(exception):
     """Fixture to simulate error on connect."""
     with patch(
-        "homeassistant.components.risco.RiscoLocal.connect",
+        "inpui.components.risco.RiscoLocal.connect",
         side_effect=exception,
     ):
         yield
@@ -213,15 +213,15 @@ async def setup_risco_local(
     """Set up a local Risco integration for testing."""
     with (
         patch(
-            "homeassistant.components.risco.RiscoLocal.connect",
+            "inpui.components.risco.RiscoLocal.connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.id",
+            "inpui.components.risco.RiscoLocal.id",
             new_callable=PropertyMock(return_value=TEST_SITE_UUID),
         ),
         patch(
-            "homeassistant.components.risco.RiscoLocal.disconnect",
+            "inpui.components.risco.RiscoLocal.disconnect",
         ),
     ):
         await hass.config_entries.async_setup(local_config_entry.entry_id)

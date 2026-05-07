@@ -41,7 +41,7 @@ async def test_alarm_control_panel(
     instance = canary.return_value
     instance.get_locations.return_value = [mocked_location]
 
-    with patch("homeassistant.components.canary.PLATFORMS", ["alarm_control_panel"]):
+    with patch("inpui.components.canary.PLATFORMS", ["alarm_control_panel"]):
         await init_integration(hass)
 
     entity_id = "alarm_control_panel.home"
@@ -120,7 +120,7 @@ async def test_alarm_control_panel_services(hass: HomeAssistant, canary) -> None
     instance = canary.return_value
     instance.get_locations.return_value = [mocked_location]
 
-    with patch("homeassistant.components.canary.PLATFORMS", ["alarm_control_panel"]):
+    with patch("inpui.components.canary.PLATFORMS", ["alarm_control_panel"]):
         await init_integration(hass)
 
     entity_id = "alarm_control_panel.home"

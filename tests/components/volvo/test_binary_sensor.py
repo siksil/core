@@ -28,7 +28,7 @@ async def test_binary_sensor(
 ) -> None:
     """Test binary sensor."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await setup_integration()
 
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
@@ -53,7 +53,7 @@ async def test_unique_ids(
 ) -> None:
     """Test binary sensor for unique id's."""
 
-    with patch("homeassistant.components.volvo.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.volvo.PLATFORMS", [Platform.BINARY_SENSOR]):
         assert await setup_integration()
 
     assert f"Platform {DOMAIN} does not generate unique IDs" not in caplog.text

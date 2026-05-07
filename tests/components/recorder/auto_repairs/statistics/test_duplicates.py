@@ -200,7 +200,7 @@ async def test_delete_metadata_duplicates(
             recorder.migration, "non_live_data_migration_needed", return_value=False
         ),
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=_create_engine_28,
         ),
     ):
@@ -325,7 +325,7 @@ async def test_delete_metadata_duplicates_many(
             recorder.migration, "non_live_data_migration_needed", return_value=False
         ),
         patch(
-            "homeassistant.components.recorder.core.create_engine",
+            "inpui.components.recorder.core.create_engine",
             new=_create_engine_28,
         ),
     ):

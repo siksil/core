@@ -56,9 +56,9 @@ async def test_setup_classic_led_ctrl(
     classic_led_ctrl_mock.tankconfig = tankconfig
 
     with (
-        patch("homeassistant.components.eheimdigital.PLATFORMS", [Platform.LIGHT]),
+        patch("inpui.components.eheimdigital.PLATFORMS", [Platform.LIGHT]),
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):
@@ -86,9 +86,9 @@ async def test_dynamic_new_devices(
     eheimdigital_hub_mock.return_value.devices = {}
 
     with (
-        patch("homeassistant.components.eheimdigital.PLATFORMS", [Platform.LIGHT]),
+        patch("inpui.components.eheimdigital.PLATFORMS", [Platform.LIGHT]),
         patch(
-            "homeassistant.components.eheimdigital.coordinator.asyncio.Event",
+            "inpui.components.eheimdigital.coordinator.asyncio.Event",
             new=AsyncMock,
         ),
     ):

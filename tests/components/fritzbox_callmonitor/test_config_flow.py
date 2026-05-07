@@ -95,33 +95,33 @@ async def test_setup_one_phonebook(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_ids",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_ids",
             new_callable=PropertyMock,
             return_value=[0],
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_info",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_info",
             return_value=MOCK_PHONEBOOK_INFO_1,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.modelname",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.modelname",
             return_value=MOCK_PHONEBOOK_NAME_1,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.config_flow.FritzConnection.__init__",
+            "inpui.components.fritzbox_callmonitor.config_flow.FritzConnection.__init__",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.config_flow.FritzConnection.updatecheck",
+            "inpui.components.fritzbox_callmonitor.config_flow.FritzConnection.updatecheck",
             new_callable=PropertyMock,
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.async_setup_entry",
+            "inpui.components.fritzbox_callmonitor.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -146,25 +146,25 @@ async def test_setup_multiple_phonebooks(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_ids",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_ids",
             new_callable=PropertyMock,
             return_value=[0, 1],
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.config_flow.FritzConnection.__init__",
+            "inpui.components.fritzbox_callmonitor.config_flow.FritzConnection.__init__",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.config_flow.FritzConnection.updatecheck",
+            "inpui.components.fritzbox_callmonitor.config_flow.FritzConnection.updatecheck",
             new_callable=PropertyMock,
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_info",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_info",
             side_effect=[MOCK_PHONEBOOK_INFO_1, MOCK_PHONEBOOK_INFO_2],
         ),
     ):
@@ -178,11 +178,11 @@ async def test_setup_multiple_phonebooks(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.modelname",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.modelname",
             return_value=MOCK_PHONEBOOK_NAME_1,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.async_setup_entry",
+            "inpui.components.fritzbox_callmonitor.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -212,7 +212,7 @@ async def test_setup_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+        "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
         side_effect=RequestsConnectionError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -231,7 +231,7 @@ async def test_setup_insufficient_permissions(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+        "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
         side_effect=FritzSecurityError,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -253,7 +253,7 @@ async def test_setup_invalid_auth(
     )
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+        "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
         side_effect=error,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -274,33 +274,33 @@ async def test_reauth_successful(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_ids",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_ids",
             new_callable=PropertyMock,
             return_value=[0],
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_info",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.phonebook_info",
             return_value=MOCK_PHONEBOOK_INFO_1,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.modelname",
+            "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.modelname",
             return_value=MOCK_PHONEBOOK_NAME_1,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.config_flow.FritzConnection.__init__",
+            "inpui.components.fritzbox_callmonitor.config_flow.FritzConnection.__init__",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.config_flow.FritzConnection.updatecheck",
+            "inpui.components.fritzbox_callmonitor.config_flow.FritzConnection.updatecheck",
             new_callable=PropertyMock,
             return_value=MOCK_DEVICE_INFO,
         ),
         patch(
-            "homeassistant.components.fritzbox_callmonitor.async_setup_entry",
+            "inpui.components.fritzbox_callmonitor.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -340,7 +340,7 @@ async def test_reauth_not_successful(
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
+        "inpui.components.fritzbox_callmonitor.base.FritzPhonebook.__init__",
         side_effect=side_effect,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -367,7 +367,7 @@ async def test_options_flow_correct_prefixes(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.async_setup_entry",
+        "inpui.components.fritzbox_callmonitor.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -396,7 +396,7 @@ async def test_options_flow_incorrect_prefixes(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.async_setup_entry",
+        "inpui.components.fritzbox_callmonitor.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)
@@ -425,7 +425,7 @@ async def test_options_flow_no_prefixes(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.fritzbox_callmonitor.async_setup_entry",
+        "inpui.components.fritzbox_callmonitor.async_setup_entry",
         return_value=True,
     ):
         await hass.config_entries.async_setup(config_entry.entry_id)

@@ -62,7 +62,7 @@ async def test_config_mqtt(hass: HomeAssistant, mqtt: None) -> None:
     flow_id = step["flow_id"]
 
     with patch(
-        "homeassistant.components.mysensors.async_setup_entry",
+        "inpui.components.mysensors.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result = await hass.config_entries.flow.async_configure(
@@ -115,15 +115,15 @@ async def test_config_serial(hass: HomeAssistant) -> None:
 
     with (
         patch(  # mock is_serial_port because otherwise the test will be platform dependent (/dev/ttyACMx vs COMx)
-            "homeassistant.components.mysensors.config_flow.is_serial_port",
+            "inpui.components.mysensors.config_flow.is_serial_port",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mysensors.config_flow.try_connect",
+            "inpui.components.mysensors.config_flow.try_connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mysensors.async_setup_entry",
+            "inpui.components.mysensors.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -157,11 +157,11 @@ async def test_config_tcp(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.mysensors.config_flow.try_connect",
+            "inpui.components.mysensors.config_flow.try_connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mysensors.async_setup_entry",
+            "inpui.components.mysensors.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -195,11 +195,11 @@ async def test_fail_to_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.mysensors.config_flow.try_connect",
+            "inpui.components.mysensors.config_flow.try_connect",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.mysensors.async_setup_entry",
+            "inpui.components.mysensors.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -356,15 +356,15 @@ async def test_config_invalid(
 
     with (
         patch(
-            "homeassistant.components.mysensors.config_flow.try_connect",
+            "inpui.components.mysensors.config_flow.try_connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mysensors.gateway.socket.getaddrinfo",
+            "inpui.components.mysensors.gateway.socket.getaddrinfo",
             side_effect=OSError,
         ),
         patch(
-            "homeassistant.components.mysensors.async_setup_entry",
+            "inpui.components.mysensors.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -674,11 +674,11 @@ async def test_duplicate(
     with (
         patch("sys.platform", "win32"),
         patch(
-            "homeassistant.components.mysensors.config_flow.try_connect",
+            "inpui.components.mysensors.config_flow.try_connect",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.mysensors.async_setup_entry",
+            "inpui.components.mysensors.async_setup_entry",
             return_value=True,
         ),
     ):

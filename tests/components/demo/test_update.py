@@ -33,7 +33,7 @@ from inpui.setup import async_setup_component
 async def update_only() -> None:
     """Enable only the update platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.UPDATE],
     ):
         yield
@@ -146,7 +146,7 @@ async def test_update_with_progress(
         callback(lambda event: events.append(event)),
     )
 
-    with patch("homeassistant.components.demo.update.FAKE_INSTALL_SLEEP_TIME", new=0):
+    with patch("inpui.components.demo.update.FAKE_INSTALL_SLEEP_TIME", new=0):
         await hass.services.async_call(
             UPDATE_DOMAIN,
             SERVICE_INSTALL,
@@ -194,7 +194,7 @@ async def test_update_with_progress_raising(
 
     with (
         patch(
-            "homeassistant.components.demo.update._fake_install",
+            "inpui.components.demo.update._fake_install",
             side_effect=[None, None, None, None, RuntimeError],
         ) as fake_sleep,
         pytest.raises(RuntimeError),

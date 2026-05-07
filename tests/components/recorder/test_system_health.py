@@ -115,7 +115,7 @@ async def test_recorder_system_health_crashed_recorder_runs_table(
     """
 
     with patch(
-        "homeassistant.components.recorder.table_managers.recorder_runs.RecorderRunsManager.load_from_db"
+        "inpui.components.recorder.table_managers.recorder_runs.RecorderRunsManager.load_from_db"
     ):
         assert await async_setup_component(hass, "system_health", {})
         instance = await async_setup_recorder_instance(hass)

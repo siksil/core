@@ -19,7 +19,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.transmission.async_setup_entry",
+        "inpui.components.transmission.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -41,7 +41,7 @@ def mock_transmission_client() -> Generator[AsyncMock]:
     """Mock a Transmission client."""
     with (
         patch(
-            "homeassistant.components.transmission.transmission_rpc.Client",
+            "inpui.components.transmission.transmission_rpc.Client",
             autospec=False,
         ) as mock_client_class,
     ):
@@ -113,5 +113,5 @@ def mock_torrent():
 @pytest.fixture(autouse=True)
 def patch_sleep() -> Generator[None]:
     """Fixture to remove sleep in tests."""
-    with patch("homeassistant.components.transmission.switch.AFTER_WRITE_SLEEP", 0):
+    with patch("inpui.components.transmission.switch.AFTER_WRITE_SLEEP", 0):
         yield

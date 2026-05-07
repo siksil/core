@@ -134,7 +134,7 @@ def test_include_yaml(value: Any) -> None:
         assert doc["key"] == value
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     ("hass_config_yaml_files", "value"),
     [
@@ -154,7 +154,7 @@ def test_include_dir_list(mock_walk: Mock, value: Any) -> None:
         assert sorted(doc["key"]) == sorted(value)
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     "hass_config_yaml_files",
     [
@@ -183,7 +183,7 @@ def test_include_dir_list_recursive(mock_walk: Mock) -> None:
         assert sorted(doc["key"]) == sorted(["zero", "one", "two"])
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     ("hass_config_yaml_files", "value"),
     [
@@ -214,7 +214,7 @@ def test_include_dir_named(mock_walk: Mock, value: Any) -> None:
         assert doc["key"] == value
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     "hass_config_yaml_files",
     [
@@ -244,7 +244,7 @@ def test_include_dir_named_recursive(mock_walk: Mock) -> None:
         assert doc["key"] == correct
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     ("hass_config_yaml_files", "value"),
     [
@@ -273,7 +273,7 @@ def test_include_dir_merge_list(mock_walk: Mock, value: Any) -> None:
         assert sorted(doc["key"]) == sorted(value)
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     "hass_config_yaml_files",
     [
@@ -302,7 +302,7 @@ def test_include_dir_merge_list_recursive(mock_walk: Mock) -> None:
         assert sorted(doc["key"]) == sorted(["one", "two", "three", "four"])
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     ("hass_config_yaml_files", "value"),
     [
@@ -340,7 +340,7 @@ def test_include_dir_merge_named(mock_walk: Mock, value: Any) -> None:
         assert doc["key"] == value
 
 
-@patch("homeassistant.util.yaml.loader.os.walk")
+@patch("inpui.util.yaml.loader.os.walk")
 @pytest.mark.parametrize(
     "hass_config_yaml_files",
     [
@@ -469,11 +469,11 @@ def mock_integration_frame() -> Generator[Mock]:
     )
     with (
         patch(
-            "homeassistant.helpers.frame.linecache.getline",
+            "inpui.helpers.frame.linecache.getline",
             return_value=correct_frame.line,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=extract_stack_to_frame(
                 [
                     Mock(

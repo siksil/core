@@ -24,7 +24,7 @@ async def test_button(
     reolink_host: MagicMock,
 ) -> None:
     """Test button entity with ptz up."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BUTTON]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -55,7 +55,7 @@ async def test_ptz_move_service(
     reolink_host: MagicMock,
 ) -> None:
     """Test ptz_move entity service using PTZ button entity."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BUTTON]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED
@@ -87,7 +87,7 @@ async def test_host_button(
     reolink_host: MagicMock,
 ) -> None:
     """Test host button entity with reboot."""
-    with patch("homeassistant.components.reolink.PLATFORMS", [Platform.BUTTON]):
+    with patch("inpui.components.reolink.PLATFORMS", [Platform.BUTTON]):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.LOADED

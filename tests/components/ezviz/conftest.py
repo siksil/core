@@ -22,7 +22,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock setting up a config entry."""
     with patch(
-        "homeassistant.components.ezviz.async_setup_entry", return_value=True
+        "inpui.components.ezviz.async_setup_entry", return_value=True
     ) as setup_entry_mock:
         yield setup_entry_mock
 
@@ -69,9 +69,9 @@ def mock_ezviz_client() -> Generator[AsyncMock]:
     """Mock the EzvizAPI for easier testing."""
     with (
         patch(
-            "homeassistant.components.ezviz.EzvizClient", autospec=True
+            "inpui.components.ezviz.EzvizClient", autospec=True
         ) as mock_ezviz,
-        patch("homeassistant.components.ezviz.config_flow.EzvizClient", new=mock_ezviz),
+        patch("inpui.components.ezviz.config_flow.EzvizClient", new=mock_ezviz),
     ):
         instance = mock_ezviz.return_value
 
@@ -90,7 +90,7 @@ def mock_test_rtsp_auth() -> Generator[MagicMock]:
     """Mock the EzvizApi for easier testing."""
     with (
         patch(
-            "homeassistant.components.ezviz.config_flow.TestRTSPAuth"
+            "inpui.components.ezviz.config_flow.TestRTSPAuth"
         ) as mock_ezviz_test_rtsp,
     ):
         instance = mock_ezviz_test_rtsp.return_value

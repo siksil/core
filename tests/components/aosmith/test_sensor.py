@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 async def platforms() -> AsyncGenerator[None]:
     """Return the platforms to be loaded for this test."""
-    with patch("homeassistant.components.aosmith.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.aosmith.PLATFORMS", [Platform.SENSOR]):
         yield
 
 

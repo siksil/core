@@ -24,7 +24,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 async def platforms() -> AsyncGenerator[None]:
     """Return the platforms to be loaded for this test."""
-    with patch("homeassistant.components.homee.PLATFORMS", [Platform.SIREN]):
+    with patch("inpui.components.homee.PLATFORMS", [Platform.SIREN]):
         yield
 
 

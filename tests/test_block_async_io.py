@@ -37,11 +37,11 @@ async def test_protect_loop_debugger_sleep(caplog: pytest.LogCaptureFixture) -> 
     )
     with (
         patch(
-            "homeassistant.block_async_io.get_current_frame",
+            "inpui.block_async_io.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):
@@ -64,11 +64,11 @@ async def test_protect_loop_sleep() -> None:
     with (
         pytest.raises(RuntimeError, match="Caught blocking call to sleep with args"),
         patch(
-            "homeassistant.block_async_io.get_current_frame",
+            "inpui.block_async_io.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):
@@ -90,11 +90,11 @@ async def test_protect_loop_sleep_get_current_frame_raises() -> None:
     with (
         pytest.raises(RuntimeError, match="Caught blocking call to sleep with args"),
         patch(
-            "homeassistant.block_async_io.get_current_frame",
+            "inpui.block_async_io.get_current_frame",
             side_effect=ValueError,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):
@@ -117,11 +117,11 @@ async def test_protect_loop_importlib_import_module_non_integration(
     with (
         patch.object(block_async_io, "_IN_TESTS", False),
         patch(
-            "homeassistant.block_async_io.get_current_frame",
+            "inpui.block_async_io.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):
@@ -148,11 +148,11 @@ async def test_protect_loop_importlib_import_loaded_module_non_integration(
     with (
         patch.object(block_async_io, "_IN_TESTS", False),
         patch(
-            "homeassistant.block_async_io.get_current_frame",
+            "inpui.block_async_io.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):
@@ -188,11 +188,11 @@ async def test_protect_loop_importlib_import_module_in_integration(
     with (
         patch.object(block_async_io, "_IN_TESTS", False),
         patch(
-            "homeassistant.block_async_io.get_current_frame",
+            "inpui.block_async_io.get_current_frame",
             return_value=frames,
         ),
         patch(
-            "homeassistant.helpers.frame.get_current_frame",
+            "inpui.helpers.frame.get_current_frame",
             return_value=frames,
         ),
     ):

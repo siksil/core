@@ -33,7 +33,7 @@ def compute_pskc_fixture(enable_compute_pskc: bool) -> Any:
     compute_pskc = otbr.util.compute_pskc if enable_compute_pskc else None
 
     with patch(
-        "homeassistant.components.otbr.util.compute_pskc", side_effect=compute_pskc
+        "inpui.components.otbr.util.compute_pskc", side_effect=compute_pskc
     ) as compute_pskc_mock:
         yield compute_pskc_mock
 

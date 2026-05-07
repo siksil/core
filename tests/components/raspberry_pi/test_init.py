@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, MockModule, mock_integration
 def mock_rpi_power():
     """Mock the rpi_power integration."""
     with patch(
-        "homeassistant.components.rpi_power.async_setup_entry",
+        "inpui.components.rpi_power.async_setup_entry",
         return_value=True,
     ):
         yield
@@ -39,10 +39,10 @@ async def test_setup_entry(hass: HomeAssistant) -> None:
     assert not hass.config_entries.async_entries("rpi_power")
     with (
         patch(
-            "homeassistant.components.raspberry_pi.get_os_info",
+            "inpui.components.raspberry_pi.get_os_info",
             return_value={"board": "rpi"},
         ) as mock_get_os_info,
-        patch("homeassistant.components.rpi_power.config_flow.new_under_voltage"),
+        patch("inpui.components.rpi_power.config_flow.new_under_voltage"),
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
@@ -63,7 +63,7 @@ async def test_setup_entry_no_hassio(hass: HomeAssistant) -> None:
     config_entry.add_to_hass(hass)
     assert len(hass.config_entries.async_entries()) == 1
 
-    with patch("homeassistant.components.raspberry_pi.get_os_info") as mock_get_os_info:
+    with patch("inpui.components.raspberry_pi.get_os_info") as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -87,7 +87,7 @@ async def test_setup_entry_wrong_board(hass: HomeAssistant) -> None:
     assert len(hass.config_entries.async_entries()) == 1
 
     with patch(
-        "homeassistant.components.raspberry_pi.get_os_info",
+        "inpui.components.raspberry_pi.get_os_info",
         return_value={"board": "generic-x86-64"},
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)
@@ -111,7 +111,7 @@ async def test_setup_entry_wait_hassio(hass: HomeAssistant) -> None:
     )
     config_entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.raspberry_pi.get_os_info",
+        "inpui.components.raspberry_pi.get_os_info",
         return_value=None,
     ) as mock_get_os_info:
         assert not await hass.config_entries.async_setup(config_entry.entry_id)

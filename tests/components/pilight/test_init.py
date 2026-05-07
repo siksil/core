@@ -68,7 +68,7 @@ class PilightDaemonSim:
         _LOGGER.error("PilightDaemonSim callback: %s", function)
 
 
-@patch("homeassistant.components.pilight._LOGGER.error")
+@patch("inpui.components.pilight._LOGGER.error")
 async def test_connection_failed_error(mock_error, hass: HomeAssistant) -> None:
     """Try to connect at 127.0.0.1:5001 with socket error."""
     with (
@@ -84,7 +84,7 @@ async def test_connection_failed_error(mock_error, hass: HomeAssistant) -> None:
         assert mock_error.call_count == 1
 
 
-@patch("homeassistant.components.pilight._LOGGER.error")
+@patch("inpui.components.pilight._LOGGER.error")
 async def test_connection_timeout_error(mock_error, hass: HomeAssistant) -> None:
     """Try to connect at 127.0.0.1:5001 with socket timeout."""
     with (
@@ -117,8 +117,8 @@ async def test_send_code_no_protocol(hass: HomeAssistant) -> None:
         assert "required key not provided @ data['protocol']" in str(excinfo.value)
 
 
-@patch("homeassistant.components.pilight._LOGGER.error")
-@patch("homeassistant.components.pilight._LOGGER", _LOGGER)
+@patch("inpui.components.pilight._LOGGER.error")
+@patch("inpui.components.pilight._LOGGER", _LOGGER)
 @patch("pilight.pilight.Client", PilightDaemonSim)
 async def test_send_code(mock_pilight_error, hass: HomeAssistant) -> None:
     """Try to send proper data."""
@@ -140,7 +140,7 @@ async def test_send_code(mock_pilight_error, hass: HomeAssistant) -> None:
 
 
 @patch("pilight.pilight.Client", PilightDaemonSim)
-@patch("homeassistant.components.pilight._LOGGER.error")
+@patch("inpui.components.pilight._LOGGER.error")
 async def test_send_code_fail(mock_pilight_error, hass: HomeAssistant) -> None:
     """Check IOError exception error message."""
     with (
@@ -162,8 +162,8 @@ async def test_send_code_fail(mock_pilight_error, hass: HomeAssistant) -> None:
         assert "Pilight send failed" in str(error_log_call)
 
 
-@patch("homeassistant.components.pilight._LOGGER.error")
-@patch("homeassistant.components.pilight._LOGGER", _LOGGER)
+@patch("inpui.components.pilight._LOGGER.error")
+@patch("inpui.components.pilight._LOGGER", _LOGGER)
 @patch("pilight.pilight.Client", PilightDaemonSim)
 async def test_send_code_delay(mock_pilight_error, hass: HomeAssistant) -> None:
     """Try to send proper data with delay afterwards."""
@@ -204,8 +204,8 @@ async def test_send_code_delay(mock_pilight_error, hass: HomeAssistant) -> None:
         assert str(service_data2) in str(error_log_call)
 
 
-@patch("homeassistant.components.pilight._LOGGER.error")
-@patch("homeassistant.components.pilight._LOGGER", _LOGGER)
+@patch("inpui.components.pilight._LOGGER.error")
+@patch("inpui.components.pilight._LOGGER", _LOGGER)
 @patch("pilight.pilight.Client", PilightDaemonSim)
 async def test_start_stop(mock_pilight_error, hass: HomeAssistant) -> None:
     """Check correct startup and stop of pilight daemon."""

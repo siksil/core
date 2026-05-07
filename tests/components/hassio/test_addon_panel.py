@@ -34,7 +34,7 @@ async def test_hassio_addon_panel_startup(
     }
 
     with patch(
-        "homeassistant.components.hassio.addon_panel._register_panel",
+        "inpui.components.hassio.addon_panel._register_panel",
     ) as mock_panel:
         await async_setup_component(hass, "hassio", {})
         await hass.async_block_till_done()
@@ -61,7 +61,7 @@ async def test_hassio_addon_panel_api(
     }
 
     with patch(
-        "homeassistant.components.hassio.addon_panel._register_panel",
+        "inpui.components.hassio.addon_panel._register_panel",
     ) as mock_panel:
         await async_setup_component(hass, "hassio", {})
         await hass.async_block_till_done()
@@ -102,7 +102,7 @@ async def test_hassio_addon_panel_registration(
     }
 
     with patch(
-        "homeassistant.components.hassio.addon_panel.frontend.async_register_built_in_panel"
+        "inpui.components.hassio.addon_panel.frontend.async_register_built_in_panel"
     ) as mock_register:
         await async_setup_component(hass, "hassio", {})
         await hass.async_block_till_done()

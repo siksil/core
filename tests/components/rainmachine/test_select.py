@@ -24,8 +24,8 @@ async def test_select_entities(
 ) -> None:
     """Test select entities."""
     with (
-        patch("homeassistant.components.rainmachine.Client", return_value=client),
-        patch("homeassistant.components.rainmachine.PLATFORMS", [Platform.SELECT]),
+        patch("inpui.components.rainmachine.Client", return_value=client),
+        patch("inpui.components.rainmachine.PLATFORMS", [Platform.SELECT]),
     ):
         assert await async_setup_component(hass, DOMAIN, config)
         await hass.async_block_till_done()

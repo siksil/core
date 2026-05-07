@@ -162,7 +162,7 @@ async def test_unknown_error(
     """Test we show user form on unknown error."""
     user_input = MOCK_USER_INPUT.copy()
     with patch(
-        "homeassistant.components.directv.config_flow.DIRECTV.update",
+        "inpui.components.directv.config_flow.DIRECTV.update",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -181,7 +181,7 @@ async def test_ssdp_unknown_error(
     """Test we abort SSDP flow on unknown error."""
     discovery_info = dataclasses.replace(MOCK_SSDP_DISCOVERY_INFO)
     with patch(
-        "homeassistant.components.directv.config_flow.DIRECTV.update",
+        "inpui.components.directv.config_flow.DIRECTV.update",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -200,7 +200,7 @@ async def test_ssdp_confirm_unknown_error(
     """Test we abort SSDP flow on unknown error."""
     discovery_info = dataclasses.replace(MOCK_SSDP_DISCOVERY_INFO)
     with patch(
-        "homeassistant.components.directv.config_flow.DIRECTV.update",
+        "inpui.components.directv.config_flow.DIRECTV.update",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -228,7 +228,7 @@ async def test_full_user_flow_implementation(
     assert result["step_id"] == "user"
 
     user_input = MOCK_USER_INPUT.copy()
-    with patch("homeassistant.components.directv.async_setup_entry", return_value=True):
+    with patch("inpui.components.directv.async_setup_entry", return_value=True):
         result = await hass.config_entries.flow.async_configure(
             result["flow_id"],
             user_input=user_input,

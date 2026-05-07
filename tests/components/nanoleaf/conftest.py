@@ -27,7 +27,7 @@ def mock_config_entry() -> MockConfigEntry:
 async def mock_nanoleaf() -> AsyncGenerator[AsyncMock]:
     """Mock a Nanoleaf device."""
     with patch(
-        "homeassistant.components.nanoleaf.Nanoleaf", autospec=True
+        "inpui.components.nanoleaf.Nanoleaf", autospec=True
     ) as mock_nanoleaf:
         client = mock_nanoleaf.return_value
         client.model = "NO_TOUCH"

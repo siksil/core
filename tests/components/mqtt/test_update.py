@@ -747,7 +747,7 @@ async def test_discovery_update_unchanged_update(
     """Test update of discovered update."""
     data1 = '{ "name": "Beer", "state_topic": "installed-topic", "latest_version_topic": "latest-topic"}'
     with patch(
-        "homeassistant.components.mqtt.update.MqttUpdate.discovery_update"
+        "inpui.components.mqtt.update.MqttUpdate.discovery_update"
     ) as discovery_update:
         await help_test_discovery_update_unchanged(
             hass, mqtt_mock_entry, update.DOMAIN, data1, discovery_update

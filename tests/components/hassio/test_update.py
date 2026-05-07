@@ -163,7 +163,7 @@ async def test_update_addon(hass: HomeAssistant, update_addon: AsyncMock) -> Non
     await hass.async_block_till_done()
 
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await hass.services.async_call(
             "update",
@@ -399,7 +399,7 @@ async def test_update_addon_with_backup(
 
     supervisor_client.mounts.info.return_value.default_backup_mount = default_mount
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await hass.services.async_call(
             "update",
@@ -488,15 +488,15 @@ async def test_update_addon_with_backup_removes_old_backups(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
         ) as mock_create_backup,
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_delete_backup",
+            "inpui.components.backup.manager.BackupManager.async_delete_backup",
             autospec=True,
             return_value={},
         ) as async_delete_backup,
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_get_backups",
+            "inpui.components.backup.manager.BackupManager.async_get_backups",
             return_value=(backups, {}),
         ),
     ):
@@ -539,7 +539,7 @@ async def test_update_os(hass: HomeAssistant, supervisor_client: AsyncMock) -> N
 
     supervisor_client.os.update.return_value = None
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await hass.services.async_call(
             "update",
@@ -642,7 +642,7 @@ async def test_update_os_with_backup(
     supervisor_client.os.update.return_value = None
     supervisor_client.mounts.info.return_value.default_backup_mount = default_mount
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await hass.services.async_call(
             "update",
@@ -673,7 +673,7 @@ async def test_update_core(hass: HomeAssistant, supervisor_client: AsyncMock) ->
 
     supervisor_client.homeassistant.update.return_value = None
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await hass.services.async_call(
             "update",
@@ -958,7 +958,7 @@ async def test_update_core_with_backup(
     supervisor_client.homeassistant.update.return_value = None
     supervisor_client.mounts.info.return_value.default_backup_mount = default_mount
     with patch(
-        "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+        "inpui.components.backup.manager.BackupManager.async_create_backup",
     ) as mock_create_backup:
         await hass.services.async_call(
             "update",
@@ -1003,7 +1003,7 @@ async def test_update_core_sets_progress_immediately(
         )
 
     with patch(
-        "homeassistant.components.hassio.update.update_core",
+        "inpui.components.hassio.update.update_core",
         side_effect=check_progress,
     ) as mock_update:
         await hass.services.async_call(
@@ -1037,7 +1037,7 @@ async def test_update_core_resets_progress_on_error(
 
     with (
         patch(
-            "homeassistant.components.hassio.update.update_core",
+            "inpui.components.hassio.update.update_core",
             side_effect=HomeAssistantError,
         ),
         pytest.raises(HomeAssistantError),
@@ -1087,7 +1087,7 @@ async def test_update_addon_sets_progress_immediately(
         )
 
     with patch(
-        "homeassistant.components.hassio.update.update_addon",
+        "inpui.components.hassio.update.update_addon",
         side_effect=check_progress,
     ) as mock_update:
         await hass.services.async_call(
@@ -1121,7 +1121,7 @@ async def test_update_addon_resets_progress_on_error(
 
     with (
         patch(
-            "homeassistant.components.hassio.update.update_addon",
+            "inpui.components.hassio.update.update_addon",
             side_effect=HomeAssistantError,
         ),
         pytest.raises(HomeAssistantError),
@@ -1222,11 +1222,11 @@ async def test_update_addon_with_backup_and_error(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
             side_effect=create_backup_error,
         ),
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_delete_filtered_backups",
+            "inpui.components.backup.manager.BackupManager.async_delete_filtered_backups",
             side_effect=delete_filtered_backups_error,
         ),
         pytest.raises(HomeAssistantError, match=message),
@@ -1287,7 +1287,7 @@ async def test_update_os_with_backup_and_error(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
             side_effect=BackupManagerError,
         ),
         pytest.raises(HomeAssistantError, match=r"^Error creating backup:"),
@@ -1378,7 +1378,7 @@ async def test_update_core_with_backup_and_error(
     supervisor_client.mounts.info.return_value.default_backup_mount = None
     with (
         patch(
-            "homeassistant.components.backup.manager.BackupManager.async_create_backup",
+            "inpui.components.backup.manager.BackupManager.async_create_backup",
             side_effect=BackupManagerError,
         ),
         pytest.raises(HomeAssistantError, match=r"^Error creating backup:"),

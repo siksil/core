@@ -41,7 +41,7 @@ async def init_components(hass: HomeAssistant):
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.wyoming.async_setup_entry", return_value=True
+        "inpui.components.wyoming.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -127,7 +127,7 @@ async def init_wyoming_stt(
 ) -> ConfigEntry:
     """Initialize Wyoming STT."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=STT_INFO,
     ):
         await hass.config_entries.async_setup(stt_config_entry.entry_id)
@@ -141,7 +141,7 @@ async def init_wyoming_tts(
 ) -> ConfigEntry:
     """Initialize Wyoming TTS."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=TTS_INFO,
     ):
         await hass.config_entries.async_setup(tts_config_entry.entry_id)
@@ -155,7 +155,7 @@ async def init_wyoming_streaming_tts(
 ) -> ConfigEntry:
     """Initialize Wyoming streaming TTS."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=TTS_STREAMING_INFO,
     ):
         await hass.config_entries.async_setup(tts_config_entry.entry_id)
@@ -169,7 +169,7 @@ async def init_wyoming_wake_word(
 ) -> ConfigEntry:
     """Initialize Wyoming Wake Word."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=WAKE_WORD_INFO,
     ):
         await hass.config_entries.async_setup(wake_word_config_entry.entry_id)
@@ -183,7 +183,7 @@ async def init_wyoming_intent(
 ) -> ConfigEntry:
     """Initialize Wyoming intent recognizer."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=INTENT_INFO,
     ):
         await hass.config_entries.async_setup(intent_config_entry.entry_id)
@@ -197,7 +197,7 @@ async def init_wyoming_handle(
 ) -> ConfigEntry:
     """Initialize Wyoming intent handler."""
     with patch(
-        "homeassistant.components.wyoming.data.load_wyoming_info",
+        "inpui.components.wyoming.data.load_wyoming_info",
         return_value=HANDLE_INFO,
     ):
         await hass.config_entries.async_setup(handle_config_entry.entry_id)
@@ -238,11 +238,11 @@ async def init_satellite(hass: HomeAssistant, satellite_config_entry: ConfigEntr
     """Initialize Wyoming satellite."""
     with (
         patch(
-            "homeassistant.components.wyoming.data.load_wyoming_info",
+            "inpui.components.wyoming.data.load_wyoming_info",
             return_value=SATELLITE_INFO,
         ),
         patch(
-            "homeassistant.components.wyoming.assist_satellite.WyomingAssistSatellite.run"
+            "inpui.components.wyoming.assist_satellite.WyomingAssistSatellite.run"
         ) as _run_mock,
     ):
         # _run_mock: satellite task does not actually run

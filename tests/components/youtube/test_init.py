@@ -110,7 +110,7 @@ async def test_expired_token_refresh_client_error(
     """Test failure while refreshing token with a client error."""
 
     with patch(
-        "homeassistant.components.youtube.OAuth2Session.async_ensure_token_valid",
+        "inpui.components.youtube.OAuth2Session.async_ensure_token_valid",
         side_effect=ClientError,
     ):
         await setup_integration()
@@ -147,7 +147,7 @@ async def test_oauth_implementation_not_available(
     entry = hass.config_entries.async_entries(DOMAIN)[0]
 
     with patch(
-        "homeassistant.components.youtube.async_get_config_entry_implementation",
+        "inpui.components.youtube.async_get_config_entry_implementation",
         side_effect=ImplementationUnavailableError,
     ):
         await hass.config_entries.async_setup(entry.entry_id)

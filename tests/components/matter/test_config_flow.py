@@ -63,7 +63,7 @@ ZEROCONF_INFO_UDP = ZeroconfServiceInfo(
 def setup_entry_fixture() -> Generator[AsyncMock]:
     """Mock entry setup."""
     with patch(
-        "homeassistant.components.matter.async_setup_entry", return_value=True
+        "inpui.components.matter.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -72,7 +72,7 @@ def setup_entry_fixture() -> Generator[AsyncMock]:
 def unload_entry_fixture() -> Generator[AsyncMock]:
     """Mock entry unload."""
     with patch(
-        "homeassistant.components.matter.async_unload_entry", return_value=True
+        "inpui.components.matter.async_unload_entry", return_value=True
     ) as mock_unload_entry:
         yield mock_unload_entry
 
@@ -81,7 +81,7 @@ def unload_entry_fixture() -> Generator[AsyncMock]:
 def client_connect_fixture() -> Generator[AsyncMock]:
     """Mock server version."""
     with patch(
-        "homeassistant.components.matter.config_flow.MatterClient.connect"
+        "inpui.components.matter.config_flow.MatterClient.connect"
     ) as client_connect:
         yield client_connect
 
@@ -90,7 +90,7 @@ def client_connect_fixture() -> Generator[AsyncMock]:
 def supervisor_fixture() -> Generator[MagicMock]:
     """Mock Supervisor."""
     with patch(
-        "homeassistant.components.matter.config_flow.is_hassio", return_value=True
+        "inpui.components.matter.config_flow.is_hassio", return_value=True
     ) as is_hassio:
         yield is_hassio
 
@@ -104,7 +104,7 @@ def mock_get_addon_discovery_info(get_addon_discovery_info: AsyncMock) -> None:
 def addon_setup_time_fixture() -> Generator[int]:
     """Mock add-on setup sleep time."""
     with patch(
-        "homeassistant.components.matter.config_flow.ADDON_SETUP_TIMEOUT", new=0
+        "inpui.components.matter.config_flow.ADDON_SETUP_TIMEOUT", new=0
     ) as addon_setup_time:
         yield addon_setup_time
 
@@ -113,7 +113,7 @@ def addon_setup_time_fixture() -> Generator[int]:
 def mock_onboarded_fixture() -> Generator[MagicMock]:
     """Mock that Home Assistant is not yet onboarded."""
     with patch(
-        "homeassistant.components.matter.config_flow.async_is_onboarded",
+        "inpui.components.matter.config_flow.async_is_onboarded",
         return_value=False,
     ) as mock_onboarded:
         yield mock_onboarded

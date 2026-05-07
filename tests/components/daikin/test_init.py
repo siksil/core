@@ -27,7 +27,7 @@ def mock_daikin():
         """Mock the init function in pydaikin."""
         return Appliance
 
-    with patch("homeassistant.components.daikin.DaikinFactory") as Appliance:
+    with patch("inpui.components.daikin.DaikinFactory") as Appliance:
         Appliance.side_effect = mock_daikin_factory
         type(Appliance).update_status = AsyncMock()
         type(Appliance).device_ip = PropertyMock(return_value=HOST)
@@ -69,7 +69,7 @@ async def test_duplicate_removal(
     type(mock_daikin).values = PropertyMock(return_value=INVALID_DATA)
 
     with patch(
-        "homeassistant.components.daikin.async_migrate_unique_id", return_value=None
+        "inpui.components.daikin.async_migrate_unique_id", return_value=None
     ):
         assert await hass.config_entries.async_setup(config_entry.entry_id)
 

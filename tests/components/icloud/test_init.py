@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_controller_2fa_service():
     """Mock a successful 2fa service."""
     with patch(
-        "homeassistant.components.icloud.account.PyiCloudService"
+        "inpui.components.icloud.account.PyiCloudService"
     ) as service_mock:
         service_mock.return_value.requires_2fa = True
         service_mock.return_value.requires_2sa = True

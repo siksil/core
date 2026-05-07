@@ -6,6 +6,6 @@
   "documentation": "https://www.home-assistant.io/integrations/waze_travel_time",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "loggers": ["pywaze", "homeassistant.helpers.location"],
+  "loggers": ["pywaze", "inpui.helpers.location"],
   "requirements": ["pywaze==1.2.0"]
 }

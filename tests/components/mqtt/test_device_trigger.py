@@ -1688,10 +1688,10 @@ async def test_trigger_debug_info(
     assert debug_info_data["triggers"][0]["discovery_data"]["payload"] == config2
 
 
-@patch("homeassistant.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
-@patch("homeassistant.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.DISCOVERY_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.INITIAL_SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.SUBSCRIBE_COOLDOWN", 0.0)
+@patch("inpui.components.mqtt.client.UNSUBSCRIBE_COOLDOWN", 0.0)
 async def test_unload_entry(
     hass: HomeAssistant,
     mqtt_mock_entry: MqttMockHAClientGenerator,

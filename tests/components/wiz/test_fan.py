@@ -52,7 +52,7 @@ INITIAL_PARAMS = {
 
 
 @pytest.mark.parametrize("bulb_type", [FAKE_DIMMABLE_FAN, FAKE_DIMMABLE_FAN_2])
-@patch("homeassistant.components.wiz.PLATFORMS", [Platform.FAN])
+@patch("inpui.components.wiz.PLATFORMS", [Platform.FAN])
 async def test_entity(
     hass: HomeAssistant,
     snapshot: SnapshotAssertion,

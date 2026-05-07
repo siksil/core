@@ -147,7 +147,7 @@ async def test_bulb_services(
     mocked_instance = AsyncMock(return_value=True)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotBulb",
+        "inpui.components.switchbot.light.switchbot.SwitchbotBulb",
         **{mock_method: mocked_instance},
         update=AsyncMock(return_value=None),
     ):
@@ -184,7 +184,7 @@ async def test_bulb_services_exception(
     error_message = "An error occurred while performing the action: Operation failed"
 
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotBulb",
+        "inpui.components.switchbot.light.switchbot.SwitchbotBulb",
         **{mock_method: AsyncMock(side_effect=exception)},
         update=AsyncMock(return_value=None),
     ):
@@ -219,7 +219,7 @@ async def test_ceiling_light_services(
     mocked_instance = AsyncMock(return_value=True)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotCeilingLight",
+        "inpui.components.switchbot.light.switchbot.SwitchbotCeilingLight",
         **{mock_method: mocked_instance},
         update=AsyncMock(return_value=None),
     ):
@@ -256,7 +256,7 @@ async def test_ceiling_light_services_exception(
     error_message = "An error occurred while performing the action: Operation failed"
 
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotCeilingLight",
+        "inpui.components.switchbot.light.switchbot.SwitchbotCeilingLight",
         **{mock_method: AsyncMock(side_effect=exception)},
         update=AsyncMock(return_value=None),
     ):
@@ -291,7 +291,7 @@ async def test_strip_light_services(
     mocked_instance = AsyncMock(return_value=True)
 
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotLightStrip",
+        "inpui.components.switchbot.light.switchbot.SwitchbotLightStrip",
         **{mock_method: mocked_instance},
         update=AsyncMock(return_value=None),
     ):
@@ -328,7 +328,7 @@ async def test_strip_light_services_exception(
     error_message = "An error occurred while performing the action: Operation failed"
 
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotLightStrip",
+        "inpui.components.switchbot.light.switchbot.SwitchbotLightStrip",
         **{mock_method: AsyncMock(side_effect=exception)},
         update=AsyncMock(return_value=None),
     ):
@@ -379,7 +379,7 @@ async def test_floor_lamp_services(
     mocked_instance = AsyncMock(return_value=True)
 
     with patch.multiple(
-        f"homeassistant.components.switchbot.light.switchbot.{dev_cls}",
+        f"inpui.components.switchbot.light.switchbot.{dev_cls}",
         **{mock_method: mocked_instance},
         update=AsyncMock(return_value=None),
     ):
@@ -423,7 +423,7 @@ async def test_floor_lamp_services_exception(
     exception = SwitchbotOperationError("Operation failed")
     error_message = "An error occurred while performing the action: Operation failed"
     with patch.multiple(
-        "homeassistant.components.switchbot.light.switchbot.SwitchbotStripLight3",
+        "inpui.components.switchbot.light.switchbot.SwitchbotStripLight3",
         **{mock_method: AsyncMock(side_effect=exception)},
         update=AsyncMock(return_value=None),
     ):

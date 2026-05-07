@@ -364,13 +364,13 @@ async def test_if_action_before(
     before_10 = dt_util.now().replace(hour=8)
     after_10 = dt_util.now().replace(hour=14)
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=before_10):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=before_10):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
     assert len(service_calls) == 1
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=after_10):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=after_10):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -397,13 +397,13 @@ async def test_if_action_after(
     before_10 = dt_util.now().replace(hour=8)
     after_10 = dt_util.now().replace(hour=14)
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=before_10):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=before_10):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
     assert len(service_calls) == 0
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=after_10):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=after_10):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -431,13 +431,13 @@ async def test_if_action_one_weekday(
     monday = dt_util.now() - timedelta(days=days_past_monday)
     tuesday = monday + timedelta(days=1)
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=monday):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=monday):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
     assert len(service_calls) == 1
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=tuesday):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=tuesday):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -466,19 +466,19 @@ async def test_if_action_list_weekday(
     tuesday = monday + timedelta(days=1)
     wednesday = tuesday + timedelta(days=1)
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=monday):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=monday):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
     assert len(service_calls) == 1
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=tuesday):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=tuesday):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
     assert len(service_calls) == 2
 
-    with patch("homeassistant.helpers.condition.dt_util.now", return_value=wednesday):
+    with patch("inpui.helpers.condition.dt_util.now", return_value=wednesday):
         hass.bus.async_fire("test_event")
         await hass.async_block_till_done()
 
@@ -489,7 +489,7 @@ async def test_untrack_time_change(hass: HomeAssistant) -> None:
     """Test for removing tracked time changes."""
     mock_track_time_change = Mock()
     with patch(
-        "homeassistant.components.homeassistant.triggers.time.async_track_time_change",
+        "inpui.components.homeassistant.triggers.time.async_track_time_change",
         return_value=mock_track_time_change,
     ):
         assert await async_setup_component(

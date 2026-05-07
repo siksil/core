@@ -99,7 +99,7 @@ async def test_abort_already_configured(hass: HomeAssistant) -> None:
     with (
         patch("zeversolar.ZeverSolarClient.get_data", return_value=mock_data),
         patch(
-            "homeassistant.components.zeversolar.async_setup_entry",
+            "inpui.components.zeversolar.async_setup_entry",
         ) as mock_setup_entry,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -122,7 +122,7 @@ async def _set_up_zeversolar(hass: HomeAssistant, flow_id: str) -> None:
     with (
         patch("zeversolar.ZeverSolarClient.get_data", return_value=mock_data),
         patch(
-            "homeassistant.components.zeversolar.async_setup_entry",
+            "inpui.components.zeversolar.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

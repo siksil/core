@@ -26,7 +26,7 @@ async def test_form(hass: HomeAssistant) -> None:
             return_value="bla",
         ),
         patch(
-            "homeassistant.components.mutesync.async_setup_entry",
+            "inpui.components.mutesync.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

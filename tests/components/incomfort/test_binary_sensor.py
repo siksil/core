@@ -16,7 +16,7 @@ from .conftest import MOCK_HEATER_STATUS
 from tests.common import snapshot_platform
 
 
-@patch("homeassistant.components.incomfort.PLATFORMS", [Platform.BINARY_SENSOR])
+@patch("inpui.components.incomfort.PLATFORMS", [Platform.BINARY_SENSOR])
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")
 async def test_setup_platform(
     hass: HomeAssistant,
@@ -45,7 +45,7 @@ async def test_setup_platform(
     ],
     ids=["is_failed", "is_pumping", "is_burning", "is_tapping"],
 )
-@patch("homeassistant.components.incomfort.PLATFORMS", [Platform.BINARY_SENSOR])
+@patch("inpui.components.incomfort.PLATFORMS", [Platform.BINARY_SENSOR])
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")
 async def test_setup_binary_sensors_alt(
     hass: HomeAssistant,

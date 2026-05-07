@@ -20,7 +20,7 @@ def mock_light_profiles():
         return profiles
 
     with patch(
-        "homeassistant.components.light.Profiles",
+        "inpui.components.light.Profiles",
         side_effect=mock_profiles_class,
     ):
         yield data

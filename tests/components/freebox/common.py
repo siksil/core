@@ -21,7 +21,7 @@ async def setup_platform(hass: HomeAssistant, platform: str) -> MockConfigEntry:
     )
     mock_entry.add_to_hass(hass)
 
-    with patch("homeassistant.components.freebox.PLATFORMS", [platform]):
+    with patch("inpui.components.freebox.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
     await hass.async_block_till_done()
 

@@ -34,11 +34,11 @@ async def init_integration(
 
     with (
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor.async_get_mac_address",
+            "inpui.components.nam.NettigoAirMonitor.async_get_mac_address",
             return_value="aa:bb:cc:dd:ee:ff",
         ),
         patch(
-            "homeassistant.components.nam.NettigoAirMonitor._async_http_request",
+            "inpui.components.nam.NettigoAirMonitor._async_http_request",
             return_value=update_response,
         ),
     ):

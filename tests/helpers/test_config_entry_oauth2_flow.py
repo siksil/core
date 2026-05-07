@@ -56,7 +56,7 @@ async def local_impl_pkce(
     """Local implementation."""
     assert await setup.async_setup_component(hass, "auth", {})
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.secrets.token_urlsafe",
+        "inpui.helpers.config_entry_oauth2_flow.secrets.token_urlsafe",
         return_value=MOCK_SECRET_TOKEN_URLSAFE
         + "bbbbbb",  # Add some characters that should be removed by the logic.
     ):
@@ -183,7 +183,7 @@ async def test_missing_credentials_for_domain(
     flow = flow_handler()
     flow.hass = hass
 
-    with patch("homeassistant.loader.APPLICATION_CREDENTIALS", [TEST_DOMAIN]):
+    with patch("inpui.loader.APPLICATION_CREDENTIALS", [TEST_DOMAIN]):
         result = await flow.async_step_user()
     assert result["type"] == data_entry_flow.FlowResultType.ABORT
     assert result["reason"] == "missing_credentials"
@@ -202,7 +202,7 @@ async def test_abort_if_authorization_timeout(
     flow.hass = hass
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.asyncio.timeout",
+        "inpui.helpers.config_entry_oauth2_flow.asyncio.timeout",
         side_effect=TimeoutError,
     ):
         result = await flow.async_step_user()
@@ -397,7 +397,7 @@ async def test_abort_on_oauth_timeout_error(
     assert resp.headers["content-type"] == "text/html; charset=utf-8"
 
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.asyncio.timeout",
+        "inpui.helpers.config_entry_oauth2_flow.asyncio.timeout",
         side_effect=TimeoutError,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])

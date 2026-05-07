@@ -38,7 +38,7 @@ async def test_climate_entities(
     status.remote_zone_info = [mock_zone]
     status.zones = {1: mock_zone}
 
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 
@@ -49,7 +49,7 @@ async def test_system_set_temperature(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test setting temperature for system climate entity."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -72,7 +72,7 @@ async def test_system_set_temperature_api_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test API error when setting temperature for system climate entity."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -95,7 +95,7 @@ async def test_system_set_fan_mode(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test setting fan mode for system climate entity."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -116,7 +116,7 @@ async def test_system_set_fan_mode_api_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test API error when setting fan mode for system climate entity."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -139,7 +139,7 @@ async def test_system_set_hvac_mode(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test setting HVAC mode for system climate entity."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -160,7 +160,7 @@ async def test_system_set_hvac_mode_api_error(
     mock_config_entry: MockConfigEntry,
 ) -> None:
     """Test API error when setting HVAC mode for system climate entity."""
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     status = mock_actron_api.state_manager.get_status.return_value
@@ -270,7 +270,7 @@ async def test_system_hvac_mode_unmapped(
     status.user_aircon_settings.is_on = True
     status.user_aircon_settings.mode = "UNKNOWN_MODE"
 
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     state = hass.states.get("climate.test_system")
@@ -291,7 +291,7 @@ async def test_zone_hvac_mode_unmapped(
     status.remote_zone_info = [mock_zone]
     status.zones = {1: mock_zone}
 
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     state = hass.states.get("climate.living_room")
@@ -311,7 +311,7 @@ async def test_zone_hvac_mode_inactive(
     status.remote_zone_info = [mock_zone]
     status.zones = {1: mock_zone}
 
-    with patch("homeassistant.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
+    with patch("inpui.components.actron_air.PLATFORMS", [Platform.CLIMATE]):
         await setup_integration(hass, mock_config_entry)
 
     state = hass.states.get("climate.living_room")

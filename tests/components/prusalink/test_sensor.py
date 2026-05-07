@@ -27,7 +27,7 @@ from inpui.setup import async_setup_component
 @pytest.fixture(autouse=True)
 def setup_sensor_platform_only():
     """Only setup sensor platform."""
-    with patch("homeassistant.components.prusalink.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.prusalink.PLATFORMS", [Platform.SENSOR]):
         yield
 
 
@@ -254,7 +254,7 @@ async def test_sensors_active_job(
 ) -> None:
     """Test sensors while active job."""
     with patch(
-        "homeassistant.components.prusalink.sensor.utcnow",
+        "inpui.components.prusalink.sensor.utcnow",
         return_value=datetime(2022, 8, 27, 14, 0, 0, tzinfo=UTC),
     ):
         assert await async_setup_component(hass, "prusalink", {})

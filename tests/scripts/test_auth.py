@@ -19,7 +19,7 @@ from tests.common import register_auth_provider
 @pytest.fixture(autouse=True)
 def reset_log_level() -> Generator[None]:
     """Reset log level after each test case."""
-    logger = logging.getLogger("homeassistant.core")
+    logger = logging.getLogger("inpui.core")
     orig_level = logger.level
     yield
     logger.setLevel(orig_level)

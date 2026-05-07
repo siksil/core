@@ -25,15 +25,15 @@ async def test_form(hass: HomeAssistant, brand) -> None:
 
     with (
         patch(
-            "homeassistant.components.nexia.config_flow.NexiaHome.get_name",
+            "inpui.components.nexia.config_flow.NexiaHome.get_name",
             return_value="myhouse",
         ),
         patch(
-            "homeassistant.components.nexia.config_flow.NexiaHome.login",
+            "inpui.components.nexia.config_flow.NexiaHome.login",
             side_effect=MagicMock(),
         ),
         patch(
-            "homeassistant.components.nexia.async_setup_entry",
+            "inpui.components.nexia.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -61,10 +61,10 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.nexia.config_flow.NexiaHome.login",
+            "inpui.components.nexia.config_flow.NexiaHome.login",
         ),
         patch(
-            "homeassistant.components.nexia.config_flow.NexiaHome.get_name",
+            "inpui.components.nexia.config_flow.NexiaHome.get_name",
             return_value=None,
         ),
     ):
@@ -88,7 +88,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nexia.config_flow.NexiaHome.login",
+        "inpui.components.nexia.config_flow.NexiaHome.login",
         side_effect=TimeoutError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -111,7 +111,7 @@ async def test_form_invalid_auth_http_401(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nexia.config_flow.NexiaHome.login",
+        "inpui.components.nexia.config_flow.NexiaHome.login",
         side_effect=aiohttp.ClientResponseError(
             status=401, request_info=MagicMock(), history=MagicMock()
         ),
@@ -136,7 +136,7 @@ async def test_form_cannot_connect_not_found(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nexia.config_flow.NexiaHome.login",
+        "inpui.components.nexia.config_flow.NexiaHome.login",
         side_effect=aiohttp.ClientResponseError(
             status=404, request_info=MagicMock(), history=MagicMock()
         ),
@@ -161,7 +161,7 @@ async def test_form_broad_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.nexia.config_flow.NexiaHome.login",
+        "inpui.components.nexia.config_flow.NexiaHome.login",
         side_effect=ValueError,
     ):
         result2 = await hass.config_entries.flow.async_configure(

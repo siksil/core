@@ -51,7 +51,7 @@ async def create_mocked_yeti():
 def patch_config_flow_yeti(mocked_yeti):
     """Patch Goal Zero config flow."""
     return patch(
-        "homeassistant.components.goalzero.config_flow.Yeti",
+        "inpui.components.goalzero.config_flow.Yeti",
         return_value=mocked_yeti,
     )
 

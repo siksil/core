@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.ohme.async_setup_entry", return_value=True
+        "inpui.components.ohme.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -41,11 +41,11 @@ def mock_client():
     """Fixture to mock the OhmeApiClient."""
     with (
         patch(
-            "homeassistant.components.ohme.config_flow.OhmeApiClient",
+            "inpui.components.ohme.config_flow.OhmeApiClient",
             autospec=True,
         ) as client,
         patch(
-            "homeassistant.components.ohme.OhmeApiClient",
+            "inpui.components.ohme.OhmeApiClient",
             new=client,
         ),
     ):

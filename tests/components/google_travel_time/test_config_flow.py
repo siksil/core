@@ -45,11 +45,11 @@ async def assert_common_reconfigure_steps(
     client_mock = AsyncMock()
     with (
         patch(
-            "homeassistant.components.google_travel_time.helpers.RoutesAsyncClient",
+            "inpui.components.google_travel_time.helpers.RoutesAsyncClient",
             return_value=client_mock,
         ),
         patch(
-            "homeassistant.components.google_travel_time.sensor.RoutesAsyncClient",
+            "inpui.components.google_travel_time.sensor.RoutesAsyncClient",
             return_value=client_mock,
         ),
     ):

@@ -48,7 +48,7 @@ async def test_form(hass: HomeAssistant) -> None:
             return_value="test_token",
         ),
         patch(
-            "homeassistant.components.adax.async_setup_entry",
+            "inpui.components.adax.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -154,11 +154,11 @@ async def test_local_create_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.adax.async_setup_entry",
+            "inpui.components.adax.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.adax.config_flow.adax_local.AdaxConfig",
+            "inpui.components.adax.config_flow.adax_local.AdaxConfig",
             autospec=True,
         ) as mock_client_class,
     ):
@@ -256,7 +256,7 @@ async def test_local_connection_error(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
+        "inpui.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
         return_value=False,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -291,7 +291,7 @@ async def test_local_heater_not_available(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
+        "inpui.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
         side_effect=adax_local.HeaterNotAvailable,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -326,7 +326,7 @@ async def test_local_heater_not_found(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
+        "inpui.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
         side_effect=adax_local.HeaterNotFound,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -361,7 +361,7 @@ async def test_local_invalid_wifi_cred(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
+        "inpui.components.adax.config_flow.adax_local.AdaxConfig.configure_device",
         side_effect=adax_local.InvalidWifiCred,
     ):
         result = await hass.config_entries.flow.async_configure(

@@ -21,11 +21,11 @@ def disable_platforms(hass: HomeAssistant) -> None:
     """Disable platforms to speed up tests."""
     with (
         patch(
-            "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+            "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
             [],
         ),
         patch(
-            "homeassistant.components.demo.COMPONENTS_WITH_DEMO_PLATFORM",
+            "inpui.components.demo.COMPONENTS_WITH_DEMO_PLATFORM",
             [],
         ),
     ):

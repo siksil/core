@@ -22,7 +22,7 @@ DOMAIN = "keymitt_ble"
 def patch_microbot_api():
     """Patch MicroBot API."""
     return patch(
-        "homeassistant.components.keymitt_ble.config_flow.MicroBotApiClient", AsyncMock
+        "inpui.components.keymitt_ble.config_flow.MicroBotApiClient", AsyncMock
     )
 
 
@@ -72,7 +72,7 @@ async def test_user_setup(hass: HomeAssistant) -> None:
     """Test the user initiated form with valid mac."""
 
     with patch(
-        "homeassistant.components.keymitt_ble.config_flow.async_discovered_service_info",
+        "inpui.components.keymitt_ble.config_flow.async_discovered_service_info",
         return_value=[SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -119,7 +119,7 @@ async def test_user_setup_already_configured(hass: HomeAssistant) -> None:
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.keymitt_ble.config_flow.async_discovered_service_info",
+        "inpui.components.keymitt_ble.config_flow.async_discovered_service_info",
         return_value=[SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -134,7 +134,7 @@ async def test_user_no_devices(hass: HomeAssistant) -> None:
     with (
         patch_microbot_api(),
         patch(
-            "homeassistant.components.keymitt_ble.config_flow.async_discovered_service_info",
+            "inpui.components.keymitt_ble.config_flow.async_discovered_service_info",
             return_value=[],
         ),
     ):
@@ -151,7 +151,7 @@ async def test_no_link(hass: HomeAssistant) -> None:
     with (
         patch_microbot_api(),
         patch(
-            "homeassistant.components.keymitt_ble.config_flow.async_discovered_service_info",
+            "inpui.components.keymitt_ble.config_flow.async_discovered_service_info",
             return_value=[SERVICE_INFO],
         ),
     ):
@@ -172,7 +172,7 @@ async def test_no_link(hass: HomeAssistant) -> None:
     assert result2["step_id"] == "link"
     with (
         patch(
-            "homeassistant.components.keymitt_ble.config_flow.MicroBotApiClient",
+            "inpui.components.keymitt_ble.config_flow.MicroBotApiClient",
             MockMicroBotApiClientFail,
         ),
         patch_async_setup_entry() as mock_setup_entry,
@@ -201,7 +201,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.keymitt_ble.config_flow.async_discovered_service_info",
+        "inpui.components.keymitt_ble.config_flow.async_discovered_service_info",
         return_value=[SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(

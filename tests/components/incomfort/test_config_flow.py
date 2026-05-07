@@ -391,7 +391,7 @@ async def test_options_flow(
     assert result["type"] is FlowResultType.FORM
     assert result["step_id"] == "init"
 
-    with patch("homeassistant.components.incomfort.async_setup_entry") as restart_mock:
+    with patch("inpui.components.incomfort.async_setup_entry") as restart_mock:
         result2 = await hass.config_entries.options.async_configure(
             result["flow_id"], user_input
         )

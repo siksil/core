@@ -18,7 +18,7 @@ from tests.common import MockConfigEntry
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.yardian.async_setup_entry", return_value=True
+        "inpui.components.yardian.async_setup_entry", return_value=True
     ) as patched_setup_entry:
         yield patched_setup_entry
 
@@ -46,10 +46,10 @@ def mock_yardian_client() -> Generator[AsyncMock]:
     """Mock the Yardian client used by the integration and config flow."""
     with (
         patch(
-            "homeassistant.components.yardian.AsyncYardianClient", autospec=True
+            "inpui.components.yardian.AsyncYardianClient", autospec=True
         ) as client_cls,
         patch(
-            "homeassistant.components.yardian.config_flow.AsyncYardianClient",
+            "inpui.components.yardian.config_flow.AsyncYardianClient",
             autospec=True,
         ) as flow_client_cls,
     ):
@@ -74,5 +74,5 @@ def mock_yardian_client() -> Generator[AsyncMock]:
 @pytest.fixture
 def sensor_platform_only() -> Generator[None]:
     """Limit the integration setup to the sensor platform for faster tests."""
-    with patch("homeassistant.components.yardian.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.yardian.PLATFORMS", [Platform.SENSOR]):
         yield

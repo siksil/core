@@ -72,7 +72,7 @@ async def async_init_integration(
     )
 
     with patch(
-        "homeassistant.components.nut.AIONUTClient",
+        "inpui.components.nut.AIONUTClient",
         return_value=mock_pynut,
     ):
         extra_config_entry_data: dict[str, Any] = {}

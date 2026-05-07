@@ -84,7 +84,7 @@ from tests.common import MockConfigEntry, async_fire_time_changed
 @pytest.fixture(autouse=True)
 def patch_lifx_state_settle_delay():
     """Set asyncio.sleep for state settles to zero."""
-    with patch("homeassistant.components.lifx.light.LIFX_STATE_SETTLE_DELAY", 0):
+    with patch("inpui.components.lifx.light.LIFX_STATE_SETTLE_DELAY", 0):
         yield
 
 

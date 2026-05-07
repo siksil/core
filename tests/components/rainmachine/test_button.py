@@ -24,8 +24,8 @@ async def test_buttons(
 ) -> None:
     """Test buttons."""
     with (
-        patch("homeassistant.components.rainmachine.Client", return_value=client),
-        patch("homeassistant.components.rainmachine.PLATFORMS", [Platform.BUTTON]),
+        patch("inpui.components.rainmachine.Client", return_value=client),
+        patch("inpui.components.rainmachine.PLATFORMS", [Platform.BUTTON]),
     ):
         assert await async_setup_component(hass, DOMAIN, config)
         await hass.async_block_till_done()

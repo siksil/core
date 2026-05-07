@@ -187,7 +187,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
 
     # Aidoos
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -204,7 +204,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
 
     # Groups
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_group",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_group",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -220,7 +220,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.COOL
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_group",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_group",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -237,7 +237,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
 
     # Installations
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -253,7 +253,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.COOL
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -270,7 +270,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
 
     # Zones
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -286,7 +286,7 @@ async def test_airzone_climate_turn_on_off(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.COOL
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -309,7 +309,7 @@ async def test_airzone_climate_set_fan_mode(hass: HomeAssistant) -> None:
 
     # Aidoos
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -326,7 +326,7 @@ async def test_airzone_climate_set_fan_mode(hass: HomeAssistant) -> None:
     assert state.attributes[ATTR_FAN_MODE] == FAN_LOW
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -350,7 +350,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
 
     # Aidoos
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -367,7 +367,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.HEAT_COOL
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -385,7 +385,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
 
     # Groups
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_group",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_group",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -402,7 +402,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.DRY
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_group",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_group",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -420,7 +420,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
 
     # Installations
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -437,7 +437,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.DRY
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -455,7 +455,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
 
     # Zones
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -472,7 +472,7 @@ async def test_airzone_climate_set_hvac_mode(hass: HomeAssistant) -> None:
     assert state.state == HVACMode.HEAT
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -496,7 +496,7 @@ async def test_airzone_climate_set_hvac_slave_error(hass: HomeAssistant) -> None
 
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
             return_value=None,
         ),
         pytest.raises(HomeAssistantError),
@@ -522,7 +522,7 @@ async def test_airzone_climate_set_temp(hass: HomeAssistant) -> None:
 
     # Groups
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_group",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_group",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -540,7 +540,7 @@ async def test_airzone_climate_set_temp(hass: HomeAssistant) -> None:
 
     # Installations
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -560,7 +560,7 @@ async def test_airzone_climate_set_temp(hass: HomeAssistant) -> None:
 
     # Zones
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -580,7 +580,7 @@ async def test_airzone_climate_set_temp(hass: HomeAssistant) -> None:
 
     # Aidoo Pro with Double Setpoint
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -609,7 +609,7 @@ async def test_airzone_climate_set_temp_error(hass: HomeAssistant) -> None:
     # Aidoos
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
             side_effect=AirzoneCloudError,
         ),
         pytest.raises(HomeAssistantError),
@@ -630,7 +630,7 @@ async def test_airzone_climate_set_temp_error(hass: HomeAssistant) -> None:
     # Groups
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_group",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_group",
             side_effect=AirzoneCloudError,
         ),
         pytest.raises(HomeAssistantError),
@@ -651,7 +651,7 @@ async def test_airzone_climate_set_temp_error(hass: HomeAssistant) -> None:
     # Installations
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_put_installation",
             side_effect=AirzoneCloudError,
         ),
         pytest.raises(HomeAssistantError),
@@ -672,7 +672,7 @@ async def test_airzone_climate_set_temp_error(hass: HomeAssistant) -> None:
     # Zones
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
             side_effect=AirzoneCloudError,
         ),
         pytest.raises(HomeAssistantError),

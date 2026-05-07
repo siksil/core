@@ -21,7 +21,7 @@ async def test_entities(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test roomba entities."""
-    with patch("homeassistant.components.roomba.PLATFORMS", [Platform.SENSOR]):
+    with patch("inpui.components.roomba.PLATFORMS", [Platform.SENSOR]):
         mock_config_entry.add_to_hass(hass)
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()

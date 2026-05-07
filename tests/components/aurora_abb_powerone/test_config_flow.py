@@ -56,7 +56,7 @@ async def test_form(hass: HomeAssistant) -> None:
             return_value="1.234",
         ) as mock_setup,
         patch(
-            "homeassistant.components.aurora_abb_powerone.async_setup_entry",
+            "inpui.components.aurora_abb_powerone.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

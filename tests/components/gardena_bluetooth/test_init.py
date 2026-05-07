@@ -117,7 +117,7 @@ async def test_setup_delayed_product(
         return await original_get_product_type(*args, **kwargs)
 
     with patch(
-        "homeassistant.components.gardena_bluetooth.async_get_product_type",
+        "inpui.components.gardena_bluetooth.async_get_product_type",
         wraps=_get_product_type,
     ):
         async with asyncio.TaskGroup() as tg:

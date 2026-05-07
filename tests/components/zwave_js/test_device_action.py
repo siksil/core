@@ -265,7 +265,7 @@ async def test_actions(
         assert args[1] == 1
 
     with patch(
-        "homeassistant.components.zwave_js.services.async_set_config_parameter"
+        "inpui.components.zwave_js.services.async_set_config_parameter"
     ) as mock_call:
         hass.bus.async_fire("test_event_set_config_parameter")
         await hass.async_block_till_done()
@@ -277,7 +277,7 @@ async def test_actions(
         assert args[2] == 1
 
     with patch(
-        "homeassistant.components.zwave_js.services.async_set_config_parameter"
+        "inpui.components.zwave_js.services.async_set_config_parameter"
     ) as mock_call:
         hass.bus.async_fire("test_event_set_config_parameter_no_endpoint")
         await hass.async_block_till_done()
@@ -451,7 +451,7 @@ async def test_lock_actions(
         },
     )
 
-    with patch("homeassistant.components.zwave_js.lock.clear_usercode") as mock_call:
+    with patch("inpui.components.zwave_js.lock.clear_usercode") as mock_call:
         hass.bus.async_fire("test_event_clear_lock_usercode")
         await hass.async_block_till_done()
         mock_call.assert_called_once()
@@ -460,7 +460,7 @@ async def test_lock_actions(
         assert args[0].node_id == node.node_id
         assert args[1] == 1
 
-    with patch("homeassistant.components.zwave_js.lock.set_usercode") as mock_call:
+    with patch("inpui.components.zwave_js.lock.set_usercode") as mock_call:
         hass.bus.async_fire("test_event_set_lock_usercode")
         await hass.async_block_till_done()
         mock_call.assert_called_once()

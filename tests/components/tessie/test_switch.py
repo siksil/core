@@ -28,7 +28,7 @@ async def test_switches(
 
     entity_id = "switch.test_charge"
     with patch(
-        "homeassistant.components.tessie.switch.start_charging",
+        "inpui.components.tessie.switch.start_charging",
     ) as mock_start_charging:
         # Test Switch On
         await hass.services.async_call(
@@ -41,7 +41,7 @@ async def test_switches(
     assert hass.states.get(entity_id) == snapshot(name=SERVICE_TURN_ON)
 
     with patch(
-        "homeassistant.components.tessie.switch.stop_charging",
+        "inpui.components.tessie.switch.stop_charging",
     ) as mock_stop_charging:
         # Test Switch Off
         await hass.services.async_call(

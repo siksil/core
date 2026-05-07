@@ -66,8 +66,8 @@ async def mock_gios(
 ) -> AsyncGenerator[MagicMock]:
     """Yield a mocked GIOS client."""
     with (
-        patch("homeassistant.components.gios.Gios", autospec=True) as mock_gios,
-        patch("homeassistant.components.gios.config_flow.Gios", new=mock_gios),
+        patch("inpui.components.gios.Gios", autospec=True) as mock_gios,
+        patch("inpui.components.gios.config_flow.Gios", new=mock_gios),
     ):
         mock_gios.create = AsyncMock(return_value=mock_gios)
         mock_gios.async_update = AsyncMock(return_value=mock_gios_sensors)

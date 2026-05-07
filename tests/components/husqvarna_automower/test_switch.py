@@ -271,7 +271,7 @@ async def test_switch_snapshot(
 ) -> None:
     """Snapshot tests of the switches."""
     with patch(
-        "homeassistant.components.husqvarna_automower.PLATFORMS",
+        "inpui.components.husqvarna_automower.PLATFORMS",
         [Platform.SWITCH],
     ):
         await setup_integration(hass, mock_config_entry)

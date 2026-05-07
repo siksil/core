@@ -28,7 +28,7 @@ def picnic_api():
         },
     }
     with patch(
-        "homeassistant.components.picnic.config_flow.PicnicAPI",
+        "inpui.components.picnic.config_flow.PicnicAPI",
     ) as picnic_mock:
         picnic_mock().session.auth_token = auth_token
         picnic_mock().get_user.return_value = auth_data
@@ -47,7 +47,7 @@ async def test_form(hass: HomeAssistant, picnic_api) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.picnic.async_setup_entry",
+        "inpui.components.picnic.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -76,7 +76,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.picnic.config_flow.PicnicHub.authenticate",
+        "inpui.components.picnic.config_flow.PicnicHub.authenticate",
         side_effect=PicnicAuthError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -99,7 +99,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.picnic.config_flow.PicnicHub.authenticate",
+        "inpui.components.picnic.config_flow.PicnicHub.authenticate",
         side_effect=requests.exceptions.ConnectionError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -122,7 +122,7 @@ async def test_form_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.picnic.config_flow.PicnicHub.authenticate",
+        "inpui.components.picnic.config_flow.PicnicHub.authenticate",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -183,7 +183,7 @@ async def test_step_reauth(hass: HomeAssistant, picnic_api) -> None:
     assert result_init["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.picnic.async_setup_entry",
+        "inpui.components.picnic.async_setup_entry",
         return_value=True,
     ):
         result_configure = await hass.config_entries.flow.async_configure(
@@ -222,7 +222,7 @@ async def test_step_reauth_failed(hass: HomeAssistant) -> None:
     assert result_init["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.picnic.config_flow.PicnicHub.authenticate",
+        "inpui.components.picnic.config_flow.PicnicHub.authenticate",
         side_effect=PicnicAuthError,
     ):
         result_configure = await hass.config_entries.flow.async_configure(
@@ -260,7 +260,7 @@ async def test_step_reauth_different_account(hass: HomeAssistant, picnic_api) ->
     assert result_init["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.picnic.async_setup_entry",
+        "inpui.components.picnic.async_setup_entry",
         return_value=True,
     ):
         result_configure = await hass.config_entries.flow.async_configure(

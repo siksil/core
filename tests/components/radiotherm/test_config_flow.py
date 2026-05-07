@@ -36,11 +36,11 @@ async def test_form(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+            "inpui.components.radiotherm.data.radiotherm.get_thermostat",
             return_value=_mock_radiotherm(),
         ),
         patch(
-            "homeassistant.components.radiotherm.async_setup_entry",
+            "inpui.components.radiotherm.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -67,7 +67,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+        "inpui.components.radiotherm.data.radiotherm.get_thermostat",
         side_effect=Exception,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -88,7 +88,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+        "inpui.components.radiotherm.data.radiotherm.get_thermostat",
         side_effect=RadiothermTstatError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -106,7 +106,7 @@ async def test_dhcp_can_confirm(hass: HomeAssistant) -> None:
     """Test DHCP discovery flow can confirm right away."""
 
     with patch(
-        "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+        "inpui.components.radiotherm.data.radiotherm.get_thermostat",
         return_value=_mock_radiotherm(),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -129,7 +129,7 @@ async def test_dhcp_can_confirm(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.radiotherm.async_setup_entry",
+        "inpui.components.radiotherm.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -150,7 +150,7 @@ async def test_dhcp_fails_to_connect(hass: HomeAssistant) -> None:
     """Test DHCP discovery flow that fails to connect."""
 
     with patch(
-        "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+        "inpui.components.radiotherm.data.radiotherm.get_thermostat",
         side_effect=RadiothermTstatError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -179,7 +179,7 @@ async def test_dhcp_already_exists(hass: HomeAssistant) -> None:
     entry.add_to_hass(hass)
 
     with patch(
-        "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+        "inpui.components.radiotherm.data.radiotherm.get_thermostat",
         return_value=_mock_radiotherm(),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -215,11 +215,11 @@ async def test_user_unique_id_already_exists(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.radiotherm.data.radiotherm.get_thermostat",
+            "inpui.components.radiotherm.data.radiotherm.get_thermostat",
             return_value=_mock_radiotherm(),
         ),
         patch(
-            "homeassistant.components.radiotherm.async_setup_entry",
+            "inpui.components.radiotherm.async_setup_entry",
             return_value=True,
         ),
     ):

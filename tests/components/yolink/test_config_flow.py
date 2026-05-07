@@ -91,9 +91,9 @@ async def test_full_flow(
     )
 
     with (
-        patch("homeassistant.components.yolink.api.ConfigEntryAuth"),
+        patch("inpui.components.yolink.api.ConfigEntryAuth"),
         patch(
-            "homeassistant.components.yolink.async_setup_entry", return_value=True
+            "inpui.components.yolink.async_setup_entry", return_value=True
         ) as mock_setup,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])
@@ -130,7 +130,7 @@ async def test_abort_if_authorization_timeout(hass: HomeAssistant) -> None:
         application_credentials.ClientCredential(CLIENT_ID, CLIENT_SECRET),
     )
     with patch(
-        "homeassistant.helpers.config_entry_oauth2_flow.LocalOAuth2Implementation.async_generate_authorize_url",
+        "inpui.helpers.config_entry_oauth2_flow.LocalOAuth2Implementation.async_generate_authorize_url",
         side_effect=TimeoutError,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -199,9 +199,9 @@ async def test_reauthentication(
     )
 
     with (
-        patch("homeassistant.components.yolink.api.ConfigEntryAuth"),
+        patch("inpui.components.yolink.api.ConfigEntryAuth"),
         patch(
-            "homeassistant.components.yolink.async_setup_entry", return_value=True
+            "inpui.components.yolink.async_setup_entry", return_value=True
         ) as mock_setup,
     ):
         result = await hass.config_entries.flow.async_configure(result["flow_id"])

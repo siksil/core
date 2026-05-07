@@ -47,7 +47,7 @@ async def setup_credentials(hass: HomeAssistant) -> None:
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.watts.async_setup_entry",
+        "inpui.components.watts.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         yield mock_setup_entry
@@ -57,7 +57,7 @@ def mock_setup_entry() -> Generator[AsyncMock]:
 def mock_watts_client() -> Generator[AsyncMock]:
     """Mock a Watts Vision client."""
     with patch(
-        "homeassistant.components.watts.WattsVisionClient",
+        "inpui.components.watts.WattsVisionClient",
         autospec=True,
     ) as mock_client_class:
         client = mock_client_class.return_value
@@ -126,5 +126,5 @@ def skip_cloud_fixture():
     We do not need to test it here as we only need to test our
     usage of the oauth2 helpers.
     """
-    with patch("homeassistant.components.cloud.async_setup", return_value=True):
+    with patch("inpui.components.cloud.async_setup", return_value=True):
         yield

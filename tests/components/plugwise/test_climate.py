@@ -37,7 +37,7 @@ from tests.common import (
 )
 
 HA_PLUGWISE_SMILE_ASYNC_UPDATE = (
-    "homeassistant.components.plugwise.coordinator.Smile.async_update"
+    "inpui.components.plugwise.coordinator.Smile.async_update"
 )
 
 

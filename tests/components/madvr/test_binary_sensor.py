@@ -25,7 +25,7 @@ async def test_binary_sensor_setup(
     entity_registry: er.EntityRegistry,
 ) -> None:
     """Test setup of the binary sensor entities."""
-    with patch("homeassistant.components.madvr.PLATFORMS", [Platform.BINARY_SENSOR]):
+    with patch("inpui.components.madvr.PLATFORMS", [Platform.BINARY_SENSOR]):
         await setup_integration(hass, mock_config_entry)
     await snapshot_platform(hass, entity_registry, snapshot, mock_config_entry.entry_id)
 

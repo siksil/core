@@ -120,7 +120,7 @@ async def entry_with_basic_config(
     hass: HomeAssistant, flow_at_user_step: ConfigFlowResult
 ) -> ConfigFlowResult:
     """Return a entry with a basic config."""
-    with patch("homeassistant.components.sia.async_setup_entry", return_value=True):
+    with patch("inpui.components.sia.async_setup_entry", return_value=True):
         return await hass.config_entries.flow.async_configure(
             flow_at_user_step["flow_id"], BASIC_CONFIG
         )
@@ -141,7 +141,7 @@ async def entry_with_additional_account_config(
     hass: HomeAssistant, flow_at_add_account_step: ConfigFlowResult
 ) -> ConfigFlowResult:
     """Return a entry with a two account config."""
-    with patch("homeassistant.components.sia.async_setup_entry", return_value=True):
+    with patch("inpui.components.sia.async_setup_entry", return_value=True):
         return await hass.config_entries.flow.async_configure(
             flow_at_add_account_step["flow_id"], ADDITIONAL_ACCOUNT
         )
@@ -218,7 +218,7 @@ async def test_abort_form(hass: HomeAssistant) -> None:
 @pytest.fixture(autouse=True)
 def mock_sia() -> Generator[None]:
     """Mock SIAClient."""
-    with patch("homeassistant.components.sia.hub.SIAClient", autospec=True):
+    with patch("inpui.components.sia.hub.SIAClient", autospec=True):
         yield
 
 

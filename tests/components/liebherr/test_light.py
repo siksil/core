@@ -210,7 +210,7 @@ async def test_no_light_entity_without_control(
     )
 
     mock_config_entry.add_to_hass(hass)
-    with patch("homeassistant.components.liebherr.PLATFORMS", platforms):
+    with patch("inpui.components.liebherr.PLATFORMS", platforms):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -226,7 +226,7 @@ async def test_dynamic_device_discovery_light(
     """Test new devices with presentation light are automatically discovered."""
     mock_config_entry.add_to_hass(hass)
 
-    with patch(f"homeassistant.components.{DOMAIN}.PLATFORMS", [Platform.LIGHT]):
+    with patch(f"inpui.components.{DOMAIN}.PLATFORMS", [Platform.LIGHT]):
         await hass.config_entries.async_setup(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 

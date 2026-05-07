@@ -318,8 +318,8 @@ async def hassio_enabled(
 ) -> AsyncGenerator[None]:
     """Enable hassio."""
     with (
-        patch("homeassistant.components.backup.is_hassio", return_value=True),
-        patch("homeassistant.components.backup.backup.is_hassio", return_value=True),
+        patch("inpui.components.backup.is_hassio", return_value=True),
+        patch("inpui.components.backup.backup.is_hassio", return_value=True),
     ):
         yield
 

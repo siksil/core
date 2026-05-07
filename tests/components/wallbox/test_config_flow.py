@@ -52,11 +52,11 @@ async def test_form_cannot_authenticate(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.wallbox.Wallbox.authenticate",
+            "inpui.components.wallbox.Wallbox.authenticate",
             new=Mock(side_effect=http_403_error),
         ),
         patch(
-            "homeassistant.components.wallbox.Wallbox.pauseChargingSession",
+            "inpui.components.wallbox.Wallbox.pauseChargingSession",
             new=Mock(side_effect=http_403_error),
         ),
     ):
@@ -80,11 +80,11 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
     with (
         patch(
-            "homeassistant.components.wallbox.Wallbox.authenticate",
+            "inpui.components.wallbox.Wallbox.authenticate",
             new=Mock(side_effect=http_404_error),
         ),
         patch(
-            "homeassistant.components.wallbox.Wallbox.pauseChargingSession",
+            "inpui.components.wallbox.Wallbox.pauseChargingSession",
             new=Mock(side_effect=http_404_error),
         ),
     ):
@@ -110,7 +110,7 @@ async def test_form_validate_input(
     )
     with (
         patch(
-            "homeassistant.components.wallbox.config_flow.Wallbox",
+            "inpui.components.wallbox.config_flow.Wallbox",
             return_value=mock_wallbox,
         ),
     ):

@@ -86,11 +86,11 @@ def mock_lojack_client(
 
     with (
         patch(
-            "homeassistant.components.lojack.LoJackClient.create",
+            "inpui.components.lojack.LoJackClient.create",
             return_value=client,
         ),
         patch(
-            "homeassistant.components.lojack.config_flow.LoJackClient.create",
+            "inpui.components.lojack.config_flow.LoJackClient.create",
             return_value=client,
         ),
     ):
@@ -101,7 +101,7 @@ def mock_lojack_client(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Mock async_setup_entry."""
     with patch(
-        "homeassistant.components.lojack.async_setup_entry",
+        "inpui.components.lojack.async_setup_entry",
         return_value=True,
     ) as mock:
         yield mock

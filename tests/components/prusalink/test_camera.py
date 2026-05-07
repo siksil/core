@@ -14,7 +14,7 @@ from tests.typing import ClientSessionGenerator
 @pytest.fixture(autouse=True)
 def setup_camera_platform_only():
     """Only setup camera platform."""
-    with patch("homeassistant.components.prusalink.PLATFORMS", [Platform.CAMERA]):
+    with patch("inpui.components.prusalink.PLATFORMS", [Platform.CAMERA]):
         yield
 
 

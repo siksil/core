@@ -26,8 +26,8 @@ async def test_switches(
 ) -> None:
     """Test switches."""
     with (
-        patch("homeassistant.components.rainmachine.Client", return_value=client),
-        patch("homeassistant.components.rainmachine.PLATFORMS", [Platform.SWITCH]),
+        patch("inpui.components.rainmachine.Client", return_value=client),
+        patch("inpui.components.rainmachine.PLATFORMS", [Platform.SWITCH]),
     ):
         assert await async_setup_component(hass, DOMAIN, config)
         await hass.async_block_till_done()

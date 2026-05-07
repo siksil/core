@@ -34,11 +34,11 @@ async def test_form_create_entry(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+            "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.vallox.async_setup_entry",
+            "inpui.components.vallox.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):
@@ -71,11 +71,11 @@ async def test_form_invalid_ip(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+            "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.vallox.async_setup_entry",
+            "inpui.components.vallox.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -97,7 +97,7 @@ async def test_form_vallox_api_exception_cannot_connect(hass: HomeAssistant) -> 
     )
 
     with patch(
-        "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+        "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
         side_effect=ValloxApiException,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -111,11 +111,11 @@ async def test_form_vallox_api_exception_cannot_connect(hass: HomeAssistant) -> 
 
     with (
         patch(
-            "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+            "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.vallox.async_setup_entry",
+            "inpui.components.vallox.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -137,7 +137,7 @@ async def test_form_os_error_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+        "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
         side_effect=ValloxWebsocketException,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -151,11 +151,11 @@ async def test_form_os_error_cannot_connect(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+            "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.vallox.async_setup_entry",
+            "inpui.components.vallox.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -177,7 +177,7 @@ async def test_form_unknown_exception(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+        "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
         side_effect=Exception,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -191,11 +191,11 @@ async def test_form_unknown_exception(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+            "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.vallox.async_setup_entry",
+            "inpui.components.vallox.async_setup_entry",
             return_value=True,
         ),
     ):
@@ -311,7 +311,7 @@ async def test_reconfigure_host_vallox_api_exception_cannot_connect(
     entry, init_flow_result = init_reconfigure_flow
 
     with patch(
-        "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+        "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
         side_effect=ValloxApiException,
     ):
         reconfigure_result = await hass.config_entries.flow.async_configure(
@@ -350,7 +350,7 @@ async def test_reconfigure_host_unknown_exception(
     entry, init_flow_result = init_reconfigure_flow
 
     with patch(
-        "homeassistant.components.vallox.config_flow.Vallox.fetch_metric_data",
+        "inpui.components.vallox.config_flow.Vallox.fetch_metric_data",
         side_effect=Exception,
     ):
         reconfigure_result = await hass.config_entries.flow.async_configure(

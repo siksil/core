@@ -99,7 +99,7 @@ async def test_esphome_device_subscribe_logs(
     await hass.async_block_till_done()
 
     async with async_call_logger_set_level(
-        "homeassistant.components.esphome", "DEBUG", hass=hass, caplog=caplog
+        "inpui.components.esphome", "DEBUG", hass=hass, caplog=caplog
     ):
         assert device.current_log_level == LogLevel.LOG_LEVEL_VERY_VERBOSE
 
@@ -131,15 +131,15 @@ async def test_esphome_device_subscribe_logs(
         assert "test_debug_log_message" in caplog.text
 
     async with async_call_logger_set_level(
-        "homeassistant.components.esphome", "WARNING", hass=hass, caplog=caplog
+        "inpui.components.esphome", "WARNING", hass=hass, caplog=caplog
     ):
         assert device.current_log_level == LogLevel.LOG_LEVEL_WARN
     async with async_call_logger_set_level(
-        "homeassistant.components.esphome", "ERROR", hass=hass, caplog=caplog
+        "inpui.components.esphome", "ERROR", hass=hass, caplog=caplog
     ):
         assert device.current_log_level == LogLevel.LOG_LEVEL_ERROR
     async with async_call_logger_set_level(
-        "homeassistant.components.esphome", "INFO", hass=hass, caplog=caplog
+        "inpui.components.esphome", "INFO", hass=hass, caplog=caplog
     ):
         assert device.current_log_level == LogLevel.LOG_LEVEL_CONFIG
 
@@ -1301,13 +1301,13 @@ async def test_debug_logging(
         mock_client=mock_client,
     )
     async with async_call_logger_set_level(
-        "homeassistant.components.esphome", "DEBUG", hass=hass, caplog=caplog
+        "inpui.components.esphome", "DEBUG", hass=hass, caplog=caplog
     ):
         mock_client.set_debug.assert_has_calls([call(True)])
         mock_client.reset_mock()
 
     async with async_call_logger_set_level(
-        "homeassistant.components.esphome", "WARNING", hass=hass, caplog=caplog
+        "inpui.components.esphome", "WARNING", hass=hass, caplog=caplog
     ):
         mock_client.set_debug.assert_has_calls([call(False)])
 
@@ -2245,7 +2245,7 @@ async def test_sub_device_references_main_device_area(
     assert sub_device_3.area_id == area_registry.async_get_area_by_name("Bedroom").id
 
 
-@patch("homeassistant.components.esphome.manager.secrets.token_bytes")
+@patch("inpui.components.esphome.manager.secrets.token_bytes")
 async def test_dynamic_encryption_key_generation(
     mock_token_bytes: Mock,
     hass: HomeAssistant,
@@ -2440,7 +2440,7 @@ async def test_manager_handle_dynamic_encryption_key_edge_cases(
     mock_client.noise_encryption_set_key.assert_not_called()
 
 
-@patch("homeassistant.components.esphome.manager.secrets.token_bytes")
+@patch("inpui.components.esphome.manager.secrets.token_bytes")
 async def test_manager_dynamic_encryption_key_generation_flow(
     mock_token_bytes: Mock,
     hass: HomeAssistant,
@@ -2509,7 +2509,7 @@ async def test_manager_dynamic_encryption_key_generation_flow(
     )
 
 
-@patch("homeassistant.components.esphome.manager.secrets.token_bytes")
+@patch("inpui.components.esphome.manager.secrets.token_bytes")
 async def test_manager_handle_dynamic_encryption_key_no_existing_key(
     mock_token_bytes: Mock,
     hass: HomeAssistant,
@@ -2580,7 +2580,7 @@ async def test_manager_handle_dynamic_encryption_key_no_existing_key(
     )
 
 
-@patch("homeassistant.components.esphome.manager.secrets.token_bytes")
+@patch("inpui.components.esphome.manager.secrets.token_bytes")
 async def test_manager_handle_dynamic_encryption_key_device_set_key_fails(
     mock_token_bytes: Mock,
     hass: HomeAssistant,
@@ -2650,7 +2650,7 @@ async def test_manager_handle_dynamic_encryption_key_device_set_key_fails(
     assert CONF_NOISE_PSK not in entry.data
 
 
-@patch("homeassistant.components.esphome.manager.secrets.token_bytes")
+@patch("inpui.components.esphome.manager.secrets.token_bytes")
 async def test_manager_handle_dynamic_encryption_key_connection_error(
     mock_token_bytes: Mock,
     hass: HomeAssistant,
@@ -2759,7 +2759,7 @@ async def test_zwave_proxy_request_home_id_change(
 
     # Track flow creation
     with patch(
-        "homeassistant.helpers.discovery_flow.async_create_flow"
+        "inpui.helpers.discovery_flow.async_create_flow"
     ) as mock_create_flow:
         # Call the callback
         zwave_proxy_callback(request)
@@ -2778,7 +2778,7 @@ async def test_zwave_proxy_request_home_id_change(
 
     # Track flow creation
     with patch(
-        "homeassistant.helpers.discovery_flow.async_create_flow"
+        "inpui.helpers.discovery_flow.async_create_flow"
     ) as mock_create_flow:
         # Call the callback
         zwave_proxy_callback(request)

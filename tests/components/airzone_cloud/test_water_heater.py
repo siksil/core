@@ -48,7 +48,7 @@ async def test_airzone_water_heater_turn_on_off(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -64,7 +64,7 @@ async def test_airzone_water_heater_turn_on_off(hass: HomeAssistant) -> None:
     assert state.state == STATE_ECO
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -86,7 +86,7 @@ async def test_airzone_water_heater_set_operation(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -103,7 +103,7 @@ async def test_airzone_water_heater_set_operation(hass: HomeAssistant) -> None:
     assert state.state == STATE_ECO
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -120,7 +120,7 @@ async def test_airzone_water_heater_set_operation(hass: HomeAssistant) -> None:
     assert state.state == STATE_PERFORMANCE
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -143,7 +143,7 @@ async def test_airzone_water_heater_set_temp(hass: HomeAssistant) -> None:
     await async_init_integration(hass)
 
     with patch(
-        "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+        "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
         return_value=None,
     ):
         await hass.services.async_call(
@@ -167,7 +167,7 @@ async def test_airzone_water_heater_set_temp_error(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
+            "inpui.components.airzone_cloud.AirzoneCloudApi.api_patch_device",
             side_effect=AirzoneCloudError,
         ),
         pytest.raises(HomeAssistantError),

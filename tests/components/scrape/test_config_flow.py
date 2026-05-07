@@ -56,7 +56,7 @@ async def test_form(
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=get_data,
     ) as mock_data:
         result2 = await hass.config_entries.flow.async_configure(
@@ -113,7 +113,7 @@ async def test_form_with_post(
     assert result["type"] is FlowResultType.FORM
 
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=get_data,
     ) as mock_data:
         result2 = await hass.config_entries.flow.async_configure(
@@ -173,7 +173,7 @@ async def test_flow_fails(
     assert result["step_id"] == config_entries.SOURCE_USER
 
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         side_effect=HomeAssistantError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -189,7 +189,7 @@ async def test_flow_fails(
     assert result2["errors"] == {"base": "resource_error"}
 
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=MockRestData("test_scrape_sensor_no_data"),
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -205,7 +205,7 @@ async def test_flow_fails(
     assert result2["errors"] == {"base": "resource_error"}
 
     with patch(
-        "homeassistant.components.rest.RestData",
+        "inpui.components.rest.RestData",
         return_value=get_data,
     ):
         result3 = await hass.config_entries.flow.async_configure(
@@ -269,7 +269,7 @@ async def test_options_resource_flow(
     assert result["step_id"] == "resource"
 
     mocker = MockRestData("test_scrape_sensor2")
-    with patch("homeassistant.components.rest.RestData", return_value=mocker):
+    with patch("inpui.components.rest.RestData", return_value=mocker):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
             user_input={
@@ -336,9 +336,9 @@ async def test_options_add_remove_sensor_flow(
 
     mocker = MockRestData("test_scrape_sensor2")
     with (
-        patch("homeassistant.components.rest.RestData", return_value=mocker),
+        patch("inpui.components.rest.RestData", return_value=mocker),
         patch(
-            "homeassistant.components.scrape.config_flow.uuid.uuid1",
+            "inpui.components.scrape.config_flow.uuid.uuid1",
             return_value=uuid.UUID("3699ef88-69e6-11ed-a1eb-0242ac120003"),
         ),
     ):
@@ -403,7 +403,7 @@ async def test_options_add_remove_sensor_flow(
     assert result["step_id"] == "remove_sensor"
 
     mocker = MockRestData("test_scrape_sensor2")
-    with patch("homeassistant.components.rest.RestData", return_value=mocker):
+    with patch("inpui.components.rest.RestData", return_value=mocker):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
             user_input={
@@ -469,7 +469,7 @@ async def test_options_edit_sensor_flow(
     assert result["step_id"] == "edit_sensor"
 
     mocker = MockRestData("test_scrape_sensor2")
-    with patch("homeassistant.components.rest.RestData", return_value=mocker):
+    with patch("inpui.components.rest.RestData", return_value=mocker):
         result = await hass.config_entries.options.async_configure(
             result["flow_id"],
             user_input={

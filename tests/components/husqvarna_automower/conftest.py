@@ -121,7 +121,7 @@ def mock_automower_client(
         pytest.fail("Listen was not cancelled!")
 
     with patch(
-        "homeassistant.components.husqvarna_automower.AutomowerSession",
+        "inpui.components.husqvarna_automower.AutomowerSession",
         autospec=True,
         spec_set=True,
     ) as mock:

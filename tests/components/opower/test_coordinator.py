@@ -380,7 +380,7 @@ async def test_coordinator_migration_empty_source_stats(
     coordinator = OpowerCoordinator(hass, mock_config_entry)
 
     with patch(
-        "homeassistant.components.opower.coordinator.statistics_during_period",
+        "inpui.components.opower.coordinator.statistics_during_period",
         return_value={statistic_id: []},
     ):
         migrated = await coordinator._async_maybe_migrate_statistics(

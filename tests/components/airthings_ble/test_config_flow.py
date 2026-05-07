@@ -124,7 +124,7 @@ async def test_user_setup(hass: HomeAssistant) -> None:
     wave_plus_device = AirthingsDeviceType.WAVE_PLUS
     with (
         patch(
-            "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+            "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
             return_value=[WAVE_SERVICE_INFO],
         ),
         patch_async_ble_device_from_address(WAVE_SERVICE_INFO),
@@ -151,7 +151,7 @@ async def test_user_setup(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.airthings_ble.async_setup_entry",
+        "inpui.components.airthings_ble.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -177,7 +177,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     wave_plus_device = AirthingsDeviceType.WAVE_PLUS
     with (
         patch(
-            "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+            "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
             return_value=[WAVE_SERVICE_INFO],
         ),
         patch_async_ble_device_from_address(WAVE_SERVICE_INFO),
@@ -204,7 +204,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
     }
 
     with patch(
-        "homeassistant.components.airthings_ble.async_setup_entry",
+        "inpui.components.airthings_ble.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -222,7 +222,7 @@ async def test_user_setup_replaces_ignored_device(hass: HomeAssistant) -> None:
 async def test_user_setup_no_device(hass: HomeAssistant) -> None:
     """Test the user initiated form without any device detected."""
     with patch(
-        "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+        "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
         return_value=[],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -240,7 +240,7 @@ async def test_user_setup_existing_and_unknown_device(hass: HomeAssistant) -> No
     )
     entry.add_to_hass(hass)
     with patch(
-        "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+        "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
         return_value=[UNKNOWN_SERVICE_INFO, WAVE_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -266,7 +266,7 @@ async def test_user_setup_unknown_error(
     """Test the user initiated form with an unknown error."""
     with (
         patch(
-            "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+            "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
             return_value=[WAVE_SERVICE_INFO],
         ),
         patch_async_ble_device_from_address(service_info),
@@ -284,7 +284,7 @@ async def test_user_setup_unable_to_connect(hass: HomeAssistant) -> None:
     """Test the user initiated form with a device that's failing connection."""
     with (
         patch(
-            "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+            "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
             return_value=[WAVE_SERVICE_INFO],
         ),
         patch_async_ble_device_from_address(WAVE_SERVICE_INFO),
@@ -301,7 +301,7 @@ async def test_user_setup_unable_to_connect(hass: HomeAssistant) -> None:
 async def test_unsupported_device(hass: HomeAssistant) -> None:
     """Test the user initiated form with an unsupported device."""
     with patch(
-        "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+        "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
         return_value=[UNKNOWN_SERVICE_INFO, VIEW_PLUS_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(
@@ -356,7 +356,7 @@ async def test_step_user_firmware_required(hass: HomeAssistant) -> None:
 
     with (
         patch(
-            "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+            "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
             return_value=[WAVE_SERVICE_INFO],
         ),
         patch_async_ble_device_from_address(WAVE_SERVICE_INFO),
@@ -369,7 +369,7 @@ async def test_step_user_firmware_required(hass: HomeAssistant) -> None:
     assert result["step_id"] == "user"
 
     with patch(
-        "homeassistant.components.airthings_ble.async_setup_entry",
+        "inpui.components.airthings_ble.async_setup_entry",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -383,7 +383,7 @@ async def test_step_user_firmware_required(hass: HomeAssistant) -> None:
 async def test_discovering_unsupported_devices(hass: HomeAssistant) -> None:
     """Test discovering unsupported devices."""
     with patch(
-        "homeassistant.components.airthings_ble.config_flow.async_discovered_service_info",
+        "inpui.components.airthings_ble.config_flow.async_discovered_service_info",
         return_value=[UNKNOWN_AIRTHINGS_SERVICE_INFO, UNKNOWN_SERVICE_INFO],
     ):
         result = await hass.config_entries.flow.async_init(

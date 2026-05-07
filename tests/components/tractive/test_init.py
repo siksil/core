@@ -47,7 +47,7 @@ async def test_unload_entry(
     assert len(hass.config_entries.async_entries(DOMAIN)) == 1
     assert mock_config_entry.state is ConfigEntryState.LOADED
 
-    with patch("homeassistant.components.tractive.TractiveClient.unsubscribe"):
+    with patch("inpui.components.tractive.TractiveClient.unsubscribe"):
         assert await hass.config_entries.async_unload(mock_config_entry.entry_id)
         await hass.async_block_till_done()
 
@@ -136,7 +136,7 @@ async def test_unsubscribe_on_ha_stop(
     await init_integration(hass, mock_config_entry)
 
     with patch(
-        "homeassistant.components.tractive.TractiveClient.unsubscribe"
+        "inpui.components.tractive.TractiveClient.unsubscribe"
     ) as mock_unsuscribe:
         hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
@@ -186,7 +186,7 @@ async def test_missing_sleep_data(
     await init_integration(hass, mock_config_entry)
 
     with patch(
-        "homeassistant.components.tractive.async_dispatcher_send"
+        "inpui.components.tractive.async_dispatcher_send"
     ) as async_dispatcher_send_mock:
         mock_tractive_client.send_health_overview_event(mock_config_entry, event)
 
@@ -210,7 +210,7 @@ async def test_missing_activity_data(
     await init_integration(hass, mock_config_entry)
 
     with patch(
-        "homeassistant.components.tractive.async_dispatcher_send"
+        "inpui.components.tractive.async_dispatcher_send"
     ) as async_dispatcher_send_mock:
         mock_tractive_client.send_health_overview_event(mock_config_entry, event)
 

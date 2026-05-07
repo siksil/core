@@ -383,7 +383,7 @@ async def test_reload(
     assert entity_registry.async_get_entity_id(DOMAIN, DOMAIN, "test_3") is not None
 
     with patch(
-        "homeassistant.config.load_yaml_config_file",
+        "inpui.config.load_yaml_config_file",
         autospec=True,
         return_value={
             DOMAIN: {
@@ -625,7 +625,7 @@ async def test_setup_no_config(hass: HomeAssistant, hass_admin_user: MockUser) -
     assert await async_setup_component(hass, DOMAIN, {})
 
     with patch(
-        "homeassistant.config.load_yaml_config_file", autospec=True, return_value={}
+        "inpui.config.load_yaml_config_file", autospec=True, return_value={}
     ):
         await hass.services.async_call(
             DOMAIN,

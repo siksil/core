@@ -41,7 +41,7 @@ async def test_flow_successful(hass: HomeAssistant) -> None:
     with (
         patch("aiosyncthing.system.System.status", return_value={"myID": "server-id"}),
         patch(
-            "homeassistant.components.syncthing.async_setup_entry",
+            "inpui.components.syncthing.async_setup_entry",
             return_value=True,
         ) as mock_setup_entry,
     ):

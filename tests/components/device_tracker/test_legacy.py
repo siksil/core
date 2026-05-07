@@ -32,7 +32,7 @@ def test_remove_device_from_config(hass: HomeAssistant) -> None:
     files = {legacy.YAML_DEVICES: dump(yaml_devices)}
     with (
         patch_yaml_files(files, True),
-        patch("homeassistant.components.device_tracker.legacy.open", mopen),
+        patch("inpui.components.device_tracker.legacy.open", mopen),
     ):
         legacy.remove_device_from_config(hass, "test")
 

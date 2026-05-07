@@ -43,7 +43,7 @@ ENTITY_COVER = "cover.living_room_window"
 def cover_only() -> Generator[None]:
     """Enable only the climate platform."""
     with patch(
-        "homeassistant.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
+        "inpui.components.demo.COMPONENTS_WITH_CONFIG_ENTRY_DEMO_PLATFORM",
         [Platform.COVER],
     ):
         yield

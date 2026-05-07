@@ -44,7 +44,7 @@ async def test_all_entities(
 ) -> None:
     """Test all entities."""
     with patch(
-        "homeassistant.components.open_router.PLATFORMS",
+        "inpui.components.open_router.PLATFORMS",
         [Platform.CONVERSATION],
     ):
         await setup_integration(hass, mock_config_entry)

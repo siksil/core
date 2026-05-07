@@ -20,7 +20,7 @@ async def test_climate(
 ) -> None:
     """Test climate."""
     with patch(
-        "homeassistant.components.moehlenhoff_alpha2.PLATFORMS",
+        "inpui.components.moehlenhoff_alpha2.PLATFORMS",
         [Platform.CLIMATE],
     ):
         entry = await init_integration(hass)

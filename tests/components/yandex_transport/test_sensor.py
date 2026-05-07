@@ -24,7 +24,7 @@ SUBURBAN_TRAIN_REPLY = json.loads(
 def mock_requester_bus():
     """Create a mock for YandexMapsRequester."""
     with patch(
-        "homeassistant.components.yandex_transport.sensor.YandexMapsRequester"
+        "inpui.components.yandex_transport.sensor.YandexMapsRequester"
     ) as requester:
         instance = requester.return_value
         instance.set_new_session = AsyncMock()
@@ -36,7 +36,7 @@ def mock_requester_bus():
 def mock_requester_suburban_train():
     """Create a mock for YandexMapsRequester."""
     with patch(
-        "homeassistant.components.yandex_transport.sensor.YandexMapsRequester"
+        "inpui.components.yandex_transport.sensor.YandexMapsRequester"
     ) as requester:
         instance = requester.return_value
         instance.set_new_session = AsyncMock()

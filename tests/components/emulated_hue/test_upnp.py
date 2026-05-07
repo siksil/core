@@ -51,7 +51,7 @@ def hue_client(
     """Return a hue API client."""
     app = web.Application()
     with unittest.mock.patch(
-        "homeassistant.components.emulated_hue.web.Application", return_value=app
+        "inpui.components.emulated_hue.web.Application", return_value=app
     ):
 
         async def client():
@@ -64,7 +64,7 @@ def hue_client(
 async def setup_hue(hass: HomeAssistant) -> None:
     """Set up the emulated_hue integration."""
     with patch(
-        "homeassistant.components.emulated_hue.async_create_upnp_datagram_endpoint"
+        "inpui.components.emulated_hue.async_create_upnp_datagram_endpoint"
     ):
         assert await setup.async_setup_component(
             hass,

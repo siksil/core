@@ -69,7 +69,7 @@ def mock_audio_proxy():
     mock_proxy.async_stop = AsyncMock()
 
     with patch(
-        "homeassistant.components.homekit.type_cameras.AudioProxy",
+        "inpui.components.homekit.type_cameras.AudioProxy",
         return_value=mock_proxy,
     ):
         yield mock_proxy
@@ -205,11 +205,11 @@ async def test_camera_stream_source_configured(hass: HomeAssistant, run_driver) 
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -242,11 +242,11 @@ async def test_camera_stream_source_configured(hass: HomeAssistant, run_driver) 
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="rtsp://example.local",
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -323,11 +323,11 @@ async def test_camera_stream_source_configured_with_failing_ffmpeg(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="rtsp://example.local",
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=_get_failing_mock_ffmpeg(),
         ),
     ):
@@ -369,11 +369,11 @@ async def test_camera_stream_source_audio_proxy_fails(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -414,11 +414,11 @@ async def test_camera_stream_source_found(hass: HomeAssistant, run_driver) -> No
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="rtsp://example.local",
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -448,11 +448,11 @@ async def test_camera_stream_source_found(hass: HomeAssistant, run_driver) -> No
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value="rtsp://example2.local",
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -498,11 +498,11 @@ async def test_camera_stream_source_fails(hass: HomeAssistant, run_driver) -> No
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             side_effect=OSError,
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=_get_working_mock_ffmpeg(),
         ),
     ):
@@ -584,11 +584,11 @@ async def test_camera_stream_source_configured_and_copy_codec(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -659,11 +659,11 @@ async def test_camera_stream_source_configured_and_override_profile_names(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=working_ffmpeg,
         ),
     ):
@@ -733,11 +733,11 @@ async def test_camera_streaming_fails_after_starting_ffmpeg(
 
     with (
         patch(
-            "homeassistant.components.demo.camera.DemoCamera.stream_source",
+            "inpui.components.demo.camera.DemoCamera.stream_source",
             return_value=None,
         ),
         patch(
-            "homeassistant.components.homekit.type_cameras.HAFFmpeg",
+            "inpui.components.homekit.type_cameras.HAFFmpeg",
             return_value=ffmpeg_with_invalid_pid,
         ),
     ):

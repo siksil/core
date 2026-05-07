@@ -25,11 +25,11 @@ async def test_flow_works(hass: HomeAssistant, simple_mock_home) -> None:
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.get_auth",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.get_auth",
             return_value=True,
         ),
     ):
@@ -52,19 +52,19 @@ async def test_flow_works(hass: HomeAssistant, simple_mock_home) -> None:
 
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
+            "inpui.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
         ),
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -80,7 +80,7 @@ async def test_flow_works(hass: HomeAssistant, simple_mock_home) -> None:
 async def test_flow_init_connection_error(hass: HomeAssistant) -> None:
     """Test config flow with accesspoint connection error."""
     with patch(
-        "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+        "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
         return_value=False,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -97,15 +97,15 @@ async def test_flow_link_connection_error(hass: HomeAssistant) -> None:
     """Test config flow client registration connection error."""
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value=False,
         ),
     ):
@@ -123,11 +123,11 @@ async def test_flow_link_press_button(hass: HomeAssistant) -> None:
     """Test config flow ask for pressing the blue button."""
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=False,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
     ):
@@ -156,7 +156,7 @@ async def test_init_already_configured(hass: HomeAssistant) -> None:
     """Test accesspoint is already configured."""
     MockConfigEntry(domain=DOMAIN, unique_id="ABC123").add_to_hass(hass)
     with patch(
-        "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+        "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
         return_value=True,
     ):
         result = await hass.config_entries.flow.async_init(
@@ -173,19 +173,19 @@ async def test_import_config(hass: HomeAssistant, simple_mock_home) -> None:
     """Test importing a host with an existing config file."""
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
+            "inpui.components.homematicip_cloud.hap.HomematicipHAP.async_connect",
         ),
     ):
         result = await hass.config_entries.flow.async_init(
@@ -216,11 +216,11 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     # Submit reauth_confirm, button not yet pressed -> link form shown
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=False,
         ),
     ):
@@ -235,19 +235,19 @@ async def test_reauth_flow(hass: HomeAssistant) -> None:
     # User presses button -> reauth completes
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value="new_token",
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.async_setup_entry",
+            "inpui.components.homematicip_cloud.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.async_unload_entry",
+            "inpui.components.homematicip_cloud.async_unload_entry",
             return_value=True,
         ),
     ):
@@ -275,11 +275,11 @@ async def test_reauth_flow_register_failure(hass: HomeAssistant) -> None:
     # Submit reauth_confirm to get to link step
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=False,
         ),
     ):
@@ -291,11 +291,11 @@ async def test_reauth_flow_register_failure(hass: HomeAssistant) -> None:
     # Button pressed but register fails -> should show error, not abort
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value=False,
         ),
     ):
@@ -310,19 +310,19 @@ async def test_reauth_flow_register_failure(hass: HomeAssistant) -> None:
     # Retry succeeds -> reauth completes
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value="new_token",
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.async_setup_entry",
+            "inpui.components.homematicip_cloud.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.async_unload_entry",
+            "inpui.components.homematicip_cloud.async_unload_entry",
             return_value=True,
         ),
     ):
@@ -350,7 +350,7 @@ async def test_reauth_flow_connection_error(hass: HomeAssistant) -> None:
     assert result["step_id"] == "reauth_confirm"
 
     with patch(
-        "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+        "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
         return_value=False,
     ):
         result = await hass.config_entries.flow.async_configure(
@@ -364,23 +364,23 @@ async def test_reauth_flow_connection_error(hass: HomeAssistant) -> None:
     # Retry succeeds -> reauth completes
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value="new_token",
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.async_setup_entry",
+            "inpui.components.homematicip_cloud.async_setup_entry",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.async_unload_entry",
+            "inpui.components.homematicip_cloud.async_unload_entry",
             return_value=True,
         ),
     ):
@@ -399,15 +399,15 @@ async def test_import_existing_config(hass: HomeAssistant) -> None:
     MockConfigEntry(domain=DOMAIN, unique_id="ABC123").add_to_hass(hass)
     with (
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_checkbutton",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_setup",
             return_value=True,
         ),
         patch(
-            "homeassistant.components.homematicip_cloud.hap.HomematicipAuth.async_register",
+            "inpui.components.homematicip_cloud.hap.HomematicipAuth.async_register",
             return_value=True,
         ),
     ):

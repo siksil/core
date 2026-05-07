@@ -327,7 +327,7 @@ async def async_decode_stream(
     with (
         patch("av.open", new=py_av.open),
         patch(
-            "homeassistant.components.stream.core.StreamOutput.put",
+            "inpui.components.stream.core.StreamOutput.put",
             side_effect=py_av.capture_buffer.capture_output_segment,
         ),
     ):
@@ -844,7 +844,7 @@ async def test_durations(hass: HomeAssistant, worker_finished_stream) -> None:
     )
     worker_finished, mock_stream = worker_finished_stream
 
-    with patch("homeassistant.components.stream.Stream", wraps=mock_stream):
+    with patch("inpui.components.stream.Stream", wraps=mock_stream):
         stream = create_stream(
             hass, source, {}, dynamic_stream_settings(), stream_label="camera"
         )
@@ -923,7 +923,7 @@ async def test_has_keyframe(
 
     worker_finished, mock_stream = worker_finished_stream
 
-    with patch("homeassistant.components.stream.Stream", wraps=mock_stream):
+    with patch("inpui.components.stream.Stream", wraps=mock_stream):
         stream = create_stream(
             hass, h264_video, {}, dynamic_stream_settings(), stream_label="camera"
         )
@@ -966,7 +966,7 @@ async def test_h265_video_is_hvc1(hass: HomeAssistant, worker_finished_stream) -
     source = generate_h265_video()
 
     worker_finished, mock_stream = worker_finished_stream
-    with patch("homeassistant.components.stream.Stream", wraps=mock_stream):
+    with patch("inpui.components.stream.Stream", wraps=mock_stream):
         stream = create_stream(
             hass, source, {}, dynamic_stream_settings(), stream_label="camera"
         )
@@ -1002,7 +1002,7 @@ async def test_get_image(hass: HomeAssistant, h264_video, filename) -> None:
 
     # Since libjpeg-turbo is not installed on the CI runner, we use a mock
     with patch(
-        "homeassistant.components.camera.TurboJPEGSingleton"
+        "inpui.components.camera.TurboJPEGSingleton"
     ) as mock_turbo_jpeg_singleton:
         mock_turbo_jpeg_singleton.instance.return_value = mock_turbo_jpeg()
         stream = create_stream(hass, h264_video, {}, dynamic_stream_settings())
@@ -1065,7 +1065,7 @@ async def test_get_image_rotated(hass: HomeAssistant, h264_video, filename) -> N
 
     # Since libjpeg-turbo is not installed on the CI runner, we use a mock
     with patch(
-        "homeassistant.components.camera.TurboJPEGSingleton"
+        "inpui.components.camera.TurboJPEGSingleton"
     ) as mock_turbo_jpeg_singleton:
         mock_turbo_jpeg_singleton.instance.return_value = mock_turbo_jpeg()
         for orientation in (Orientation.NO_TRANSFORM, Orientation.ROTATE_RIGHT):

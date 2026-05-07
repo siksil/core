@@ -77,7 +77,7 @@ def test_enforce_greek_micro_char(
     code: str,
 ) -> None:
     """Good test cases."""
-    root_node = astroid.parse(code, "homeassistant.components.pylint_test")
+    root_node = astroid.parse(code, "inpui.components.pylint_test")
     walker = ASTWalker(linter)
     walker.add_checker(enforce_greek_micro_char_checker)
 
@@ -153,7 +153,7 @@ def test_enforce_greek_micro_char_assign_bad(
     code: str,
 ) -> None:
     """Bad assignment test cases."""
-    root_node = astroid.parse(code, "homeassistant.components.pylint_test")
+    root_node = astroid.parse(code, "inpui.components.pylint_test")
     walker = ASTWalker(linter)
     walker.add_checker(enforce_greek_micro_char_checker)
 

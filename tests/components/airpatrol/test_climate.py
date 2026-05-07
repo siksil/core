@@ -51,7 +51,7 @@ from tests.common import (
 def override_platforms() -> Generator[None]:
     """Override the platforms to load for airpatrol."""
     with patch(
-        "homeassistant.components.airpatrol.PLATFORMS",
+        "inpui.components.airpatrol.PLATFORMS",
         [Platform.CLIMATE],
     ):
         yield

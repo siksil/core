@@ -16,7 +16,7 @@ from tests.common import MockConfigEntry, async_capture_events, snapshot_platfor
 @pytest.fixture(autouse=True)
 def setup_platforms():
     """Patch PLATFORMS for all tests in this file."""
-    with patch("homeassistant.components.lutron.PLATFORMS", [Platform.EVENT]):
+    with patch("inpui.components.lutron.PLATFORMS", [Platform.EVENT]):
         yield
 
 

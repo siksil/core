@@ -17,7 +17,7 @@ from tests.common import MockConfigEntry, snapshot_platform
 @pytest.fixture(autouse=True)
 def setup_platforms() -> Generator[None]:
     """Set up the platforms for the tests."""
-    with patch("homeassistant.components.tado.PLATFORMS", [Platform.WATER_HEATER]):
+    with patch("inpui.components.tado.PLATFORMS", [Platform.WATER_HEATER]):
         yield
 
 

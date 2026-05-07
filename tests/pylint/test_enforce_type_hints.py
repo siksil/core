@@ -20,11 +20,11 @@ from . import assert_adds_messages, assert_no_messages
     ("module_name", "expected_platform", "in_platforms"),
     [
         ("homeassistant", None, False),
-        ("homeassistant.components", None, False),
-        ("homeassistant.components.pylint_test", "__init__", False),
-        ("homeassistant.components.pylint_test.config_flow", "config_flow", False),
-        ("homeassistant.components.pylint_test.light", "light", True),
-        ("homeassistant.components.pylint_test.light.v1", None, False),
+        ("inpui.components", None, False),
+        ("inpui.components.pylint_test", "__init__", False),
+        ("inpui.components.pylint_test.config_flow", "config_flow", False),
+        ("inpui.components.pylint_test.light", "light", True),
+        ("inpui.components.pylint_test.light.v1", None, False),
     ],
 )
 def test_regex_get_module_platform(
@@ -115,7 +115,7 @@ def test_ignore_no_annotations(
 
     func_node = astroid.extract_node(
         code,
-        "homeassistant.components.pylint_test.light",
+        "inpui.components.pylint_test.light",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -150,7 +150,7 @@ def test_bypass_ignore_no_annotations(
 
     func_node = astroid.extract_node(
         code,
-        "homeassistant.components.pylint_test",
+        "inpui.components.pylint_test",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -190,7 +190,7 @@ def test_dont_ignore_partial_annotations(
     """Ensure that _is_valid_type is run if there is at least one annotation."""
     func_node = astroid.extract_node(
         code,
-        "homeassistant.components.pylint_test",
+        "inpui.components.pylint_test",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -215,7 +215,7 @@ def test_invalid_discovery_info(
     ) -> bool:
         pass
     """,
-        "homeassistant.components.pylint_test.device_tracker",
+        "inpui.components.pylint_test.device_tracker",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -248,7 +248,7 @@ def test_valid_discovery_info(
     ) -> bool:
         pass
     """,
-        "homeassistant.components.pylint_test.device_tracker",
+        "inpui.components.pylint_test.device_tracker",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -268,7 +268,7 @@ def test_invalid_list_dict_str_any(
     ) -> list:
         pass
     """,
-        "homeassistant.components.pylint_test.device_trigger",
+        "inpui.components.pylint_test.device_trigger",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -302,7 +302,7 @@ def test_valid_list_dict_str_any(
     ) -> list[dict[str, Any]]:
         pass
     """,
-        "homeassistant.components.pylint_test.device_trigger",
+        "inpui.components.pylint_test.device_trigger",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -339,7 +339,7 @@ def test_invalid_config_flow_step(
         ):
             pass
     """,
-        "homeassistant.components.pylint_test.config_flow",
+        "inpui.components.pylint_test.config_flow",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -451,7 +451,7 @@ def test_invalid_flow_step(
     """Ensure invalid hints are rejected for flow step."""
     class_node, func_node = astroid.extract_node(
         code,
-        "homeassistant.components.pylint_test.config_flow",
+        "inpui.components.pylint_test.config_flow",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -508,7 +508,7 @@ def test_valid_flow_step(
     """Ensure valid hints are accepted for flow step."""
     class_node = astroid.extract_node(
         code,
-        "homeassistant.components.pylint_test.config_flow",
+        "inpui.components.pylint_test.config_flow",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -543,7 +543,7 @@ def test_invalid_config_flow_async_get_options_flow(
         ) -> AxisOptionsFlow:
             return AxisOptionsFlow(config_entry)
     """,
-        "homeassistant.components.pylint_test.config_flow",
+        "inpui.components.pylint_test.config_flow",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -603,7 +603,7 @@ def test_valid_config_flow_async_get_options_flow(
             return AxisOptionsFlow(config_entry)
 
     """,
-        "homeassistant.components.pylint_test.config_flow",
+        "inpui.components.pylint_test.config_flow",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -641,7 +641,7 @@ def test_invalid_entity_properties(
         ) -> bool:
             pass
     """,
-        "homeassistant.components.pylint_test.lock",
+        "inpui.components.pylint_test.lock",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -714,7 +714,7 @@ def test_ignore_invalid_entity_properties(
         ):
             pass
     """,
-        "homeassistant.components.pylint_test.lock",
+        "inpui.components.pylint_test.lock",
     )
     lock_match = next(
         function_match
@@ -768,7 +768,7 @@ def test_named_arguments(
         ) -> bool:
             pass
     """,
-        "homeassistant.components.pylint_test.fan",
+        "inpui.components.pylint_test.fan",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -851,7 +851,7 @@ def test_invalid_mapping_return_type(
         ){return_hint}:
             pass
     """,
-        "homeassistant.components.pylint_test.fan",
+        "inpui.components.pylint_test.fan",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -914,7 +914,7 @@ def test_valid_mapping_return_type(
         ){return_hint}:
             pass
     """,
-        "homeassistant.components.pylint_test.fan",
+        "inpui.components.pylint_test.fan",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -961,7 +961,7 @@ def test_valid_long_tuple(
         ) -> tuple[int, int, int, int, int]:
             pass
     """,
-        "homeassistant.components.pylint_test.light",
+        "inpui.components.pylint_test.light",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1002,7 +1002,7 @@ def test_invalid_long_tuple(
         ) -> tuple[int, int, int, int, float]:
             pass
     """,
-        "homeassistant.components.pylint_test.light",
+        "inpui.components.pylint_test.light",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1054,7 +1054,7 @@ def test_invalid_device_class(
         ):
             pass
     """,
-        "homeassistant.components.pylint_test.cover",
+        "inpui.components.pylint_test.cover",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1094,7 +1094,7 @@ def test_media_player_entity(
         async def async_get_media_image(self) -> tuple[bytes | None, str | None]:
             pass
     """,
-        "homeassistant.components.pylint_test.media_player",
+        "inpui.components.pylint_test.media_player",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1127,7 +1127,7 @@ def test_humidifier_entity(
         def async_set_humidity(self, humidity: float) -> None:
             pass
     """,
-        "homeassistant.components.pylint_test.humidifier",
+        "inpui.components.pylint_test.humidifier",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1164,7 +1164,7 @@ def test_number_entity(linter: UnittestLinter, type_hint_checker: BaseChecker) -
         def native_value(self) -> int:
             pass
     """,
-        "homeassistant.components.pylint_test.number",
+        "inpui.components.pylint_test.number",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1201,7 +1201,7 @@ def test_vacuum_entity(linter: UnittestLinter, type_hint_checker: BaseChecker) -
         ) -> None:
             pass
     """,
-        "homeassistant.components.pylint_test.vacuum",
+        "inpui.components.pylint_test.vacuum",
     )
     type_hint_checker.visit_module(class_node.parent)
 
@@ -1228,7 +1228,7 @@ def test_notify_get_service(
     class CustomNotificationService(BaseNotificationService):
         pass
     """,
-        "homeassistant.components.pylint_test.notify",
+        "inpui.components.pylint_test.notify",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -1466,7 +1466,7 @@ def test_valid_generic(
     ) -> None:
         pass
     """,
-        "homeassistant.components.pylint_test.notify",
+        "inpui.components.pylint_test.notify",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -1498,7 +1498,7 @@ def test_invalid_generic(
     ) -> None:
         pass
     """,
-        "homeassistant.components.pylint_test.notify",
+        "inpui.components.pylint_test.notify",
     )
     type_hint_checker.visit_module(func_node.parent)
 
@@ -1534,7 +1534,7 @@ def test_missing_argument(
     ) -> None:
         pass
     """,
-        "homeassistant.components.pylint_test.sensor",
+        "inpui.components.pylint_test.sensor",
     )
     type_hint_checker.visit_module(func_node.parent)
 

@@ -28,7 +28,7 @@ MOCK_DEVICE_CURRENT = DeviceReadings(
 def mock_setup_entry() -> Generator[AsyncMock]:
     """Override async_setup_entry."""
     with patch(
-        "homeassistant.components.freshr.async_setup_entry", return_value=True
+        "inpui.components.freshr.async_setup_entry", return_value=True
     ) as mock_setup_entry:
         yield mock_setup_entry
 
@@ -48,10 +48,10 @@ def mock_freshr_client() -> Generator[MagicMock]:
     """Return a mocked FreshrClient."""
     with (
         patch(
-            "homeassistant.components.freshr.coordinator.FreshrClient", autospec=True
+            "inpui.components.freshr.coordinator.FreshrClient", autospec=True
         ) as mock_client_class,
         patch(
-            "homeassistant.components.freshr.config_flow.FreshrClient",
+            "inpui.components.freshr.config_flow.FreshrClient",
             new=mock_client_class,
         ),
     ):
